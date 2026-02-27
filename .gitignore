@@ -6,3 +6,5 @@ simple-rabbit-theme.zip
 claude-code-build-prompt.md
 simple-rabbit-website-copy.md
 writing-rules-seo-geo.md
+deploy.sh
+.env.deploy
