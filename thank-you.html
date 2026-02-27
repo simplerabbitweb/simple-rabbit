@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're In | Simple Rabbit</title>
+  <meta name="description" content="Thanks for reaching out. Here's what happens next.">
+  <meta property="og:title" content="You're In | Simple Rabbit">
+  <meta property="og:description" content="Thanks for reaching out. Here's what happens next.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/thank-you.html">
+  <meta property="og:image" content="https://simplerabbit.studio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text x='8' y='72' font-family='monospace' font-size='46' font-weight='bold' fill='%230872cc'>SR</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:16px;display:block;}
+    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input::placeholder{color:var(--mid);}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
+    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .grid-3,.grid-2{grid-template-columns:1fr!important;gap:32px!important;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:600px){
+      .nav-link-about,.nav-link-portfolio{display:none!important;}
+      .mobile-cta-bar{display:block!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo.svg" alt="Simple Rabbit" style="max-height:112px;display:block;"></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link-about">About</a>
+      <a href="portfolio.html" class="nav-link-portfolio">Portfolio</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:820px;margin:0 auto;">
+    <div style="width:56px;height:56px;margin:0 auto 28px;border:1.5px solid var(--black);display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h1 style="font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1;margin-bottom:0;">You're in. Here's what happens next.</h1>
+  </div>
+</section>
+
+<!-- 2. THREE STEPS -->
+<section class="reveal sp" style="padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);text-align:center;">
+        <div style="width:48px;height:48px;margin:0 auto 24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:100%;height:100%;color:var(--dark);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </div>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">We review.</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We look at your current site (if you have one), your industry, and your competitors to understand where you stand.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);text-align:center;">
+        <div style="width:48px;height:48px;margin:0 auto 24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:100%;height:100%;color:var(--dark);"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+        </div>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">We record.</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">You'll get a personal video walkthrough with our initial thoughts, not a canned pitch. Real observations about your project.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);text-align:center;">
+        <div style="width:48px;height:48px;margin:0 auto 24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:100%;height:100%;color:var(--dark);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">We talk.</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">If it feels like a fit, we'll schedule a call to dig deeper. If it doesn't, we'll tell you that too. No pressure either way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. WHILE YOU WAIT -->
+<section class="reveal sp" style="background:var(--tone);padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">While you wait.</h2>
+    <div class="grid-2">
+      <a href="blog/bergen-county-web-design.html" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Bergen County</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why Bergen County service businesses are losing clients to their own website</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Most local NJ business owners don't realize their website is quietly turning away the exact clients they want. Here's what to look for and how to fix it.</p>
+        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
+      </a>
+      <a href="blog/charge-more-better-website.html" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Pricing &amp; positioning</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why clients balk at your rates — and how the right website fixes it</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">It's not your pricing. When your website signals expert, dream clients stop negotiating and start saying yes — even before the first conversation.</p>
+        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. NEWSLETTER SIGNUP -->
+<section class="reveal sp" style="padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:520px;margin:0 auto;text-align:center;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:16px;">Stay in the loop.</h2>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">GEO insights, web design thinking, and the occasional behind-the-scenes look at what we're building.</p>
+    <form id="newsletter-form" style="display:flex;max-width:440px;margin:0 auto;">
+      <input type="email" name="email" required placeholder="Your email address" class="form-input" style="flex:1;">
+      <button type="submit" style="background:var(--black);color:var(--white);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="contact.html">Start a Project &rarr;</a>
+</div>
+
+<script>
+  // GA4 conversion event
+  gtag('event', 'generate_lead', { event_category: 'form', event_label: 'contact form submission' });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Newsletter form
+  document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    try {
+      await fetch('https://formspree.io/f/mojndlrg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: this.email.value, type: 'newsletter signup' })
+      });
+      this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
+    } catch(err) { console.error(err); }
+  });
+</script>
+</body>
+</html>

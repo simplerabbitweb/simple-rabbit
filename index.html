@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Rabbit | Web Design That Books Better Clients</title>
+  <meta name="description" content="Simple Rabbit builds websites that attract clients who see your value instantly. Web design with SEO built in for service businesses.">
+  <meta property="og:title" content="Simple Rabbit | Web Design That Books Better Clients">
+  <meta property="og:description" content="Simple Rabbit builds websites that attract clients who see your value instantly. Web design with SEO built in for service businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio">
+  <meta property="og:image" content="https://simplerabbit.studio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text x='8' y='72' font-family='monospace' font-size='46' font-weight='bold' fill='%230872cc'>SR</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:16px;display:block;}
+    .work-item{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--light-border);text-decoration:none;color:var(--dark);font-size:15px;transition:color 0.2s;}
+    .work-item:hover{color:var(--black);}
+    .work-arrow{transition:opacity 0.2s,transform 0.2s;opacity:0;}
+    .work-item:hover .work-arrow{opacity:1;transform:translateX(4px);}
+    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input::placeholder{color:var(--mid);}
+    .form-select{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23949698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;-webkit-appearance:none;outline:none;font-family:var(--font-body);color:var(--black);cursor:pointer;}
+    .form-select:focus{border-bottom-color:var(--black);}
+    .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
+    .form-group{margin-bottom:28px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .grid-2-center{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
+    .grid-split{display:grid;grid-template-columns:1fr 1fr;}
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
+    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;transition:background 0.2s;}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .grid-2,.grid-2-center,.grid-3,.grid-split{grid-template-columns:1fr!important;gap:40px!important;}
+      .work-preview-grid{grid-template-columns:1fr!important;}
+      .work-preview-panel{display:none!important;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:600px){
+      .nav-link-about,.nav-link-portfolio{display:none!important;}
+      .mobile-cta-bar{display:block!important;}
+      .form-row{grid-template-columns:1fr!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo.svg" alt="Simple Rabbit" style="max-height:112px;display:block;"></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link-about">About</a>
+      <a href="portfolio.html" class="nav-link-portfolio">Portfolio</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;">
+  <div style="max-width:820px;margin:0 auto;">
+    <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Charge more</h1>
+    <p style="font-family:var(--font-display);font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;color:var(--mid);margin-bottom:36px;font-weight:400;">without the pushback</p>
+    <p style="font-size:18px;font-weight:300;line-height:1.7;color:var(--dark);max-width:520px;margin:0 auto 44px;">Websites that attract clients who see your value instantly</p>
+    <a href="contact.html" class="btn-primary">Get a Quote &rarr;</a>
+  </div>
+</section>
+
+<!-- 2. BANNER -->
+<div style="background:var(--tone);padding:18px 48px;text-align:center;border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+  <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);">Website Design &middot; SEO &middot; Schema Markup &middot; AI Visibility &middot; Ongoing Support</span>
+</div>
+
+<!-- 3. INTRO SECTION -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;">
+    <div>
+      <img src="leann.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;">
+    </div>
+    <div>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:24px;">We build the website that supports your freedom.</h2>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:480px;margin-bottom:28px;">Imagine every person who finds you online instantly trusts you and your business. They see your confidence, approachability, and success immediately. Your website shows that you are the best-of-the-best in your industry and that you can help them reach their goals. With the right site in place, you finally charge what you truly deserve, connect only with clients you genuinely enjoy working with, and build the joyful, sustainable life you've always wanted.</p>
+      <h3 style="font-size:22px;line-height:1.25;font-weight:400;">Now you can spend real time with your family, take care of yourself, and chase bigger goals without the burnout.</h3>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PAIN POINTS -->
+<section class="reveal sp" style="background:var(--tone);padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:820px;margin-bottom:64px;">You've been in the game for years, evolving over time. But your website? It makes you look like a newbie.</h2>
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:40px;border-right:1px solid var(--light-border);">
+        <h4 style="font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:12px;line-height:1.3;">You're getting clients. Just not the right clients.</h4>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Your website doesn't filter people at the right level, so you end up saying yes to projects that drain time, energy, or profit.</p>
+      </div>
+      <div style="padding:40px;border-right:1px solid var(--light-border);">
+        <h4 style="font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:12px;line-height:1.3;">People are shocked when you give them your pricing.</h4>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">People balk at your rates because your website screams 'budget' instead of 'expert'.</p>
+      </div>
+      <div style="padding:40px;border-right:1px solid var(--light-border);">
+        <h4 style="font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:12px;line-height:1.3;">You get results, but someone else wins their business.</h4>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Other providers look more established and professional online, so people assume they're higher-quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SOLUTION SECTION -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;">
+    <div>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:16px;">It's not your prices. It's a DIY website that's misaligned.</h2>
+      <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:24px;">Outdated design. No SEO. A site that doesn't match who you've become.</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">A professionally built website turns your brand into proof of your expertise, your results, your value.</p>
+      <ul style="list-style:none;margin-bottom:40px;">
+        <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Attract dream clients who appreciate what you do</li>
+        <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Make more money by charging what you deserve without question</li>
+        <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Fall back in love with your business because you're only working with the right kind of clients</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">Get a Quote</a>
+    </div>
+    <div style="background:var(--black);padding:60px 48px;">
+      <p style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);line-height:1.5;font-style:italic;color:var(--white);">"Your website should be working as hard as you are &mdash; attracting clients who already see your value before they ever reach out."</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FOUNDER SECTION -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;">
+    <div>
+      <img src="leann-2.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:4/5;max-height:560px;">
+    </div>
+    <div>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Hi, I'm Leann</h2>
+      <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:24px;">Founder &amp; Web Designer</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">I help ambitious women stop blending in and start booking better clients. I build websites that do the selling for you, so you can grow to six and seven figures without burning out to get there.</p>
+      <a href="about.html" style="font-size:14px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;">Learn about us &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SERVICES SECTION -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:600px;margin-bottom:64px;">We build websites that attract the clients you want to work with.</h2>
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <span class="overline">get found</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">SEO Built In</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Every site we build is optimized for Google and AI search, so the right people find you without you chasing them.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <span class="overline">build trust</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">Custom Design</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Your site becomes your best salesperson by filtering out tire-kickers and closing premium clients.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <span class="overline">grow with you</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">Ongoing Support</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Your business changes. Your site should too. We stay on as a partner so your website always reflects where you're headed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. WORK LIST -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">Selected work</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">11 projects and counting.</h2>
+    <div class="work-preview-grid" style="display:grid;grid-template-columns:500px 1fr;gap:64px;align-items:start;">
+      <div style="border-top:1px solid var(--light-border);">
+        <a href="https://eventscustomtaylored.com" target="_blank" class="work-item" data-preview="previews/eventscustomtaylored.png" data-domain="eventscustomtaylored.com"><span>eventscustomtaylored.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://findhoodcleaning.com" target="_blank" class="work-item" data-preview="previews/findhoodcleaning.png" data-domain="findhoodcleaning.com"><span>findhoodcleaning.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://goodwinfinishes.com.au" target="_blank" class="work-item" data-preview="previews/goodwinfinishes.png" data-domain="goodwinfinishes.com.au"><span>goodwinfinishes.com.au</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://hellopascackvalley.com" target="_blank" class="work-item" data-preview="previews/hellopascackvalley.png" data-domain="hellopascackvalley.com"><span>hellopascackvalley.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://innovativesoftware.solutions" target="_blank" class="work-item" data-preview="previews/innovativesoftware.png" data-domain="innovativesoftware.solutions"><span>innovativesoftware.solutions</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://lauracgonzalez.com" target="_blank" class="work-item" data-preview="previews/lauracgonzalez.png" data-domain="lauracgonzalez.com"><span>lauracgonzalez.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://novateurstyle.com" target="_blank" class="work-item" data-preview="previews/novateurstyle.png" data-domain="novateurstyle.com"><span>novateurstyle.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://reviveandbloomtherapy.com" target="_blank" class="work-item" data-preview="previews/reviveandbloom.png" data-domain="reviveandbloomtherapy.com"><span>reviveandbloomtherapy.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://smoothlasercenter.com" target="_blank" class="work-item" data-preview="previews/smoothlasercenter.png" data-domain="smoothlasercenter.com"><span>smoothlasercenter.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://thecallwithnancysabato.com" target="_blank" class="work-item" data-preview="previews/thecallwithnancy.png" data-domain="thecallwithnancysabato.com"><span>thecallwithnancysabato.com</span><span class="work-arrow">&rarr;</span></a>
+        <a href="https://thehomerefresh.com" target="_blank" class="work-item" data-preview="previews/thehomerefresh.png" data-domain="thehomerefresh.com"><span>thehomerefresh.com</span><span class="work-arrow">&rarr;</span></a>
+      </div>
+      <div class="work-preview-panel" style="position:sticky;top:80px;">
+        <div style="position:relative;overflow:hidden;border:1px solid var(--light-border);background:var(--tone);aspect-ratio:16/10;">
+          <img id="preview-img" src="" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transition:opacity 0.35s;">
+          <div id="preview-placeholder" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.2s;">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-align:center;line-height:2.2;">Hover a project<br>to preview</span>
+          </div>
+        </div>
+        <p id="preview-label" style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;color:var(--mid);margin-top:10px;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. TESTIMONIALS -->
+<section class="reveal sp" style="background:var(--tone);padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">What clients say</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Don't take our word for it.</h2>
+    <div class="grid-3" style="gap:24px;">
+      <div style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
+        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"Working with Leann from Simple Rabbit was an absolute dream! She completely brought my vision to life. Her designs were modern, clean, and totally on point. She made the entire process feel so easy and seamless. I truly felt like I was in the best hands from start to finish."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Melissa Simon, The Home Refresh</p>
+      </div>
+      <div style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
+        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann 'got it' immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Laura Gonzalez, Education Attorney</p>
+      </div>
+      <div style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
+        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search! Thank you again Leann."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Mona Perez, Smooth Laser Center</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. SPLIT SECTION -->
+<section class="reveal" style="border-bottom:1px solid var(--light-border);">
+  <div class="grid-split">
+    <div style="background:var(--black);padding:80px 64px;">
+      <span class="overline" style="color:rgba(255,255,255,0.4);">About</span>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;color:var(--white);margin-bottom:20px;">We make websites that work harder than they look.</h2>
+      <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.7);margin-bottom:32px;">Every design decision we make is intentional. We build for trust, visibility, and conversion &mdash; not just aesthetics.</p>
+      <a href="about.html" style="color:var(--white);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:2px;">Learn more &rarr;</a>
+    </div>
+    <div style="background:var(--tone);padding:80px 64px;border-left:1px solid var(--light-border);">
+      <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">Stay in the loop.</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">GEO insights, web design thinking, and the occasional behind-the-scenes look at what we're building.</p>
+      <form id="newsletter-form" style="display:flex;">
+        <input type="email" name="email" required placeholder="Your email address" class="form-input" style="flex:1;">
+        <button type="submit" style="background:var(--black);color:var(--white);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 11. HOW IT WORKS -->
+<section class="reveal sp" style="padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline" style="text-align:center;display:block;">How it works</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;text-align:center;margin-bottom:64px;">Three steps. No surprises.</h2>
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);text-align:center;">
+        <div style="width:48px;height:48px;margin:0 auto 24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:100%;height:100%;color:var(--dark);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </div>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Tell us about your project.</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Fill out the form below. Takes about 2 minutes. Tell us what you're building and where you want to go.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);text-align:center;">
+        <div style="width:48px;height:48px;margin:0 auto 24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:100%;height:100%;color:var(--dark);"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+        </div>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Get a video response.</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Within 24 hours, we send you a personal video with our honest take on your project and how we'd approach it.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);text-align:center;">
+        <div style="width:48px;height:48px;margin:0 auto 24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:100%;height:100%;color:var(--dark);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">We build it together.</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">If it's a fit, we get to work. If not, no pressure. Either way, you'll walk away with clarity.</p>
+      </div>
+    </div>
+    <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);text-align:center;margin-top:40px;">Projects start at $4,800</p>
+  </div>
+</section>
+
+<!-- 12. CONTACT FORM -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2" style="max-width:1100px;margin:0 auto;">
+    <div>
+      <span class="overline">Get in touch</span>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:20px;">Let's build something worth finding.</h2>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:400px;">Tell us about your project. We'll get back to you within 24 hours with a video of our initial thoughts.</p>
+    </div>
+    <div>
+      <form id="contact-form">
+        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;">
+          <div>
+            <label class="form-label">Name</label>
+            <input type="text" name="name" required placeholder="Your name" class="form-input">
+          </div>
+          <div>
+            <label class="form-label">Email</label>
+            <input type="email" name="email" required placeholder="you@email.com" class="form-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Current Website (optional)</label>
+          <input type="url" name="website" placeholder="https://yoursite.com" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Budget</label>
+          <select name="budget" class="form-select">
+            <option value="">Select a range</option>
+            <option>$4,800 - $6,000</option>
+            <option>$6,000 - $10,000</option>
+            <option>$10K+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">When do you want to get started?</label>
+          <select name="timeline" class="form-select">
+            <option value="">Select a timeline</option>
+            <option>Immediately</option>
+            <option>Within 2 weeks</option>
+            <option>Within 1-2 months</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">How did you find us?</label>
+          <select name="referral" class="form-select">
+            <option value="">Select an option</option>
+            <option>Google Search</option>
+            <option>ChatGPT</option>
+            <option>AI Search</option>
+            <option>Social Media</option>
+            <option>Someone told me about you</option>
+            <option>Event</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" rows="4" placeholder="Tell us about your project..." class="form-input" style="resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Submit &rarr;</button>
+        <p id="form-error" style="font-size:14px;color:var(--dark);margin-top:12px;display:none;">Something went wrong. Please try again.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<!-- 13. MOBILE CTA BAR -->
+<div class="mobile-cta-bar">
+  <a href="contact.html">Start a Project &rarr;</a>
+</div>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Contact form
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type=submit]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mojndlrg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: this.name.value,
+          email: this.email.value,
+          website: this.website.value,
+          budget: this.budget.value,
+          timeline: this.timeline.value,
+          referral: this.referral.value,
+          message: this.message.value
+        })
+      });
+      if (res.ok) {
+        window.location.href = 'thank-you.html';
+      } else {
+        btn.textContent = 'Submit \u2192';
+        btn.disabled = false;
+        document.getElementById('form-error').style.display = 'block';
+      }
+    } catch(err) {
+      btn.textContent = 'Submit \u2192';
+      btn.disabled = false;
+    }
+  });
+
+  // Newsletter form
+  document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    try {
+      await fetch('https://formspree.io/f/mojndlrg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: this.email.value, type: 'newsletter signup' })
+      });
+      this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
+    } catch(err) { console.error(err); }
+  });
+
+  // Work preview
+  (function() {
+    var items = document.querySelectorAll('.work-item[data-preview]');
+    var img = document.getElementById('preview-img');
+    var lbl = document.getElementById('preview-label');
+    var ph  = document.getElementById('preview-placeholder');
+    if (!img) return;
+    var current = '';
+    items.forEach(function(item) {
+      item.addEventListener('mouseenter', function() {
+        var url = this.dataset.preview;
+        if (url === current) return;
+        current = url;
+        img.style.opacity = '0';
+        img.src = url;
+        img.onload = function() { ph.style.opacity = '0'; img.style.opacity = '1'; };
+        img.onerror = function() { ph.style.opacity = '1'; img.style.opacity = '0'; };
+        lbl.textContent = item.dataset.domain || '';
+      });
+    });
+  })();
+</script>
+</body>
+</html>

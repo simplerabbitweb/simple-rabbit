@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Simple Rabbit | Websites that book better clients</title>
+  <meta name="description" content="Simple Rabbit is a web design studio for ambitious women. We build websites with SEO baked in so you get found, get paid, and grow.">
+  <meta property="og:title" content="About Simple Rabbit | Websites that book better clients">
+  <meta property="og:description" content="Simple Rabbit is a web design studio for ambitious women. We build websites with SEO baked in so you get found, get paid, and grow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/about.html">
+  <meta property="og:image" content="https://simplerabbit.studio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text x='8' y='72' font-family='monospace' font-size='46' font-weight='bold' fill='%230872cc'>SR</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:16px;display:block;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .grid-2-center{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
+    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .grid-2,.grid-2-center,.grid-3{grid-template-columns:1fr!important;gap:40px!important;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:600px){
+      .nav-link-about,.nav-link-portfolio{display:none!important;}
+      .mobile-cta-bar{display:block!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo.svg" alt="Simple Rabbit" style="max-height:112px;display:block;"></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link-about">About</a>
+      <a href="portfolio.html" class="nav-link-portfolio">Portfolio</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:820px;margin:0 auto;">
+    <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">About simple rabbit</h1>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;font-weight:400;color:var(--mid);margin-bottom:36px;">websites that book better clients</h2>
+    <a href="contact.html" class="btn-primary">Get a Quote &rarr;</a>
+  </div>
+</section>
+
+<!-- 2. PARTNER SECTION -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:640px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:28px;">A true partner invested in your next level</h2>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Most designers launch your site and vanish. We stay.</p>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Our ongoing partnership evolves alongside your business as you become better at what you do, your offers change, and your vision gets bigger. We're in it for the six-figure leap and the seven-figure empire.</p>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">We can relate to juggling high-stakes work, chaos with kids, and the exhaustion of constantly proving our worth online. That's why we show up consistently: hands-on, in-touch, and fully invested in seeing you stop settling and start getting paid what you're truly worth.</p>
+    <a href="contact.html" class="btn-primary">Get a Quote</a>
+  </div>
+</section>
+
+<!-- 3. WHY CHOOSE SIMPLE RABBIT -->
+<section class="reveal sp" style="background:var(--tone);padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Why choose Simple Rabbit</h2>
+    <div style="max-width:640px;border-top:1px solid var(--light-border);">
+      <div style="padding:32px 0;border-bottom:1px solid var(--light-border);display:flex;gap:24px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);flex-shrink:0;padding-top:4px;">01</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We support your business as it grows and changes so that your website is always up-to-date.</p>
+      </div>
+      <div style="padding:32px 0;border-bottom:1px solid var(--light-border);display:flex;gap:24px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);flex-shrink:0;padding-top:4px;">02</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We're women building for women. We've walked in your shoes.</p>
+      </div>
+      <div style="padding:32px 0;border-bottom:1px solid var(--light-border);display:flex;gap:24px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);flex-shrink:0;padding-top:4px;">03</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We're hands-on and highly communicative so you always know the status of your site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FOUNDER BIO -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;">
+    <div>
+      <img src="leann-3.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;">
+    </div>
+    <div>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Hi, I'm Leann!</h2>
+      <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:28px;">Founder, Simple Rabbit</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">I spent years watching ambitious women undercharge, attract wrong clients, and burn out because their websites didn't match the expert they'd become. That's why I built Simple Rabbit.</p>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);">We build clean, modern websites with SEO baked in from day one, so you show up on Google and AI searches, high-paying dream clients find you, and you scale to 6&ndash;7 figures without sacrificing your life or joy in the work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. VALUES SECTION -->
+<section class="reveal sp" style="background:var(--tone);padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <h4 style="font-family:var(--font-display);font-size:19px;font-weight:500;margin-bottom:16px;line-height:1.3;">Partnership, not a project</h4>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">You've been burned by designers who disappear after launch but we won't. Your business keeps growing, and we're right there with you.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <h4 style="font-family:var(--font-display);font-size:19px;font-weight:500;margin-bottom:16px;line-height:1.3;">Built for women ready to stop playing small</h4>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">You're tired of attracting clients who question your rates or ghost you after the quote, but you're done blending in and ready to show up like the expert you already are.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <h4 style="font-family:var(--font-display);font-size:19px;font-weight:500;margin-bottom:16px;line-height:1.3;">Growth shouldn't cost you everything</h4>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">You didn't start a business to work around the clock chasing the wrong clients. Your business should pay you well and still leave room for the life you want.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FINAL CTA -->
+<section class="reveal sp" style="padding:100px 48px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:520px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Don't settle for less</h2>
+    <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:36px;">attract clients who value your work</h3>
+    <a href="contact.html" class="btn-primary">Get a Quote</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="contact.html">Start a Project &rarr;</a>
+</div>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

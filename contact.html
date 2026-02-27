@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Simple Rabbit</title>
+  <meta name="description" content="Tell us about your project. We respond within 24 hours with a video walkthrough of our initial thoughts.">
+  <meta property="og:title" content="Contact | Simple Rabbit">
+  <meta property="og:description" content="Tell us about your project. We respond within 24 hours with a video walkthrough of our initial thoughts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/contact.html">
+  <meta property="og:image" content="https://simplerabbit.studio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text x='8' y='72' font-family='monospace' font-size='46' font-weight='bold' fill='%230872cc'>SR</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 36px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:16px;display:block;}
+    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input::placeholder{color:var(--mid);}
+    .form-select{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23949698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;-webkit-appearance:none;outline:none;font-family:var(--font-body);color:var(--black);cursor:pointer;}
+    .form-select:focus{border-bottom-color:var(--black);}
+    .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
+    .form-group{margin-bottom:28px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
+    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;}
+    .detail-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-border);align-items:flex-start;}
+    .detail-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;}
+    .detail-value{font-size:15px;color:var(--dark);}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .grid-2{grid-template-columns:1fr!important;gap:48px!important;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:600px){
+      .nav-link-about,.nav-link-portfolio{display:none!important;}
+      .mobile-cta-bar{display:block!important;}
+      .form-row{grid-template-columns:1fr!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo.svg" alt="Simple Rabbit" style="max-height:112px;display:block;"></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link-about">About</a>
+      <a href="portfolio.html" class="nav-link-portfolio">Portfolio</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:820px;margin:0 auto;">
+    <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Get a quote</h1>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;font-weight:400;color:var(--mid);">Let's talk through your project</h2>
+  </div>
+</section>
+
+<!-- 2. CONTACT BODY -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2" style="max-width:1100px;margin:0 auto;">
+
+    <!-- Left: info -->
+    <div>
+      <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:20px;">How it works.</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">Fill out the form. We'll review your project and send you a short video walkthrough with our thoughts on what we'd do and whether we're the right fit. No pressure, no pitch deck.</p>
+      <div style="border-top:1px solid var(--light-border);">
+        <div class="detail-row">
+          <span class="detail-label">Email</span>
+          <a href="mailto:hello@simplerabbit.studio" class="detail-value" style="text-decoration:none;color:var(--dark);">hello@simplerabbit.studio</a>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Bergen County, NJ</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Response time</span>
+          <span class="detail-value">Under 24 hours</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div>
+      <form id="contact-form">
+        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;">
+          <div>
+            <label class="form-label">Name</label>
+            <input type="text" name="name" required placeholder="Your name" class="form-input">
+          </div>
+          <div>
+            <label class="form-label">Email</label>
+            <input type="email" name="email" required placeholder="you@email.com" class="form-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Current Website (optional)</label>
+          <input type="text" name="website" placeholder="yoursite.com" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Budget</label>
+          <select name="budget" class="form-select">
+            <option value="">Select a range</option>
+            <option>$4,800 - $6,000</option>
+            <option>$6,000 - $10,000</option>
+            <option>$10K+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">When do you want to get started?</label>
+          <select name="timeline" class="form-select">
+            <option value="">Select a timeline</option>
+            <option>Immediately</option>
+            <option>Within 2 weeks</option>
+            <option>Within 1-2 months</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">How did you find us?</label>
+          <select name="referral" class="form-select">
+            <option value="">Select an option</option>
+            <option>Google Search</option>
+            <option>ChatGPT</option>
+            <option>AI Search</option>
+            <option>Social Media</option>
+            <option>Someone told me about you</option>
+            <option>Event</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" rows="4" placeholder="Tell us about your project..." class="form-input" style="resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Submit &rarr;</button>
+        <p id="form-error" style="font-size:14px;color:var(--dark);margin-top:12px;display:none;">Something went wrong. Please try again.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="contact.html">Start a Project &rarr;</a>
+</div>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type=submit]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mojndlrg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: this.name.value,
+          email: this.email.value,
+          website: this.website.value,
+          budget: this.budget.value,
+          timeline: this.timeline.value,
+          referral: this.referral.value,
+          message: this.message.value
+        })
+      });
+      if (res.ok) {
+        window.location.href = 'thank-you.html';
+      } else {
+        btn.textContent = 'Submit \u2192';
+        btn.disabled = false;
+        document.getElementById('form-error').style.display = 'block';
+      }
+    } catch(err) {
+      btn.textContent = 'Submit \u2192';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

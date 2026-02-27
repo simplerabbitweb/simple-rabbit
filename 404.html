@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Simple Rabbit</title>
+  <meta name="description" content="This page doesn't exist — but your next website might.">
+  <meta property="og:title" content="Page Not Found | Simple Rabbit">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/404.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text x='8' y='72' font-family='monospace' font-size='46' font-weight='bold' fill='%230872cc'>SR</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--black);z-index:200;}
+    .mobile-cta-bar a{display:block;text-align:center;color:var(--white);text-decoration:none;font-size:14px;font-weight:500;padding:18px;letter-spacing:0.5px;}
+    @media(max-width:900px){
+      .grid-2{grid-template-columns:1fr;gap:24px;}
+      .nav-inner{padding:0 24px;}
+      footer{padding:24px;}
+    }
+    @media(max-width:600px){
+      .mobile-cta-bar{display:block;}
+      body{padding-bottom:60px;}
+      footer{flex-direction:column;gap:12px;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo.svg" alt="Simple Rabbit" style="max-height:112px;display:block;"></a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. 404 HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:600px;margin:0 auto;">
+    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:24px;">404</span>
+    <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Nothing here.</h1>
+    <p style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);line-height:1.15;font-weight:400;color:var(--mid);margin-bottom:36px;">But your next website could be.</p>
+    <p style="font-size:16px;line-height:1.75;color:var(--dark);margin-bottom:40px;">The page you're looking for doesn't exist. Head back home or read something useful while you're here.</p>
+    <a href="index.html" class="btn-primary">Back to home &rarr;</a>
+  </div>
+</section>
+
+<!-- 2. READ SOMETHING -->
+<section class="reveal sp" style="background:var(--tone);padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Read something useful.</h2>
+    <div class="grid-2">
+      <a href="blog/bergen-county-web-design.html" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Bergen County</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why Bergen County service businesses are losing clients to their own website</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Most local NJ business owners don't realize their website is quietly turning away the exact clients they want. Here's what to look for and how to fix it.</p>
+        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
+      </a>
+      <a href="blog/charge-more-better-website.html" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Pricing &amp; positioning</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why clients balk at your rates — and how the right website fixes it</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">It's not your pricing. When your website signals expert, dream clients stop negotiating and start saying yes — even before the first conversation.</p>
+        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="contact.html">Start a Project &rarr;</a>
+</div>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

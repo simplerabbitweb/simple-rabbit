@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Style Guide | Everlane-Style Website System</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     DESIGN SYSTEM TOKENS
+     Copy this entire :root block into every page.
+     To rebrand: swap --accent, --accent-dark, fonts, and logo.
+     ============================================================ */
+  :root {
+    color-scheme: light only;
+
+    /* COLORS */
+    --black: #000;
+    --white: #fff;
+    --tone: #f7f7f8;         /* light grey background */
+    --accent: #0872cc;       /* ← your brand color */
+    --accent-dark: #0660ab;  /* ← hover state for accent */
+    --accent-light: #c2cdff; /* ← secondary accent, soft highlights */
+    --mid: #949698;          /* secondary text, overlines */
+    --dark: #4c4c4b;         /* body text */
+    --light-border: #dfe0e1; /* hairline borders, dividers */
+
+    /* FONTS */
+    --font-display: 'Optima', 'Optima Nova', 'Candara', 'Segoe UI', sans-serif;
+    --font-body: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  /* ============================================================
+     RESET & GLOBALS
+     ============================================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  h1, h2, h3 { letter-spacing: -1px; font-weight: 400; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ============================================================
+     STYLE GUIDE LAYOUT (not part of the system)
+     ============================================================ */
+  .sg-wrapper { max-width: 1100px; margin: 0 auto; padding: 80px 48px; }
+  .sg-title { font-family: var(--font-display); font-size: 48px; letter-spacing: -2px; margin-bottom: 8px; }
+  .sg-subtitle { font-size: 16px; color: var(--mid); margin-bottom: 80px; line-height: 1.6; max-width: 560px; }
+  .sg-section { margin-bottom: 80px; }
+  .sg-section-title {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 32px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--light-border);
+  }
+  .sg-row { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 32px; }
+  .sg-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); margin-bottom: 8px; }
+  .sg-note { font-size: 13px; color: var(--dark); line-height: 1.7; margin-top: 8px; }
+  .sg-code {
+    background: var(--tone); padding: 20px 24px; font-family: var(--font-mono);
+    font-size: 12px; line-height: 1.8; color: var(--dark); border: 1px solid var(--light-border);
+    overflow-x: auto; white-space: pre; margin-top: 12px;
+  }
+  .sg-divider { border: none; border-top: 1px solid var(--light-border); margin: 60px 0; }
+
+  /* ============================================================
+     COMPONENT PREVIEWS
+     ============================================================ */
+
+  /* Color swatches */
+  .swatch { width: 100px; }
+  .swatch-box { width: 100px; height: 100px; border: 1px solid var(--light-border); margin-bottom: 8px; }
+  .swatch-name { font-family: var(--font-mono); font-size: 11px; color: var(--dark); }
+  .swatch-hex { font-family: var(--font-mono); font-size: 10px; color: var(--mid); }
+
+  /* Typography samples */
+  .type-sample { margin-bottom: 24px; }
+  .type-sample h1 { font-family: var(--font-display); font-size: 72px; letter-spacing: -2px; line-height: 1.06; }
+  .type-sample h2 { font-family: var(--font-display); font-size: 40px; letter-spacing: -1px; line-height: 1.15; }
+  .type-sample h3 { font-family: var(--font-display); font-size: 22px; letter-spacing: -1px; line-height: 1.25; }
+  .type-meta { font-family: var(--font-mono); font-size: 10px; color: var(--mid); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Overline */
+  .overline-sample {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--mid);
+  }
+
+  /* Body text */
+  .body-sample { font-size: 15px; line-height: 1.75; color: var(--dark); max-width: 480px; }
+  .body-light { font-weight: 300; }
+
+  /* Mono sample */
+  .mono-sample { font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; color: var(--mid); }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block; padding: 14px 40px; background: var(--black); color: var(--white);
+    font-family: var(--font-body); font-size: 14px; font-weight: 500;
+    text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; letter-spacing: 0.5px;
+  }
+  .btn-primary:hover { background: var(--dark); }
+
+  .btn-nav {
+    display: inline-block; padding: 10px 24px; background: var(--black); color: var(--white);
+    font-family: var(--font-body); font-size: 13px; font-weight: 500;
+    text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;
+  }
+  .btn-nav:hover { background: var(--dark); }
+
+  .btn-submit {
+    display: inline-block; padding: 14px 36px; background: var(--black); color: var(--white);
+    font-family: var(--font-body); font-size: 14px; font-weight: 500;
+    text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; width: fit-content;
+  }
+  .btn-submit:hover { background: var(--dark); }
+
+  /* Links */
+  .link-sample {
+    font-size: 14px; color: var(--white); text-decoration: underline;
+    text-underline-offset: 3px; transition: color 0.2s;
+  }
+  .link-sample:hover { color: var(--accent); }
+
+  .link-dark { font-size: 14px; color: var(--dark); text-decoration: none; transition: color 0.2s; }
+  .link-dark:hover { color: var(--black); }
+
+  /* Form inputs */
+  .form-preview { max-width: 400px; }
+  .form-preview input,
+  .form-preview select,
+  .form-preview textarea {
+    width: 100%; padding: 16px 0; background: transparent; border: none;
+    border-bottom: 1px solid var(--light-border); font-family: var(--font-body);
+    font-size: 14px; color: var(--black); outline: none; transition: border-color 0.2s;
+    -webkit-appearance: none; border-radius: 0; margin-bottom: 4px;
+  }
+  .form-preview input::placeholder,
+  .form-preview textarea::placeholder { color: var(--mid); }
+  .form-preview input:focus,
+  .form-preview select:focus,
+  .form-preview textarea:focus { border-color: var(--black); }
+  .form-preview select {
+    cursor: pointer; color: var(--mid);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23949698' d='M5 7L0 2h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 0 center; padding-right: 20px;
+  }
+  .form-preview textarea { resize: vertical; min-height: 80px; margin-top: 8px; }
+
+  /* Email form (inline) */
+  .email-form-sample { display: flex; gap: 0; max-width: 400px; }
+  .email-form-sample input {
+    flex: 1; padding: 14px 16px; background: var(--white); border: 1px solid var(--light-border);
+    border-right: none; font-family: var(--font-body); font-size: 14px; color: var(--black); outline: none;
+  }
+  .email-form-sample input::placeholder { color: var(--mid); }
+  .email-form-sample button {
+    padding: 14px 24px; background: var(--black); border: 1px solid var(--black);
+    font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--white);
+    cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+  .email-form-sample button:hover { background: var(--dark); }
+
+  /* Cards */
+  .card-sample {
+    background: var(--white); padding: 32px; border: 1px solid var(--light-border); max-width: 320px;
+  }
+  .card-sample-tone {
+    background: var(--tone); padding: 32px; border: 1px solid var(--light-border); max-width: 320px;
+  }
+
+  /* Ghost numbers */
+  .ghost-num { font-family: var(--font-display); font-size: 48px; color: var(--light-border); line-height: 1; }
+
+  /* Star rating */
+  .stars-sample { color: var(--accent); font-size: 14px; letter-spacing: 2px; }
+
+  /* Spacing preview */
+  .spacing-block { background: var(--tone); border: 1px solid var(--light-border); display: flex; align-items: center; justify-content: center; }
+  .spacing-label { font-family: var(--font-mono); font-size: 10px; color: var(--mid); text-align: center; }
+
+  /* Icon preview */
+  .icon-preview { display: flex; gap: 32px; align-items: center; }
+  .icon-preview svg { width: 32px; height: 32px; stroke: var(--black); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Nav preview */
+  .nav-preview {
+    padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;
+    background: var(--white); border: 1px solid var(--light-border);
+  }
+  .nav-preview .logo { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--black); text-decoration: none; }
+  .nav-preview .logo span { color: var(--accent); }
+  .nav-preview .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-preview .nav-links a { font-family: var(--font-body); font-size: 14px; font-weight: 400; color: var(--dark); text-decoration: none; }
+
+  /* Footer preview */
+  .footer-preview {
+    padding: 40px 48px; border: 1px solid var(--light-border); display: flex;
+    justify-content: space-between; align-items: center;
+  }
+  .footer-preview .fl { font-size: 12px; color: var(--mid); }
+  .footer-preview .fr { display: flex; gap: 24px; }
+  .footer-preview .fr a { font-size: 12px; color: var(--mid); text-decoration: none; }
+
+  /* Split preview */
+  .split-preview { display: grid; grid-template-columns: 1fr 1fr; min-height: 200px; border: 1px solid var(--light-border); }
+  .split-dark-preview { background: var(--black); color: var(--white); padding: 40px; }
+  .split-light-preview { background: var(--tone); padding: 40px; }
+
+  /* Banner preview */
+  .banner-preview {
+    background: var(--tone); padding: 20px 48px; text-align: center;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--mid); border: 1px solid var(--light-border);
+  }
+
+  /* Testimonial preview */
+  .testimonial-preview { background: var(--white); padding: 32px; border: 1px solid var(--light-border); max-width: 320px; }
+  .testimonial-preview .stars { color: var(--accent); font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+  .testimonial-preview p { font-size: 15px; line-height: 1.75; color: var(--dark); margin-bottom: 20px; font-style: italic; }
+  .testimonial-preview .author { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); }
+
+  /* Work list preview */
+  .work-preview { max-width: 400px; list-style: none; }
+  .work-preview li { border-top: 1px solid var(--light-border); }
+  .work-preview li:last-child { border-bottom: 1px solid var(--light-border); }
+  .work-preview a { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-decoration: none; color: var(--black); font-size: 16px; font-weight: 300; transition: padding-left 0.25s; }
+  .work-preview a:hover { padding-left: 12px; }
+  .work-preview .arrow { font-size: 13px; color: var(--mid); opacity: 0; transition: opacity 0.25s; }
+  .work-preview a:hover .arrow { opacity: 1; }
+
+  /* Reveal animation preview */
+  .reveal-sample {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-sample.visible { opacity: 1; transform: translateY(0); }
+
+  /* Responsive note */
+  @media (max-width: 600px) {
+    .sg-wrapper { padding: 40px 24px; }
+    .sg-row { flex-direction: column; }
+    .split-preview { grid-template-columns: 1fr; }
+    .type-sample h1 { font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="sg-wrapper">
+
+<!-- HEADER -->
+<h1 class="sg-title">CSS Style Guide</h1>
+<p class="sg-subtitle">A complete reference for building Everlane-style websites. Copy the CSS tokens, swap your brand color and fonts, and build. Every component on this page is a live, working example.</p>
+
+<!-- ============================================================ -->
+<!-- COLORS -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">01 / Colors</div>
+  <div class="sg-row">
+    <div class="swatch">
+      <div class="swatch-box" style="background:#000"></div>
+      <div class="swatch-name">Black</div>
+      <div class="swatch-hex">#000000</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#fff"></div>
+      <div class="swatch-name">White</div>
+      <div class="swatch-hex">#ffffff</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#f7f7f8"></div>
+      <div class="swatch-name">Tone</div>
+      <div class="swatch-hex">#f7f7f8</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#0872cc"></div>
+      <div class="swatch-name">Accent</div>
+      <div class="swatch-hex">#0872cc</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#0660ab"></div>
+      <div class="swatch-name">Accent Dark</div>
+      <div class="swatch-hex">#0660ab</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#c2cdff"></div>
+      <div class="swatch-name">Accent Light</div>
+      <div class="swatch-hex">#c2cdff</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#949698"></div>
+      <div class="swatch-name">Mid</div>
+      <div class="swatch-hex">#949698</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#4c4c4b"></div>
+      <div class="swatch-name">Dark</div>
+      <div class="swatch-hex">#4c4c4b</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#dfe0e1"></div>
+      <div class="swatch-name">Light Border</div>
+      <div class="swatch-hex">#dfe0e1</div>
+    </div>
+  </div>
+  <p class="sg-note">To rebrand: swap --accent, --accent-dark, and --accent-light. Everything else stays neutral. The accent color appears on overlines, star ratings, logo highlight, and hover states. The accent-light works for soft highlights, card backgrounds, tags, badges, and subtle emphasis areas.</p>
+  <div class="sg-code">:root {
+  --black: #000;
+  --white: #fff;
+  --tone: #f7f7f8;
+  --accent: #0872cc;       /* ← swap this */
+  --accent-dark: #0660ab;  /* ← swap this */
+  --accent-light: #c2cdff; /* ← swap this */
+  --mid: #949698;
+  --dark: #4c4c4b;
+  --light-border: #dfe0e1;
+}</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TYPOGRAPHY -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">02 / Typography</div>
+
+  <div class="sg-label">Display Font (headings)</div>
+  <div class="type-sample">
+    <h1>We build websites that AI recommends.</h1>
+    <div class="type-meta">Optima / 72px / -2px tracking / weight 400 / line-height 1.06</div>
+  </div>
+  <div class="type-sample">
+    <h2>Two things, done extremely well.</h2>
+    <div class="type-meta">Optima / clamp(28px, 3.5vw, 40px) / -1px tracking / line-height 1.15</div>
+  </div>
+  <div class="type-sample">
+    <h3>Design your website.</h3>
+    <div class="type-meta">Optima / 22px / -1px tracking / line-height 1.25</div>
+  </div>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Body Font</div>
+  <div class="type-sample">
+    <p class="body-sample">Web design and GEO content for creative and service businesses that want to be the answer, not just a result.</p>
+    <div class="type-meta">Outfit / 15px / weight 400 / line-height 1.75 / color: --dark</div>
+  </div>
+  <div class="type-sample">
+    <p class="body-sample body-light" style="font-size:18px">Web design and GEO content for creative and service businesses.</p>
+    <div class="type-meta">Outfit / 18px / weight 300 (light) / line-height 1.7 / used in hero subtext</div>
+  </div>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Overline</div>
+  <div class="type-sample">
+    <div class="overline-sample">What we do</div>
+    <div class="type-meta">DM Mono / 11px / 2px letter-spacing / uppercase / color: --mid</div>
+  </div>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Mono / Utility Text</div>
+  <div class="type-sample">
+    <div class="mono-sample">Projects start at $4,800</div>
+    <div class="type-meta">DM Mono / 12px / 1px letter-spacing / color: --mid</div>
+  </div>
+
+  <div class="sg-code">--font-display: 'Optima', 'Optima Nova', 'Candara', 'Segoe UI', sans-serif;
+--font-body: 'Outfit', system-ui, sans-serif;
+--font-mono: 'DM Mono', monospace;
+
+/* Global heading rule */
+h1, h2, h3 { letter-spacing: -1px; font-weight: 400; }
+
+/* Hero h1 gets tighter tracking */
+.hero h1 { letter-spacing: -2px; }</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- BUTTONS -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">03 / Buttons</div>
+  <div class="sg-row" style="align-items:center">
+    <div>
+      <div class="sg-label">Primary CTA</div>
+      <a class="btn-primary" href="#">Start a Project →</a>
+      <div class="type-meta" style="margin-top:8px">14px / 500 weight / 14px 40px padding</div>
+    </div>
+    <div>
+      <div class="sg-label">Nav CTA</div>
+      <a class="btn-nav" href="#">Get Started</a>
+      <div class="type-meta" style="margin-top:8px">13px / 500 weight / 10px 24px padding</div>
+    </div>
+    <div>
+      <div class="sg-label">Form Submit</div>
+      <button class="btn-submit">Submit →</button>
+      <div class="type-meta" style="margin-top:8px">14px / 500 weight / 14px 36px padding</div>
+    </div>
+  </div>
+  <p class="sg-note">All buttons: black background (#000), white text, no border-radius, no rounded corners. Hover state: background transitions to --dark (#4c4c4b) over 0.2s. No box-shadow, no gradients. Always flat.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMS -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">04 / Form Inputs</div>
+
+  <div class="sg-label">Underline Inputs (contact forms)</div>
+  <div class="form-preview" style="margin-bottom:32px">
+    <input type="text" placeholder="Name *">
+    <input type="email" placeholder="Email *">
+    <select>
+      <option value="" disabled selected>Budget</option>
+      <option>$4,800 - $6,000</option>
+    </select>
+    <textarea placeholder="Tell us about your project..."></textarea>
+  </div>
+  <p class="sg-note">No visible border except a 1px bottom line in --light-border. Focus state: border-color transitions to --black. No background color, no border-radius. Select gets a custom SVG dropdown arrow. Placeholder color: --mid.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Inline Email Form (newsletter)</div>
+  <div class="email-form-sample">
+    <input type="email" placeholder="Email address">
+    <button>Subscribe</button>
+  </div>
+  <p class="sg-note" style="margin-top:12px">Input and button share a border. Input: 1px solid --light-border, no right border. Button: black background, white text. No gap between them. Max-width: 400px.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- COMPONENTS -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">05 / Components</div>
+
+  <div class="sg-label">Navigation</div>
+  <div class="nav-preview" style="margin-bottom:32px">
+    <a href="#" class="logo">Brand <span>Name</span></a>
+    <div class="nav-links">
+      <a href="#">About</a>
+      <a href="#">Articles</a>
+      <a href="#" class="btn-nav">Get Started</a>
+    </div>
+  </div>
+  <p class="sg-note">Sticky, white background, 1px bottom border. Logo: DM Mono, 12px, uppercase, 2px letter-spacing. Second word in --accent. Links: Outfit 14px, color --dark. CTA: black filled button.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Service Banner</div>
+  <div class="banner-preview" style="margin-bottom:16px">Service One · Service Two · Service Three · Service Four · Service Five</div>
+  <p class="sg-note">Full-width --tone background. DM Mono 11px, 2px letter-spacing, uppercase, color --mid. Middot separator.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Ghost Numbers</div>
+  <div class="sg-row" style="align-items:flex-end;gap:48px;margin-bottom:16px">
+    <div style="text-align:center">
+      <div class="ghost-num">01</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;margin-top:20px">Heading goes here.</h3>
+      <p class="body-sample" style="font-size:14px;margin-top:12px">Description text in Outfit 14px, color --dark, line-height 1.75.</p>
+    </div>
+    <div style="text-align:center">
+      <div class="ghost-num">02</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;margin-top:20px">Heading goes here.</h3>
+      <p class="body-sample" style="font-size:14px;margin-top:12px">Used in the "What we do" three-column section.</p>
+    </div>
+    <div style="text-align:center">
+      <div class="ghost-num">03</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;margin-top:20px">Heading goes here.</h3>
+      <p class="body-sample" style="font-size:14px;margin-top:12px">Optima 48px, color --light-border. Decorative only.</p>
+    </div>
+  </div>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">SVG Icons (How It Works)</div>
+  <div class="icon-preview" style="margin-bottom:16px">
+    <div style="text-align:center">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+      <div class="type-meta" style="margin-top:4px">Document</div>
+    </div>
+    <div style="text-align:center">
+      <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+      <div class="type-meta" style="margin-top:4px">Video</div>
+    </div>
+    <div style="text-align:center">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      <div class="type-meta" style="margin-top:4px">Chat</div>
+    </div>
+  </div>
+  <p class="sg-note">32px wide, stroke only (no fill), stroke-width 1.5, stroke-linecap/linejoin round. Color: --black. Swap these for any Feather-style icon set.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Work List</div>
+  <ul class="work-preview" style="margin-bottom:16px">
+    <li><a href="#"><span>projectname.com</span><span class="arrow">→</span></a></li>
+    <li><a href="#"><span>anotherclient.com</span><span class="arrow">→</span></a></li>
+    <li><a href="#"><span>thirdproject.com</span><span class="arrow">→</span></a></li>
+  </ul>
+  <p class="sg-note">Items separated by 1px --light-border lines. Hover: 12px left padding shift + arrow appears. Text: 16px, weight 300. Arrow: 13px, color --mid, opacity 0 to 1.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Testimonial Card</div>
+  <div class="sg-row">
+    <div class="testimonial-preview">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Client quote goes here. Keep it to 2-3 sentences. Italic, 15px, line-height 1.75."</p>
+      <div class="author">Client Name, Business</div>
+    </div>
+  </div>
+  <p class="sg-note">White background on --tone section. 1px --light-border. Stars: unicode ★ in --accent. Author: DM Mono 11px uppercase. Three cards in a row on desktop, stacks on mobile.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Split Section</div>
+  <div class="split-preview" style="margin-bottom:16px">
+    <div class="split-dark-preview">
+      <div class="overline-sample" style="color:var(--accent);margin-bottom:12px">About</div>
+      <h3 style="font-family:var(--font-display);font-size:24px;color:var(--white)">Dark side heading.</h3>
+      <p style="font-size:14px;color:var(--mid);margin-top:12px;line-height:1.7">Body text in --mid on dark background.</p>
+    </div>
+    <div class="split-light-preview">
+      <h3 style="font-family:var(--font-display);font-size:22px;margin-bottom:12px">Light side heading.</h3>
+      <p style="font-size:14px;color:var(--dark);line-height:1.7">Body text in --dark on --tone background.</p>
+    </div>
+  </div>
+  <p class="sg-note">50/50 grid. Left: black background, white text, overline in --accent. Right: --tone background. Both: 80px 60px padding. Stacks on mobile.</p>
+
+  <hr class="sg-divider">
+
+  <div class="sg-label">Footer</div>
+  <div class="footer-preview">
+    <div class="fl">© 2026 Brand Name LLC · Location</div>
+    <div class="fr">
+      <a href="#">Email</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <p class="sg-note">1px top border. Flex space-between. All text: 12px, color --mid. Links: no underline, hover to --black.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SPACING -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">06 / Spacing</div>
+  <div class="sg-code">/* Section padding */
+Hero:             120px top, 100px bottom
+Content sections: 100px top and bottom (three-col, contact)
+Smaller sections: 80px top and bottom (testimonials, how-it-works)
+
+/* Horizontal padding */
+Desktop:  48px
+Tablet:   24px (under 900px)
+
+/* Max widths */
+Hero text:     820px
+Content:       1100px
+Contact grid:  1000px
+Work list:     600px
+Body text:     480px (or 520px in hero)
+
+/* Grid gaps */
+Three columns:  48px
+Contact grid:   80px
+Testimonials:   32px
+
+/* Borders */
+Always 1px solid --light-border
+Used on: section tops, nav bottom, work items, cards, footer top</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ANIMATION -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">07 / Animation</div>
+  <p class="sg-note" style="margin-bottom:16px">Two animations in the system. Both are minimal.</p>
+
+  <div class="sg-label">Scroll Reveal</div>
+  <div class="sg-code">.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* JS trigger */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));</div>
+
+  <div class="sg-label" style="margin-top:24px">Hover Transitions</div>
+  <div class="sg-code">/* All interactive elements */
+transition: [property] 0.2s;
+
+/* Buttons: background color */
+/* Links: color */
+/* Work items: padding-left 0.25s */
+/* Work arrows: opacity 0.25s */</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- RESPONSIVE -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">08 / Responsive Breakpoints</div>
+  <div class="sg-code">/* Tablet: 900px */
+@media (max-width: 900px) {
+  - Horizontal padding: 48px → 24px
+  - Three-col grid → single column
+  - Testimonial grid → single column
+  - Split section → stacked
+  - Contact grid → single column
+}
+
+/* Mobile: 600px */
+@media (max-width: 600px) {
+  - Nav links hidden except CTA
+  - Email form → stacked vertically
+  - Contact row (name/email) → single column
+  - Sticky mobile CTA bar appears (fixed bottom)
+  - Footer gets extra bottom padding for CTA clearance
+}</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE STRUCTURE -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">09 / Page Structure (Homepage)</div>
+  <div class="sg-code">Nav (sticky)
+├── Logo (mono, uppercase, second word in accent)
+└── Links + CTA button
+
+Hero (centered, max-width 820px)
+├── h1 (display font, 72px, -2px tracking)
+├── p (body font, 18px, weight 300)
+└── CTA button
+
+Banner (full-width, tone background, mono text)
+
+Three-Column Section
+├── Overline + h2 (centered)
+└── 3x cards: ghost number + h3 + p
+
+Work List
+├── Overline + h2 (centered)
+└── Vertical list with hover arrows
+
+Testimonials (tone background)
+├── Overline + h2 (centered)
+└── 3x cards: stars + quote + author
+
+Split Section
+├── Left: black bg, white text, overline, h2, p, link
+└── Right: tone bg, h3, p, email form
+
+How It Works
+├── Overline + h2 (centered)
+├── 3x steps: icon + h3 + p
+└── Pricing line (mono, centered)
+
+Contact
+├── Left: overline + h2 + p
+└── Right: underline form inputs
+
+Footer
+├── Left: copyright
+└── Right: links
+
+Mobile CTA (fixed bottom bar, under 600px only)</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- REBRANDING CHECKLIST -->
+<!-- ============================================================ -->
+<div class="sg-section">
+  <div class="sg-section-title">10 / Rebranding Checklist</div>
+  <div class="sg-code">To use this system for a different brand:
+
+1. COLORS
+   - Swap --accent (#0872cc) with your brand color
+   - Generate --accent-dark (10-15% darker) for hover states
+   - Generate --accent-light (soft pastel version) for highlights, tags, badges
+   - Everything else (black, white, tone, mid, dark, border) stays the same
+
+2. FONTS
+   - Display: swap Optima for any elegant display font
+   - Body: swap Outfit for any clean sans-serif
+   - Mono: swap DM Mono for any monospace
+   - Keep the letter-spacing rules (-1px headings, -2px hero, 2px overlines)
+
+3. LOGO
+   - Same format: BRAND NAME in mono, uppercase, 12px, 2px tracking
+   - Second word gets --accent color
+
+4. FAVICON
+   - SVG: black square, your initials in --accent, monospace font
+
+5. CONTENT
+   - Hero: one sentence, max 8 words, with italic emphasis
+   - Subtext: one sentence, max 20 words
+   - Three-col: your three core services
+   - Work list: client URLs
+   - Testimonials: 3 client quotes
+   - Contact form: customize dropdown options
+   - Banner: your service keywords with middot separators
+
+6. TECHNICAL
+   - Formspree: swap endpoint URL
+   - GA4: swap measurement ID
+   - Schema markup: update business info
+   - OG image: regenerate with your brand</div>
+</div>
+
+</div>
+</body>
+</html>
