@@ -1,8 +1,13 @@
+# Force root URL to always load index.html directly (bypasses server cache)
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^$ /index.html [L,QSA]
+
 # Prevent HTML pages from being cached so updates show immediately
 <FilesMatch "\.(html)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires 0
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
 </FilesMatch>
 
 # Allow images, CSS, JS to be cached for 1 week
