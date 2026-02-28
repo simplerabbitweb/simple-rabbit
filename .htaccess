@@ -1,0 +1,11 @@
+# Prevent HTML pages from being cached so updates show immediately
+<FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</FilesMatch>
+
+# Allow images, CSS, JS to be cached for 1 week
+<FilesMatch "\.(png|jpg|jpeg|svg|ico|css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+</FilesMatch>
