@@ -1,7 +1,15 @@
-# Force root URL to always load index.html directly (bypasses server cache)
 Options +FollowSymLinks
 RewriteEngine On
-RewriteRule ^$ /index.html [L,QSA]
+
+# Redirect .html URLs to clean URLs (301 permanent)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Serve clean URLs by appending .html internally
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
 
 # Prevent HTML pages from being cached so updates show immediately
 <FilesMatch "\.(html)$">
@@ -10,7 +18,7 @@ RewriteRule ^$ /index.html [L,QSA]
     Header always set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
 </FilesMatch>
 
-# Allow images, CSS, JS to be cached for 1 week
+# Allow images, SVG, JS to be cached for 1 week
 <FilesMatch "\.(png|jpg|jpeg|svg|ico|css|js)$">
     Header set Cache-Control "public, max-age=604800"
 </FilesMatch>
