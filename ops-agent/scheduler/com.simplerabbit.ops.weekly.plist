@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    macOS launchd plist — Simple Rabbit Ops Agent (Leo) — Weekly Review
+    Runs agent.py --weekly every Sunday at 9:00 AM.
+
+    INSTALL:
+        cp com.simplerabbit.ops.weekly.plist ~/Library/LaunchAgents/
+        launchctl load ~/Library/LaunchAgents/com.simplerabbit.ops.weekly.plist
+
+    UNINSTALL:
+        launchctl unload ~/Library/LaunchAgents/com.simplerabbit.ops.weekly.plist
+        rm ~/Library/LaunchAgents/com.simplerabbit.ops.weekly.plist
+
+    VIEW LOGS:
+        tail -f /tmp/simplerabbit-ops.log
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.simplerabbit.ops.weekly</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/leannfrank/Desktop/simple rabbit/ops-agent/agent.py</string>
+        <string>--weekly</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/leannfrank/Desktop/simple rabbit/ops-agent</string>
+
+    <!-- Run every Sunday at 9:00 AM -->
+    <!-- Weekday 0 = Sunday -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/simplerabbit-ops.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/simplerabbit-ops-error.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
