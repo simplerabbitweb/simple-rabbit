@@ -73,19 +73,51 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
     .article-body a:hover{color:var(--accent-dark);}
     .back-link{font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mid);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:32px;transition:color 0.2s;}
     .back-link:hover{color:var(--black);}
+    /* Client overview card */
     .client-card{background:var(--tone);padding:28px 32px;margin:0 0 52px;border-left:3px solid var(--light-border);}
     .client-card-label{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:16px;display:block;}
     .client-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;}
-    .client-card-item{}
     .client-card-item-label{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-bottom:4px;}
     .client-card-item-value{font-size:14px;color:var(--dark);line-height:1.5;}
-    .article-img-block{margin:40px 0;text-align:center;}
-    .article-img-block img{max-width:300px;width:100%;border:1px solid var(--light-border);display:block;margin:0 auto;}
-    .article-img-caption{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-top:12px;}
+    /* Results grid */
     .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-border);margin:36px 0;}
     .results-grid-item{background:var(--white);padding:28px 24px;text-align:center;}
     .results-grid-stat{font-family:var(--font-display);font-size:32px;letter-spacing:-1px;color:var(--black);margin-bottom:8px;}
     .results-grid-label{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);line-height:1.5;}
+    /* Shared caption */
+    .img-caption{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);text-align:center;margin-top:12px;}
+    /* Mobile screenshot */
+    .mobile-img-wrap{margin:40px 0;text-align:center;cursor:zoom-in;}
+    .mobile-img-wrap img{max-width:300px;width:100%;border:1px solid var(--light-border);display:block;margin:0 auto;transition:opacity 0.2s;}
+    .mobile-img-wrap:hover img{opacity:0.88;}
+    /* Before/After compare grid */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--light-border);margin:36px 0;}
+    .compare-item{position:relative;overflow:hidden;background:var(--white);cursor:zoom-in;}
+    .compare-item img{width:100%;display:block;transition:transform 0.3s;}
+    .compare-item:hover img{transform:scale(1.02);}
+    .compare-badge{position:absolute;top:12px;left:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;background:var(--black);color:var(--white);padding:5px 10px;z-index:1;}
+    .compare-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .compare-hint span{font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;opacity:0;transition:opacity 0.2s;background:rgba(0,0,0,0.65);padding:8px 16px;}
+    .compare-item:hover .compare-hint{background:rgba(0,0,0,0.08);}
+    .compare-item:hover .compare-hint span{opacity:1;}
+    /* PDF comparison */
+    .pdf-compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:40px 0;}
+    .pdf-card{border:1px solid var(--light-border);cursor:pointer;transition:border-color 0.2s;}
+    .pdf-card:hover{border-color:var(--dark);}
+    .pdf-card-header{padding:14px 16px;border-bottom:1px solid var(--light-border);display:flex;justify-content:space-between;align-items:center;}
+    .pdf-card-title{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);}
+    .pdf-card-action{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);}
+    .pdf-card-preview{height:220px;overflow:hidden;background:var(--tone);display:flex;align-items:flex-start;justify-content:center;}
+    .pdf-card-preview embed{width:100%;height:100%;pointer-events:none;border:none;}
+    /* Lightbox */
+    .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:400;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+    .lb-overlay.active{display:flex;}
+    .lb-close{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:42px;cursor:pointer;z-index:401;line-height:1;padding:4px;opacity:0.75;transition:opacity 0.15s;font-family:Arial,sans-serif;}
+    .lb-close:hover{opacity:1;}
+    .lb-inner{cursor:default;max-width:95vw;max-height:92vh;display:flex;align-items:center;justify-content:center;}
+    .lb-inner img{max-width:90vw;max-height:88vh;display:block;object-fit:contain;box-shadow:0 12px 48px rgba(0,0,0,0.5);}
+    .lb-inner iframe{width:min(1000px,92vw);height:88vh;border:none;background:#fff;}
+    /* Footer & nav */
     footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
     .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:var(--black);}
@@ -108,6 +140,8 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
       body{padding-bottom:60px;}
       footer{flex-direction:column;gap:12px;text-align:center;}
       .client-card-grid{grid-template-columns:1fr;}
+      .compare-grid{grid-template-columns:1fr;}
+      .pdf-compare{grid-template-columns:1fr;}
     }
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
@@ -219,14 +253,53 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
 
   <p>The about page brought Melissa forward as both a professional and a person. In a service category where the human relationship matters as much as the outcome, letting clients see who they'd be working with is not optional. It's often the thing that converts a hesitant visitor into a real inquiry.</p>
 
-  <div class="article-img-block">
-    <img src="../previews/the-home-refresh-mobile.png" alt="The Home Refresh website on mobile" loading="lazy">
-    <p class="article-img-caption">thehomerefresh.com on mobile</p>
+  <!-- BEFORE / AFTER HOMEPAGE -->
+  <div class="compare-grid" role="group" aria-label="Before and after homepage comparison">
+    <div class="compare-item" onclick="lbOpen('img','../previews/the_home_refresh_old_homepage.png')" role="button" tabindex="0" aria-label="View old homepage full size">
+      <img src="../previews/the_home_refresh_old_homepage.png" alt="The Home Refresh old homepage" loading="lazy">
+      <span class="compare-badge">Before</span>
+      <div class="compare-hint"><span>View full size</span></div>
+    </div>
+    <div class="compare-item" onclick="lbOpen('img','../previews/the_home_refresh_new_homepage.png')" role="button" tabindex="0" aria-label="View new homepage full size">
+      <img src="../previews/the_home_refresh_new_homepage.png" alt="The Home Refresh new homepage" loading="lazy">
+      <span class="compare-badge">After</span>
+      <div class="compare-hint"><span>View full size</span></div>
+    </div>
   </div>
+  <p class="img-caption">The homepage, before and after</p>
 
   <p>The design reflected what anyone who has worked with Melissa already knows: organized, warm, and polished without being cold. Clean typography, intentional white space, and a visual system that communicates care and attention to detail before a single word is read. The site looks like the service it's selling.</p>
 
+  <!-- MOBILE SCREENSHOT -->
+  <div class="mobile-img-wrap" onclick="lbOpen('img','../previews/the-home-refresh-mobile.png')" role="button" tabindex="0" aria-label="View mobile screenshot full size">
+    <img src="../previews/the-home-refresh-mobile.png" alt="The Home Refresh website on mobile" loading="lazy">
+  </div>
+  <p class="img-caption">thehomerefresh.com on mobile</p>
+
   <p>Every page was also built with SEO and local search in mind. For a service business operating in a specific geographic area, showing up when Bergen County clients search for home organizing services is not a nice-to-have. It's a material part of how new clients find you.</p>
+
+  <!-- FULL-SITE PDF COMPARISON -->
+  <div class="pdf-compare" role="group" aria-label="Full website before and after">
+    <div class="pdf-card" onclick="lbOpen('pdf','../previews/the_home_refresh_full_old.pdf.pdf')" role="button" tabindex="0" aria-label="View full old website">
+      <div class="pdf-card-header">
+        <span class="pdf-card-title">Before &mdash; Full site</span>
+        <span class="pdf-card-action">View &rarr;</span>
+      </div>
+      <div class="pdf-card-preview">
+        <embed src="../previews/the_home_refresh_full_old.pdf.pdf" type="application/pdf">
+      </div>
+    </div>
+    <div class="pdf-card" onclick="lbOpen('pdf','../previews/the_home_refresh_full_new.pdf')" role="button" tabindex="0" aria-label="View full new website">
+      <div class="pdf-card-header">
+        <span class="pdf-card-title">After &mdash; Full site</span>
+        <span class="pdf-card-action">View &rarr;</span>
+      </div>
+      <div class="pdf-card-preview">
+        <embed src="../previews/the_home_refresh_full_new.pdf" type="application/pdf">
+      </div>
+    </div>
+  </div>
+  <p class="img-caption">Click either to view the full website</p>
 
   <h2>What happened after launch</h2>
 
@@ -271,6 +344,12 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
   <p>If your current site isn't bringing in the right clients consistently, the structure is the problem. <a href="/contact">Get a quote</a> and we'll take an honest look at what your site is communicating and what it would take to change it.</p>
 
 </article>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" onclick="lbClose()">
+  <button class="lb-close" id="lb-close" onclick="lbClose()" aria-label="Close">&times;</button>
+  <div class="lb-inner" id="lb-inner" onclick="event.stopPropagation()"></div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -321,6 +400,30 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
 </script>
 
 <script>
+  // Lightbox
+  function lbOpen(type, src) {
+    var inner = document.getElementById('lb-inner');
+    inner.innerHTML = type === 'img'
+      ? '<img src="' + src + '" alt="">'
+      : '<iframe src="' + src + '" title="Website preview"></iframe>';
+    document.getElementById('lb').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function lbClose() {
+    document.getElementById('lb').classList.remove('active');
+    document.getElementById('lb-inner').innerHTML = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') lbClose();
+  });
+  // Keyboard support for clickable elements
+  document.querySelectorAll('[role="button"]').forEach(function(el) {
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+  });
+  // Reveal animation
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
