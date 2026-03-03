@@ -35,7 +35,7 @@ load_dotenv(AGENT_DIR / ".env", override=True)
 
 sys.path.insert(0, str(AGENT_DIR))
 from tools.memory_tools import read_recent_memory, write_daily_log
-from tools.notion import write_posts_to_notion, write_newsletter_outline_to_notion, clear_notion_page
+from tools.email_notify import send_drafts_email
 
 DRY_RUN = "--dry-run" in sys.argv
 
@@ -307,30 +307,34 @@ def execute_tool(tool_name: str, tool_input: dict) -> str:
         with week_file.open("a") as f:
             f.write(format_posts_as_markdown(day_label, posts))
 
-        # Clear the page first so each day starts fresh
-        clear_notion_page()
-
-        # Write to Notion
-        notion_result = write_posts_to_notion(day_label, posts)
-        notion_status = (
-            "Notion updated."
-            if notion_result["success"]
-            else f"Notion failed: {notion_result['error']}"
+        # Email today's drafts to Leann
+        email_body = format_posts_for_email(day_label, posts)
+        email_result = send_drafts_email(
+            subject=f"Simple Rabbit — {day_label} content drafts",
+            body=email_body,
+        )
+        email_status = (
+            f"Email sent to {email_result['sent_to']}."
+            if email_result["success"]
+            else f"Email failed: {email_result['error']}"
         )
 
-        return f"Saved {len(posts)} posts to {week_file.name}. {notion_status}"
+        return f"Saved {len(posts)} posts to {week_file.name}. {email_status}"
 
     elif tool_name == "send_newsletter_outline":
         outline = tool_input["outline"]
         if DRY_RUN:
             print(f"\n--- DRY RUN: newsletter outline ---\n{outline}\n---\n")
-            return "[DRY RUN] Would have saved newsletter outline to Notion."
+            return "[DRY RUN] Would have emailed newsletter outline."
         today = date.today()
         date_label = today.strftime("%B %-d, %Y")
-        result = write_newsletter_outline_to_notion(date_label, outline)
+        result = send_drafts_email(
+            subject=f"Simple Rabbit — Newsletter outline for {date_label}",
+            body=outline,
+        )
         if result["success"]:
-            return "Newsletter outline saved to Notion."
-        return f"Notion failed: {result['error']}"
+            return f"Newsletter outline emailed to {result['sent_to']}."
+        return f"Email failed: {result['error']}"
 
     elif tool_name == "write_daily_log":
         if not DRY_RUN:
@@ -353,8 +357,8 @@ def build_system_prompt(platforms: list[str], today_str: str) -> str:
     thursday_section = """
 ## THURSDAY: NEWSLETTER OUTLINE
 
-After saving the regular posts, generate a newsletter outline for Leann and save it
-to Notion using send_newsletter_outline. It will appear on her Daily Social Posts page.
+After saving the regular posts, generate a newsletter outline for Leann and email it
+using send_newsletter_outline. It will arrive as a separate email in her inbox.
 
 Leann writes the newsletter herself — your job is to give her a strong starting point.
 Structure the outline like this:
