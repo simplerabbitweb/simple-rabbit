@@ -91,6 +91,7 @@ INTERNAL LINKS NEEDED: ../contact.html, charge-more-better-website.html, bergen-
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 
@@ -284,8 +285,9 @@ INTERNAL LINKS NEEDED: ../contact.html, charge-more-better-website.html, bergen-
 <script>
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
+  }, { threshold: 0 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
 </script>
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
