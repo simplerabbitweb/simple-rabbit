@@ -1,110 +1,109 @@
 """
-Memory management for the Simple Rabbit content agent.
-Reads/writes daily logs, content queue, and pillar rotation tracking.
+Memory and state management tools for Simple Rabbit agents.
+Used by both Sage (content-agent) and Leo (ops-agent).
 """
 
-import os
-from datetime import date, timedelta
+import json
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
-MEMORY_DIR = Path(__file__).parent.parent / "memory"
-PENDING_DIR = Path(__file__).parent.parent / "pending"
+# Memory lives inside content-agent/memory/
+CONTENT_AGENT_DIR = Path(__file__).parent.parent
+MEMORY_DIR = CONTENT_AGENT_DIR / "memory"
+PENDING_DIR = MEMORY_DIR / "pending"
+LOGS_DIR = MEMORY_DIR / "logs"
 
-CONTENT_PILLARS = [
-    "Pricing & positioning — why websites affect what clients pay",
-    "AI & SEO visibility — how to get found in 2026",
-    "Premium client attraction — filtering for the right clients",
-    "Web design education — what makes a site actually work",
-    "Behind the scenes — Simple Rabbit work, process, results",
-    "Women in business — mindset, growth, charging what you're worth",
-]
 
+# ─────────────────────────────────────────────
+# DAILY LOGS
+# ─────────────────────────────────────────────
 
 def get_todays_log_path() -> Path:
-    return MEMORY_DIR / f"{date.today().isoformat()}.md"
-
-
-def get_pending_path() -> Path:
-    return PENDING_DIR / f"{date.today().isoformat()}.md"
-
-
-def read_recent_memory(days: int = 3) -> str:
-    """Read the last N days of memory logs. Returns combined text."""
-    lines = []
-    for i in range(days):
-        day = date.today() - timedelta(days=i)
-        path = MEMORY_DIR / f"{day.isoformat()}.md"
-        if path.exists():
-            lines.append(f"\n\n--- {day.isoformat()} ---\n")
-            lines.append(path.read_text())
-    return "".join(lines) if lines else "No recent memory found."
-
-
-def get_todays_pillar() -> str:
-    """
-    Rotate through the 6 content pillars based on day-of-year.
-    Ensures variety without tracking state.
-    """
-    day_number = date.today().timetuple().tm_yday
-    pillar = CONTENT_PILLARS[day_number % len(CONTENT_PILLARS)]
-    return pillar
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    return LOGS_DIR / f"{date.today().isoformat()}.md"
 
 
 def write_daily_log(content: str) -> None:
-    """Write or append to today's memory log."""
+    """Append a timestamped entry to today's memory log."""
     path = get_todays_log_path()
-    MEMORY_DIR.mkdir(exist_ok=True)
-    if path.exists():
-        existing = path.read_text()
-        path.write_text(existing + "\n" + content)
-    else:
-        path.write_text(f"# {date.today().isoformat()} Content Log\n\n" + content)
+    timestamp = datetime.now().strftime("%H:%M")
+    with path.open("a") as f:
+        f.write(f"\n---\n{timestamp} — {content}\n")
 
 
-def save_pending_post(platform: str, content: str, note: str = "") -> None:
-    """Save a post to today's pending approval file."""
-    path = get_pending_path()
-    PENDING_DIR.mkdir(exist_ok=True)
+def read_recent_memory(days: int = 7) -> str:
+    """Read the last N days of memory logs and return as a single string."""
+    parts = []
+    for i in range(days):
+        d = date.today() - timedelta(days=i)
+        log_path = LOGS_DIR / f"{d.isoformat()}.md"
+        if log_path.exists():
+            label = d.strftime("%A, %B %-d")
+            parts.append(f"=== {label} ===\n{log_path.read_text().strip()}")
+    return "\n\n".join(parts) if parts else "No recent memory found."
 
-    separator = "\n---\n"
-    entry = f"\n## {platform.upper()}\n\n{content}\n"
-    if note:
-        entry += f"\n_Note: {note}_\n"
 
-    if path.exists():
-        path.write_text(path.read_text() + separator + entry)
-    else:
-        path.write_text(f"# Pending Approval — {date.today().isoformat()}\n" + entry)
+# ─────────────────────────────────────────────
+# PENDING POSTS
+# ─────────────────────────────────────────────
+
+def get_todays_pending_path() -> Path:
+    PENDING_DIR.mkdir(parents=True, exist_ok=True)
+    return PENDING_DIR / f"{date.today().isoformat()}.json"
+
+
+def write_pending_posts(posts: list) -> None:
+    """Write (overwrite) today's pending posts file."""
+    path = get_todays_pending_path()
+    data = {
+        "date": date.today().isoformat(),
+        "posts": posts,
+    }
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
 
 def read_pending_posts() -> str:
-    """Read today's pending posts file."""
-    path = get_pending_path()
+    """Read today's pending posts and return as formatted text."""
+    path = get_todays_pending_path()
     if not path.exists():
         return ""
-    return path.read_text()
+
+    data = json.loads(path.read_text())
+    lines = [f"Pending posts for {data['date']}:\n"]
+    for i, post in enumerate(data.get("posts", []), 1):
+        status = post.get("status", "pending")
+        platform = post.get("platform", "").upper()
+        content = post.get("content", "")
+        needs_image = " [NEEDS IMAGE URL]" if post.get("needs_image") else ""
+        lines.append(f"{i}. {platform} [{status}]{needs_image}\n{content}\n")
+
+    return "\n".join(lines)
+
+
+def add_pending_post(post: dict) -> None:
+    """Add a single post to today's pending file (creates it if needed)."""
+    path = get_todays_pending_path()
+    if path.exists():
+        data = json.loads(path.read_text())
+    else:
+        data = {"date": date.today().isoformat(), "posts": []}
+
+    post.setdefault("status", "pending")
+    post.setdefault("created_at", datetime.now().isoformat())
+    data["posts"].append(post)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
 
 def mark_pending_as_posted(platform: str) -> None:
-    """
-    Update today's pending file to mark a platform as posted.
-    Appends a posted marker — does not delete the original entry.
-    """
-    path = get_pending_path()
+    """Mark the first pending post for a platform as 'posted'."""
+    path = get_todays_pending_path()
     if not path.exists():
         return
-    content = path.read_text()
-    marker = f"\n✅ {platform.upper()} — POSTED\n"
-    path.write_text(content + marker)
 
+    data = json.loads(path.read_text())
+    for post in data.get("posts", []):
+        if post.get("platform") == platform and post.get("status") == "pending":
+            post["status"] = "posted"
+            break
 
-def read_brand_context() -> str:
-    """Read all brand context files and return combined text."""
-    base = Path(__file__).parent.parent
-    files = ["SOUL.md", "IDENTITY.md", "AGENTS.md"]
-    parts = []
-    for filename in files:
-        filepath = base / filename
-        if filepath.exists():
-            parts.append(f"\n\n=== {filename} ===\n\n{filepath.read_text()}")
-    return "".join(parts)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False))

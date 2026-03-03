@@ -1,149 +1,270 @@
 #!/usr/bin/env python3
 """
 Simple Rabbit Content Agent — Sage
-Daily content generation and auto-posting agent using Claude Agent SDK.
+Reads blog articles and generates on-brand social media content daily.
 
-Runs at 7am daily via launchd. Generates all platform content,
-auto-posts to Threads and X, queues Instagram/Facebook/LinkedIn for approval,
-and emails Leann the pending drafts.
+Posting schedule:
+  Every day:   Threads (1), X/Twitter (1), Facebook (1)
+  Mon/Wed/Fri: Instagram (1), LinkedIn (1)
+
+Output: saves drafts to a weekly markdown file + emails Leann the day's posts.
+No API connections required — just copy and paste.
 
 Usage:
-    python agent.py
+    python agent.py            # run today's content session
+    python agent.py --dry-run  # generate posts but don't save or email anything
 """
 
 import json
 import os
+import re
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta
+from html.parser import HTMLParser
 from pathlib import Path
 
 import anthropic
 from dotenv import load_dotenv
 
-# ── local tools ──────────────────────────────
-sys.path.insert(0, str(Path(__file__).parent))
-from tools.social import (
-    post_to_facebook,
-    post_to_instagram,
-    post_to_linkedin,
-    post_to_threads,
-    post_to_twitter,
-)
-from tools.memory_tools import (
-    get_todays_pillar,
-    read_brand_context,
-    read_recent_memory,
-    save_pending_post,
-    write_daily_log,
-)
-from tools.email_notify import send_approval_email
+ROOT = Path(__file__).parent.parent
+BLOG_DIR = ROOT / "blog"
+AGENT_DIR = Path(__file__).parent
+DRAFTS_DIR = AGENT_DIR / "drafts"
 
-load_dotenv()
+load_dotenv(AGENT_DIR / ".env", override=True)
+
+sys.path.insert(0, str(AGENT_DIR))
+from tools.memory_tools import read_recent_memory, write_daily_log
+from tools.notion import write_posts_to_notion, write_newsletter_outline_to_notion, clear_notion_page
+
+DRY_RUN = "--dry-run" in sys.argv
+
 
 # ─────────────────────────────────────────────
-# TOOL DEFINITIONS (Claude sees these)
+# ARTICLE PARSING
 # ─────────────────────────────────────────────
 
-TOOLS = [
+class _TextExtractor(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.parts = []
+        self._skip = False
+        self._skip_tags = {"script", "style", "nav", "head"}
+        self._block_tags = {"p", "h1", "h2", "h3", "h4", "li", "blockquote", "div"}
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self._skip_tags:
+            self._skip = True
+
+    def handle_endtag(self, tag):
+        if tag in self._skip_tags:
+            self._skip = False
+        elif tag in self._block_tags:
+            self.parts.append(" ")
+
+    def handle_data(self, data):
+        if not self._skip:
+            stripped = data.strip()
+            if stripped:
+                self.parts.append(stripped)
+
+    def get_text(self) -> str:
+        raw = " ".join(self.parts)
+        return re.sub(r"\s{2,}", " ", raw).strip()
+
+
+def parse_article(file_path: Path) -> dict:
+    html = file_path.read_text(encoding="utf-8")
+
+    meta = {}
+    comment_match = re.search(r"<!--(.*?)-->", html, re.DOTALL)
+    if comment_match:
+        for line in comment_match.group(1).strip().splitlines():
+            if ":" in line:
+                key, _, value = line.partition(":")
+                meta[key.strip()] = value.strip()
+
+    canonical_match = re.search(r'<link rel="canonical" href="([^"]+)"', html)
+    url = canonical_match.group(1) if canonical_match else ""
+
+    extractor = _TextExtractor()
+    extractor.feed(html)
+    body = extractor.get_text()
+    if len(body) > 3000:
+        body = body[:3000] + "…"
+
+    return {
+        "title": meta.get("TITLE", file_path.stem),
+        "slug": meta.get("SLUG", file_path.stem),
+        "description": meta.get("META DESCRIPTION", ""),
+        "url": url,
+        "text": body,
+    }
+
+
+def load_all_articles() -> list[dict]:
+    articles = []
+    for f in sorted(BLOG_DIR.glob("*.html")):
+        try:
+            articles.append(parse_article(f))
+        except Exception as e:
+            print(f"  ⚠ Could not parse {f.name}: {e}")
+    return articles
+
+
+def format_articles_for_prompt(articles: list[dict]) -> str:
+    lines = []
+    for a in articles:
+        lines.append(
+            f"ARTICLE: {a['title']}\n"
+            f"URL: {a['url']}\n"
+            f"DESCRIPTION: {a['description']}\n"
+            f"CONTENT EXCERPT: {a['text'][:1500]}\n"
+        )
+    return "\n---\n".join(lines)
+
+
+# ─────────────────────────────────────────────
+# SCHEDULE LOGIC
+# ─────────────────────────────────────────────
+
+def todays_platforms() -> list[str]:
+    today = date.today().weekday()  # 0=Monday … 6=Sunday
+    platforms = ["threads", "twitter", "facebook", "instagram"]
+    if today in (0, 2, 4):  # Mon, Wed, Fri
+        platforms += ["linkedin"]
+    return platforms
+
+
+# ─────────────────────────────────────────────
+# DRAFT FILE HELPERS
+# ─────────────────────────────────────────────
+
+def get_week_file_path() -> Path:
+    """Weekly draft file, named after Monday of the current week."""
+    monday = date.today() - timedelta(days=date.today().weekday())
+    DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
+    return DRAFTS_DIR / f"week-{monday.isoformat()}.md"
+
+
+def week_file_header(monday: date) -> str:
+    return f"# Simple Rabbit — Week of {monday.strftime('%B %-d, %Y')}\n"
+
+
+def format_posts_as_markdown(day_label: str, posts: list[dict]) -> str:
+    """Format a day's posts as a markdown section."""
+    lines = [f"\n---\n\n## {day_label}\n"]
+    for post in posts:
+        platform = post["platform"].replace("twitter", "X / Twitter").title()
+        note = f" _({post['note']})_" if post.get("note") else ""
+        lines.append(f"### {platform}{note}\n")
+        lines.append(post["content"].strip())
+        lines.append("")  # blank line after content
+    return "\n".join(lines)
+
+
+def format_posts_for_email(day_label: str, posts: list[dict]) -> str:
+    """Format a day's posts as plain text for email."""
+    lines = [f"Your content for {day_label}:\n", "=" * 50]
+    for post in posts:
+        platform = post["platform"].replace("twitter", "X / Twitter").upper()
+        note = f"  ({post['note']})" if post.get("note") else ""
+        lines.append(f"\n{platform}{note}")
+        lines.append("-" * len(platform))
+        lines.append(post["content"].strip())
+    lines.append("\n" + "=" * 50)
+    lines.append("Copy and paste to each platform when you're ready.")
+    return "\n".join(lines)
+
+
+# ─────────────────────────────────────────────
+# TOOL DEFINITIONS
+# ─────────────────────────────────────────────
+
+SAGE_TOOLS = [
     {
-        "name": "post_to_twitter",
+        "name": "read_articles",
         "description": (
-            "Post content to X/Twitter immediately. "
-            "Use this for the daily X post. Max 280 characters."
+            "Load all Simple Rabbit blog articles. "
+            "Returns titles, URLs, descriptions, and content excerpts. "
+            "Always call this first."
+        ),
+        "input_schema": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "read_recent_memory",
+        "description": (
+            "Read the last 7 days of activity logs to see which articles and angles "
+            "have been used recently. Use this to avoid repetition."
+        ),
+        "input_schema": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "save_drafts",
+        "description": (
+            "Save today's drafted posts to the weekly file and email them to Leann. "
+            "Call this once with ALL of today's posts together."
         ),
         "input_schema": {
             "type": "object",
             "properties": {
-                "content": {
-                    "type": "string",
-                    "description": "The tweet text. Must be 280 characters or fewer.",
+                "posts": {
+                    "type": "array",
+                    "description": "All of today's posts in platform order.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "platform": {
+                                "type": "string",
+                                "enum": ["threads", "twitter", "facebook", "instagram", "linkedin"],
+                                "description": "The platform this post is for.",
+                            },
+                            "content": {
+                                "type": "string",
+                                "description": "The full post text or caption.",
+                            },
+                            "note": {
+                                "type": "string",
+                                "description": (
+                                    "Optional note for Leann, e.g. 'needs an image' for Instagram."
+                                ),
+                            },
+                        },
+                        "required": ["platform", "content"],
+                    },
                 }
             },
-            "required": ["content"],
+            "required": ["posts"],
         },
     },
     {
-        "name": "post_to_threads",
+        "name": "send_newsletter_outline",
         "description": (
-            "Post content to Threads immediately. "
-            "Use this for the daily Threads post. Max 500 characters."
+            "Save the weekly newsletter outline to the Notion page. "
+            "Call this on Thursdays after saving the regular posts."
         ),
         "input_schema": {
             "type": "object",
             "properties": {
-                "content": {
+                "outline": {
                     "type": "string",
-                    "description": "The Threads post text. Max 500 characters.",
+                    "description": "The full newsletter outline.",
                 }
             },
-            "required": ["content"],
+            "required": ["outline"],
         },
     },
     {
-        "name": "queue_for_approval",
+        "name": "write_daily_log",
         "description": (
-            "Save a post to the pending approval queue. "
-            "Use this for Instagram, Facebook, and LinkedIn posts — "
-            "Leann must approve these before they go live."
+            "Write a session summary to the memory log. "
+            "Include which article you used and what angles you took. "
+            "Call this last."
         ),
         "input_schema": {
             "type": "object",
             "properties": {
-                "platform": {
-                    "type": "string",
-                    "enum": ["instagram", "facebook", "linkedin"],
-                    "description": "Which platform this post is for.",
-                },
-                "content": {
-                    "type": "string",
-                    "description": "The full post content/caption.",
-                },
-                "note": {
-                    "type": "string",
-                    "description": (
-                        "Optional note for Leann (e.g., 'Instagram needs an image — "
-                        "suggest a photo of your desk or workspace')."
-                    ),
-                },
-            },
-            "required": ["platform", "content"],
-        },
-    },
-    {
-        "name": "send_approval_email",
-        "description": (
-            "Send Leann the daily approval email with all pending posts. "
-            "Call this AFTER all posts have been generated and queued. "
-            "Pass a short summary of what was auto-posted today."
-        ),
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "auto_posted_summary": {
-                    "type": "string",
-                    "description": (
-                        "Brief summary of what was auto-posted today "
-                        "(e.g., 'X: posted ✅ | Threads: posted ✅')."
-                    ),
-                }
-            },
-            "required": ["auto_posted_summary"],
-        },
-    },
-    {
-        "name": "log_to_memory",
-        "description": (
-            "Write a note to today's memory log. "
-            "Use this to record what was created, posted, or any observations. "
-            "Call at the end of the session."
-        ),
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "content": {
-                    "type": "string",
-                    "description": "What to record in today's memory log.",
-                }
+                "content": {"type": "string", "description": "The log entry."}
             },
             "required": ["content"],
         },
@@ -156,142 +277,233 @@ TOOLS = [
 # ─────────────────────────────────────────────
 
 def execute_tool(tool_name: str, tool_input: dict) -> str:
-    """Execute a tool call and return a string result."""
-    print(f"  → Tool: {tool_name}({json.dumps(tool_input, ensure_ascii=False)[:120]})")
+    print(f"  → {tool_name}({json.dumps(tool_input, ensure_ascii=False)[:120]})")
 
-    if tool_name == "post_to_twitter":
-        result = post_to_twitter(tool_input["content"])
-        if result["success"]:
-            return f"Posted to Twitter successfully. Tweet ID: {result['id']}"
-        return f"Twitter post failed: {result['error']}"
+    if tool_name == "read_articles":
+        articles = load_all_articles()
+        return format_articles_for_prompt(articles)
 
-    elif tool_name == "post_to_threads":
-        result = post_to_threads(tool_input["content"])
-        if result["success"]:
-            return f"Posted to Threads successfully. Post ID: {result['id']}"
-        return f"Threads post failed: {result['error']}"
+    elif tool_name == "read_recent_memory":
+        return read_recent_memory(days=7)
 
-    elif tool_name == "queue_for_approval":
-        platform = tool_input["platform"]
-        content = tool_input["content"]
-        note = tool_input.get("note", "")
-        save_pending_post(platform, content, note)
-        return f"Saved {platform} post to pending approval queue."
+    elif tool_name == "save_drafts":
+        posts = tool_input.get("posts", [])
+        today = date.today()
+        day_label = today.strftime("%A, %B %-d")
 
-    elif tool_name == "send_approval_email":
-        from tools.memory_tools import read_pending_posts
-        pending = read_pending_posts()
-        result = send_approval_email(
-            pending_content=pending,
-            auto_posted_summary=tool_input.get("auto_posted_summary", ""),
+        if DRY_RUN:
+            print(f"\n--- DRY RUN: posts for {day_label} ---")
+            for p in posts:
+                print(f"\n[{p['platform'].upper()}]")
+                print(p["content"])
+            print("--- end ---\n")
+            return "[DRY RUN] Would have saved to weekly file and emailed Leann."
+
+        # Write to weekly markdown file
+        week_file = get_week_file_path()
+        monday = today - timedelta(days=today.weekday())
+        if not week_file.exists():
+            week_file.write_text(week_file_header(monday))
+        with week_file.open("a") as f:
+            f.write(format_posts_as_markdown(day_label, posts))
+
+        # Clear the page first so each day starts fresh
+        clear_notion_page()
+
+        # Write to Notion
+        notion_result = write_posts_to_notion(day_label, posts)
+        notion_status = (
+            "Notion updated."
+            if notion_result["success"]
+            else f"Notion failed: {notion_result['error']}"
         )
-        if result["success"]:
-            return f"Approval email sent to {result['sent_to']}."
-        return f"Email failed: {result['error']}"
 
-    elif tool_name == "log_to_memory":
-        write_daily_log(tool_input["content"])
+        return f"Saved {len(posts)} posts to {week_file.name}. {notion_status}"
+
+    elif tool_name == "send_newsletter_outline":
+        outline = tool_input["outline"]
+        if DRY_RUN:
+            print(f"\n--- DRY RUN: newsletter outline ---\n{outline}\n---\n")
+            return "[DRY RUN] Would have saved newsletter outline to Notion."
+        today = date.today()
+        date_label = today.strftime("%B %-d, %Y")
+        result = write_newsletter_outline_to_notion(date_label, outline)
+        if result["success"]:
+            return "Newsletter outline saved to Notion."
+        return f"Notion failed: {result['error']}"
+
+    elif tool_name == "write_daily_log":
+        if not DRY_RUN:
+            write_daily_log(tool_input["content"])
         return "Memory log updated."
 
     return f"Unknown tool: {tool_name}"
 
 
 # ─────────────────────────────────────────────
+# SAGE SYSTEM PROMPT
+# ─────────────────────────────────────────────
+
+def build_system_prompt(platforms: list[str], today_str: str) -> str:
+    soul = (AGENT_DIR / "SOUL.md").read_text()
+    identity = (AGENT_DIR / "IDENTITY.md").read_text()
+    platform_list = ", ".join(p.upper() for p in platforms)
+    is_thursday = date.today().weekday() == 3
+
+    thursday_section = """
+## THURSDAY: NEWSLETTER OUTLINE
+
+After saving the regular posts, generate a newsletter outline for Leann and save it
+to Notion using send_newsletter_outline. It will appear on her Daily Social Posts page.
+
+Leann writes the newsletter herself — your job is to give her a strong starting point.
+Structure the outline like this:
+
+---
+NEWSLETTER OUTLINE — [date]
+========================================
+
+THEME: [One clear idea that ties the whole issue together]
+
+OPENING HOOK
+------------
+Suggest an inspirational story, real person, historical moment, or surprising idea
+that connects emotionally to the theme. 2–3 sentences describing the hook.
+Note why it resonates for women business owners specifically.
+
+SECTION 1: [Suggested heading]
+------------------------------
+Key idea: [the business insight]
+Drawn from: [which article + the angle to use]
+Prompt for Leann: [a question to help her add her own voice, e.g. "When did you first notice this with a client?"]
+
+SECTION 2: [Suggested heading]
+------------------------------
+Key idea: ...
+Drawn from: ...
+Prompt for Leann: ...
+
+SECTION 3: [Suggested heading — optional, only include if it adds something]
+------------------------------
+...
+
+CLOSING
+-------
+Suggested wrap-up sentence or thought.
+CTA: simplerabbit.studio/contact
+
+WRITING PROMPTS
+---------------
+3–4 questions to help Leann find her voice and personal angle:
+- [Question]
+- [Question]
+- [Question]
+---
+
+Keep it practical. Leann should be able to read this, pick the parts that resonate,
+and start writing within a few minutes.
+""" if is_thursday else ""
+
+    thursday_task = """
+7. Call send_newsletter_outline with the newsletter outline (Thursday only)""" if is_thursday else ""
+
+    return f"""{soul}
+
+{identity}
+
+---
+
+## TODAY
+
+Today is {today_str}.
+You are drafting content for: {platform_list}
+
+## PLATFORM GUIDELINES
+
+**THREADS** (every day)
+Conversational and direct. A take, a tip, or a short story. 2–4 short paragraphs.
+Under 500 characters. No hashtags. Write like you're talking to a peer.
+
+**X / TWITTER** (every day)
+One sharp insight. Hard limit: 280 characters — stay well under it.
+No jargon. One clean hashtag max if it genuinely adds something.
+
+**FACEBOOK** (every day)
+Warm and educational. 2–4 short paragraphs. End with a question or a link to the article.
+Make the first line count.
+
+**INSTAGRAM** (every day)
+Visual-first. The first line is a scroll-stopping hook.
+3–5 short paragraphs. Hashtags at the end: 10–15 that mix niche and specific tags.
+Always include note: "needs an image" when saving this post.
+
+**LINKEDIN** (Mon/Wed/Fri only)
+Professional insight. 3–5 paragraphs, narrative or list format. No hashtags.
+Write for business owners. End with a clear takeaway or question.
+{thursday_section}
+## YOUR TASK
+
+1. Call read_articles to load the source material
+2. Call read_recent_memory to see which articles and angles were used recently
+3. Choose ONE primary article to anchor today's content — pick the one least used recently,
+   or the angle that fits a content pillar you haven't covered lately
+4. Write all posts for today — each one pulls a different angle from the same article.
+   A stat for Twitter. A story for Facebook. A strong opinion for Threads.
+   A practical tip for LinkedIn. A visual concept for Instagram.
+5. Call save_drafts with all posts together (this saves the file and emails Leann)
+6. Call write_daily_log with a brief summary: which article, what angles, what pillar{thursday_task}
+
+Make it good. Give real value. This is Leann's voice.
+"""
+
+
+# ─────────────────────────────────────────────
 # MAIN AGENT LOOP
 # ─────────────────────────────────────────────
 
-def run_agent():
-    today = date.today().strftime("%A, %B %-d, %Y")
-    pillar = get_todays_pillar()
-    brand_context = read_brand_context()
-    recent_memory = read_recent_memory(days=3)
+def run_sage():
+    today = date.today()
+    today_str = today.strftime("%A, %B %-d, %Y")
+    platforms = todays_platforms()
 
-    system_prompt = f"""You are Sage, the content creator for Simple Rabbit — a premium web design studio for women-owned service businesses, founded by Leann Frank in Bergen County, NJ.
-
-You have all the brand knowledge you need below. Your job right now is to write today's social media content and use your tools to distribute it.
-
-{brand_context}
-
-───────────────
-TODAY'S SESSION
-───────────────
-Date: {today}
-Today's content pillar: {pillar}
-
-Recent memory (what's been posted):
-{recent_memory}
-
-───────────────
-YOUR TASK TODAY
-───────────────
-Generate and distribute content for ALL platforms listed below. Use the tools available to you.
-
-AUTO-POST (do these immediately using your tools):
-- X/Twitter: 1 post — max 280 chars. Sharp, punchy, quotable. No hashtags.
-- Threads: 1 post — up to 500 chars. Can be slightly longer/conversational.
-
-QUEUE FOR APPROVAL (save these using queue_for_approval tool):
-- Instagram: 1 caption — image caption style. Leann will add the image. Include a note suggesting a photo idea.
-- Facebook (business page): 1 post — informative and warm. Can be longer than X.
-- LinkedIn: 1 post — professional but human. Thought leadership angle.
-
-THEN:
-- Send the approval email using send_approval_email tool.
-- Log what you did to memory using log_to_memory tool.
-
-WRITING RULES (non-negotiable):
-- No em-dashes (—). Ever.
-- No "It's not X, it's Y" constructions.
-- Vary sentence length. No staccato robots.
-- Specific over generic. Real over theoretical.
-- Sound like a confident, smart human. Not a content tool.
-- CTA always links to simplerabbit.studio/contact when including a CTA.
-- No corporate filler: no "leverage," "robust," "comprehensive solutions."
-
-Go. Write great content, use your tools, get it done."""
-
+    system_prompt = build_system_prompt(platforms, today_str)
     client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-    messages = [
-        {
-            "role": "user",
-            "content": "Run today's content session. Generate all posts and distribute them.",
-        }
-    ]
+    print(f"\n🌿 Sage — Content Session")
+    print(f"   {today_str}")
+    print(f"   Platforms today: {', '.join(platforms)}")
+    if DRY_RUN:
+        print("   [DRY RUN — nothing will be saved or emailed]\n")
+    else:
+        print()
 
-    print(f"\n🐇 Sage is running — {today}")
-    print(f"   Pillar: {pillar}\n")
+    messages = [{"role": "user", "content": "Run today's content session."}]
 
-    # Agentic loop — runs until Claude stops calling tools
     while True:
         response = client.messages.create(
             model="claude-sonnet-4-6",
             max_tokens=8096,
             system=system_prompt,
-            tools=TOOLS,
+            tools=SAGE_TOOLS,
             messages=messages,
         )
 
-        # Add assistant response to message history
         messages.append({"role": "assistant", "content": response.content})
 
+        for block in response.content:
+            if hasattr(block, "text") and block.text:
+                print(f"\n{block.text}")
+
         if response.stop_reason == "end_turn":
-            # Claude is done
-            final_text = " ".join(
-                block.text for block in response.content if hasattr(block, "text")
-            )
-            if final_text:
-                print(f"\nSage: {final_text}")
-            print("\n✅ Session complete.")
+            print("\n✅ Sage done.\n")
             break
 
         elif response.stop_reason == "tool_use":
-            # Process all tool calls in this response
             tool_results = []
             for block in response.content:
                 if block.type == "tool_use":
                     result_text = execute_tool(block.name, block.input)
-                    print(f"     ✓ {result_text}")
+                    print(f"     ✓ {result_text[:120]}")
                     tool_results.append(
                         {
                             "type": "tool_result",
@@ -299,7 +511,6 @@ Go. Write great content, use your tools, get it done."""
                             "content": result_text,
                         }
                     )
-
             messages.append({"role": "user", "content": tool_results})
 
         else:
@@ -307,5 +518,9 @@ Go. Write great content, use your tools, get it done."""
             break
 
 
+# ─────────────────────────────────────────────
+# ENTRY POINT
+# ─────────────────────────────────────────────
+
 if __name__ == "__main__":
-    run_agent()
+    run_sage()

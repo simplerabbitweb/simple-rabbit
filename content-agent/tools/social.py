@@ -1,177 +1,186 @@
 """
-Social media posting functions for Simple Rabbit content agent.
-Handles: Twitter/X, Threads, Instagram, Facebook, LinkedIn
+Social media posting tools for Simple Rabbit.
+Used by both Sage (content-agent) and Leo (ops-agent).
 """
 
 import os
 import time
 import requests
 import tweepy
-from dotenv import load_dotenv
 
-load_dotenv()
-
-
-# ─────────────────────────────────────────────
-# TWITTER / X
-# ─────────────────────────────────────────────
 
 def post_to_twitter(content: str) -> dict:
-    """Post a tweet to X/Twitter. Returns success/failure dict."""
+    """Post to X/Twitter via Tweepy v4."""
     try:
         client = tweepy.Client(
             consumer_key=os.getenv("TWITTER_API_KEY"),
             consumer_secret=os.getenv("TWITTER_API_SECRET"),
             access_token=os.getenv("TWITTER_ACCESS_TOKEN"),
-            access_token_secret=os.getenv("TWITTER_ACCESS_TOKEN_SECRET"),
+            access_token_secret=os.getenv("TWITTER_ACCESS_SECRET"),
         )
         response = client.create_tweet(text=content)
-        tweet_id = response.data["id"]
-        return {"success": True, "platform": "twitter", "id": tweet_id}
+        return {"success": True, "id": str(response.data["id"])}
     except Exception as e:
-        return {"success": False, "platform": "twitter", "error": str(e)}
+        return {"success": False, "error": str(e)}
 
-
-# ─────────────────────────────────────────────
-# THREADS
-# ─────────────────────────────────────────────
 
 def post_to_threads(content: str) -> dict:
-    """Post a text post to Threads via Meta Graph API."""
-    try:
-        user_id = os.getenv("THREADS_USER_ID")
-        token = os.getenv("META_ACCESS_TOKEN")
-        base = "https://graph.threads.net/v1.0"
+    """Post a text post to Threads via the Threads Graph API."""
+    user_id = os.getenv("THREADS_USER_ID")
+    token = os.getenv("THREADS_ACCESS_TOKEN")
 
-        # Step 1: Create media container
-        container_resp = requests.post(
-            f"{base}/{user_id}/threads",
+    if not user_id or not token:
+        return {"success": False, "error": "THREADS_USER_ID or THREADS_ACCESS_TOKEN not set."}
+
+    try:
+        # Step 1: Create a media container
+        r = requests.post(
+            f"https://graph.threads.net/v1.0/{user_id}/threads",
             params={
                 "media_type": "TEXT",
                 "text": content,
                 "access_token": token,
             },
-            timeout=30,
+            timeout=15,
         )
-        container_resp.raise_for_status()
-        creation_id = container_resp.json()["id"]
+        r.raise_for_status()
+        container_id = r.json().get("id")
+        if not container_id:
+            return {"success": False, "error": f"No container ID returned: {r.text}"}
 
-        # Step 2: Publish (Meta recommends a short delay)
-        time.sleep(3)
-        publish_resp = requests.post(
-            f"{base}/{user_id}/threads_publish",
+        # Brief pause before publishing (recommended by Meta)
+        time.sleep(2)
+
+        # Step 2: Publish
+        r2 = requests.post(
+            f"https://graph.threads.net/v1.0/{user_id}/threads_publish",
             params={
-                "creation_id": creation_id,
+                "creation_id": container_id,
                 "access_token": token,
             },
-            timeout=30,
+            timeout=15,
         )
-        publish_resp.raise_for_status()
-        post_id = publish_resp.json()["id"]
-        return {"success": True, "platform": "threads", "id": post_id}
+        r2.raise_for_status()
+        post_id = r2.json().get("id")
+        return {"success": True, "id": str(post_id)}
+
+    except requests.HTTPError as e:
+        return {"success": False, "error": f"HTTP {e.response.status_code}: {e.response.text}"}
     except Exception as e:
-        return {"success": False, "platform": "threads", "error": str(e)}
+        return {"success": False, "error": str(e)}
 
-
-# ─────────────────────────────────────────────
-# FACEBOOK PAGE
-# ─────────────────────────────────────────────
-
-def post_to_facebook(content: str) -> dict:
-    """Post to the Simple Rabbit Facebook business page."""
-    try:
-        page_id = os.getenv("FACEBOOK_PAGE_ID")
-        token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN")
-
-        resp = requests.post(
-            f"https://graph.facebook.com/v20.0/{page_id}/feed",
-            data={"message": content, "access_token": token},
-            timeout=30,
-        )
-        resp.raise_for_status()
-        post_id = resp.json().get("id")
-        return {"success": True, "platform": "facebook", "id": post_id}
-    except Exception as e:
-        return {"success": False, "platform": "facebook", "error": str(e)}
-
-
-# ─────────────────────────────────────────────
-# INSTAGRAM (caption only — image must be provided)
-# ─────────────────────────────────────────────
 
 def post_to_instagram(caption: str, image_url: str) -> dict:
-    """
-    Post a photo to Instagram. Requires a publicly accessible image URL.
-    image_url must be a direct link to a JPG/PNG hosted online.
-    """
-    try:
-        ig_user_id = os.getenv("INSTAGRAM_USER_ID")
-        token = os.getenv("META_ACCESS_TOKEN")
-        base = f"https://graph.facebook.com/v20.0/{ig_user_id}"
+    """Post an image + caption to Instagram via the Instagram Graph API."""
+    user_id = os.getenv("INSTAGRAM_USER_ID")
+    token = os.getenv("INSTAGRAM_ACCESS_TOKEN")
 
+    if not user_id or not token:
+        return {"success": False, "error": "INSTAGRAM_USER_ID or INSTAGRAM_ACCESS_TOKEN not set."}
+
+    try:
         # Step 1: Create media container
-        container_resp = requests.post(
-            f"{base}/media",
+        r = requests.post(
+            f"https://graph.instagram.com/v18.0/{user_id}/media",
             params={
                 "image_url": image_url,
                 "caption": caption,
                 "access_token": token,
             },
-            timeout=30,
+            timeout=20,
         )
-        container_resp.raise_for_status()
-        creation_id = container_resp.json()["id"]
+        r.raise_for_status()
+        container_id = r.json().get("id")
+        if not container_id:
+            return {"success": False, "error": f"No container ID: {r.text}"}
+
+        time.sleep(3)
 
         # Step 2: Publish
-        time.sleep(3)
-        publish_resp = requests.post(
-            f"{base}/media_publish",
-            params={"creation_id": creation_id, "access_token": token},
-            timeout=30,
+        r2 = requests.post(
+            f"https://graph.instagram.com/v18.0/{user_id}/media_publish",
+            params={
+                "creation_id": container_id,
+                "access_token": token,
+            },
+            timeout=20,
         )
-        publish_resp.raise_for_status()
-        post_id = publish_resp.json()["id"]
-        return {"success": True, "platform": "instagram", "id": post_id}
+        r2.raise_for_status()
+        post_id = r2.json().get("id")
+        return {"success": True, "id": str(post_id)}
+
+    except requests.HTTPError as e:
+        return {"success": False, "error": f"HTTP {e.response.status_code}: {e.response.text}"}
     except Exception as e:
-        return {"success": False, "platform": "instagram", "error": str(e)}
+        return {"success": False, "error": str(e)}
 
 
-# ─────────────────────────────────────────────
-# LINKEDIN
-# ─────────────────────────────────────────────
+def post_to_facebook(content: str) -> dict:
+    """Post to a Facebook Page via the Graph API."""
+    page_id = os.getenv("FACEBOOK_PAGE_ID")
+    token = os.getenv("FACEBOOK_ACCESS_TOKEN")
+
+    if not page_id or not token:
+        return {"success": False, "error": "FACEBOOK_PAGE_ID or FACEBOOK_ACCESS_TOKEN not set."}
+
+    try:
+        r = requests.post(
+            f"https://graph.facebook.com/v18.0/{page_id}/feed",
+            params={
+                "message": content,
+                "access_token": token,
+            },
+            timeout=15,
+        )
+        r.raise_for_status()
+        post_id = r.json().get("id")
+        return {"success": True, "id": str(post_id)}
+
+    except requests.HTTPError as e:
+        return {"success": False, "error": f"HTTP {e.response.status_code}: {e.response.text}"}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+
 
 def post_to_linkedin(content: str) -> dict:
-    """Post a text post to LinkedIn as the authenticated member."""
-    try:
-        token = os.getenv("LINKEDIN_ACCESS_TOKEN")
-        author_urn = os.getenv("LINKEDIN_PERSON_URN")  # e.g. "urn:li:person:XXXXXXXX"
+    """Post to LinkedIn via the UGC Posts API v2."""
+    token = os.getenv("LINKEDIN_ACCESS_TOKEN")
+    person_id = os.getenv("LINKEDIN_PERSON_ID")
 
-        headers = {
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-            "X-Restli-Protocol-Version": "2.0.0",
-        }
-        payload = {
-            "author": author_urn,
-            "lifecycleState": "PUBLISHED",
-            "specificContent": {
-                "com.linkedin.ugc.ShareContent": {
-                    "shareCommentary": {"text": content},
-                    "shareMediaCategory": "NONE",
-                }
-            },
-            "visibility": {
-                "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
-            },
-        }
-        resp = requests.post(
+    if not token or not person_id:
+        return {"success": False, "error": "LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_ID not set."}
+
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0",
+    }
+    payload = {
+        "author": f"urn:li:person:{person_id}",
+        "lifecycleState": "PUBLISHED",
+        "specificContent": {
+            "com.linkedin.ugc.ShareContent": {
+                "shareCommentary": {"text": content},
+                "shareMediaCategory": "NONE",
+            }
+        },
+        "visibility": {
+            "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+        },
+    }
+
+    try:
+        r = requests.post(
             "https://api.linkedin.com/v2/ugcPosts",
             headers=headers,
             json=payload,
-            timeout=30,
+            timeout=15,
         )
-        resp.raise_for_status()
-        post_id = resp.headers.get("x-restli-id", "unknown")
-        return {"success": True, "platform": "linkedin", "id": post_id}
+        r.raise_for_status()
+        post_id = r.headers.get("x-restli-id", r.json().get("id", "unknown"))
+        return {"success": True, "id": str(post_id)}
+
+    except requests.HTTPError as e:
+        return {"success": False, "error": f"HTTP {e.response.status_code}: {e.response.text}"}
     except Exception as e:
-        return {"success": False, "platform": "linkedin", "error": str(e)}
+        return {"success": False, "error": str(e)}

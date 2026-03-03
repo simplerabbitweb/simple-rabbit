@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-    macOS launchd plist — Simple Rabbit Content Agent
-    Runs agent.py daily at 7:00 AM.
-
-    INSTALL:
-        cp com.simplerabbit.agent.plist ~/Library/LaunchAgents/
-        launchctl load ~/Library/LaunchAgents/com.simplerabbit.agent.plist
-
-    UNINSTALL:
-        launchctl unload ~/Library/LaunchAgents/com.simplerabbit.agent.plist
-        rm ~/Library/LaunchAgents/com.simplerabbit.agent.plist
-
-    VIEW LOGS:
-        tail -f /tmp/simplerabbit-agent.log
-        tail -f /tmp/simplerabbit-agent-error.log
--->
 <plist version="1.0">
 <dict>
     <key>Label</key>
@@ -23,32 +7,56 @@
 
     <key>ProgramArguments</key>
     <array>
-        <!-- Use the full path to your Python 3 interpreter -->
-        <!-- Run: which python3  to find the right path -->
         <string>/usr/bin/python3</string>
         <string>/Users/leannfrank/Desktop/simple rabbit/content-agent/agent.py</string>
+    </array>
+
+    <!-- Runs Monday–Friday at 5:00 AM (uses system timezone — make sure your Mac is set to Eastern) -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key><integer>1</integer>
+            <key>Hour</key><integer>5</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>2</integer>
+            <key>Hour</key><integer>5</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>3</integer>
+            <key>Hour</key><integer>5</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>4</integer>
+            <key>Hour</key><integer>5</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>5</integer>
+            <key>Hour</key><integer>5</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
     </array>
 
     <key>WorkingDirectory</key>
     <string>/Users/leannfrank/Desktop/simple rabbit/content-agent</string>
 
-    <!-- Run daily at 7:00 AM -->
-    <key>StartCalendarInterval</key>
-    <dict>
-        <key>Hour</key>
-        <integer>7</integer>
-        <key>Minute</key>
-        <integer>0</integer>
-    </dict>
-
-    <!-- Logging -->
     <key>StandardOutPath</key>
-    <string>/tmp/simplerabbit-agent.log</string>
-    <key>StandardErrorPath</key>
-    <string>/tmp/simplerabbit-agent-error.log</string>
+    <string>/Users/leannfrank/Desktop/simple rabbit/content-agent/logs/sage.log</string>
 
-    <!-- Run even if the scheduled time was missed (e.g. Mac was asleep) -->
+    <key>StandardErrorPath</key>
+    <string>/Users/leannfrank/Desktop/simple rabbit/content-agent/logs/sage.error.log</string>
+
     <key>RunAtLoad</key>
     <false/>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
 </dict>
 </plist>
