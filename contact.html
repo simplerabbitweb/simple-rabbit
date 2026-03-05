@@ -55,7 +55,7 @@
     .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;}
     .detail-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-border);align-items:flex-start;}
     .detail-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;}
-    .detail-value{font-size:15px;color:var(--dark);}
+    .detail-value{font-size:15px;color:var(--dark);overflow-wrap:break-word;word-break:break-word;}
     @media(max-width:900px){
       .nav-inner{padding:0 24px;}
       .sp{padding-left:24px!important;padding-right:24px!important;}
@@ -65,6 +65,7 @@
     @media(max-width:600px){
       .mobile-cta-bar{display:block!important;}
       .form-row{grid-template-columns:1fr!important;}
+      body{padding-bottom:calc(68px + env(safe-area-inset-bottom));}
     }
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
@@ -155,16 +156,16 @@
         <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;">
           <div>
             <label class="form-label">First Name*</label>
-            <input type="text" name="first_name" required placeholder="First name" class="form-input">
+            <input type="text" name="first_name" required class="form-input">
           </div>
           <div>
             <label class="form-label">Last Name*</label>
-            <input type="text" name="last_name" required placeholder="Last name" class="form-input">
+            <input type="text" name="last_name" required class="form-input">
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Business Name*</label>
-          <input type="text" name="business_name" required placeholder="Your business name" class="form-input">
+          <input type="text" name="business_name" required class="form-input">
         </div>
         <div class="form-group">
           <label class="form-label">Current Website</label>
@@ -209,7 +210,7 @@
         <div class="form-group">
           <label class="form-label">Anything else you'd like to share?</label>
           <p style="font-size:13px;line-height:1.6;color:var(--mid);margin-bottom:10px;">Any insight you're able to provide would be very helpful, as this will allow us to prepare a strategy that's aligned with your needs.</p>
-          <textarea name="message" rows="5" placeholder="Share anything that would help us understand your goals..." class="form-input" style="resize:vertical;"></textarea>
+          <textarea name="message" rows="5" class="form-input" style="resize:vertical;"></textarea>
         </div>
         <button type="submit" class="btn-primary">Send my details &rarr;</button>
         <p id="form-error" style="font-size:14px;color:var(--dark);margin-top:12px;display:none;">Something went wrong. Please try again.</p>
