@@ -350,48 +350,70 @@
     </div>
     <div>
       <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label">Email*</label>
+          <input type="email" name="email" required placeholder="you@email.com" class="form-input">
+        </div>
         <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;">
           <div>
-            <label class="form-label">Name</label>
-            <input type="text" name="name" required placeholder="Your name" class="form-input">
+            <label class="form-label">First Name*</label>
+            <input type="text" name="first_name" required placeholder="First name" class="form-input">
           </div>
           <div>
-            <label class="form-label">Email</label>
-            <input type="email" name="email" required placeholder="you@email.com" class="form-input">
+            <label class="form-label">Last Name*</label>
+            <input type="text" name="last_name" required placeholder="Last name" class="form-input">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Current Website (optional)</label>
+          <label class="form-label">Business Name*</label>
+          <input type="text" name="business_name" required placeholder="Your business name" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Current Website</label>
           <input type="url" name="website" placeholder="https://yoursite.com" class="form-input">
         </div>
         <div class="form-group">
-          <label class="form-label">When do you want to get started?</label>
-          <select name="timeline" class="form-select">
-            <option value="">Select a timeline</option>
-            <option>Immediately</option>
-            <option>Within 2 weeks</option>
-            <option>Within 1-2 months</option>
-            <option>Just exploring</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">How did you find us?</label>
+          <label class="form-label">How did you hear about us?</label>
           <select name="referral" class="form-select">
-            <option value="">Select an option</option>
+            <option value="">Select one</option>
+            <option>Threads</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>YouTube</option>
             <option>Google Search</option>
-            <option>ChatGPT</option>
-            <option>AI Search</option>
-            <option>Social Media</option>
-            <option>Someone told me about you</option>
-            <option>Event</option>
+            <option>Referral from a friend or colleague</option>
             <option>Other</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea name="message" rows="4" placeholder="Tell us about your project..." class="form-input" style="resize:vertical;"></textarea>
+          <label class="form-label">Is this for a brand new site or redoing your current site?*</label>
+          <select name="project_type" required class="form-select">
+            <option value="">Select one</option>
+            <option>Brand new site</option>
+            <option>Redesign of my current site</option>
+          </select>
         </div>
-        <button type="submit" class="btn-primary">Submit &rarr;</button>
+        <div class="form-group">
+          <label class="form-label">Which pages would you like us to build?*</label>
+          <p style="font-size:13px;line-height:1.6;color:var(--mid);margin-bottom:10px;">The basics are Home, About, Offers, and Contact. If you need a Sales Page for a course or program, please specify.</p>
+          <textarea name="pages" required rows="3" placeholder="e.g. Home, About, Offers, Contact..." class="form-input" style="resize:vertical;"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">When do you want to get started?</label>
+          <select name="timeline" class="form-select">
+            <option value="">Select one</option>
+            <option>Right away</option>
+            <option>Within 1-3 months</option>
+            <option>Within 3-6 months</option>
+            <option>Just exploring for now</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Anything else you'd like to share?</label>
+          <p style="font-size:13px;line-height:1.6;color:var(--mid);margin-bottom:10px;">Any insight you're able to provide would be very helpful, as this will allow us to prepare a strategy that's aligned with your needs.</p>
+          <textarea name="message" rows="5" placeholder="Share anything that would help us understand your goals..." class="form-input" style="resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send my details &rarr;</button>
         <p id="form-error" style="font-size:14px;color:var(--dark);margin-top:12px;display:none;">Something went wrong. Please try again.</p>
       </form>
     </div>
@@ -433,23 +455,27 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: this.name.value,
           email: this.email.value,
+          first_name: this.first_name.value,
+          last_name: this.last_name.value,
+          business_name: this.business_name.value,
           website: this.website.value,
-          timeline: this.timeline.value,
           referral: this.referral.value,
+          project_type: this.project_type.value,
+          pages: this.pages.value,
+          timeline: this.timeline.value,
           message: this.message.value
         })
       });
       if (res.ok) {
-        window.location.href = 'thank-you.html';
+        window.location.href = '/thank-you';
       } else {
-        btn.textContent = 'Submit \u2192';
+        btn.textContent = 'Send my details \u2192';
         btn.disabled = false;
         document.getElementById('form-error').style.display = 'block';
       }
     } catch(err) {
-      btn.textContent = 'Submit \u2192';
+      btn.textContent = 'Send my details \u2192';
       btn.disabled = false;
     }
   });
