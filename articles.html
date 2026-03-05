@@ -35,10 +35,10 @@
     .nav-links{display:flex;align-items:center;gap:32px;}
     .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
     .nav-links a:hover{color:var(--black);}
-    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
-    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
-    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
-    .btn-primary:hover{background:var(--dark);}
+    .nav-cta{background:#c2cdff!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:#a8b8ff!important;color:var(--black)!important;}
+    .btn-primary{display:inline-block;background:#c2cdff;color:var(--black);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:#a8b8ff;}
     .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
     .article-card{border:1px solid var(--light-border);background:var(--white);text-decoration:none;color:var(--black);display:flex;flex-direction:column;transition:border-color 0.2s;}
@@ -52,8 +52,8 @@
     footer{display:flex;justify-content:space-between;align-items:center;padding:32px 48px;border-top:1px solid var(--light-border);font-size:13px;}
     .footer-link{color:var(--mid);text-decoration:none;font-size:13px;transition:color 0.2s;}
     .footer-link:hover{color:var(--black);}
-    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--black);z-index:200;}
-    .mobile-cta-bar a{display:block;text-align:center;color:var(--white);text-decoration:none;font-size:14px;font-weight:500;padding:18px;letter-spacing:0.5px;}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#c2cdff;z-index:200;}
+    .mobile-cta-bar a{display:block;text-align:center;color:var(--black);text-decoration:none;font-size:14px;font-weight:500;padding:18px;letter-spacing:0.5px;}
     @media(max-width:900px){
       .article-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
       .nav-inner{padding:0 24px;}
@@ -74,7 +74,7 @@
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--black);}
-    .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
+    .mobile-nav-cta{background:#c2cdff!important;color:var(--black)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
   </style>
   <!-- Google Analytics -->
@@ -247,7 +247,7 @@
     <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">SEO insights, web design thinking, and the occasional behind-the-scenes look at what we're building.</p>
     <form id="newsletter-form" style="display:flex;max-width:440px;margin:0 auto;">
       <input type="email" name="email" required placeholder="Your email address" style="flex:1;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);">
-      <button type="submit" style="background:var(--black);color:var(--white);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
+      <button type="submit" style="background:#c2cdff;color:var(--black);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
     </form>
   </div>
 </section>
