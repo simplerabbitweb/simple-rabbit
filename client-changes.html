@@ -438,14 +438,10 @@
 (function () {
 
   // ── Checkbox card toggling ───────────────────────────────────────────────
+  // The card is a <label> wrapping the checkbox — clicking it natively toggles
+  // the checkbox. We only need to listen for the change event to update visuals.
   document.querySelectorAll('.req-card').forEach(function (card) {
     var cb = card.querySelector('input[type="checkbox"]');
-    card.addEventListener('click', function (e) {
-      if (e.target === cb) return;
-      cb.checked = !cb.checked;
-      refreshCard(card, cb.checked);
-      calcTotal();
-    });
     cb.addEventListener('change', function () {
       refreshCard(card, cb.checked);
       calcTotal();
