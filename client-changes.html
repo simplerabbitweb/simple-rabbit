@@ -155,6 +155,22 @@
       .req-card{flex-wrap:wrap;gap:12px;}
       .card-tag{margin-top:0;}
     }
+
+    /* ── Upload zone ── */
+    .upload-zone{border:1.5px dashed var(--light-border);padding:40px 24px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;margin-top:16px;outline:none;}
+    .upload-zone:hover,.upload-zone:focus,.upload-zone.drag-over{border-color:var(--accent);background:#eef4fc;}
+    .upload-icon{color:var(--mid);display:block;margin:0 auto 12px;}
+    .upload-title{font-size:15px;font-weight:500;margin-bottom:6px;}
+    .upload-title span{color:var(--accent);}
+    .upload-sub{font-size:13px;color:var(--mid);}
+    .file-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;min-height:0;}
+    .file-chip{display:flex;align-items:center;gap:8px;background:var(--tone);border:1px solid var(--light-border);padding:7px 12px;font-size:13px;max-width:100%;animation:chipIn 0.15s ease;}
+    @keyframes chipIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+    .file-chip-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px;}
+    .file-chip-size{color:var(--mid);flex-shrink:0;font-family:var(--font-mono);font-size:11px;}
+    .file-chip-remove{background:none;border:none;cursor:pointer;color:var(--mid);padding:0 0 0 4px;line-height:1;font-size:18px;flex-shrink:0;transition:color 0.15s;}
+    .file-chip-remove:hover{color:var(--black);}
+    .upload-error{font-size:13px;color:#c0392b;margin-top:8px;display:none;}
   </style>
 </head>
 <body>
@@ -374,7 +390,18 @@
         <div class="field-group">
           <label class="field-label" for="f-message">Describe what you need *</label>
           <textarea class="field-input" id="f-message" name="message" rows="5" required placeholder="Be as specific as possible — include the page name, the exact text to update, links to reference images, etc."></textarea>
-          <p class="field-hint">Need to send files or screenshots? Email them to <a href="mailto:hello@simplerabbit.studio">hello@simplerabbit.studio</a> after submitting.</p>
+        </div>
+        <div class="field-group" style="margin-bottom:0;">
+          <label class="field-label">Attachments <span style="color:var(--mid);font-weight:400;">(optional)</span></label>
+          <p class="field-hint" style="margin-bottom:0;">Screenshots, images, documents — anything that helps explain the request.</p>
+          <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload files">
+            <svg class="upload-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <div class="upload-title">Drop files here or <span>click to browse</span></div>
+            <div class="upload-sub">Images, PDFs, Word docs &middot; Up to 10 MB each</div>
+          </div>
+          <input type="file" id="file-input" name="attachment" multiple accept="image/*,.pdf,.doc,.docx,.txt,.csv,.zip" style="display:none;">
+          <div class="file-list" id="file-list"></div>
+          <p class="upload-error" id="upload-error"></p>
         </div>
       </div>
 
@@ -497,6 +524,79 @@
     }
   }
 
+  // ── File upload zone ─────────────────────────────────────────────────────
+  var selectedFiles = [];
+  var MAX_SIZE = 10 * 1024 * 1024; // 10 MB
+
+  var uploadZone  = document.getElementById('upload-zone');
+  var fileInput   = document.getElementById('file-input');
+  var fileList    = document.getElementById('file-list');
+  var uploadError = document.getElementById('upload-error');
+
+  uploadZone.addEventListener('click', function () { fileInput.click(); });
+  uploadZone.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+  });
+
+  uploadZone.addEventListener('dragover',  function (e) { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+  uploadZone.addEventListener('dragleave', function ()  { uploadZone.classList.remove('drag-over'); });
+  uploadZone.addEventListener('drop', function (e) {
+    e.preventDefault();
+    uploadZone.classList.remove('drag-over');
+    addFiles(Array.from(e.dataTransfer.files));
+  });
+
+  fileInput.addEventListener('change', function () {
+    addFiles(Array.from(this.files));
+    this.value = ''; // reset so same file can be re-added after removal
+  });
+
+  function addFiles(files) {
+    uploadError.style.display = 'none';
+    var errors = [];
+    files.forEach(function (file) {
+      if (file.size > MAX_SIZE) {
+        errors.push(file.name + ' is over 10 MB');
+        return;
+      }
+      // Avoid duplicates by name+size
+      var dup = selectedFiles.some(function (f) { return f.name === file.name && f.size === file.size; });
+      if (!dup) selectedFiles.push(file);
+    });
+    if (errors.length) {
+      uploadError.textContent = errors.join(' · ');
+      uploadError.style.display = 'block';
+    }
+    renderFileList();
+  }
+
+  function renderFileList() {
+    fileList.innerHTML = '';
+    selectedFiles.forEach(function (file, idx) {
+      var chip = document.createElement('div');
+      chip.className = 'file-chip';
+      chip.innerHTML =
+        '<span class="file-chip-name">' + escHtml(file.name) + '</span>' +
+        '<span class="file-chip-size">' + fmtSize(file.size) + '</span>' +
+        '<button type="button" class="file-chip-remove" aria-label="Remove ' + escHtml(file.name) + '">&times;</button>';
+      chip.querySelector('.file-chip-remove').addEventListener('click', function () {
+        selectedFiles.splice(idx, 1);
+        renderFileList();
+      });
+      fileList.appendChild(chip);
+    });
+  }
+
+  function fmtSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+
+  function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
   // ── Submit ───────────────────────────────────────────────────────────────
   document.getElementById('submit-btn').addEventListener('click', async function () {
     var form     = document.getElementById('change-form');
@@ -520,26 +620,28 @@
 
     var website = form.querySelector('[name="website"]').value.trim();
 
-    var payload = {
-      name:            name,
-      email:           email,
-      website:         website || '(not provided)',
-      requests:        selected.length ? selected.join('\n') : '(none selected)',
-      estimated_total: document.getElementById('cost-total').textContent,
-      message:         message,
-      status:          'submitted',
-      _subject:        'New content change request from ' + name
-    };
+    // Use FormData so file attachments are included (Formspree paid plan)
+    var fd = new FormData();
+    fd.append('name',            name);
+    fd.append('email',           email);
+    fd.append('website',         website || '(not provided)');
+    fd.append('requests',        selected.length ? selected.join('\n') : '(none selected)');
+    fd.append('estimated_total', document.getElementById('cost-total').textContent);
+    fd.append('message',         message);
+    fd.append('status',          'submitted');
+    fd.append('_subject',        'New content change request from ' + name);
+    selectedFiles.forEach(function (file) { fd.append('attachment', file); });
 
     var btn = this;
     btn.disabled = true;
     btn.textContent = 'Submitting\u2026';
 
     try {
+      // No Content-Type header — browser sets multipart/form-data boundary automatically
       var res = await fetch('https://formspree.io/f/mojndlrg', {
         method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(payload)
+        headers: { 'Accept': 'application/json' },
+        body:    fd
       });
       if (res.ok) {
         showState('success');
