@@ -445,9 +445,7 @@
     </div>
     <h2>Request submitted!</h2>
     <p>We'll review your request and get to work within <strong>3 business days</strong>. You should receive a confirmation email shortly.</p>
-    <!-- File follow-up — shown only when files were attached -->
-    <div id="success-file-action" style="display:none;margin-top:28px;padding:24px;border:1px solid var(--light-border);background:var(--tone);text-align:left;"></div>
-    <a href="/" class="back-link" style="margin-top:32px;display:inline-block;">← Back to Simple Rabbit</a>
+    <a href="/" class="back-link">← Back to Simple Rabbit</a>
   </div>
 </div>
 
@@ -558,7 +556,7 @@
     var errors = [];
     files.forEach(function (file) {
       if (file.size > MAX_SIZE) {
-        errors.push(file.name + ' is over 10 MB');
+        errors.push(file.name + ' is over 5 MB');
         return;
       }
       // Avoid duplicates by name+size
@@ -622,34 +620,31 @@
 
     var website = form.querySelector('[name="website"]').value.trim();
 
-    var filesSnapshot = selectedFiles.slice(); // capture before async
-
-    var payload = {
-      name:            name,
-      email:           email,
-      website:         website || '(not provided)',
-      requests:        selected.length ? selected.join('\n') : '(none selected)',
-      estimated_total: document.getElementById('cost-total').textContent,
-      message:         message,
-      attachments:     filesSnapshot.length
-                         ? filesSnapshot.map(function(f){ return f.name + ' (' + fmtSize(f.size) + ')'; }).join(', ')
-                         : '(none)',
-      status:          'submitted',
-      _subject:        'New content change request from ' + name
-    };
+    // Use FormData (multipart) so Formspree receives and stores file attachments
+    var fd = new FormData();
+    fd.append('name',            name);
+    fd.append('email',           email);
+    fd.append('website',         website || '(not provided)');
+    fd.append('requests',        selected.length ? selected.join('\n') : '(none selected)');
+    fd.append('estimated_total', document.getElementById('cost-total').textContent);
+    fd.append('message',         message);
+    fd.append('status',          'submitted');
+    fd.append('_subject',        'New content change request from ' + name);
+    selectedFiles.forEach(function (file) { fd.append('attachment', file); });
 
     var btn = this;
     btn.disabled = true;
     btn.textContent = 'Submitting\u2026';
 
     try {
+      // No Content-Type header — browser sets multipart/form-data + boundary automatically
       var res = await fetch('https://formspree.io/f/mojndlrg', {
         method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(payload)
+        headers: { 'Accept': 'application/json' },
+        body:    fd
       });
       if (res.ok) {
-        showState('success', name, filesSnapshot);
+        showState('success');
       } else {
         btn.disabled = false;
         calcTotal();
@@ -711,35 +706,14 @@
       } catch (e) { /* silent — still show cancel state */ }
     }
 
-    showState('cancelled', '', []);
+    showState('cancelled');
   });
 
   // ── State helpers ────────────────────────────────────────────────────────
-  function showState(state, name, files) {
-    document.getElementById('main-wrap').style.display   = 'none';
-    document.getElementById('cost-bar').style.display    = 'none';
-
+  function showState(state) {
+    document.getElementById('main-wrap').style.display = 'none';
+    document.getElementById('cost-bar').style.display  = 'none';
     if (state === 'success') {
-      // If files were attached, show a mailto follow-up action
-      if (files && files.length > 0) {
-        var fileNames = files.map(function (f) { return f.name; }).join(', ');
-        var subject   = encodeURIComponent('Files: Change Request from ' + name);
-        var body      = encodeURIComponent(
-          'Hi Leann,\n\nPlease find ' + files.length + ' file(s) attached for my change request:\n' +
-          fileNames + '\n\nThanks!'
-        );
-        var mailto = 'mailto:hello@simplerabbit.studio?subject=' + subject + '&body=' + body;
-        document.getElementById('success-file-action').innerHTML =
-          '<p style="font-size:14px;font-weight:500;margin-bottom:8px;">📎 You have ' + files.length +
-          ' file' + (files.length > 1 ? 's' : '') + ' to send</p>' +
-          '<p style="font-size:13px;color:var(--dark);line-height:1.55;margin-bottom:16px;">' +
-          escHtml(fileNames) + '</p>' +
-          '<a href="' + mailto + '" style="display:inline-block;background:var(--black);color:var(--white);' +
-          'padding:11px 22px;font-size:13px;font-weight:500;text-decoration:none;">' +
-          'Open email draft \u2192</a>' +
-          '<p style="font-size:12px;color:var(--mid);margin-top:10px;">This opens a pre-filled email — just attach the files and hit send.</p>';
-        document.getElementById('success-file-action').style.display = 'block';
-      }
       document.getElementById('success-state').classList.add('active');
     } else {
       document.getElementById('cancelled-state').classList.add('active');
