@@ -106,6 +106,7 @@
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
   <a href="/articles">Articles</a>
   <a href="/contact">Contact</a>
   <a href="/contact" class="mobile-nav-cta">Book a Call</a>
@@ -286,14 +287,20 @@
   // Newsletter form
   document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    try {
-      await fetch('https://formspree.io/f/mlgpewwb', {
+    const emailVal = this.email.value;
+    await Promise.allSettled([
+      fetch('https://formspree.io/f/mlgpewwb', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: this.email.value, type: 'newsletter signup' })
-      });
-      this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
-    } catch(err) { console.error(err); }
+        body: JSON.stringify({ email: emailVal, type: 'newsletter signup' })
+      }),
+      fetch('/newsletter-proxy.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal })
+      })
+    ]);
+    this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
   });
 </script>
 <script>

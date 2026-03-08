@@ -91,6 +91,7 @@
     <div class="nav-links">
       <a href="/about">About</a>
       <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
       <a href="/articles">Articles</a>
       <a href="/contact">Contact</a>
       <a href="/contact" class="nav-cta">Book a Call</a>
@@ -101,6 +102,7 @@
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
   <a href="/articles">Articles</a>
   <a href="/contact">Contact</a>
   <a href="/contact" class="mobile-nav-cta">Book a Call</a>
@@ -138,30 +140,49 @@
     "Checking if it looks decent on a phone...",
     "Looking for a reason to contact you...",
     "Checking if your homepage says what you do in 5 seconds...",
-    "Searching for signs of life in your call to action...",
+    "Searching for signs of life in your contact button...",
   ];
 
-  async function submitToFlodesk(email) {
-    try {
-      await fetch("https://api.flodesk.com/v1/subscribers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, segments: ["69ac8121a7411e99b28fc0e5"] }),
-      });
-    } catch (_) {}
+  function parseItems(text) {
+    return text.split(/\n(?=\d+\.)/).map(block => {
+      block = block.trim();
+      const m = block.match(/^\d+\.\s*\*{0,2}(.+?)\*{0,2}\s*[—–-]+\s*(.+)$/s);
+      if (m) return { title: m[1].trim(), desc: m[2].trim() };
+      return { title: null, desc: block.replace(/^\d+\.\s*/, '').trim() };
+    }).filter(item => item.desc);
+  }
+
+  function getDomain(rawUrl) {
+    try { return new URL(rawUrl).hostname.replace(/^www\./, ''); } catch { return rawUrl; }
   }
 
   function AuditApp() {
-    const [email, setEmail]   = useState("");
-    const [url, setUrl]       = useState("");
-    const [stage, setStage]   = useState("idle");
-    const [quip, setQuip]     = useState(QUIPS[0]);
+    const [email, setEmail]       = useState("");
+    const [url, setUrl]           = useState("");
+    const [stage, setStage]       = useState("idle");
+    const [quip, setQuip]         = useState(QUIPS[0]);
     const [errorMsg, setErrorMsg] = useState("");
-    const [review, setReview] = useState("");
+    const [review, setReview]     = useState("");
+    const [copied, setCopied]     = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
     const mono = { fontFamily: "var(--font-mono, 'DM Mono', monospace)" };
     const disp = { fontFamily: "var(--font-display, 'Optima', sans-serif)" };
+    const accent = "#0872cc";
+    const lightBorder = "#dfe0e1";
+    const mid = "#949698";
+    const dark = "#4c4c4b";
+    const tone = "#f7f7f8";
+    const px = isMobile ? "20px" : "32px";
 
+    // Track window width for responsive styles
+    useEffect(() => {
+      const handler = () => setIsMobile(window.innerWidth < 640);
+      window.addEventListener("resize", handler);
+      return () => window.removeEventListener("resize", handler);
+    }, []);
+
+    // Quip rotator
     useEffect(() => {
       if (stage !== "loading") return;
       let i = 0;
@@ -169,56 +190,95 @@
       return () => clearInterval(iv);
     }, [stage]);
 
-    async function runAudit() {
-      const emailTrimmed = email.trim();
-      let raw = url.trim();
+    // On mount: check for ?url= param and auto-run (shared link)
+    useEffect(() => {
+      const params = new URLSearchParams(window.location.search);
+      const sharedUrl = params.get("url");
+      if (sharedUrl) {
+        setUrl(sharedUrl);
+        fetchAudit(sharedUrl, "");
+      }
+    }, []);
 
-      if (!emailTrimmed || !raw) { setErrorMsg("Please enter your email and website URL."); setStage("error"); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) { setErrorMsg("Please enter a valid email address."); setStage("error"); return; }
-      if (!raw.startsWith("http")) raw = "https://" + raw;
-      try { new URL(raw); } catch { setErrorMsg("Try: https://yoursite.com"); setStage("error"); return; }
-
-      setStage("loading"); setQuip(QUIPS[0]);
-      submitToFlodesk(emailTrimmed);
-
+    // Core fetch — email optional (empty for shared-link auto-runs)
+    async function fetchAudit(rawUrl, emailAddr) {
+      setStage("loading");
+      setQuip(QUIPS[0]);
       try {
         const res = await fetch("/audit-proxy.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: raw }),
+          body: JSON.stringify({ url: rawUrl, email: emailAddr }),
         });
-
         const data = await res.json();
         if (!res.ok || !data.content?.[0]) throw new Error(data.error?.message || "API error");
         setReview(data.content[0].text.trim());
         setStage("results");
+        window.history.replaceState({}, "", "/audit?url=" + encodeURIComponent(rawUrl));
       } catch (e) {
         setErrorMsg("Something went wrong. Please try again in a moment.");
         setStage("error");
       }
     }
 
-    const accent = "#0872cc";
-    const lightBorder = "#dfe0e1";
-    const mid = "#949698";
-    const dark = "#4c4c4b";
-    const tone = "#f7f7f8";
+    // Manual run — validates email + URL
+    async function runAudit() {
+      const emailTrimmed = email.trim();
+      let raw = url.trim();
+      if (!emailTrimmed || !raw) { setErrorMsg("Please enter your email and website URL."); setStage("error"); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) { setErrorMsg("Please enter a valid email address."); setStage("error"); return; }
+      if (!raw.startsWith("http")) raw = "https://" + raw;
+      try { new URL(raw); } catch { setErrorMsg("Try: https://yoursite.com"); setStage("error"); return; }
+      setUrl(raw);
+      fetchAudit(raw, emailTrimmed);
+    }
+
+    // Copy verdict as plain text
+    function copyVerdict() {
+      const items = parseItems(review);
+      const domain = getDomain(url);
+      const lines = [
+        `Website audit for ${domain}`,
+        `By Bugs, the Rabbit @ Simple Rabbit\n`,
+        ...items.map((item, i) => `${i + 1}. ${item.title ? item.title + " — " : ""}${item.desc}`),
+        `\n---\nFree audit tool: https://simplerabbit.studio/audit`,
+      ];
+      navigator.clipboard.writeText(lines.join("\n")).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      });
+    }
+
+    const copyBtnStyle = {
+      padding: "9px 20px", background: "transparent",
+      border: `1px solid ${copied ? "#000" : lightBorder}`,
+      fontFamily: "inherit", fontSize: 12, cursor: "pointer",
+      color: copied ? "#000" : dark,
+    };
 
     return (
       <div style={{ fontFamily: "var(--font-body, 'Outfit', sans-serif)", background: "#fff", color: "#000" }}>
 
-        {/* Idle / Error */}
+        {/* ── Idle / Error ── */}
         {(stage === "idle" || stage === "error") && (
-          <section style={{ padding: "80px 32px 80px", textAlign: "center", borderBottom: `1px solid ${lightBorder}` }}>
+          <section style={{ padding: isMobile ? "56px 20px" : "80px 32px", textAlign: "center", borderBottom: `1px solid ${lightBorder}` }}>
             <div style={{ ...mono, fontSize: 11, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 20 }}>Free Tool</div>
             <div style={{ fontSize: "3rem", marginBottom: 20, display: "inline-block", animation: "bob 1.2s ease-in-out infinite alternate" }}>🐇</div>
             <h1 style={{ ...disp, fontSize: "clamp(1.8rem,4vw,3rem)", letterSpacing: "-2px", lineHeight: 1.1, fontWeight: 400, maxWidth: 680, margin: "0 auto 16px" }}>
               Your website has something to say.<br />
               <em style={{ color: accent }}>Let's find out what.</em>
             </h1>
-            <p style={{ fontSize: 15, fontWeight: 300, color: dark, lineHeight: 1.75, maxWidth: 440, margin: "0 auto 40px" }}>
-              Paste your URL. Bugs, the Rabbit will give you 5 things that are quietly costing you clients — and what it'll actually take to fix them.
+            <p style={{ fontSize: 15, fontWeight: 300, color: dark, lineHeight: 1.75, maxWidth: 440, margin: "0 auto 32px" }}>
+              Paste your URL. Bugs will tell you exactly what is costing you clients — and what it would take to actually fix it.
             </p>
+
+            {/* Bugs intro */}
+            <div style={{ maxWidth: 480, margin: "0 auto 36px", textAlign: "left", padding: isMobile ? "16px" : "20px 24px", background: tone, borderLeft: `3px solid ${accent}` }}>
+              <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 8 }}>Meet Bugs</div>
+              <p style={{ fontSize: 13, fontWeight: 300, color: dark, lineHeight: 1.75 }}>
+                Bugs is Simple Rabbit's resident website auditor. He has reviewed thousands of business sites and has no patience for vague feedback. He reads your site the way a first-time visitor does — and tells you exactly what a stranger sees when they land on your homepage. He does not sugarcoat.
+              </p>
+            </div>
 
             <div style={{ maxWidth: 480, margin: "0 auto", display: "flex", flexDirection: "column", gap: 10 }}>
               <input
@@ -228,6 +288,9 @@
                 onChange={e => setEmail(e.target.value)}
                 placeholder="your@email.com"
               />
+              <p style={{ fontSize: 11, color: mid, textAlign: "left", marginTop: -4, lineHeight: 1.5 }}>
+                By submitting, you're signing up for occasional emails from Simple Rabbit. You can unsubscribe from any email we send.
+              </p>
               <div style={{ display: "flex", border: `1px solid ${lightBorder}` }}>
                 <input
                   type="url"
@@ -235,16 +298,15 @@
                   onChange={e => setUrl(e.target.value)}
                   onKeyDown={e => e.key === "Enter" && runAudit()}
                   placeholder="https://yourwebsite.com"
-                  style={{ flex: 1, padding: "14px 16px", border: "none", fontFamily: "inherit", fontSize: 14, color: "#000", outline: "none", background: "#fff" }}
+                  style={{ flex: 1, minWidth: 0, padding: "14px 16px", border: "none", fontFamily: "inherit", fontSize: 14, color: "#000", outline: "none", background: "#fff" }}
                 />
                 <button
                   onClick={runAudit}
-                  style={{ padding: "14px 24px", background: "#000", color: "#fff", fontFamily: "inherit", fontSize: 13, fontWeight: 500, border: "none", cursor: "pointer", whiteSpace: "nowrap" }}
+                  style={{ padding: "14px 20px", background: "#000", color: "#fff", fontFamily: "inherit", fontSize: 13, fontWeight: 500, border: "none", cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}
                 >
                   Run Audit
                 </button>
               </div>
-              <p style={{ ...mono, fontSize: 10, letterSpacing: "1px", textTransform: "uppercase", color: mid, textAlign: "center", marginTop: 4 }}>No spam &middot; No pitch &middot; Just the truth</p>
             </div>
 
             {stage === "error" && (
@@ -256,70 +318,73 @@
           </section>
         )}
 
-        {/* Loading */}
+        {/* ── Loading ── */}
         {stage === "loading" && (
-          <div style={{ padding: "80px 32px", textAlign: "center", minHeight: 300, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ padding: `80px ${px}`, textAlign: "center", minHeight: 300, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <div style={{ fontSize: "2.8rem", marginBottom: 20, display: "inline-block", animation: "bob 1.2s ease-in-out infinite alternate" }}>🐇</div>
             <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 10 }}>Bugs is reviewing your site</div>
             <div style={{ fontSize: 15, fontWeight: 300, color: dark, maxWidth: 360 }}>{quip}</div>
           </div>
         )}
 
-        {/* Results */}
+        {/* ── Results ── */}
         {stage === "results" && review && (() => {
-          // Parse "1. **Title** — Description" items
-          function parseItems(text) {
-            return text.split(/\n(?=\d+\.)/).map(block => {
-              block = block.trim();
-              const m = block.match(/^\d+\.\s*\*{0,2}(.+?)\*{0,2}\s*[—–-]+\s*(.+)$/s);
-              if (m) return { title: m[1].trim(), desc: m[2].trim() };
-              return { title: null, desc: block.replace(/^\d+\.\s*/, '').trim() };
-            }).filter(item => item.desc);
-          }
           const items = parseItems(review);
-
+          const domain = getDomain(url);
           return (
             <div>
-              {/* Verdict — white bg, black text */}
-              <div style={{ background: "#fff", padding: "60px 32px 48px", borderBottom: `1px solid ${lightBorder}` }}>
+              {/* Verdict */}
+              <div style={{ background: "#fff", padding: isMobile ? `40px ${px} 32px` : `60px ${px} 48px`, borderBottom: `1px solid ${lightBorder}` }}>
                 <div style={{ maxWidth: 780, margin: "0 auto" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
-                    <span style={{ fontSize: "2rem" }}>🐇</span>
-                    <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent }}>Bugs, the Rabbit's Verdict</div>
+
+                  {/* Header row */}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                      <span style={{ fontSize: "2rem" }}>🐇</span>
+                      <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent }}>Bugs, the Rabbit's Verdict</div>
+                    </div>
+                    <button onClick={copyVerdict} style={copyBtnStyle}>
+                      {copied ? "Copied ✓" : "Copy audit"}
+                    </button>
                   </div>
+
+                  {/* Intro line */}
                   <div style={{ marginBottom: 36, paddingBottom: 28, borderBottom: `1px solid ${lightBorder}` }}>
                     <p style={{ ...disp, fontSize: "clamp(1.2rem,2.5vw,1.6rem)", fontWeight: 400, letterSpacing: "-0.5px", lineHeight: 1.3, color: "#000" }}>
-                      Bugs reviewed <span style={{ color: accent }}>{(() => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; } })()}</span>. Here's what's costing you clients.
+                      Bugs reviewed <span style={{ color: accent }}>{domain}</span>. Here's what's costing you clients.
                     </p>
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+
+                  {/* Issue list */}
+                  <div style={{ display: "flex", flexDirection: "column" }}>
                     {items.map((item, i) => (
                       <div key={i} style={{
                         padding: "28px 0",
                         borderBottom: i < items.length - 1 ? `1px solid ${lightBorder}` : "none",
-                        display: "flex", gap: 24, alignItems: "flex-start"
+                        display: "flex", gap: isMobile ? 16 : 24, alignItems: "flex-start"
                       }}>
-                        <div style={{ ...mono, fontSize: 11, color: mid, minWidth: 24, paddingTop: 3, flexShrink: 0 }}>{i + 1}</div>
-                        <div>
+                        <div style={{ ...mono, fontSize: 11, color: mid, minWidth: 20, paddingTop: 3, flexShrink: 0 }}>{i + 1}</div>
+                        <div style={{ minWidth: 0 }}>
                           {item.title && (
-                            <div style={{ ...disp, fontSize: 17, fontWeight: 400, letterSpacing: "-0.5px", marginBottom: 8, color: "#000" }}>{item.title}</div>
+                            <div style={{ ...disp, fontSize: isMobile ? 15 : 17, fontWeight: 400, letterSpacing: "-0.5px", marginBottom: 8, color: "#000" }}>{item.title}</div>
                           )}
                           <p style={{ fontSize: 14, fontWeight: 300, color: dark, lineHeight: 1.8 }}>{item.desc}</p>
                         </div>
                       </div>
                     ))}
                   </div>
+
                 </div>
               </div>
 
-              {/* Big arrow */}
-              <div style={{ background: tone, padding: "32px", textAlign: "center", borderBottom: `1px solid ${lightBorder}` }}>
+              {/* Arrow */}
+              <div style={{ background: tone, padding: `28px ${px}`, textAlign: "center", borderBottom: `1px solid ${lightBorder}` }}>
                 <div style={{ fontSize: "3.5rem", lineHeight: 1, color: "#000", marginBottom: 8 }}>↓</div>
                 <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid }}>Here's what to do about it</div>
               </div>
 
-              {/* Next step — centered */}
-              <div style={{ background: "#000", padding: "72px 32px", textAlign: "center" }}>
+              {/* Next step */}
+              <div style={{ background: "#000", padding: isMobile ? `52px ${px}` : `72px ${px}`, textAlign: "center" }}>
                 <div style={{ maxWidth: 520, margin: "0 auto" }}>
                   <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent, marginBottom: 20 }}>Next Step</div>
                   <h2 style={{ ...disp, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#fff", marginBottom: 16, fontWeight: 400, letterSpacing: "-1px" }}>Want this actually fixed?</h2>
@@ -328,11 +393,11 @@
                 </div>
               </div>
 
-              {/* Audit another site */}
-              <div style={{ padding: "28px 32px", textAlign: "center", borderTop: `1px solid ${lightBorder}` }}>
+              {/* Run another */}
+              <div style={{ padding: `24px ${px}`, textAlign: "center", borderTop: `1px solid ${lightBorder}` }}>
                 <span style={{ fontSize: 13, color: mid }}>Want to check another site? </span>
                 <button
-                  onClick={() => { setStage("idle"); setUrl(""); setEmail(""); setReview(""); }}
+                  onClick={() => { setStage("idle"); setUrl(""); setEmail(""); setReview(""); window.history.replaceState({}, "", "/audit"); }}
                   style={{ fontSize: 13, color: dark, background: "none", border: "none", cursor: "pointer", textDecoration: "underline", fontFamily: "inherit", padding: 0 }}
                 >
                   Run another audit
