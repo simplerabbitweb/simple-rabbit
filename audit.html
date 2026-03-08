@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Website Audit · Simple Rabbit</title>
-  <meta name="description" content="Paste your URL. The Rabbit will give you a straight breakdown of what's working — and what's quietly costing you clients. Free, instant, no pitch.">
+  <meta name="description" content="Paste your URL. Bugs, the Rabbit will tell you exactly what's costing you clients — and what needs to change. Free, instant, no pitch.">
   <meta property="og:title" content="Free Website Audit · Simple Rabbit">
-  <meta property="og:description" content="Paste your URL. The Rabbit will give you a straight breakdown of what's working — and what's quietly costing you clients.">
+  <meta property="og:description" content="Paste your URL. Bugs, the Rabbit will tell you exactly what's costing you clients — and what needs to change.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://simplerabbit.studio/audit">
   <meta property="og:image" content="https://simplerabbit.studio/og-image.png">
@@ -217,7 +217,7 @@
               <em style={{ color: accent }}>Let's find out what.</em>
             </h1>
             <p style={{ fontSize: 15, fontWeight: 300, color: dark, lineHeight: 1.75, maxWidth: 440, margin: "0 auto 40px" }}>
-              Paste your URL. The Rabbit will give you a straight breakdown of what's working — and what's quietly costing you clients.
+              Paste your URL. Bugs, the Rabbit will give you 5 things that are quietly costing you clients — and what it'll actually take to fix them.
             </p>
 
             <div style={{ maxWidth: 480, margin: "0 auto", display: "flex", flexDirection: "column", gap: 10 }}>
@@ -260,52 +260,87 @@
         {stage === "loading" && (
           <div style={{ padding: "80px 32px", textAlign: "center", minHeight: 300, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <div style={{ fontSize: "2.8rem", marginBottom: 20, display: "inline-block", animation: "bob 1.2s ease-in-out infinite alternate" }}>🐇</div>
-            <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 10 }}>The Rabbit is reviewing your site</div>
+            <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 10 }}>Bugs is reviewing your site</div>
             <div style={{ fontSize: 15, fontWeight: 300, color: dark, maxWidth: 360 }}>{quip}</div>
           </div>
         )}
 
         {/* Results */}
-        {stage === "results" && review && (
-          <div>
-            <div style={{ background: "#000", color: "#fff", padding: "60px 32px" }}>
-              <div style={{ maxWidth: 780, margin: "0 auto", display: "flex", gap: 32, alignItems: "flex-start" }}>
-                <div style={{ fontSize: "2.8rem", flexShrink: 0 }}>🐇</div>
-                <div>
-                  <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent, marginBottom: 16 }}>The Rabbit's Verdict</div>
-                  {review.split("\n\n").map((para, i) => (
-                    <p key={i} style={{ fontSize: 16, fontWeight: 300, color: "#e8e8e8", lineHeight: 1.85, marginBottom: i < review.split("\n\n").length - 1 ? 16 : 0 }}>{para}</p>
-                  ))}
+        {stage === "results" && review && (() => {
+          // Parse "1. **Title** — Description" items
+          function parseItems(text) {
+            return text.split(/\n(?=\d+\.)/).map(block => {
+              block = block.trim();
+              const m = block.match(/^\d+\.\s*\*{0,2}(.+?)\*{0,2}\s*[—–-]+\s*(.+)$/s);
+              if (m) return { title: m[1].trim(), desc: m[2].trim() };
+              return { title: null, desc: block.replace(/^\d+\.\s*/, '').trim() };
+            }).filter(item => item.desc);
+          }
+          const items = parseItems(review);
+
+          return (
+            <div>
+              {/* Verdict — white bg, black text */}
+              <div style={{ background: "#fff", padding: "60px 32px 48px", borderBottom: `1px solid ${lightBorder}` }}>
+                <div style={{ maxWidth: 780, margin: "0 auto" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
+                    <span style={{ fontSize: "2rem" }}>🐇</span>
+                    <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent }}>Bugs, the Rabbit's Verdict</div>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                    {items.map((item, i) => (
+                      <div key={i} style={{
+                        padding: "28px 0",
+                        borderBottom: i < items.length - 1 ? `1px solid ${lightBorder}` : "none",
+                        display: "flex", gap: 24, alignItems: "flex-start"
+                      }}>
+                        <div style={{ ...mono, fontSize: 11, color: mid, minWidth: 24, paddingTop: 3, flexShrink: 0 }}>{i + 1}</div>
+                        <div>
+                          {item.title && (
+                            <div style={{ ...disp, fontSize: 17, fontWeight: 400, letterSpacing: "-0.5px", marginBottom: 8, color: "#000" }}>{item.title}</div>
+                          )}
+                          <p style={{ fontSize: 14, fontWeight: 300, color: dark, lineHeight: 1.8 }}>{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: `1px solid ${lightBorder}` }}>
-              <div style={{ background: "#000", padding: "60px 40px" }}>
-                <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent, marginBottom: 16 }}>Next Step</div>
-                <h2 style={{ ...disp, fontSize: "clamp(1.3rem,2vw,1.7rem)", color: "#fff", marginBottom: 12, fontWeight: 400, letterSpacing: "-1px" }}>Want this actually fixed?</h2>
-                <p style={{ fontSize: 13, fontWeight: 300, color: "#aaa", lineHeight: 1.75, marginBottom: 28, maxWidth: 320 }}>The Rabbit found the issues. Leann fixes them. Book a free strategy call and let's talk about what your website should actually be doing.</p>
-                <a href="https://simplerabbit.studio/contact" style={{ display: "inline-block", padding: "12px 32px", background: "#fff", color: "#000", fontFamily: "inherit", fontSize: 13, fontWeight: 500, textDecoration: "none" }}>Book My Free Call →</a>
+              {/* Big arrow */}
+              <div style={{ background: tone, padding: "32px", textAlign: "center", borderBottom: `1px solid ${lightBorder}` }}>
+                <div style={{ fontSize: "3.5rem", lineHeight: 1, color: "#000", marginBottom: 8 }}>↓</div>
+                <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid }}>Here's what to do about it</div>
               </div>
-              <div style={{ background: tone, padding: "60px 40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <h3 style={{ ...disp, fontSize: 20, marginBottom: 10, fontWeight: 400, letterSpacing: "-1px" }}>Not sure where to start?</h3>
-                <p style={{ fontSize: 13, color: dark, lineHeight: 1.7 }}>That's exactly what the call is for. No pressure, no pitch. Just a real conversation about your site.</p>
-                <button
-                  onClick={() => { setStage("idle"); setUrl(""); setEmail(""); setReview(""); }}
-                  style={{ display: "inline-block", padding: "12px 28px", background: "transparent", color: "#000", fontFamily: "inherit", fontSize: 12, fontWeight: 500, border: `1px solid ${lightBorder}`, cursor: "pointer", marginTop: 20, alignSelf: "flex-start" }}
-                >
-                  Audit a different site
-                </button>
-              </div>
-            </div>
 
-            <style>{`
-              @media(max-width:700px){
-                #audit-split{grid-template-columns:1fr!important;}
-              }
-            `}</style>
-          </div>
-        )}
+              {/* Next step */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                <div style={{ background: "#000", padding: "60px 40px" }}>
+                  <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent, marginBottom: 16 }}>Next Step</div>
+                  <h2 style={{ ...disp, fontSize: "clamp(1.3rem,2vw,1.7rem)", color: "#fff", marginBottom: 12, fontWeight: 400, letterSpacing: "-1px" }}>Want this actually fixed?</h2>
+                  <p style={{ fontSize: 13, fontWeight: 300, color: "#aaa", lineHeight: 1.75, marginBottom: 28, maxWidth: 320 }}>Bugs found the issues. Leann fixes them. Book a free strategy call and let's talk about what your website should actually be doing.</p>
+                  <a href="https://simplerabbit.studio/contact" style={{ display: "inline-block", padding: "12px 32px", background: "#fff", color: "#000", fontFamily: "inherit", fontSize: 13, fontWeight: 500, textDecoration: "none" }}>Book My Free Call →</a>
+                </div>
+                <div style={{ background: tone, padding: "60px 40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <h3 style={{ ...disp, fontSize: 20, marginBottom: 10, fontWeight: 400, letterSpacing: "-1px" }}>Not sure where to start?</h3>
+                  <p style={{ fontSize: 13, color: dark, lineHeight: 1.7 }}>That's exactly what the call is for. No pressure, no pitch. Just a real conversation about what your site needs.</p>
+                  <button
+                    onClick={() => { setStage("idle"); setUrl(""); setEmail(""); setReview(""); }}
+                    style={{ display: "inline-block", padding: "12px 28px", background: "transparent", color: "#000", fontFamily: "inherit", fontSize: 12, fontWeight: 500, border: `1px solid ${lightBorder}`, cursor: "pointer", marginTop: 20, alignSelf: "flex-start" }}
+                  >
+                    Audit a different site
+                  </button>
+                </div>
+              </div>
+
+              <style>{`
+                @media(max-width:700px){
+                  #audit-root .next-step-grid{grid-template-columns:1fr!important;}
+                }
+              `}</style>
+            </div>
+          );
+        })()}
       </div>
     );
   }
