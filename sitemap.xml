@@ -39,6 +39,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://simplerabbit.studio/privacy-policy</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Tools -->
   <url>
     <loc>https://simplerabbit.studio/audit</loc>
