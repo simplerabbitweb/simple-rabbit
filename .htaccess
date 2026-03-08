@@ -1,6 +1,14 @@
 Options +FollowSymLinks
 RewriteEngine On
 
+# --- Force HTTPS ---
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- Redirect www → non-www ---
+RewriteCond %{HTTP_HOST} ^www\.simplerabbit\.studio [NC]
+RewriteRule ^ https://simplerabbit.studio%{REQUEST_URI} [L,R=301]
+
 # Redirect .html URLs to clean URLs (301 permanent)
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
@@ -10,6 +18,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.+)$ $1.html [L]
+
+# --- HSTS: tell browsers to always use HTTPS ---
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
 
 # Prevent HTML pages from being cached so updates show immediately
 <FilesMatch "\.(html)$">
