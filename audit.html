@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Website Audit · Simple Rabbit</title>
+  <meta name="description" content="Paste your URL. The Rabbit will give you a straight breakdown of what's working — and what's quietly costing you clients. Free, instant, no pitch.">
+  <meta property="og:title" content="Free Website Audit · Simple Rabbit">
+  <meta property="og:description" content="Paste your URL. The Rabbit will give you a straight breakdown of what's working — and what's quietly costing you clients.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/audit">
+  <meta property="og:image" content="https://simplerabbit.studio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/audit">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+
+    /* Nav */
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
+    .mobile-nav a:hover{color:var(--black);}
+    .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
+
+    /* Footer */
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;font-family:var(--font-mono);}
+    .footer-link:hover{color:var(--black);}
+
+    /* Audit tool styles */
+    @keyframes bob{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+    #audit-root input::placeholder{color:var(--mid);}
+    #audit-root input,#audit-root button{font-family:var(--font-body);}
+    .audit-input{
+      width:100%;padding:14px 16px;border:1px solid var(--light-border);
+      font-family:var(--font-body);font-size:14px;color:var(--black);
+      outline:none;background:var(--white);transition:border-color 0.2s;
+    }
+    .audit-input:focus{border-color:var(--black);}
+    .audit-input::placeholder{color:var(--mid);}
+
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:768px){
+      .hamburger{display:flex!important;}
+      .nav-links{display:none!important;}
+      .nav-inner a img{max-height:44px!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.svg" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+</div>
+
+<!-- AUDIT APP -->
+<div id="audit-root"></div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;">
+    <a href="tel:5514862779" class="footer-link">551.486.2779</a>
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<!-- HAMBURGER SCRIPT -->
+<script>
+  const hb = document.getElementById('hamburger');
+  const mn = document.getElementById('mobile-nav');
+  hb.addEventListener('click', () => { hb.classList.toggle('open'); mn.classList.toggle('open'); });
+</script>
+
+<!-- AUDIT REACT APP -->
+<script type="text/babel">
+  const { useState, useEffect } = React;
+
+  const QUIPS = [
+    "Checking if anyone can actually find you on Google...",
+    "Looking for your phone number. Fingers crossed.",
+    "Seeing how fast this thing loads...",
+    "Checking if it looks decent on a phone...",
+    "Looking for a reason to contact you...",
+    "Checking if your homepage says what you do in 5 seconds...",
+    "Searching for signs of life in your call to action...",
+  ];
+
+  async function submitToFlodesk(email) {
+    try {
+      await fetch("https://api.flodesk.com/v1/subscribers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, segments: ["69ac8121a7411e99b28fc0e5"] }),
+      });
+    } catch (_) {}
+  }
+
+  function AuditApp() {
+    const [email, setEmail]   = useState("");
+    const [url, setUrl]       = useState("");
+    const [stage, setStage]   = useState("idle");
+    const [quip, setQuip]     = useState(QUIPS[0]);
+    const [errorMsg, setErrorMsg] = useState("");
+    const [review, setReview] = useState("");
+
+    const mono = { fontFamily: "var(--font-mono, 'DM Mono', monospace)" };
+    const disp = { fontFamily: "var(--font-display, 'Optima', sans-serif)" };
+
+    useEffect(() => {
+      if (stage !== "loading") return;
+      let i = 0;
+      const iv = setInterval(() => { i = (i + 1) % QUIPS.length; setQuip(QUIPS[i]); }, 2400);
+      return () => clearInterval(iv);
+    }, [stage]);
+
+    async function runAudit() {
+      const emailTrimmed = email.trim();
+      let raw = url.trim();
+
+      if (!emailTrimmed || !raw) { setErrorMsg("Please enter your email and website URL."); setStage("error"); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) { setErrorMsg("Please enter a valid email address."); setStage("error"); return; }
+      if (!raw.startsWith("http")) raw = "https://" + raw;
+      try { new URL(raw); } catch { setErrorMsg("Try: https://yoursite.com"); setStage("error"); return; }
+
+      setStage("loading"); setQuip(QUIPS[0]);
+      submitToFlodesk(emailTrimmed);
+
+      try {
+        const res = await fetch("/audit-proxy.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: raw }),
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.content?.[0]) throw new Error(data.error?.message || "API error");
+        setReview(data.content[0].text.trim());
+        setStage("results");
+      } catch (e) {
+        setErrorMsg("Something went wrong. Please try again in a moment.");
+        setStage("error");
+      }
+    }
+
+    const accent = "#0872cc";
+    const lightBorder = "#dfe0e1";
+    const mid = "#949698";
+    const dark = "#4c4c4b";
+    const tone = "#f7f7f8";
+
+    return (
+      <div style={{ fontFamily: "var(--font-body, 'Outfit', sans-serif)", background: "#fff", color: "#000" }}>
+
+        {/* Idle / Error */}
+        {(stage === "idle" || stage === "error") && (
+          <section style={{ padding: "80px 32px 80px", textAlign: "center", borderBottom: `1px solid ${lightBorder}` }}>
+            <div style={{ ...mono, fontSize: 11, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 20 }}>Free Tool</div>
+            <div style={{ fontSize: "3rem", marginBottom: 20, display: "inline-block", animation: "bob 1.2s ease-in-out infinite alternate" }}>🐇</div>
+            <h1 style={{ ...disp, fontSize: "clamp(1.8rem,4vw,3rem)", letterSpacing: "-2px", lineHeight: 1.1, fontWeight: 400, maxWidth: 680, margin: "0 auto 16px" }}>
+              Your website has something to say.<br />
+              <em style={{ color: accent }}>Let's find out what.</em>
+            </h1>
+            <p style={{ fontSize: 15, fontWeight: 300, color: dark, lineHeight: 1.75, maxWidth: 440, margin: "0 auto 40px" }}>
+              Paste your URL. The Rabbit will give you a straight breakdown of what's working — and what's quietly costing you clients.
+            </p>
+
+            <div style={{ maxWidth: 480, margin: "0 auto", display: "flex", flexDirection: "column", gap: 10 }}>
+              <input
+                className="audit-input"
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="your@email.com"
+              />
+              <div style={{ display: "flex", border: `1px solid ${lightBorder}` }}>
+                <input
+                  type="url"
+                  value={url}
+                  onChange={e => setUrl(e.target.value)}
+                  onKeyDown={e => e.key === "Enter" && runAudit()}
+                  placeholder="https://yourwebsite.com"
+                  style={{ flex: 1, padding: "14px 16px", border: "none", fontFamily: "inherit", fontSize: 14, color: "#000", outline: "none", background: "#fff" }}
+                />
+                <button
+                  onClick={runAudit}
+                  style={{ padding: "14px 24px", background: "#000", color: "#fff", fontFamily: "inherit", fontSize: 13, fontWeight: 500, border: "none", cursor: "pointer", whiteSpace: "nowrap" }}
+                >
+                  Run Audit
+                </button>
+              </div>
+              <p style={{ ...mono, fontSize: 10, letterSpacing: "1px", textTransform: "uppercase", color: mid, textAlign: "center", marginTop: 4 }}>No spam &middot; No pitch &middot; Just the truth</p>
+            </div>
+
+            {stage === "error" && (
+              <div style={{ maxWidth: 440, margin: "20px auto 0", padding: 16, border: "1px solid #fdd", background: "#fdf2f2", textAlign: "center" }}>
+                <p style={{ fontSize: 13, color: "#c0392b", lineHeight: 1.7 }}>{errorMsg}</p>
+                <button onClick={() => setStage("idle")} style={{ marginTop: 10, padding: "8px 20px", background: "transparent", border: `1px solid ${lightBorder}`, fontFamily: "inherit", fontSize: 13, cursor: "pointer" }}>Try Again</button>
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Loading */}
+        {stage === "loading" && (
+          <div style={{ padding: "80px 32px", textAlign: "center", minHeight: 300, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ fontSize: "2.8rem", marginBottom: 20, display: "inline-block", animation: "bob 1.2s ease-in-out infinite alternate" }}>🐇</div>
+            <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: mid, marginBottom: 10 }}>The Rabbit is reviewing your site</div>
+            <div style={{ fontSize: 15, fontWeight: 300, color: dark, maxWidth: 360 }}>{quip}</div>
+          </div>
+        )}
+
+        {/* Results */}
+        {stage === "results" && review && (
+          <div>
+            <div style={{ background: "#000", color: "#fff", padding: "60px 32px" }}>
+              <div style={{ maxWidth: 780, margin: "0 auto", display: "flex", gap: 32, alignItems: "flex-start" }}>
+                <div style={{ fontSize: "2.8rem", flexShrink: 0 }}>🐇</div>
+                <div>
+                  <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent, marginBottom: 16 }}>The Rabbit's Verdict</div>
+                  {review.split("\n\n").map((para, i) => (
+                    <p key={i} style={{ fontSize: 16, fontWeight: 300, color: "#e8e8e8", lineHeight: 1.85, marginBottom: i < review.split("\n\n").length - 1 ? 16 : 0 }}>{para}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: `1px solid ${lightBorder}` }}>
+              <div style={{ background: "#000", padding: "60px 40px" }}>
+                <div style={{ ...mono, fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: accent, marginBottom: 16 }}>Next Step</div>
+                <h2 style={{ ...disp, fontSize: "clamp(1.3rem,2vw,1.7rem)", color: "#fff", marginBottom: 12, fontWeight: 400, letterSpacing: "-1px" }}>Want this actually fixed?</h2>
+                <p style={{ fontSize: 13, fontWeight: 300, color: "#aaa", lineHeight: 1.75, marginBottom: 28, maxWidth: 320 }}>The Rabbit found the issues. Leann fixes them. Book a free strategy call and let's talk about what your website should actually be doing.</p>
+                <a href="https://simplerabbit.studio/contact" style={{ display: "inline-block", padding: "12px 32px", background: "#fff", color: "#000", fontFamily: "inherit", fontSize: 13, fontWeight: 500, textDecoration: "none" }}>Book My Free Call →</a>
+              </div>
+              <div style={{ background: tone, padding: "60px 40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <h3 style={{ ...disp, fontSize: 20, marginBottom: 10, fontWeight: 400, letterSpacing: "-1px" }}>Not sure where to start?</h3>
+                <p style={{ fontSize: 13, color: dark, lineHeight: 1.7 }}>That's exactly what the call is for. No pressure, no pitch. Just a real conversation about your site.</p>
+                <button
+                  onClick={() => { setStage("idle"); setUrl(""); setEmail(""); setReview(""); }}
+                  style={{ display: "inline-block", padding: "12px 28px", background: "transparent", color: "#000", fontFamily: "inherit", fontSize: 12, fontWeight: 500, border: `1px solid ${lightBorder}`, cursor: "pointer", marginTop: 20, alignSelf: "flex-start" }}
+                >
+                  Audit a different site
+                </button>
+              </div>
+            </div>
+
+            <style>{`
+              @media(max-width:700px){
+                #audit-split{grid-template-columns:1fr!important;}
+              }
+            `}</style>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("audit-root")).render(<AuditApp />);
+</script>
+
+</body>
+</html>

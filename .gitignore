@@ -10,3 +10,4 @@ deploy.sh
 .env.deploy
 **/.env
 .env
+audit-proxy.php
