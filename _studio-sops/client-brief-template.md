@@ -55,9 +55,31 @@ When starting the project in Claude Code, paste **both** this document and `kick
 
 ---
 
+### UI Style Choices
+
+Translate the client's vibe and inspiration into concrete style decisions. These drive how you write the CSS — they are not in the variables block but inform every component.
+
+| Decision | Options | This client |
+|----------|---------|-------------|
+| Button corner radius | 0 (sharp), 4–6px (soft), 8–12px (rounded), full pill | [fill in] |
+| Button style | Solid fill, outlined/ghost, text + arrow | [fill in] |
+| Button color | Accent color, black, white, custom | [fill in] |
+| Card style | Flat border, drop shadow, no border, colored bg | [fill in] |
+| Card corner radius | 0 (sharp), 4–8px (soft), 12px+ (rounded) | [fill in] |
+| Input style | Underline only, full border, filled bg | [fill in] |
+| Animation preference | Subtle fade-up (default), slide-in, scale, stagger, none | [fill in] |
+| Section backgrounds | White/tone only, full-bleed color, photo/texture | [fill in] |
+
+**My design direction notes:**
+[your notes — what to lean into, what to avoid, overall aesthetic, anything that stood out from intake or inspiration sites]
+
+---
+
 ### CSS Variables Block
 > Translate the client's colors and fonts into the variables below.
-> Keep all base variables exactly as shown. Only replace `--accent`, `--accent-dark`, `--accent-light`, and font variables.
+> The base structural variables (black, white, tone, mid, dark, light-border, green) stay the same on every project.
+> The accent and font variables are always client-specific.
+> Add additional custom variables if the client's palette needs more than one brand color.
 >
 > **To pick `--accent-dark`:** take the primary color and darken it ~15% (use a color picker or just desaturate slightly).
 > **To pick `--accent-light`:** take the primary color and lighten it to ~15% opacity (great for tinted backgrounds and borders).
@@ -205,9 +227,6 @@ From intake Section 04 — list each service the client entered:
 **Competitor sites:**
 [intake: Competitor websites — paste verbatim]
 
-**My design direction notes:**
-[your notes — what to lean into, what to avoid, overall aesthetic direction, anything that stood out from the intake responses]
-
 ---
 
 ## Social Media
@@ -257,23 +276,56 @@ Once this brief is complete, paste it into Claude Code with the following instru
 
 **Paste this prompt into Claude Code (with this brief attached):**
 
-> Using the client brief above, generate a `style-guide.html` for this client. Follow the exact same structure as `/Users/leannfrank/Desktop/simple rabbit/style-guide.html` but make these specific changes:
+> Using the client brief above, generate a `style-guide.html` for this client. Use `/Users/leannfrank/Desktop/simple rabbit/style-guide.html` as the structural reference, but adapt the design to match this client — not Simple Rabbit's own aesthetic.
 >
+> **Client-specific changes (required):**
 > 1. **Title tag** → `[CLIENT BUSINESS NAME] — Style Guide`
 > 2. **Page heading** → `[CLIENT BUSINESS NAME] Style Guide`
 > 3. **Page subtitle** → `Brand reference for [CLIENT BUSINESS NAME]. Use these tokens across every page.`
 > 4. **Google Fonts import** → replace with the import from this brief
-> 5. **CSS `:root` variables** → replace the accent colors and font variables with the values from this brief; keep all base variables (black, white, tone, mid, dark, light-border, green) identical
-> 6. **Color swatches** → update the accent/accent-dark/accent-light swatch boxes and hex labels to match this client's colors; leave all other swatches unchanged
-> 7. **Typography samples** → update the font-family references in `.type-sample h1/h2/h3` to match this client's display font
+> 5. **CSS `:root` variables** → replace accent colors and font variables with this brief's values; keep base structural variables (black, white, tone, mid, dark, light-border, green) the same
+> 6. **Color swatches** → update all swatches to reflect this client's full palette
+> 7. **Typography samples** → update font-family references to match this client's fonts
 > 8. **Nav logo preview** → replace "Brand Name" with "[CLIENT BUSINESS NAME]"
-> 9. **Primary CTA button text** → replace "Start a Project →" with this client's CTA from the brief
-> 10. **Pricing mono sample** → replace "Projects start at $4,800" with the client's starting price or "pricing by quote" if undisclosed
-> 11. **Footer preview** → replace "Brand Name LLC · Location" with "[CLIENT BUSINESS NAME] · [CITY, STATE]"
-> 12. **Save the file** → `style-guide.html` in the client's project root folder
+> 9. **Primary CTA button text** → replace with this client's CTA
+> 10. **Pricing mono sample** → replace with the client's starting price or "pricing by quote"
+> 11. **Footer preview** → replace with "[CLIENT BUSINESS NAME] · [CITY, STATE]"
 >
-> Everything else in the file stays exactly the same — all component demos, spacing values, animation code, breakpoints, and page structure examples are universal and do not change.
+> **Design adaptation (required — this is a client site, not Simple Rabbit):**
+> 12. **Button demos** → reflect the client's button style from the UI Style Choices above: use their brand color, their corner radius, and their hover state — not Simple Rabbit black
+> 13. **Card demos** → use this client's card style (shadow, flat border, or no border) and corner radius
+> 14. **Shadows** → include if the client's aesthetic calls for them
+> 15. **Animation style** → match the client's animation preference from the brief
+>
+> 16. **Save the file** → `style-guide.html` in the client's project root folder
 
 ---
 
-> **Note:** The style guide is a client-facing deliverable. It lives in the client's project folder as `style-guide.html`. It is not deployed to their live site — it's an internal reference file for you and the client to align on design before and during the build.
+> **Note:** The style guide is an internal reference — it lives in the client's project folder as `style-guide.html` and is not deployed to the live site. Use it to align on design during the build.
+
+---
+
+## Generate the Client Brand Guide PDF
+
+After the site launches, Simple Rabbit delivers a polished brand guide PDF to the client. This is their ongoing reference for staying on-brand in everything they create after handoff — social posts, email templates, presentations, future marketing materials.
+
+**To generate the PDF:**
+
+1. Open `_studio-sops/generate-brand-guide.py`
+2. Fill in the `CLIENT` dict at the top with this client's information:
+   - Copy colors from the CSS variables block above
+   - Copy fonts from the Google Fonts section above
+   - Copy voice rules from this brief
+   - Copy logo rules from this brief
+   - Set `"slug"` to a short kebab-case version of the business name (used for the filename)
+3. Run: `python3 generate-brand-guide.py`
+4. Output: `[client-slug]-brand-guide.pdf` in the `_studio-sops/` folder
+5. Move or copy the PDF to the client's project folder and email it at handoff
+
+**What the PDF includes:**
+- Brand foundation (guiding statement, ideal client, brand vibe)
+- Full color palette with swatches, hex codes, and usage notes
+- Typography (fonts, source, and usage for each role)
+- Voice & tone (always/never rules, CTA copy)
+- Logo usage rules
+- Quick reference card

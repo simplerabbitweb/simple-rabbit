@@ -162,24 +162,29 @@ setTimeout(() => document.querySelectorAll('.reveal:not(.visible)').forEach(el =
 - Height: 64px
 
 ### Buttons
+
+> Button style is **client-specific** — adapt everything below to match the Client Brief's design direction. Color, border-radius, shadows, and hover behavior should all reflect what the client asked for. The code below is the Simple Rabbit default; it is not a universal template.
+
 ```css
-/* Primary (black fill) */
+/* Primary — adapt color, radius, and shadow to client brand */
 .btn-primary {
-  background: var(--black); color: var(--white);
+  background: var(--accent); color: var(--white);
   padding: 14px 40px; font-size: 14px; font-weight: 500;
   letter-spacing: 0.5px; text-decoration: none;
-  display: inline-block; transition: background 0.2s;
+  display: inline-block; border-radius: 0; /* adjust per client */
+  transition: background 0.2s;
 }
-.btn-primary:hover { background: var(--dark); }
+.btn-primary:hover { background: var(--accent-dark); }
 
-/* Ghost (outlined) */
+/* Ghost (outlined) — adjust border color and radius to client brand */
 .btn-ghost {
-  background: transparent; color: var(--black);
+  background: transparent; color: var(--dark);
   border: 1px solid var(--light-border);
   padding: 13px 28px; font-size: 14px; font-weight: 500;
+  border-radius: 0; /* adjust per client */
   transition: all 0.2s;
 }
-.btn-ghost:hover { border-color: var(--black); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 ```
 
 ### Form inputs (underline style)

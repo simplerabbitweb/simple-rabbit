@@ -22,8 +22,9 @@ Use this alongside `kickoff-prompt.md` for building client sites.
 | `--green-bg` | `#edf7f1` | Success state backgrounds |
 | `--green-border` | `#b3dfc6` | Success state borders |
 
-**Adapting for a client:** Keep all variables except `--accent`, `--accent-dark`, `--accent-light`.
-Replace those three with the client's brand color and its hover/tint variants.
+**For Simple Rabbit's own site:** The palette above is fixed — change nothing.
+
+**Adapting for a client:** The full palette is driven by the client's brand. At minimum, replace `--accent`, `--accent-dark`, and `--accent-light` with the client's brand color and its variants. If the client's brand has a strong secondary color, neutral tone, or specific background color, introduce additional variables as needed. Client sites are not required to use black as the primary button/CTA color — use whatever the client's brand calls for.
 
 ---
 
@@ -230,9 +231,9 @@ if (hbtn && mnav) {
 ```
 
 **Rules:**
-- Primary CTA text: always "Book a Call →" (for Simple Rabbit sites)
-- Adjust CTA copy per client (e.g. "Schedule a Consultation →", "Get a Quote →")
-- No rounded corners — all buttons are sharp/square
+- Primary CTA text: always "Book a Call →" (for Simple Rabbit sites) — adjust per client
+- The CSS above is the Simple Rabbit default. For client sites, adapt to match their brand: button color uses the client's primary color, border-radius matches their aesthetic (0 for sharp, 4–8px for soft, full pill for rounded), and shadows are fine if the design calls for it
+- Hover states, transition timing, and animation style can all vary per client
 
 ---
 
