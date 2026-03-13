@@ -154,6 +154,13 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
     .mobile-nav a:hover{color:var(--black);}
     .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    .article-cta{background:var(--black);color:var(--white);padding:80px 48px;text-align:center;}
+    .article-cta h3{font-size:clamp(24px,3vw,32px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:20px;color:var(--white);font-family:var(--font-display);font-weight:400;}
+    .article-cta p{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.8);margin:0 auto 36px;max-width:560px;}
+    .article-cta-btn{display:inline-block;background:var(--white);color:var(--black);padding:16px 48px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;}
+    .article-cta-btn:hover{background:#e8e8e8;}
+    @media(max-width:900px){.article-cta{padding:64px 32px;}}
+    @media(max-width:600px){.article-cta{padding:48px 24px;}.article-cta h3{font-size:22px;}}
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
@@ -285,7 +292,7 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
   <div class="pdf-compare" role="group" aria-label="Full website before and after">
     <div class="pdf-card" onclick="lbOpen('pdf','../previews/the_home_refresh_full_old.pdf.pdf')" role="button" tabindex="0" aria-label="View full old website">
       <div class="pdf-card-header">
-        <span class="pdf-card-title">Before &mdash; Full site</span>
+        <span class="pdf-card-title">Before: Full site</span>
         <span class="pdf-card-action">View &rarr;</span>
       </div>
       <div class="pdf-card-preview">
@@ -294,7 +301,7 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
     </div>
     <div class="pdf-card" onclick="lbOpen('pdf','../previews/the_home_refresh_full_new.pdf')" role="button" tabindex="0" aria-label="View full new website">
       <div class="pdf-card-header">
-        <span class="pdf-card-title">After &mdash; Full site</span>
+        <span class="pdf-card-title">After: Full site</span>
         <span class="pdf-card-action">View &rarr;</span>
       </div>
       <div class="pdf-card-preview">
@@ -341,12 +348,14 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, charge-more-better-we
 
   <p>For more on how website design shapes what clients expect before they contact you, read our article on <a href="/blog/charge-more-better-website">why clients push back on your rates and how the right website fixes it</a>. Or take a look at <a href="/portfolio">the full Simple Rabbit portfolio</a> to see how this approach translates across different service industries.</p>
 
-  <hr>
-
-  <h3>Your website should be doing this kind of work for your business</h3>
-  <p>If your current site isn't bringing in the right clients consistently, the structure is the problem. <a href="/contact">Get a quote</a> and we'll take an honest look at what your site is communicating and what it would take to change it.</p>
 
 </article>
+
+<section class="article-cta reveal">
+  <h3>Your website should be doing this kind of work for your business</h3>
+  <p>If your current site isn't bringing in the right clients consistently, the structure is the problem. We'll take an honest look at what your site is communicating and what it would take to change it.</p>
+  <a href="/contact" class="article-cta-btn">Book a Call</a>
+</section>
 
 <!-- LIGHTBOX -->
 <div class="lb-overlay" id="lb" onclick="lbClose()">
