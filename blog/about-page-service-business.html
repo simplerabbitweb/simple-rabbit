@@ -104,6 +104,13 @@ INTERNAL LINKS NEEDED: ../contact.html, 5-things-premium-clients.html, convert-v
     .mobile-nav a:hover{color:var(--black);}
     .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    .article-cta{background:var(--black);color:var(--white);padding:80px 48px;text-align:center;}
+    .article-cta h3{font-size:clamp(24px,3vw,32px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:20px;color:var(--white);font-family:var(--font-display);font-weight:400;}
+    .article-cta p{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.8);margin:0 auto 36px;max-width:560px;}
+    .article-cta-btn{display:inline-block;background:var(--white);color:var(--black);padding:16px 48px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;}
+    .article-cta-btn:hover{background:#e8e8e8;}
+    @media(max-width:900px){.article-cta{padding:64px 32px;}}
+    @media(max-width:600px){.article-cta{padding:48px 24px;}.article-cta h3{font-size:22px;}}
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
@@ -123,9 +130,10 @@ INTERNAL LINKS NEEDED: ../contact.html, 5-things-premium-clients.html, convert-v
     <div class="nav-links">
       <a href="/about">About</a>
       <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
       <a href="/articles">Articles</a>
       <a href="/contact">Contact</a>
-      <a href="/contact" class="nav-cta">Get a Quote</a>
+      <a href="/contact" class="nav-cta">Book a Call</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -133,9 +141,10 @@ INTERNAL LINKS NEEDED: ../contact.html, 5-things-premium-clients.html, convert-v
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
   <a href="/articles">Articles</a>
   <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Get a Quote</a>
+  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
 </div>
 
 <!-- ARTICLE HEADER -->
@@ -222,17 +231,20 @@ INTERNAL LINKS NEEDED: ../contact.html, 5-things-premium-clients.html, convert-v
 
   <p>Most About pages do none of those things well. Fixing that one page, with clear positioning, genuine voice, and a direct call to action, often changes the conversion rate of the entire site. The homepage generates interest. The About page converts it. For more on how the pieces of a high-converting site fit together, read <a href="convert-visitors-to-clients.html">how to turn website visitors into booked calls</a>.</p>
 
-  <hr>
-
-  <h3>Is your About page doing the work it should be doing?</h3>
-  <p>Simple Rabbit builds websites for women-owned service businesses that establish trust quickly, position the founder clearly, and turn the right visitors into booked calls. <a href="/contact">Book a free call</a> and let's talk about what yours needs.</p>
-
 </article>
+
+<section class="article-cta reveal">
+  <h3>Is your About page doing the work it should be doing?</h3>
+  <p>Simple Rabbit builds websites for women-owned service businesses that establish trust quickly, position the founder clearly, and turn the right visitors into booked calls.</p>
+  <a href="/contact" class="article-cta-btn">Book a Call</a>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
   <div style="display:flex;gap:24px;align-items:center;">
+    <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+    <a href="tel:5514862779" class="footer-link">551.486.2779</a>
     <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
     <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
     <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
@@ -240,7 +252,7 @@ INTERNAL LINKS NEEDED: ../contact.html, 5-things-premium-clients.html, convert-v
 </footer>
 
 <div class="mobile-cta-bar">
-  <a href="/contact">Book a Free Call &rarr;</a>
+  <a href="/contact">Book a Call &rarr;</a>
 </div>
 
 <script type="application/ld+json">
