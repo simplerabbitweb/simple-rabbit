@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Client Questionnaire | Simple Rabbit</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-77EEVJRJJD');
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --green:#1a7a4a;--green-bg:#edf7f1;--green-border:#b3dfc6;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);font-weight:400;}
+    a{color:inherit;}
+
+    /* ── Nav ── */
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1000px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-badge{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);border:1px solid var(--light-border);padding:5px 12px;}
+
+    /* ── Hero ── */
+    .hero{padding:80px 48px 60px;border-bottom:1px solid var(--light-border);text-align:center;}
+    .hero-inner{max-width:680px;margin:0 auto;}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;}
+    .hero p{font-size:16px;line-height:1.8;color:var(--dark);}
+    .hero p strong{color:var(--black);}
+
+    /* ── Info banner ── */
+    .info-banner{background:var(--tone);border-bottom:1px solid var(--light-border);padding:14px 48px;}
+    .info-banner-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--dark);}
+    .info-banner svg{flex-shrink:0;color:var(--accent);}
+
+    /* ── Form wrapper ── */
+    .form-wrapper{max-width:1000px;margin:0 auto;padding:0 48px 140px;}
+    .form-section{padding:56px 0;border-bottom:1px solid var(--light-border);}
+    .form-section:last-of-type{border-bottom:none;}
+    .section-hd{margin-bottom:32px;}
+    .section-hd h2{font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;}
+    .section-hd p{font-size:15px;color:var(--dark);line-height:1.7;}
+    .section-num{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:10px;display:block;}
+
+    /* ── Inputs ── */
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;}
+    .field-grid .span-2{grid-column:1/-1;}
+    .field-group{margin-bottom:32px;}
+    .field-group:last-child{margin-bottom:0;}
+    .field-label{display:block;font-size:13px;font-weight:500;color:var(--dark);margin-bottom:8px;}
+    .field-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);transition:border-color 0.2s;}
+    .field-input:focus{border-bottom-color:var(--black);}
+    .field-input::placeholder{color:var(--mid);}
+    textarea.field-input{border:1px solid var(--light-border);padding:14px;resize:vertical;min-height:110px;}
+    textarea.field-input:focus{border-color:var(--black);}
+    .field-hint{font-size:13px;color:var(--mid);margin-top:8px;line-height:1.55;}
+    .field-hint a{color:var(--accent);text-decoration:none;}
+    .field-hint a:hover{text-decoration:underline;}
+
+    /* ── Checkbox cards (form fields picker) ── */
+    .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .check-card{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border:1px solid var(--light-border);cursor:pointer;transition:border-color 0.15s,background 0.15s;-webkit-user-select:none;user-select:none;}
+    .check-card:hover{border-color:var(--black);}
+    .check-card input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
+    .check-card.checked{border-color:var(--black);background:var(--tone);}
+    .card-box{width:18px;height:18px;border:1.5px solid var(--light-border);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;background:var(--white);}
+    .check-card.checked .card-box{border-color:var(--black);background:var(--black);}
+    .card-box svg{display:none;width:10px;height:10px;}
+    .check-card.checked .card-box svg{display:block;}
+    .card-body{flex:1;min-width:0;}
+    .card-title{display:block;font-size:14px;font-weight:500;margin-bottom:3px;}
+    .card-desc{display:block;font-size:13px;color:var(--mid);line-height:1.5;}
+
+    /* ── Services builder ── */
+    .services-list{display:flex;flex-direction:column;gap:16px;margin-bottom:20px;}
+    .service-card{border:1px solid var(--light-border);padding:24px 24px 20px;}
+    .service-card-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+    .service-card-num{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);}
+    .service-remove{background:none;border:none;cursor:pointer;font-size:13px;color:var(--mid);padding:0;font-family:var(--font-body);transition:color 0.15s;}
+    .service-remove:hover{color:#c0392b;}
+    .pricing-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+    .pricing-opt{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--light-border);cursor:pointer;font-size:13px;transition:all 0.15s;-webkit-user-select:none;user-select:none;}
+    .pricing-opt:hover{border-color:var(--black);}
+    .pricing-opt input[type="radio"]{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
+    .pricing-opt.selected{border-color:var(--black);background:var(--tone);}
+    .radio-dot{width:14px;height:14px;border:1.5px solid var(--light-border);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s;background:var(--white);}
+    .pricing-opt.selected .radio-dot{border-color:var(--black);}
+    .radio-dot::after{content:'';width:6px;height:6px;background:var(--black);border-radius:50%;opacity:0;transition:opacity 0.15s;}
+    .pricing-opt.selected .radio-dot::after{opacity:1;}
+    .btn-add-service{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--light-border);padding:11px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-body);color:var(--dark);transition:all 0.2s;}
+    .btn-add-service:hover{border-color:var(--black);color:var(--black);}
+
+    /* ── Drive banner ── */
+    .drive-banner{background:#eef4fc;border:1px solid var(--accent-light);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;margin-top:16px;}
+    .drive-banner svg{flex-shrink:0;color:var(--accent);margin-top:2px;}
+    .drive-banner-body{flex:1;}
+    .drive-banner-title{font-size:14px;font-weight:500;margin-bottom:6px;}
+    .drive-banner-text{font-size:13px;color:var(--dark);line-height:1.6;}
+    .drive-banner-text a{color:var(--accent);text-decoration:none;font-weight:500;}
+    .drive-banner-text a:hover{text-decoration:underline;}
+
+    /* ── Upload zone ── */
+    .upload-zone{border:1.5px dashed var(--light-border);padding:36px 24px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;margin-top:12px;outline:none;}
+    .upload-zone:hover,.upload-zone:focus,.upload-zone.drag-over{border-color:var(--accent);background:#eef4fc;}
+    .upload-icon{color:var(--mid);display:block;margin:0 auto 12px;}
+    .upload-title{font-size:15px;font-weight:500;margin-bottom:6px;}
+    .upload-title span{color:var(--accent);}
+    .upload-sub{font-size:13px;color:var(--mid);}
+    .file-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+    .file-chip{display:flex;align-items:center;gap:8px;background:var(--tone);border:1px solid var(--light-border);padding:7px 12px;font-size:13px;max-width:100%;animation:chipIn 0.15s ease;}
+    @keyframes chipIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+    .file-chip-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px;}
+    .file-chip-size{color:var(--mid);flex-shrink:0;font-family:var(--font-mono);font-size:11px;}
+    .file-chip-remove{background:none;border:none;cursor:pointer;color:var(--mid);padding:0 0 0 4px;line-height:1;font-size:18px;flex-shrink:0;transition:color 0.15s;}
+    .file-chip-remove:hover{color:var(--black);}
+    .upload-error{font-size:13px;color:#c0392b;margin-top:8px;display:none;}
+
+    /* ── Toggle (has photos?) ── */
+    .toggle-row{display:flex;gap:12px;margin-top:12px;}
+    .toggle-opt{padding:10px 22px;border:1px solid var(--light-border);font-size:14px;font-weight:500;cursor:pointer;transition:all 0.15s;-webkit-user-select:none;user-select:none;}
+    .toggle-opt:hover{border-color:var(--black);}
+    .toggle-opt.active{border-color:var(--black);background:var(--black);color:var(--white);}
+
+    /* ── Fixed submit bar ── */
+    .submit-bar{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);z-index:50;padding:18px 48px;padding-bottom:calc(18px + env(safe-area-inset-bottom));}
+    .submit-bar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+    .submit-bar-info{flex:1;}
+    .submit-bar-label{font-size:13px;color:var(--mid);font-family:var(--font-mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+    .submit-bar-sub{font-size:13px;color:var(--dark);}
+    .btn-primary{background:var(--black);color:var(--white);border:none;padding:13px 28px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;}
+    .btn-primary:hover{background:var(--dark);}
+    .btn-primary:disabled{opacity:0.5;cursor:not-allowed;}
+
+    /* ── State screens ── */
+    .state-screen{display:none;padding:80px 48px 120px;text-align:center;}
+    @media(max-width:768px){.state-screen{padding:60px 24px 80px;}}
+    .state-screen.active{display:block;}
+    .state-icon{width:56px;height:56px;margin:0 auto 28px;border:1.5px solid var(--black);display:flex;align-items:center;justify-content:center;}
+    .state-screen h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px;margin-bottom:16px;}
+    .state-screen p{font-size:16px;color:var(--dark);line-height:1.8;max-width:520px;margin:0 auto 32px;}
+    .back-link{font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;text-decoration:none;display:inline-block;}
+
+    /* ── Responsive ── */
+    @media(max-width:768px){
+      .nav-inner{padding:0 24px;}
+      .hero{padding:60px 24px 48px;}
+      .info-banner{padding:14px 24px;}
+      .form-wrapper{padding:0 24px 160px;}
+      .field-grid{grid-template-columns:1fr;}
+      .check-grid{grid-template-columns:1fr;}
+      .submit-bar{padding:16px 24px;padding-bottom:calc(16px + env(safe-area-inset-bottom));}
+      .submit-bar-inner{flex-direction:column;align-items:stretch;gap:12px;}
+      .btn-primary{width:100%;text-align:center;}
+      .service-card{padding:20px 16px 16px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── MAIN CONTENT ──────────────────────────────────────────────────────── -->
+<div id="main-wrap">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/"><img src="logo.svg" alt="Simple Rabbit" style="max-height:56px;display:block;"></a>
+      <span class="nav-badge">Client Portal</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="overline">New Clients</span>
+      <h1>New Client Questionnaire</h1>
+      <p>Help us build your site right the first time. Fill this out as completely as you can — <strong>don't worry if you don't have everything yet.</strong> We'll follow up on anything missing during your kickoff call.</p>
+    </div>
+  </section>
+
+  <!-- INFO BANNER -->
+  <div class="info-banner">
+    <div class="info-banner-inner">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Takes about 10&ndash;15 minutes. You can always reach us at <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent);text-decoration:none;margin-left:4px;">hello@simplerabbit.studio</a> if you have questions.
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <form id="intake-form" novalidate>
+    <div class="form-wrapper">
+
+      <!-- ── SECTION 1: About Your Business ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">01</span>
+          <h2>About Your Business</h2>
+          <p>This information will match your Google Business Profile — accuracy here helps with local SEO.</p>
+        </div>
+        <div class="field-grid">
+          <div class="field-group">
+            <label class="field-label" for="f-name">Your Name *</label>
+            <input class="field-input" type="text" id="f-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-email">Your Email *</label>
+            <input class="field-input" type="email" id="f-email" name="email" required autocomplete="email" placeholder="you@yourbusiness.com">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-biz-name">Business Name *</label>
+            <input class="field-input" type="text" id="f-biz-name" name="business_name" required placeholder="As it appears on Google">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-industry">Industry / Niche</label>
+            <input class="field-input" type="text" id="f-industry" name="industry" placeholder="e.g. Interior Design, Family Law, Life Coaching">
+          </div>
+          <div class="field-group span-2">
+            <label class="field-label" for="f-address">Business Address</label>
+            <input class="field-input" type="text" id="f-address" name="address" autocomplete="street-address" placeholder="Street, City, State, ZIP — exactly as on Google Business Profile">
+            <p class="field-hint">Used to match your Google Business Profile. If you're service-area only (no storefront), enter your city and state.</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-phone">Business Phone</label>
+            <input class="field-input" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="(201) 555-0100">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-current-site">Current Website (if any)</label>
+            <input class="field-input" type="url" id="f-current-site" name="current_website" autocomplete="url" placeholder="https://yoursite.com">
+          </div>
+          <div class="field-group span-2">
+            <label class="field-label" for="f-ideal-client">Who is your ideal client?</label>
+            <textarea class="field-input" id="f-ideal-client" name="ideal_client" rows="3" placeholder="Describe the person you most want to attract — their situation, what they're struggling with, what they're looking for."></textarea>
+          </div>
+          <div class="field-group span-2">
+            <label class="field-label" for="f-differentiator">What makes you different from competitors?</label>
+            <textarea class="field-input" id="f-differentiator" name="differentiator" rows="3" placeholder="What do you do or offer that no one else does? What do your best clients say about working with you?"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 2: Brand Assets ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">02</span>
+          <h2>Brand Assets</h2>
+          <p>Upload what you have. If you don't have a brand guide yet, no worries — we'll work with what you've got.</p>
+        </div>
+
+        <!-- Logo upload -->
+        <div class="field-group">
+          <label class="field-label">Logo File(s)</label>
+          <p class="field-hint" style="margin-top:0;margin-bottom:0;">Upload your logo in any format you have (PNG, SVG, AI, EPS, PDF). If you have both light and dark versions, upload both.</p>
+          <div class="upload-zone" id="logo-zone" role="button" tabindex="0" aria-label="Upload logo files">
+            <svg class="upload-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <div class="upload-title">Drop logo files here or <span>click to browse</span></div>
+            <div class="upload-sub">PNG, SVG, AI, EPS, PDF &middot; Up to 5 MB each</div>
+          </div>
+          <input type="file" id="logo-input" name="logo" multiple accept="image/*,.svg,.ai,.eps,.pdf" style="display:none;">
+          <div class="file-list" id="logo-file-list"></div>
+          <p class="upload-error" id="logo-upload-error"></p>
+        </div>
+
+        <!-- Brand guidelines upload -->
+        <div class="field-group">
+          <label class="field-label">Brand Guidelines <span style="color:var(--mid);font-weight:400;">(optional)</span></label>
+          <p class="field-hint" style="margin-top:0;margin-bottom:0;">Brand guide, style guide, mood board — upload anything that captures your visual direction.</p>
+          <div class="upload-zone" id="guide-zone" role="button" tabindex="0" aria-label="Upload brand guidelines">
+            <svg class="upload-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <div class="upload-title">Drop files here or <span>click to browse</span></div>
+            <div class="upload-sub">PDF, PNG, JPG, Word, AI &middot; Up to 5 MB each</div>
+          </div>
+          <input type="file" id="guide-input" name="brand_guidelines" multiple accept="image/*,.pdf,.doc,.docx,.ai,.eps" style="display:none;">
+          <div class="file-list" id="guide-file-list"></div>
+          <p class="upload-error" id="guide-upload-error"></p>
+        </div>
+
+        <div class="field-grid">
+          <div class="field-group">
+            <label class="field-label" for="f-colors">Brand Colors</label>
+            <input class="field-input" type="text" id="f-colors" name="brand_colors" placeholder="e.g. Navy #002B5B, Cream #F5F0E8, Gold #C9A84C">
+            <p class="field-hint">Hex codes are ideal, but "warm beige and deep forest green" works too.</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-fonts">Brand Fonts <span style="color:var(--mid);font-weight:400;">(if you know them)</span></label>
+            <input class="field-input" type="text" id="f-fonts" name="brand_fonts" placeholder="e.g. Cormorant Garamond for headings, Lato for body">
+          </div>
+          <div class="field-group span-2">
+            <label class="field-label" for="f-vibe">Three words that describe your brand's vibe</label>
+            <input class="field-input" type="text" id="f-vibe" name="brand_vibe" placeholder="e.g. Elevated, Warm, Modern">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-inspo">Websites you love (for inspiration)</label>
+            <textarea class="field-input" id="f-inspo" name="inspiration_sites" rows="3" placeholder="Paste URLs, one per line. What do you like about them?"></textarea>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-competitors">Competitor websites</label>
+            <textarea class="field-input" id="f-competitors" name="competitor_sites" rows="3" placeholder="Paste URLs, one per line. We want to know what's out there so we can help you stand out."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 3: Contact Form Fields ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">03</span>
+          <h2>Contact Form Fields</h2>
+          <p>What information do you want to collect from visitors who reach out? Select everything you'd like included in your contact form.</p>
+        </div>
+
+        <div class="check-grid" id="form-fields-grid">
+
+          <label class="check-card">
+            <input type="checkbox" name="contact_fields" value="Phone number">
+            <div class="card-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="card-body">
+              <span class="card-title">Phone Number</span>
+              <span class="card-desc">Optional or required</span>
+            </div>
+          </label>
+
+          <label class="check-card">
+            <input type="checkbox" name="contact_fields" value="Service interest">
+            <div class="card-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="card-body">
+              <span class="card-title">Service of Interest</span>
+              <span class="card-desc">Dropdown or checkboxes</span>
+            </div>
+          </label>
+
+          <label class="check-card">
+            <input type="checkbox" name="contact_fields" value="How did you hear about us?">
+            <div class="card-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="card-body">
+              <span class="card-title">How Did You Hear About Us?</span>
+              <span class="card-desc">Referral tracking dropdown</span>
+            </div>
+          </label>
+
+          <label class="check-card">
+            <input type="checkbox" name="contact_fields" value="Budget range">
+            <div class="card-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="card-body">
+              <span class="card-title">Budget Range</span>
+              <span class="card-desc">Dropdown with ranges</span>
+            </div>
+          </label>
+
+          <label class="check-card">
+            <input type="checkbox" name="contact_fields" value="Timeline / start date">
+            <div class="card-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="card-body">
+              <span class="card-title">Timeline / Start Date</span>
+              <span class="card-desc">When they want to begin</span>
+            </div>
+          </label>
+
+          <label class="check-card">
+            <input type="checkbox" name="contact_fields" value="Message / tell us more" checked>
+            <div class="card-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="card-body">
+              <span class="card-title">Message / Tell Us More</span>
+              <span class="card-desc">Open text area</span>
+            </div>
+          </label>
+
+        </div>
+
+        <div class="field-group" style="margin-top:24px;">
+          <label class="field-label" for="f-custom-fields">Any custom questions? <span style="color:var(--mid);font-weight:400;">(optional)</span></label>
+          <textarea class="field-input" id="f-custom-fields" name="custom_form_fields" rows="3" placeholder="e.g. &quot;What is your dog's name?&quot; or &quot;How many guests are you expecting?&quot; — list any questions specific to your business."></textarea>
+        </div>
+      </div>
+
+      <!-- ── SECTION 4: Services & Pricing ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">04</span>
+          <h2>Services &amp; Pricing</h2>
+          <p>List the services you offer. For each one, let us know how you'd like to display pricing on your site.</p>
+        </div>
+
+        <div class="services-list" id="services-list">
+          <!-- Service cards injected by JS -->
+        </div>
+
+        <button type="button" class="btn-add-service" id="add-service-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add a Service
+        </button>
+        <input type="hidden" id="services-data" name="services">
+      </div>
+
+      <!-- ── SECTION 5: Photography ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">05</span>
+          <h2>Photography</h2>
+          <p>Great photos make a huge difference. Let us know what you're working with.</p>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Do you have professional photos to use on your site?</label>
+          <div class="toggle-row" id="photos-toggle">
+            <div class="toggle-opt" data-value="yes">Yes, I have photos</div>
+            <div class="toggle-opt" data-value="no">Not yet</div>
+            <div class="toggle-opt" data-value="some">I have some</div>
+          </div>
+          <input type="hidden" id="has-photos" name="has_photos" value="">
+        </div>
+
+        <!-- Drive upload prompt (shown when yes or some) -->
+        <div id="drive-upload-section" style="display:none;">
+          <div class="drive-banner">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            <div class="drive-banner-body">
+              <div class="drive-banner-title">Upload your photos to our shared Google Drive folder</div>
+              <div class="drive-banner-text">
+                To keep file quality intact, please upload your photos directly to our shared folder:<br>
+                <a href="https://drive.google.com/drive/folders/1T8g9fja0jIJRXQBdbMsw35Ca-r-FlQLF?usp=drive_link" target="_blank" rel="noopener">
+                  Open Google Drive Folder &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="field-group" style="margin-top:24px;">
+            <label class="field-label" for="f-photo-notes">Photo notes <span style="color:var(--mid);font-weight:400;">(optional)</span></label>
+            <textarea class="field-input" id="f-photo-notes" name="photo_notes" rows="3" placeholder="Describe what you've uploaded — headshots, team photos, office/studio shots, product photos, lifestyle imagery, etc."></textarea>
+          </div>
+        </div>
+
+        <!-- No photos — prompt about options -->
+        <div id="no-photos-section" style="display:none;">
+          <div class="field-group" style="margin-top:8px;">
+            <label class="field-label" for="f-photo-plan">What's the plan for photography?</label>
+            <textarea class="field-input" id="f-photo-plan" name="photo_plan" rows="3" placeholder="e.g. Planning a shoot before launch, open to stock photos for now, looking for recommendations, etc."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 6: Social Media ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">06</span>
+          <h2>Social Media</h2>
+          <p>Add your handles so we can link them from your site. Leave blank anything you don't use.</p>
+        </div>
+        <div class="field-grid">
+          <div class="field-group">
+            <label class="field-label" for="f-instagram">Instagram</label>
+            <input class="field-input" type="text" id="f-instagram" name="instagram" placeholder="@yourusername or full URL">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-facebook">Facebook</label>
+            <input class="field-input" type="text" id="f-facebook" name="facebook" placeholder="Page name or full URL">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-linkedin">LinkedIn</label>
+            <input class="field-input" type="text" id="f-linkedin" name="linkedin" placeholder="Profile or company page URL">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-tiktok">TikTok</label>
+            <input class="field-input" type="text" id="f-tiktok" name="tiktok" placeholder="@yourusername or full URL">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-pinterest">Pinterest</label>
+            <input class="field-input" type="text" id="f-pinterest" name="pinterest" placeholder="Profile URL">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="f-other-social">Other</label>
+            <input class="field-input" type="text" id="f-other-social" name="other_social" placeholder="YouTube, X, Threads, etc.">
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 7: Anything Else ── -->
+      <div class="form-section">
+        <div class="section-hd">
+          <span class="section-num">07</span>
+          <h2>Anything Else?</h2>
+          <p>Is there anything important about your business, your goals, or your vision for this site that we haven't asked yet?</p>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="f-anything-else">Additional notes <span style="color:var(--mid);font-weight:400;">(optional)</span></label>
+          <textarea class="field-input" id="f-anything-else" name="anything_else" rows="5" placeholder="Specific pages you want, features you've seen on other sites, things you absolutely don't want, a launch date you're working toward — anything goes."></textarea>
+        </div>
+      </div>
+
+    </div><!-- /form-wrapper -->
+  </form>
+
+</div><!-- /#main-wrap -->
+
+<!-- ── FIXED SUBMIT BAR ───────────────────────────────────────────────────── -->
+<div class="submit-bar" id="submit-bar">
+  <div class="submit-bar-inner">
+    <div class="submit-bar-info">
+      <div class="submit-bar-label">New Client Questionnaire</div>
+      <div class="submit-bar-sub">Fill in as much as you can &mdash; we'll cover the rest on our kickoff call.</div>
+    </div>
+    <button type="button" class="btn-primary" id="submit-btn">Submit Questionnaire</button>
+  </div>
+</div>
+
+<!-- ── SUCCESS STATE ──────────────────────────────────────────────────────── -->
+<div id="success-state" class="state-screen">
+
+  <!-- Confirmation message -->
+  <div style="max-width:560px;margin:0 auto 56px;">
+    <div class="state-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h2>Questionnaire received.</h2>
+    <p>We'll review everything before we meet. Now let's get your kickoff call on the calendar — pick a time below that works for you.</p>
+  </div>
+
+  <!-- Calendar embed -->
+  <div style="max-width:900px;margin:0 auto 56px;text-align:left;">
+    <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);padding-bottom:16px;border-bottom:1px solid var(--light-border);margin-bottom:0;">Book Your Kickoff Call</div>
+    <iframe
+      src="https://calendar.notion.so/meet/leannfrank/8r843wzt"
+      style="width:100%;height:700px;border:none;border-left:1px solid var(--light-border);border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);display:block;"
+      loading="lazy"
+      title="Book a Kickoff Call with Simple Rabbit"
+    ></iframe>
+  </div>
+
+  <!-- Footer links -->
+  <div style="max-width:560px;margin:0 auto;">
+    <p style="font-size:14px;color:var(--mid);margin-bottom:20px;">Questions before your call? Reach us at <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent);text-decoration:none;">hello@simplerabbit.studio</a></p>
+    <a href="/" class="back-link">← Back to Simple Rabbit</a>
+  </div>
+
+</div>
+
+<script>
+(function () {
+
+  // ── Checkbox card toggling (contact form fields) ─────────────────────────
+  document.querySelectorAll('#form-fields-grid .check-card').forEach(function (card) {
+    var cb = card.querySelector('input[type="checkbox"]');
+    // Init visual state (for pre-checked items)
+    if (cb.checked) card.classList.add('checked');
+    cb.addEventListener('change', function () {
+      if (cb.checked) {
+        card.classList.add('checked');
+      } else {
+        card.classList.remove('checked');
+      }
+    });
+  });
+
+  // ── Photos toggle ────────────────────────────────────────────────────────
+  document.querySelectorAll('#photos-toggle .toggle-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      document.querySelectorAll('#photos-toggle .toggle-opt').forEach(function (o) { o.classList.remove('active'); });
+      opt.classList.add('active');
+      document.getElementById('has-photos').value = opt.dataset.value;
+      var val = opt.dataset.value;
+      document.getElementById('drive-upload-section').style.display = (val === 'yes' || val === 'some') ? '' : 'none';
+      document.getElementById('no-photos-section').style.display   = (val === 'no') ? '' : 'none';
+    });
+  });
+
+  // ── Services builder ─────────────────────────────────────────────────────
+  var serviceCount = 0;
+
+  function createServiceCard() {
+    serviceCount++;
+    var idx = serviceCount;
+    var card = document.createElement('div');
+    card.className = 'service-card';
+    card.dataset.idx = idx;
+    card.innerHTML =
+      '<div class="service-card-hd">' +
+        '<span class="service-card-num">Service ' + idx + '</span>' +
+        '<button type="button" class="service-remove" data-idx="' + idx + '">Remove</button>' +
+      '</div>' +
+      '<div class="field-grid">' +
+        '<div class="field-group">' +
+          '<label class="field-label">Service Name *</label>' +
+          '<input class="field-input" type="text" name="service_name_' + idx + '" placeholder="e.g. Brand Strategy Intensive">' +
+        '</div>' +
+        '<div class="field-group">' +
+          '<label class="field-label">Price / Starting At</label>' +
+          '<input class="field-input" type="text" name="service_price_' + idx + '" placeholder="e.g. $2,500 or Starting at $1,200">' +
+        '</div>' +
+        '<div class="field-group span-2">' +
+          '<label class="field-label">Short Description</label>' +
+          '<textarea class="field-input" name="service_desc_' + idx + '" rows="2" placeholder="1&ndash;2 sentences describing what this service includes and who it\'s for."></textarea>' +
+        '</div>' +
+        '<div class="field-group span-2" style="margin-bottom:0;">' +
+          '<label class="field-label">How would you like to display pricing?</label>' +
+          '<div class="pricing-options">' +
+            '<label class="pricing-opt">' +
+              '<input type="radio" name="service_pricing_display_' + idx + '" value="Show exact price">' +
+              '<div class="radio-dot"></div>Show exact price' +
+            '</label>' +
+            '<label class="pricing-opt">' +
+              '<input type="radio" name="service_pricing_display_' + idx + '" value="Show starting at">' +
+              '<div class="radio-dot"></div>Show &ldquo;Starting at&rdquo;' +
+            '</label>' +
+            '<label class="pricing-opt">' +
+              '<input type="radio" name="service_pricing_display_' + idx + '" value="Custom / by quote">' +
+              '<div class="radio-dot"></div>Custom / by quote' +
+            '</label>' +
+            '<label class="pricing-opt">' +
+              '<input type="radio" name="service_pricing_display_' + idx + '" value="Don\'t show pricing">' +
+              '<div class="radio-dot"></div>Don\'t show pricing' +
+            '</label>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    // Wire up remove button
+    card.querySelector('.service-remove').addEventListener('click', function () {
+      card.remove();
+      renumberServices();
+    });
+
+    // Wire up pricing option radio buttons
+    card.querySelectorAll('.pricing-opt').forEach(function (opt) {
+      var radio = opt.querySelector('input[type="radio"]');
+      radio.addEventListener('change', function () {
+        card.querySelectorAll('.pricing-opt').forEach(function (o) { o.classList.remove('selected'); });
+        if (radio.checked) opt.classList.add('selected');
+      });
+    });
+
+    return card;
+  }
+
+  function renumberServices() {
+    document.querySelectorAll('.service-card').forEach(function (card, i) {
+      card.querySelector('.service-card-num').textContent = 'Service ' + (i + 1);
+    });
+  }
+
+  document.getElementById('add-service-btn').addEventListener('click', function () {
+    var list = document.getElementById('services-list');
+    list.appendChild(createServiceCard());
+  });
+
+  // Add one service card by default
+  document.getElementById('services-list').appendChild(createServiceCard());
+
+  // ── File upload helper factory ────────────────────────────────────────────
+  var MAX_SIZE = 5 * 1024 * 1024; // 5 MB
+
+  function makeUploader(zoneId, inputId, listId, errorId) {
+    var files      = [];
+    var zone       = document.getElementById(zoneId);
+    var input      = document.getElementById(inputId);
+    var listEl     = document.getElementById(listId);
+    var errorEl    = document.getElementById(errorId);
+
+    zone.addEventListener('click', function () { input.click(); });
+    zone.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+    });
+    zone.addEventListener('dragover', function (e) { e.preventDefault(); zone.classList.add('drag-over'); });
+    zone.addEventListener('dragleave', function () { zone.classList.remove('drag-over'); });
+    zone.addEventListener('drop', function (e) {
+      e.preventDefault();
+      zone.classList.remove('drag-over');
+      add(Array.from(e.dataTransfer.files));
+    });
+    input.addEventListener('change', function () {
+      add(Array.from(this.files));
+      this.value = '';
+    });
+
+    function add(newFiles) {
+      errorEl.style.display = 'none';
+      var errors = [];
+      newFiles.forEach(function (f) {
+        if (f.size > MAX_SIZE) { errors.push(f.name + ' is over 5 MB'); return; }
+        var dup = files.some(function (x) { return x.name === f.name && x.size === f.size; });
+        if (!dup) files.push(f);
+      });
+      if (errors.length) { errorEl.textContent = errors.join(' · '); errorEl.style.display = 'block'; }
+      render();
+    }
+
+    function render() {
+      listEl.innerHTML = '';
+      files.forEach(function (f, idx) {
+        var chip = document.createElement('div');
+        chip.className = 'file-chip';
+        chip.innerHTML =
+          '<span class="file-chip-name">' + esc(f.name) + '</span>' +
+          '<span class="file-chip-size">' + fmt(f.size) + '</span>' +
+          '<button type="button" class="file-chip-remove" aria-label="Remove ' + esc(f.name) + '">&times;</button>';
+        chip.querySelector('.file-chip-remove').addEventListener('click', function () {
+          files.splice(idx, 1); render();
+        });
+        listEl.appendChild(chip);
+      });
+    }
+
+    return { getFiles: function () { return files; } };
+  }
+
+  var logoUploader  = makeUploader('logo-zone',  'logo-input',  'logo-file-list',  'logo-upload-error');
+  var guideUploader = makeUploader('guide-zone', 'guide-input', 'guide-file-list', 'guide-upload-error');
+
+  function fmt(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1048576) return (bytes / 1024).toFixed(0) + ' KB';
+    return (bytes / 1048576).toFixed(1) + ' MB';
+  }
+  function esc(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Build services summary for hidden field ───────────────────────────────
+  function buildServicesData() {
+    var services = [];
+    document.querySelectorAll('.service-card').forEach(function (card, i) {
+      var num = i + 1;
+      var name     = (card.querySelector('[name^="service_name_"]')  || {}).value || '';
+      var price    = (card.querySelector('[name^="service_price_"]') || {}).value || '';
+      var desc     = (card.querySelector('[name^="service_desc_"]')  || {}).value || '';
+      var dispEl   = card.querySelector('[name^="service_pricing_display_"]:checked');
+      var disp     = dispEl ? dispEl.value : '';
+      if (name.trim()) {
+        services.push('Service ' + num + ': ' + name.trim() +
+          (price ? ' | Price: ' + price.trim() : '') +
+          (disp  ? ' | Display: ' + disp       : '') +
+          (desc  ? ' | ' + desc.trim()          : ''));
+      }
+    });
+    return services.join('\n');
+  }
+
+  // ── Submit ────────────────────────────────────────────────────────────────
+  document.getElementById('submit-btn').addEventListener('click', async function () {
+    var form  = document.getElementById('intake-form');
+    var name  = form.querySelector('[name="name"]').value.trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var biz   = form.querySelector('[name="business_name"]').value.trim();
+
+    if (!name || !email || !biz) {
+      var missing = [];
+      if (!name)  missing.push('your name');
+      if (!email) missing.push('your email');
+      if (!biz)   missing.push('your business name');
+      alert('Please fill in: ' + missing.join(', ') + '.');
+      return;
+    }
+
+    // Build services summary
+    document.getElementById('services-data').value = buildServicesData();
+
+    // Gather selected contact form fields
+    var fields = [];
+    form.querySelectorAll('[name="contact_fields"]:checked').forEach(function (cb) { fields.push(cb.value); });
+
+    var fd = new FormData();
+
+    // Core fields
+    fd.append('name',            name);
+    fd.append('email',           email);
+    fd.append('business_name',   biz);
+    fd.append('industry',        form.querySelector('[name="industry"]').value.trim()         || '(not provided)');
+    fd.append('address',         form.querySelector('[name="address"]').value.trim()          || '(not provided)');
+    fd.append('phone',           form.querySelector('[name="phone"]').value.trim()            || '(not provided)');
+    fd.append('current_website', form.querySelector('[name="current_website"]').value.trim()  || '(not provided)');
+    fd.append('ideal_client',    form.querySelector('[name="ideal_client"]').value.trim()     || '(not provided)');
+    fd.append('differentiator',  form.querySelector('[name="differentiator"]').value.trim()   || '(not provided)');
+
+    // Brand
+    fd.append('brand_colors',       form.querySelector('[name="brand_colors"]').value.trim()       || '(not provided)');
+    fd.append('brand_fonts',        form.querySelector('[name="brand_fonts"]').value.trim()        || '(not provided)');
+    fd.append('brand_vibe',         form.querySelector('[name="brand_vibe"]').value.trim()         || '(not provided)');
+    fd.append('inspiration_sites',  form.querySelector('[name="inspiration_sites"]').value.trim()  || '(not provided)');
+    fd.append('competitor_sites',   form.querySelector('[name="competitor_sites"]').value.trim()   || '(not provided)');
+
+    // Contact form fields
+    fd.append('contact_form_fields', fields.length ? fields.join(', ') : '(none selected)');
+    fd.append('custom_form_fields',  form.querySelector('[name="custom_form_fields"]').value.trim() || '(none)');
+
+    // Services
+    fd.append('services', document.getElementById('services-data').value || '(none provided)');
+
+    // Photos
+    fd.append('has_photos',   document.getElementById('has-photos').value || '(not answered)');
+    fd.append('photo_notes',  form.querySelector('[name="photo_notes"]')  ? form.querySelector('[name="photo_notes"]').value.trim()  : '');
+    fd.append('photo_plan',   form.querySelector('[name="photo_plan"]')   ? form.querySelector('[name="photo_plan"]').value.trim()   : '');
+
+    // Social
+    fd.append('instagram',    form.querySelector('[name="instagram"]').value.trim()    || '');
+    fd.append('facebook',     form.querySelector('[name="facebook"]').value.trim()     || '');
+    fd.append('linkedin',     form.querySelector('[name="linkedin"]').value.trim()     || '');
+    fd.append('tiktok',       form.querySelector('[name="tiktok"]').value.trim()       || '');
+    fd.append('pinterest',    form.querySelector('[name="pinterest"]').value.trim()    || '');
+    fd.append('other_social', form.querySelector('[name="other_social"]').value.trim() || '');
+
+    // Anything else
+    fd.append('anything_else', form.querySelector('[name="anything_else"]').value.trim() || '(none)');
+
+    // Subject
+    fd.append('_subject', 'New client questionnaire from ' + name + ' — ' + biz);
+
+    // File attachments
+    logoUploader.getFiles().forEach(function (f)  { fd.append('logo', f); });
+    guideUploader.getFiles().forEach(function (f) { fd.append('brand_guidelines', f); });
+
+    var btn = this;
+    btn.disabled = true;
+    btn.textContent = 'Submitting\u2026';
+
+    try {
+      var res = await fetch('https://formspree.io/f/mdawoyyo', {
+        method:  'POST',
+        headers: { 'Accept': 'application/json' },
+        body:    fd
+      });
+      if (res.ok) {
+        document.getElementById('main-wrap').style.display = 'none';
+        document.getElementById('submit-bar').style.display = 'none';
+        document.getElementById('success-state').classList.add('active');
+        window.scrollTo(0, 0);
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Questionnaire';
+        alert('Something went wrong. Please try again or email us at hello@simplerabbit.studio.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Submit Questionnaire';
+      alert('Something went wrong. Please try again or email us at hello@simplerabbit.studio.');
+    }
+  });
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services · Simple Rabbit</title>
+  <meta name="description" content="Custom website design starting at $4,800. We build sites that attract premium clients, communicate your value instantly, and grow with your business.">
+  <meta property="og:title" content="Services · Simple Rabbit">
+  <meta property="og:description" content="Custom website design starting at $4,800. We build sites that attract premium clients and charge what you deserve.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/services">
+  <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/services">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .grid-2-center{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
+    .grid-split{display:grid;grid-template-columns:1fr 1fr;}
+    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input::placeholder{color:var(--mid);}
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
+    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;transition:background 0.2s;}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .grid-2,.grid-2-center,.grid-3,.grid-split{grid-template-columns:1fr!important;gap:40px!important;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:600px){
+      .mobile-cta-bar{display:block!important;}
+    }
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
+    .mobile-nav a:hover{color:var(--black);}
+    .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
+    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+
+    /* Hover micro-animations */
+    .approach-card{transition:background 0.2s,border-color 0.2s;}
+    .approach-card:hover{background:var(--white);}
+    .process-step{transition:background 0.2s;}
+    .process-step:hover{background:var(--tone);}
+    .list-row{transition:color 0.15s;}
+    .list-row:hover{color:var(--black);}
+    .list-row .arrow{display:inline-block;transition:transform 0.2s;}
+    .list-row:hover .arrow{transform:translateX(4px);}
+    .offer-panel{transition:background 0.2s;}
+    .offer-panel:hover{background:var(--white);}
+  </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.svg" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+</div>
+
+<!-- 1. HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:820px;margin:0 auto;">
+    <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Websites built to</h1>
+    <p style="font-family:var(--font-display);font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;color:var(--mid);margin-bottom:36px;font-weight:400;">charge what you deserve</p>
+    <p style="font-size:18px;font-weight:300;line-height:1.7;color:var(--dark);max-width:520px;margin:0 auto 44px;">Custom design. Built-in SEO. A site that does the selling before anyone picks up the phone.</p>
+    <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+  </div>
+</section>
+
+<!-- 2. OUR APPROACH -->
+<section class="reveal sp" style="background:var(--tone);padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">Our approach</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:760px;margin-bottom:64px;">We don't just make sites look good. We build tools that attract better clients.</h2>
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div class="approach-card" style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <span class="overline">conversion first</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">Built to book clients</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Every design decision is made to move the right visitor toward reaching out. Aesthetics matter, but they answer to strategy.</p>
+      </div>
+      <div class="approach-card" style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <span class="overline">design &amp; experience</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">Premium, not just pretty</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Clean, intentional, and built to match where you're going, not where you've been. Your site should feel like the next level of your business.</p>
+      </div>
+      <div class="approach-card" style="padding:48px 40px;border-right:1px solid var(--light-border);">
+        <span class="overline">brand &amp; reputation</span>
+        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:16px;">Proof of your expertise</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Your website becomes the evidence that you're the best in your field. It filters in ideal clients automatically, and filters out everyone else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. THE OFFERING -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">What we build</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Two ways to work together.</h2>
+    <div class="grid-split" style="border:1px solid var(--light-border);">
+
+      <!-- Website Design -->
+      <div style="padding:56px 48px;border-right:1px solid var(--light-border);">
+        <h3 style="font-size:clamp(24px,2.5vw,32px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Custom Website Build</h3>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $4,800</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">A fully custom website designed around your business, your clients, and your goals. Built to attract, convert, and grow with you.</p>
+        <ul style="list-style:none;margin-bottom:40px;">
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Custom design, no templates</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>SEO built in from day one</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Schema markup for AI &amp; Google visibility</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Strategic copy guidance</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Mobile-optimized &amp; fast</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Contact form &amp; lead capture</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Launch support &amp; Google submission</li>
+        </ul>
+        <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+      </div>
+
+      <!-- Ongoing Support -->
+      <div style="padding:56px 48px;background:var(--tone);">
+        <h3 style="font-size:clamp(24px,2.5vw,32px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Monthly Partnership</h3>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $149/month &middot; Available after launch</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">Your business keeps evolving. Your website should too. Stay on as an ongoing partner so your site always reflects where you're headed.</p>
+        <ul style="list-style:none;margin-bottom:40px;">
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Content &amp; copy updates</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>New page builds</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>SEO monitoring &amp; improvements</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Technical maintenance</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Priority access &amp; fast turnaround</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Consulting sessions <span style="font-size:12px;color:var(--mid);align-self:center;">(optional add-on)</span></li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Blog post writing &amp; publishing <span style="font-size:12px;color:var(--mid);align-self:center;">(optional add-on)</span></li>
+        </ul>
+        <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. WHO IT'S FOR -->
+<section class="reveal sp" style="background:var(--tone);padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="grid-2-center">
+
+      <div>
+        <img src="service-image-2.png" alt="Simple Rabbit studio" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;">
+      </div>
+
+      <div>
+        <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:24px;">This is for you if&hellip;</h2>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">We do our best work with service business owners who are ready to grow, not just get online. Here's what that usually looks like.</p>
+        <ul style="list-style:none;">
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:16px 0;border-bottom:1px solid var(--light-border);display:flex;gap:16px;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>You've been in business for a few years and have results to show for it</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:16px 0;border-bottom:1px solid var(--light-border);display:flex;gap:16px;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>You're ready to raise your prices or attract a higher-caliber client</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:16px 0;border-bottom:1px solid var(--light-border);display:flex;gap:16px;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>You want a website that does the selling before anyone picks up the phone</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:16px 0;border-bottom:1px solid var(--light-border);display:flex;gap:16px;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>You're tired of explaining your value, you want your site to do it for you</li>
+          <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:16px 0;display:flex;gap:16px;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>You have a clear sense of who you serve and what you offer</li>
+        </ul>
+        <p style="font-size:13px;line-height:1.75;color:var(--mid);margin-top:24px;font-style:italic;">We're not the cheapest option, we're the one that pays for itself. If you're just starting out and need something low-cost to get online, we're probably not the right fit yet.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 5. HOW IT WORKS -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline" style="text-align:center;display:block;">The process</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;text-align:center;margin-bottom:16px;">Simple. Intentional. No surprises.</h2>
+    <p style="font-size:15px;font-weight:300;color:var(--dark);line-height:1.75;text-align:center;max-width:520px;margin:0 auto 64px;">Most projects are complete in 4&ndash;6 weeks from kickoff. Here's exactly how it goes.</p>
+    <div style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);max-width:900px;margin:0 auto;">
+      <div class="grid-2" style="gap:0!important;align-items:stretch!important;">
+        <div class="process-step" style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);margin-bottom:16px;">01</div>
+          <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Discovery call</h3>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">A 30-minute conversation. We learn your business, your clients, and what's not working. You learn our process. We decide together if it's the right fit.</p>
+        </div>
+        <div class="process-step" style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);margin-bottom:16px;">02</div>
+          <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Proposal &amp; agreement</h3>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">We send a detailed proposal outlining scope, timeline, and investment. Once you're ready to move forward, we sign the agreement and get started.</p>
+        </div>
+        <div class="process-step" style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);margin-bottom:16px;">03</div>
+          <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Questionnaire &amp; kick-off</h3>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">You complete a focused questionnaire about your business, clients, and goals. Then we meet for a 45-minute kick-off call to align on direction before anything is built.</p>
+        </div>
+        <div class="process-step" style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);margin-bottom:16px;">04</div>
+          <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Strategy &amp; copy</h3>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">We map the site structure and sharpen your messaging before a single page is designed. The words come first. The design serves them.</p>
+        </div>
+        <div class="process-step" style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);margin-bottom:16px;">05</div>
+          <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Design &amp; build</h3>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">We design, build, and optimize your full site. You review at key milestones. Revisions are part of the process, not a negotiation.</p>
+        </div>
+        <div class="process-step" style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);margin-bottom:16px;">06</div>
+          <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Launch &amp; support</h3>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">We launch, submit to Google, and stay available as your partner. When your business changes, your site should change with it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA BLOCK -->
+<section class="reveal" style="background:var(--black);padding:100px 48px;text-align:center;">
+  <div style="max-width:520px;margin:0 auto;">
+    <span class="overline" style="color:rgba(255,255,255,0.4);">Next step</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;color:var(--white);margin-bottom:20px;">Ready to stop blending in?</h2>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:40px;">Book a free 30-minute strategy call. Let's have an honest conversation about your business and whether we're the right fit to work together.</p>
+    <a href="/contact" style="display:inline-block;padding:14px 40px;background:var(--white);color:var(--black);font-family:var(--font-body);font-size:14px;font-weight:500;text-decoration:none;transition:background 0.2s;">Book My Free Call &rarr;</a>
+  </div>
+</section>
+
+<!-- 7. NEWSLETTER -->
+<section class="reveal" style="border-bottom:1px solid var(--light-border);">
+  <div class="grid-split">
+    <div style="background:var(--black);padding:80px 64px;">
+      <span class="overline" style="color:rgba(255,255,255,0.4);">About</span>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;color:var(--white);margin-bottom:20px;">We make websites that work harder than they look.</h2>
+      <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.7);margin-bottom:32px;">Every design decision we make is intentional. We build for trust, visibility, and conversion, not just aesthetics.</p>
+      <a href="/about" style="color:var(--white);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:2px;">Learn more &rarr;</a>
+    </div>
+    <div style="background:var(--tone);padding:80px 64px;border-left:1px solid var(--light-border);">
+      <span class="overline">Newsletter</span>
+      <h3 style="font-size:clamp(28px,3.5vw,42px);line-height:1.15;font-weight:400;letter-spacing:-1px;margin-bottom:16px;">Join The Hutch</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">SEO insights, web design thinking, and the occasional behind-the-scenes look at what we're building.</p>
+      <form id="newsletter-form" style="display:flex;">
+        <input type="email" name="email" required class="form-input" style="flex:1;">
+        <button type="submit" style="background:var(--black);color:var(--white);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+    <a href="tel:5514862779" class="footer-link">551.486.2779</a>
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<!-- MOBILE CTA BAR -->
+<div class="mobile-cta-bar">
+  <a href="/contact">Book a Call &rarr;</a>
+</div>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
+
+  // Newsletter form
+  document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const emailVal = this.email.value;
+    await Promise.allSettled([
+      fetch('https://formspree.io/f/mlgpewwb', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, type: 'newsletter signup' })
+      }),
+      fetch('/newsletter-proxy.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal })
+      })
+    ]);
+    this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
+  });
+</script>
+<script>
+var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
+if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Website Design",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Simple Rabbit",
+    "url": "https://simplerabbit.studio"
+  },
+  "description": "Custom website design for service businesses. Built with SEO, schema markup, and AI visibility to attract premium clients.",
+  "offers": {
+    "@type": "Offer",
+    "price": "4800",
+    "priceCurrency": "USD",
+    "description": "Custom website design starting at $4,800"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Bergen County, NJ"
+  }
+}
+</script>
+
+</body>
+</html>

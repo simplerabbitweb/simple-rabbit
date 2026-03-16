@@ -8,3 +8,6 @@ simple-rabbit-website-copy.md
 writing-rules-seo-geo.md
 deploy.sh
 .env.deploy
+**/.env
+.env
+audit-proxy.php

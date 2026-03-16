@@ -28,8 +28,6 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
@@ -81,7 +79,7 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
     .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:var(--black);}
     .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--black);z-index:200;}
-    .mobile-cta-bar a{display:block;text-align:center;color:var(--white);text-decoration:none;font-size:14px;font-weight:500;padding:18px;letter-spacing:0.5px;}
+    .mobile-cta-bar a{display:block;text-align:center;color:var(--black);text-decoration:none;font-size:14px;font-weight:500;padding:18px;letter-spacing:0.5px;}
     @media(max-width:900px){
       .article-header{padding:48px 32px 40px;}
       .article-body{padding:48px 32px 64px;}
@@ -108,6 +106,13 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
     .mobile-nav a:hover{color:var(--black);}
     .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    .article-cta{background:var(--black);color:var(--white);padding:80px 48px;text-align:center;}
+    .article-cta h3{font-size:clamp(24px,3vw,32px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:20px;color:var(--white);font-family:var(--font-display);font-weight:400;}
+    .article-cta p{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.8);margin:0 auto 36px;max-width:560px;}
+    .article-cta-btn{display:inline-block;background:var(--white);color:var(--black);padding:16px 48px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;}
+    .article-cta-btn:hover{background:#e8e8e8;}
+    @media(max-width:900px){.article-cta{padding:64px 32px;}}
+    @media(max-width:600px){.article-cta{padding:48px 24px;}.article-cta h3{font-size:22px;}}
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
@@ -127,9 +132,10 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
     <div class="nav-links">
       <a href="/about">About</a>
       <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
       <a href="/articles">Articles</a>
       <a href="/contact">Contact</a>
-      <a href="/contact" class="nav-cta">Get a Quote</a>
+      <a href="/contact" class="nav-cta">Book a Call</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -137,9 +143,10 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
   <a href="/articles">Articles</a>
   <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Get a Quote</a>
+  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
 </div>
 
 <!-- ARTICLE HEADER -->
@@ -165,7 +172,7 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 
   <p>Most of the time, pricing isn't the problem. The website is.</p>
 
-  <p>This post is about the direct connection between professional website design and pricing power — what your site signals to every potential client before you've said a word, and three specific things that create rate pushback that most business owners never connect to their web presence.</p>
+  <p>This post is about the direct connection between professional website design and pricing power, what your site signals to every potential client before you've said a word, and three specific things that create rate pushback that most business owners never connect to their web presence.</p>
 
   <h2>Why pricing conversations start on your website</h2>
 
@@ -173,7 +180,7 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 
   <p>The <a href="https://credibility.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford Web Credibility Research Project</a> found that <strong>75% of people judge a company's credibility based on its website design</strong>. Before a prospect reads a testimonial or reviews your portfolio, the design has already shaped their expectation of what you should cost. A site that looks like it was built in a few hours on a free platform signals one thing: this business hasn't invested in how it presents itself. And when a business hasn't invested in its own presentation, clients expect pricing to reflect that.</p>
 
-  <p>This isn't a conscious process for most people. They don't think "this website looks cheap, so I'll offer less." They just arrive at a number in their head — a number anchored by what your site told them before you opened your mouth.</p>
+  <p>This isn't a conscious process for most people. They don't think "this website looks cheap, so I'll offer less." They just arrive at a number in their head, a number anchored by what your site told them before you opened your mouth.</p>
 
   <h2>What your website is telling clients about your prices</h2>
 
@@ -207,9 +214,9 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 
   <p><strong>Mismatched visual quality.</strong> If your portfolio shows impressive work but your website looks like it was built quickly on a budget template, clients experience a credibility gap they can't easily explain. They just feel uncertain. When people feel uncertain, they hesitate, negotiate, or walk.</p>
 
-  <p><strong>Missing proof.</strong> If your website has no testimonials, no case studies, and no visible evidence of real results, clients have to take your word for your pricing. Every piece of social proof you add removes one more reason for them to doubt you. You can see how <a href="/portfolio">Simple Rabbit approaches this with real client work</a> — showing the actual websites built, not just a description of the service.</p>
+  <p><strong>Missing proof.</strong> If your website has no testimonials, no case studies, and no visible evidence of real results, clients have to take your word for your pricing. Every piece of social proof you add removes one more reason for them to doubt you. You can see how <a href="/portfolio">Simple Rabbit approaches this with real client work</a>, showing the actual websites built, not just a description of the service.</p>
 
-  <p><strong>Wrong positioning.</strong> A website trying to appeal to everyone signals that you'll work with anyone. That makes price negotiation feel reasonable to the client. A website that speaks directly to a specific client with a specific problem commands a specific rate. "We help ambitious women service business owners stop blending in and start booking premium clients" converts differently than "we build websites for businesses of all sizes."</p>
+  <p><strong>Wrong positioning.</strong> A website trying to appeal to everyone signals that you'll work with anyone. That makes price negotiation feel reasonable to the client. A website that speaks directly to a specific client with a specific problem commands a specific rate. "We help ambitious service business owners stop blending in and start booking premium clients" converts differently than "we build websites for businesses of all sizes."</p>
 
   <h2>What changes when your website matches your rates</h2>
 
@@ -225,23 +232,27 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 
   <p>You don't need an expert audit to answer this. Ask yourself one question: if a client sees only your website and nothing else, does it justify what you charge?</p>
 
-  <p>If you find yourself mentally adding qualifications — "well, they'd need to see my work" or "once they talk to me it all makes sense" — your website is already creating a gap your sales process has to work to close.</p>
+  <p>If you find yourself mentally adding qualifications, like "well, they'd need to see my work" or "once they talk to me it all makes sense," your website is already creating a gap your sales process has to work to close.</p>
 
   <p>That gap has a cost. It shows up in extra calls, in discounts you didn't plan to offer, in clients who seemed interested and then disappeared. A professional website for your service business should make the pricing conversation easier before it starts, not harder once it's already underway.</p>
 
   <p>Also worth reading: <a href="bergen-county-web-design.html">why Bergen County service businesses are losing clients to their own website</a>, which covers the broader credibility and visibility side of the same problem.</p>
 
-  <hr>
-
-  <h3>Your website should be justifying your rates, not undercutting them</h3>
-  <p>Simple Rabbit builds websites that signal expertise and attract clients who are already sold before the first call. <a href="/contact">Get a quote</a> and we'll tell you exactly what your current site is communicating and what it would take to change it.</p>
 
 </article>
+
+<section class="article-cta reveal">
+  <h3>Your website should be justifying your rates, not undercutting them</h3>
+  <p>Simple Rabbit builds websites that signal expertise and attract clients who are already sold before the first call.</p>
+  <a href="/contact" class="article-cta-btn">Book a Call</a>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
   <div style="display:flex;gap:24px;align-items:center;">
+    <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+    <a href="tel:5514862779" class="footer-link">551.486.2779</a>
     <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
     <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
     <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
@@ -249,7 +260,7 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 </footer>
 
 <div class="mobile-cta-bar">
-  <a href="/contact">Start a Project &rarr;</a>
+  <a href="/contact">Book a Call &rarr;</a>
 </div>
 
 <script type="application/ld+json">
@@ -319,6 +330,32 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
 if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://simplerabbit.studio/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "https://simplerabbit.studio/articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why a Better Website Lets You Charge More",
+      "item": "https://simplerabbit.studio/blog/charge-more-better-website"
+    }
+  ]
+}
 </script>
 </body>
 </html>
