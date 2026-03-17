@@ -458,19 +458,27 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
-      const res = await fetch('https://formspree.io/f/mojndlrg', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: this.name.value,
-          email: this.email.value,
-          website: this.website.value,
-          budget: this.budget.value,
-          town: this.town.value,
-          message: this.message.value,
-          source: 'Bergen County service page'
-        })
-      });
+      const formEmail = this.email.value;
+      const [res] = await Promise.all([
+        fetch('https://formspree.io/f/mojndlrg', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: this.name.value,
+            email: formEmail,
+            website: this.website.value,
+            budget: this.budget.value,
+            town: this.town.value,
+            message: this.message.value,
+            source: 'Bergen County service page'
+          })
+        }),
+        fetch('/newsletter-proxy.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: formEmail })
+        }).catch(() => {})
+      ]);
       if (res.ok) {
         window.location.href = '/thank-you';
       } else {
