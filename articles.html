@@ -52,16 +52,12 @@
     footer{display:flex;justify-content:space-between;align-items:center;padding:32px 48px;border-top:1px solid var(--light-border);font-size:13px;}
     .footer-link{color:var(--mid);text-decoration:none;font-size:13px;transition:color 0.2s;}
     .footer-link:hover{color:var(--black);}
-    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--black);z-index:200;}
-    .mobile-cta-bar a{display:block;text-align:center;color:var(--black);text-decoration:none;font-size:14px;font-weight:500;padding:18px;letter-spacing:0.5px;}
     @media(max-width:900px){
       .article-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
       .nav-inner{padding:0 24px;}
       footer{padding:24px;}
     }
     @media(max-width:600px){
-      .mobile-cta-bar{display:block;}
-      body{padding-bottom:60px;}
       .article-grid{grid-template-columns:1fr;gap:20px;}
       footer{flex-direction:column;gap:12px;text-align:center;}
     }
@@ -74,7 +70,6 @@
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--black);}
-    .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
   </style>
   <!-- Google Analytics -->
@@ -97,8 +92,7 @@
       <a href="/about" class="nav-link-about nav-link-hide">About</a>
       <a href="/portfolio" class="nav-link-portfolio nav-link-hide">Portfolio</a>
       <a href="/articles" style="color:var(--black);">Articles</a>
-      <a href="/contact" class="nav-link-hide">Contact</a>
-      <a href="/contact" class="nav-cta">Book a Call</a>
+      <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -108,8 +102,6 @@
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
 </div>
 
 <!-- 1. HERO -->
@@ -285,7 +277,7 @@
   <div style="max-width:520px;margin:0 auto;">
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Ready to book better clients?</h2>
     <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:36px;">Let's build a website that does the selling for you</h3>
-    <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+    <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
   </div>
 </section>
 
@@ -300,10 +292,6 @@
     <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
   </div>
 </footer>
-
-<div class="mobile-cta-bar">
-  <a href="/contact">Book a Call &rarr;</a>
-</div>
 
 <script>
   const obs = new IntersectionObserver(entries => {

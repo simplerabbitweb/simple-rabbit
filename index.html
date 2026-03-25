@@ -60,8 +60,6 @@
     footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
     .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:var(--black);}
-    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
-    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;transition:background 0.2s;}
     @media(max-width:900px){
       .nav-inner{padding:0 24px;}
       .sp{padding-left:24px!important;padding-right:24px!important;}
@@ -71,7 +69,6 @@
       footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
     }
     @media(max-width:600px){
-      .mobile-cta-bar{display:block!important;}
       .form-row{grid-template-columns:1fr!important;}
     }
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
@@ -83,7 +80,6 @@
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--black);}
-    .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
   </style>
   <!-- Google Analytics -->
@@ -108,8 +104,7 @@
       <a href="/portfolio" class="nav-link-portfolio">Portfolio</a>
       <a href="/services">Services</a>
       <a href="/articles">Articles</a>
-      <a href="/contact">Contact</a>
-      <a href="/contact" class="nav-cta">Book a Call</a>
+      <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -119,8 +114,6 @@
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
 </div>
 
 <!-- 1. HERO -->
@@ -129,7 +122,7 @@
     <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Charge more</h1>
     <p style="font-family:var(--font-display);font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;color:var(--mid);margin-bottom:36px;font-weight:400;">without the pushback</p>
     <p style="font-size:18px;font-weight:300;line-height:1.7;color:var(--dark);max-width:520px;margin:0 auto 44px;">Websites that attract clients who see your value instantly</p>
-    <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+    <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
   </div>
 </section>
 
@@ -185,7 +178,7 @@
         <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Make more money by charging what you deserve without question</li>
         <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Fall back in love with your business because you're only working with the right kind of clients</li>
       </ul>
-      <a href="/contact" class="btn-primary">Book a Call</a>
+      <a href="/contact" class="btn-primary">Work With Us</a>
     </div>
     <div style="background:var(--black);padding:60px 48px;">
       <p style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);line-height:1.5;font-style:italic;color:var(--white);">"Your website should be working as hard as you are &mdash; attracting clients who already see your value before they ever reach out."</p>
@@ -426,11 +419,6 @@
     <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
   </div>
 </footer>
-
-<!-- 13. MOBILE CTA BAR -->
-<div class="mobile-cta-bar">
-  <a href="/contact">Book a Call &rarr;</a>
-</div>
 
 <script>
   // Scroll reveal
