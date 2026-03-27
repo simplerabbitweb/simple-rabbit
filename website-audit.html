@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website & Google Presence Audit. $297 | Simple Rabbit</title>
+  <meta name="description" content="A complete audit of your website and Google presence, written report and personalized video walkthrough, delivered in 5 business days. Only $297.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#f7f7f8;
+      --accent:#0872cc;--accent-dark:#0660ab;--accent-light:#c2cdff;
+      --mid:#949698;--dark:#4c4c4b;--light-border:#dfe0e1;
+      --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAV */
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--light-border);z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+
+    /* BUTTONS */
+    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+
+    /* OVERLINE */
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+
+    /* LAYOUT */
+    .sp{padding-left:48px;padding-right:48px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
+    .grid-split{display:grid;grid-template-columns:1fr 1fr;}
+
+    /* FORM */
+    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input::placeholder{color:var(--mid);}
+    .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
+    .form-group{margin-bottom:28px;}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:var(--black);}
+
+    /* MOBILE */
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--light-border);padding:12px 24px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;}
+    .mobile-cta-bar a{display:block;background:var(--black);color:var(--white);text-align:center;padding:14px;font-size:14px;font-weight:500;text-decoration:none;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
+    .mobile-nav-cta{background:var(--black)!important;color:var(--white)!important;text-align:center;margin:24px!important;border-bottom:none!important;font-weight:500!important;}
+
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .grid-2,.grid-3,.grid-split{grid-template-columns:1fr!important;gap:40px!important;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+    }
+    @media(max-width:768px){
+      .hamburger{display:flex!important;}
+      .nav-links{display:none!important;}
+      .nav-inner a img{max-height:44px!important;}
+    }
+    @media(max-width:600px){
+      .mobile-cta-bar{display:block!important;}
+      body{padding-bottom:calc(68px + env(safe-area-inset-bottom));}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.svg" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+</div>
+
+<!-- 1. HERO -->
+<section class="reveal sp" style="padding:120px 48px 100px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:820px;margin:0 auto;">
+    <span class="overline" style="display:block;text-align:center;margin-bottom:20px;">One-time &middot; $297 &middot; No recurring fees</span>
+    <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Stop guessing why your site</h1>
+    <p style="font-family:var(--font-display);font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;color:var(--mid);font-weight:400;margin-bottom:36px;">isn't converting or ranking</p>
+    <p style="font-size:18px;font-weight:300;line-height:1.7;color:var(--dark);max-width:520px;margin:0 auto 44px;">A complete audit of your entire website and Google presence, written report and personalized video walkthrough, delivered in 5 business days.</p>
+    <a href="https://buy.stripe.com/3cIaEZd7wgPYaqM2kU9R602" class="btn-primary">Get My Audit. $297 &rarr;</a>
+  </div>
+</section>
+
+<!-- 2. BANNER -->
+<div style="background:var(--tone);padding:18px 48px;text-align:center;border-bottom:1px solid var(--light-border);">
+  <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);">Full Website Review &middot; Technical SEO &middot; Google Business Profile &middot; Search Console &middot; PDF Report &middot; Private Video</span>
+</div>
+
+<!-- 3. WHAT'S INCLUDED -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">What you get</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:760px;margin-bottom:16px;">Two deliverables. Thousands in potential value.</h2>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:520px;margin-bottom:64px;">Not a generic checklist. A real, hands-on audit built specifically around your site, delivered two ways so nothing gets lost in translation.</p>
+    <div class="grid-split" style="border:1px solid var(--light-border);">
+
+      <!-- Report -->
+      <div style="padding:56px 48px;border-right:1px solid var(--light-border);">
+        <span class="overline">Deliverable 01</span>
+        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Written Audit Report</h3>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">PDF &middot; Screenshots included &middot; Yours to keep</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">A polished, professional document with screenshots, annotations, and exact steps. Ready to hand off to your developer or work through yourself.</p>
+        <ul style="list-style:none;">
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Every page reviewed and scored</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Technical SEO findings with priority level</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Screenshots of exact issues</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Step-by-step fix instructions</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Quick-win opportunities highlighted</li>
+        </ul>
+      </div>
+
+      <!-- Video -->
+      <div style="padding:56px 48px;background:var(--tone);">
+        <span class="overline">Deliverable 02</span>
+        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Private Video Walkthrough</h3>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">15–25 minutes &middot; Screen-share &middot; Private link</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">A screen-share recording where I walk through the biggest opportunities on your actual site, so you see exactly what I see and why it matters.</p>
+        <ul style="list-style:none;">
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Personalized to your site and industry</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Screen share so nothing is abstract</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Context behind each recommendation</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>Private link, yours to keep forever</li>
+          <li style="font-size:15px;line-height:1.75;color:var(--dark);padding:14px 0;display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;">&rarr;</span>No jargon, no filler</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. ORDER FORM -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);" id="order">
+  <div class="grid-2" style="max-width:1100px;margin:0 auto;">
+
+    <div>
+      <span class="overline">Ready to get started?</span>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:20px;">Get a complete picture of your site and Google presence.</h2>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:380px;margin-bottom:40px;">Fill out the form and I'll be in touch within 24 hours to confirm your order and send a short intake questionnaire.</p>
+      <div style="border-top:1px solid var(--light-border);">
+        <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-border);align-items:flex-start;">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;">Investment</span>
+          <span style="font-size:15px;color:var(--dark);">$297 one-time &middot; No recurring fees</span>
+        </div>
+        <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-border);align-items:flex-start;">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;">Turnaround</span>
+          <span style="font-size:15px;color:var(--dark);">5 business days</span>
+        </div>
+        <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-border);align-items:flex-start;">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;">Deliverables</span>
+          <span style="font-size:15px;color:var(--dark);">PDF report + private video walkthrough</span>
+        </div>
+        <div style="display:flex;gap:16px;padding:16px 0;align-items:flex-start;">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;">Ownership</span>
+          <span style="font-size:15px;color:var(--dark);">100% yours to keep and share</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="width:100%;aspect-ratio:4/3;background:var(--tone);border:1px solid var(--light-border);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);">Image placeholder</span>
+      </div>
+      <a href="https://buy.stripe.com/3cIaEZd7wgPYaqM2kU9R602" class="btn-primary" style="display:block;text-align:center;padding:18px 40px;font-size:15px;">Get My Audit. $297 &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-link" style="cursor:default;">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
+  <div style="display:flex;gap:24px;align-items:center;">
+    <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+    <a href="tel:5514862779" class="footer-link">551.486.2779</a>
+    <a href="mailto:hello@simplerabbit.studio" class="footer-link">hello@simplerabbit.studio</a>
+    <a href="https://instagram.com/leannmfrank" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" class="footer-link">Facebook</a>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="https://buy.stripe.com/3cIaEZd7wgPYaqM2kU9R602">Get My Audit. $297 &rarr;</a>
+</div>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
+</script>
+<script>
+var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
+if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+</script>
+</body>
+</html>
