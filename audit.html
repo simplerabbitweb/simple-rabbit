@@ -73,7 +73,7 @@
 
     @media(max-width:900px){
       .nav-inner{padding:0 24px;}
-      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}footer>div{flex-wrap:wrap;justify-content:center;gap:12px;}
     }
     @media(max-width:768px){
       .hamburger{display:flex!important;}
@@ -93,8 +93,7 @@
       <a href="/portfolio">Portfolio</a>
       <a href="/services">Services</a>
       <a href="/articles">Articles</a>
-      <a href="/contact">Contact</a>
-      <a href="/contact" class="nav-cta">Book a Call</a>
+      <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -104,8 +103,7 @@
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+  <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
 
 <!-- AUDIT APP -->
@@ -289,9 +287,6 @@
                 onChange={e => setEmail(e.target.value)}
                 placeholder="your@email.com"
               />
-              <p style={{ fontSize: 11, color: mid, textAlign: "left", marginTop: -4, lineHeight: 1.5 }}>
-                By submitting, you're signing up for occasional emails from Simple Rabbit. You can unsubscribe from any email we send.
-              </p>
               <div style={{ display: "flex", border: `1px solid ${lightBorder}` }}>
                 <input
                   type="url"

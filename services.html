@@ -59,7 +59,7 @@
       .nav-inner{padding:0 24px;}
       .sp{padding-left:24px!important;padding-right:24px!important;}
       .grid-2,.grid-2-center,.grid-3,.grid-split{grid-template-columns:1fr!important;gap:40px!important;}
-      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}footer>div{flex-wrap:wrap;justify-content:center;gap:12px;}
     }
     @media(max-width:600px){
       .mobile-cta-bar{display:block!important;}
@@ -92,6 +92,11 @@
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BANNER -->
+<div style="background:var(--black);color:var(--white);text-align:center;padding:10px 24px;font-size:13px;font-family:var(--font-body);letter-spacing:0.2px;">
+  Now booking website + Google audits &mdash; <a href="/audit" style="color:var(--white);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:500;">Learn more &rarr;</a>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
@@ -101,8 +106,7 @@
       <a href="/portfolio">Portfolio</a>
       <a href="/services">Services</a>
       <a href="/articles">Articles</a>
-      <a href="/contact">Contact</a>
-      <a href="/contact" class="nav-cta">Book a Call</a>
+      <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -112,8 +116,7 @@
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+  <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
 
 <!-- 1. HERO -->
@@ -122,7 +125,7 @@
     <h1 style="font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;margin-bottom:12px;">Websites built to</h1>
     <p style="font-family:var(--font-display);font-size:clamp(44px,6vw,72px);letter-spacing:-2px;line-height:1.06;color:var(--mid);margin-bottom:36px;font-weight:400;">charge what you deserve</p>
     <p style="font-size:18px;font-weight:300;line-height:1.7;color:var(--dark);max-width:520px;margin:0 auto 44px;">Custom design. Built-in SEO. A site that does the selling before anyone picks up the phone.</p>
-    <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+    <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
   </div>
 </section>
 
@@ -155,7 +158,31 @@
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <span class="overline">What we build</span>
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Two ways to work together.</h2>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Three ways to work together.</h2>
+
+    <!-- Audit Card -->
+    <div style="border:1px solid var(--light-border);margin-bottom:24px;display:flex;align-items:stretch;flex-wrap:wrap;">
+      <div style="background:var(--black);padding:40px 48px;display:flex;align-items:center;justify-content:center;min-width:200px;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.5);margin-bottom:8px;text-transform:uppercase;">One-time</div>
+          <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,52px);font-weight:400;color:var(--white);letter-spacing:-2px;line-height:1;">$297</div>
+        </div>
+      </div>
+      <div style="padding:40px 48px;flex:1;min-width:280px;border-left:1px solid var(--light-border);">
+        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Website &amp; Google Presence Audit</h3>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:20px;">No redesign required &middot; Delivered in 5 business days</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">Not ready for a full build? Get a complete no-fluff audit of your entire website and Google presence — delivered as a polished written report (PDF) and a personalized video walkthrough (15–25 min). Clear, prioritized fixes you can act on immediately.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+          <span style="font-size:12px;font-family:var(--font-mono);letter-spacing:1px;padding:6px 14px;border:1px solid var(--light-border);color:var(--dark);">Full website review</span>
+          <span style="font-size:12px;font-family:var(--font-mono);letter-spacing:1px;padding:6px 14px;border:1px solid var(--light-border);color:var(--dark);">Technical SEO audit</span>
+          <span style="font-size:12px;font-family:var(--font-mono);letter-spacing:1px;padding:6px 14px;border:1px solid var(--light-border);color:var(--dark);">Google Business Profile</span>
+          <span style="font-size:12px;font-family:var(--font-mono);letter-spacing:1px;padding:6px 14px;border:1px solid var(--light-border);color:var(--dark);">PDF report + video</span>
+          <span style="font-size:12px;font-family:var(--font-mono);letter-spacing:1px;padding:6px 14px;border:1px solid var(--light-border);color:var(--dark);">You keep full ownership</span>
+        </div>
+        <a href="/audit" class="btn-primary">Get My Audit &rarr;</a>
+      </div>
+    </div>
+
     <div class="grid-split" style="border:1px solid var(--light-border);">
 
       <!-- Website Design -->
@@ -172,7 +199,7 @@
           <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Contact form &amp; lead capture</li>
           <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Launch support &amp; Google submission</li>
         </ul>
-        <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+        <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
       </div>
 
       <!-- Ongoing Support -->
@@ -189,7 +216,7 @@
           <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;border-bottom:1px solid var(--light-border);display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Consulting sessions <span style="font-size:12px;color:var(--mid);align-self:center;">(optional add-on)</span></li>
           <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:12px 0;display:flex;gap:12px;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>Blog post writing &amp; publishing <span style="font-size:12px;color:var(--mid);align-self:center;">(optional add-on)</span></li>
         </ul>
-        <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+        <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
       </div>
 
     </div>
@@ -275,24 +302,13 @@
   </div>
 </section>
 
-<!-- 7. NEWSLETTER -->
+<!-- 7. ABOUT -->
 <section class="reveal" style="border-bottom:1px solid var(--light-border);">
-  <div class="grid-split">
-    <div style="background:var(--black);padding:80px 64px;">
-      <span class="overline" style="color:rgba(255,255,255,0.4);">About</span>
-      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;color:var(--white);margin-bottom:20px;">We make websites that work harder than they look.</h2>
-      <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.7);margin-bottom:32px;">Every design decision we make is intentional. We build for trust, visibility, and conversion, not just aesthetics.</p>
-      <a href="/about" style="color:var(--white);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:2px;">Learn more &rarr;</a>
-    </div>
-    <div style="background:var(--tone);padding:80px 64px;border-left:1px solid var(--light-border);">
-      <span class="overline">Newsletter</span>
-      <h3 style="font-size:clamp(28px,3.5vw,42px);line-height:1.15;font-weight:400;letter-spacing:-1px;margin-bottom:16px;">Join The Hutch</h3>
-      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">SEO insights, web design thinking, and the occasional behind-the-scenes look at what we're building.</p>
-      <form id="newsletter-form" style="display:flex;">
-        <input type="email" name="email" required class="form-input" style="flex:1;">
-        <button type="submit" style="background:var(--black);color:var(--white);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
-      </form>
-    </div>
+  <div style="background:var(--black);padding:80px 64px;">
+    <span class="overline" style="color:rgba(255,255,255,0.4);">About</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;color:var(--white);margin-bottom:20px;">We make websites that work harder than they look.</h2>
+    <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.7);margin-bottom:32px;">Every design decision we make is intentional. We build for trust, visibility, and conversion, not just aesthetics.</p>
+    <a href="/about" style="color:var(--white);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:2px;">Learn more &rarr;</a>
   </div>
 </section>
 
@@ -310,7 +326,7 @@
 
 <!-- MOBILE CTA BAR -->
 <div class="mobile-cta-bar">
-  <a href="/contact">Book a Call &rarr;</a>
+  <a href="/contact">Work With Us &rarr;</a>
 </div>
 
 <script>
@@ -321,24 +337,6 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
 
-  // Newsletter form
-  document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const emailVal = this.email.value;
-    await Promise.allSettled([
-      fetch('https://formspree.io/f/mlgpewwb', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailVal, type: 'newsletter signup' })
-      }),
-      fetch('/newsletter-proxy.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailVal })
-      })
-    ]);
-    this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
-  });
 </script>
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');

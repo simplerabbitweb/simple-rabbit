@@ -98,7 +98,7 @@
       <a href="/portfolio" class="nav-link-portfolio nav-link-hide">Portfolio</a>
       <a href="/articles" style="color:var(--black);">Articles</a>
       <a href="/contact" class="nav-link-hide">Contact</a>
-      <a href="/contact" class="nav-cta">Book a Call</a>
+      <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -108,8 +108,7 @@
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+  <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
 
 <!-- 1. HERO -->
@@ -267,25 +266,13 @@
   </div>
 </section>
 
-<!-- 3. NEWSLETTER -->
-<section class="reveal sp" style="padding:80px 48px;border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
-  <div style="max-width:520px;margin:0 auto;text-align:center;">
-    <span class="overline" style="display:block;margin-bottom:16px;">Newsletter</span>
-    <h2 style="font-size:clamp(32px,4.5vw,52px);line-height:1.1;letter-spacing:-1px;margin-bottom:16px;">Join The Hutch</h2>
-    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">SEO insights, web design thinking, and the occasional behind-the-scenes look at what we're building.</p>
-    <form id="newsletter-form" style="display:flex;max-width:440px;margin:0 auto;">
-      <input type="email" name="email" required style="flex:1;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);">
-      <button type="submit" style="background:var(--black);color:var(--white);border:none;padding:10px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-body);white-space:nowrap;transition:background 0.2s;flex-shrink:0;">Subscribe</button>
-    </form>
-  </div>
-</section>
 
 <!-- 4. CTA -->
 <section class="reveal sp" style="padding:100px 48px;text-align:center;border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
   <div style="max-width:520px;margin:0 auto;">
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Ready to book better clients?</h2>
     <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:36px;">Let's build a website that does the selling for you</h3>
-    <a href="/contact" class="btn-primary">Book a Call &rarr;</a>
+    <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
   </div>
 </section>
 
@@ -302,7 +289,7 @@
 </footer>
 
 <div class="mobile-cta-bar">
-  <a href="/contact">Book a Call &rarr;</a>
+  <a href="/contact">Work With Us &rarr;</a>
 </div>
 
 <script>
@@ -312,24 +299,6 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
 
-  // Newsletter form
-  document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const emailVal = this.email.value;
-    await Promise.allSettled([
-      fetch('https://formspree.io/f/mlgpewwb', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailVal, type: 'newsletter signup' })
-      }),
-      fetch('/newsletter-proxy.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailVal })
-      })
-    ]);
-    this.innerHTML = '<p style="font-size:14px;color:var(--dark);">Thanks! You\'re subscribed.</p>';
-  });
 </script>
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');

@@ -60,7 +60,7 @@
       .nav-inner{padding:0 24px;}
       .sp{padding-left:24px!important;padding-right:24px!important;}
       .grid-2{grid-template-columns:1fr!important;gap:48px!important;}
-      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
+      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}footer>div{flex-wrap:wrap;justify-content:center;gap:12px;}
     }
     @media(max-width:600px){
       .mobile-cta-bar{display:block!important;}
@@ -101,8 +101,7 @@
       <a href="/portfolio" class="nav-link-portfolio">Portfolio</a>
       <a href="/services">Services</a>
       <a href="/articles">Articles</a>
-      <a href="/contact">Contact</a>
-      <a href="/contact" class="nav-cta">Book a Call</a>
+      <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -112,8 +111,7 @@
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+  <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
 
 <!-- 1. HERO -->
@@ -187,21 +185,22 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Is this for a brand new site or redoing your current site?*</label>
-          <select name="project_type" required class="form-select">
+          <label class="form-label">What are you interested in?*</label>
+          <select name="project_type" required class="form-select" id="project-type-select">
             <option value="">Select one</option>
             <option>Brand new site</option>
             <option>Redesign of my current site</option>
+            <option value="audit">Website &amp; Google Presence Audit — $297</option>
           </select>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="field-pages">
           <label class="form-label">Which pages would you like us to build?*</label>
           <p style="font-size:13px;line-height:1.6;color:var(--mid);margin-bottom:10px;">The basics are Home, About, Offers, and Contact. If you need a Sales Page for a course or program, please specify.</p>
-          <textarea name="pages" required rows="3" placeholder="e.g. Home, About, Offers, Contact..." class="form-input" style="resize:vertical;"></textarea>
+          <textarea name="pages" rows="3" placeholder="e.g. Home, About, Offers, Contact..." class="form-input" style="resize:vertical;"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="field-budget">
           <label class="form-label">Budget*</label>
-          <select name="budget" required class="form-select">
+          <select name="budget" class="form-select">
             <option value="">Select one</option>
             <option>$4,800 – $7,000</option>
             <option>$7,000 – $10,000</option>
@@ -244,7 +243,7 @@
 </footer>
 
 <div class="mobile-cta-bar">
-  <a href="/contact">Book a Call &rarr;</a>
+  <a href="/contact">Work With Us &rarr;</a>
 </div>
 
 <script>
@@ -254,6 +253,19 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
 
+  (function() {
+    var sel = document.getElementById('project-type-select');
+    var fPages = document.getElementById('field-pages');
+    var fBudget = document.getElementById('field-budget');
+    function toggleAuditFields() {
+      var isAudit = sel.value === 'audit';
+      fPages.style.display = isAudit ? 'none' : '';
+      fBudget.style.display = isAudit ? 'none' : '';
+    }
+    sel.addEventListener('change', toggleAuditFields);
+    toggleAuditFields();
+  })();
+
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = this.querySelector('[type=submit]');
@@ -261,30 +273,23 @@
     btn.disabled = true;
     try {
       const formEmail = this.email.value;
-      const [res] = await Promise.all([
-        fetch('https://formspree.io/f/mojndlrg', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: formEmail,
-            first_name: this.first_name.value,
-            last_name: this.last_name.value,
-            business_name: this.business_name.value,
-            website: this.website.value,
-            referral: this.referral.value,
-            project_type: this.project_type.value,
-            budget: this.budget.value,
-            pages: this.pages.value,
-            timeline: this.timeline.value,
-            message: this.message.value
-          })
-        }),
-        fetch('/newsletter-proxy.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: formEmail })
-        }).catch(() => {})
-      ]);
+      const res = await fetch('https://formspree.io/f/mojndlrg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formEmail,
+          first_name: this.first_name.value,
+          last_name: this.last_name.value,
+          business_name: this.business_name.value,
+          website: this.website.value,
+          referral: this.referral.value,
+          project_type: this.project_type.value,
+          budget: this.budget.value,
+          pages: this.pages.value,
+          timeline: this.timeline.value,
+          message: this.message.value
+        })
+      });
       if (res.ok) {
         window.location.href = '/thank-you';
       } else {
