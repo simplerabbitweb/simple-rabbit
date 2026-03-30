@@ -48,10 +48,10 @@
 
   <!-- Tools -->
   <url>
-    <loc>https://simplerabbit.studio/audit</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://simplerabbit.studio/website-audit</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Service pages -->
