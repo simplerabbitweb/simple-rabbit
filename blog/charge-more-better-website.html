@@ -53,7 +53,8 @@ INTERNAL LINKS NEEDED: ../contact.html, ../portfolio.html, bergen-county-web-des
     .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
     .nav-item{position:relative;display:flex;align-items:center;}
     .nav-item>a::after{content:'\25BE';font-size:9px;margin-left:4px;opacity:0.6;}
-    .nav-dropdown{display:none;position:absolute;top:calc(100% + 1px);left:-20px;background:var(--white);border:1px solid var(--light-border);min-width:210px;z-index:200;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + 10px);left:-20px;background:var(--white);border:1px solid var(--light-border);min-width:210px;z-index:200;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
+    .nav-item::before{content:'';position:absolute;top:100%;left:0;right:0;height:10px;}
     .nav-item:hover .nav-dropdown{display:block;}
     .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
     .nav-dropdown a:last-child{border-bottom:none;}
