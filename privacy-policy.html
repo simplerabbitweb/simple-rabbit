@@ -45,7 +45,7 @@
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--black);}
+    .mobile-nav a:hover{color:var(--black);}.mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
     @media(max-width:900px){
       .nav-inner{padding:0 24px;}
       footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}footer>div{flex-wrap:wrap;justify-content:center;gap:12px;}

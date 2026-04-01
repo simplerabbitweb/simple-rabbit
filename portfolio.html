@@ -60,6 +60,7 @@
       .sp{padding-left:24px!important;padding-right:24px!important;}
       .work-preview-grid{grid-template-columns:1fr!important;}
       .work-preview-panel{display:none!important;}
+      .case-study-grid{grid-template-columns:1fr!important;}
       footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}footer>div{flex-wrap:wrap;justify-content:center;gap:12px;}
     }
     @media(max-width:600px){
@@ -72,7 +73,7 @@
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--black);}
+    .mobile-nav a:hover{color:var(--black);}.mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
   </style>
   <!-- Google Analytics -->
@@ -159,7 +160,7 @@
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <span class="overline" style="margin-bottom:24px;display:block;">Client Results</span>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;">
+    <div class="case-study-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;">
       <a href="/blog/case-study-smooth-laser-center" class="article-card reveal" style="max-width:none;">
         <div class="article-card-img"><img src="previews/smooth-laser-center-website.png" alt="Smooth Laser Center website case study by Simple Rabbit"></div>
         <div class="article-card-body">

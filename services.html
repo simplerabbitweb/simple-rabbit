@@ -69,7 +69,7 @@
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--black);}
+    .mobile-nav a:hover{color:var(--black);}.mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
 
     /* Hover micro-animations */
@@ -190,29 +190,13 @@
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <span class="overline">What we build</span>
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Three ways to work together.</h2>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Let&rsquo;s make your website something you&rsquo;re proud to share.</h2>
 
-    <!-- Audit Card -->
-    <div style="border:1px solid var(--light-border);margin-bottom:24px;display:flex;align-items:stretch;flex-wrap:wrap;">
-      <div style="background:var(--black);padding:40px 48px;display:flex;align-items:center;justify-content:center;min-width:200px;">
-        <div style="text-align:center;">
-          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.5);margin-bottom:8px;text-transform:uppercase;">One-time</div>
-          <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,52px);font-weight:400;color:var(--white);letter-spacing:-2px;line-height:1;">$297</div>
-        </div>
-      </div>
-      <div style="padding:40px 48px;flex:1;min-width:280px;border-left:1px solid var(--light-border);">
-        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Website &amp; Google Presence Audit</h3>
-        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:20px;">No redesign required &middot; Delivered in 5 business days</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">Not ready for a full build? We'll review your entire website and Google presence and tell you exactly what to fix, page by page so that you have a clear plan you can act on immediately.</p>
-        <a href="/website-audit" class="btn-primary">Get My Audit &rarr;</a>
-      </div>
-    </div>
-
-    <div class="grid-split" style="border:1px solid var(--light-border);">
+    <div class="grid-split" style="border:1px solid var(--light-border);margin-bottom:24px;">
 
       <!-- Website Design -->
       <div style="padding:56px 48px;border-right:1px solid var(--light-border);">
-        <h3 style="font-size:clamp(24px,2.5vw,32px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Custom Website Build</h3>
+        <h3 style="font-size:clamp(24px,2.5vw,32px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Website Build</h3>
         <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $4,800</p>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">A WordPress website designed around your business, your clients, and your goals. Built to attract, convert, and grow with you. Optimized for Google search &amp; AI visibility.</p>
         <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
@@ -227,6 +211,18 @@
       </div>
 
     </div>
+
+    <!-- Audit — secondary offer -->
+    <div style="border:1px solid var(--light-border);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;background:var(--tone);">
+      <div style="flex:1;min-width:260px;">
+        <h3 style="font-size:clamp(20px,2vw,24px);letter-spacing:-0.5px;line-height:1.2;font-weight:400;margin-bottom:12px;">Not ready for a full build?</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We&rsquo;ll review your entire website and Google presence and tell you exactly what to fix, page by page — so you have a clear plan you can act on immediately.</p>
+      </div>
+      <div style="flex-shrink:0;">
+        <a href="/website-audit" style="display:inline-block;background:transparent;color:var(--black);border:1px solid var(--black);padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='var(--black)';this.style.color='var(--white)';" onmouseout="this.style.background='transparent';this.style.color='var(--black)';">Learn about the audit &rarr;</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -240,7 +236,7 @@
       </div>
 
       <div>
-        <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:24px;">This is for you if&hellip;</h2>
+        <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:24px;">Simple Rabbit is for you if&hellip;</h2>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">We do our best work with service business owners who are ready to grow, not just get online. Here's what that usually looks like.</p>
         <ul style="list-style:none;">
           <li class="list-row" style="font-size:15px;line-height:1.75;color:var(--dark);padding:16px 0;border-bottom:1px solid var(--light-border);display:flex;gap:16px;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;" class="arrow">&rarr;</span>You've been in business for a few years and have results to show for it</li>

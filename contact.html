@@ -72,7 +72,7 @@
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--light-border);}
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:var(--dark);text-decoration:none;padding:20px 24px;border-bottom:1px solid var(--light-border);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--black);}
+    .mobile-nav a:hover{color:var(--black);}.mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
   </style>
   <!-- Google Analytics -->
@@ -175,11 +175,12 @@
           <label class="form-label">How did you hear about us?</label>
           <select name="referral" class="form-select">
             <option value="">Select one</option>
-            <option>Threads</option>
             <option>Instagram</option>
             <option>Facebook</option>
             <option>YouTube</option>
             <option>Google Search</option>
+            <option>AI</option>
+            <option>Event</option>
             <option>Referral from a friend or colleague</option>
             <option>Other</option>
           </select>
@@ -190,7 +191,7 @@
             <option value="">Select one</option>
             <option>Brand new site</option>
             <option>Redesign of my current site</option>
-            <option value="audit">Website &amp; Google Presence Audit — $297</option>
+            <option value="audit">Website &amp; Google Presence Audit</option>
           </select>
         </div>
         <div class="form-group" id="field-pages">
