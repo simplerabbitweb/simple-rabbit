@@ -192,32 +192,35 @@
     <span class="overline">What we build</span>
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Let&rsquo;s make your website something you&rsquo;re proud to share.</h2>
 
-    <div class="grid-3" style="border:1px solid var(--light-border);">
-
-      <!-- Website Build -->
-      <div style="padding:56px 40px;border-right:1px solid var(--light-border);">
-        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Website Build</h3>
-        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $4,800</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">A WordPress website designed around your business, your clients, and your goals. Built to attract, convert, and grow with you. Optimized for Google search &amp; AI visibility.</p>
+    <!-- Website Build + Monthly Partnership -->
+    <div style="border:1px solid var(--light-border);margin-bottom:24px;">
+      <div class="grid-split">
+        <div style="padding:56px 48px;border-right:1px solid var(--light-border);">
+          <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Website Build</h3>
+          <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $4,800</p>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">A WordPress website designed around your business, your clients, and your goals. Built to attract, convert, and grow with you. Optimized for Google search &amp; AI visibility.</p>
+        </div>
+        <div style="padding:56px 48px;background:var(--tone);">
+          <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Monthly Partnership</h3>
+          <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $149/month &middot; Available after launch</p>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">After we launch, we manage the hosting, maintenance, and changes to your website so that you have an ongoing partner to keep your website up-to-date and secure.</p>
+        </div>
+      </div>
+      <div style="padding:32px 48px;border-top:1px solid var(--light-border);text-align:center;">
         <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
       </div>
+    </div>
 
-      <!-- Monthly Partnership -->
-      <div style="padding:56px 40px;border-right:1px solid var(--light-border);background:var(--tone);">
-        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Monthly Partnership</h3>
-        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">Starting at $149/month &middot; Available after launch</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">After we launch, we manage the hosting, maintenance, and changes to your website so that you have an ongoing partner to keep your website up-to-date and secure.</p>
-        <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
+    <!-- Audit — full width -->
+    <div style="border:1px solid var(--light-border);padding:48px;display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:clamp(20px,2vw,26px);letter-spacing:-0.5px;line-height:1.2;font-weight:400;margin-bottom:8px;">Website &amp; Google Presence Audit</h3>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:16px;">$297 one-time &middot; Delivered in 5 business days</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Not ready for a full build? We&rsquo;ll review your entire website and Google presence and tell you exactly what to fix, page by page — so you have a clear plan you can act on immediately.</p>
       </div>
-
-      <!-- Audit -->
-      <div style="padding:56px 40px;">
-        <h3 style="font-size:clamp(22px,2.5vw,28px);letter-spacing:-1px;line-height:1.15;font-weight:400;margin-bottom:8px;">Website &amp; Google Presence Audit</h3>
-        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:1px;color:var(--mid);margin-bottom:28px;">$297 one-time &middot; Delivered in 5 business days</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">Not ready for a full build? We&rsquo;ll review your entire website and Google presence and tell you exactly what to fix, page by page — so you have a clear plan you can act on immediately.</p>
+      <div style="flex-shrink:0;">
         <a href="/website-audit" class="btn-primary">Get My Audit &rarr;</a>
       </div>
-
     </div>
 
   </div>
@@ -342,7 +345,7 @@
 </script>
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
-if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
 </script>
 
 <script type="application/ld+json">
