@@ -37,6 +37,15 @@
     .nav-links a:hover{color:var(--black);}
     .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
     .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;}
+    .nav-item{position:relative;display:flex;align-items:center;}
+    .nav-item>a::after{content:'\25BE';font-size:9px;margin-left:4px;opacity:0.6;}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + 1px);left:-20px;background:var(--white);border:1px solid var(--light-border);min-width:210px;z-index:200;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
+    .nav-item:hover .nav-dropdown{display:block;}
+    .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
+    .nav-dropdown a:last-child{border-bottom:none;}
+    .nav-dropdown a:hover{background:var(--tone);color:var(--black);}
+    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:var(--mid)!important;border-bottom:1px solid var(--light-border)!important;}
+    .mobile-nav-sub:hover{color:var(--black)!important;}
     .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
     .btn-primary:hover{background:var(--dark);}
     .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
@@ -101,7 +110,17 @@
     <div class="nav-links">
       <a href="/about" class="nav-link-about">About</a>
       <a href="/portfolio" class="nav-link-portfolio">Portfolio</a>
-      <a href="/services">Services</a>
+      <div class="nav-item">
+        <a href="/services">Services</a>
+  <a href="/website-design" class="mobile-nav-sub">Website Build</a>
+  <a href="/ongoing-support" class="mobile-nav-sub">Monthly Partnership</a>
+  <a href="/website-audit" class="mobile-nav-sub">Website &amp; Google Audit</a>
+        <div class="nav-dropdown">
+          <a href="/website-design">Website Build</a>
+          <a href="/ongoing-support">Monthly Partnership</a>
+          <a href="/website-audit">Website &amp; Google Audit</a>
+        </div>
+      </div>
       <a href="/articles">Articles</a>
       <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
@@ -112,6 +131,9 @@
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
   <a href="/services">Services</a>
+  <a href="/website-design" class="mobile-nav-sub">Website Build</a>
+  <a href="/ongoing-support" class="mobile-nav-sub">Monthly Partnership</a>
+  <a href="/website-audit" class="mobile-nav-sub">Website &amp; Google Audit</a>
   <a href="/articles">Articles</a>
   <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
