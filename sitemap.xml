@@ -46,6 +46,20 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Service detail pages -->
+  <url>
+    <loc>https://simplerabbit.studio/website-design</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://simplerabbit.studio/ongoing-support</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Tools -->
   <url>
     <loc>https://simplerabbit.studio/website-audit</loc>
