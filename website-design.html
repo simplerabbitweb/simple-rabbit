@@ -97,24 +97,45 @@
   </style>
   <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Custom WordPress Website Design",
-    "description": "Simple Rabbit builds custom WordPress websites for service businesses. SEO built in, launched within 30 days, starting at $4,800.",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Simple Rabbit",
-      "url": "https://simplerabbit.studio"
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Custom WordPress Website Design",
+  "description": "Simple Rabbit builds custom WordPress websites for service businesses. SEO built in, launched within 30 days, starting at $4,800.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Simple Rabbit",
+    "url": "https://simplerabbit.studio"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "4800",
+    "priceCurrency": "USD",
+    "image": "https://simplerabbit.studio/Leann-4.jpg",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      }
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "4800",
-      "priceCurrency": "USD"
-    },
-    "areaServed": { "@type": "AdministrativeArea", "name": "Bergen County, NJ" }
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Bergen County, NJ"
   }
-  </script>
+}
+</script>
 </head>
 <body>
 
