@@ -9,6 +9,7 @@ RewriteRule ^web-design-bergen-county-nj$ /web-design-bergen-county-nj.html [L]
 
 # --- Force HTTPS ---
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # --- Redirect www → non-www ---
