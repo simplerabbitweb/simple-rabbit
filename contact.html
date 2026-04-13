@@ -231,15 +231,6 @@
           <label class="form-label">Which pages would you like us to build?*</label>
           <textarea name="pages" rows="3" placeholder="e.g. Home, About, Offers, Contact..." class="form-input" style="resize:vertical;"></textarea>
         </div>
-        <div class="form-group" id="field-budget">
-          <label class="form-label">Budget*</label>
-          <select name="budget" class="form-select">
-            <option value="">Select one</option>
-            <option>$4,800 – $7,000</option>
-            <option>$7,000 – $10,000</option>
-            <option>$10,000+</option>
-          </select>
-        </div>
         <div class="form-group">
           <label class="form-label">When do you want to get started?</label>
           <select name="timeline" class="form-select">
@@ -300,11 +291,9 @@
   (function() {
     var sel = document.getElementById('project-type-select');
     var fPages = document.getElementById('field-pages');
-    var fBudget = document.getElementById('field-budget');
     function toggleAuditFields() {
       var isAudit = sel.value === 'audit';
       fPages.style.display = isAudit ? 'none' : '';
-      fBudget.style.display = isAudit ? 'none' : '';
     }
     sel.addEventListener('change', toggleAuditFields);
     toggleAuditFields();
@@ -328,7 +317,6 @@
           website: this.website.value,
           referral: this.referral.value,
           project_type: this.project_type.value,
-          budget: this.budget.value,
           pages: this.pages.value,
           timeline: this.timeline.value,
           message: this.message.value
