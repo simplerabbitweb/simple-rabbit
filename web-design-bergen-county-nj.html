@@ -33,7 +33,7 @@
       --font-body:'Outfit',system-ui,sans-serif;
       --font-mono:'DM Mono',monospace;
     }
-    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
     h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
     a{color:inherit;}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
@@ -506,7 +506,7 @@
 <!-- FULL-WIDTH CTA -->
 <section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:url('/CTA-banner.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
-  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.90);padding:64px 56px;max-width:520px;width:calc(100% - 48px);text-align:center;">
+  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:520px;width:calc(100% - 48px);text-align:center;">
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Next step</span>
     <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;">Let&rsquo;s build a site that books the clients you actually want.</h2>
     <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">Tell us about your business. If we&rsquo;re the right fit, we&rsquo;ll map out a plan together.</p>
