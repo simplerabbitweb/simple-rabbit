@@ -4,9 +4,6 @@ RewriteEngine On
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
-# --- Bergen County landing page clean URL ---
-RewriteRule ^web-design-bergen-county-nj$ /web-design-bergen-county-nj.html [L]
-
 # --- Force HTTPS ---
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
