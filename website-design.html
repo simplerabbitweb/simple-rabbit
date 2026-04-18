@@ -256,7 +256,7 @@
 </div>
 
 <!-- 1. HERO -->
-<section style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 50% 55% at 70% 45%, #0872cc 0%, #c2cdff 45%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 54% 60% at 65% 68%, #0872cc 0%, #c2cdff 45%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
   <div class="hero-grain"></div>
   <div style="position:relative;z-index:1;padding:80px 0 32px;">
     <h1 style="font-family:var(--font-display);font-size:clamp(44px,7vw,96px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
@@ -481,15 +481,15 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 
 
 <!-- EXIT INTENT POPUP -->
-<div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.30);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 24px 64px rgba(0,0,0,0.18);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
-    <button onclick="closeExitPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#949698;line-height:1;">&times;</button>
-    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#0872cc;display:block;margin-bottom:16px;">Before you go</span>
-    <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;">Not ready for a full website build?</h2>
-    <p style="font-size:15px;line-height:1.75;color:#4c4c4b;margin-bottom:32px;">Start with an audit. We&rsquo;ll review your entire website and Google presence and give you a clear, prioritized plan you can act on right away.</p>
-    <a href="/website-audit" style="display:inline-block;background:#000;color:#fff;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">See the Website &amp; Google Clarity Review &rarr;</a>
+<div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#000;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
+    <button onclick="closeExitPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:rgba(255,255,255,0.5);line-height:1;">&times;</button>
+    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c2cdff;display:block;margin-bottom:16px;">Before you go</span>
+    <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">Not ready for a full website build?</h2>
+    <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.75);margin-bottom:32px;">Start with an audit. We&rsquo;ll review your entire website and Google presence and give you a clear, prioritized plan you can act on right away.</p>
+    <a href="/website-audit" style="display:inline-block;background:#fff;color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">See the Website &amp; Google Clarity Review &rarr;</a>
     <div style="margin-top:20px;">
-      <button onclick="closeExitPopup()" style="background:none;border:none;font-size:13px;color:#949698;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks, I&rsquo;ll keep looking</button>
+      <button onclick="closeExitPopup()" style="background:none;border:none;font-size:13px;color:rgba(255,255,255,0.45);cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks, I&rsquo;ll keep looking</button>
     </div>
   </div>
 </div>
