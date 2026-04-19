@@ -163,7 +163,7 @@
     <h1 style="font-family:var(--font-display);font-size:clamp(52px,8.5vw,108px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
       <span style="display:block;">Work with us.</span>
     </h1>
-    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;max-width:380px;color:rgba(0,0,0,0.65);margin:24px 0 0;">Tell us about your project. We respond within 24 hours with our initial thoughts.</p>
+    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;max-width:480px;color:rgba(0,0,0,0.65);margin:24px 0 0;">Tell us about your project and then let&rsquo;s have a Discovery Call to walk through your business needs.</p>
   </div>
   <div></div>
 </section>
@@ -211,6 +211,17 @@
         <div class="form-group">
           <label class="form-label">Business Name*</label>
           <input type="text" name="business_name" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">How long have you been in business?</label>
+          <select name="years_in_business" class="form-select">
+            <option value="">Select one</option>
+            <option>Less than 1 year</option>
+            <option>1-3 years</option>
+            <option>3-5 years</option>
+            <option>5-10 years</option>
+            <option>10+ years</option>
+          </select>
         </div>
         <div class="form-group">
           <label class="form-label">Current Website</label>
@@ -384,6 +395,7 @@
           first_name: this.first_name.value,
           last_name: this.last_name.value,
           business_name: this.business_name.value,
+          years_in_business: this.years_in_business.value,
           website: this.website.value,
           referral: this.referral.value,
           project_type: this.project_type.value,
