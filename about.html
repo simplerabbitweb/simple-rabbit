@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Simple Rabbit | Websites that book better clients</title>
-  <meta name="description" content="Simple Rabbit is a web design studio for ambitious service businesses. We build websites with SEO baked in so you get found, get paid, and grow.">
-  <meta property="og:title" content="About Simple Rabbit | Websites that book better clients">
-  <meta property="og:description" content="Simple Rabbit is a web design studio for ambitious service businesses. We build websites with SEO baked in so you get found, get paid, and grow.">
+  <title>About Simple Rabbit | The web studio for cash-pay service businesses</title>
+  <meta name="description" content="Simple Rabbit is a specialist web design studio run by Leann Frank. I build custom websites for owners of cash-pay service businesses whose work deserves a better website.">
+  <meta property="og:title" content="About Simple Rabbit | The web studio for cash-pay service businesses">
+  <meta property="og:description" content="Simple Rabbit is a specialist web design studio run by Leann Frank. I build custom websites for owners of cash-pay service businesses whose work deserves a better website.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://simplerabbit.studio/about">
   <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
@@ -19,7 +19,7 @@
     :root{
       color-scheme:light only;
       --black:#000;--white:#fff;--tone:#F9F7F2;
-      --accent:#A8895F;--accent-dark:#8a6f4a;--accent-light:#e8d9bc;
+      --accent:#9A8C84;--accent-dark:#7A6E67;--accent-light:#DDD7D2;
       --mid:#111;--dark:#333;--light-border:#dfe0e1;
       --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
       --font-body:'Outfit',system-ui,sans-serif;
@@ -30,7 +30,7 @@
     a{color:inherit;}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;padding-bottom:8px;}
     .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
     .nav-links{display:flex;align-items:center;gap:32px;}
     .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
@@ -67,8 +67,6 @@
       .grid-2,.grid-2-center,.grid-3{grid-template-columns:1fr!important;gap:40px!important;}
       .footer-cols{grid-template-columns:1fr!important;}
     }
-    @media(max-width:600px){
-    }
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
     .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -82,10 +80,17 @@
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     .blob-grain{position:absolute;inset:0;border-radius:50%;opacity:0.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;-webkit-mask:radial-gradient(circle,black 0%,transparent 70%);mask:radial-gradient(circle,black 0%,transparent 70%);}
     @media(max-width:768px){
-      .inner-hero{min-height:80vh!important;}
-      .hero-h1 span{padding-left:0!important;text-align:left;}
+      .inner-hero{min-height:0!important;padding:32px 24px 40px!important;}
+      .inner-hero>div{padding-top:40px!important;padding-bottom:0!important;}
       .cta-box{padding:40px 28px!important;}
       .parallax-bg{background-attachment:scroll!important;background-size:cover!important;}
+      .footer-cols{grid-template-columns:1fr 1fr!important;gap:40px!important;}
+    }
+    @media(max-width:520px){
+      .footer-cols{grid-template-columns:1fr!important;}
+    }
+    @media(max-width:768px){
+      .footer-bottom-bar{justify-content:center!important;flex-direction:column!important;align-items:center!important;text-align:center!important;gap:12px!important;}
     }
   </style>
   <!-- Google Analytics -->
@@ -101,10 +106,6 @@
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BANNER -->
-<div style="background:var(--black);color:var(--white);text-align:center;padding:10px 24px;font-size:13px;font-family:var(--font-body);letter-spacing:0.2px;">
-  Now booking website + Google audits, <a href="/website-audit" style="color:var(--white);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:500;">Learn more &rarr;</a>
-</div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -113,20 +114,7 @@
     <div class="nav-links">
       <a href="/about" class="nav-link-about">About</a>
       <a href="/portfolio" class="nav-link-portfolio">Portfolio</a>
-      <div class="nav-item">
-        <div class="mobile-nav-services">
-    <a href="/services" style="flex:1;">Services</a>
-    <button class="mobile-nav-toggle" id="svc-toggle" aria-label="Toggle service pages">+</button>
-  </div>
-  <a href="/website-design" class="mobile-nav-sub">Website Build</a>
-  <a href="/ongoing-support" class="mobile-nav-sub">Monthly Partnership</a>
-  <a href="/website-audit" class="mobile-nav-sub">Website &amp; Google Clarity Review</a>
-        <div class="nav-dropdown">
-          <a href="/website-design">Website Build</a>
-          <a href="/ongoing-support">Monthly Partnership</a>
-          <a href="/website-audit">Website &amp; Google Clarity Review</a>
-        </div>
-      </div>
+      <a href="/services">Services</a>
       <a href="/articles">Articles</a>
       <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
@@ -136,32 +124,27 @@
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
-  <div class="mobile-nav-services">
-    <a href="/services" style="flex:1;">Services</a>
-    <button class="mobile-nav-toggle" id="svc-toggle" aria-label="Toggle service pages">+</button>
-  </div>
-  <a href="/website-design" class="mobile-nav-sub">Website Build</a>
-  <a href="/ongoing-support" class="mobile-nav-sub">Monthly Partnership</a>
-  <a href="/website-audit" class="mobile-nav-sub">Website &amp; Google Clarity Review</a>
+  <a href="/services">Services</a>
   <a href="/articles">Articles</a>
   <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
 
+
 <!-- 1. HERO -->
-<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 62% 50% at 82% 72%, rgba(232,217,188,0.55) 0%, rgba(244,234,217,0.22) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section class="inner-hero" style="min-height:56vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 62% 50% at 82% 72%, rgba(221,215,210,0.55) 0%, rgba(244,234,217,0.22) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
   <div class="hero-grain"></div>
-  <div style="position:relative;z-index:1;padding:80px 0 32px;">
-    <h1 style="font-family:var(--font-display);font-size:clamp(52px,8.5vw,108px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
-      <span style="display:block;">About.</span>
-    </h1>
-    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;max-width:480px;color:rgba(0,0,0,0.65);margin:24px 0 0;">We build websites for service businesses who are done being overlooked, explaining their rates, and losing clients to someone with a shinier site.</p>
+  <div style="position:relative;z-index:1;padding:80px 0 32px;max-width:860px;">
+    <span class="overline" style="margin-bottom:24px;">About Simple Rabbit</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(36px,6vw,76px);line-height:1.05;letter-spacing:-2px;color:#000;font-weight:400;margin:0 0 32px;">We build websites for practice owners whose work is better than their website.</h1>
+    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;max-width:560px;color:rgba(0,0,0,0.65);margin:0;">Most of our clients run private-pay service businesses. They do high-quality work. Their websites should reflect it.</p>
   </div>
   <div style="display:flex;align-items:flex-end;justify-content:flex-end;position:relative;z-index:1;">
-    <a href="/contact" style="display:inline-block;background:#000;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;flex-shrink:0;">Work With Us &rarr;</a>
+    <a href="/contact" style="display:inline-block;background:#000;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;flex-shrink:0;">Book a clarity call</a>
   </div>
 </section>
 
-<!-- 2. AS FEATURED IN -->
+
+<!-- AS FEATURED IN -->
 <section class="reveal sp" style="background:var(--white);border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);padding:60px 48px;text-align:center;">
   <div style="max-width:900px;margin:0 auto;">
     <span class="overline" style="margin-bottom:32px;">As featured in</span>
@@ -179,66 +162,123 @@
   </div>
 </section>
 
-<!-- 3. PARTNER SECTION -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;">
-  <div aria-hidden="true" style="position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(232,217,188,0.62) 0%,transparent 70%);right:-120px;top:60px;pointer-events:none;"><div class="blob-grain"></div></div>
-  <div style="max-width:640px;margin:0 auto;position:relative;">
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:28px;">Most designers launch your site and vanish. We stay.</h2>
-    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Your business isn't static and your website shouldn't be either. As you grow, raise your rates, change your services, or shift who you're targeting - your site needs to keep up. We make sure it does.</p>
-    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:40px;">We built our own business from scratch, so we know what's actually at stake when your website isn't working. That's why we show up consistently - hands-on, in-touch, and fully invested in your growth, not just your launch.</p>
-    <a href="/contact" class="btn-primary">Work With Us</a>
-  </div>
-</section>
 
-<!-- 4. WHY CHOOSE SIMPLE RABBIT -->
-<section class="reveal sp" style="background:var(--tone);padding:100px 48px;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Why choose Simple Rabbit</h2>
-    <div style="max-width:640px;border-top:1px solid var(--light-border);">
-      <div style="padding:32px 0;border-bottom:1px solid var(--light-border);display:flex;gap:24px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);flex-shrink:0;padding-top:4px;">01</span>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We support your business as it grows and changes so that your website is always up-to-date.</p>
-      </div>
-      <div style="padding:32px 0;border-bottom:1px solid var(--light-border);display:flex;gap:24px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);flex-shrink:0;padding-top:4px;">02</span>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We've built our own business from scratch, so we know what's actually at stake.</p>
-      </div>
-      <div style="padding:32px 0;border-bottom:1px solid var(--light-border);display:flex;gap:24px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--mid);flex-shrink:0;padding-top:4px;">03</span>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We're hands-on and highly communicative so you always know the status of your site.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. FOUNDER BIO -->
+<!-- 2. PHOTO + INTRO -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;">
-  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(168,137,95,0.40) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
+  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(154,140,132,0.28) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
   <div class="grid-2-center" style="max-width:1100px;margin:0 auto;position:relative;">
     <div>
       <img src="leann-2.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;">
     </div>
     <div>
-      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Hi, I'm Leann!</h2>
-      <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:28px;">Founder, Simple Rabbit</h3>
-      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">I spent years watching ambitious business owners undercharge, attract wrong clients, and burn out because their websites didn't match the expert they'd become. That's why I built Simple Rabbit.</p>
-      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">We build clean, modern websites with SEO baked in from day one, so you show up in Google and AI search results, the right clients find you, and you build a business you&#39;re proud of.</p>
+      <span class="overline">Hi, I&rsquo;m Leann</span>
+      <h2 style="font-size:clamp(24px,3vw,36px);line-height:1.2;margin-bottom:28px;">I run Simple Rabbit out of Bergen County, New Jersey.</h2>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">I've been building websites for years. Simple Rabbit is what happens when years of client work meets a clear point of view about what a website should actually do.</p>
+      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">I work with a small number of clients at a time. Every project is custom. Every site is built to be found on Google, pitched to the right client, and easy to keep current long after launch.</p>
       <a href="/articles" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">Read my stuff &rarr;</a>
     </div>
   </div>
 </section>
 
 
-<!-- FULL-WIDTH CTA -->
-<section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-  <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
-  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:520px;width:calc(100% - 48px);text-align:center;" class="cta-box">
-    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:16px;">Next step</span>
-    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Let&rsquo;s build a site that books the clients you actually want.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Tell us about your business. If we&rsquo;re the right fit, we&rsquo;ll map out a plan together.</p>
-    <a href="/contact" style="display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Work With Us &rarr;</a>
+<!-- 3. WHO I WORK WITH -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);background:var(--tone);position:relative;">
+  <div aria-hidden="true" style="position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(221,215,210,0.50) 0%,transparent 70%);right:-120px;top:60px;pointer-events:none;"><div class="blob-grain"></div></div>
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
+    <span class="overline">Who we work with</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:640px;margin-bottom:28px;">Practice owners who are done blending in.</h2>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:640px;margin-bottom:56px;">Our clients run cash-pay service businesses. High-end practices. Specialty services. Private-pay work where clients choose them because the work is worth what it costs. Their websites should do the same.</p>
+    <div style="max-width:680px;border-top:1px solid var(--light-border);">
+      <div style="padding:36px 0;border-bottom:1px solid var(--light-border);display:flex;gap:32px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);flex-shrink:0;padding-top:4px;">01</span>
+        <div>
+          <p style="font-size:16px;font-weight:500;margin-bottom:8px;color:var(--black);">You charge high-end prices.</p>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">Your services aren't cheap. Your website shouldn't look it.</p>
+        </div>
+      </div>
+      <div style="padding:36px 0;border-bottom:1px solid var(--light-border);display:flex;gap:32px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);flex-shrink:0;padding-top:4px;">02</span>
+        <div>
+          <p style="font-size:16px;font-weight:500;margin-bottom:8px;color:var(--black);">Your clients are paying close attention.</p>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">Someone spending $1,200 on a service is reading your site twice before they book. It has to hold up.</p>
+        </div>
+      </div>
+      <div style="padding:36px 0;border-bottom:1px solid var(--light-border);display:flex;gap:32px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);flex-shrink:0;padding-top:4px;">03</span>
+        <div>
+          <p style="font-size:16px;font-weight:500;margin-bottom:8px;color:var(--black);">You're tired of being the best-kept secret.</p>
+          <p style="font-size:15px;line-height:1.75;color:var(--dark);">You know your work. Your referrals know your work. Now it's time for Google to know your work too.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+
+<!-- 4. HOW I WORK -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">How we work</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:640px;margin-bottom:28px;">Custom, considered, and actually finished.</h2>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:640px;margin-bottom:48px;">Every website we build is custom. No templates, no cookie-cutter layouts, no recycled copy. I start with your business, your client, and the way they actually search. The design follows the strategy, not the other way around.</p>
+    <img src="leann-working.jpg" alt="Leann Frank at work" style="width:100%;aspect-ratio:16/7;object-fit:cover;display:block;margin-bottom:48px;" loading="lazy">
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:40px;border-right:1px solid var(--light-border);">
+        <div style="font-family:var(--font-display);font-size:36px;letter-spacing:-1px;line-height:1;margin-bottom:8px;">11+</div>
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);">Custom websites launched</div>
+      </div>
+      <div style="padding:40px;border-right:1px solid var(--light-border);">
+        <div style="font-family:var(--font-display);font-size:36px;letter-spacing:-1px;line-height:1;margin-bottom:8px;">4&ndash;6</div>
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);">Week average project timeline</div>
+      </div>
+      <div style="padding:40px;border-right:1px solid var(--light-border);">
+        <div style="font-family:var(--font-display);font-size:36px;letter-spacing:-1px;line-height:1;margin-bottom:8px;">100%</div>
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);">Of clients own their website and hosting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5. WHAT I DON'T DO -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);background:var(--tone);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">What we don&rsquo;t do</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:640px;margin-bottom:20px;">A few things you won't get here.</h2>
+    <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:48px;">I'd rather tell you upfront what I'm not before you book a call.</p>
+    <div style="max-width:680px;border-top:1px solid var(--light-border);">
+      <div style="padding:28px 0;border-bottom:1px solid var(--light-border);display:flex;gap:20px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:14px;color:var(--accent);flex-shrink:0;line-height:1.75;">&#8212;</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We don't take on starter businesses. If you're figuring out what you offer, we're not the right fit yet.</p>
+      </div>
+      <div style="padding:28px 0;border-bottom:1px solid var(--light-border);display:flex;gap:20px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:14px;color:var(--accent);flex-shrink:0;line-height:1.75;">&#8212;</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We don't do template-based sites. Every build is custom.</p>
+      </div>
+      <div style="padding:28px 0;border-bottom:1px solid var(--light-border);display:flex;gap:20px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:14px;color:var(--accent);flex-shrink:0;line-height:1.75;">&#8212;</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We don't take on more than a few projects at a time. You get our attention, not our assistant's.</p>
+      </div>
+      <div style="padding:28px 0;border-bottom:1px solid var(--light-border);display:flex;gap:20px;align-items:flex-start;">
+        <span style="font-family:var(--font-mono);font-size:14px;color:var(--accent);flex-shrink:0;line-height:1.75;">&#8212;</span>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We don't ghost after launch. Ongoing care is built into how we work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 6. FINAL CTA -->
+<section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+  <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
+  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:560px;width:calc(100% - 48px);text-align:center;" class="cta-box">
+    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:16px;">Work with us</span>
+    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Ready for a website that earns its place in the practice?</h2>
+    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Book a free 30-minute clarity call. We'll talk about your business, your client, and whether I'm the right fit to build what's next.</p>
+    <a href="/contact" style="display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Book a free call</a>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer style="background:#000;border-top:none;padding:0;display:block;">
@@ -247,20 +287,20 @@
   <div style="border-bottom:1px solid rgba(255,255,255,0.1);padding:56px 48px;">
     <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
       <div>
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8d9bc;display:block;margin-bottom:10px;">The Hutch - Free Newsletter</span>
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:10px;">The Hutch - Free Newsletter</span>
         <p style="font-size:clamp(18px,2vw,24px);color:#fff;margin:0;line-height:1.3;font-family:var(--font-display);">SEO insights and web design thinking, delivered weekly.</p>
       </div>
       <form onsubmit="submitNewsletter(event,this)" style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;align-items:center;">
       <input type="email" name="email" placeholder="Your email" required style="border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:14px;padding:10px 0;outline:none;font-family:var(--font-body);min-width:180px;">
       <button type="submit" style="background:#fff;color:#000;padding:13px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:var(--font-body);white-space:nowrap;flex-shrink:0;">Join The Hutch &rarr;</button>
-      <p class="nl-msg" style="font-size:13px;color:#e8d9bc;width:100%;margin:4px 0 0;display:none;"></p>
+      <p class="nl-msg" style="font-size:13px;color:#DDD7D2;width:100%;margin:4px 0 0;display:none;"></p>
     </form>
     </div>
   </div>
 
   <!-- Main columns -->
   <div style="padding:64px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div class="footer-cols" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:48px;">
+    <div class="footer-cols" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
 
       <!-- Brand -->
       <div>
@@ -290,26 +330,7 @@
       <div>
         <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Services</span>
         <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/website-design" style="font-size:14px;color:#fff;text-decoration:none;">Website Build</a>
-          <a href="/ongoing-support" style="font-size:14px;color:#fff;text-decoration:none;">Monthly Partnership</a>
-          <a href="/website-audit" style="font-size:14px;color:#fff;text-decoration:none;">Website &amp; Google Clarity Review</a>
           <a href="/services" style="font-size:14px;color:#fff;text-decoration:none;">All Services</a>
-        </nav>
-      </div>
-
-      <!-- Counties -->
-      <div>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Counties We Serve</span>
-        <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/web-design-bergen-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Bergen County, NJ</a>
-          <a href="/web-design-westchester-county-ny" style="font-size:14px;color:#fff;text-decoration:none;">Westchester County, NY</a>
-          <a href="/web-design-rockland-county-ny" style="font-size:14px;color:#fff;text-decoration:none;">Rockland County, NY</a>
-          <a href="/web-design-morris-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Morris County, NJ</a>
-          <a href="/web-design-essex-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Essex County, NJ</a>
-          <a href="/web-design-hudson-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Hudson County, NJ</a>
-          <a href="/web-design-passaic-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Passaic County, NJ</a>
-          <a href="/web-design-sussex-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Sussex County, NJ</a>
-          <a href="/web-design-warren-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Warren County, NJ</a>
         </nav>
       </div>
 
@@ -319,7 +340,7 @@
   <!-- Bottom bar -->
   <div style="padding:28px 48px;">
     <div style="max-width:1100px;margin:0 auto;">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
+      <div class="footer-bottom-bar" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
         <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
         <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
       </div>
@@ -354,8 +375,8 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
     "url": "https://simplerabbit.studio"
   },
   "url": "https://simplerabbit.studio/about",
-  "image": "https://simplerabbit.studio/leann.jpg",
-  "description": "Leann Frank is the founder of Simple Rabbit, a premium web design studio for service businesses in Bergen County, NJ and across the US.",
+  "image": "https://simplerabbit.studio/leann-2.jpg",
+  "description": "Leann Frank is the founder of Simple Rabbit, a specialist web design studio for cash-pay service businesses. Based in Bergen County, NJ, she builds custom websites for high-end private-pay service businesses across the US.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bergen County",
@@ -375,13 +396,13 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 <div id="newsletter-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
   <div style="background:#000;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
-    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8d9bc;display:block;margin-bottom:16px;">The Hutch - Free Newsletter</span>
+    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch - Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of. No fluff.</p>
+    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of.</p>
     <form onsubmit="submitNewsletter(event,this)" style="width:100%;">
     <input type="email" name="email" placeholder="Your email address" required style="width:100%;border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:15px;padding:10px 0;outline:none;font-family:'Outfit',system-ui,sans-serif;margin-bottom:16px;display:block;">
     <button type="submit" style="display:block;width:100%;background:#fff;color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">Join The Hutch &rarr;</button>
-    <p class="nl-msg" style="font-size:13px;color:#e8d9bc;margin-top:12px;display:none;"></p>
+    <p class="nl-msg" style="font-size:13px;color:#DDD7D2;margin-top:12px;display:none;"></p>
   </form>
     <div style="margin-top:20px;">
       <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
@@ -400,6 +421,32 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 })();
 function closeNewsletterPopup(){
   document.getElementById('newsletter-popup').style.display='none';
+}
+</script>
+<script>
+function submitNewsletter(e, form) {
+  e.preventDefault();
+  var email = form.querySelector('[name="email"]').value;
+  var msg = form.querySelector('.nl-msg');
+  fetch('/newsletter-proxy.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: 'email=' + encodeURIComponent(email)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    msg.style.display = 'block';
+    if (data.success) {
+      msg.textContent = "You're in. Watch for your first issue.";
+      form.querySelector('[type="submit"]').style.display = 'none';
+    } else {
+      msg.textContent = data.message || 'Something went wrong. Try again.';
+    }
+  })
+  .catch(function(){
+    msg.style.display = 'block';
+    msg.textContent = 'Something went wrong. Try again.';
+  });
 }
 </script>
 

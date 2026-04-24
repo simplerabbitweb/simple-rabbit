@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Rabbit | Your website should be doing the work</title>
-  <meta name="description" content="Simple Rabbit builds sites that show up when the right people are searching and do the qualifying before you ever pick up the phone.">
-  <meta property="og:title" content="Simple Rabbit | Your website should be doing the work">
-  <meta property="og:description" content="Simple Rabbit builds sites that show up when the right people are searching and do the qualifying before you ever pick up the phone.">
+  <title>Simple Rabbit | The web studio for cash-pay service businesses</title>
+  <meta name="description" content="Custom websites and ongoing SEO for cash-pay service businesses whose in-person experience is already high-quality. Your website should match.">
+  <meta property="og:title" content="Simple Rabbit | The web studio for cash-pay service businesses">
+  <meta property="og:description" content="Custom websites and ongoing SEO for cash-pay service businesses whose in-person experience is already high-quality. Your website should match.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://simplerabbit.studio">
   <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
@@ -21,7 +21,7 @@
     :root{
       color-scheme:light only;
       --black:#000;--white:#fff;--tone:#F9F7F2;
-      --accent:#A8895F;--accent-dark:#8a6f4a;--accent-light:#e8d9bc;
+      --accent:#9A8C84;--accent-dark:#7A6E67;--accent-light:#DDD7D2;
       --mid:#111;--dark:#333;--light-border:#dfe0e1;
       --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
       --font-body:'Outfit',system-ui,sans-serif;
@@ -32,7 +32,7 @@
     a{color:inherit;}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;padding-bottom:8px;}
     .nav-inner{max-width:1100px;margin:0 auto;padding:0 48px 0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
     .nav-links{display:flex;align-items:center;gap:32px;}
     .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
@@ -74,6 +74,14 @@
     footer{border-top:1px solid var(--light-border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;}
     .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:var(--black);}
+    .article-card{border:1px solid var(--light-border);background:var(--white);text-decoration:none;color:var(--black);display:flex;flex-direction:column;transition:border-color 0.2s;max-width:480px;}
+    .article-card:hover{border-color:var(--black);}
+    .article-card-body{padding:32px;}
+    .article-card-arrow{font-size:13px;color:var(--mid);margin-top:auto;padding:20px 32px;border-top:1px solid var(--light-border);display:flex;align-items:center;justify-content:space-between;transition:color 0.2s;}
+    .article-card:hover .article-card-arrow{color:var(--black);}
+    .article-card-img{aspect-ratio:16/10;overflow:hidden;background:var(--tone);}
+    .article-card-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 0.4s ease;}
+    .article-card:hover .article-card-img img{transform:scale(1.03);}
     @media(max-width:900px){
       .nav-inner{padding:0 24px;}
       .sp{padding-left:24px!important;padding-right:24px!important;}
@@ -98,10 +106,14 @@
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     .blob-grain{position:absolute;inset:0;border-radius:50%;opacity:0.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;-webkit-mask:radial-gradient(circle,black 0%,transparent 70%);mask:radial-gradient(circle,black 0%,transparent 70%);}
     @media(max-width:768px){
-      .hero-h1 span{padding-left:0!important;text-align:left;}
+      .hero-h1{font-size:clamp(36px,9vw,84px)!important;letter-spacing:-1.5px!important;}
       .cta-box{padding:40px 28px!important;}
       .parallax-bg{background-attachment:scroll!important;background-size:cover!important;}
       .footer-cols{grid-template-columns:1fr 1fr!important;gap:40px!important;}
+      .proof-bar{flex-direction:column!important;gap:16px!important;text-align:center;}
+      .proof-divider{display:none!important;}
+      .serve-grid{grid-template-columns:1fr!important;}
+      .cs-grid{grid-template-columns:1fr!important;}
     }
     @media(max-width:520px){
       .footer-cols{grid-template-columns:1fr!important;}
@@ -110,6 +122,14 @@
       .footer-social{justify-content:center!important;}
       .footer-newsletter-cta{margin:0 auto!important;display:block!important;text-align:center!important;}
       .footer-bottom-bar{justify-content:center!important;flex-direction:column!important;align-items:center!important;text-align:center!important;gap:12px!important;}
+      .pricing-tease-inner{flex-direction:column!important;gap:32px!important;}
+    }
+    .testi-reveal-btn{display:none;width:100%;margin-top:16px;background:none;border:1px solid var(--light-border);padding:14px 24px;font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;color:var(--dark);transition:border-color 0.2s,color 0.2s;text-align:center;}
+    .testi-reveal-btn:hover{border-color:var(--black);color:var(--black);}
+    @media(max-width:768px){
+      .testi-grid{grid-template-columns:1fr!important;}
+      .testi-extra{display:none;}
+      #testi-btn-4{display:block;}
     }
   </style>
   <!-- Google Analytics -->
@@ -129,7 +149,7 @@
   "url": "https://simplerabbit.studio",
   "logo": "https://simplerabbit.studio/logo.png",
   "image": "https://simplerabbit.studio/Leann-4.jpg",
-  "description": "Simple Rabbit builds custom WordPress websites for service businesses that book better clients and rank in local and AI search.",
+  "description": "Simple Rabbit is a specialist web design studio for cash-pay service businesses. We build custom websites and provide ongoing SEO for high-end private-pay service businesses.",
   "telephone": "+15514862779",
   "email": "hello@simplerabbit.studio",
   "address": {
@@ -139,8 +159,8 @@
     "addressCountry": "US"
   },
   "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Bergen County, NJ"
+    "@type": "Country",
+    "name": "United States"
   },
   "founder": {
     "@type": "Person",
@@ -150,91 +170,33 @@
     "https://instagram.com/leannmfrank",
     "https://www.facebook.com/simplerabbitnj/"
   ],
-  "priceRange": "$$",
+  "priceRange": "$$$$",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Web Design Services",
+    "name": "Web Design Services for Cash-Pay Service Businesses",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Custom WordPress Website Design",
-          "description": "Custom WordPress websites for service businesses, built with SEO and AI visibility, starting at $4,800."
-        },
-        "image": "https://simplerabbit.studio/Leann-4.jpg",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "name": "Custom Website Design for Cash-Pay Service Businesses",
+          "description": "Custom websites for high-end cash-pay service businesses, built with SEO and conversion in mind. Starting at $4,800."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Website & Google Clarity Review",
-          "description": "Complete audit of your website and Google presence for $297."
-        },
-        "image": "https://simplerabbit.studio/Leann-4.jpg",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "name": "Ongoing Website Care and SEO",
+          "description": "Monthly website management, SEO, and updates for cash-pay service businesses. Starting at $149/month."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website and Google Clarity Review",
+          "description": "Complete audit of your website and Google presence. Clear, prioritized fixes for $297."
         }
       }
     ]
@@ -249,42 +211,21 @@
   "review": [
     {
       "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Melissa Simon"
-      },
-      "reviewBody": "Working with Leann from Simple Rabbit was an absolute dream! She completely brought my vision to life. Her designs were modern, clean, and totally on point. She made the entire process feel so easy and seamless."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Laura Gonzalez"
-      },
-      "reviewBody": "I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann got it immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Mona Perez"
-      },
+      "reviewRating": {"@type": "Rating","ratingValue": "5","bestRating": "5"},
+      "author": {"@type": "Person","name": "Mona Perez"},
       "reviewBody": "Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search!"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating","ratingValue": "5","bestRating": "5"},
+      "author": {"@type": "Person","name": "Melissa Simon"},
+      "reviewBody": "Working with Leann from Simple Rabbit was an absolute dream! She completely brought my vision to life. Her designs were modern, clean, and totally on point."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating","ratingValue": "5","bestRating": "5"},
+      "author": {"@type": "Person","name": "Laura Gonzalez"},
+      "reviewBody": "I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann got it immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."
     }
   ]
 }
@@ -293,10 +234,6 @@
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BANNER -->
-<div style="background:var(--black);color:var(--white);text-align:center;padding:10px 24px;font-size:13px;font-family:var(--font-body);letter-spacing:0.2px;">
-  Now booking website + Google audits, <a href="/website-audit" style="color:var(--white);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:500;">Learn more &rarr;</a>
-</div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -305,20 +242,7 @@
     <div class="nav-links">
       <a href="/about" class="nav-link-about">About</a>
       <a href="/portfolio" class="nav-link-portfolio">Portfolio</a>
-      <div class="nav-item">
-        <div class="mobile-nav-services">
-    <a href="/services" style="flex:1;">Services</a>
-    <button class="mobile-nav-toggle" id="svc-toggle" aria-label="Toggle service pages">+</button>
-  </div>
-  <a href="/website-design" class="mobile-nav-sub">Website Build</a>
-  <a href="/ongoing-support" class="mobile-nav-sub">Monthly Partnership</a>
-  <a href="/website-audit" class="mobile-nav-sub">Website &amp; Google Clarity Review</a>
-        <div class="nav-dropdown">
-          <a href="/website-design">Website Build</a>
-          <a href="/ongoing-support">Monthly Partnership</a>
-          <a href="/website-audit">Website &amp; Google Clarity Review</a>
-        </div>
-      </div>
+      <a href="/services">Services</a>
       <a href="/articles">Articles</a>
       <a href="/contact" class="nav-cta">Work With Us</a>
     </div>
@@ -328,183 +252,218 @@
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
   <a href="/portfolio">Portfolio</a>
-  <div class="mobile-nav-services">
-    <a href="/services" style="flex:1;">Services</a>
-    <button class="mobile-nav-toggle" id="svc-toggle" aria-label="Toggle service pages">+</button>
-  </div>
-  <a href="/website-design" class="mobile-nav-sub">Website Build</a>
-  <a href="/ongoing-support" class="mobile-nav-sub">Monthly Partnership</a>
-  <a href="/website-audit" class="mobile-nav-sub">Website &amp; Google Clarity Review</a>
+  <a href="/services">Services</a>
   <a href="/articles">Articles</a>
   <a href="/contact" class="mobile-nav-cta">Work With Us</a>
 </div>
 
+
 <!-- 1. HERO -->
-<section style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 52% 58% at 72% 42%, rgba(168,137,95,0.30) 0%, rgba(232,217,188,0.14) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 52% 58% at 72% 42%, rgba(154,140,132,0.30) 0%, rgba(221,215,210,0.14) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
   <div class="hero-grain"></div>
-  <div style="position:relative;z-index:1;padding:80px 0 32px;">
-    <h1 style="font-family:var(--font-display);font-size:clamp(52px,8.5vw,108px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
-      <span style="display:block;">Your prices are fine.</span>
-      <span style="display:block;padding-left:10%;">Your website is the problem.</span>
-    </h1>
-  </div>
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;position:relative;z-index:1;gap:40px;flex-wrap:wrap;">
-    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;max-width:480px;color:rgba(0,0,0,0.65);margin:0;">We build sites that attract the right clients - people who already see your value before they ever reach out.</p>
-    <a href="/contact" style="display:inline-block;background:#000;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;flex-shrink:0;">Work With Us &rarr;</a>
+  <div style="position:relative;z-index:1;padding:80px 0 0;max-width:960px;">
+    <span class="overline" style="margin-bottom:28px;">Websites for cash-pay health practices</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">The web studio for practices redefining how people invest in themselves.</h1>
+    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;max-width:520px;color:rgba(0,0,0,0.65);margin:0 0 44px;">We work with private-pay service businesses whose in-person experience is already high-quality and need a website to match.</p>
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <a href="/contact" style="display:inline-block;background:#000;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;">Book a clarity call</a>
+      <a href="/portfolio" style="font-size:14px;color:var(--accent);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;font-family:var(--font-body);">See our work &rarr;</a>
+    </div>
   </div>
 </section>
 
 
-<!-- 4. PAIN POINTS -->
-<section class="reveal sp" style="background:radial-gradient(ellipse 70% 60% at 92% 50%, rgba(232,217,188,0.38) 0%, rgba(244,234,217,0.13) 55%, #ffffff 72%);padding:100px 48px;border-bottom:1px solid var(--light-border);">
+<!-- 2. PROOF BAR -->
+<section style="border-bottom:1px solid var(--light-border);padding:28px 48px;background:var(--white);">
+  <div class="proof-bar" style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;">
+    <span style="font-family:var(--font-display);font-size:15px;color:var(--black);padding:8px 40px;">Smooth Laser Center</span>
+    <span class="proof-divider" style="width:1px;height:20px;background:var(--accent);flex-shrink:0;align-self:center;"></span>
+    <span style="font-family:var(--font-display);font-size:15px;color:var(--black);padding:8px 40px;">Women's Health Practice</span>
+    <span class="proof-divider" style="width:1px;height:20px;background:var(--accent);flex-shrink:0;align-self:center;"></span>
+    <span style="font-family:var(--font-display);font-size:15px;color:var(--mid);padding:8px 40px;">+ 11 practices launched</span>
+  </div>
+</section>
+
+
+<!-- 3. WHO WE SERVE -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;grid-template-columns:1fr 400px;">
+    <div>
+      <span class="overline">Who we build for</span>
+      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:40px;">If your clients pay out of pocket, your website has to earn every click.</h2>
+      <p style="font-size:17px;line-height:1.8;color:var(--dark);margin-bottom:40px;">My clients run cash-pay service businesses like high-end practices, specialty services and other businesses where clients choose them, pay out of pocket, and expect the experience to match. If that&rsquo;s your business, your website needs to reflect it before anyone walks through the door.</p>
+      <a href="/contact" style="display:inline-block;background:#000;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Book a clarity call</a>
+    </div>
+    <img src="leann-studio.jpg" alt="Leann Frank, Simple Rabbit" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:grayscale(100%);" loading="lazy">
+  </div>
+</section>
+
+
+<!-- 4. FEATURED CASE STUDIES -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:820px;margin-bottom:64px;">You've been in business for years but your website is still causing problems.</h2>
+    <span class="overline">Selected work</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Websites that match the care.</h2>
+
+    <div class="cs-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-bottom:40px;">
+
+      <!-- Smooth Laser Center -->
+      <a href="/blog/case-study-smooth-laser-center" class="article-card reveal" style="max-width:none;">
+        <div class="article-card-img"><img src="previews/smooth-laser-center-website.png" alt="Smooth Laser Center website case study by Simple Rabbit"></div>
+        <div class="article-card-body">
+          <span class="overline">Case Study</span>
+          <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How Smooth Laser Center went from invisible online to getting clients from search every week</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--dark);">Mona had the skills and the clientele, but her old website didn't reflect any of it. Here's how a new site changed her visibility on Google.</p>
+        </div>
+        <div class="article-card-arrow">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read case study</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
+      <!-- Lisa Milli, MD — Coming Soon -->
+      <div role="region" aria-label="Coming soon case study" style="max-width:none;border:1px solid var(--light-border);background:linear-gradient(135deg,#f4ead9 0%,#DDD7D2 100%);cursor:default;display:flex;flex-direction:column;color:var(--black);">
+        <div style="aspect-ratio:16/10;overflow:hidden;">
+          <img src="previews/case-study-coming-soon.png.jpg" alt="Coming soon case study by Simple Rabbit" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);">
+        </div>
+        <div style="padding:32px;flex:1;">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;">Coming Soon &middot; Specialty Practice</span>
+          <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;color:#000;">A new case study, launching soon</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--dark);">A specialty practice. Launching Summer 2026.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="/portfolio" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">See all 11 projects &rarr;</a>
+  </div>
+</section>
+
+
+<!-- 5. WHY SIMPLE RABBIT -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);background:var(--tone);position:relative;">
+  <div aria-hidden="true" style="position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(154,140,132,0.20) 0%,transparent 70%);right:-120px;bottom:-100px;pointer-events:none;"><div class="blob-grain"></div></div>
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
+    <span class="overline">Why Simple Rabbit</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:720px;margin-bottom:64px;">You're not hiring a generalist. You're hiring a studio that knows this space.</h2>
     <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);background:var(--tone);">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">01</span>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;margin-bottom:16px;">Built for your client</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We understand how clients research private-pay services. Every page is designed around how they actually shop, compare, and decide.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);background:var(--tone);">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">02</span>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;margin-bottom:16px;">Local SEO that actually works</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Service pages written to rank for the services and outcomes clients are searching. Google sends you inquiries, not just curious browsers.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--light-border);background:var(--tone);">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">03</span>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;margin-bottom:16px;">We handle the site for good</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Ongoing care means your website stays current, secure, and on-brand without you ever touching it.</p>
+      </div>
+    </div>
+    <div style="margin-top:40px;">
+      <a href="/about" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">Meet the studio &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 6. PROCESS -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">How we work</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:600px;margin-bottom:64px;">Clear from the first call to long after launch.</h2>
+    <div class="grid-3" style="border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+
       <div style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">01</span>
-        <h4 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;">You're getting clients. Just not the right ones. Because your site attracts the wrong people.</h4>
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Clarity call</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--dark);">We learn about your business, your clients, and your goals. Thirty minutes. No pressure, no pitch deck.</p>
       </div>
+
       <div style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">02</span>
-        <h4 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;">People balk at your price because your site looks budget, and people assume you are too.</h4>
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Proposal</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--dark);">You get a clear scope, timeline, and investment. No surprises, no hourly billing, no scope creep.</p>
       </div>
+
       <div style="padding:48px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">03</span>
-        <h4 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;">You do great work but your competitor with a better site wins the business.</h4>
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Design</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--dark);">We build your site around how your ideal client researches, compares, and decides to book.</p>
       </div>
+
       <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">04</span>
-        <h4 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;">You don't show up in Google or AI search.</h4>
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Review</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--dark);">One focused round of revisions. You tell us what to refine, we take it from there.</p>
       </div>
+
       <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">05</span>
-        <h4 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;">You spend more time tweaking your site than making money.</h4>
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Launch</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--dark);">Your site goes live SEO-ready, properly set up for Google, and built to be found by the clients you want.</p>
       </div>
+
       <div style="padding:48px 40px;border-right:1px solid var(--light-border);">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:24px;">06</span>
-        <h4 style="font-family:var(--font-display);font-size:22px;font-weight:400;line-height:1.3;">You're embarrassed to share your outdated website.</h4>
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Ongoing care</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--dark);">We stay on as your web partner. Your site stays current, secure, and growing alongside your practice.</p>
       </div>
+
     </div>
+    <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;color:var(--mid);margin-top:24px;">Most practice sites are complete in 4 to 6 weeks from kickoff.</p>
   </div>
 </section>
 
-<!-- 6. FOUNDER SECTION -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
-  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;">
-    <div>
-      <img src="leann.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:4/5;max-height:560px;">
-    </div>
-    <div>
-      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:12px;">Hi, I'm Leann</h2>
-      <h3 style="font-size:22px;line-height:1.25;font-weight:400;color:var(--mid);margin-bottom:24px;">Founder &amp; Web Designer &middot; Bergen County, NJ</h3>
-      <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">I build websites for service business owners who are done being underpriced. Based in Bergen County, NJ, I make sites that do the selling before you ever get on the phone.</p>
-      <a href="/about" style="font-size:14px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;">Learn about us &rarr;</a>
-    </div>
-  </div>
-</section>
 
-<!-- 3. INTRO SECTION -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;">
-  <div aria-hidden="true" style="position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,217,188,0.62) 0%,transparent 70%);right:-100px;bottom:-120px;pointer-events:none;"><div class="blob-grain"></div></div>
-  <div class="grid-2-center" style="max-width:1100px;margin:0 auto;position:relative;">
-    <div>
-      <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:24px;">This is what becomes possible when your website actually does its job.</h2>
-      <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:480px;margin-bottom:28px;">You stop chasing clients and start choosing them. Better inquiries, less convincing, higher rates that nobody questions - because your site already made the case before you ever got on the phone.</p>
-      <a href="/portfolio" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">View our work &rarr;</a>
-    </div>
-    <div>
-      <img src="innovative-software-solutions.png" alt="Simple Rabbit web design work" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;">
-    </div>
-  </div>
-</section>
 
-<!-- 5. SOLUTION SECTION -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);text-align:center;">
-  <div style="max-width:820px;margin:0 auto;">
-    <blockquote style="font-family:var(--font-display);font-size:clamp(32px,5vw,64px);line-height:1.05;letter-spacing:-2px;font-weight:400;color:var(--black);margin:0 0 32px;">&ldquo;When your website is working, clients show up already sold. You stop justifying your price and start choosing who you work with.&rdquo;</blockquote>
-    <cite style="font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);font-style:normal;">- Leann Frank, Founder of Simple Rabbit</cite>
-  </div>
-</section>
 
-<!-- 7. SERVICES SECTION -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;">
-  <div aria-hidden="true" style="position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(168,137,95,0.30) 0%,transparent 70%);right:-120px;bottom:-100px;pointer-events:none;"><div class="blob-grain"></div></div>
-  <div style="max-width:1100px;margin:0 auto;position:relative;">
-    <span class="overline">What we offer</span>
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:600px;margin-bottom:16px;">Three ways to work together.</h2>
-    <p style="font-size:15px;line-height:1.75;color:var(--dark);max-width:520px;margin-bottom:64px;">From a quick gut-check to a full custom build, we meet you where you are.</p>
-    <img src="website-design-for-you.png" alt="Simple Rabbit web design" style="width:100%;display:block;aspect-ratio:16/7;object-fit:cover;object-position:center;border:1px solid var(--light-border);border-bottom:none;">
-    <div class="grid-3" style="border:1px solid var(--light-border);">
-      <div class="offer-card" style="padding:40px 40px 48px;border-right:1px solid var(--light-border);background:var(--white);">
-        <span class="overline">start here</span>
-        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:4px;">Website &amp; Google Clarity Review</h3>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);margin-bottom:16px;">$297 one-time</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">A complete audit of your website and Google presence. Clear, prioritized fixes you can act on right away.</p>
-        <a href="/website-audit" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">See what's included &rarr;</a>
-      </div>
-      <div class="offer-card" style="padding:40px 40px 48px;border-right:1px solid var(--light-border);background:var(--white);">
-        <span class="overline">full build</span>
-        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:4px;">Custom Website Build</h3>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);margin-bottom:16px;">Starting at $4,800</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">A fully custom website designed around your business, your clients, and your goals. Built to attract, convert, and grow with you.</p>
-        <a href="/services" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">Learn more &rarr;</a>
-      </div>
-      <div class="offer-card" style="padding:40px 40px 48px;background:var(--white);">
-        <span class="overline">ongoing</span>
-        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:4px;">Monthly Partnership</h3>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);margin-bottom:16px;">Starting at $149/month</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:28px;">Your business keeps evolving. Your website should too. Stay on as an ongoing partner for updates, SEO, and strategy.</p>
-        <a href="/services" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">Learn more &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 9. TESTIMONIALS -->
-<style>
-  @media(max-width:768px){
-    .testi-grid{grid-template-columns:1fr!important;}
-    .testi-extra{display:none;}
-    #testi-btn-4{display:block;}
-  }
-  .testi-reveal-btn{display:none;width:100%;margin-top:16px;background:none;border:1px solid var(--light-border);padding:14px 24px;font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;color:var(--dark);transition:border-color 0.2s,color 0.2s;text-align:center;}
-  .testi-reveal-btn:hover{border-color:var(--black);color:var(--black);}
-</style>
-<section class="reveal sp" style="background:var(--tone);padding:80px 48px;border-bottom:1px solid var(--light-border);">
+<!-- 8. TESTIMONIALS -->
+<section class="reveal sp" style="background:var(--white);padding:80px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <span class="overline">What clients say</span>
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Don't take our word for it.</h2>
     <div class="testi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
-        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"Working with Leann from Simple Rabbit was an absolute dream! She completely brought my vision to life. Her designs were modern, clean, and totally on point. She made the entire process feel so easy and seamless. I truly felt like I was in the best hands from start to finish."</p>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Melissa Simon, The Home Refresh</p>
-      </div>
-      <div style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
-        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann 'got it' immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."</p>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Laura Gonzalez, Education Attorney</p>
-      </div>
-      <div style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
-        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"I can't express how thrilled I am with the website Simple Rabbit created for my business. Leann was easy to work with, and she could read my mind. Now I have a website that represents my services beautifully, and I couldn't be happier with the outcome and the ease with which it all came together."</p>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Lauren Goodwin, Lauren Goodwin Decorative Finishes, Australia</p>
-      </div>
-      <div class="testi-extra" id="testi-4" style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
+
+      <div style="background:var(--tone);padding:36px;border:1px solid var(--light-border);">
         <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search!"</p>
         <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Mona Perez, Smooth Laser Center &middot; Washington Township, NJ</p>
       </div>
-      <div class="testi-extra" id="testi-5" style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
+
+      <div style="background:var(--tone);padding:36px;border:1px solid var(--light-border);">
+        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"Working with Leann from Simple Rabbit was an absolute dream! She completely brought my vision to life. Her designs were modern, clean, and totally on point. She made the entire process feel so easy and seamless. I truly felt like I was in the best hands from start to finish."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Melissa Simon, The Home Refresh</p>
+      </div>
+
+      <div style="background:var(--tone);padding:36px;border:1px solid var(--light-border);">
+        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann 'got it' immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Laura Gonzalez, Education Attorney</p>
+      </div>
+
+      <div class="testi-extra" id="testi-4" style="background:var(--tone);padding:36px;border:1px solid var(--light-border);">
+        <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"I can't express how thrilled I am with the website Simple Rabbit created for my business. Leann was easy to work with, and she could read my mind. Now I have a website that represents my services beautifully, and I couldn't be happier with the outcome and the ease with which it all came together."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Lauren Goodwin, Lauren Goodwin Decorative Finishes, Australia</p>
+      </div>
+
+      <div class="testi-extra" id="testi-5" style="background:var(--tone);padding:36px;border:1px solid var(--light-border);">
         <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"LOVE! I feel like Leann took the idea out of my non-creative brain and brought it to life."</p>
         <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Jessica Semioli, Revive &amp; Bloom Therapy &middot; Waldwick, NJ</p>
       </div>
-      <div class="testi-extra" id="testi-6" style="background:var(--white);padding:36px;border:1px solid var(--light-border);">
+
+      <div class="testi-extra" id="testi-6" style="background:var(--tone);padding:36px;border:1px solid var(--light-border);">
         <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:24px;">"I was absolutely thrilled with my website for my luxury styling business. Leann totally saw my vision and executed an upscale, streamlined website that reflected my brand perfectly. She just gets it! I cannot recommend her enough."</p>
         <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);">Lauren Matina, Novateur Style</p>
       </div>
+
     </div>
     <button class="testi-reveal-btn" id="testi-btn-4" onclick="testiReveal(4)">See another &rarr;</button>
     <button class="testi-reveal-btn" id="testi-btn-5" onclick="testiReveal(5)">And another &rarr;</button>
@@ -513,56 +472,17 @@
 </section>
 
 
-
-
-
-<!-- CASE STUDIES -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <span class="overline">Real results</span>
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">What happens when the right site goes live.</h2>
-    <div class="grid-2" style="gap:40px;align-items:start;">
-
-      <div style="border:1px solid var(--light-border);">
-        <img src="/previews/smoothlasercenter.png" alt="Smooth Laser Center website by Simple Rabbit" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--light-border);">
-        <div style="padding:36px;">
-          <span class="overline">Med spa, Washington Township NJ</span>
-          <h3 style="font-size:clamp(20px,2.2vw,26px);line-height:1.2;font-weight:400;margin-bottom:20px;">From invisible online to getting clients from search every week</h3>
-          <div style="display:flex;gap:32px;margin-bottom:28px;flex-wrap:wrap;">
-            <div><div style="font-family:var(--font-display);font-size:30px;letter-spacing:-1px;line-height:1;">6x</div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-top:4px;">Google impressions</div></div>
-            <div><div style="font-family:var(--font-display);font-size:30px;letter-spacing:-1px;line-height:1;">4x+</div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-top:4px;">Clicks from search</div></div>
-          </div>
-          <a href="/blog/case-study-smooth-laser-center" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">Read the case study &rarr;</a>
-        </div>
-      </div>
-
-      <div style="border:1px solid var(--light-border);">
-        <img src="/previews/thehomerefresh.png" alt="The Home Refresh website by Simple Rabbit" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--light-border);">
-        <div style="padding:36px;">
-          <span class="overline">Home organizing, Bergen County NJ</span>
-          <h3 style="font-size:clamp(20px,2.2vw,26px);line-height:1.2;font-weight:400;margin-bottom:20px;">From outdated website to booked solid</h3>
-          <div style="display:flex;gap:32px;margin-bottom:28px;flex-wrap:wrap;">
-            <div><div style="font-family:var(--font-display);font-size:30px;letter-spacing:-1px;line-height:1;">Booked</div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-top:4px;">Solid since launch</div></div>
-            <div><div style="font-family:var(--font-display);font-size:30px;letter-spacing:-1px;line-height:1;">Dozens</div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-top:4px;">Consultation requests</div></div>
-          </div>
-          <a href="/blog/case-study-the-home-refresh" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">Read the case study &rarr;</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FULL-WIDTH CTA -->
+<!-- 9. FINAL CTA -->
 <section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
   <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
-  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:520px;width:calc(100% - 48px);text-align:center;" class="cta-box">
+  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:560px;width:calc(100% - 48px);text-align:center;" class="cta-box">
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:16px;">Next step</span>
-    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Let&rsquo;s build a site that books the clients you actually want.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Tell us about your business. If we&rsquo;re the right fit, we&rsquo;ll map out a plan together.</p>
-    <a href="/contact" style="display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Work With Us &rarr;</a>
+    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Ready for a website that earns its place in the practice?</h2>
+    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Book a free 30-minute clarity call. We'll walk through your business, your client, and whether we're the right fit to build what's next.</p>
+    <a href="/contact" style="display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Book my free call</a>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer style="background:#000;border-top:none;padding:0;display:block;">
@@ -571,20 +491,20 @@
   <div style="border-bottom:1px solid rgba(255,255,255,0.1);padding:56px 48px;">
     <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
       <div>
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8d9bc;display:block;margin-bottom:10px;">The Hutch - Free Newsletter</span>
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:10px;">The Hutch - Free Newsletter</span>
         <p style="font-size:clamp(18px,2vw,24px);color:#fff;margin:0;line-height:1.3;font-family:var(--font-display);">SEO insights and web design thinking, delivered weekly.</p>
       </div>
       <form onsubmit="submitNewsletter(event,this)" style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;align-items:center;">
       <input type="email" name="email" placeholder="Your email" required style="border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:14px;padding:10px 0;outline:none;font-family:var(--font-body);min-width:180px;">
       <button type="submit" style="background:#fff;color:#000;padding:13px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:var(--font-body);white-space:nowrap;flex-shrink:0;">Join The Hutch &rarr;</button>
-      <p class="nl-msg" style="font-size:13px;color:#e8d9bc;width:100%;margin:4px 0 0;display:none;"></p>
+      <p class="nl-msg" style="font-size:13px;color:#DDD7D2;width:100%;margin:4px 0 0;display:none;"></p>
     </form>
     </div>
   </div>
 
   <!-- Main columns -->
   <div style="padding:64px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div class="footer-cols" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:48px;">
+    <div class="footer-cols" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
 
       <!-- Brand -->
       <div>
@@ -614,28 +534,10 @@
       <div>
         <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Services</span>
         <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/website-design" style="font-size:14px;color:#fff;text-decoration:none;">Website Build</a>
-          <a href="/ongoing-support" style="font-size:14px;color:#fff;text-decoration:none;">Monthly Partnership</a>
-          <a href="/website-audit" style="font-size:14px;color:#fff;text-decoration:none;">Website &amp; Google Clarity Review</a>
           <a href="/services" style="font-size:14px;color:#fff;text-decoration:none;">All Services</a>
         </nav>
       </div>
 
-      <!-- Counties -->
-      <div>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Counties We Serve</span>
-        <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/web-design-bergen-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Bergen County, NJ</a>
-          <a href="/web-design-westchester-county-ny" style="font-size:14px;color:#fff;text-decoration:none;">Westchester County, NY</a>
-          <a href="/web-design-rockland-county-ny" style="font-size:14px;color:#fff;text-decoration:none;">Rockland County, NY</a>
-          <a href="/web-design-morris-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Morris County, NJ</a>
-          <a href="/web-design-essex-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Essex County, NJ</a>
-          <a href="/web-design-hudson-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Hudson County, NJ</a>
-          <a href="/web-design-passaic-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Passaic County, NJ</a>
-          <a href="/web-design-sussex-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Sussex County, NJ</a>
-          <a href="/web-design-warren-county-nj" style="font-size:14px;color:#fff;text-decoration:none;">Warren County, NJ</a>
-        </nav>
-      </div>
 
     </div>
   </div>
@@ -653,7 +555,6 @@
 
 </footer>
 
-<!-- 13. MOBILE CTA BAR -->
 
 <script>
   // Scroll reveal
@@ -671,40 +572,6 @@
     if (btn)  btn.style.display  = 'none';
     if (next) next.style.display = 'block';
   }
-
-
-
-  // Work preview
-  (function() {
-    var items = document.querySelectorAll('.work-item[data-preview]');
-    var img = document.getElementById('preview-img');
-    var lbl = document.getElementById('preview-label');
-    var ph  = document.getElementById('preview-placeholder');
-    if (!img) return;
-    // Preload all preview images so hover is instant
-    items.forEach(function(item) {
-      var pre = new Image();
-      pre.src = item.dataset.preview;
-    });
-    var current = '';
-    items.forEach(function(item) {
-      item.addEventListener('mouseenter', function() {
-        var url = this.dataset.preview;
-        if (url === current) return;
-        current = url;
-        img.style.opacity = '0';
-        img.src = url;
-        // Show immediately if already cached, otherwise wait for load
-        if (img.complete && img.naturalWidth) {
-          ph.style.opacity = '0'; img.style.opacity = '1';
-        } else {
-          img.onload = function() { ph.style.opacity = '0'; img.style.opacity = '1'; };
-          img.onerror = function() { ph.style.opacity = '1'; img.style.opacity = '0'; };
-        }
-        lbl.textContent = item.dataset.domain || '';
-      });
-    });
-  })();
 </script>
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
@@ -720,138 +587,19 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
   "name": "Simple Rabbit",
   "url": "https://simplerabbit.studio",
   "logo": "https://simplerabbit.studio/logo.png",
-  "image": "https://simplerabbit.studio/leann.jpg",
-  "description": "Simple Rabbit is a premium web design studio for service businesses. We build websites with SEO and AI visibility built in so you attract better clients and charge what you deserve.",
-  "founder": {
-    "@type": "Person",
-    "name": "Leann Frank"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Bergen County",
-    "addressRegion": "NJ",
-    "addressCountry": "US"
-  },
+  "image": "https://simplerabbit.studio/Leann-4.jpg",
+  "description": "Simple Rabbit is a specialist web design studio for cash-pay service businesses. We build custom websites and provide ongoing SEO for high-end private-pay service businesses.",
+  "founder": {"@type": "Person","name": "Leann Frank"},
+  "address": {"@type": "PostalAddress","addressLocality": "Bergen County","addressRegion": "NJ","addressCountry": "US"},
   "telephone": "+15514862779",
   "email": "hello@simplerabbit.studio",
   "priceRange": "$$$$",
   "currenciesAccepted": "USD",
   "openingHours": "Mo-Fr 09:00-17:00",
-  "areaServed": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "Bergen County, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Hackensack, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Ridgewood, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Paramus, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Fort Lee, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Teaneck, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Englewood, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Fair Lawn, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "River Vale, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Westwood, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Ramsey, NJ"
-    },
-    {
-      "@type": "City",
-      "name": "Mahwah, NJ"
-    },
-    {
-      "@type": "State",
-      "name": "New Jersey"
-    },
-    {
-      "@type": "Country",
-      "name": "United States"
-    }
-  ],
-  "serviceType": [
-    "Web Design",
-    "SEO",
-    "AI Visibility"
-  ],
-  "sameAs": [
-    "https://instagram.com/leannmfrank",
-    "https://www.facebook.com/simplerabbitnj/"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "6",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Melissa Simon"
-      },
-      "reviewBody": "Working with Leann from Simple Rabbit was an absolute dream! She completely brought my vision to life. Her designs were modern, clean, and totally on point. She made the entire process feel so easy and seamless."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Laura Gonzalez"
-      },
-      "reviewBody": "I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann got it immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Mona Perez"
-      },
-      "reviewBody": "Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search!"
-    }
-  ]
+  "areaServed": {"@type": "Country","name": "United States"},
+  "serviceType": ["Web Design for Cash-Pay Service Businesses","Website Design for High-End Service Businesses","SEO for Private-Pay Services"],
+  "sameAs": ["https://instagram.com/leannmfrank","https://www.facebook.com/simplerabbitnj/"],
+  "aggregateRating": {"@type": "AggregateRating","ratingValue": "5","reviewCount": "6","bestRating": "5","worstRating": "1"}
 }
 </script>
 <script type="application/ld+json">
@@ -860,7 +608,7 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
   "@type": "WebSite",
   "name": "Simple Rabbit",
   "url": "https://simplerabbit.studio",
-  "description": "Premium web design for service businesses. Starting at $4,800."
+  "description": "The web studio for cash-pay service businesses. Custom websites starting at $4,800."
 }
 </script>
 <script type="application/ld+json">
@@ -870,18 +618,18 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How much does a Simple Rabbit website cost?",
+      "name": "What types of practices does Simple Rabbit build websites for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Projects start at $4,800. The investment depends on scope, number of pages, and ongoing support. We provide a clear quote after learning about your business."
+        "text": "Simple Rabbit builds websites for cash-pay service businesses, including high-end practices, specialty services, and private-pay businesses where clients choose to pay out of pocket for quality work."
       }
     },
     {
       "@type": "Question",
-      "name": "What is included in a Simple Rabbit website?",
+      "name": "How much does a Simple Rabbit website cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every project includes custom design, strategic copywriting guidance, on-page SEO, mobile optimization, and ongoing support so your site stays current."
+        "text": "Custom website builds start at $4,800. Ongoing care and SEO starts at $149/month. We provide a clear quote after learning about your practice."
       }
     },
     {
@@ -889,31 +637,23 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
       "name": "How long does a website project take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most projects are complete in 4 to 6 weeks from kickoff, depending on scope and how quickly content and feedback are exchanged."
+        "text": "Most practice sites are complete in 4 to 6 weeks from kickoff, depending on scope and how quickly content and feedback are exchanged."
       }
     },
     {
       "@type": "Question",
-      "name": "What types of businesses does Simple Rabbit work with?",
+      "name": "Does Simple Rabbit work with practices outside New Jersey?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We work with service businesses, coaches, consultants, home organizers, attorneys, health and wellness providers, and other professionals who are ready to attract premium clients and charge what they deserve."
+        "text": "Yes. While Simple Rabbit is based in Bergen County, NJ, we work with private-pay service businesses across the United States. Our process is fully remote."
       }
     },
     {
       "@type": "Question",
-      "name": "Does Simple Rabbit work with businesses outside New Jersey?",
+      "name": "What is included in a Simple Rabbit website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. While we are based in Bergen County, NJ, we work with service businesses across the United States. Our process is fully remote and designed to work seamlessly regardless of location."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer web design services in Bergen County, NJ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Simple Rabbit is a web design studio based in Bergen County, NJ. We work with service businesses throughout Bergen County, including Hackensack, Ridgewood, Paramus, Fort Lee, Teaneck, Englewood, Fair Lawn, River Vale, Westwood, Ramsey, and Mahwah, as well as clients across the US."
+        "text": "Every project includes custom design, SEO-optimized service pages written for the services your clients are searching, mobile optimization, and ongoing care so your site stays current and competitive."
       }
     }
   ]
@@ -924,13 +664,13 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 <div id="newsletter-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
   <div style="background:#000;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
-    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8d9bc;display:block;margin-bottom:16px;">The Hutch - Free Newsletter</span>
+    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch - Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of. No fluff.</p>
+    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you're proud of.</p>
     <form onsubmit="submitNewsletter(event,this)" style="width:100%;">
     <input type="email" name="email" placeholder="Your email address" required style="width:100%;border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:15px;padding:10px 0;outline:none;font-family:'Outfit',system-ui,sans-serif;margin-bottom:16px;display:block;">
     <button type="submit" style="display:block;width:100%;background:#fff;color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">Join The Hutch &rarr;</button>
-    <p class="nl-msg" style="font-size:13px;color:#e8d9bc;margin-top:12px;display:none;"></p>
+    <p class="nl-msg" style="font-size:13px;color:#DDD7D2;margin-top:12px;display:none;"></p>
   </form>
     <div style="margin-top:20px;">
       <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
@@ -949,6 +689,33 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 })();
 function closeNewsletterPopup(){
   document.getElementById('newsletter-popup').style.display='none';
+}
+</script>
+
+<script>
+function submitNewsletter(e, form) {
+  e.preventDefault();
+  var email = form.querySelector('[name="email"]').value;
+  var msg = form.querySelector('.nl-msg');
+  fetch('/newsletter-proxy.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: 'email=' + encodeURIComponent(email)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    msg.style.display = 'block';
+    if (data.success) {
+      msg.textContent = "You're in. Watch for your first issue.";
+      form.querySelector('[type="submit"]').style.display = 'none';
+    } else {
+      msg.textContent = data.message || 'Something went wrong. Try again.';
+    }
+  })
+  .catch(function(){
+    msg.style.display = 'block';
+    msg.textContent = 'Something went wrong. Try again.';
+  });
 }
 </script>
 
