@@ -73,7 +73,7 @@
     .included-cell{padding:40px 40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);}
     .faq-row{border-bottom:1px solid var(--light-border);padding:32px 0;}
     .faq-row:first-child{border-top:1px solid var(--light-border);}
-    .also-avail-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+    .also-avail-grid{display:grid;grid-template-columns:repeat(3,1fr);}
     @media(max-width:900px){
       .also-avail-grid{grid-template-columns:1fr 1fr!important;}
       .nav-inner{padding:0 24px;}
@@ -85,7 +85,9 @@
       .invest-blocks{flex-direction:column!important;gap:0!important;}
       .invest-block{border-right:none!important;border-bottom:1px solid var(--light-border)!important;}
     }
-    @media(max-width:600px){}
+    @media(max-width:600px){
+      .also-avail-grid{grid-template-columns:1fr!important;}
+    }
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
     .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -226,8 +228,9 @@
 </section>
 
 <!-- SECTION 2: WHAT'S INCLUDED -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1100px;margin:0 auto;">
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(194,205,255,0.24) 0%,transparent 68%);right:-120px;top:40px;pointer-events:none;"></div>
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
     <span class="overline">What&rsquo;s Included</span>
     <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;max-width:640px;">A website built for your practice, not a template with your logo slapped on.</h2>
 
@@ -314,24 +317,28 @@
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:48px;">Also available</span>
     <div class="also-avail-grid" style="gap:0;border-top:1px solid rgba(255,255,255,0.1);border-left:1px solid rgba(255,255,255,0.1);">
 
-      <div style="padding:40px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);">
-        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Logo Design</h3>
-        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">A mark that holds up everywhere, from a business card to a website header.</p>
+      <div style="border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);overflow:hidden;">
+        <img src="logo-design.png" alt="Logo Design" style="width:100%;height:90px;object-fit:cover;display:block;">
+        <div style="padding:32px 32px 40px;">
+          <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Logo Design</h3>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">A mark that holds up everywhere, from a business card to a website header.</p>
+        </div>
       </div>
 
-      <div style="padding:40px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);">
-        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Brand Design</h3>
-        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">Colors, type, and visual language that ties your whole business together.</p>
+      <div style="border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);overflow:hidden;">
+        <img src="brand-design.png" alt="Brand Design" style="width:100%;height:90px;object-fit:cover;display:block;">
+        <div style="padding:32px 32px 40px;">
+          <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Brand Design</h3>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">Colors, type, and visual language that ties your whole business together.</p>
+        </div>
       </div>
 
-      <div style="padding:40px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);">
-        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Google Business Profile</h3>
-        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">Optimized so the right clients find you when they search locally.</p>
-      </div>
-
-      <div style="padding:40px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);">
-        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Stationery Design</h3>
-        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">Business cards, letterheads, and print materials that match your brand.</p>
+      <div style="border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);overflow:hidden;">
+        <img src="stationary-design.png" alt="Stationery Design" style="width:100%;height:90px;object-fit:cover;display:block;">
+        <div style="padding:32px 32px 40px;">
+          <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;">Stationery Design</h3>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);">Business cards, letterheads, and print materials that match your brand.</p>
+        </div>
       </div>
 
     </div>
