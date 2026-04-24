@@ -4,6 +4,14 @@ RewriteEngine On
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
+# --- Service sub-pages → /services ---
+RewriteRule ^website-design/?$ /services [R=301,L]
+RewriteRule ^ongoing-support/?$ /services [R=301,L]
+RewriteRule ^website-audit/?$ /services [R=301,L]
+
+# --- County/location pages → /articles ---
+RewriteRule ^web-design-bergen-county-nj/?$ /articles [R=301,L]
+
 # --- Force HTTPS ---
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
