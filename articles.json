@@ -55,7 +55,7 @@
   },
   {
     "url": "/blog/about-page-service-business",
-    "image": "/previews/article-about-page.png",
+    "image": "/previews/article-about-page.jpg",
     "imageAlt": "How to write an About page that converts high-paying clients",
     "overline": "Web Design",
     "title": "Your About page is the second most visited page on your website. Most service businesses are wasting it.",
@@ -81,17 +81,8 @@
     "date": "2026-03-03"
   },
   {
-    "url": "/blog/bergen-county-web-design",
-    "image": "/previews/article-bergen-county.png",
-    "imageAlt": "Bergen County web design for service businesses",
-    "overline": "Bergen County",
-    "title": "Why Bergen County service businesses are losing clients to their own website",
-    "excerpt": "Someone clicks through, spends a few seconds looking, and leaves. Here's what your site is signaling before you've said a word.",
-    "date": "2026-02-27"
-  },
-  {
     "url": "/blog/charge-more-better-website",
-    "image": "/previews/article-charge-more.png",
+    "image": "/previews/article-charge-more.jpg",
     "imageAlt": "How your website affects what clients expect to pay",
     "overline": "Pricing & positioning",
     "title": "Why clients balk at your rates, and how the right website fixes it",
@@ -99,17 +90,8 @@
     "date": "2026-02-27"
   },
   {
-    "url": "/blog/local-seo-bergen-county",
-    "image": "/previews/article-local-seo.png",
-    "imageAlt": "Local SEO for Bergen County service businesses",
-    "overline": "SEO",
-    "title": "How to show up on Google when Bergen County clients search for what you do",
-    "excerpt": "You could be great at what you do and still invisible online. Here's how Google and AI tools decide who shows up when Bergen County clients search for what you offer.",
-    "date": "2026-02-27"
-  },
-  {
     "url": "/blog/5-things-premium-clients",
-    "image": "/previews/article-5-things.png",
+    "image": "/previews/article-5-things.jpg",
     "imageAlt": "5 things your website needs to book premium clients",
     "overline": "Web design",
     "title": "5 things your website needs to book premium clients (most sites miss #3)",
