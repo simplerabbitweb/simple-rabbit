@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit; }
 if ($_SERVER['REQUEST_METHOD'] !== 'POST')    { http_response_code(405); echo json_encode(['error' => 'Method not allowed']); exit; }
 
 // ── FLODESK ────────────────────────────────────────────────────────────────
-$FLODESK_KEY_B64 = 'ZmRfa2V5XzBkNjA1NDFhM2RiODRiOTA5ZTdjZThlODEzZGY1ZDEyLjhXeDVmSXJXOUxnTmtrcUlvbzQ3elhXd1RxSHhYelpkUXE4RXlsWnFvYklHNFZ1aDRFajNacElwOGZGdWtUN2JCRDJZdjE3UHNjdklXNUNleGhCYVhER1JITkwwRnFkTHA4MXJ4NUlJaVJmc0FaVXpWMTNhWGFidUtod25tQTRrcm5GblI0Y0h2ZFZHN2RmS3lxSkN5NVpWdGI3bWtDclV5S3ZKeEpHdGVKNFhqZjM0N0c2RkxpUlZEaXhwbU40Zzo=';
+$FLODESK_KEY_B64 = 'ZmRfa2V5Xzc4ZGE2YjFlZmQxOTQ5ZTVhMmM4N2ZjZjgwNzUwMTg4LjVLbk9ZNWMwS1l1YzlYZExCTlAyNzQ3UDZwQzdMWTR3NHFZRlR2bHRxMGFCelhSRmpVdzlBVnRVUU1QOGM3N21ZQ1Z6ejFmeEJvMXBRZmVvRU1CSXJSbEZYdVNVdHlLVFFBRklhd0thZVVvMU96bVZQbklUdkttWURIVkJleTZOaUtrNEhVSkk4akhXYlVOUDNDaXNZSlBydTU2dHFVUkE1OGRWNEFLa3h4Vjl5MUhLenQ5TUU3QlU2d0lqaXMxcTo=';
 $SEGMENT_ID      = '69a105de219d2456af91f067'; // segment: simplerabbit.studio
 // ──────────────────────────────────────────────────────────────────────────
 
