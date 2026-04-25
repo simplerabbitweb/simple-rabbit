@@ -235,68 +235,24 @@
 <!-- FOOTER -->
 <footer style="background:#000;border-top:none;padding:0;display:block;">
 
-  <!-- Newsletter row -->
-  <div style="border-bottom:1px solid rgba(255,255,255,0.1);padding:56px 48px;">
-    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-      <div>
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:10px;">The Hutch - Free Newsletter</span>
-        <p style="font-size:clamp(18px,2vw,24px);color:#fff;margin:0;line-height:1.3;font-family:var(--font-display);">SEO insights and web design thinking, delivered weekly.</p>
+  <!-- Row 1: copyright + social -->
+  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
       </div>
-      <form onsubmit="submitNewsletter(event,this)" style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;align-items:center;">
-      <input type="email" name="email" placeholder="Your email" required style="border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:14px;padding:10px 0;outline:none;font-family:var(--font-body);min-width:180px;">
-      <button type="submit" style="background:#fff;color:#000;padding:13px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:var(--font-body);white-space:nowrap;flex-shrink:0;">Join The Hutch &rarr;</button>
-      <p class="nl-msg" style="font-size:13px;color:#DDD7D2;width:100%;margin:4px 0 0;display:none;"></p>
-    </form>
+      <div style="display:flex;gap:28px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+      </div>
     </div>
   </div>
 
-  <!-- Main columns -->
-  <div style="padding:64px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div class="footer-cols" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
-
-      <!-- Brand -->
-      <div>
-
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="mailto:hello@simplerabbit.studio" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">hello@simplerabbit.studio</a>
-          <div style="display:flex;gap:20px;margin-top:4px;">
-            <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;">Instagram</a>
-            <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;">Facebook</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Studio pages -->
-      <div>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Studio</span>
-        <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/about" style="font-size:14px;color:#fff;text-decoration:none;">About</a>
-          <a href="/portfolio" style="font-size:14px;color:#fff;text-decoration:none;">Portfolio</a>
-          <a href="/articles" style="font-size:14px;color:#fff;text-decoration:none;">Articles</a>
-          <a href="/contact" style="font-size:14px;color:#fff;text-decoration:none;">Contact</a>
-        </nav>
-      </div>
-
-      <!-- Services -->
-      <div>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Services</span>
-        <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/services" style="font-size:14px;color:#fff;text-decoration:none;">All Services</a>
-        </nav>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Bottom bar -->
-  <div style="padding:28px 48px;">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="footer-bottom-bar" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
-        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC &middot; Bergen County, NJ</span>
-        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
-      </div>
-      <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; Romans 1:16</p>
-    </div>
+  <!-- Row 2: scripture -->
+  <div style="padding:20px 48px;">
+    <p style="font-size:11px;font-family:var(--font-mono);color:rgba(255,255,255,0.45);font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
 
 </footer>
