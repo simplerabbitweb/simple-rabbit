@@ -104,7 +104,6 @@
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
     @media(max-width:768px){.home-hero{min-height:44vh!important;padding-top:32px!important;padding-bottom:32px!important;}.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
-    .blob-grain{position:absolute;inset:0;border-radius:50%;opacity:0.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;-webkit-mask:radial-gradient(circle,black 0%,transparent 70%);mask:radial-gradient(circle,black 0%,transparent 70%);}
     @media(max-width:768px){
       .hero-h1{font-size:clamp(36px,9vw,84px)!important;letter-spacing:-1.5px!important;}
       .cta-box{padding:40px 28px!important;}
@@ -255,7 +254,7 @@
 
 
 <!-- 1. HERO -->
-<section class="home-hero" style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 52% 58% at 72% 42%, rgba(245,215,200,0.48) 0%, rgba(245,215,200,0.24) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section class="home-hero" style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:#ffffff;">
   <div class="hero-grain"></div>
   <div style="position:relative;z-index:1;padding:80px 0 0;max-width:960px;">
     <span class="overline" style="margin-bottom:28px;">Custom websites &middot; local SEO &middot; launch and ongoing support</span>
@@ -303,7 +302,6 @@
 
 <!-- 3. AS FEATURED IN -->
 <section class="reveal sp" style="background:var(--white);border-bottom:1px solid var(--light-border);padding:60px 48px;text-align:center;position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(240,225,195,0.38) 0%,transparent 68%);right:-140px;top:-140px;pointer-events:none;"></div>
   <div style="max-width:900px;margin:0 auto;position:relative;">
     <span class="overline" style="margin-bottom:32px;">As featured in</span>
     <div style="display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;">
@@ -323,7 +321,6 @@
 
 <!-- 4. FEATURED CASE STUDIES -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(240,225,195,0.40) 0%,transparent 68%);right:-180px;bottom:-180px;pointer-events:none;"></div>
   <div style="max-width:1100px;margin:0 auto;position:relative;">
     <span class="overline">Selected work</span>
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Websites that match the care they provide.</h2>
@@ -346,7 +343,7 @@
       <!-- Lisa Milli, MD — Coming Soon -->
       <div role="region" aria-label="Coming soon case study" style="max-width:none;border:1px solid var(--light-border);background:linear-gradient(135deg,#f4ead9 0%,#DDD7D2 100%);cursor:default;display:flex;flex-direction:column;color:var(--black);">
         <div style="aspect-ratio:16/10;overflow:hidden;">
-          <img src="previews/case-study-coming-soon.png.jpg" alt="Coming soon case study by Simple Rabbit" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);">
+          <img src="previews/case-study-coming-soon.png.jpg" alt="Coming soon case study by Simple Rabbit" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="padding:32px;flex:1;">
           <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;">Coming Soon &middot; Specialty Practice</span>
@@ -377,7 +374,6 @@
 
 <!-- HI I'M LEANN -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,215,200,0.46) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
   <div class="grid-2-center" style="max-width:1100px;margin:0 auto;position:relative;">
     <div>
       <img src="Leann.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;" loading="lazy">
@@ -399,7 +395,6 @@
 
 <!-- 8. TESTIMONIAL -->
 <section class="reveal sp" style="background:var(--white);padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(220,200,210,0.44) 0%,transparent 68%);left:-160px;bottom:-160px;pointer-events:none;"></div>
   <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;">
     <span class="overline" style="margin-bottom:32px;">What clients say</span>
     <div style="font-size:18px;letter-spacing:4px;margin-bottom:32px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -413,7 +408,7 @@
 
 <!-- 9. FINAL CTA -->
 <section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-  <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
+  <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;background-attachment:fixed;"></div>
   <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:560px;width:calc(100% - 48px);text-align:center;" class="cta-box">
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:16px;">Next step</span>
     <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Ready to get started?</h2>

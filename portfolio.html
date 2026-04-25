@@ -91,7 +91,6 @@
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
-    .blob-grain{position:absolute;inset:0;border-radius:50%;opacity:0.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;-webkit-mask:radial-gradient(circle,black 0%,transparent 70%);mask:radial-gradient(circle,black 0%,transparent 70%);}
     @media(max-width:768px){
       .inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}
       .hero-h1 span{padding-left:0!important;text-align:left;}
@@ -136,7 +135,7 @@
 </div>
 
 <!-- 1. HERO -->
-<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 58% 54% at 35% 55%, rgba(245,215,200,0.64) 0%, rgba(245,215,200,0.30) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:#ffffff;">
   <div class="hero-grain"></div>
   <div style="position:relative;z-index:1;padding:80px 0 32px;">
     <h1 style="font-family:var(--font-display);font-size:clamp(52px,8.5vw,108px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
@@ -197,7 +196,6 @@
 
 <!-- 3. WORK LIST -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;">
-  <div aria-hidden="true" style="position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(245,215,200,0.50) 0%,transparent 70%);left:-120px;top:100px;pointer-events:none;"><div class="blob-grain"></div></div>
   <div style="max-width:1100px;margin:0 auto;position:relative;">
     <span class="overline">Selected work</span>
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Some of the projects we've worked on for different industries.</h2>
@@ -232,7 +230,7 @@
 
 <!-- FULL-WIDTH CTA -->
 <section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-  <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
+  <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;background-attachment:fixed;"></div>
   <div style="position:relative;z-index:1;background:rgba(255,255,255,0.18);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.28);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:520px;width:calc(100% - 48px);text-align:center;" class="cta-box">
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:16px;">Next step</span>
     <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Let&rsquo;s build a site that books the clients you actually want.</h2>
