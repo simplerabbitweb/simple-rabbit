@@ -120,9 +120,8 @@
     <div style="width:56px;height:56px;margin:0 auto 28px;border:1.5px solid var(--black);display:flex;align-items:center;justify-content:center;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
     </div>
-    <h1 style="font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1;margin-bottom:20px;">You&rsquo;re in. Now, let&rsquo;s find a time to chat</h1>
-    <p style="font-size:clamp(16px,1.5vw,20px);color:var(--dark);margin-bottom:20px;">Choose a day and time for your 30 Minute Clarity Call.</p>
-    <div style="font-size:32px;color:var(--mid);">&#8595;</div>
+    <h1 style="font-size:clamp(32px,5vw,56px);letter-spacing:-2px;line-height:1.1;margin-bottom:20px;">You&rsquo;re in.</h1>
+    <p style="font-size:clamp(16px,1.5vw,20px);color:var(--dark);">Now, give us 24 hours to review your submission and we&rsquo;ll get back to you via email.</p>
   </div>
 </section>
 
@@ -130,22 +129,25 @@
 <section class="reveal sp" style="background:var(--white);padding:80px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">While you wait.</h2>
-    <div class="grid-2">
-      <a href="/blog/bergen-county-web-design" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Bergen County</span>
-        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why Bergen County service businesses are losing clients to their own website</h3>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Most local NJ business owners don't realize their website is quietly turning away the exact clients they want. Here's what to look for and how to fix it.</p>
-        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
-      </a>
-      <a href="/blog/charge-more-better-website" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Pricing &amp; positioning</span>
-        <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why clients balk at your rates, and how the right website fixes it</h3>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">It's not your pricing. When your website signals expert, dream clients stop negotiating and start saying yes, even before the first conversation.</p>
-        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
-      </a>
-    </div>
+    <div class="grid-2" id="recent-articles"></div>
   </div>
 </section>
+<script>
+fetch('/articles.json')
+  .then(function(r){ return r.json(); })
+  .then(function(articles){
+    var top2 = articles.slice(0,2);
+    var html = top2.map(function(a){
+      return '<a href="'+a.url+'" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">'
+        +'<span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">'+a.overline+'</span>'
+        +'<h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">'+a.title+'</h3>'
+        +'<p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">'+a.excerpt+'</p>'
+        +'<span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>'
+        +'</a>';
+    }).join('');
+    document.getElementById('recent-articles').innerHTML = html;
+  });
+</script>
 
 
 <!-- FOOTER -->
