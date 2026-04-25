@@ -33,7 +33,7 @@
     .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
     .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
     .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
+    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
     .nav-links a:hover{color:var(--white);}
     .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
     .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
@@ -45,7 +45,7 @@
     .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
     .nav-dropdown a:last-child{border-bottom:none;}
     .nav-dropdown a:hover{background:var(--tone);color:var(--black);}
-    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:rgba(255,255,255,0.65)!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
+    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
     .mobile-nav-sub:hover{color:var(--white)!important;}
     .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
     .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
@@ -66,6 +66,7 @@
       .sp{padding-left:24px!important;padding-right:24px!important;}
       .grid-2,.grid-2-center,.grid-3{grid-template-columns:1fr!important;gap:40px!important;}
       .footer-cols{grid-template-columns:1fr!important;}
+      .industries-grid{grid-template-columns:1fr!important;}
     }
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
@@ -74,13 +75,13 @@
     .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:rgba(255,255,255,0.85);text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
+    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     .blob-grain{position:absolute;inset:0;border-radius:50%;opacity:0.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;-webkit-mask:radial-gradient(circle,black 0%,transparent 70%);mask:radial-gradient(circle,black 0%,transparent 70%);}
     @media(max-width:768px){
-      .inner-hero{min-height:0!important;padding:32px 24px 40px!important;}
+      .inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}
       .inner-hero>div{padding-top:40px!important;padding-bottom:0!important;}
       .cta-box{padding:40px 28px!important;}
       .parallax-bg{background-attachment:scroll!important;background-size:cover!important;}
@@ -131,7 +132,7 @@
 
 
 <!-- 1. HERO -->
-<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 62% 50% at 82% 72%, rgba(245,215,200,0.45) 0%, rgba(245,215,200,0.18) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 62% 50% at 82% 72%, rgba(245,215,200,0.62) 0%, rgba(245,215,200,0.30) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
   <div class="hero-grain"></div>
   <div style="position:relative;z-index:1;padding:80px 0 32px;">
     <h1 style="font-family:var(--font-display);font-size:clamp(52px,8.5vw,108px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
@@ -144,28 +145,9 @@
 </section>
 
 
-<!-- AS FEATURED IN -->
-<section class="reveal sp" style="background:var(--white);border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);padding:60px 48px;text-align:center;">
-  <div style="max-width:900px;margin:0 auto;">
-    <span class="overline" style="margin-bottom:32px;">As featured in</span>
-    <div style="display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;">
-      <a href="https://bergenmama.com/article/spotlight-bergen-mamas-who-can-help-you-grow-your-business" target="_blank" rel="noopener" aria-label="Bergen Mama feature" style="display:block;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
-        <img src="social-proof/bergen-mama.png" alt="Bergen Mama" style="height:clamp(44px,10vw,80px);width:auto;display:block;filter:grayscale(1);">
-      </a>
-      <a href="https://citylifestyle.com/articles/hopping-toward-success" target="_blank" rel="noopener" aria-label="City Lifestyle feature" style="display:block;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
-        <img src="social-proof/pascack-valley-city-lifestyle.png" alt="Pascack Valley City Lifestyle" style="height:clamp(44px,10vw,80px);width:auto;display:block;filter:grayscale(1);">
-      </a>
-      <a href="https://youtu.be/byNjrmPNz8M?si=W_EjthPGU_f1r8Xa" target="_blank" rel="noopener" aria-label="Local Biz Cast podcast" style="display:block;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
-        <img src="social-proof/local-biz-cast.png" alt="Local Biz Cast" style="height:clamp(44px,10vw,80px);width:auto;display:block;filter:grayscale(1);">
-      </a>
-    </div>
-  </div>
-</section>
-
-
 <!-- 2. PHOTO + INTRO -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;">
-  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(220,200,210,0.28) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
+  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(220,200,210,0.48) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
   <div class="grid-2-center" style="max-width:1100px;margin:0 auto;position:relative;">
     <div>
       <img src="leann-2.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;">
@@ -184,37 +166,75 @@
 
 
 <!-- 4. STUDIO STATEMENT -->
-<section class="reveal sp" style="padding:120px 48px;border-bottom:1px solid var(--light-border);background:var(--white);text-align:center;">
-  <div style="max-width:880px;margin:0 auto;">
+<section class="reveal sp" style="padding:120px 48px;border-bottom:1px solid var(--light-border);background:var(--white);text-align:center;position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(245,215,200,0.42) 0%,transparent 68%);right:-180px;top:-180px;pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(220,200,210,0.36) 0%,transparent 70%);left:-120px;bottom:-120px;pointer-events:none;"></div>
+  <div style="max-width:880px;margin:0 auto;position:relative;">
     <span class="overline" style="margin-bottom:32px;">About Simple Rabbit</span>
     <p style="font-family:var(--font-display);font-size:clamp(26px,3.8vw,52px);letter-spacing:-1.5px;line-height:1.15;color:var(--black);font-weight:400;">Simple Rabbit is a boutique web studio based in Bergen County, NJ. We work with cash-pay service businesses where clients pay full price by choice. Our sites are clean without being cold, specific without being rigid, and built to grow with the business behind them.</p>
   </div>
 </section>
 
 
-<!-- 5. WHAT I DON'T DO -->
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid rgba(255,255,255,0.08);background:var(--black);">
+
+
+<!-- 5. WHO WE LOVE TO WORK WITH -->
+<section class="reveal sp" style="padding:100px 48px;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.08);">
   <div style="max-width:1100px;margin:0 auto;">
-    <span class="overline" style="color:rgba(255,255,255,0.45);">What we don&rsquo;t do</span>
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;max-width:640px;margin-bottom:20px;color:#fff;">A few things you won't get here.</h2>
-    <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.55);margin-bottom:48px;">I'd rather tell you upfront what I'm not before you book a call.</p>
-    <div style="max-width:680px;border-top:1px solid rgba(255,255,255,0.1);">
-      <div style="padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:20px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:14px;color:rgba(255,255,255,0.35);flex-shrink:0;line-height:1.75;">-</span>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.8);">We don't take on starter businesses. If you're still figuring out what you sell, the timing isn't right. Come back when you've got traction.</p>
+    <span class="overline" style="color:#fff;">Who we love to work with</span>
+    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:56px;color:#fff;">The practices we build for.</h2>
+    <div class="industries-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,0.1);border-left:1px solid rgba(255,255,255,0.1);max-width:860px;">
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Direct Primary Care or membership-based primary care</p>
       </div>
-      <div style="padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:20px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:14px;color:rgba(255,255,255,0.35);flex-shrink:0;line-height:1.75;">-</span>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.8);">We don't use templates. Not as a starting point, not as inspiration. Every build starts from scratch.</p>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Concierge or retainer medicine</p>
       </div>
-      <div style="padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:20px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:14px;color:rgba(255,255,255,0.35);flex-shrink:0;line-height:1.75;">-</span>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.8);">We keep a short client list on purpose. You're not waiting in a queue.</p>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Primary care visits</p>
       </div>
-      <div style="padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:20px;align-items:flex-start;">
-        <span style="font-family:var(--font-mono);font-size:14px;color:rgba(255,255,255,0.35);flex-shrink:0;line-height:1.75;">-</span>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.8);">We don't hand off and disappear. The relationship doesn't end at launch. That's actually when it starts.</p>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Mental health services providers</p>
       </div>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Women&rsquo;s health service providers</p>
+      </div>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Physical therapists</p>
+      </div>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Functional or integrative medicine</p>
+      </div>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Niche specialty consults</p>
+      </div>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:#fff;">Telemedicine / virtual providers</p>
+      </div>
+
+      <div style="padding:22px 32px;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;gap:16px;align-items:flex-start;">
+        <span style="color:#fff;font-family:var(--font-mono);font-size:12px;flex-shrink:0;margin-top:3px;">—</span>
+        <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.55);font-style:italic;">And more&hellip;</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -240,7 +260,7 @@
     <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
       <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
         <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
       </div>
       <div style="display:flex;gap:28px;">
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
@@ -252,7 +272,7 @@
 
   <!-- Row 2: scripture -->
   <div style="padding:20px 48px;">
-    <p style="font-size:11px;font-family:var(--font-mono);color:rgba(255,255,255,0.45);font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
 
 </footer>
@@ -305,14 +325,14 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
     <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch &mdash; Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>
-    <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.85);margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of. No filler.</p>
+    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of. No filler.</p>
     <form onsubmit="submitNewsletter(event,this)" style="width:100%;">
       <input type="email" name="email" placeholder="Your email address" required style="width:100%;border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:15px;padding:10px 0;outline:none;font-family:'Outfit',system-ui,sans-serif;margin-bottom:16px;display:block;">
       <button type="submit" style="display:block;width:100%;background:#fff;color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">Join The Hutch &rarr;</button>
       <p class="nl-msg" style="font-size:13px;color:#DDD7D2;margin-top:12px;display:none;"></p>
     </form>
     <div style="margin-top:20px;">
-      <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:rgba(255,255,255,0.65);cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
+      <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
     </div>
   </div>
 </div>

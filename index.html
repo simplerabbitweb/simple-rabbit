@@ -35,7 +35,7 @@
     .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
     .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
     .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
+    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
     .nav-links a:hover{color:var(--white);}
     .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
     .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
@@ -47,7 +47,7 @@
     .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
     .nav-dropdown a:last-child{border-bottom:none;}
     .nav-dropdown a:hover{background:var(--tone);color:var(--black);}
-    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:rgba(255,255,255,0.65)!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
+    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
     .mobile-nav-sub:hover{color:var(--white)!important;}
     .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
     .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
@@ -100,9 +100,9 @@
     .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:rgba(255,255,255,0.85);text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
+    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    @media(max-width:768px){.home-hero{min-height:44vh!important;padding-top:32px!important;padding-bottom:32px!important;}.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     .blob-grain{position:absolute;inset:0;border-radius:50%;opacity:0.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;-webkit-mask:radial-gradient(circle,black 0%,transparent 70%);mask:radial-gradient(circle,black 0%,transparent 70%);}
     @media(max-width:768px){
@@ -255,7 +255,7 @@
 
 
 <!-- 1. HERO -->
-<section style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 52% 58% at 72% 42%, rgba(245,215,200,0.30) 0%, rgba(245,215,200,0.14) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section class="home-hero" style="min-height:88vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 52% 58% at 72% 42%, rgba(245,215,200,0.48) 0%, rgba(245,215,200,0.24) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
   <div class="hero-grain"></div>
   <div style="position:relative;z-index:1;padding:80px 0 0;max-width:960px;">
     <span class="overline" style="margin-bottom:28px;">Websites for private-pay service businesses</span>
@@ -271,7 +271,7 @@
 <!-- 2. PROOF BAR -->
 <section style="border-bottom:1px solid var(--light-border);padding:28px 48px;background:var(--white);">
   <div style="max-width:860px;margin:0 auto;text-align:center;">
-    <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--black);line-height:1.6;">web design &middot; logo design &middot; website management &middot; local SEO</p>
+    <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--black);line-height:1.6;">WordPress web design &middot; wordmark logo design &middot; website management &middot; local SEO</p>
   </div>
 </section>
 
@@ -280,9 +280,29 @@
 
 
 
+<!-- 3. AS FEATURED IN -->
+<section class="reveal sp" style="background:var(--white);border-bottom:1px solid var(--light-border);padding:60px 48px;text-align:center;position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(240,225,195,0.38) 0%,transparent 68%);right:-140px;top:-140px;pointer-events:none;"></div>
+  <div style="max-width:900px;margin:0 auto;position:relative;">
+    <span class="overline" style="margin-bottom:32px;">As featured in</span>
+    <div style="display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;">
+      <a href="https://bergenmama.com/article/spotlight-bergen-mamas-who-can-help-you-grow-your-business" target="_blank" rel="noopener" aria-label="Bergen Mama feature" style="display:block;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+        <img src="social-proof/bergen-mama.png" alt="Bergen Mama" style="height:clamp(44px,10vw,80px);width:auto;display:block;filter:grayscale(1);">
+      </a>
+      <a href="https://citylifestyle.com/articles/hopping-toward-success" target="_blank" rel="noopener" aria-label="City Lifestyle feature" style="display:block;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+        <img src="social-proof/pascack-valley-city-lifestyle.png" alt="Pascack Valley City Lifestyle" style="height:clamp(44px,10vw,80px);width:auto;display:block;filter:grayscale(1);">
+      </a>
+      <a href="https://youtu.be/byNjrmPNz8M?si=W_EjthPGU_f1r8Xa" target="_blank" rel="noopener" aria-label="Local Biz Cast podcast" style="display:block;opacity:0.6;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+        <img src="social-proof/local-biz-cast.png" alt="Local Biz Cast" style="height:clamp(44px,10vw,80px);width:auto;display:block;filter:grayscale(1);">
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- 4. FEATURED CASE STUDIES -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(240,225,195,0.22) 0%,transparent 68%);right:-180px;bottom:-180px;pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(240,225,195,0.40) 0%,transparent 68%);right:-180px;bottom:-180px;pointer-events:none;"></div>
   <div style="max-width:1100px;margin:0 auto;position:relative;">
     <span class="overline">Selected work</span>
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:64px;">Websites that match the care they provide.</h2>
@@ -326,7 +346,7 @@
 <!-- STATEMENT STRIP -->
 <section style="background:var(--black);padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.08);">
   <div style="max-width:900px;margin:0 auto;text-align:center;">
-    <p style="font-family:var(--font-display);font-size:clamp(30px,4.2vw,56px);letter-spacing:-1.5px;line-height:1.15;color:#fff;font-weight:400;">Our clients run cash-pay practices and specialty service businesses. They do high-quality work, charge accordingly, and need a website that makes that clear before anyone picks up the phone.</p>
+    <p style="font-family:var(--font-display);font-size:clamp(30px,4.2vw,56px);letter-spacing:-1.5px;line-height:1.15;color:#fff;font-weight:400;">We work with cash-pay practices and specialty service businesses that do high-quality work, charge accordingly, and need a website that makes that clear before anyone picks up the phone.</p>
     <div style="margin-top:40px;">
       <a href="/contact" style="display:inline-block;background:#fff;color:#000;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">Book a clarity call &rarr;</a>
     </div>
@@ -336,7 +356,7 @@
 
 <!-- HI I'M LEANN -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,215,200,0.28) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
+  <div aria-hidden="true" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,215,200,0.46) 0%,transparent 70%);left:-120px;top:80px;pointer-events:none;"><div class="blob-grain"></div></div>
   <div class="grid-2-center" style="max-width:1100px;margin:0 auto;position:relative;">
     <div>
       <img src="Leann.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;max-height:600px;" loading="lazy">
@@ -357,28 +377,29 @@
 
 
 <!-- 8. TESTIMONIALS -->
-<section class="reveal sp" style="background:var(--white);padding:80px 48px;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1100px;margin:0 auto;">
+<section class="reveal sp" style="background:var(--white);padding:80px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(220,200,210,0.44) 0%,transparent 68%);left:-160px;bottom:-160px;pointer-events:none;"></div>
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
     <span class="overline">What clients say</span>
     <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:48px;">Don't take our word for it.</h2>
     <div class="testi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
 
       <div style="background:var(--black);padding:36px;border:1px solid rgba(255,255,255,0.1);">
         <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.82);margin-bottom:24px;">"Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search!"</p>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:rgba(255,255,255,0.4);">Mona Perez, Smooth Laser Center &middot; Washington Township, NJ</p>
+        <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:24px;">"Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search!"</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:#fff;">Mona Perez, Smooth Laser Center &middot; Washington Township, NJ</p>
       </div>
 
       <div style="background:var(--black);padding:36px;border:1px solid rgba(255,255,255,0.1);">
         <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.82);margin-bottom:24px;">"I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann 'got it' immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."</p>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:rgba(255,255,255,0.4);">Laura Gonzalez, Education Attorney</p>
+        <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:24px;">"I met with numerous people, but none were a good match. Then I met Leann. Although I wasn't really able to articulate much more than I wanted something clean and crisp, Leann 'got it' immediately. I loved the very first version. And her SEO work was spot on. I started getting calls in week 2."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:#fff;">Laura Gonzalez, Education Attorney</p>
       </div>
 
       <div style="background:var(--black);padding:36px;border:1px solid rgba(255,255,255,0.1);">
         <div style="font-size:16px;letter-spacing:2px;margin-bottom:20px;color:#d4a017;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.82);margin-bottom:24px;">"I was absolutely thrilled with my website for my luxury styling business. Leann totally saw my vision and executed an upscale, streamlined website that reflected my brand perfectly. She just gets it! I cannot recommend her enough."</p>
-        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:rgba(255,255,255,0.4);">Lauren Matina, Novateur Style</p>
+        <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:24px;">"I was absolutely thrilled with my website for my luxury styling business. Leann totally saw my vision and executed an upscale, streamlined website that reflected my brand perfectly. She just gets it! I cannot recommend her enough."</p>
+        <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:#fff;">Lauren Matina, Novateur Style</p>
       </div>
 
     </div>
@@ -406,7 +427,7 @@
     <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
       <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
         <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
       </div>
       <div style="display:flex;gap:28px;">
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
@@ -418,7 +439,7 @@
 
   <!-- Row 2: scripture -->
   <div style="padding:20px 48px;">
-    <p style="font-size:11px;font-family:var(--font-mono);color:rgba(255,255,255,0.45);font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
 
 </footer>
@@ -527,14 +548,14 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
     <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch &mdash; Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>
-    <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.85);margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of. No filler.</p>
+    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Practical insights on getting found, attracting better clients, and building a business you&rsquo;re proud of. No filler.</p>
     <form onsubmit="submitNewsletter(event,this)" style="width:100%;">
       <input type="email" name="email" placeholder="Your email address" required style="width:100%;border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:15px;padding:10px 0;outline:none;font-family:'Outfit',system-ui,sans-serif;margin-bottom:16px;display:block;">
       <button type="submit" style="display:block;width:100%;background:#fff;color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">Join The Hutch &rarr;</button>
       <p class="nl-msg" style="font-size:13px;color:#DDD7D2;margin-top:12px;display:none;"></p>
     </form>
     <div style="margin-top:20px;">
-      <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:rgba(255,255,255,0.65);cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
+      <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
     </div>
   </div>
 </div>

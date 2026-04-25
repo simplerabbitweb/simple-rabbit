@@ -33,7 +33,7 @@
     .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
     .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
     .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
+    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
     .nav-links a:hover{color:var(--white);}
     .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
     .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
@@ -45,7 +45,7 @@
     .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
     .nav-dropdown a:last-child{border-bottom:none;}
     .nav-dropdown a:hover{background:var(--tone);color:var(--black);}
-    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:rgba(255,255,255,0.65)!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
+    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
     .mobile-nav-sub:hover{color:var(--white)!important;}
     .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
     .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
@@ -82,12 +82,12 @@
     .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
     .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:rgba(255,255,255,0.85);text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
+    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     @media(max-width:768px){
-      .inner-hero{min-height:80vh!important;}
+      .inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}
       .hero-h1 span{padding-left:0!important;text-align:left;}
       .cta-box{padding:40px 28px!important;}
       .parallax-bg{background-attachment:scroll!important;background-size:cover!important;}
@@ -129,7 +129,7 @@
 </div>
 
 <!-- 1. HERO -->
-<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 40% 52% at 88% 32%, rgba(220,200,210,0.45) 0%, rgba(220,200,210,0.17) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
+<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:radial-gradient(ellipse 40% 52% at 88% 32%, rgba(220,200,210,0.62) 0%, rgba(220,200,210,0.30) 52%, #ffffff 70%);overflow:hidden;border-bottom:1px solid var(--light-border);">
   <div class="hero-grain"></div>
   <div style="position:relative;z-index:1;padding:80px 0 32px;">
     <h1 style="font-family:var(--font-display);font-size:clamp(52px,8.5vw,108px);line-height:0.97;letter-spacing:-3px;color:#000;font-weight:400;margin:0;" class="hero-h1">
@@ -427,7 +427,7 @@ function togglePastPosts(){
     <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
       <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
         <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
       </div>
       <div style="display:flex;gap:28px;">
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
@@ -439,7 +439,7 @@ function togglePastPosts(){
 
   <!-- Row 2: scripture -->
   <div style="padding:20px 48px;">
-    <p style="font-size:11px;font-family:var(--font-mono);color:rgba(255,255,255,0.45);font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
 
 </footer>
