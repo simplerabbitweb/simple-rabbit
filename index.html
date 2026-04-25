@@ -126,6 +126,11 @@
     @media(max-width:768px){
       .testi-grid{grid-template-columns:1fr!important;}
     }
+    .practices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);}
+    @media(max-width:600px){
+      .practices-grid{grid-template-columns:repeat(2,1fr);}
+      .practices-section{padding-left:24px!important;padding-right:24px!important;}
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
@@ -269,10 +274,10 @@
 
 
 <!-- 2. PRACTICES WE BUILD FOR -->
-<section style="border-bottom:1px solid var(--light-border);padding:36px 48px;background:var(--white);">
+<section class="practices-section" style="border-bottom:1px solid var(--light-border);padding:36px 48px;background:var(--white);">
   <div style="max-width:1100px;margin:0 auto;">
     <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:20px;">Practices we build for</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+    <div class="practices-grid">
       <div style="padding:18px 28px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
         <p style="font-family:var(--font-display);font-size:16px;font-weight:400;color:var(--black);line-height:1.4;">Functional &amp; integrative medicine</p>
       </div>
