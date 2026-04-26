@@ -53,7 +53,7 @@
     .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
     .mobile-nav-sub{display:none!important;}
     .mobile-nav-sub.open{display:block!important;}
-    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary{display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
     .btn-primary:hover{background:var(--dark);}
     .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     .work-item{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--light-border);text-decoration:none;color:var(--dark);font-size:15px;transition:color 0.2s;}
@@ -61,10 +61,10 @@
     .work-arrow{transition:opacity 0.2s,transform 0.2s;opacity:0;}
     .work-item:hover .work-arrow{opacity:1;transform:translateX(4px);}
     .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
-    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--accent);}
     .form-input::placeholder{color:var(--mid);}
     .form-select{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23949698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;-webkit-appearance:none;outline:none;font-family:var(--font-body);color:var(--black);cursor:pointer;}
-    .form-select:focus{border-bottom-color:var(--black);}
+    .form-select:focus{border-bottom-color:var(--accent);}
     .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
     .form-group{margin-bottom:28px;}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
@@ -75,7 +75,7 @@
     .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:#fff;}
     .article-card{border:1px solid var(--light-border);background:var(--white);text-decoration:none;color:var(--black);display:flex;flex-direction:column;transition:border-color 0.2s;max-width:480px;}
-    .article-card:hover{border-color:var(--black);}
+    .article-card:hover{border-color:#474D73;}
     .article-card-body{padding:32px;}
     .article-card-arrow{font-size:13px;color:var(--mid);margin-top:auto;padding:20px 32px;border-top:1px solid var(--light-border);display:flex;align-items:center;justify-content:space-between;transition:color 0.2s;}
     .article-card:hover .article-card-arrow{color:var(--black);}
@@ -265,7 +265,7 @@
     <span class="overline" style="margin-bottom:28px;">Custom websites &middot; local SEO &middot; launch and ongoing support</span>
     <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">Websites for cash-pay functional medicine and women&rsquo;s health practices.</h1>
     <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:44px;">
-      <a href="/contact" style="display:inline-block;background:#000;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;">Work With Us</a>
+      <a href="/contact" style="display:inline-block;background:#474D73;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;white-space:nowrap;">Work With Us</a>
       <a href="/portfolio" style="font-size:14px;color:var(--accent);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;font-family:var(--font-body);">See our work &rarr;</a>
     </div>
     <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.75;color:rgba(0,0,0,0.6);margin-top:32px;max-width:600px;">Custom design, local SEO, and content that brings in the right patients without insurance, ads, or guesswork.</p>
@@ -352,14 +352,14 @@
         </div>
         <div style="padding:32px;flex:1;">
           <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;">Coming Soon &middot; Specialty Practice</span>
-          <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;color:#000;">A new case study, launching soon</h3>
+          <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;color:var(--black);">A new case study, launching soon</h3>
           <p style="font-size:14px;line-height:1.75;color:var(--dark);">A specialty practice. Launching Summer 2026.</p>
         </div>
       </div>
 
     </div>
 
-    <a href="/portfolio" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">See all 11 projects &rarr;</a>
+    <a href="/portfolio" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">See all 11 projects &rarr;</a>
   </div>
 </section>
 
@@ -367,7 +367,7 @@
 
 
 <!-- STATEMENT STRIP -->
-<section style="background:var(--black);padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.08);">
+<section style="background:#474D73;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.08);">
   <div style="max-width:900px;margin:0 auto;text-align:center;">
     <p style="font-family:var(--font-display);font-size:clamp(30px,4.2vw,56px);letter-spacing:-1.5px;line-height:1.15;color:#fff;font-weight:400;">We work with cash-pay practices and specialty service businesses that do high-quality work, charge accordingly, and need a website that makes that clear before anyone picks up the phone.</p>
     <div style="margin-top:40px;">
@@ -388,7 +388,7 @@
       <h2 style="font-size:clamp(24px,3vw,36px);line-height:1.2;margin-bottom:28px;">I run Simple Rabbit out of Bergen County, New Jersey.</h2>
       <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">I build websites for cash-pay practices, the kind that left the insurance system to practice differently. Functional medicine. Women&rsquo;s health. Concierge primary care. Practices where the work is real, the science matters, and the website needs to do real work before anyone picks up the phone.</p>
       <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">Every project is custom and every site is built to be found on Google, written to attract the right patient, and easy to keep current long after launch.</p>
-      <a href="/about" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">More about me &rarr;</a>
+      <a href="/about" style="font-size:13px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;font-family:var(--font-mono);letter-spacing:1px;">More about me &rarr;</a>
     </div>
   </div>
 </section>
@@ -418,7 +418,7 @@
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:16px;">Next step</span>
     <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#fff;">Ready to get started?</h2>
     <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">Tell us about your project. If we&rsquo;re a good fit, we&rsquo;ll be in touch to set up a call.</p>
-    <a href="/contact" style="display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Work With Us &rarr;</a>
+    <a href="/contact" style="display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Work With Us &rarr;</a>
   </div>
 </section>
 
@@ -549,7 +549,7 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 
 <!-- NEWSLETTER POPUP -->
 <div id="newsletter-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:#000;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
+  <div style="background:#474D73;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
     <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch &mdash; Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>

@@ -48,7 +48,7 @@
     .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
     .mobile-nav-sub{display:none!important;}
     .mobile-nav-sub.open{display:block!important;}
-    .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary{display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
     .btn-primary:hover{background:var(--dark);}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
     footer{display:block;padding:0;border:none;}
@@ -125,13 +125,13 @@
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Bergen County</span>
         <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why Bergen County service businesses are losing clients to their own website</h3>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">Most local NJ business owners don't realize their website is quietly turning away the exact clients they want. Here's what to look for and how to fix it.</p>
-        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
+        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--accent);padding-bottom:2px;">Read &rarr;</span>
       </a>
       <a href="/blog/charge-more-better-website" style="display:block;text-decoration:none;color:inherit;background:var(--white);padding:36px;border:1px solid var(--light-border);transition:border-color 0.2s;">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Pricing &amp; positioning</span>
         <h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">Why clients balk at your rates, and how the right website fixes it</h3>
         <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">It's not your pricing. When your website signals expert, dream clients stop negotiating and start saying yes, even before the first conversation.</p>
-        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>
+        <span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--accent);padding-bottom:2px;">Read &rarr;</span>
       </a>
     </div>
   </div>
@@ -178,7 +178,7 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 
 <!-- NEWSLETTER POPUP -->
 <div id="newsletter-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:#000;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
+  <div style="background:#474D73;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
     <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch &mdash; Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>

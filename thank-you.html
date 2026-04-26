@@ -53,7 +53,7 @@
     .mobile-nav-sub.open{display:block!important;}
     .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
-    .form-input:focus{border-bottom-color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--accent);}
     .form-input::placeholder{color:var(--mid);}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
@@ -142,7 +142,7 @@ fetch('/articles.json')
         +'<span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">'+a.overline+'</span>'
         +'<h3 style="font-size:22px;line-height:1.25;font-weight:400;margin-bottom:12px;">'+a.title+'</h3>'
         +'<p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:20px;">'+a.excerpt+'</p>'
-        +'<span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:2px;">Read &rarr;</span>'
+        +'<span style="font-size:14px;color:var(--black);border-bottom:1px solid var(--accent);padding-bottom:2px;">Read &rarr;</span>'
         +'</a>';
     }).join('');
     document.getElementById('recent-articles').innerHTML = html;
@@ -196,7 +196,7 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
 
 <!-- NEWSLETTER POPUP -->
 <div id="newsletter-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:#000;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
+  <div style="background:#474D73;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
     <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
     <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#DDD7D2;display:block;margin-bottom:16px;">The Hutch &mdash; Free Newsletter</span>
     <h2 style="font-family:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">SEO and web design thinking, delivered weekly.</h2>
