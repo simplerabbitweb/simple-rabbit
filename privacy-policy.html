@@ -16,8 +16,8 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
       color-scheme:light only;
-      --black:#000;--white:#fff;--tone:#F9F7F2;
-      --accent:#6B5D52;--accent-dark:#4A3F38;--accent-light:#DDD7D2;
+      --black:#000;--white:#fff;--tone:#E2D8D6;
+      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
       --mid:#111;--dark:#333;--light-border:#dfe0e1;
       --font-display:'Optima','Optima Nova','Candara','Segoe UI',sans-serif;
       --font-body:'Outfit',system-ui,sans-serif;
@@ -26,7 +26,7 @@
     html{overflow-x:hidden;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
     h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
     a{color:inherit;}
-    .nav{position:sticky;top:0;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
     .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
     .nav-links{display:flex;align-items:center;gap:32px;}
     .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
@@ -49,14 +49,14 @@
     .mobile-nav-sub.open{display:block!important;}
     .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     footer{display:block;padding:0;border:none;}
-    .footer-link{font-size:12px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
-    .footer-link:hover{color:var(--black);}
+    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:#fff;}
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
     .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
     .hamburger.open span:nth-child(2){opacity:0;}
     .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:rgba(255,255,255,0.85);text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
@@ -177,7 +177,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#000;border-top:none;padding:0;display:block;">
+<footer style="background:#474D73;border-top:none;padding:0;display:block;">
 
   <!-- Newsletter row -->
   <div style="border-bottom:1px solid rgba(255,255,255,0.1);padding:56px 48px;">
