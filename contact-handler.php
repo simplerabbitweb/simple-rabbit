@@ -47,7 +47,7 @@ Hi {$first_name},
 
 Thank you for reaching out to Simple Rabbit.
 
-We review every inquiry personally and will be in touch within 48 hours.
+We review every inquiry personally and will be in touch within 24 hours.
 
 — Leann
 Simple Rabbit
