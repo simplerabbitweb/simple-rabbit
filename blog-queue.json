@@ -1,33 +1,208 @@
 {
   "posts": [
-    {"id": 1,  "title": "How Women's Wellness Practices Get Found on Google (Without Running Ads)",                        "slug": "how-womens-wellness-practices-get-found-on-google",      "category": "Local SEO",              "published": false},
-    {"id": 2,  "title": "Local SEO for Private-Pay Practices: The 5 Things That Actually Move the Needle",               "slug": "local-seo-for-private-pay-practices",                  "category": "Local SEO",              "published": false},
-    {"id": 3,  "title": "Why Your Practice Isn't Showing Up in the Local Map Pack (and How to Fix It)",                  "slug": "why-your-practice-isnt-showing-up-in-local-map-pack",  "category": "Local SEO",              "published": false},
-    {"id": 4,  "title": "Google Business Profile Mistakes Costing Wellness Practices Real Patients",                     "slug": "google-business-profile-mistakes-wellness-practices",   "category": "Local SEO",              "published": false},
-    {"id": 5,  "title": "How to Rank for 'Functional Medicine Near Me' Without Paying for Ads",                          "slug": "how-to-rank-for-functional-medicine-near-me",           "category": "Local SEO",              "published": false},
-    {"id": 6,  "title": "The Local Keywords Your Wellness Practice Should Be Targeting (and Probably Isn't)",            "slug": "local-keywords-your-wellness-practice-should-target",   "category": "Local SEO",              "published": false},
-    {"id": 7,  "title": "The Website Mistakes That Cost Private-Pay Practices the Right Patients",                       "slug": "website-mistakes-that-cost-private-pay-practices",      "category": "Web Design",             "published": false},
-    {"id": 8,  "title": "7 Signs Your Practice Website Is Quietly Losing You Money",                                     "slug": "signs-your-practice-website-is-losing-you-money",       "category": "Web Design",             "published": false},
-    {"id": 9,  "title": "What a Patient-Attracting Website Actually Looks Like for a Women's Wellness Practice",         "slug": "what-a-patient-attracting-website-looks-like",          "category": "Web Design",             "published": false},
-    {"id": 10, "title": "Why Beautiful Websites Don't Always Bring In Patients (and What Does)",                         "slug": "why-beautiful-websites-dont-bring-in-patients",          "category": "Web Design",             "published": false},
-    {"id": 11, "title": "The 'About' Page Mistake Almost Every Wellness Practice Makes",                                 "slug": "about-page-mistake-every-wellness-practice-makes",      "category": "Web Design",             "published": false},
-    {"id": 12, "title": "How to Tell If Your Website Is Working: 4 Numbers to Check Right Now",                         "slug": "how-to-tell-if-your-website-is-working",                "category": "Strategy",               "published": false},
-    {"id": 13, "title": "How to Write Website Copy That Attracts the Right Patient (and Repels the Wrong One)",          "slug": "website-copy-that-attracts-the-right-patient",          "category": "Strategy",               "published": false},
-    {"id": 14, "title": "The 3 Pages Every Women's Wellness Practice Website Needs",                                     "slug": "three-pages-every-wellness-practice-website-needs",     "category": "Web Design",             "published": false},
-    {"id": 15, "title": "Why Your 'Services' Page Is Confusing Patients (and How to Rewrite It)",                       "slug": "why-your-services-page-is-confusing-patients",          "category": "Strategy",               "published": false},
-    {"id": 16, "title": "How to Talk About Your Pricing Without Scaring Patients Away",                                  "slug": "how-to-talk-about-pricing-without-scaring-patients",    "category": "Strategy",               "published": false},
-    {"id": 17, "title": "The Words Private-Pay Practices Should Stop Using on Their Websites",                           "slug": "words-private-pay-practices-should-stop-using",         "category": "Strategy",               "published": false},
-    {"id": 18, "title": "How to Use Your Website to Pre-Qualify Patients Before They Call",                              "slug": "use-your-website-to-pre-qualify-patients",              "category": "Strategy",               "published": false},
-    {"id": 19, "title": "So You Left Insurance: A Practical Guide to Building Your Online Presence",                     "slug": "left-insurance-building-your-online-presence",          "category": "Practice Building",      "published": false},
-    {"id": 20, "title": "The First 90 Days Online: A Roadmap for New Private-Pay Practices",                            "slug": "first-90-days-online-new-private-pay-practice",         "category": "Practice Building",      "published": false},
-    {"id": 21, "title": "How New Functional Medicine Practices Get Their First 10 Patients",                             "slug": "how-functional-medicine-practices-get-first-patients",  "category": "Practice Building",      "published": false},
-    {"id": 22, "title": "Why Most Private-Pay Practices Plateau (and the Website Fix That Helps)",                       "slug": "why-private-pay-practices-plateau",                     "category": "Practice Building",      "published": false},
-    {"id": 23, "title": "The Insurance to Cash Transition: What Your Website Needs to Communicate",                      "slug": "insurance-to-cash-transition-what-your-website-needs",  "category": "Practice Building",      "published": false},
-    {"id": 24, "title": "Website Strategy for Menopause and Hormone Practices: What Patients Are Searching For",         "slug": "website-strategy-for-menopause-and-hormone-practices",  "category": "Women's Wellness",       "published": false},
-    {"id": 25, "title": "How Aesthetics and Laser Practices Stand Out in a Crowded Local Market",                        "slug": "how-aesthetics-and-laser-practices-stand-out",          "category": "Women's Wellness",       "published": false},
-    {"id": 26, "title": "SEO for Holistic Gynecology Practices: A Plain-English Guide",                                  "slug": "seo-for-holistic-gynecology-practices",                 "category": "Women's Wellness",       "published": false},
-    {"id": 27, "title": "Why Functional Medicine Practices Need a Different Kind of Website",                            "slug": "why-functional-medicine-practices-need-different-website","category": "Women's Wellness",       "published": false},
-    {"id": 29, "title": "Behind the Build: What It Takes to Launch a Wellness Practice Website That Actually Ranks",     "slug": "behind-the-build-launching-wellness-practice-website",  "category": "Case Study",             "published": false},
-    {"id": 30, "title": "From Insurance to Independent: How One Practice Rebuilt Its Patient Pipeline",                  "slug": "from-insurance-to-independent-rebuilding-patient-pipeline","category": "Case Study",            "published": false}
+    {
+      "id": 1,
+      "title": "How Women's Wellness Practices Get Found on Google (Without Running Ads)",
+      "slug": "how-womens-wellness-practices-get-found-on-google",
+      "category": "Local SEO",
+      "published": true,
+      "published_date": "2026-04-28"
+    },
+    {
+      "id": 2,
+      "title": "Local SEO for Private-Pay Practices: The 5 Things That Actually Move the Needle",
+      "slug": "local-seo-for-private-pay-practices",
+      "category": "Local SEO",
+      "published": false
+    },
+    {
+      "id": 3,
+      "title": "Why Your Practice Isn't Showing Up in the Local Map Pack (and How to Fix It)",
+      "slug": "why-your-practice-isnt-showing-up-in-local-map-pack",
+      "category": "Local SEO",
+      "published": false
+    },
+    {
+      "id": 4,
+      "title": "Google Business Profile Mistakes Costing Wellness Practices Real Patients",
+      "slug": "google-business-profile-mistakes-wellness-practices",
+      "category": "Local SEO",
+      "published": false
+    },
+    {
+      "id": 5,
+      "title": "How to Rank for 'Functional Medicine Near Me' Without Paying for Ads",
+      "slug": "how-to-rank-for-functional-medicine-near-me",
+      "category": "Local SEO",
+      "published": false
+    },
+    {
+      "id": 6,
+      "title": "The Local Keywords Your Wellness Practice Should Be Targeting (and Probably Isn't)",
+      "slug": "local-keywords-your-wellness-practice-should-target",
+      "category": "Local SEO",
+      "published": false
+    },
+    {
+      "id": 7,
+      "title": "The Website Mistakes That Cost Private-Pay Practices the Right Patients",
+      "slug": "website-mistakes-that-cost-private-pay-practices",
+      "category": "Web Design",
+      "published": false
+    },
+    {
+      "id": 8,
+      "title": "7 Signs Your Practice Website Is Quietly Losing You Money",
+      "slug": "signs-your-practice-website-is-losing-you-money",
+      "category": "Web Design",
+      "published": false
+    },
+    {
+      "id": 9,
+      "title": "What a Patient-Attracting Website Actually Looks Like for a Women's Wellness Practice",
+      "slug": "what-a-patient-attracting-website-looks-like",
+      "category": "Web Design",
+      "published": false
+    },
+    {
+      "id": 10,
+      "title": "Why Beautiful Websites Don't Always Bring In Patients (and What Does)",
+      "slug": "why-beautiful-websites-dont-bring-in-patients",
+      "category": "Web Design",
+      "published": false
+    },
+    {
+      "id": 11,
+      "title": "The 'About' Page Mistake Almost Every Wellness Practice Makes",
+      "slug": "about-page-mistake-every-wellness-practice-makes",
+      "category": "Web Design",
+      "published": false
+    },
+    {
+      "id": 12,
+      "title": "How to Tell If Your Website Is Working: 4 Numbers to Check Right Now",
+      "slug": "how-to-tell-if-your-website-is-working",
+      "category": "Strategy",
+      "published": false
+    },
+    {
+      "id": 13,
+      "title": "How to Write Website Copy That Attracts the Right Patient (and Repels the Wrong One)",
+      "slug": "website-copy-that-attracts-the-right-patient",
+      "category": "Strategy",
+      "published": false
+    },
+    {
+      "id": 14,
+      "title": "The 3 Pages Every Women's Wellness Practice Website Needs",
+      "slug": "three-pages-every-wellness-practice-website-needs",
+      "category": "Web Design",
+      "published": false
+    },
+    {
+      "id": 15,
+      "title": "Why Your 'Services' Page Is Confusing Patients (and How to Rewrite It)",
+      "slug": "why-your-services-page-is-confusing-patients",
+      "category": "Strategy",
+      "published": false
+    },
+    {
+      "id": 16,
+      "title": "How to Talk About Your Pricing Without Scaring Patients Away",
+      "slug": "how-to-talk-about-pricing-without-scaring-patients",
+      "category": "Strategy",
+      "published": false
+    },
+    {
+      "id": 17,
+      "title": "The Words Private-Pay Practices Should Stop Using on Their Websites",
+      "slug": "words-private-pay-practices-should-stop-using",
+      "category": "Strategy",
+      "published": false
+    },
+    {
+      "id": 18,
+      "title": "How to Use Your Website to Pre-Qualify Patients Before They Call",
+      "slug": "use-your-website-to-pre-qualify-patients",
+      "category": "Strategy",
+      "published": false
+    },
+    {
+      "id": 19,
+      "title": "So You Left Insurance: A Practical Guide to Building Your Online Presence",
+      "slug": "left-insurance-building-your-online-presence",
+      "category": "Practice Building",
+      "published": false
+    },
+    {
+      "id": 20,
+      "title": "The First 90 Days Online: A Roadmap for New Private-Pay Practices",
+      "slug": "first-90-days-online-new-private-pay-practice",
+      "category": "Practice Building",
+      "published": false
+    },
+    {
+      "id": 21,
+      "title": "How New Functional Medicine Practices Get Their First 10 Patients",
+      "slug": "how-functional-medicine-practices-get-first-patients",
+      "category": "Practice Building",
+      "published": false
+    },
+    {
+      "id": 22,
+      "title": "Why Most Private-Pay Practices Plateau (and the Website Fix That Helps)",
+      "slug": "why-private-pay-practices-plateau",
+      "category": "Practice Building",
+      "published": false
+    },
+    {
+      "id": 23,
+      "title": "The Insurance to Cash Transition: What Your Website Needs to Communicate",
+      "slug": "insurance-to-cash-transition-what-your-website-needs",
+      "category": "Practice Building",
+      "published": false
+    },
+    {
+      "id": 24,
+      "title": "Website Strategy for Menopause and Hormone Practices: What Patients Are Searching For",
+      "slug": "website-strategy-for-menopause-and-hormone-practices",
+      "category": "Women's Wellness",
+      "published": false
+    },
+    {
+      "id": 25,
+      "title": "How Aesthetics and Laser Practices Stand Out in a Crowded Local Market",
+      "slug": "how-aesthetics-and-laser-practices-stand-out",
+      "category": "Women's Wellness",
+      "published": false
+    },
+    {
+      "id": 26,
+      "title": "SEO for Holistic Gynecology Practices: A Plain-English Guide",
+      "slug": "seo-for-holistic-gynecology-practices",
+      "category": "Women's Wellness",
+      "published": false
+    },
+    {
+      "id": 27,
+      "title": "Why Functional Medicine Practices Need a Different Kind of Website",
+      "slug": "why-functional-medicine-practices-need-different-website",
+      "category": "Women's Wellness",
+      "published": false
+    },
+    {
+      "id": 29,
+      "title": "Behind the Build: What It Takes to Launch a Wellness Practice Website That Actually Ranks",
+      "slug": "behind-the-build-launching-wellness-practice-website",
+      "category": "Case Study",
+      "published": false
+    },
+    {
+      "id": 30,
+      "title": "From Insurance to Independent: How One Practice Rebuilt Its Patient Pipeline",
+      "slug": "from-insurance-to-independent-rebuilding-patient-pipeline",
+      "category": "Case Study",
+      "published": false
+    }
   ]
 }
