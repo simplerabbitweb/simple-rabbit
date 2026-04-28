@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Rabbit — Brand Guidelines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:   #474D73;
+      --rose:     #AA737D;
+      --peach:    #D7AF99;
+      --linen:    #E2D8D6;
+      --black:    #000000;
+      --dark:     #333333;
+      --mid:      #666666;
+      --light:    #F5F2F1;
+      --white:    #FFFFFF;
+      --border:   #DFE0E1;
+
+      --font-display: 'Raleway', sans-serif;
+      --font-body:    'Outfit', sans-serif;
+      --font-mono:    'DM Mono', monospace;
+    }
+
+    html { background: #f0eded; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: #f0eded;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
+    }
+
+    /* PAGE WRAPPER */
+    .page {
+      width: 794px;
+      margin: 0 auto 48px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* COVER */
+    .cover {
+      background: var(--purple);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 64px;
+    }
+    .cover-logo {
+      margin-bottom: auto;
+      padding-top: 0;
+    }
+    .cover-logo img {
+      height: 36px;
+      filter: brightness(0) invert(1);
+    }
+    .cover-title {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 300;
+      letter-spacing: -2px;
+      color: var(--white);
+      line-height: 1.1;
+      margin-top: auto;
+    }
+    .cover-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 20px;
+    }
+
+    /* SECTION LAYOUT */
+    .section {
+      padding: 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -1px;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--dark);
+      max-width: 580px;
+    }
+
+    /* COLORS */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .color-card {
+      overflow: hidden;
+    }
+    .color-swatch {
+      height: 96px;
+      width: 100%;
+    }
+    .color-info {
+      padding: 14px 0 0;
+    }
+    .color-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .color-hex {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .color-use {
+      font-size: 12px;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    /* TYPOGRAPHY */
+    .type-sample {
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+    .type-sample:first-of-type {
+      margin-top: 32px;
+      padding-top: 0;
+      border-top: none;
+    }
+    .type-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .type-meta-name {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+    .type-meta-detail {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--mid);
+    }
+    .type-display {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      line-height: 1.1;
+    }
+    .type-body-sample {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--dark);
+    }
+    .type-mono-sample {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+    .type-sizes {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .type-size-row {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .type-size-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--mid);
+      width: 110px;
+      flex-shrink: 0;
+    }
+    .type-size-spec {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--rose);
+      width: 120px;
+      flex-shrink: 0;
+    }
+    .type-size-example {
+      color: var(--dark);
+    }
+
+    /* VOICE SECTION */
+    .voice-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 32px;
+    }
+    .voice-pillar {
+      background: var(--white);
+      padding: 28px 24px;
+    }
+    .voice-pillar-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .voice-pillar-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--mid);
+    }
+
+    .voice-trio-note {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background: var(--linen);
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--dark);
+    }
+
+    /* TONE TABLE */
+    .tone-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 13px;
+    }
+    .tone-table th {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+    }
+    .tone-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.55;
+      color: var(--dark);
+    }
+    .tone-table tr:last-child td {
+      border-bottom: none;
+    }
+    .tone-table td:first-child {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      white-space: nowrap;
+      width: 180px;
+    }
+
+    /* WORD LISTS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .word-list-title {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .word-list-title.green { color: #4a7c59; }
+    .word-list-title.red   { color: #a05252; }
+
+    .word-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .word-tag {
+      font-size: 12px;
+      padding: 5px 10px;
+      line-height: 1;
+    }
+    .word-tag.use {
+      background: #eef4f0;
+      color: #4a7c59;
+      font-family: var(--font-body);
+    }
+    .word-tag.avoid {
+      background: #f9eeee;
+      color: #a05252;
+      font-family: var(--font-body);
+      text-decoration: line-through;
+      text-decoration-color: rgba(160,82,82,0.4);
+    }
+
+    /* RULES */
+    .rule-list {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .rule-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--dark);
+    }
+    .rule-item:last-child { border-bottom: none; }
+    .rule-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--rose);
+      padding-top: 3px;
+      flex-shrink: 0;
+      width: 28px;
+    }
+
+    /* PHRASES */
+    .phrase-list {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .phrase-item {
+      padding: 20px 24px;
+      background: var(--light);
+      border-left: 3px solid var(--rose);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: var(--black);
+      line-height: 1.5;
+    }
+
+    /* STRUCTURES TO AVOID */
+    .avoid-list {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .avoid-item {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--dark);
+    }
+    .avoid-item:last-child { border-bottom: none; }
+    .avoid-x {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #a05252;
+      flex-shrink: 0;
+      width: 16px;
+    }
+
+    /* AUDIENCE */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .audience-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+    .audience-card-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .audience-card-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .audience-card-body {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--mid);
+    }
+
+    /* GUT CHECK */
+    .gutcheck {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .gutcheck-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      background: var(--light);
+    }
+    .gutcheck-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--linen);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 28px;
+    }
+    .gutcheck-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--dark);
+      padding-top: 4px;
+    }
+
+    /* FOOTER BAR */
+    .doc-footer {
+      background: var(--purple);
+      padding: 28px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .doc-footer-left {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .doc-footer-right {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* PRINT */
+    @media print {
+      html, body { background: white; padding: 0; }
+      .page { margin: 0; width: 100%; box-shadow: none; }
+      .page-break { page-break-before: always; }
+      .no-break { page-break-inside: avoid; }
+    }
+
+    @media screen {
+      .page { box-shadow: 0 4px 40px rgba(0,0,0,0.12); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-logo">
+      <img src="logo.png" alt="Simple Rabbit">
+    </div>
+    <div>
+      <h1 class="cover-title">Brand<br>Guidelines</h1>
+      <p class="cover-sub">Simple Rabbit Studio &nbsp;—&nbsp; 2026</p>
+    </div>
+  </div>
+
+  <!-- ABOUT THE STUDIO -->
+  <div class="section">
+    <span class="section-label">01 &nbsp; Studio</span>
+    <h2 class="section-title">About Simple Rabbit</h2>
+    <p class="section-body">Simple Rabbit is a one-person web design studio run by Leann Frank out of Bergen County, NJ. The studio builds custom WordPress websites for cash-pay women's wellness practices: functional medicine, women's health, concierge. Everything is built one at a time.</p>
+    <div class="audience-grid" style="margin-top:36px;">
+      <div class="audience-card no-break">
+        <span class="audience-card-label">01</span>
+        <p class="audience-card-title">The Independent Provider</p>
+        <p class="audience-card-body">NP, MD, DO, or PA who left insurance-based practice. Often a woman, 35&ndash;55, running functional medicine, women's health, or concierge. Smart, science-trained, skeptical of marketing.</p>
+      </div>
+      <div class="audience-card no-break">
+        <span class="audience-card-label">02</span>
+        <p class="audience-card-title">The Growing Practice</p>
+        <p class="audience-card-body">2&ndash;5 years in, ready to raise prices, knows the website is holding them back. Looking for a studio that understands their world without needing a primer on cash-pay medicine.</p>
+      </div>
+      <div class="audience-card no-break">
+        <span class="audience-card-label">03</span>
+        <p class="audience-card-title">The Researcher</p>
+        <p class="audience-card-body">Not ready yet. Will spend 20 minutes on the site. The voice must hold up under scrutiny. Doesn't respond to pressure or generic agency language.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLORS -->
+  <div class="section page-break">
+    <span class="section-label">02 &nbsp; Color</span>
+    <h2 class="section-title">Color Palette</h2>
+    <p class="section-body">Five primary colors. The palette is warm, muted, and deliberately un-clinical. Purple carries authority. Rose adds warmth without being sweet.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#474D73;"></div>
+        <div class="color-info">
+          <p class="color-name">Deep Slate Purple</p>
+          <span class="color-hex">#474D73</span>
+          <p class="color-use">Navigation, statement sections, footer, primary buttons</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#AA737D;"></div>
+        <div class="color-info">
+          <p class="color-name">Dusty Rose</p>
+          <span class="color-hex">#AA737D</span>
+          <p class="color-use">Overlines, accent labels, link highlights, brand accents</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#D7AF99;"></div>
+        <div class="color-info">
+          <p class="color-name">Warm Peach</p>
+          <span class="color-hex">#D7AF99</span>
+          <p class="color-use">Secondary accents, hover states, supporting warmth</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#E2D8D6; border:1px solid #dfe0e1;"></div>
+        <div class="color-info">
+          <p class="color-name">Blush Linen</p>
+          <span class="color-hex">#E2D8D6</span>
+          <p class="color-use">Section backgrounds, card fills, light tone areas</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#000000;"></div>
+        <div class="color-info">
+          <p class="color-name">Black</p>
+          <span class="color-hex">#000000</span>
+          <p class="color-use">All body text, headlines on light backgrounds</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFFFFF; border:1px solid #dfe0e1;"></div>
+        <div class="color-info">
+          <p class="color-name">White</p>
+          <span class="color-hex">#FFFFFF</span>
+          <p class="color-use">Page background, cards, buttons on dark sections</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="section page-break">
+    <span class="section-label">03 &nbsp; Typography</span>
+    <h2 class="section-title">Type System</h2>
+    <p class="section-body">Three typefaces. Each has a single role. Don't swap them.</p>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <span class="type-meta-name">Display &nbsp;/&nbsp; Raleway</span>
+        <span class="type-meta-detail">Google Fonts &nbsp;&mdash;&nbsp; weights 300, 400, 500, 600</span>
+      </div>
+      <p class="type-display">Built for the<br>right patients.</p>
+      <p style="font-size:12px;color:var(--mid);margin-top:14px;font-family:var(--font-body);line-height:1.6;">Used for: all H1 and H2 headings, hero statements, large callouts, pull quotes. Always letter-spacing: -1px to -2px. Weight 400 is the standard; 300 for very large sizes.</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <span class="type-meta-name">Body &nbsp;/&nbsp; Outfit</span>
+        <span class="type-meta-detail">Google Fonts &nbsp;&mdash;&nbsp; weights 300, 400, 500, 600, 700</span>
+      </div>
+      <p class="type-body-sample">A site built to bring in the right patients and do the selling before anyone picks up the phone. Clean copy, careful structure, ranked on Google.</p>
+      <p style="font-size:12px;color:var(--mid);margin-top:14px;font-family:var(--font-body);line-height:1.6;">Used for: all body copy, navigation links, buttons, form fields, captions. Default size 15&ndash;16px, line-height 1.6&ndash;1.75.</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <span class="type-meta-name">Mono &nbsp;/&nbsp; DM Mono</span>
+        <span class="type-meta-detail">Google Fonts &nbsp;&mdash;&nbsp; weights 400, 500</span>
+      </div>
+      <p class="type-mono-sample">Services &nbsp;&mdash;&nbsp; 01 &nbsp;&mdash;&nbsp; Bergen County NJ</p>
+      <p style="font-size:12px;color:var(--mid);margin-top:14px;font-family:var(--font-body);line-height:1.6;">Used for: overlines, section labels, form field labels, small metadata, numbered lists. Always uppercase. Letter-spacing 1.5&ndash;2.5px. Color is Dusty Rose (#AA737D) on white; white with opacity on dark backgrounds.</p>
+    </div>
+
+    <div class="type-sizes">
+      <div class="type-size-row">
+        <span class="type-size-label">Hero H1</span>
+        <span class="type-size-spec">clamp(52px,7vw,92px)</span>
+        <span class="type-size-example" style="font-family:var(--font-display);font-size:22px;font-weight:400;letter-spacing:-1px;">Raleway 400, tracking -2px</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">Section H2</span>
+        <span class="type-size-spec">clamp(28px,3.5vw,48px)</span>
+        <span class="type-size-example" style="font-family:var(--font-display);font-size:18px;font-weight:400;letter-spacing:-1px;">Raleway 400, tracking -1px</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">Card H3</span>
+        <span class="type-size-spec">18–22px</span>
+        <span class="type-size-example" style="font-family:var(--font-display);font-size:16px;font-weight:400;">Raleway 400</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">Body copy</span>
+        <span class="type-size-spec">15–16px</span>
+        <span class="type-size-example" style="font-family:var(--font-body);font-size:14px;">Outfit 400, line-height 1.7</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">Overline</span>
+        <span class="type-size-spec">10–11px</span>
+        <span class="type-size-example" style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);">DM MONO, TRACKING 2PX</span>
+      </div>
+      <div class="type-size-row" style="border-bottom:none;">
+        <span class="type-size-label">Nav / Buttons</span>
+        <span class="type-size-spec">13–14px</span>
+        <span class="type-size-example" style="font-family:var(--font-body);font-size:13px;font-weight:500;">Outfit 500</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOICE -->
+  <div class="section page-break">
+    <span class="section-label">04 &nbsp; Voice</span>
+    <h2 class="section-title">Brand Voice</h2>
+    <p class="section-body">Three qualities. All three at once is the target. Missing any one breaks it.</p>
+
+    <div class="voice-pillars">
+      <div class="voice-pillar">
+        <p class="voice-pillar-title">Direct.</p>
+        <p class="voice-pillar-body">Fewest words that work. No padding, no hedging, no overselling. If a sentence can be cut in half, cut it.</p>
+      </div>
+      <div class="voice-pillar">
+        <p class="voice-pillar-title">Warm.</p>
+        <p class="voice-pillar-body">Treat the reader as a peer, not a prospect. Contractions. Sounds like a real person talking to another real person.</p>
+      </div>
+      <div class="voice-pillar">
+        <p class="voice-pillar-title">Quietly confident.</p>
+        <p class="voice-pillar-body">No shouting. No credential-listing. Specificity does the credibility work. Let the work speak.</p>
+      </div>
+    </div>
+
+    <div class="voice-trio-note">
+      Direct without warm = cold. &nbsp; Warm without direct = soft. &nbsp; Confident without warm = arrogant.
+    </div>
+  </div>
+
+  <!-- TONE BY FORMAT -->
+  <div class="section">
+    <span class="section-label">05 &nbsp; Tone</span>
+    <h2 class="section-title">Tone by Format</h2>
+    <p class="section-body">The voice stays constant. The register shifts depending on context.</p>
+
+    <table class="tone-table">
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Register</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Homepage / Services</td>
+          <td>Most polished. Short, confident statements. Every word earns its place.</td>
+        </tr>
+        <tr>
+          <td>Articles / Newsletter</td>
+          <td>More conversational. First person, "you," occasional asides. Like Leann talking with a smart friend who runs a practice.</td>
+        </tr>
+        <tr>
+          <td>Client emails / Proposals</td>
+          <td>Warmest. First person, signed <em>Leann</em> (first name only). Direct but human.</td>
+        </tr>
+        <tr>
+          <td>Social (IG, LinkedIn)</td>
+          <td>Same warmth as articles, shorter. One idea per post. No hooks, no emoji lists.</td>
+        </tr>
+        <tr>
+          <td>Case Studies</td>
+          <td>Most specific. Names, places, numbers. Client words and data carry the credibility.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SENTENCE RULES -->
+  <div class="section page-break">
+    <span class="section-label">06 &nbsp; Writing Rules</span>
+    <h2 class="section-title">Sentence Rules</h2>
+
+    <div class="rule-list">
+      <div class="rule-item">
+        <span class="rule-num">01</span>
+        <span>Short sentences over long. Vary length, lean short.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-num">02</span>
+        <span>Active voice. "We build custom sites," not "Custom sites are built."</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-num">03</span>
+        <span>Specific nouns. "A menopause specialist," not "a healthcare provider."</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-num">04</span>
+        <span>Concrete verbs. "Brings in patients," not "drives engagement." "Ranks on Google," not "achieves visibility."</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-num">05</span>
+        <span>Cut qualifying clauses: "in order to," "as well as," "in terms of."</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-num">06</span>
+        <span>Use "I" when it's more honest. Leann is the studio. "I built this site," not "we built this site."</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-num">07</span>
+        <span>No false urgency. No "limited spots," "booking out fast," or "only 3 slots left."</span>
+      </div>
+      <div class="rule-item" style="border-bottom:none;">
+        <span class="rule-num">08</span>
+        <span>No medical claims. No specific patient outcome claims from a website. No medical advice in any context.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRUCTURES TO AVOID -->
+  <div class="section">
+    <span class="section-label">07 &nbsp; Patterns to Avoid</span>
+    <h2 class="section-title">Sentence Structures to Skip</h2>
+    <p class="section-body">These patterns signal AI-generated copy. Cut them on sight.</p>
+
+    <div class="avoid-list">
+      <div class="avoid-item">
+        <span class="avoid-x">&#x2715;</span>
+        <span>"Not just X, but Y" &mdash; don't use it.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="avoid-x">&#x2715;</span>
+        <span>"We don't just X, we Y" &mdash; don't use it.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="avoid-x">&#x2715;</span>
+        <span>Triple adjective lists: "Clean, intentional, and strategic." One is sharper.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="avoid-x">&#x2715;</span>
+        <span>"But here's the thing." Just say the thing.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="avoid-x">&#x2715;</span>
+        <span>Em-dashes. Hard rule: never. Use a comma, period, parentheses, or colon instead.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="avoid-x">&#x2715;</span>
+        <span>"And here's why." / "Because here's the truth." Just make the point.</span>
+      </div>
+      <div class="avoid-item" style="border-bottom:none;">
+        <span class="avoid-x">&#x2715;</span>
+        <span>"Imagine if..." opener &mdash; skip it.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORD LISTS -->
+  <div class="section page-break">
+    <span class="section-label">08 &nbsp; Word Choice</span>
+    <h2 class="section-title">Use &amp; Avoid</h2>
+
+    <div class="two-col">
+      <div>
+        <span class="word-list-title green">Words that fit the brand</span>
+        <div class="word-tags">
+          <span class="word-tag use">custom</span>
+          <span class="word-tag use">built</span>
+          <span class="word-tag use">designed</span>
+          <span class="word-tag use">written</span>
+          <span class="word-tag use">structured</span>
+          <span class="word-tag use">ranked</span>
+          <span class="word-tag use">found</span>
+          <span class="word-tag use">visible</span>
+          <span class="word-tag use">clear</span>
+          <span class="word-tag use">considered</span>
+          <span class="word-tag use">intentional</span>
+          <span class="word-tag use">careful</span>
+          <span class="word-tag use">specific</span>
+          <span class="word-tag use">practice</span>
+          <span class="word-tag use">provider</span>
+          <span class="word-tag use">practitioner</span>
+          <span class="word-tag use">patient</span>
+          <span class="word-tag use">cash-pay</span>
+          <span class="word-tag use">independent</span>
+          <span class="word-tag use">specialty</span>
+          <span class="word-tag use">science-trained</span>
+        </div>
+      </div>
+      <div>
+        <span class="word-list-title red">Cut on sight</span>
+        <div class="word-tags">
+          <span class="word-tag avoid">elevate</span>
+          <span class="word-tag avoid">unlock</span>
+          <span class="word-tag avoid">empower</span>
+          <span class="word-tag avoid">transform</span>
+          <span class="word-tag avoid">level up</span>
+          <span class="word-tag avoid">game-changer</span>
+          <span class="word-tag avoid">journey</span>
+          <span class="word-tag avoid">passion</span>
+          <span class="word-tag avoid">bespoke</span>
+          <span class="word-tag avoid">curated</span>
+          <span class="word-tag avoid">seamless</span>
+          <span class="word-tag avoid">innovative</span>
+          <span class="word-tag avoid">robust</span>
+          <span class="word-tag avoid">delve into</span>
+          <span class="word-tag avoid">dive deep</span>
+          <span class="word-tag avoid">unpack</span>
+          <span class="word-tag avoid">bandwidth</span>
+          <span class="word-tag avoid">scalable</span>
+          <span class="word-tag avoid">hustle</span>
+          <span class="word-tag avoid">glow up</span>
+          <span class="word-tag avoid">soul-led</span>
+          <span class="word-tag avoid">white glove</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <span class="section-label" style="margin-bottom:16px;">Phrases that work</span>
+      <div class="phrase-list">
+        <div class="phrase-item">"Built to be found on Google, pitched to the right patient, and easy to keep current."</div>
+        <div class="phrase-item">"A site that does the selling before anyone picks up the phone."</div>
+        <div class="phrase-item">"We're not the cheapest option. We're the one that pays for itself."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUT CHECK -->
+  <div class="section">
+    <span class="section-label">09 &nbsp; Quality Check</span>
+    <h2 class="section-title">Three-Question Gut Check</h2>
+    <p class="section-body">Run any piece of copy through these before it goes live.</p>
+
+    <div class="gutcheck">
+      <div class="gutcheck-item">
+        <span class="gutcheck-num">1</span>
+        <p class="gutcheck-text">Would a real person say this out loud to another real person?</p>
+      </div>
+      <div class="gutcheck-item">
+        <span class="gutcheck-num">2</span>
+        <p class="gutcheck-text">Could this same sentence appear on any web design agency's site? If yes, it's too generic.</p>
+      </div>
+      <div class="gutcheck-item">
+        <span class="gutcheck-num">3</span>
+        <p class="gutcheck-text">Does it respect the reader's time and intelligence?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOC FOOTER -->
+  <div class="doc-footer">
+    <span class="doc-footer-left">Simple Rabbit &nbsp;&mdash;&nbsp; Brand Guidelines</span>
+    <span class="doc-footer-right">simplerabbit.studio &nbsp;&mdash;&nbsp; Bergen County NJ</span>
+  </div>
+
+</div>
+
+</body>
+</html>
