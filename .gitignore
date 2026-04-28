@@ -11,3 +11,4 @@ deploy.sh
 **/.env
 .env
 audit-proxy.php
+.blog-config.json
