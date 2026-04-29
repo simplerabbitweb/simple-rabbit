@@ -445,7 +445,7 @@
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
         <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
         <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
-        <a href="javascript:void(0)" onclick="document.getElementById('newsletter-popup').style.display='flex'" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
+        <a href="https://leannfrank.myflodesk.com/jointhehutch" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
       </div>
     </div>
   </div>
@@ -472,36 +472,22 @@ var stgl=document.querySelector('#mobile-nav .mobile-nav-toggle');
 if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=document.querySelectorAll('#mobile-nav .mobile-nav-sub');var open=subs[0].classList.contains('open');subs.forEach(function(s){s.classList.toggle('open',!open);});stgl.textContent=open?'+':'−';});}
 </script>
 
-<!-- NEWSLETTER POPUP -->
-<div id="newsletter-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:#474D73;border:1px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.55);max-width:480px;width:100%;padding:56px 48px;position:relative;text-align:center;">
-    <button onclick="closeNewsletterPopup()" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#fff;line-height:1;">&times;</button>
-    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E2D8D6;display:block;margin-bottom:16px;">The Hutch &middot; A Weekly Newsletter</span>
-    <h2 style="font-family:'Raleway',sans-serif;font-size:clamp(22px,3vw,30px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:16px;font-weight:400;color:#fff;">Notes on websites, patients, and the practice you're building.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#fff;margin-bottom:32px;">One short email a week, with what I&rsquo;m seeing in client work and what&rsquo;s actually working online.</p>
-    <form onsubmit="submitNewsletter(event,this)" style="width:100%;">
-    <input type="email" name="email" placeholder="Your email address" required style="width:100%;border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:15px;padding:10px 0;outline:none;font-family:'Outfit',system-ui,sans-serif;margin-bottom:16px;display:block;">
-    <button type="submit" style="display:block;width:100%;background:#fff;color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;transition:background 0.2s;">Join The Hutch &rarr;</button>
-    <p class="nl-msg" style="font-size:13px;color:#E2D8D6;margin-top:12px;display:none;"></p>
-  </form>
-    <div style="margin-top:20px;">
-      <button onclick="closeNewsletterPopup()" style="background:none;border:none;font-size:13px;color:#fff;cursor:pointer;font-family:'Outfit',system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;">No thanks</button>
-    </div>
-  </div>
-</div>
+<!-- FLODESK NEWSLETTER -->
 <script>
-(function(){
-  if(sessionStorage.getItem('srNewsletterShown')) return;
-  var popup=document.getElementById('newsletter-popup');
-  setTimeout(function(){
-    if(sessionStorage.getItem('srNewsletterShown')) return;
-    sessionStorage.setItem('srNewsletterShown','1');
-    popup.style.display='flex';
-  }, 20000);
-})();
-function closeNewsletterPopup(){
-  document.getElementById('newsletter-popup').style.display='none';
-}
+  (function(w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+    var sm = d.createElement(t); sm.async = true; sm.type = 'module';
+    sm.src = h + s + '.mjs' + v; f.parentNode.insertBefore(sm, f);
+    var sn = d.createElement(t); sn.async = true; sn.noModule = true;
+    sn.src = h + s + '.js' + v; f.parentNode.insertBefore(sn, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+</script>
+<script>
+  window.fd('form', { formId: '69f243ce0a1f098d7fb37e63' });
 </script>
 
 </body>
