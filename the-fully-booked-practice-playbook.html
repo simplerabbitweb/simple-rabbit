@@ -86,11 +86,20 @@
     .section-inner-wide { max-width: 860px; margin: 0 auto; }
 
     /* HERO */
-    .hero { padding: 80px 48px 72px; background: var(--white); border-bottom: 1px solid var(--light-border); position: relative; background-image: url('playbook-banner.jpg'); background-size: cover; background-position: center top; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.82); pointer-events: none; }
+    .hero { padding: 80px 48px; background: var(--white); border-bottom: 1px solid var(--light-border); position: relative; background-image: url('playbook-banner.jpg'); background-size: cover; background-position: center top; min-height: 72vh; display: flex; align-items: center; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.70); pointer-events: none; }
     .hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
     .hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 68px); letter-spacing: -2px; line-height: 1.06; font-weight: 400; color: var(--black); margin-bottom: 24px; }
     .hero-sub { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.75; color: rgba(0,0,0,0.6); margin-bottom: 40px; max-width: 600px; }
+
+    /* HERO GRID */
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; width: 100%; }
+    .hero-form-card { background: var(--white); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 16px 56px rgba(0,0,0,0.10); padding: 40px; }
+    .hero-stats { display: flex; margin-top: 40px; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.80); }
+    .hero-stat { padding: 16px 28px; border-right: 1px solid rgba(0,0,0,0.10); flex: 1; }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { font-family: var(--font-mono); font-size: 22px; color: var(--accent); line-height: 1; }
+    .hero-stat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; color: rgba(0,0,0,0.35); margin-top: 5px; text-transform: uppercase; }
 
     /* FORM */
     .fd-form-wrapper { border: 1px solid var(--light-border); padding: 40px; background: var(--white); }
@@ -98,11 +107,19 @@
 
     /* WHAT'S INSIDE */
     .inside-list { list-style: none; margin-top: 40px; }
-    .inside-item { display: grid; grid-template-columns: 48px 1fr; gap: 0 24px; padding: 28px 0; border-bottom: 1px solid var(--light-border); }
+    .inside-item { display: grid; grid-template-columns: 72px 1fr; gap: 0 28px; padding: 32px 0; border-bottom: 1px solid var(--light-border); align-items: start; }
     .inside-item:last-child { border-bottom: none; }
-    .inside-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; color: var(--accent); padding-top: 4px; }
-    .inside-title { font-family: var(--font-display); font-size: 18px; font-weight: 400; letter-spacing: -0.3px; color: var(--black); margin-bottom: 6px; line-height: 1.3; }
+    .inside-num { display: flex; flex-direction: column; align-items: flex-start; padding-top: 4px; }
+    .inside-num .day-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.28); margin-bottom: 1px; }
+    .inside-num .day-num { font-family: var(--font-mono); font-size: 40px; color: var(--accent); line-height: 1; }
+    .inside-title { font-family: var(--font-display); font-size: 19px; font-weight: 400; letter-spacing: -0.3px; color: var(--black); margin-bottom: 8px; line-height: 1.3; }
     .inside-desc { font-size: 14px; line-height: 1.65; color: var(--mid); }
+
+    /* WHO IT'S FOR — SPECIALTY LIST */
+    .specialty-list { list-style: none; padding: 0; margin-top: 28px; }
+    .specialty-list li { display: flex; align-items: center; gap: 14px; font-size: 15px; color: var(--dark); padding: 10px 0; border-bottom: 1px solid var(--light-border); }
+    .specialty-list li:last-child { border-bottom: none; }
+    .specialty-arrow { font-family: var(--font-mono); font-size: 11px; color: var(--accent); flex-shrink: 0; }
 
     /* WHO IT'S FOR */
     .who-body { font-size: 16px; line-height: 1.8; color: var(--dark); }
@@ -113,9 +130,10 @@
     .about-body p + p { margin-top: 20px; }
 
     /* FINAL CTA */
-    .cta-section { padding: 100px 48px; background: var(--purple); }
-    .cta-inner { max-width: 680px; margin: 0 auto; }
-    .cta-section h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 38px); letter-spacing: -1px; line-height: 1.15; font-weight: 400; color: #fff; margin-bottom: 40px; }
+    .cta-section { padding: 100px 48px; background: var(--purple); position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 180px 180px; opacity: 0.06; pointer-events: none; }
+    .cta-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-section h2 { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 48px); letter-spacing: -1.5px; line-height: 1.1; font-weight: 400; color: #fff; margin-bottom: 40px; }
 
     /* FOOTER */
     footer { background: var(--purple); border-top: none; padding: 0; display: block; }
@@ -127,7 +145,10 @@
     @media (max-width: 900px) {
       .nav-inner { padding: 0 24px; }
       .section { padding: 64px 24px; }
-      .hero { padding: 56px 24px 56px; }
+      .hero { padding: 56px 24px; min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .hero-stats { flex-wrap: wrap; }
+      .hero-stat { padding: 14px 20px; }
       .cta-section { padding: 64px 24px; }
       .fd-form-wrapper { padding: 28px 24px; }
       .fd-form-wrapper-dark { padding: 28px 24px; }
@@ -182,16 +203,36 @@
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <span class="overline">A Free 5-Day Playbook</span>
-    <h1>The Fully-Booked Practice Playbook</h1>
-    <p class="hero-sub">Five days on how patients find your practice online and what convinces them to book. Written for women's wellness practitioners running private-pay practices.</p>
-
-    <div class="fd-form-wrapper">
+  <div class="hero-grid">
+    <!-- Left: copy -->
+    <div>
+      <span class="overline">Free 5-Day Email Playbook</span>
+      <h1>The Fully-Booked<br>Practice Playbook</h1>
+      <p class="hero-sub">Five days on how patients find your practice online — and what actually convinces them to book. Written for women's wellness practitioners running private-pay practices.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Emails</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">~20</div>
+          <div class="hero-stat-label">Min read</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Free</div>
+          <div class="hero-stat-label">Always</div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: form card -->
+    <div class="hero-form-card">
+      <p style="font-size:15px;font-weight:500;color:var(--black);margin-bottom:6px;line-height:1.4;">Get the free playbook.</p>
+      <p style="font-size:13px;color:var(--mid);margin-bottom:24px;line-height:1.55;">One email a day for five days. Start reading in the next five minutes.</p>
       <div id="fd-form-69f2a90530789e560a2076c6-hero"></div>
       <script>
         window.fd('form', { formId: '69f2a90530789e560a2076c6', containerEl: '#fd-form-69f2a90530789e560a2076c6-hero' });
       </script>
+      <p style="font-size:11px;font-family:var(--font-mono);color:rgba(0,0,0,0.35);margin-top:16px;letter-spacing:0.5px;">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
@@ -205,35 +246,35 @@
 
     <ul class="inside-list">
       <li class="inside-item">
-        <span class="inside-num">01</span>
+        <div class="inside-num"><span class="day-label">Day</span><span class="day-num">01</span></div>
         <div>
           <p class="inside-title">What the homepages of practices doing this well have in common.</p>
           <p class="inside-desc">Three traits, then a self-test for yours.</p>
         </div>
       </li>
       <li class="inside-item">
-        <span class="inside-num">02</span>
+        <div class="inside-num"><span class="day-label">Day</span><span class="day-num">02</span></div>
         <div>
           <p class="inside-title">Whether you're showing up where patients are actually looking.</p>
           <p class="inside-desc">Two searches, what they tell you, and how to fix the gap.</p>
         </div>
       </li>
       <li class="inside-item">
-        <span class="inside-num">03</span>
+        <div class="inside-num"><span class="day-label">Day</span><span class="day-num">03</span></div>
         <div>
           <p class="inside-title">The Google Business Profile fields most practitioners ignore.</p>
           <p class="inside-desc">All 8 of them, with what good looks like for each.</p>
         </div>
       </li>
       <li class="inside-item">
-        <span class="inside-num">04</span>
+        <div class="inside-num"><span class="day-label">Day</span><span class="day-num">04</span></div>
         <div>
           <p class="inside-title">What happens after a patient lands on your site.</p>
           <p class="inside-desc">The conversion paths most practice websites get wrong.</p>
         </div>
       </li>
       <li class="inside-item">
-        <span class="inside-num">05</span>
+        <div class="inside-num"><span class="day-label">Day</span><span class="day-num">05</span></div>
         <div>
           <p class="inside-title">The pieces you can't audit yourself.</p>
           <p class="inside-desc">Five things that quietly cost you the right patients, and what to do about them.</p>
@@ -254,9 +295,15 @@
     <div style="padding:100px 64px;">
       <span class="overline">Who It's For</span>
       <div class="who-body">
-        <p>For women's wellness practitioners running private-pay practices: functional medicine, hormone and menopause care, holistic gynecology, aesthetics, and adjacent specialties.</p>
-        <p>Whether you're considering leaving insurance, you've recently made the leap, or your practice has been private-pay for years, the playbook applies.</p>
+        <p>For women's wellness practitioners running private-pay practices. Whether you're considering leaving insurance, you've recently made the leap, or your practice has been private-pay for years — the playbook applies.</p>
       </div>
+      <ul class="specialty-list">
+        <li><span class="specialty-arrow">→</span>Functional &amp; integrative medicine</li>
+        <li><span class="specialty-arrow">→</span>Hormone &amp; menopause care</li>
+        <li><span class="specialty-arrow">→</span>Holistic gynecology &amp; women's health</li>
+        <li><span class="specialty-arrow">→</span>Medical aesthetics &amp; wellness spas</li>
+        <li><span class="specialty-arrow">→</span>Private-pay therapy &amp; mental health</li>
+      </ul>
     </div>
     <div style="height:100%;min-height:420px;overflow:hidden;">
       <img src="who-its-for.jpg" alt="Who it's for" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -283,6 +330,11 @@
         <p>I'm Leann. I run Simple Rabbit, a one-person studio that builds custom websites for women's wellness practices. I've spent years auditing practice websites and watching the same patterns show up. The playbook you're about to receive is a stripped-down version of what I run when a practitioner pays me to do it.</p>
         <p>I'm sending it free because I'd rather you find the right help, even if it's not me, than stay stuck.</p>
       </div>
+      <div style="margin-top:36px;border-top:1px solid var(--light-border);padding-top:28px;display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--mid);"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);">→</span>Bergen County, NJ — serving practitioners nationwide</div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--mid);"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);">→</span>Custom sites built exclusively for private-pay wellness practices</div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--mid);"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);">→</span><a href="/portfolio" style="color:var(--accent);text-decoration:underline;">See our work &rarr;</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -292,7 +344,8 @@
 <section class="cta-section reveal">
   <div class="cta-inner">
     <span class="overline-white">Start the Playbook</span>
-    <h2>Five days. Twenty minutes of reading. About an hour of work, total.</h2>
+    <h2>Five days. Twenty minutes of reading.<br>A clearer picture of why patients aren't booking.</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:40px;max-width:520px;">Free. Delivered to your inbox. No fluff, no pitch — just the audit I'd run on your practice.</p>
 
     <div class="fd-form-wrapper-dark">
       <div id="fd-form-69f2a90530789e560a2076c6-cta"></div>
@@ -300,6 +353,7 @@
         window.fd('form', { formId: '69f2a90530789e560a2076c6', containerEl: '#fd-form-69f2a90530789e560a2076c6-cta' });
       </script>
     </div>
+    <p style="font-size:11px;font-family:var(--font-mono);color:rgba(255,255,255,0.35);margin-top:20px;letter-spacing:0.5px;">No spam. Unsubscribe anytime. Your inbox is safe.</p>
   </div>
 </section>
 
