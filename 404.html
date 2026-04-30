@@ -197,7 +197,10 @@ if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=
   })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
 </script>
 <script>
-  window.fd('form', { formId: '69f243ce0a1f098d7fb37e63' });
+  (function(){
+    if(window.location.pathname.replace(/\/$/,'').indexOf('/contact')!==-1)return;
+    setTimeout(function(){window.fd('form',{formId:'69f243ce0a1f098d7fb37e63'});},10000);
+  })();
 </script>
 
 </body>
