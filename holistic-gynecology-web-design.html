@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design for Holistic Gynecology Practices | Simple Rabbit</title>
+  <meta name="description" content="Custom websites for independent gynecologists, midwives, and integrative women's health practitioners. Built to look as serious as the work and to bring in the right patients.">
+  <meta property="og:title" content="Web Design for Holistic Gynecology Practices | Simple Rabbit">
+  <meta property="og:description" content="Custom websites for independent gynecologists, midwives, and integrative women's health practitioners. Built to look as serious as the work and to bring in the right patients.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/holistic-gynecology-web-design">
+  <meta property="og:image" content="https://simplerabbit.studio/leann-services.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/holistic-gynecology-web-design">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#E2D8D6;
+      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
+      --mid:#111;--dark:#333;--light-border:#dfe0e1;
+      --purple:#474D73;
+      --font-display:'Raleway',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--white);}
+    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
+    .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .btn-primary{display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    .btn-secondary{display:inline-block;background:transparent;color:#474D73;padding:13px 38px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:1px solid #474D73;cursor:pointer;transition:background 0.2s,color 0.2s;}
+    .btn-secondary:hover{background:#474D73;color:var(--white);}
+    .sp{padding-left:48px;padding-right:48px;}
+    .faq-row{border-bottom:1px solid var(--light-border);padding:36px 0;}
+    .faq-row:first-child{border-top:1px solid var(--light-border);}
+    .process-step{transition:background 0.2s;}
+    .process-step:hover{background:#d8cec9;}
+    .include-list{list-style:none;margin-top:32px;border-top:1px solid var(--light-border);}
+    .include-list li{padding:16px 0;border-bottom:1px solid var(--light-border);font-size:15px;line-height:1.6;color:var(--dark);display:flex;align-items:baseline;gap:12px;}
+    .include-list li::before{content:'→';font-family:var(--font-mono);font-size:12px;color:var(--accent);flex-shrink:0;}
+    footer{display:block;padding:0;border:none;}
+    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:#fff;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
+    .mobile-nav a:hover{color:var(--white);}
+    .mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}
+    .mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+      .sp{padding-left:24px!important;padding-right:24px!important;}
+      .how-it-works-grid{grid-template-columns:1fr!important;}
+      .offer-grid{grid-template-columns:1fr!important;gap:40px!important;}
+      .footer-social-links{flex-wrap:wrap!important;gap:12px!important;}
+      .cta-pair{flex-direction:column!important;align-items:center!important;}
+    }
+    @media(max-width:768px){
+      .hamburger{display:flex!important;}
+      .nav-links{display:none!important;}
+      .nav-inner a img{max-height:44px!important;}
+      .inner-hero{padding:64px 24px 72px!important;}
+    }
+    @media(max-width:600px){
+      footer > div{padding-left:20px!important;padding-right:20px!important;}
+      .footer-social-links{flex-wrap:wrap!important;gap:12px!important;}
+    }
+  </style>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Web Design for Holistic Gynecology Practices",
+  "description": "Custom websites for independent gynecologists, midwives, and integrative women's health practitioners. Includes strategic copywriting, local SEO foundations, service pages built around holistic gynecology offerings, and ongoing site care after launch.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Simple Rabbit",
+    "url": "https://simplerabbit.studio",
+    "telephone": "+15514862779",
+    "email": "hello@simplerabbit.studio",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bergen County",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    }
+  },
+  "serviceType": "Web Design",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "holistic gynecology practices, integrative women's health practitioners, midwives, independent gynecologists"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div id="announcement-banner" style="background:#829AAB;padding:11px 24px;text-align:center;position:relative;">
+  <a href="/playbook" style="font-size:13px;color:#fff;font-family:'Outfit',system-ui,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;">
+    <span style="font-weight:400;opacity:0.88;">Free 5-day email series &rarr;</span>
+    <strong style="font-weight:600;letter-spacing:0.1px;">The Fully-Booked Private Practice Playbook</strong>
+    <span style="background:rgba(255,255,255,0.18);padding:2px 10px;font-size:12px;letter-spacing:0.5px;border:1px solid rgba(255,255,255,0.3);">Get it free</span>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact" class="nav-cta">Start a Project</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact" class="mobile-nav-cta">Start a Project</a>
+</div>
+
+<!-- HERO -->
+<section style="background:#474D73;padding:100px 72px 100px;" class="inner-hero">
+  <div style="max-width:840px;">
+    <span class="overline" style="color:#E2D8D6;">Web Design &middot; Holistic Gynecology</span>
+    <h1 style="font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-2px;color:#fff;font-weight:400;margin-bottom:28px;">Web design for holistic gynecology practices.</h1>
+    <p style="font-size:clamp(17px,1.8vw,21px);line-height:1.7;color:rgba(255,255,255,0.82);max-width:660px;margin-bottom:40px;">Custom websites for independent gynecologists, midwives, and integrative women&rsquo;s health practitioners. Built to look as serious as the work and to bring in patients who are looking for exactly what you do.</p>
+    <a href="/contact" class="btn-primary" style="background:var(--white);color:var(--black);">Tell me about your practice &rarr;</a>
+  </div>
+</section>
+
+
+<!-- SECTION 1: PROBLEM -->
+<section class="reveal sp" style="padding:100px 48px;background:var(--white);border-bottom:1px solid var(--light-border);">
+  <div style="max-width:840px;margin:0 auto;">
+    <span class="overline">The Problem</span>
+    <h2 style="font-size:clamp(26px,3vw,40px);line-height:1.15;margin-bottom:36px;">Why holistic gynecology practices keep ending up with the wrong website.</h2>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">There are two obvious templates for a gynecology website. Neither one fits.</p>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">The first is conventional OB/GYN web design. Stock photos of a pregnant woman on a white background. Hospital-system brand language. A page called &ldquo;Our Team&rdquo; with a row of headshots in white coats. This design language is built for affiliated practices with multiple providers and a billing department. It communicates institutional medicine. That&rsquo;s not wrong for the practices it&rsquo;s built for. It&rsquo;s wrong for a holistic or integrative gynecologist whose entire point of difference is that she is specifically not that.</p>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">The second template is wellness web design. Soft pink and sage. Watercolor botanical illustrations. Language that sounds more like a health coach than a credentialed clinician. This design language is built for practitioners without a medical license who need visual warmth to establish trust in the absence of credentials. A gynecologist with an MD or a CNM with fifteen years of clinical experience doesn&rsquo;t need that scaffolding. She needs the design to reflect the depth of training she actually has.</p>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">The result: holistic gynecology practices end up with sites that look like a maternity ward, a yoga studio, or an awkward hybrid of both. None of them match the practice being run.</p>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:36px;">The patient who finds a holistic gynecology practice through search has usually been looking for a while. She wants integrative care and she wants it from someone with real clinical training. She can read a site in thirty seconds and know whether the practice understands what she&rsquo;s looking for. The site that fails to signal both competence and philosophy loses her before she reaches the contact page. Holistic gynecology website design sits between two established templates, and neither one gets the balance right. More on how patients find practices like this through search: <a href="/blog/how-womens-wellness-practices-get-found-on-google" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">how women&rsquo;s wellness practices get found on Google without running ads</a>.</p>
+
+    <a href="/contact" class="btn-primary">Start a project &rarr;</a>
+  </div>
+</section>
+
+
+<!-- SECTION 2: OFFER -->
+<section class="reveal sp" style="padding:100px 48px;background:var(--tone);border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;" class="offer-grid">
+
+    <div>
+      <span class="overline">The Build</span>
+      <h2 style="font-size:clamp(26px,3vw,40px);line-height:1.15;margin-bottom:28px;">What a holistic gynecology practice website actually needs.</h2>
+
+      <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">Every Simple Rabbit build starts with copy. Before design decisions are made, I write what each page says. For a holistic gynecology practice, that process begins with understanding how this particular practitioner describes her work, which clinical offerings define the practice, and who her patient actually is.</p>
+
+      <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">The design sits between two poles on purpose: not pink-and-pastel, not stock pregnancy photos, not corporate-medical, not crystals-and-moon-phases. Clinically serious without reading as a hospital. Warm without reading as a life coach. The visual language earns trust with the patient who wants both.</p>
+
+      <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">The copy process is different for practitioners in this niche because the practitioner usually has strong, specific opinions about how she describes her work. Integrative gynecology language is precise. The difference between &ldquo;holistic approach&rdquo; and &ldquo;evidence-informed integrative care&rdquo; matters to her and to her patient. The writing process treats her language as the source material, not as something to be smoothed into generic wellness copy.</p>
+
+      <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">Service pages are built around the clinical offerings of a holistic gynecology practice, which look different from a conventional OB/GYN service list. That might include: an integrative annual exam, perimenopause and menopause care that isn&rsquo;t organized around HRT-as-default, a functional approach to PCOS or endometriosis, sexual health, pelvic pain, or fertility support outside the IVF-only model. Each of those is its own page, written for the patient searching for that specific thing.</p>
+
+      <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:36px;">Booking and conversion paths are built to reflect the actual intake process. Holistic gynecology practices often use a longer intake call or pre-screening before the first appointment. That process should be explained on the site, not hidden. Patients who understand what to expect before they book are the ones who show up ready.</p>
+
+      <a href="/contact" class="btn-primary">Start a project &rarr;</a>
+    </div>
+
+    <div>
+      <span class="overline" style="opacity:0;">spacer</span>
+      <h3 style="font-family:var(--font-display);font-size:18px;letter-spacing:-0.5px;font-weight:400;margin-bottom:8px;margin-top:16px;">Every build includes:</h3>
+      <ul class="include-list">
+        <li>Custom design that reads as clinically serious, not a hospital system and not a wellness brand</li>
+        <li>Strategic copywriting that treats your clinical language as source material</li>
+        <li>Local SEO foundations (showing up when patients search for holistic or integrative gynecology in your area)</li>
+        <li>Service pages built around your specific clinical offerings, not a generic OB/GYN list</li>
+        <li>Booking and conversion paths that reflect longer intake and pre-screening processes</li>
+        <li>Google Business Profile review and alignment</li>
+        <li>Ongoing hosting, security, and site care after launch</li>
+        <li>One point of contact (Leann) from the first call through every update</li>
+      </ul>
+      <p style="margin-top:28px;font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;color:var(--accent);">Every site is built on WordPress, a platform you own and can grow with. A full overview of what goes into every project is on the <a href="/services" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">services page</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 3: PROOF -->
+<section class="reveal sp" style="padding:100px 48px;background:var(--white);border-bottom:1px solid var(--light-border);">
+  <div style="max-width:840px;margin:0 auto;">
+    <span class="overline">The Background</span>
+    <h2 style="font-size:clamp(26px,3vw,40px);line-height:1.15;margin-bottom:36px;">A note on proof.</h2>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">I haven&rsquo;t published a case study in holistic gynecology yet. I want to say that plainly rather than dress it up.</p>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:24px;">What I can tell you: Simple Rabbit works exclusively with private-pay women&rsquo;s wellness practices. Holistic and integrative gynecology is one of the niches I&rsquo;ve audited extensively. I know the pattern of problems &mdash; the mismatched design language, the service pages that describe a philosophy without naming what the patient is actually searching for, the Google Business Profile that conflicts with the website copy. And I&rsquo;m actively building a portfolio of holistic gynecology work this year.</p>
+
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:36px;">For adjacent women&rsquo;s wellness proof, the Smooth Laser Center case study shows what a custom site does for a private-pay practice that wasn&rsquo;t reaching its right-fit patients: a different specialty, the same underlying challenge. <a href="/blog/case-study-smooth-laser-center" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Read the full case study &rarr;</a></p>
+  </div>
+</section>
+
+
+<!-- SECTION 4: PROCESS -->
+<section class="reveal sp" style="padding:100px 48px;background:var(--tone);border-bottom:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">How It Works</span>
+    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:16px;">How a holistic gynecology website project actually works.</h2>
+    <p style="font-size:17px;line-height:1.85;color:var(--dark);margin-bottom:56px;max-width:680px;">Three stages. No project managers, no handoffs, no wondering where things stand.</p>
+
+    <div class="how-it-works-grid" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);">
+
+      <div class="process-step" style="padding:40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">01</span>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:12px;font-weight:400;">Discovery and planning</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We start with a longer conversation than most web projects require. Holistic gynecology positioning is specific, and the discovery phase is where the specificity gets surfaced: which clinical offerings define the practice, how you describe your approach, what kind of patient you&rsquo;re building for, and which local search terms she&rsquo;s actually using to find you. You get a clear scope and a content plan before any writing starts.</p>
+      </div>
+
+      <div class="process-step" style="padding:40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">02</span>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:12px;font-weight:400;">Copy, design, and build</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">I write every page before I design it. Your clinical language is the source material, not a starting point I&rsquo;ll smooth into something more generic. You review copy before it becomes design. The site is built on WordPress, owned by you, and you see the work develop with check-ins at each stage. Most projects run eight to twelve weeks, depending on the number of service pages and the complexity of the intake process.</p>
+      </div>
+
+      <div class="process-step" style="padding:40px;border-right:1px solid var(--light-border);border-bottom:1px solid var(--light-border);">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">03</span>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:12px;font-weight:400;">Launch and care</h3>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">We launch when the site is ready. Hosting, security, and updates are handled from there. As the practice evolves &mdash; new services, updated intake processes, new pages for conditions you&rsquo;re seeing more of &mdash; the site keeps up. One point of contact, no account coordinators, no explaining your work to someone new six months in.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 5: FAQ -->
+<section class="reveal sp" style="padding:100px 48px;background:var(--white);border-bottom:1px solid var(--light-border);">
+  <div style="max-width:840px;margin:0 auto;">
+    <span class="overline">Common Questions</span>
+    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;">Common questions from holistic gynecology practitioners.</h2>
+
+    <div class="faq-row">
+      <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">How is a holistic gynecology website different from a conventional OB/GYN website?</p>
+      <p style="font-size:15px;line-height:1.8;color:var(--dark);">A conventional OB/GYN site is built for the patient who is looking for standard prenatal care or a routine annual exam, often within a hospital-affiliated system. A holistic gynecology website is built for the patient who has already decided she wants something different and is trying to assess whether this practice is the right fit. That patient reads differently. She is comparing philosophy, not just location and insurance acceptance. The copy needs to be specific to your clinical approach, the design needs to signal depth without reading as institutional, and the service pages need to name the conditions and models of care she is searching for specifically.</p>
+    </div>
+
+    <div class="faq-row">
+      <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">Do you work with midwives running gynecology-focused practices, not just birth-focused ones?</p>
+      <p style="font-size:15px;line-height:1.8;color:var(--dark);">Yes. The CNM segment that focuses on ongoing women&rsquo;s gynecologic health &mdash; annual exams, menopause, hormones, pelvic health, sexual health &mdash; rather than birth and obstetric care is distinct, and most web design for midwives defaults to the birth-focused template. A gynecology-focused midwifery website needs to make the scope of care clear from the first page, so the patient who isn&rsquo;t looking for birth support understands immediately that this practice is for her. That requires specific copy and specific service page architecture that a generalist midwifery template won&rsquo;t have.</p>
+    </div>
+
+    <div class="faq-row">
+      <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">How do you handle the language around topics like informed consent, BHRT, or alternatives to standard care?</p>
+      <p style="font-size:15px;line-height:1.8;color:var(--dark);">Carefully, and with the practitioner as the authority. Holistic gynecologists often have strong, specific positions on how they discuss bioidentical hormones, informed consent, off-label treatments, and alternatives to standard protocols. My job is not to soften those positions to make the site more generic. The copy is written to reflect how you actually describe your work, reviewed by you before anything goes live, and structured so that the patient who is looking for that specific approach can identify herself as the right fit quickly. I don&rsquo;t write medical content without your input and review.</p>
+    </div>
+
+    <div class="faq-row">
+      <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">Can you handle local SEO for &ldquo;holistic gynecologist [my city]&rdquo; or &ldquo;integrative women&rsquo;s health [my city]&rdquo;?</p>
+      <p style="font-size:15px;line-height:1.8;color:var(--dark);">Local SEO is the work that puts your practice in front of patients in your area when they search on Google. Every Simple Rabbit build includes the foundations: location signals on every relevant page, title tags built around real patient search terms, and a Google Business Profile that aligns with what the site says. Holistic gynecology and integrative women&rsquo;s health are lower-volume search categories than conventional OB/GYN, which actually means less competition in many markets. The practices ranking for those terms are often doing so with a well-structured site and a current Google Business Profile &mdash; not an expensive SEO retainer.</p>
+    </div>
+
+    <div class="faq-row">
+      <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">My practice spans holistic gynecology, hormone care, and functional medicine. Which page should I be reading?</p>
+      <p style="font-size:15px;line-height:1.8;color:var(--dark);">All of them are relevant, and that&rsquo;s actually common. Many practitioners in this space sit across multiple niches. The page that matters most is the one that most closely describes the patient you most want to reach &mdash; which is also the framing the site is built around. If your practice is primarily gynecology-focused with a functional lens, this page describes the right approach. If hormone and menopause care is the center of what you do, the <a href="/menopause-practice-web-design" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">menopause practice page</a> is closer. If root-cause investigation and lab work are central, the <a href="/functional-medicine-web-design" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">functional medicine page</a> applies. Fill out the contact form and we&rsquo;ll sort it out on a call.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 6: CTA -->
+<section class="reveal sp" style="padding:100px 48px;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div style="max-width:640px;margin:0 auto;text-align:center;">
+    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E2D8D6;display:block;margin-bottom:20px;">Ready when you are</span>
+    <h2 style="font-size:clamp(28px,3.5vw,44px);line-height:1.1;letter-spacing:-1.5px;color:#fff;font-weight:400;margin-bottom:24px;">Ready when you are.</h2>
+    <p style="font-size:17px;line-height:1.75;color:rgba(255,255,255,0.8);margin-bottom:40px;">Fill out the short form and I&rsquo;ll reach out to set up a call. If you&rsquo;re still in research mode, the free playbook covers why patients find practices online and what actually convinces them to book &mdash; a good next step before we talk.</p>
+    <div class="cta-pair" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="/contact" class="btn-primary" style="background:var(--white);color:var(--black);">Start a project &rarr;</a>
+      <a href="/playbook" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:#fff;">Get the free playbook</a>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER PRACTICES -->
+<div class="sp" style="padding:40px 48px;background:var(--white);border-top:1px solid var(--light-border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:16px;">Other practices we build for</p>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;">
+      <a href="/menopause-practice-web-design" style="font-family:var(--font-display);font-size:15px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;">Women&rsquo;s hormone and menopause care</a>
+      <a href="/functional-medicine-web-design" style="font-family:var(--font-display);font-size:15px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;">Functional and integrative medicine</a>
+      <a href="/aesthetics-web-design" style="font-family:var(--font-display);font-size:15px;color:var(--black);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;">Aesthetics and laser</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#474D73;border-top:none;padding:0;display:block;">
+  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
+      </div>
+      <div class="footer-social-links" style="display:flex;gap:28px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+        <a href="https://leannfrank.myflodesk.com/jointhehutch" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px 48px;">
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
+</script>
+<script>
+var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
+if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+</script>
+
+</body>
+</html>
