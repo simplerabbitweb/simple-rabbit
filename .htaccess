@@ -4,6 +4,9 @@ RewriteEngine On
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
+# --- Redirect old playbook URL to /playbook ---
+RewriteRule ^the-fully-booked-practice-playbook/?$ /playbook [R=301,L]
+
 # --- Service sub-pages → /services ---
 RewriteRule ^website-design/?$ /services [R=301,L]
 RewriteRule ^ongoing-support/?$ /services [R=301,L]
