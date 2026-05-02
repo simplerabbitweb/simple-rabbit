@@ -329,9 +329,9 @@
     btn.disabled = true;
     try {
       const formEmail = this.email.value;
-      const res = await fetch('/contact-handler.php', {
+      const res = await fetch('https://formspree.io/f/mojndlrg', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           email: formEmail,
           first_name: this.first_name.value,
