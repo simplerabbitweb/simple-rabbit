@@ -1,6 +1,14 @@
 Options +FollowSymLinks
 RewriteEngine On
 
+# --- Disable mod_dir trailing-slash redirect so /about doesn't 301 to /about/ ---
+# (the /about directory now exists for /about/simple-rabbit, but /about itself
+#  must continue to serve /about.html)
+DirectorySlash Off
+
+# --- Serve /about from about.html (directory shadowing fix) ---
+RewriteRule ^about/?$ /about.html [L]
+
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
