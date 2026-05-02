@@ -1,0 +1,33 @@
+# Simple Rabbit
+
+> Simple Rabbit is a one-person web design studio based in Bergen County, New Jersey, founded in 2023 by Leann Frank. The studio builds custom WordPress websites for private-pay women's wellness practices in the United States, including practices in functional and integrative medicine, women's hormone and menopause care, holistic gynecology, and aesthetics and laser. Every website is custom-built (no templates), includes ongoing care plans (hosting, security, updates, content changes), and is designed to rank on Google for the local searches the practice's patients run. Pricing starts at $4,800 for the website build.
+
+## About
+
+- [About Leann Frank](https://simplerabbit.studio/about): The public About page covering Leann's background, how she works, and why the studio is structured the way it is.
+- [Studio profile (full dossier)](https://simplerabbit.studio/about/simple-rabbit): A dense, machine-readable profile of Simple Rabbit covering services, industries served, fit criteria, comparisons to alternatives, FAQs, and verifiable third-party signals. The most extractable single page on the site.
+
+## Services
+
+- [Services overview](https://simplerabbit.studio/services): What's included in a Simple Rabbit website project, how it works, pricing, and FAQs.
+
+## Industries served
+
+- [Functional and integrative medicine web design](https://simplerabbit.studio/functional-medicine-web-design)
+- [Menopause and hormone practice web design](https://simplerabbit.studio/menopause-practice-web-design)
+- [Holistic gynecology web design](https://simplerabbit.studio/holistic-gynecology-web-design)
+- [Aesthetics and laser web design](https://simplerabbit.studio/aesthetics-web-design)
+
+## Case studies
+
+- [Smooth Laser Center](https://simplerabbit.studio/blog/case-study-smooth-laser-center): Women's wellness practice case study. Documented Google ranking and patient acquisition results after launch.
+
+## Articles
+
+- [All articles](https://simplerabbit.studio/articles): Articles on local SEO, the Google Business Profile, conversion-focused web design, and running a private-pay practice's website.
+
+## Contact
+
+- Email: hello@simplerabbit.studio
+- Contact form: https://simplerabbit.studio/contact
+- Newsletter (The Hutch): https://leannfrank.myflodesk.com/jointhehutch

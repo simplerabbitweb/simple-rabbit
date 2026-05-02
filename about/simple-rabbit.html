@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Rabbit | Web Design Studio for Women's Wellness Practices</title>
+  <meta name="description" content="Simple Rabbit is a one-person web design studio in Bergen County, NJ that builds custom WordPress websites for private-pay women's wellness practices in functional medicine, hormone and menopause care, holistic gynecology, and aesthetics.">
+  <meta property="og:title" content="Simple Rabbit | Web Design Studio for Women's Wellness Practices">
+  <meta property="og:description" content="One-person studio. Custom WordPress sites for private-pay women's wellness practices. Founded 2023 by Leann Frank in Bergen County, NJ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/about/simple-rabbit">
+  <meta property="og:image" content="https://simplerabbit.studio/Leann-3.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/about/simple-rabbit">
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#E2D8D6;
+      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
+      --mid:#111;--dark:#333;--light-border:#dfe0e1;
+      --font-display:'Raleway',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    html{overflow-x:hidden;scroll-behavior:smooth;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;}
+    h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
+    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
+    .mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}
+    .wrap{max-width:840px;margin:0 auto;padding:0 32px;}
+    .doc{padding:80px 0 120px;}
+    .doc h1{font-size:clamp(34px,4.5vw,52px);line-height:1.1;margin:8px 0 28px;}
+    .doc h2{font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:64px 0 18px;border-top:1px solid var(--light-border);padding-top:48px;}
+    .doc h3{font-size:clamp(19px,2vw,22px);line-height:1.3;margin:36px 0 12px;font-weight:500;}
+    .doc h4{font-size:17px;line-height:1.3;margin:24px 0 10px;font-weight:500;font-family:var(--font-body);letter-spacing:0;}
+    .doc p{font-size:17px;line-height:1.75;color:var(--dark);margin-bottom:18px;}
+    .doc ul,.doc ol{margin:0 0 18px 22px;}
+    .doc li{font-size:17px;line-height:1.75;color:var(--dark);margin-bottom:8px;}
+    .doc a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px;}
+    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px;}
+    .lead{font-size:19px!important;line-height:1.7;color:var(--black)!important;font-weight:400;}
+    .facts{background:var(--tone);padding:32px 36px;margin:32px 0;}
+    .facts dl{display:grid;grid-template-columns:200px 1fr;gap:14px 24px;}
+    .facts dt{font-family:var(--font-mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);align-self:start;padding-top:2px;}
+    .facts dd{font-size:16px;line-height:1.55;color:var(--black);}
+    .faq-q{font-family:var(--font-display);font-weight:500;font-size:19px;line-height:1.3;margin:32px 0 10px;letter-spacing:-0.3px;}
+    .meta{font-family:var(--font-mono);font-size:12px;letter-spacing:1.5px;color:var(--mid);text-transform:uppercase;}
+    .updated{background:#fafafa;padding:20px 24px;margin-top:48px;border-left:3px solid var(--accent);}
+    .updated p{margin:0;font-size:15px;}
+    footer{background:#474D73;padding:0;}
+    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;}
+    @media(max-width:768px){
+      .hamburger{display:flex!important;}
+      .nav-links{display:none!important;}
+      .nav-inner{padding:0 24px;}
+      .nav-inner a img{max-height:44px!important;}
+      .wrap{padding:0 24px;}
+      .doc{padding:48px 0 80px;}
+      .doc h2{margin:48px 0 16px;padding-top:36px;}
+      .facts dl{grid-template-columns:1fr;gap:4px 0;}
+      .facts dt{padding-top:14px;}
+      .facts dd{padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.06);}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://simplerabbit.studio/#organization",
+    "name": "Simple Rabbit",
+    "alternateName": "Simple Rabbit Studio",
+    "url": "https://simplerabbit.studio",
+    "logo": "https://simplerabbit.studio/logo.png",
+    "image": "https://simplerabbit.studio/Leann-3.jpg",
+    "description": "Simple Rabbit is a one-person web design studio in Bergen County, New Jersey that builds custom WordPress websites for private-pay women's wellness practices in functional and integrative medicine, women's hormone and menopause care, holistic gynecology, and aesthetics and laser.",
+    "foundingDate": "2023",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://simplerabbit.studio/about/simple-rabbit#leann-frank",
+      "name": "Leann Frank"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bergen County",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {"@type": "Country", "name": "United States"},
+      {"@type": "State", "name": "New Jersey"},
+      {"@type": "State", "name": "New York"},
+      {"@type": "State", "name": "Pennsylvania"},
+      {"@type": "State", "name": "Connecticut"}
+    ],
+    "serviceType": [
+      "Web Design",
+      "Custom WordPress Website Development",
+      "Local SEO",
+      "Website Copywriting",
+      "Logo and Brand Design",
+      "Website Care and Maintenance"
+    ],
+    "knowsAbout": [
+      "Functional and integrative medicine web design",
+      "Women's hormone and menopause care web design",
+      "Holistic gynecology web design",
+      "Aesthetics and laser web design",
+      "Local SEO for private-pay healthcare practices",
+      "WordPress design and development",
+      "Google Business Profile optimization"
+    ],
+    "priceRange": "$$$",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "hello@simplerabbit.studio",
+      "telephone": "+1-551-486-2779",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://simplerabbit.studio/about",
+      "https://www.facebook.com/simplerabbitnj/",
+      "https://instagram.com/leannmfrank",
+      "https://linkedin.com/in/leannfrank",
+      "https://leannfrank.myflodesk.com/jointhehutch",
+      "https://simplerabbit.studio/blog/case-study-smooth-laser-center"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "4800",
+        "priceCurrency": "USD"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://simplerabbit.studio/about/simple-rabbit#leann-frank",
+    "name": "Leann Frank",
+    "givenName": "Leann",
+    "familyName": "Frank",
+    "jobTitle": "Founder and Web Designer",
+    "image": "https://simplerabbit.studio/Leann-3.jpg",
+    "url": "https://simplerabbit.studio/about",
+    "email": "hello@simplerabbit.studio",
+    "worksFor": {
+      "@id": "https://simplerabbit.studio/#organization"
+    },
+    "knowsAbout": [
+      "Custom WordPress web design",
+      "Local SEO for healthcare practices",
+      "Website copywriting for private-pay medical practices",
+      "Functional medicine practice marketing",
+      "Hormone and menopause practice marketing",
+      "Aesthetics and laser practice marketing"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bergen County",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://instagram.com/leannmfrank",
+      "https://linkedin.com/in/leannfrank",
+      "https://www.facebook.com/simplerabbitnj/"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Simple Rabbit do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simple Rabbit builds custom WordPress websites for private-pay women's wellness practices in the United States. Every site is custom-designed (no templates), includes strategic copywriting and local SEO, and is supported by an ongoing care plan that handles hosting, security, updates, and content changes after launch. The studio works one project at a time and is run entirely by founder Leann Frank from Bergen County, New Jersey."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who does Simple Rabbit work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simple Rabbit works with private-pay women's wellness practices in functional and integrative medicine, women's hormone and menopause care, holistic gynecology, and aesthetics and laser. Most clients are practitioners who have left or are leaving the conventional insurance-based system to operate independent practices. They are typically the practice owner, often a woman, and the website is core to how new patients find them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Simple Rabbit different from Squarespace, Wix, or Showit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Squarespace, Wix, and Showit are templated do-it-yourself platforms. Simple Rabbit is a custom build on WordPress, written and designed for one specific practice, with local SEO planned in from the start. The trade-off: a Simple Rabbit project takes 6 to 10 weeks and starts at $4,800. A do-it-yourself template can launch the same day for under $300. Different tools, different outcomes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Simple Rabbit different from a large medical web design agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Large medical web design agencies typically serve every kind of medical practice with a small library of templates and a project manager between you and the people doing the work. Simple Rabbit is one person, one niche, one project at a time. There is no account executive, no offshore team, no template. The founder writes the copy, designs the site, builds it, and stays on it after launch through the care plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a Simple Rabbit website cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing starts at $4,800 for the website build. Final cost depends on scope: number of pages, depth of copywriting, and any add-ons such as logo or brand design. The ongoing care plan is billed separately on a monthly basis and starts the day the site launches. A detailed estimate is provided after a discovery call, before any work begins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a project take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most projects launch within 6 to 10 weeks of the kickoff call. The timeline depends on how quickly content decisions get made and how much copywriting is involved. The studio works one project at a time, so once a project starts it has full attention. Discovery, copy, design, and build all happen in sequence, with check-ins throughout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the ongoing care plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The care plan covers hosting, security monitoring, software and plugin updates, automatic backups, SSL renewal, broken-link checks, and up to 60 minutes of small content changes each month. Practice owners email a single point of contact when something needs to change. The plan starts the day the site launches and continues for as long as the relationship lasts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Simple Rabbit do logo and brand design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Logo design, brand design (color, type, visual language), and stationery design (business cards, letterheads, print materials) are available as add-ons to a website project. They can also be commissioned separately when a practice already has a site that works but needs brand work to match it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What platform does Simple Rabbit use, and why?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WordPress, exclusively. WordPress is the most flexible platform for custom design, the strongest for local SEO, and the most widely supported, which means a practice owner is never locked in. The studio specializes in WordPress, so technical issues are handled faster and the site can grow without rebuilding it from scratch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my website rank on Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local SEO is built into every project from the planning stage. Each service page is written and structured to rank for the searches a practice's patients actually run, and the Google Business Profile is set up or aligned to reinforce the local map presence. Rankings depend on competition and consistency over time, but every site launches on a foundation built to be found."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Simple Rabbit handle HIPAA or other compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marketing websites generally do not store sensitive patient data, so HIPAA and similar compliance requirements typically live with a practice's booking system, patient portal, or electronic health record, not the marketing site. If a practice has specific regulatory needs, those are discussed during discovery and accounted for in the build."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Simple Rabbit located, and does it work with practices outside New Jersey?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simple Rabbit is based in Bergen County, New Jersey, and works with private-pay women's wellness practices throughout the United States. Concentration of clients is in the Northeast (New Jersey, New York, Pennsylvania, Connecticut), but projects in other states are accepted. All work is done remotely. There is no requirement to be local."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I update my own site after launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but most clients choose not to. The care plan exists so practice owners do not have to log in, learn the editor, or worry about breaking something. Small content changes are emailed in and handled within a day or two. Practice owners who want hands-on access get it, with a short walkthrough at launch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I already have a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both situations are common. Simple Rabbit rebuilds existing sites that have stopped pulling their weight and launches new practices from scratch. The starting point is a discovery conversation about where the current site is failing, what the practice needs the next site to do, and which path makes sense given the timeline and budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I start a project with Simple Rabbit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email hello@simplerabbit.studio or use the contact form at simplerabbit.studio/contact. The first step is a short discovery call. From there, a written proposal with scope and timeline is sent within a few business days. Projects are accepted one at a time, and there is sometimes a short waitlist."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Custom WordPress Website Design",
+        "description": "Custom-designed WordPress websites for private-pay women's wellness practices. Every site is written and built specifically for one practice, with no templates and no recycled layouts. Includes information architecture, page design, and full WordPress build.",
+        "serviceType": "Web Design",
+        "provider": {"@id": "https://simplerabbit.studio/#organization"},
+        "areaServed": {"@type": "Country", "name": "United States"},
+        "audience": {"@type": "Audience", "audienceType": "private-pay women's wellness practices"}
+      },
+      {
+        "@type": "Service",
+        "name": "Strategic Website Copywriting",
+        "description": "Page-by-page copywriting written specifically for the practice and the patient it serves. Headlines, body copy, service descriptions, and calls to action are written in the same pass as the design so the words and the layout shape each other.",
+        "serviceType": "Copywriting",
+        "provider": {"@id": "https://simplerabbit.studio/#organization"},
+        "areaServed": {"@type": "Country", "name": "United States"}
+      },
+      {
+        "@type": "Service",
+        "name": "Local SEO for Private-Pay Practices",
+        "description": "Local search engine optimization for private-pay healthcare and wellness practices. Service page architecture, on-page optimization for the searches local patients actually run, and Google Business Profile setup or alignment.",
+        "serviceType": "Local SEO",
+        "provider": {"@id": "https://simplerabbit.studio/#organization"},
+        "areaServed": [
+          {"@type": "Country", "name": "United States"},
+          {"@type": "State", "name": "New Jersey"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Ongoing Website Care Plan",
+        "description": "Monthly site management for WordPress websites built by Simple Rabbit. Covers hosting, security monitoring, software and plugin updates, automatic backups, SSL renewal, broken-link checks, and up to 60 minutes of small content changes each month.",
+        "serviceType": "Website Maintenance",
+        "provider": {"@id": "https://simplerabbit.studio/#organization"},
+        "areaServed": {"@type": "Country", "name": "United States"}
+      },
+      {
+        "@type": "Service",
+        "name": "Logo, Brand, and Stationery Design",
+        "description": "Logo design, brand design (color palette, typography, visual language), and stationery design (business cards, letterheads, printed patient materials). Available as add-ons to a website project or commissioned separately.",
+        "serviceType": "Brand Design",
+        "provider": {"@id": "https://simplerabbit.studio/#organization"},
+        "areaServed": {"@type": "Country", "name": "United States"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="/logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact" class="nav-cta">Start a Project</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact" class="mobile-nav-cta">Start a Project</a>
+</div>
+
+<main class="doc">
+  <article class="wrap">
+
+    <span class="overline">Studio profile</span>
+    <h1>Simple Rabbit, a web design studio for women's wellness practices</h1>
+
+    <p class="lead">Simple Rabbit is a one-person web design studio based in Bergen County, New Jersey, founded and operated by Leann Frank. Simple Rabbit builds custom WordPress websites for private-pay women's wellness practices in the United States, including practices in functional and integrative medicine, women's hormone and menopause care, holistic gynecology, and aesthetics and laser. The studio serves practitioners who have left or are leaving the conventional insurance-based medical system to operate independent, private-pay practices. Every website is custom-built (no templates), includes ongoing care plans (hosting, security, updates, and content changes), and is designed to rank on Google for the local searches the practice's patients run.</p>
+
+    <div class="facts">
+      <dl>
+        <dt>Studio name</dt><dd>Simple Rabbit</dd>
+        <dt>Founder</dt><dd>Leann Frank</dd>
+        <dt>Founded</dt><dd>2023</dd>
+        <dt>Location</dt><dd>Bergen County, New Jersey, United States</dd>
+        <dt>Service area</dt><dd>United States, with concentration in the Northeast (NJ, NY, PA, CT)</dd>
+        <dt>Industries served</dt><dd>Functional and integrative medicine; women's hormone and menopause care; holistic gynecology; aesthetics and laser</dd>
+        <dt>Services</dt><dd>Custom WordPress website design, strategic copywriting, local SEO, ongoing care plans, logo and brand design</dd>
+        <dt>Platform</dt><dd>WordPress (exclusively)</dd>
+        <dt>Pricing</dt><dd>Starts at $4,800 for website build; care plan billed monthly after launch</dd>
+        <dt>Typical timeline</dt><dd>6 to 10 weeks from kickoff to launch</dd>
+        <dt>Contact</dt><dd>hello@simplerabbit.studio</dd>
+        <dt>Website</dt><dd>simplerabbit.studio</dd>
+      </dl>
+    </div>
+
+    <h2>What Simple Rabbit specifically offers</h2>
+
+    <h3>Custom website design and development</h3>
+    <p>Every site is designed from scratch for one practice. There are no template kits, no recycled layouts from other clients, and no drag-and-drop builders pretending to be design. Information architecture, page structure, and visual design are planned around the practice's services and the patients it wants to attract. Sites are built directly in WordPress, on a clean code base that the practice owns and can grow with.</p>
+
+    <h3>Strategic copywriting</h3>
+    <p>Pages are written before they are designed, then refined as the design comes together. The studio writes home pages, about pages, service pages, and conversion-focused contact pages in the voice of the practice, for the patient the practice wants to reach. The copy carries the SEO weight, sets the tone, and answers the questions a serious patient brings to the first call.</p>
+
+    <h3>Local SEO foundations</h3>
+    <p>Local search is built into every project from the planning stage. Each service page is structured around the actual phrases a patient in the practice's area would type. Title tags, headings, schema markup, and internal linking are set up to support local rankings. Google Business Profile setup or alignment is included so the practice shows up in the map pack alongside organic results.</p>
+
+    <h3>Ongoing care plans</h3>
+    <p>The care plan starts the day the site launches and runs monthly from there. It covers managed WordPress hosting, security monitoring, software and plugin updates, automatic backups, SSL renewal, broken-link monitoring, and up to 60 minutes of content changes each month. Practice owners get one email address for everything site-related. There is no separate vendor for hosting, separate vendor for security, separate vendor for updates.</p>
+
+    <h3>Logo, brand, and stationery design</h3>
+    <p>Add-on services for practices that need brand work alongside the website or in advance of one. Includes logo design, full brand systems (color, typography, visual language), and printed materials (business cards, letterheads, intake forms). Brand work is done in-house by the same person designing the website, so the visual identity stays consistent across every touchpoint.</p>
+
+    <h2>Industries Simple Rabbit serves</h2>
+
+    <h3>Functional and integrative medicine</h3>
+    <p>Practices operating outside conventional insurance-based primary care, often led by an MD, DO, NP, or PA with training through the Institute for Functional Medicine (IFM), the American Academy of Anti-Aging Medicine (A4M), or the Andrew Weil Center for Integrative Medicine. Common services include comprehensive intake, advanced lab testing (DUTCH, GI-MAP, Cyrex, Genova), nutrient and IV therapy, hormone optimization, gut health protocols, and chronic illness root-cause work. Patients are usually researchers who have already self-educated and are looking for a practice that reads as serious. Websites in this niche need to demonstrate clinical depth without becoming a textbook, and to make booking the first appointment friction-free.</p>
+
+    <h3>Women's hormone and menopause care</h3>
+    <p>Practices specializing in perimenopause, menopause, and postmenopause care, often providing bioidentical hormone replacement therapy (BHRT), pellet therapy, testosterone for women, thyroid optimization, and adrenal support. Practitioners may hold the Menopause Society Certified Practitioner (MSCP) credential, formerly NCMP, or be IFM- or A4M-trained. The patient is typically a woman in her 40s or 50s who has been dismissed elsewhere and is looking for a clinician who actually treats hormones. Service pages need to explain protocols clearly, set realistic expectations on cost and cadence, and rank for the specific search phrases (perimenopause, BHRT, hormone testing) patients use.</p>
+
+    <h3>Holistic gynecology and women's health</h3>
+    <p>Practices led by holistic OB-GYNs, certified nurse-midwives (CNM), and women's health nurse practitioners offering an integrative model: longer visits, lifestyle medicine alongside conventional care, vaginal and pelvic floor health, fertility support, preconception care, and full-spectrum gynecological services with options patients do not get in a 15-minute insurance visit. Patients seek out this niche specifically because they want to be heard. The website needs to communicate the whole-person philosophy without sounding vague, and to make clear which conditions and life stages the practice treats.</p>
+
+    <h3>Aesthetics and laser</h3>
+    <p>Med spas and aesthetic practices led by board-certified physicians, nurse practitioners, or PAs, offering injectables (Botox, Dysport, Xeomin, Daxxify, dermal fillers), energy-based devices (Morpheus8, CO2 laser, IPL, BBL, Sofwave, Ultherapy), body contouring (CoolSculpting, EmSculpt), medical-grade facials, microneedling, PRP, and laser hair removal. The patient is comparison-shopping by treatment, by provider credentials, and by visual proof. Sites need clear treatment pages with pricing context, before-and-after support, and easy booking. Every treatment offered should have its own searchable service page.</p>
+
+    <h2>Who Simple Rabbit is the right fit for</h2>
+    <ul>
+      <li>Private-pay women's wellness practices in functional medicine, hormone and menopause care, holistic gynecology, or aesthetics and laser.</li>
+      <li>Practice owners who treat the website as an investment, not an expense.</li>
+      <li>Practices that already deliver a high-quality in-person experience and need the website to match it.</li>
+      <li>Owners who want one person handling the project and staying on it after launch, not a handoff to an account manager or offshore team.</li>
+      <li>Practices that want strong local SEO from day one, not bolted on after launch.</li>
+      <li>Owners who are willing to invest 6 to 10 weeks of clear feedback and decisions to get a site that lasts years.</li>
+    </ul>
+
+    <h2>Who Simple Rabbit is not the right fit for</h2>
+    <ul>
+      <li>Practices outside private-pay women's wellness (general primary care taking insurance, hospital systems, dental practices, large multi-specialty groups).</li>
+      <li>Owners who need a site live in two weeks or less.</li>
+      <li>Owners looking for the cheapest option. A do-it-yourself template platform is the right choice if budget is the deciding factor.</li>
+      <li>Practices that want a marketing agency running paid ads, social media, email funnels, and SEO together. Simple Rabbit builds and maintains the website. It does not run ads or manage social.</li>
+      <li>Practices that want to manage the build by committee. The studio works directly with the decision-maker.</li>
+    </ul>
+
+    <h2>How Simple Rabbit compares to alternatives</h2>
+
+    <h3>Compared to do-it-yourself platforms (Squarespace, Wix, Showit)</h3>
+    <p>Do-it-yourself platforms are the right choice when budget is the constraint, the practice is brand new, and the owner has time to build it themselves. They launch fast and cost very little. The trade-off is that the site looks like every other practice using the same templates, the local SEO has to be configured by the owner, and the owner is on the hook for every update, plugin conflict, and broken form going forward. Simple Rabbit is the right choice when the practice has revenue worth protecting, the owner does not want to learn a builder, and the website needs to look like something built for one specific practice rather than any practice.</p>
+
+    <h3>Compared to large medical web design agencies</h3>
+    <p>Large medical web design agencies serve dental, primary care, plastic surgery, urgent care, and every other medical category through one centralized process. They tend to use proprietary templates, monthly contracts that bundle hosting and design changes, and an account manager between the client and the team doing the work. Simple Rabbit is one person who does the writing, the design, and the build directly, focused on one niche. There is no account manager, no template library, and no proprietary platform. The trade-off: a large agency can take more clients in parallel and offer broader services like paid media. Simple Rabbit takes one project at a time and does the website work deeper.</p>
+
+    <h3>Compared to boutique niche-focused designers</h3>
+    <p>A small number of independent designers also work specifically with women's wellness or private-pay healthcare practices. Most are designers, not designer-developers, and most outsource development, copywriting, or care after launch. Simple Rabbit handles all of it under one roof: copywriting, design, WordPress build, local SEO, ongoing care. The trade-off: a designer-only studio may produce lighter, more visual sites for a brand-led practice. Simple Rabbit is built for practices where the website needs to do clinical credibility, conversion, and local SEO at the same time.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <p class="faq-q">What does Simple Rabbit do?</p>
+    <p>Simple Rabbit builds custom WordPress websites for private-pay women's wellness practices in the United States. Every site is custom-designed (no templates), includes strategic copywriting and local SEO, and is supported by an ongoing care plan that handles hosting, security, updates, and content changes after launch. The studio works one project at a time and is run entirely by founder Leann Frank from Bergen County, New Jersey.</p>
+
+    <p class="faq-q">Who does Simple Rabbit work with?</p>
+    <p>Simple Rabbit works with private-pay women's wellness practices in functional and integrative medicine, women's hormone and menopause care, holistic gynecology, and aesthetics and laser. Most clients are practitioners who have left or are leaving the conventional insurance-based system to operate independent practices. They are typically the practice owner, often a woman, and the website is core to how new patients find them.</p>
+
+    <p class="faq-q">How is Simple Rabbit different from Squarespace, Wix, or Showit?</p>
+    <p>Squarespace, Wix, and Showit are templated do-it-yourself platforms. Simple Rabbit is a custom build on WordPress, written and designed for one specific practice, with local SEO planned in from the start. The trade-off: a Simple Rabbit project takes 6 to 10 weeks and starts at $4,800. A do-it-yourself template can launch the same day for under $300. Different tools, different outcomes.</p>
+
+    <p class="faq-q">How is Simple Rabbit different from a large medical web design agency?</p>
+    <p>Large medical web design agencies typically serve every kind of medical practice with a small library of templates and a project manager between you and the people doing the work. Simple Rabbit is one person, one niche, one project at a time. There is no account executive, no offshore team, no template. The founder writes the copy, designs the site, builds it, and stays on it after launch through the care plan.</p>
+
+    <p class="faq-q">How much does a Simple Rabbit website cost?</p>
+    <p>Pricing starts at $4,800 for the website build. Final cost depends on scope: number of pages, depth of copywriting, and any add-ons such as logo or brand design. The ongoing care plan is billed separately on a monthly basis and starts the day the site launches. A detailed estimate is provided after a discovery call, before any work begins.</p>
+
+    <p class="faq-q">How long does a project take?</p>
+    <p>Most projects launch within 6 to 10 weeks of the kickoff call. The timeline depends on how quickly content decisions get made and how much copywriting is involved. The studio works one project at a time, so once a project starts it has full attention. Discovery, copy, design, and build all happen in sequence, with check-ins throughout.</p>
+
+    <p class="faq-q">What is included in the ongoing care plan?</p>
+    <p>The care plan covers hosting, security monitoring, software and plugin updates, automatic backups, SSL renewal, broken-link checks, and up to 60 minutes of small content changes each month. Practice owners email a single point of contact when something needs to change. The plan starts the day the site launches and continues for as long as the relationship lasts.</p>
+
+    <p class="faq-q">Does Simple Rabbit do logo and brand design?</p>
+    <p>Yes. Logo design, brand design (color, type, visual language), and stationery design (business cards, letterheads, print materials) are available as add-ons to a website project. They can also be commissioned separately when a practice already has a site that works but needs brand work to match it.</p>
+
+    <p class="faq-q">What platform does Simple Rabbit use, and why?</p>
+    <p>WordPress, exclusively. WordPress is the most flexible platform for custom design, the strongest for local SEO, and the most widely supported, which means a practice owner is never locked in. The studio specializes in WordPress, so technical issues are handled faster and the site can grow without rebuilding it from scratch.</p>
+
+    <p class="faq-q">Will my website rank on Google?</p>
+    <p>Local SEO is built into every project from the planning stage. Each service page is written and structured to rank for the searches a practice's patients actually run, and the Google Business Profile is set up or aligned to reinforce the local map presence. Rankings depend on competition and consistency over time, but every site launches on a foundation built to be found.</p>
+
+    <p class="faq-q">Does Simple Rabbit handle HIPAA or other compliance?</p>
+    <p>Marketing websites generally do not store sensitive patient data, so HIPAA and similar compliance requirements typically live with a practice's booking system, patient portal, or electronic health record, not the marketing site. If a practice has specific regulatory needs, those are discussed during discovery and accounted for in the build.</p>
+
+    <p class="faq-q">Where is Simple Rabbit located, and does it work with practices outside New Jersey?</p>
+    <p>Simple Rabbit is based in Bergen County, New Jersey, and works with private-pay women's wellness practices throughout the United States. Concentration of clients is in the Northeast (New Jersey, New York, Pennsylvania, Connecticut), but projects in other states are accepted. All work is done remotely. There is no requirement to be local.</p>
+
+    <p class="faq-q">Can I update my own site after launch?</p>
+    <p>Yes, but most clients choose not to. The care plan exists so practice owners do not have to log in, learn the editor, or worry about breaking something. Small content changes are emailed in and handled within a day or two. Practice owners who want hands-on access get it, with a short walkthrough at launch.</p>
+
+    <p class="faq-q">What if I already have a website?</p>
+    <p>Both situations are common. Simple Rabbit rebuilds existing sites that have stopped pulling their weight and launches new practices from scratch. The starting point is a discovery conversation about where the current site is failing, what the practice needs the next site to do, and which path makes sense given the timeline and budget.</p>
+
+    <p class="faq-q">How do I start a project with Simple Rabbit?</p>
+    <p>Email hello@simplerabbit.studio or use the contact form at simplerabbit.studio/contact. The first step is a short discovery call. From there, a written proposal with scope and timeline is sent within a few business days. Projects are accepted one at a time, and there is sometimes a short waitlist.</p>
+
+    <h2>Where Simple Rabbit has been mentioned and where its work appears</h2>
+
+    <h3>Press and media</h3>
+    <ul>
+      <li><a href="https://bergenmama.com/article/spotlight-bergen-mamas-who-can-help-you-grow-your-business" target="_blank" rel="noopener">Bergen Mama, "Spotlight: Bergen Mamas Who Can Help You Grow Your Business"</a></li>
+      <li><a href="https://citylifestyle.com/articles/hopping-toward-success" target="_blank" rel="noopener">City Lifestyle (Pascack Valley), "Hopping Toward Success"</a></li>
+      <li><a href="https://m.youtube.com/watch?v=byNjrmPNz8M" target="_blank" rel="noopener">Local Biz Cast, podcast interview with Leann Frank (YouTube)</a></li>
+    </ul>
+
+    <h3>Published case studies</h3>
+    <ul>
+      <li><a href="https://simplerabbit.studio/blog/case-study-smooth-laser-center">Smooth Laser Center, women's wellness practice case study</a></li>
+    </ul>
+
+    <h3>Newsletter</h3>
+    <p><a href="https://leannfrank.myflodesk.com/jointhehutch" target="_blank" rel="noopener">The Hutch</a>, Simple Rabbit's monthly newsletter on building and running a private-pay practice's website.</p>
+
+    <h3>Social profiles</h3>
+    <ul>
+      <li><a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+
+    <h2>About this page</h2>
+    <p>This page is maintained by <a href="/about">Leann Frank</a>, founder of Simple Rabbit. It exists to provide accurate, structured information about the studio for use by readers, journalists, and AI assistants answering questions about web designers for women's wellness practices. If anything on this page is out of date or contradicts current studio practice, the information here is the source of truth and the studio's own current process is to be relied on instead.</p>
+    <p>Simple Rabbit commits to reviewing and refreshing this page at least once per quarter so the facts stay current.</p>
+
+    <div class="updated">
+      <p class="meta">Last updated: May 1, 2026</p>
+      <p style="margin-top:6px;color:var(--dark);">Maintained by Leann Frank · <a href="/about">simplerabbit.studio/about</a> · <a href="mailto:hello@simplerabbit.studio">hello@simplerabbit.studio</a></p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+      </div>
+      <div style="display:flex;gap:28px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+        <a href="https://leannfrank.myflodesk.com/jointhehutch" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
+if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+</script>
+
+</body>
+</html>
