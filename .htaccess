@@ -18,7 +18,6 @@ RewriteRule ^the-fully-booked-practice-playbook/?$ /playbook [R=301,L]
 # --- Service sub-pages → /services ---
 RewriteRule ^website-design/?$ /services [R=301,L]
 RewriteRule ^ongoing-support/?$ /services [R=301,L]
-RewriteRule ^website-audit/?$ /services [R=301,L]
 
 # --- County/location pages → /articles ---
 RewriteRule ^web-design-bergen-county-nj/?$ /articles [R=301,L]
