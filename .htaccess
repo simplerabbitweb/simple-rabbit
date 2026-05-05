@@ -12,8 +12,9 @@ RewriteRule ^about/?$ /about.html [L]
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
-# --- Redirect old playbook URL to /playbook ---
-RewriteRule ^the-fully-booked-practice-playbook/?$ /playbook [R=301,L]
+# --- Redirect old playbook URLs to /fully-booked ---
+RewriteRule ^the-fully-booked-practice-playbook/?$ /fully-booked [R=301,L]
+RewriteRule ^playbook/?$ /fully-booked [R=301,L]
 
 # --- Service sub-pages → /services ---
 RewriteRule ^website-design/?$ /services [R=301,L]

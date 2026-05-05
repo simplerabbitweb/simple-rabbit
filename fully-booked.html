@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Days to a Fully-Booked Practice | Simple Rabbit</title>
+  <meta name="description" content="A free 5-day email playbook for women's wellness practitioners. How patients find your practice online and what convinces them to book.">
+  <meta property="og:title" content="5 Days to a Fully-Booked Practice | Simple Rabbit">
+  <meta property="og:description" content="A free 5-day email playbook for women's wellness practitioners. How patients find your practice online and what convinces them to book.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/fully-booked">
+  <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/fully-booked">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+
+  <!-- Flodesk universal loader -->
+  <script>
+    (function(w, d, t, h, s, n) {
+      w.FlodeskObject = n;
+      var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
+      w[n] = w[n] || fn;
+      var f = d.getElementsByTagName(t)[0];
+      var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+      var sm = d.createElement(t); sm.async = true; sm.type = 'module';
+      sm.src = h + s + '.mjs' + v; f.parentNode.insertBefore(sm, f);
+      var sn = d.createElement(t); sn.async = true; sn.noModule = true;
+      sn.src = h + s + '.js' + v; f.parentNode.insertBefore(sn, f);
+    })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      color-scheme: light only;
+      --black: #000;
+      --white: #fff;
+      --tone: #E2D8D6;
+      --accent: #AA737D;
+      --accent-light: #D7AF99;
+      --purple: #474D73;
+      --mid: #555;
+      --dark: #333;
+      --light-border: #dfe0e1;
+      --font-display: 'Raleway', sans-serif;
+      --font-body: 'Outfit', system-ui, sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    html { overflow-x: hidden; }
+    body { font-family: var(--font-body); color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; background: var(--purple); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 72px; display: flex; align-items: center; justify-content: space-between; height: 88px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; color: #fff; text-decoration: none; transition: color 0.2s; }
+    .nav-cta { background: var(--white) !important; color: var(--black) !important; padding: 10px 24px; font-size: 13px; font-weight: 500; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #e8e8e8 !important; }
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--purple); z-index: 99; flex-direction: column; overflow-y: auto; border-top: 1px solid rgba(255,255,255,0.1); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 16px; color: #fff; text-decoration: none; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-body); }
+    .mobile-nav a.mobile-nav-cta { background: var(--white); color: var(--black) !important; text-align: center; font-weight: 500; border-bottom: none !important; margin: 16px 24px; display: block; }
+
+    /* OVERLINE */
+    .overline { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: block; }
+    .overline-white { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; display: block; }
+
+    /* SECTIONS */
+    .section { padding: 100px 48px; border-bottom: 1px solid var(--light-border); }
+    .section:last-of-type { border-bottom: none; }
+    .section-inner { max-width: 720px; margin: 0 auto; }
+    .section-inner-wide { max-width: 860px; margin: 0 auto; }
+
+    /* HERO */
+    .hero { padding: 80px 48px; background: var(--white); border-bottom: 1px solid var(--light-border); position: relative; background-image: url('playbook-banner.jpg'); background-size: cover; background-position: center top; min-height: 72vh; display: flex; align-items: center; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.70); pointer-events: none; }
+    .hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 68px); letter-spacing: -2px; line-height: 1.06; font-weight: 400; color: var(--black); margin-bottom: 24px; }
+    .hero-sub { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.75; color: rgba(0,0,0,0.6); margin-bottom: 40px; max-width: 600px; }
+
+    /* HERO GRID */
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; width: 100%; }
+    .hero-form-card { background: var(--white); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 16px 56px rgba(0,0,0,0.10); padding: 40px; }
+    .hero-stats { display: flex; margin-top: 40px; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.80); }
+    .hero-stat { padding: 16px 28px; border-right: 1px solid rgba(0,0,0,0.10); flex: 1; }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { font-family: var(--font-mono); font-size: 22px; color: var(--accent); line-height: 1; }
+    .hero-stat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; color: rgba(0,0,0,0.35); margin-top: 5px; text-transform: uppercase; }
+
+    /* FORM */
+    .fd-form-wrapper { border: 1px solid var(--light-border); padding: 40px; background: var(--white); }
+    .fd-form-wrapper-dark { border: 1px solid rgba(255,255,255,0.15); padding: 40px; background: rgba(255,255,255,0.06); }
+
+    /* WHAT'S INSIDE */
+    .inside-list { list-style: none; margin-top: 40px; }
+    .inside-item { display: grid; grid-template-columns: 72px 1fr; gap: 0 28px; padding: 32px 0; border-bottom: 1px solid var(--light-border); align-items: start; }
+    .inside-item:last-child { border-bottom: none; }
+    .inside-num { display: flex; flex-direction: column; align-items: flex-start; padding-top: 4px; }
+    .inside-num .day-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.28); margin-bottom: 1px; }
+    .inside-num .day-num { font-family: var(--font-mono); font-size: 40px; color: var(--accent); line-height: 1; }
+    .inside-title { font-family: var(--font-display); font-size: 19px; font-weight: 400; letter-spacing: -0.3px; color: var(--black); margin-bottom: 8px; line-height: 1.3; }
+    .inside-desc { font-size: 14px; line-height: 1.65; color: var(--mid); }
+
+    /* WHO IT'S FOR — SPECIALTY LIST */
+    .specialty-list { list-style: none; padding: 0; margin-top: 28px; }
+    .specialty-list li { display: flex; align-items: center; gap: 14px; font-size: 15px; color: var(--dark); padding: 10px 0; border-bottom: 1px solid var(--light-border); }
+    .specialty-list li:last-child { border-bottom: none; }
+    .specialty-arrow { font-family: var(--font-mono); font-size: 11px; color: var(--accent); flex-shrink: 0; }
+
+    /* WHO IT'S FOR */
+    .who-body { font-size: 16px; line-height: 1.8; color: var(--dark); }
+    .who-body p + p { margin-top: 20px; }
+
+    /* ABOUT */
+    .about-body { font-size: 16px; line-height: 1.8; color: var(--dark); }
+    .about-body p + p { margin-top: 20px; }
+
+    /* FINAL CTA */
+    .cta-section { padding: 100px 48px; background: var(--purple); position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 180px 180px; opacity: 0.06; pointer-events: none; }
+    .cta-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-section h2 { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 48px); letter-spacing: -1.5px; line-height: 1.1; font-weight: 400; color: #fff; margin-bottom: 40px; }
+
+    /* FOOTER */
+    footer { background: var(--purple); border-top: none; padding: 0; display: block; }
+    .footer-link { font-size: 12px; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: #fff; }
+    .footer-social-links { flex-wrap: wrap; gap: 12px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px; }
+      .section { padding: 64px 24px; }
+      .hero { padding: 56px 24px; min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .inside-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .inside-grid > div:last-child { position: static !important; justify-content: center; }
+      .inside-grid > div:last-child img { width: 80% !important; height: auto !important; }
+      .hero-stats { flex-wrap: wrap; }
+      .hero-stat { padding: 14px 20px; }
+      .cta-section { padding: 64px 24px; }
+      .fd-form-wrapper { padding: 28px 24px; }
+      .fd-form-wrapper-dark { padding: 28px 24px; }
+      .two-col-section { grid-template-columns: 1fr !important; }
+      .two-col-section > div:first-child { padding: 56px 24px 32px !important; }
+      .two-col-section > div:last-child { padding: 32px 24px 56px !important; }
+      .two-col-section img { min-height: 280px !important; }
+      .whosfor-form-wrap { padding: 0 24px 48px !important; }
+      .whosfor-form-card { padding: 28px 24px !important; }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex !important; }
+      .nav-links { display: none !important; }
+      .nav-inner a img { max-height: 44px !important; }
+      footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+      .footer-social-links { flex-wrap: wrap !important; gap: 12px !important; }
+    }
+    @media (max-width: 600px) {
+      .inside-item { grid-template-columns: 36px 1fr; gap: 0 16px; }
+      footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+    }
+    @media (max-width: 900px) {
+      footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+      footer > div { flex-wrap: wrap; justify-content: center; gap: 12px; }
+    }
+    @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
+  </style>
+
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact" class="nav-cta">Start a Project</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact" class="mobile-nav-cta">Start a Project</a>
+</div>
+
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <!-- Left: copy -->
+    <div>
+      <span class="overline">Free 5-Day Email Playbook</span>
+      <h1>The Fully-Booked<br>Private Practice Playbook</h1>
+      <p class="hero-sub">Five days on how patients find your practice online and what actually convinces them to book. Written for women's wellness practitioners running private-pay practices.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Emails</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">~20</div>
+          <div class="hero-stat-label">Min read</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Free</div>
+          <div class="hero-stat-label">Always</div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: form card -->
+    <div class="hero-form-card">
+      <div id="fd-form-69f2a90530789e560a2076c6-hero"></div>
+      <script>
+        window.fd('form', { formId: '69f2a90530789e560a2076c6', containerEl: '#fd-form-69f2a90530789e560a2076c6-hero' });
+      </script>
+      <p style="font-size:11px;font-family:var(--font-mono);color:rgba(0,0,0,0.35);margin-top:16px;letter-spacing:0.5px;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 2. WHAT'S INSIDE -->
+<section class="section reveal" style="background:var(--tone);">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:64px;" class="inside-grid">
+    <!-- Left: content -->
+    <div>
+      <span class="overline">What You'll Get</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(26px,3vw,40px);letter-spacing:-1px;line-height:1.15;font-weight:400;color:var(--black);">Five days. One focused topic each day.</h2>
+      <ul class="inside-list">
+        <li class="inside-item">
+          <div class="inside-num"><span class="day-label">Day</span><span class="day-num">01</span></div>
+          <div>
+            <p class="inside-title">What the homepages of practices doing this well have in common.</p>
+            <p class="inside-desc">Three traits, then a self-test for yours.</p>
+          </div>
+        </li>
+        <li class="inside-item">
+          <div class="inside-num"><span class="day-label">Day</span><span class="day-num">02</span></div>
+          <div>
+            <p class="inside-title">Whether you're showing up where patients are actually looking.</p>
+            <p class="inside-desc">Two searches, what they tell you, and how to fix the gap.</p>
+          </div>
+        </li>
+        <li class="inside-item">
+          <div class="inside-num"><span class="day-label">Day</span><span class="day-num">03</span></div>
+          <div>
+            <p class="inside-title">The Google Business Profile fields most practitioners ignore.</p>
+            <p class="inside-desc">All 8 of them, with what good looks like for each.</p>
+          </div>
+        </li>
+        <li class="inside-item">
+          <div class="inside-num"><span class="day-label">Day</span><span class="day-num">04</span></div>
+          <div>
+            <p class="inside-title">What happens after a patient lands on your site.</p>
+            <p class="inside-desc">The conversion paths most practice websites get wrong.</p>
+          </div>
+        </li>
+        <li class="inside-item">
+          <div class="inside-num"><span class="day-label">Day</span><span class="day-num">05</span></div>
+          <div>
+            <p class="inside-title">The pieces you can't audit yourself.</p>
+            <p class="inside-desc">Five things that cost you the right patients, and what to do about them.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Right: image at 50% of section height -->
+    <div style="display:flex;align-items:center;justify-content:center;height:100%;">
+      <img src="playbook-mobile.png" alt="5 Days to a Fully-Booked Practice" style="height:50%;width:auto;max-width:100%;object-fit:contain;display:block;">
+    </div>
+  </div>
+  <!-- Form below -->
+  <div style="max-width:860px;margin:48px auto 0;border:1px solid var(--light-border);background:var(--white);padding:16px;">
+    <div id="fd-form-69f2a90530789e560a2076c6-inside"></div>
+    <script>window.fd('form', { formId: '69f2a90530789e560a2076c6', containerEl: '#fd-form-69f2a90530789e560a2076c6-inside' });</script>
+  </div>
+</section>
+
+
+<!-- 3. WHO IT'S FOR -->
+<section class="section reveal" style="background:var(--white);padding-left:0;padding-right:0;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;" class="two-col-section">
+    <div style="padding:100px 64px;">
+      <span class="overline">Who It's For</span>
+      <div class="who-body">
+        <p>For women's wellness practitioners running private-pay practices. Whether you're considering leaving insurance, you've recently made the leap, or your practice has been private-pay for years, the playbook applies.</p>
+      </div>
+      <ul class="specialty-list">
+        <li><span class="specialty-arrow">→</span>Functional &amp; integrative medicine</li>
+        <li><span class="specialty-arrow">→</span>Hormone &amp; menopause care</li>
+        <li><span class="specialty-arrow">→</span>Holistic gynecology &amp; women's health</li>
+        <li><span class="specialty-arrow">→</span>Medical aesthetics &amp; wellness spas</li>
+        <li><span class="specialty-arrow">→</span>Private-pay therapy &amp; mental health</li>
+      </ul>
+    </div>
+    <div style="height:100%;min-height:420px;overflow:hidden;">
+      <img src="who-its-for.jpg" alt="Who it's for" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+  </div>
+  <div class="whosfor-form-wrap" style="max-width:1100px;margin:0 auto;padding:0 48px 64px;">
+    <div class="whosfor-form-card" style="border:1px solid var(--light-border);background:var(--white);padding:40px;">
+      <div id="fd-form-69f2a90530789e560a2076c6-whosfor"></div>
+      <script>window.fd('form', { formId: '69f2a90530789e560a2076c6', containerEl: '#fd-form-69f2a90530789e560a2076c6-whosfor' });</script>
+    </div>
+  </div>
+</section>
+
+
+<!-- 4. ABOUT THE WRITER -->
+<section class="section reveal" style="background:var(--tone);border-top:1px solid var(--light-border);padding-left:0;padding-right:0;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;" class="two-col-section">
+    <div style="height:100%;min-height:420px;overflow:hidden;">
+      <img src="leann-articles.jpg" alt="Leann Frank" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="padding:100px 64px;">
+      <span class="overline">Who's Writing This</span>
+      <div class="about-body">
+        <p>I'm Leann. I run Simple Rabbit, a one-person studio that builds custom websites for women's wellness practices. I've spent years auditing practice websites and watching the same patterns show up. The playbook you're about to receive is a stripped-down version of what I run when a practitioner pays me to do it.</p>
+        <p>I'm sending it free because I'd rather you find the right help, even if it's not me, than stay stuck.</p>
+      </div>
+      <div style="margin-top:36px;border-top:1px solid var(--light-border);padding-top:28px;display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--mid);"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);">→</span>Bergen County, NJ, serving practitioners nationwide</div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--mid);"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);">→</span>Custom sites built exclusively for private-pay wellness practices</div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--mid);"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);">→</span><a href="/portfolio" style="color:var(--accent);text-decoration:underline;">See our work &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5. FINAL CTA -->
+<section class="cta-section reveal">
+  <div class="cta-inner">
+    <span class="overline-white">Start the Playbook</span>
+    <h2>Get a clearer picture of why patients aren't booking and how you can fix it today.</h2>
+
+    <div class="fd-form-wrapper-dark">
+      <div id="fd-form-69f2a90530789e560a2076c6-cta"></div>
+      <script>
+        window.fd('form', { formId: '69f2a90530789e560a2076c6', containerEl: '#fd-form-69f2a90530789e560a2076c6-cta' });
+      </script>
+    </div>
+    <p style="font-size:11px;font-family:var(--font-mono);color:rgba(255,255,255,0.35);margin-top:20px;letter-spacing:0.5px;">No spam. Unsubscribe anytime. Your inbox is safe.</p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="background:var(--purple);border-top:none;padding:0;display:block;">
+  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
+      </div>
+      <div class="footer-social-links" style="display:flex;gap:28px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+        <a href="https://leannfrank.myflodesk.com/jointhehutch" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px 48px;">
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  </div>
+</footer>
+
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  setTimeout(function(){ document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){ el.classList.add('visible'); }); }, 1500);
+</script>
+<script>
+  var hbtn = document.getElementById('hamburger'), mnav = document.getElementById('mobile-nav');
+  if (hbtn && mnav) {
+    hbtn.addEventListener('click', function() {
+      hbtn.classList.toggle('open');
+      mnav.classList.toggle('open');
+      document.body.style.overflow = mnav.classList.contains('open') ? 'hidden' : '';
+      if (mnav.classList.contains('open')) {
+        var navEl = document.querySelector('.nav');
+        mnav.style.top = navEl ? navEl.getBoundingClientRect().bottom + 'px' : '64px';
+      }
+    });
+    mnav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hbtn.classList.remove('open');
+        mnav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
