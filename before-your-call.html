@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before Your Call | Simple Rabbit</title>
+  <meta name="description" content="You're booked. Fill out this quick intake form before your Cash-Pay Clarity Call so we can make the most of our time together.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --black:#000;--white:#fff;--tone:#E2D8D6;
+      --accent:#AA737D;--accent-dark:#8a5d66;
+      --mid:#111;--dark:#333;--light-border:#dfe0e1;
+      --purple:#474D73;
+      --font-display:'Raleway',sans-serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'DM Mono',monospace;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    a{color:inherit;}
+    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
+    .nav-links{display:flex;align-items:center;gap:32px;}
+    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
+    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;}
+    .nav-cta:hover{background:#e8e8e8!important;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:88px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}
+    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
+    .form-input:focus{border-bottom-color:var(--accent);}
+    .form-input::placeholder{color:var(--mid);}
+    .form-select{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23949698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;-webkit-appearance:none;outline:none;font-family:var(--font-body);color:var(--black);cursor:pointer;}
+    .form-select:focus{border-bottom-color:var(--accent);}
+    .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
+    .form-group{margin-bottom:28px;}
+    .btn-primary{display:inline-block;background:#474D73;color:var(--white);padding:14px 36px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--dark);}
+    footer{display:block;padding:0;border:none;}
+    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
+    .footer-link:hover{color:#fff;}
+    @media(max-width:900px){
+      .nav-inner{padding:0 24px;}
+    }
+    @media(max-width:768px){
+      .hamburger{display:flex!important;}
+      .nav-links{display:none!important;}
+      .nav-inner a img{max-height:44px!important;}
+      .form-row{grid-template-columns:1fr!important;}
+    }
+    @media(max-width:600px){
+      .form-row{grid-template-columns:1fr!important;}
+      footer > div{padding-left:20px!important;padding-right:20px!important;}
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <link rel="canonical" href="https://simplerabbit.studio/before-your-call">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact" class="mobile-nav-cta">Book a Call</a>
+</div>
+
+<!-- HERO -->
+<section style="padding:80px 48px 64px;border-bottom:1px solid var(--light-border);background:var(--white);">
+  <div style="max-width:680px;">
+    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;">You&rsquo;re booked</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(34px,4.5vw,56px);line-height:1.08;letter-spacing:-2px;color:#000;font-weight:400;margin:0 0 24px;">One more thing before we talk.</h1>
+    <p style="font-size:17px;line-height:1.75;color:rgba(0,0,0,0.6);max-width:560px;">Fill out the form below before your call. It takes about three minutes and helps me show up prepared — so we can spend our 30 minutes talking about your practice instead of the basics.</p>
+  </div>
+</section>
+
+<!-- INTAKE FORM -->
+<section style="padding:80px 48px;border-bottom:1px solid var(--light-border);">
+  <div style="max-width:640px;">
+    <form id="intake-form">
+      <div class="form-group">
+        <label class="form-label">Email*</label>
+        <input type="email" name="email" required class="form-input">
+      </div>
+      <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;">
+        <div>
+          <label class="form-label">First Name*</label>
+          <input type="text" name="first_name" required class="form-input">
+        </div>
+        <div>
+          <label class="form-label">Last Name*</label>
+          <input type="text" name="last_name" required class="form-input">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Practice Name*</label>
+        <input type="text" name="business_name" required class="form-input">
+      </div>
+      <div class="form-group">
+        <label class="form-label">How long has your practice been open?</label>
+        <select name="years_in_business" class="form-select">
+          <option value="">Select one</option>
+          <option>Less than 1 year</option>
+          <option>1-3 years</option>
+          <option>3-5 years</option>
+          <option>5-10 years</option>
+          <option>10+ years</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Current Website</label>
+        <input type="text" name="website" placeholder="URL, or 'I don't have one yet'" class="form-input">
+      </div>
+      <div class="form-group">
+        <label class="form-label">How did you hear about Simple Rabbit?*</label>
+        <select name="referral" required class="form-select">
+          <option value="">Select one</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>YouTube</option>
+          <option>Google Search</option>
+          <option>AI search (ChatGPT, Claude, Perplexity, etc.)</option>
+          <option>Event</option>
+          <option>Referral from a friend or colleague</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">What are you interested in?*</label>
+        <select name="project_type" required class="form-select">
+          <option value="">Select one</option>
+          <option>Brand new site</option>
+          <option>Redesign of my current site</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">How are you currently getting patients?* <span style="font-size:11px;color:var(--mid);font-family:var(--font-mono);letter-spacing:0;">(select all that apply)</span></label>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
+          <label style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--black);cursor:pointer;"><input type="checkbox" name="client_source" value="Word of mouth / referrals" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;"> Word of mouth / referrals</label>
+          <label style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--black);cursor:pointer;"><input type="checkbox" name="client_source" value="Social media" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;"> Social media</label>
+          <label style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--black);cursor:pointer;"><input type="checkbox" name="client_source" value="Google search" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;"> Google search</label>
+          <label style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--black);cursor:pointer;"><input type="checkbox" name="client_source" value="Paid ads" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;"> Paid ads</label>
+          <label style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--black);cursor:pointer;"><input type="checkbox" name="client_source" value="Networking or events" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;"> Networking or events</label>
+          <label style="display:flex;align-items:center;gap:10px;font-size:15px;color:var(--black);cursor:pointer;"><input type="checkbox" name="client_source" value="Building from scratch, the website will be my main source" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;"> Building from scratch, the website will be my main source</label>
+        </div>
+        <p id="client-source-error" style="font-size:13px;color:#c0392b;margin-top:8px;display:none;">Please select at least one option.</p>
+      </div>
+      <div class="form-group">
+        <label class="form-label">When do you want to get started?</label>
+        <select name="timeline" class="form-select">
+          <option value="">Select one</option>
+          <option>Right away</option>
+          <option>Within 1-3 months</option>
+          <option>Within 3-6 months</option>
+          <option>Just exploring for now</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Anything else you&rsquo;d like me to know before the call?</label>
+        <textarea name="message" rows="5" class="form-input" style="resize:vertical;"></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Submit before my call &rarr;</button>
+      <p id="form-error" style="font-size:14px;color:var(--dark);margin-top:12px;display:none;">Something went wrong. Please try again.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#474D73;border-top:none;padding:0;display:block;">
+  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+      </div>
+      <div style="display:flex;gap:28px;">
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px 48px;">
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('intake-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const checked = this.querySelectorAll('[name="client_source"]:checked');
+    const csError = document.getElementById('client-source-error');
+    if (checked.length === 0) { csError.style.display = 'block'; return; }
+    csError.style.display = 'none';
+    const btn = this.querySelector('[type=submit]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mojndlrg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          email: this.email.value,
+          first_name: this.first_name.value,
+          last_name: this.last_name.value,
+          business_name: this.business_name.value,
+          years_in_business: this.years_in_business.value,
+          website: this.website.value,
+          referral: this.referral.value,
+          project_type: this.project_type.value,
+          client_source: Array.from(checked).map(cb => cb.value).join(', '),
+          timeline: this.timeline.value,
+          message: this.message.value,
+          _source: 'Before Your Call intake form'
+        })
+      });
+      if (res.ok) { window.location.href = '/thank-you'; }
+      else { btn.textContent = 'Submit before my call →'; btn.disabled = false; document.getElementById('form-error').style.display = 'block'; }
+    } catch(err) { btn.textContent = 'Submit before my call →'; btn.disabled = false; }
+  });
+</script>
+<script>
+  var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
+  if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'88px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+</script>
+
+</body>
+</html>
