@@ -280,7 +280,7 @@
       <p style="font-size:17px;line-height:1.8;color:var(--dark);">Ranking for local searches like that requires a few things to be in place at once: on-page content written around how patients search (not just how the specialty describes itself), accurate and consistent location information across the site, a Google Business Profile that aligns with what the site says, and enough content depth to give search engines something real to index. None of that guarantees a top position&mdash;your market and competition play into it too&mdash;but sites built with those foundations in place tend to move up over time. For more on how this works for private-pay practices, <a href="/blog/local-seo-for-private-pay-practices" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">this article covers the specifics</a>.</p>
     </div>
 
-    <div class="faq-row">
+    <div class="faq-row" data-track="insurance_check">
       <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">What&rsquo;s different about a DPC site versus a regular practice site?</p>
       <p style="font-size:17px;line-height:1.8;color:var(--dark);">A standard practice website assumes the visitor already understands how medical care is billed and delivered. A DPC or concierge site can&rsquo;t make that assumption. The membership model is unfamiliar to most patients, so the site has to do educational work that a conventional practice site doesn&rsquo;t. That usually means a dedicated &ldquo;How It Works&rdquo; page or section, clear answers to the questions every new patient has (What about my insurance? What if I need a specialist? Can I keep my OB/GYN?), and copy that positions the monthly fee as a decision that makes sense rather than a luxury add-on.</p>
     </div>
@@ -359,5 +359,6 @@ var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobi
 if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
 </script>
 
+<script src="/tracking.js" defer></script>
 </body>
 </html>

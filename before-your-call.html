@@ -254,5 +254,6 @@
   if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'88px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
 </script>
 
+<script src="/tracking.js" defer></script>
 </body>
 </html>

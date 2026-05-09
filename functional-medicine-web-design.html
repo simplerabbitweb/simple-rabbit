@@ -309,7 +309,7 @@
       <p style="font-size:17px;line-height:1.8;color:var(--dark);">Yes. Most of my clients come in with an existing site that isn&rsquo;t performing the way they need it to. Sometimes it&rsquo;s a site they built themselves. Sometimes it&rsquo;s a site a general designer built years ago. Regardless of where it started, the process is the same: I audit what you have, identify what&rsquo;s holding it back, and rebuild from the ground up with copy and design built for where your practice is now. A functional medicine website redesign typically takes the same timeline as a new build, because the work is the same work.</p>
     </div>
 
-    <div class="faq-row">
+    <div class="faq-row" data-track="insurance_check">
       <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">What if I&rsquo;m transitioning out of insurance and don&rsquo;t have my practice fully set up yet?</p>
       <p style="font-size:17px;line-height:1.8;color:var(--dark);">That&rsquo;s a good time to start. Practitioners transitioning out of insurance often underestimate how much the website does in the first few months of a private-pay practice. It&rsquo;s doing the work that a referral network used to do: explaining who you are, establishing that the fee structure is worth it, and making it easy for a patient to reach out. The earlier the site is built correctly, the earlier it starts pulling its weight. Fill out the contact form and we&rsquo;ll talk through where you are in the transition and what makes sense to build now versus later.</p>
     </div>
@@ -381,5 +381,6 @@ var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobi
 if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
 </script>
 
+<script src="/tracking.js" defer></script>
 </body>
 </html>

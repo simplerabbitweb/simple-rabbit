@@ -342,5 +342,6 @@ if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('o
 var stgl=document.querySelector('#mobile-nav .mobile-nav-toggle');
 if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=document.querySelectorAll('#mobile-nav .mobile-nav-sub');var open=subs[0].classList.contains('open');subs.forEach(function(s){s.classList.toggle('open',!open);});stgl.textContent=open?'+':'−';});}
 </script>
+<script src="/tracking.js" defer></script>
 </body>
 </html>
