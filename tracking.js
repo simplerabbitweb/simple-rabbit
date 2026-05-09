@@ -1,55 +1,59 @@
 (function () {
-  if (typeof gtag === 'undefined') return;
-
-  function fire(event, params) {
-    gtag('event', event, Object.assign({ page_location: window.location.href }, params));
+  // Safe gtag wrapper — page_title included on every event
+  function track(eventName, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, Object.assign({
+        page_location: window.location.href,
+        page_title: document.title
+      }, params || {}));
+    }
   }
 
-  // 1. book_consult_click — every CTA that links to /contact
-  document.querySelectorAll('a[href="/contact"]').forEach(function (el) {
+  // 1) book_consult_click — any element with [data-book]
+  document.querySelectorAll('[data-book]').forEach(function (el) {
     el.addEventListener('click', function () {
-      fire('book_consult_click', { button_text: el.innerText.trim() });
+      track('book_consult_click', {
+        button_text: (el.innerText || '').trim().slice(0, 100)
+      });
     });
   });
 
-  // 3. phone_click — tel: links (footer phone numbers on blog posts)
+  // 2) phone_click — tel: links
   document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
     el.addEventListener('click', function () {
-      fire('phone_click', { phone_number: el.getAttribute('href').replace('tel:', '') });
+      track('phone_click', {
+        phone_number: el.getAttribute('href').replace('tel:', '')
+      });
     });
   });
 
-  // 4. engaged_session — fires after 60 continuous seconds on page (pauses when tab is hidden)
-  var engagedFired = false;
-  var engagedTimer = null;
-  function startEngagedTimer() {
-    if (engagedFired) return;
-    engagedTimer = setTimeout(function () {
-      engagedFired = true;
-      fire('engaged_session');
-    }, 60000);
+  // 3) insurance_check — FAQ row with [data-faq="insurance"]
+  var ins = document.querySelector('[data-faq="insurance"]');
+  if (ins) {
+    var insFired = false;
+    var insHandler = function () {
+      if (insFired) return;
+      insFired = true;
+      track('insurance_check', { question: 'insurance' });
+    };
+    ins.addEventListener('click', insHandler);
+    ins.addEventListener('toggle', function () { if (ins.open) insHandler(); });
   }
-  function stopEngagedTimer() {
-    clearTimeout(engagedTimer);
-  }
-  startEngagedTimer();
-  document.addEventListener('visibilitychange', function () {
-    document.hidden ? stopEngagedTimer() : startEngagedTimer();
-  });
 
-  // 5. insurance_check — fires once when an insurance-related FAQ row scrolls into view
-  var insEls = document.querySelectorAll('[data-track="insurance_check"]');
-  if (insEls.length && 'IntersectionObserver' in window) {
-    var insObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !entry.target._srTracked) {
-          entry.target._srTracked = true;
-          fire('insurance_check', { question: 'insurance' });
-          insObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    insEls.forEach(function (el) { insObs.observe(el); });
+  // 4) engaged_session — fires once after 60s of active time on page
+  //    Pauses when tab is hidden or window loses focus
+  var activeMs = 0, lastTick = Date.now(), engagedFired = false;
+  function isActive() {
+    return document.visibilityState === 'visible' && document.hasFocus();
   }
+  setInterval(function () {
+    var now = Date.now();
+    if (isActive()) activeMs += (now - lastTick);
+    lastTick = now;
+    if (!engagedFired && activeMs >= 60000) {
+      engagedFired = true;
+      track('engaged_session', { engagement_seconds: 60 });
+    }
+  }, 1000);
 
 })();
