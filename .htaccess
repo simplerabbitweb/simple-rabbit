@@ -9,6 +9,9 @@ DirectorySlash Off
 # --- Serve /about from about.html (directory shadowing fix) ---
 RewriteRule ^about/?$ /about.html [L]
 
+# --- Redirect merged blog post ---
+RewriteRule ^blog/google-business-profile-not-getting-clicks/?$ /blog/google-business-profile-mistakes-wellness-practices [R=301,L]
+
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
