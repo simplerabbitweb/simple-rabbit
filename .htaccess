@@ -23,6 +23,9 @@ RewriteRule ^playbook/?$ /fully-booked [R=301,L]
 RewriteRule ^website-design/?$ /services [R=301,L]
 RewriteRule ^ongoing-support/?$ /services [R=301,L]
 
+# --- Deleted blog posts → /articles ---
+RewriteRule ^blog/ai-search-visibility-service-business/?$ /articles [R=301,L]
+
 # --- County/location pages → /articles ---
 RewriteRule ^web-design-bergen-county-nj/?$ /articles [R=301,L]
 
