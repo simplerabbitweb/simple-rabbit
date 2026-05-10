@@ -25,6 +25,7 @@ RewriteRule ^ongoing-support/?$ /services [R=301,L]
 
 # --- Deleted blog posts → /articles ---
 RewriteRule ^blog/ai-search-visibility-service-business/?$ /articles [R=301,L]
+RewriteRule ^blog/nj-businesses-need-solid-website/?$ /articles [R=301,L]
 
 # --- County/location pages → /articles ---
 RewriteRule ^web-design-bergen-county-nj/?$ /articles [R=301,L]
