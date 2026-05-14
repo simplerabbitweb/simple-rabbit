@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages | Simple Rabbit Web Design for Women's Wellness Practices</title>
+  <meta name="description" content="Three packages for established private-pay practices. A website audit, a full marketing system build, or ongoing care. See what fits where you are.">
+  <meta property="og:title" content="Packages | Simple Rabbit">
+  <meta property="og:description" content="Three packages for established private-pay practices. Audit, full marketing system build, or ongoing care.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/packages">
+  <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/packages">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <style>
+    /* ====================================================
+       BRAND TOKENS — swap these to retheme the page
+    ====================================================  */
+    :root {
+      --color-primary:   #474D73;
+      --color-accent:    #AA737D;
+      --color-accent-dk: #8a5d66;
+      --color-tone:      #E2D8D6;
+      --color-black:     #000;
+      --color-white:     #fff;
+      --color-mid:       #111;
+      --color-dark:      #333;
+      --color-border:    #dfe0e1;
+      --font-display:    'Raleway', sans-serif;
+      --font-body:       'Outfit', system-ui, sans-serif;
+      --font-mono:       'DM Mono', monospace;
+    }
+
+    /* ====================================================
+       RESET + BASE
+    ==================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; color-scheme: light only; }
+    body {
+      font-family: var(--font-body);
+      color: var(--color-black);
+      background: var(--color-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: var(--font-display); letter-spacing: -1px; font-weight: 400; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* skip link */
+    .skip-link {
+      position: absolute; top: -999px; left: 1rem;
+      background: var(--color-primary); color: var(--color-white);
+      padding: 0.5rem 1rem; font-family: var(--font-body); font-size: 14px;
+      text-decoration: none; z-index: 9999;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* ====================================================
+       SCROLL REVEAL
+    ==================================================== */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ====================================================
+       NAV
+    ==================================================== */
+    .nav { position: sticky; top: 0; background: var(--color-primary); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 72px; display: flex; align-items: center; justify-content: space-between; height: 88px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; color: #fff; text-decoration: none; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 0.8; }
+    .nav-cta { background: var(--color-white) !important; color: var(--color-black) !important; padding: 10px 24px; font-size: 13px; font-weight: 500; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #e8e8e8 !important; }
+
+    /* hamburger */
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--color-primary); z-index: 99; flex-direction: column; overflow-y: auto; border-top: 1px solid rgba(255,255,255,0.1); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 16px; color: #fff; text-decoration: none; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-body); }
+    .mobile-nav a.mobile-nav-cta { background: var(--color-white); color: var(--color-black) !important; text-align: center; font-weight: 500; border-bottom: none !important; margin: 16px 24px; display: block; }
+    .mobile-nav a.mobile-nav-cta:hover { background: #e8e8e8 !important; }
+
+    /* ====================================================
+       OVERLINE
+    ==================================================== */
+    .overline { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; display: block; }
+
+    /* ====================================================
+       HERO GRAIN
+    ==================================================== */
+    .hero-grain {
+      position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: 0.18;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    /* ====================================================
+       BUTTONS
+    ==================================================== */
+    .btn-primary {
+      display: inline-block; background: var(--color-primary); color: var(--color-white);
+      padding: 14px 40px; font-size: 14px; font-weight: 500; letter-spacing: 0.5px;
+      text-decoration: none; font-family: var(--font-body); border: none; cursor: pointer;
+      transition: background 0.2s; text-align: center;
+    }
+    .btn-primary:hover { background: var(--color-mid); }
+    .btn-primary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+    .btn-secondary {
+      display: inline-block; background: transparent; color: var(--color-primary);
+      padding: 13px 40px; font-size: 14px; font-weight: 500; letter-spacing: 0.5px;
+      text-decoration: none; font-family: var(--font-body); border: 1px solid var(--color-primary);
+      cursor: pointer; transition: background 0.2s, color 0.2s; text-align: center;
+    }
+    .btn-secondary:hover { background: var(--color-primary); color: var(--color-white); }
+    .btn-secondary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+    /* ====================================================
+       HOW IT WORKS — 3-step grid with arrows
+    ==================================================== */
+    .how-steps-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: start;
+      gap: 0;
+    }
+    .how-step { padding: 40px 32px; }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1.5px solid var(--color-accent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px;
+      color: var(--color-accent); margin-bottom: 20px; flex-shrink: 0;
+    }
+    .step-arrow { color: var(--color-accent); font-size: 20px; padding-top: 62px; opacity: 0.5; flex-shrink: 0; }
+
+    /* ====================================================
+       PACKAGE CARDS
+    ==================================================== */
+    .pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+    }
+    .pkg-card {
+      background: var(--color-white);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .pkg-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); z-index: 1; }
+    .pkg-card-featured { border-top: 3px solid var(--color-accent); }
+    .pkg-badge {
+      position: absolute; top: 20px; right: 20px;
+      background: var(--color-accent); color: #fff;
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 10px;
+    }
+    .pkg-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--color-accent); display: block; margin-bottom: 20px; }
+    .pkg-strike { font-size: 13px; color: var(--color-mid); margin-bottom: 2px; font-family: var(--font-mono); }
+    .pkg-price { font-family: var(--font-display); font-size: 36px; letter-spacing: -1.5px; color: var(--color-black); font-weight: 400; line-height: 1; margin-bottom: 0; }
+    .pkg-founder-pill {
+      display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px;
+      text-transform: uppercase; background: var(--color-tone); color: var(--color-accent);
+      padding: 3px 10px; margin-top: 8px;
+    }
+    .pkg-duration { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; color: var(--color-mid); margin-top: 10px; margin-bottom: 20px; text-transform: uppercase; }
+    .pkg-tagline { font-size: 15px; line-height: 1.7; color: var(--color-dark); font-style: italic; margin-bottom: 28px; border-bottom: 1px solid var(--color-border); padding-bottom: 28px; }
+    .pkg-what-header { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--color-mid); margin-bottom: 16px; }
+    .pkg-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; flex: 1; }
+    .pkg-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6; color: var(--color-dark); }
+    .pkg-check { color: var(--color-accent); flex-shrink: 0; margin-top: 2px; font-size: 14px; }
+    .pkg-best { font-size: 14px; color: var(--color-mid); font-style: italic; border-top: 1px solid var(--color-border); padding-top: 20px; margin-bottom: 28px; line-height: 1.6; }
+    .pkg-note { font-size: 12px; color: var(--color-mid); line-height: 1.6; margin-top: 16px; font-family: var(--font-mono); }
+
+    /* ====================================================
+       JOURNEY STRIP
+    ==================================================== */
+    .journey-strip { display: flex; align-items: center; justify-content: center; }
+    .journey-node { padding: 28px 48px; text-align: center; }
+    .journey-sep { color: var(--color-accent); font-size: 24px; opacity: 0.6; flex-shrink: 0; }
+
+    /* ====================================================
+       FAQ ACCORDION
+    ==================================================== */
+    .faq-acc-row { border-bottom: 1px solid var(--color-border); }
+    .faq-acc-row:first-child { border-top: 1px solid var(--color-border); }
+    .faq-toggle {
+      width: 100%; background: none; border: none; padding: 28px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; text-align: left;
+      font-family: var(--font-display); font-size: clamp(16px, 1.8vw, 20px);
+      letter-spacing: -0.5px; color: var(--color-black); font-weight: 400; gap: 16px;
+    }
+    .faq-toggle:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+    .faq-icon {
+      flex-shrink: 0; width: 22px; height: 22px;
+      border: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--color-accent); transition: transform 0.3s; line-height: 1;
+    }
+    .faq-toggle[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .faq-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-panel-inner { padding: 0 0 28px; }
+    .faq-answer { font-size: 17px; line-height: 1.8; color: var(--color-dark); }
+
+    /* ====================================================
+       FOOTER
+    ==================================================== */
+    footer { display: block; padding: 0; border: none; }
+
+    /* ====================================================
+       RESPONSIVE
+    ==================================================== */
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px; }
+      .sp { padding-left: 24px !important; padding-right: 24px !important; }
+      .pkg-grid { grid-template-columns: 1fr !important; }
+      .pkg-card { border-top: none !important; }
+      .pkg-card-featured { border-top: 3px solid var(--color-accent) !important; }
+      .how-steps-grid { grid-template-columns: 1fr !important; }
+      .step-arrow { display: none !important; }
+      .how-step { padding: 28px 0 !important; }
+      .journey-strip { flex-direction: column !important; }
+      .journey-sep { display: none !important; }
+      .journey-node { padding: 16px 24px !important; width: 100% !important; }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex !important; }
+      .nav-links { display: none !important; }
+      .nav-inner a img { max-height: 44px !important; }
+      .inner-hero { min-height: auto !important; padding: 48px 24px !important; }
+      .hero-btns { flex-direction: column !important; align-items: stretch !important; }
+      .hero-btns a { width: 100% !important; }
+      .cta-box { padding: 40px 28px !important; }
+      .parallax-bg { background-attachment: scroll !important; background-size: cover !important; }
+    }
+    @media (max-width: 600px) {
+      footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+      .footer-social-links { flex-wrap: wrap !important; gap: 12px !important; }
+      .pkg-card { padding: 32px 24px !important; }
+    }
+    @media (min-width: 901px) {
+      #announcement-banner a { font-size: 15px !important; }
+      #announcement-banner a span:last-child { font-size: 14px !important; }
+    }
+  </style>
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ====================================================
+     ANNOUNCEMENT BANNER (site-wide)
+==================================================== -->
+<div id="announcement-banner" style="background:#829AAB;padding:11px 24px;text-align:center;position:relative;">
+  <a href="/fully-booked" style="font-size:13px;color:#fff;font-family:'Outfit',system-ui,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;">
+    <span style="font-weight:400;opacity:0.88;">Free 5-day email series &rarr;</span>
+    <strong style="font-weight:600;letter-spacing:0.1px;">5 Days to a Fully-Booked Practice</strong>
+    <span style="background:rgba(255,255,255,0.18);padding:2px 10px;font-size:12px;letter-spacing:0.5px;border:1px solid rgba(255,255,255,0.3);">Get it free</span>
+  </a>
+</div>
+
+<!-- ====================================================
+     NAV
+==================================================== -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact" data-book class="nav-cta">Book a Cash-Pay Clarity Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="/about">About</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/services">Services</a>
+  <a href="/articles">Articles</a>
+  <a href="/contact" data-book class="mobile-nav-cta">Book a Cash-Pay Clarity Call</a>
+</div>
+
+<main id="main-content">
+
+  <!-- ====================================================
+       SECTION 0: FOUNDER'S PRICING BAR
+  ==================================================== -->
+  <div style="background:var(--color-mid);padding:13px 24px;text-align:center;">
+    <p style="font-size:14px;color:#fff;font-family:var(--font-body);line-height:1.5;">
+      Founder&rsquo;s pricing: 50% off the project fee for the first 3 clients, or until August 1, 2026.
+      <a href="#packages" style="color:var(--color-tone);text-decoration:underline;text-underline-offset:3px;font-weight:500;margin-left:6px;">See the packages &darr;</a>
+    </p>
+  </div>
+
+
+  <!-- ====================================================
+       SECTION 1: HERO
+  ==================================================== -->
+  <section class="inner-hero" aria-labelledby="hero-heading" style="min-height:44vh;display:flex;flex-direction:column;justify-content:center;padding:80px 48px;position:relative;background:#fff;overflow:hidden;">
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div style="position:relative;z-index:1;max-width:960px;">
+      <span class="overline">For Established Private-Pay Practices</span>
+      <h1 id="hero-heading" style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 28px;">Strategy, design, and the method that brings patients in.</h1>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.75;color:rgba(0,0,0,0.6);max-width:680px;margin-bottom:40px;">I&rsquo;m the marketing partner for established private-pay practitioners. I design and run the marketing system that turns cold leads into paying patients. WordPress, Flodesk, lead magnets, social. Done for you, so you can stay focused on your patients.</p>
+      <div class="hero-btns" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <a href="#" class="btn-primary">Book a discovery call</a>
+        <a href="#" class="btn-secondary">Take the free self-audit</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       SECTION 2: HOW IT WORKS
+  ==================================================== -->
+  <section class="reveal sp" aria-labelledby="how-heading" style="padding:100px 48px;background:var(--color-tone);border-bottom:1px solid var(--color-border);">
+    <div style="max-width:1100px;margin:0 auto;">
+      <span class="overline">The Path Most Clients Take</span>
+      <h2 id="how-heading" style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:12px;max-width:640px;">Each step builds on the one before it.</h2>
+      <p style="font-size:17px;line-height:1.75;color:var(--color-dark);margin-bottom:56px;max-width:560px;">You don&rsquo;t have to do all three. Most do.</p>
+
+      <div class="how-steps-grid" role="list">
+
+        <div class="how-step" role="listitem">
+          <div class="step-num" aria-hidden="true">01</div>
+          <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Find out what&rsquo;s broken</h3>
+          <p style="font-size:17px;line-height:1.75;color:var(--color-dark);">I review your site, tracking, and tools and give you a clear picture of where your leads are getting lost.</p>
+        </div>
+
+        <div class="step-arrow" aria-hidden="true">&rarr;</div>
+
+        <div class="how-step" role="listitem">
+          <div class="step-num" aria-hidden="true">02</div>
+          <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Fix it with a real plan</h3>
+          <p style="font-size:17px;line-height:1.75;color:var(--color-dark);">I redesign your site, set up tracking, and connect it to your booking and email tools.</p>
+        </div>
+
+        <div class="step-arrow" aria-hidden="true">&rarr;</div>
+
+        <div class="how-step" role="listitem">
+          <div class="step-num" aria-hidden="true">03</div>
+          <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Keep it working</h3>
+          <p style="font-size:17px;line-height:1.75;color:var(--color-dark);">I stay on retainer to handle small updates, monitor your reports, and tweak as you grow.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       SECTION 3: THE THREE PACKAGES
+  ==================================================== -->
+  <section id="packages" class="reveal sp" aria-labelledby="packages-heading" style="padding:100px 48px;border-bottom:1px solid var(--color-border);background:var(--color-white);">
+    <div style="max-width:1100px;margin:0 auto;">
+      <span class="overline">The Packages</span>
+      <h2 id="packages-heading" style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;">Three ways to work together.</h2>
+
+      <div class="pkg-grid">
+
+        <!-- ---- CARD 1: LEAD PATH AUDIT ---- -->
+        <article class="pkg-card" aria-label="Lead Path Audit package">
+          <span class="pkg-tag">Start here if you&rsquo;re not sure what&rsquo;s wrong</span>
+          <h3 style="font-family:var(--font-display);font-size:26px;letter-spacing:-0.5px;font-weight:400;margin-bottom:12px;">Lead Path Audit</h3>
+          <p class="pkg-strike"><s>$2,500</s></p>
+          <p class="pkg-price">$1,250</p>
+          <span class="pkg-founder-pill">Founder&rsquo;s Pricing</span>
+          <p class="pkg-duration">2 weeks</p>
+          <p class="pkg-tagline">A clear-eyed look at where your website is losing leads.</p>
+          <p class="pkg-what-header">What you get</p>
+          <ul class="pkg-list">
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Full review of your site, booking flow, and tools</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>12-page audit report</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Lead path map showing where inquiries are getting lost</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Prioritized fix list</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>60-minute walkthrough call</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Fee credits toward a Foundation Build if we work together</li>
+          </ul>
+          <p class="pkg-best">Best for practices that want a roadmap before committing to a rebuild.</p>
+          <a href="#" class="btn-secondary" style="display:block;">Start with an audit &rarr;</a>
+        </article>
+
+        <!-- ---- CARD 2: FOUNDATION BUILD (FEATURED) ---- -->
+        <article class="pkg-card pkg-card-featured" aria-label="Foundation Build package — most popular">
+          <span class="pkg-badge" aria-label="Badge: Most clients start here">Most clients start here</span>
+          <span class="pkg-tag">The full package</span>
+          <h3 style="font-family:var(--font-display);font-size:26px;letter-spacing:-0.5px;font-weight:400;margin-bottom:12px;">Foundation Build</h3>
+          <p class="pkg-strike"><s>From $15,000</s></p>
+          <p class="pkg-price">From $7,500</p>
+          <span class="pkg-founder-pill">Founder&rsquo;s Pricing</span>
+          <p class="pkg-duration">5 to 8 weeks</p>
+          <p class="pkg-tagline">The whole marketing system, built and connected. Not just a website.</p>
+          <p class="pkg-what-header">What you get</p>
+          <ul class="pkg-list">
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Strategy session and four-stage system mapping</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>WordPress site rebuild (6 to 8 pages)</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Copy direction with AI assistance, refined and reviewed</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Flodesk setup: welcome sequence and 5-email nurture sequence</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Lead magnet designed in Canva, delivered via Flodesk</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Social setup: bio optimization, Google Business Profile, 10 Canva templates</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Booking flow integration</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>GA4, Google Tag Manager, and Meta Pixel across all four stages</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Starter monthly snapshot report</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>30-day post-launch support</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>First 90 days of Care Plan included</li>
+          </ul>
+          <p class="pkg-best">Best for practices ready to invest in a complete marketing system, not just a new website.</p>
+          <a href="#" class="btn-primary" style="display:block;">Start a build &rarr;</a>
+          <p class="pkg-note">Foundation Build Plus available for practices needing extra condition pages, advanced tracking, or staff training. From <s>$22,000</s> $11,000 with founder&rsquo;s pricing.</p>
+        </article>
+
+        <!-- ---- CARD 3: CARE PLAN ---- -->
+        <article class="pkg-card" aria-label="Care Plan package">
+          <span class="pkg-tag">Already built? Stay supported.</span>
+          <h3 style="font-family:var(--font-display);font-size:26px;letter-spacing:-0.5px;font-weight:400;margin-bottom:12px;">Care Plan</h3>
+          <p class="pkg-price" style="margin-top:16px;">From $500/mo</p>
+          <p class="pkg-duration">Month-to-month</p>
+          <p class="pkg-tagline">Your whole marketing system, kept healthy and producing. Without you having to think about it.</p>
+          <p class="pkg-what-header">What you get</p>
+          <ul class="pkg-list">
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>WordPress hosting, security, and updates</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>1 hr/mo site updates (Standard) or 3 hr/mo (Premium)</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Flodesk monitoring: deliverability, list health, segment hygiene</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Monthly Canva template refresh (1 new social template)</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Monthly snapshot report (site, email, and social metrics)</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Quarterly strategy call (Standard) or monthly (Premium)</li>
+            <li><span class="pkg-check" aria-hidden="true">&#10003;</span>Premium adds: monthly content calendar and 1 Flodesk campaign drafted</li>
+          </ul>
+          <p class="pkg-best">Best for practices who want a partner running their marketing, not a vendor maintaining their site.</p>
+          <a href="#" class="btn-secondary" style="display:block;">Start a Care Plan &rarr;</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       SECTION 4: JOURNEY RECAP
+  ==================================================== -->
+  <section class="reveal sp" aria-label="Journey recap" style="padding:80px 48px;background:var(--color-white);border-bottom:1px solid var(--color-border);text-align:center;">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="journey-strip" role="list">
+        <div class="journey-node" role="listitem">
+          <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent);margin-bottom:8px;">01</p>
+          <p style="font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--color-black);letter-spacing:-0.5px;">Audit</p>
+        </div>
+        <div class="journey-sep" aria-hidden="true">&rarr;</div>
+        <div class="journey-node" role="listitem">
+          <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent);margin-bottom:8px;">02</p>
+          <p style="font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--color-black);letter-spacing:-0.5px;">Build</p>
+        </div>
+        <div class="journey-sep" aria-hidden="true">&rarr;</div>
+        <div class="journey-node" role="listitem">
+          <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--color-accent);margin-bottom:8px;">03</p>
+          <p style="font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--color-black);letter-spacing:-0.5px;">Care</p>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.75;color:var(--color-mid);margin-top:32px;font-family:var(--font-mono);">Most clients move through all three over 12 to 18 months. You can stop at any point. There is no contract.</p>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       SECTION 5: FAQ
+  ==================================================== -->
+  <section class="reveal sp" aria-labelledby="faq-heading" style="padding:100px 48px;border-bottom:1px solid var(--color-border);background:var(--color-white);">
+    <div style="max-width:840px;margin:0 auto;">
+      <span class="overline">Common Questions</span>
+      <h2 id="faq-heading" style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;">What practice owners ask before booking.</h2>
+
+      <div id="faq-list">
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="true" aria-controls="faq-1" id="faq-btn-1">
+            <span>Which package should I start with?</span>
+            <span class="faq-icon" aria-hidden="true" style="transform:rotate(45deg);">+</span>
+          </button>
+          <div class="faq-panel" id="faq-1" role="region" aria-labelledby="faq-btn-1" style="max-height:600px;">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">If you already know your website needs to be rebuilt, Foundation Build is the right starting point. If you want clarity on what&rsquo;s actually broken before investing in a rebuild, start with the Audit. If you already have a working site and just need ongoing support, Care Plan is the fit. If you&rsquo;re not sure, book a discovery call and I&rsquo;ll point you to the right one.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
+            <span>Can I skip the audit?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-2" role="region" aria-labelledby="faq-btn-2">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Yes. About half my clients do. The audit is most useful when you know something is off but cannot pinpoint it. If you already know what you want, the Foundation Build is the direct path.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
+            <span>What if I just need a basic informational website?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-3" role="region" aria-labelledby="faq-btn-3">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">I&rsquo;m probably not your best match for that. My work is built around the lead path, not brochure design. If you really only need a 4-page informational site, I can refer you to a Squarespace template specialist who is great and a fraction of the cost.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
+            <span>Is what you do HIPAA compliant?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-4" role="region" aria-labelledby="faq-btn-4">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">I work the lead side of your practice. Marketing site, contact forms (no PHI), tracking pixels, ad analytics, generic inquiry data, and email marketing for general subscribers. I do not touch EHRs, patient lists, intake with symptoms, or anything after a patient relationship begins. That separation answers most HIPAA questions before they come up.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
+            <span>How long does the process take?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-5" role="region" aria-labelledby="faq-btn-5">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Discovery call is 30 minutes. The Lead Path Audit is 2 weeks. The Foundation Build is 5 to 8 weeks depending on scope. Care Plan starts at handoff and runs month-to-month.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-6" id="faq-btn-6">
+            <span>What if I&rsquo;m not ready for a Care Plan?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-6" role="region" aria-labelledby="faq-btn-6">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Care Plan is opt-out by default. Foundation Build clients get 90 days of Care Plan included free, then decide whether to keep it. Most do, because there is always something small to adjust.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-7" id="faq-btn-7">
+            <span>Do you do photography or branding too?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-7" role="region" aria-labelledby="faq-btn-7">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">No. I focus on websites, tracking, and tool connections. I work with photographers and brand designers I trust if you need a referral.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-acc-row">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-8" id="faq-btn-8">
+            <span>Do you work with practices outside women&rsquo;s health?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-8" role="region" aria-labelledby="faq-btn-8">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Occasionally, by referral. My niche is women&rsquo;s private practice (medical and licensed therapy) because it lets me go deep on the tools and language that fit. If you are outside that, reach out anyway and I&rsquo;ll let you know if it&rsquo;s a fit or refer you.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       SECTION 6: CLOSING CTA
+  ==================================================== -->
+  <section aria-labelledby="cta-heading" style="background:var(--color-primary);padding:100px 48px;">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <h2 id="cta-heading" style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,44px);letter-spacing:-1px;line-height:1.15;margin-bottom:20px;font-weight:400;color:#fff;">Founder&rsquo;s pricing ends August 1, or after 3 clients.</h2>
+      <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.8);margin-bottom:40px;">Book a 30-minute discovery call to lock it in. I&rsquo;ll point you to the right starting point, even if it turns out to be somewhere else.</p>
+      <a href="#" style="display:inline-block;background:#fff;color:var(--color-primary);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fff'">Book a discovery call &rarr;</a>
+      <p style="margin-top:24px;font-size:13px;color:rgba(255,255,255,0.6);">Or <a href="#" style="color:rgba(255,255,255,0.85);text-decoration:underline;text-underline-offset:3px;">take the free self-audit first</a> to see what you&rsquo;re working with.</p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ====================================================
+     FOOTER
+==================================================== -->
+<footer style="background:var(--color-primary);border-top:none;padding:0;display:block;">
+
+  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
+        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
+      </div>
+      <div class="footer-social-links" style="display:flex;gap:28px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" rel="noopener" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:20px 48px;">
+    <p style="font-size:11px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  </div>
+
+</footer>
+
+
+<!-- ====================================================
+     SCRIPTS
+==================================================== -->
+
+<!-- Scroll reveal -->
+<script>
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) { el.classList.add('visible'); });
+  }, 1500);
+</script>
+
+<!-- Mobile nav -->
+<script>
+  var hbtn = document.getElementById('hamburger');
+  var mnav = document.getElementById('mobile-nav');
+  if (hbtn && mnav) {
+    hbtn.addEventListener('click', function() {
+      var isOpen = mnav.classList.toggle('open');
+      hbtn.classList.toggle('open');
+      hbtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (isOpen) {
+        var navEl = document.querySelector('.nav');
+        mnav.style.top = navEl ? navEl.getBoundingClientRect().bottom + 'px' : '64px';
+      }
+    });
+    mnav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hbtn.classList.remove('open');
+        mnav.classList.remove('open');
+        hbtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
+
+<!-- FAQ accordion — single open, first open by default -->
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panelId = btn.getAttribute('aria-controls');
+      var panel = document.getElementById(panelId);
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      document.querySelectorAll('.faq-toggle').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        var icon = b.querySelector('.faq-icon');
+        if (icon) icon.style.transform = '';
+      });
+      document.querySelectorAll('.faq-panel').forEach(function(p) {
+        p.style.maxHeight = '0px';
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        var icon = btn.querySelector('.faq-icon');
+        if (icon) icon.style.transform = 'rotate(45deg)';
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+<!-- Flodesk newsletter -->
+<script>
+  (function(w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+    var sm = d.createElement(t); sm.async = true; sm.type = 'module';
+    sm.src = h + s + '.mjs' + v; f.parentNode.insertBefore(sm, f);
+    var sn = d.createElement(t); sn.async = true; sn.noModule = true;
+    sn.src = h + s + '.js' + v; f.parentNode.insertBefore(sn, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+</script>
+<script>
+  (function() {
+    if (window.location.pathname.replace(/\/$/, '').indexOf('/contact') !== -1) return;
+    setTimeout(function() { window.fd('form', { formId: '69f243ce0a1f098d7fb37e63' }); }, 10000);
+  })();
+</script>
+
+<script src="/tracking.js" defer></script>
+</body>
+</html>
