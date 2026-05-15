@@ -74,6 +74,16 @@
     .faq-row{border-bottom:1px solid var(--light-border);padding:32px 0;}
     .faq-row:first-child{border-top:1px solid var(--light-border);}
     .also-avail-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+    .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--light-border);}
+    .pkg-card{padding:40px;border-right:1px solid var(--light-border);display:flex;flex-direction:column;}
+    .pkg-card:last-child{border-right:none;}
+    .pkg-card.featured{border-top:3px solid var(--accent);}
+    .pkg-price{font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);letter-spacing:-0.5px;font-weight:400;color:var(--black);margin:16px 0;}
+    .pkg-includes{list-style:none;margin:24px 0;display:flex;flex-direction:column;gap:10px;}
+    .pkg-includes li{font-size:15px;line-height:1.6;color:var(--dark);padding-left:20px;position:relative;}
+    .pkg-includes li::before{content:"→";position:absolute;left:0;color:var(--accent);font-size:13px;}
+    .pkg-best{font-family:var(--font-mono);font-size:11px;letter-spacing:1px;color:var(--mid);line-height:1.6;margin-top:auto;padding-top:24px;border-top:1px solid var(--light-border);}
+    @media(max-width:900px){.pkg-grid{grid-template-columns:1fr!important;}.pkg-card{border-right:none!important;border-bottom:1px solid var(--light-border);}.pkg-card:last-child{border-bottom:none;}}
     @media(max-width:900px){
       .also-avail-grid{grid-template-columns:1fr 1fr!important;}
       .nav-inner{padding:0 24px;}
@@ -117,7 +127,7 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Custom Website Design for Women's Wellness Practices",
-  "description": "Simple Rabbit designs and builds custom websites for private-pay women's wellness practices. Includes copywriting, local SEO, and ongoing care. Starting at $4,800.",
+  "description": "Simple Rabbit builds patient acquisition systems for private-pay women's wellness practices. Strategy, website design, and email nurture. Built one at a time, by one person.",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Simple Rabbit",
@@ -166,7 +176,7 @@
     "@type": "Offer",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "minPrice": "4800",
+      "minPrice": "1500",
       "priceCurrency": "USD"
     },
     "image": "https://simplerabbit.studio/Leann-4.jpg",
@@ -230,10 +240,9 @@
 <!-- SECTION 1: HERO -->
 <section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:#ffffff;overflow:hidden;">
   <div class="hero-grain"></div>
-  <!-- ink splashes -->
 <div style="position:relative;z-index:1;padding:80px 0 0;max-width:960px;">
     <span class="overline" style="margin-bottom:28px;">Services</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">Custom websites and ongoing care for the practices doing this differently.</h1>
+    <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">Custom patient acquisition systems for the practices doing this differently.</h1>
     <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
       <a href="/contact" data-book style="display:inline-block;background:#474D73;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Cash-Pay Clarity Call &rarr;</a>
     </div>
@@ -247,26 +256,26 @@
     <div>
       <span class="overline">Who It&rsquo;s For</span>
       <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:32px;">For the practitioners whose work already has weight.</h2>
-      <p style="font-size:16px;line-height:1.8;color:var(--dark);margin-bottom:48px;">My clients run private-pay practices in women&rsquo;s health. They&rsquo;ve put years into building something patients can tell is real. The website I build them is meant to do the same thing, in the same voice, for the patients who haven&rsquo;t met them yet.</p>
+      <p style="font-size:16px;line-height:1.8;color:var(--dark);margin-bottom:48px;">I work with clients who run private-pay practices in women&rsquo;s health. They&rsquo;ve put years into building something patients can tell is real. The system I build with them is meant to do the same thing, in the same voice, for the patients who haven&rsquo;t met them yet.</p>
 
       <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:24px;">This is for you if&hellip;</p>
 
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <span style="color:var(--accent);font-family:var(--font-display);font-size:18px;line-height:1.6;flex-shrink:0;">-</span>
-          <p style="font-size:16px;line-height:1.75;color:var(--dark);">Your in-person experience is already high-quality, but the website doesn&rsquo;t show it</p>
+          <p style="font-size:16px;line-height:1.75;color:var(--dark);">Your in-person experience is already high-quality, but what patients see online doesn&rsquo;t show it</p>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <span style="color:var(--accent);font-family:var(--font-display);font-size:18px;line-height:1.6;flex-shrink:0;">-</span>
-          <p style="font-size:16px;line-height:1.75;color:var(--dark);">You&rsquo;ve outgrown your current site, or never had one worth having</p>
+          <p style="font-size:16px;line-height:1.75;color:var(--dark);">You&rsquo;re getting found, but not by the right patients, or you&rsquo;re not getting found at all</p>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <span style="color:var(--accent);font-family:var(--font-display);font-size:18px;line-height:1.6;flex-shrink:0;">-</span>
-          <p style="font-size:16px;line-height:1.75;color:var(--dark);">You want one person who handles it and stays on it, not a handoff to someone you&rsquo;ve never met</p>
+          <p style="font-size:16px;line-height:1.75;color:var(--dark);">You want one person who handles the strategy, the build, and the follow-through, not a handoff to someone you&rsquo;ve never met</p>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <span style="color:var(--accent);font-family:var(--font-display);font-size:18px;line-height:1.6;flex-shrink:0;">-</span>
-          <p style="font-size:16px;line-height:1.75;color:var(--dark);">You treat the website like an investment, not an expense</p>
+          <p style="font-size:16px;line-height:1.75;color:var(--dark);">You treat your patient pipeline like an investment, not an expense</p>
         </div>
       </div>
     </div>
@@ -274,42 +283,109 @@
   </div>
 </section>
 
-<!-- SECTION 3: WHAT'S INCLUDED -->
+<!-- SECTION 3: THREE PACKAGES -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
   <div style="max-width:1100px;margin:0 auto;position:relative;">
-    <span class="overline">What&rsquo;s Included</span>
-    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;max-width:740px;">A website built specifically for your practice, plus the strategy, copy, and ongoing support that make it work.</h2>
+    <span class="overline">Three ways to work together</span>
+    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:24px;max-width:740px;">Choose where you want to start.</h2>
+    <p style="font-size:16px;line-height:1.8;color:var(--dark);margin-bottom:56px;max-width:740px;">Every package is built around the patient journey: how a patient finds you, decides to book, and stays connected after their first visit. Where each one starts depends on what you already have in place and how much of the work you want to do yourself.</p>
+
+    <div class="pkg-grid">
+
+      <!-- Card 01: Seed -->
+      <div class="pkg-card">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">01</span>
+        <h3 style="font-size:22px;letter-spacing:-0.5px;font-weight:400;margin-bottom:4px;">Seed</h3>
+        <p style="font-size:14px;font-style:italic;color:var(--dark);line-height:1.4;">Strategy Consulting</p>
+        <p class="pkg-price">$1,997</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">The full roadmap. Together we map out how patients will find your practice, what your website needs to do to convert them, and how email keeps the relationship going. You leave with a clear plan and the confidence to execute it.</p>
+        <ul class="pkg-includes">
+          <li>Social media attraction strategy</li>
+          <li>Website content and conversion planning</li>
+          <li>Email nurture workflow blueprint</li>
+          <li>Personalized patient journey roadmap</li>
+        </ul>
+        <p class="pkg-best">Best for: Practitioners who want expert direction and are ready to execute themselves.</p>
+        <a href="/contact" data-book style="display:inline-block;margin-top:32px;background:#474D73;color:#fff;padding:12px 28px;font-size:13px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Cash-Pay Clarity Call &rarr;</a>
+      </div>
+
+      <!-- Card 02: Bloom (featured) -->
+      <div class="pkg-card featured">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">02</span>
+        <h3 style="font-size:22px;letter-spacing:-0.5px;font-weight:400;margin-bottom:4px;">Bloom</h3>
+        <p style="font-size:14px;font-style:italic;color:var(--dark);line-height:1.4;">Strategy + Website Build</p>
+        <span style="display:inline-block;background:var(--accent);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;padding:3px 10px;text-transform:uppercase;margin-bottom:12px;">Launch Special</span>
+        <p class="pkg-price"><s style="font-size:0.72em;color:var(--mid);font-weight:400;opacity:0.7;">$9,000</s> $5,400</p>
+        <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:1px;color:var(--mid);margin-top:-8px;margin-bottom:16px;">Through August 30, 2026</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Everything in Seed, plus I build your website for you. Designed around the strategy we mapped, written for the patients you actually want, and structured to convert visitors into booked appointments.</p>
+        <ul class="pkg-includes">
+          <li>Everything in Seed</li>
+          <li>Custom website design and development</li>
+          <li>Conversion-focused copy written by hand</li>
+          <li>Launch-ready site optimized for your ideal patient</li>
+        </ul>
+        <p class="pkg-best">Best for: Practitioners who want a done-for-you website backed by real strategy.</p>
+        <a href="/contact" data-book style="display:inline-block;margin-top:32px;background:#474D73;color:#fff;padding:12px 28px;font-size:13px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Cash-Pay Clarity Call &rarr;</a>
+      </div>
+
+      <!-- Card 03: Flourish -->
+      <div class="pkg-card">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">03</span>
+        <h3 style="font-size:22px;letter-spacing:-0.5px;font-weight:400;margin-bottom:4px;">Flourish</h3>
+        <p style="font-size:14px;font-style:italic;color:var(--dark);line-height:1.4;">Full Patient Journey System</p>
+        <p class="pkg-price">Starting at $12,000</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);">The complete done-for-you experience. Strategy, website, and email nurture working together. Every touchpoint from first search to repeat appointment is built and consulted on as one system, not three separate pieces.</p>
+        <ul class="pkg-includes">
+          <li>Everything in Bloom</li>
+          <li>Email workflow setup and consultation</li>
+          <li>Ongoing nurture strategy guidance</li>
+          <li>Full patient journey optimization</li>
+        </ul>
+        <p class="pkg-best">Best for: Practitioners ready to invest in a full system that attracts, converts, and retains patients.</p>
+        <a href="/contact" data-book style="display:inline-block;margin-top:32px;background:#474D73;color:#fff;padding:12px 28px;font-size:13px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Cash-Pay Clarity Call &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: WHAT'S ALWAYS INCLUDED -->
+<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
+    <span class="overline">What&rsquo;s Always Included</span>
+    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:24px;max-width:740px;">The work behind every package.</h2>
+    <p style="font-size:16px;line-height:1.8;color:var(--dark);margin-bottom:56px;max-width:740px;">No matter which tier you start with, every engagement is built on the same foundation.</p>
 
     <div class="included-grid">
 
       <div class="included-cell">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">01</span>
-        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Custom design, top to bottom</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">No recycled layouts from other practices. Your site is built around your patients, your services, and how they actually search for what you do.</p>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Custom strategy, top to bottom</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">No recycled playbooks from other practices. Your strategy is built around your patients, your services, and how they actually search for and decide on care.</p>
       </div>
 
       <div class="included-cell">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">02</span>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Strategic copywriting</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">I write your pages while I design them, so the words and the layout shape each other. Every headline earns its place.</p>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Whether I&rsquo;m guiding you to write it or writing it myself, every word is tailored to the patient you&rsquo;re trying to reach and the decision you&rsquo;re trying to help them make.</p>
       </div>
 
       <div class="included-cell">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">03</span>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Local SEO foundations</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Service pages built to rank for what your patients actually search for. Plus a Google Business Profile setup that helps you show up in the local map.</p>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Pages and structure designed to rank for what your patients are actually searching. Plus Google Business Profile guidance that helps you show up in the local map.</p>
       </div>
 
       <div class="included-cell">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">04</span>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Booking and conversion paths</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Clear ways for a patient to book, call, or message from every page. No dead ends. No &ldquo;contact us&rdquo; as the only option.</p>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Clear ways for a patient to book, call, or message from every touchpoint. No dead ends. No &ldquo;contact us&rdquo; as the only option.</p>
       </div>
 
       <div class="included-cell">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">05</span>
-        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Ongoing care</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Hosting, security, backups, and up to 60 minutes of content changes every month. The site stays current without you touching it.</p>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Email nurture strategy</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">A plan for the patients who aren&rsquo;t ready to book yet. Whether we set it up together or I build it for you, your email keeps the conversation going.</p>
       </div>
 
       <div class="included-cell">
@@ -319,28 +395,28 @@
       </div>
 
     </div>
-    <p style="margin-top:28px;font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;color:var(--accent);">Every site is built on WordPress, a platform you own and can grow with.</p>
+    <p style="margin-top:28px;font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;color:var(--accent);">Every website is built on WordPress, a platform you own and can grow with.</p>
   </div>
 </section>
 
-<!-- SECTION 4: HOW IT WORKS -->
+<!-- SECTION 5: HOW IT WORKS -->
 <section class="reveal sp" style="padding:100px 48px;background:var(--tone);border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <span class="overline">How It Works</span>
-    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;max-width:640px;">Three steps from first call to launched site.</h2>
+    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;max-width:640px;">Three steps from first call to launched system.</h2>
 
     <div class="how-it-works-grid" style="display:grid;grid-template-columns:repeat(3,1fr);">
 
       <div class="process-step" style="padding:40px;">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">01</span>
-        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Discovery and planning</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">We start with a real conversation about your practice, your patients, and the website you actually need. From there, I map out the pages, the structure, and the strategy. You get a clear plan before any design work begins.</p>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Discovery and strategy</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">We start with a real conversation about your practice, your patients, and the system you actually need. From there, I map out the strategy: how patients will find you, what your website has to do, and how email keeps them engaged. You get a clear plan before any build work begins.</p>
       </div>
 
       <div class="process-step" style="padding:40px;">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">02</span>
-        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Copy, design, and build</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">I write your pages, design them, and build the site, all of it. You see the work as it comes together, with check-ins along the way. Nothing gets handed off to a third party.</p>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Build and consult</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Depending on your package, I build the pieces that need building, the website, the email workflow, the conversion paths, and consult on the rest. You see the work as it comes together, with check-ins along the way.</p>
       </div>
 
       <div class="process-step" style="padding:40px;">
@@ -353,7 +429,7 @@
   </div>
 </section>
 
-<!-- SECTION 5: FAQ -->
+<!-- SECTION 6: FAQ -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);background:var(--white);">
   <div style="max-width:840px;margin:0 auto;">
     <span class="overline">Common Questions</span>
@@ -366,7 +442,7 @@
 
     <div class="faq-row">
       <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">Can you write copy that actually sounds like my practice?</p>
-      <p style="font-size:17px;line-height:1.8;color:var(--dark);">Yes. I write every page before I design it, and I write to the actual patient you&rsquo;re trying to attract. The tone, the language, and the angle are all tailored to who your patients are and how they make decisions.</p>
+      <p style="font-size:17px;line-height:1.8;color:var(--dark);">Yes. Whether I&rsquo;m writing it for you or guiding you through it, every page is written for the actual patient you&rsquo;re trying to attract. The tone, the language, and the angle are all tailored to who your patients are and how they make decisions.</p>
     </div>
 
     <div class="faq-row">
@@ -385,8 +461,13 @@
     </div>
 
     <div class="faq-row">
+      <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">How do I know which package is right for me?</p>
+      <p style="font-size:17px;line-height:1.8;color:var(--dark);">That&rsquo;s what the clarity call is for. We&rsquo;ll talk through what you already have in place, what&rsquo;s missing, and which tier makes sense for where you are right now. If you start with Seed and decide later you want me to build it, you can move up.</p>
+    </div>
+
+    <div class="faq-row">
       <p style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);letter-spacing:-0.5px;line-height:1.3;margin-bottom:16px;font-weight:400;">Can I edit the site myself after launch?</p>
-      <p style="font-size:17px;line-height:1.8;color:var(--dark);">You can, but most of my clients don&rsquo;t want to. That&rsquo;s what ongoing care is for. I handle the updates, the new service pages, the seasonal changes. You stay focused on your patients.</p>
+      <p style="font-size:17px;line-height:1.8;color:var(--dark);">You can, but most of my clients don&rsquo;t want to. That&rsquo;s what ongoing care is for. I handle the updates, the new service pages, the email tweaks, the seasonal changes. You stay focused on your patients.</p>
     </div>
 
   </div>
