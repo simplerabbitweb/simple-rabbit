@@ -102,7 +102,7 @@
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    @media(max-width:768px){.home-hero{padding:48px 24px 30px!important;justify-content:flex-start!important;}.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    @media(max-width:768px){.home-hero{grid-template-columns:1fr!important;min-height:auto!important;}.home-hero>div:last-child{height:360px;}.home-hero>div:first-child{padding:56px 24px 40px!important;}.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     @media(max-width:768px){
       .hero-h1{font-size:clamp(36px,9vw,84px)!important;letter-spacing:-1.5px!important;}
@@ -268,16 +268,21 @@
 
 
 <!-- 1. HERO -->
-<section class="home-hero" style="display:flex;flex-direction:column;justify-content:flex-start;padding:80px 48px;position:relative;background:#ffffff;overflow:hidden;">
+<section class="home-hero" style="display:grid;grid-template-columns:1fr 1fr;min-height:88vh;position:relative;background:#ffffff;overflow:hidden;">
   <div class="hero-grain"></div>
-<div style="position:relative;z-index:1;padding:0;max-width:960px;">
+  <!-- Left: text -->
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;">
     <span class="overline" style="margin-bottom:28px;">Custom websites &middot; Local SEO &middot; Care plans</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">Attract the patients who&rsquo;d rather pay out-of-pocket than be rushed.</h1>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:44px;">
+    <h1 style="font-family:var(--font-display);font-size:clamp(36px,4.8vw,72px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">Attract the patients who&rsquo;d rather pay out-of-pocket than be rushed.</h1>
+    <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.75;color:rgba(0,0,0,0.6);margin-bottom:40px;max-width:520px;">The complete patient journey, built with you. We map the strategy, build the website and email pieces that need building, and guide the rest so your practice gets found, converts, and books.</p>
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
       <a href="/contact" data-book style="display:inline-block;background:#474D73;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Clarity Call</a>
       <a href="/portfolio" style="font-size:14px;color:var(--accent);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;font-family:var(--font-body);">See our work &rarr;</a>
     </div>
-    <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.75;color:rgba(0,0,0,0.6);margin-top:32px;max-width:600px;">The complete patient journey, built with you. We map the strategy, build the website and email pieces that need building, and guide the rest so your practice gets found, converts, and books.</p>
+  </div>
+  <!-- Right: photo -->
+  <div style="overflow:hidden;">
+    <img src="homepage-hero.jpg" alt="Leann Frank, Simple Rabbit" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
   </div>
 </section>
 
