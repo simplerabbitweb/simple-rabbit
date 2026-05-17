@@ -197,7 +197,7 @@
 
     <!-- Calendar embed -->
     <div style="background:var(--white);border:1px solid var(--light-border);overflow:hidden;">
-      <iframe src="https://calendar.notion.so/meet/leann-2c21ga2e5y/cash-pay-clarity-call" style="width:100%;height:1000px;border:none;display:block;" loading="lazy" title="Book a Cash-Pay Clarity Call"></iframe>
+      <iframe src="https://calendar.notion.so/meet/leann-2c21ga2e5y/cash-pay-clarity-call" style="width:100%;height:1000px;border:none;display:block;" title="Book a Cash-Pay Clarity Call"></iframe>
     </div>
 
   </div>
@@ -237,51 +237,6 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
 
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    // Validate checkboxes
-    const checked = this.querySelectorAll('[name="client_source"]:checked');
-    const csError = document.getElementById('client-source-error');
-    if (checked.length === 0) {
-      csError.style.display = 'block';
-      return;
-    } else {
-      csError.style.display = 'none';
-    }
-    const btn = this.querySelector('[type=submit]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    try {
-      const formEmail = this.email.value;
-      const res = await fetch('https://formspree.io/f/mojndlrg', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          email: formEmail,
-          first_name: this.first_name.value,
-          last_name: this.last_name.value,
-          business_name: this.business_name.value,
-          years_in_business: this.years_in_business.value,
-          website: this.website.value,
-          referral: this.referral.value,
-          project_type: this.project_type.value,
-          client_source: Array.from(checked).map(cb => cb.value).join(', '),
-          timeline: this.timeline.value,
-          message: this.message.value
-        })
-      });
-      if (res.ok) {
-        window.location.href = '/thank-you';
-      } else {
-        btn.textContent = 'Send my details \u2192';
-        btn.disabled = false;
-        document.getElementById('form-error').style.display = 'block';
-      }
-    } catch(err) {
-      btn.textContent = 'Send my details \u2192';
-      btn.disabled = false;
-    }
-  });
 </script>
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
