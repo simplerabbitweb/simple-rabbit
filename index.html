@@ -481,7 +481,7 @@
 
 <!-- 9. FINAL CTA -->
 <section class="home-cta" style="position:relative;aspect-ratio:2048/1367;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;background-attachment:scroll;"></div>
+  <div data-parallax-bg style="position:absolute;left:0;right:0;top:-20%;height:140%;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;will-change:transform;"></div>
   <div style="position:relative;z-index:1;background:rgba(255,255,255,0.72);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:560px;width:calc(100% - 48px);text-align:center;" class="cta-box">
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#000;display:block;margin-bottom:16px;">Ready when you are</span>
     <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#000;">Imagine a practice that brings the right patients in on its own.</h2>
@@ -526,6 +526,20 @@
   }, { threshold: 0 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
+
+  // Parallax CTA
+  (function(){
+    var bg = document.querySelector('[data-parallax-bg]');
+    if (!bg) return;
+    var section = bg.parentElement;
+    function tick() {
+      var r = section.getBoundingClientRect();
+      var progress = -r.top / (r.height + window.innerHeight);
+      bg.style.transform = 'translateY(' + (progress * 25) + '%)';
+    }
+    window.addEventListener('scroll', tick, {passive: true});
+    tick();
+  })();
 
 </script>
 <script>
