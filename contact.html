@@ -44,7 +44,7 @@
     .nav-item:hover .nav-dropdown{display:block;}
     .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
     .nav-dropdown a:last-child{border-bottom:none;}
-    .nav-dropdown a:hover{background:var(--tone);color:var(--black);}
+    .nav-dropdown a:hover{background:#FAF8F4;color:var(--black);}
     .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
     .mobile-nav-sub:hover{color:var(--white)!important;}
     .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
@@ -62,6 +62,11 @@
     .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
     .form-group{margin-bottom:28px;}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .contact-cols{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--light-border);}
+    .contact-form-col{padding:56px 48px;border-right:1px solid var(--light-border);}
+    .contact-book-col{background:#FAF8F4;padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
+    textarea.form-input{resize:vertical;min-height:120px;padding-top:8px;}
+    .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
     footer{display:block;padding:0;border:none;}
     .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:#fff;}
@@ -75,6 +80,10 @@
       .grid-2{grid-template-columns:1fr!important;gap:48px!important;}
       .footer-cols{grid-template-columns:1fr!important;}
       .contact-intro-grid{grid-template-columns:1fr!important;gap:40px!important;}
+      .contact-cols{grid-template-columns:1fr!important;}
+      .contact-form-col{border-right:none!important;border-bottom:1px solid var(--light-border);}
+      .contact-form-col,.contact-book-col{padding:40px 28px!important;}
+      .form-row-2{grid-template-columns:1fr!important;}
     }
     @media(max-width:600px){
       .form-row{grid-template-columns:1fr!important;}
@@ -172,18 +181,59 @@
   </div>
 </section>
 
-<!-- 2. BOOKING -->
+<!-- 2. CONTACT + BOOKING -->
 <section class="reveal sp" style="padding:80px 48px;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
+    <div class="contact-cols">
 
-    <!-- Booking CTA -->
-    <div style="background:var(--tone);padding:56px 48px;text-align:center;">
-      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Schedule a time</p>
-      <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);letter-spacing:-1px;font-weight:400;margin-bottom:12px;">Pick a time that works for you.</h2>
-      <p style="font-size:16px;line-height:1.75;color:var(--dark);max-width:480px;margin:0 auto 32px;">30 minutes, no charge. Opens in a new tab so you can pick a time directly.</p>
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="btn-primary">Book a Clarity Call &rarr;</a>
+      <!-- Left: Short form -->
+      <div class="contact-form-col">
+        <span class="overline">Send a message</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(22px,2.2vw,28px);letter-spacing:-0.5px;font-weight:400;margin-bottom:10px;line-height:1.2;">Have a question first?</h2>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:36px;">Can&rsquo;t find a time, not ready to book, or just want to ask something first &mdash; send a message and we&rsquo;ll get back to you within one business day.</p>
+        <form action="https://formspree.io/f/mojndlrg" method="POST">
+          <input type="hidden" name="_next" value="https://simplerabbit.studio/thank-you">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Your name</label>
+              <input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email address</label>
+              <input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@yourpractice.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-message">Your message</label>
+            <textarea class="form-input" id="cf-message" name="message" placeholder="Tell us a bit about your practice and what you&rsquo;re looking for..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send message &rarr;</button>
+        </form>
+      </div>
+
+      <!-- Right: Book a Clarity Call -->
+      <div class="contact-book-col">
+        <span class="overline">Free 30-Minute Call</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(24px,2.5vw,32px);letter-spacing:-1px;font-weight:400;margin-bottom:12px;line-height:1.15;">Book a Clarity Call</h2>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">Not sure if your website is costing you patients? Book a free 30-minute call and we will look at it together.</p>
+        <div style="border-top:1px solid var(--light-border);margin-bottom:36px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--light-border);">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Duration</span>
+            <span style="font-size:14px;color:var(--dark);">30 minutes</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--light-border);">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Format</span>
+            <span style="font-size:14px;color:var(--dark);">Google Meet</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--light-border);">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Cost</span>
+            <span style="font-size:14px;color:var(--dark);">Free</span>
+          </div>
+        </div>
+        <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="btn-primary">Book a Clarity Call &rarr;</a>
+      </div>
+
     </div>
-
   </div>
 </section>
 

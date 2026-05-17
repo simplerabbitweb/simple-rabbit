@@ -47,7 +47,7 @@
     .nav-item:hover .nav-dropdown{display:block;}
     .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
     .nav-dropdown a:last-child{border-bottom:none;}
-    .nav-dropdown a:hover{background:var(--tone);color:var(--black);}
+    .nav-dropdown a:hover{background:#FAF8F4;color:var(--black);}
     .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
     .mobile-nav-sub:hover{color:var(--white)!important;}
     .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
@@ -68,7 +68,7 @@
     .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
     .footer-link:hover{color:#fff;}
     .process-step{transition:background 0.2s;}
-    .process-step:hover{background:var(--tone);}
+    .process-step:hover{background:#FAF8F4;}
     .included-grid{display:grid;grid-template-columns:1fr 1fr;}
     .included-cell{padding:40px 40px;}
     .faq-row{border-bottom:1px solid var(--light-border);padding:32px 0;}
@@ -111,6 +111,11 @@
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
     .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
+    /* Clarity Review audit card */
+    .audit-card-grid{background:#FAF8F4;border:1px solid var(--light-border);display:grid;grid-template-columns:1fr 2fr;}
+    .audit-card-visual{overflow:hidden;border-right:1px solid var(--light-border);min-height:300px;}
+    .audit-card-content{padding:48px;display:flex;flex-direction:column;}
+    @media(max-width:900px){.audit-card-grid{grid-template-columns:1fr!important;}.audit-card-visual{border-right:none!important;border-bottom:1px solid var(--light-border);min-height:260px!important;}.audit-card-content{padding:32px!important;}}
     @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
 
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
@@ -349,6 +354,32 @@
   </div>
 </section>
 
+<!-- SECTION: WEBSITE & GOOGLE CLARITY REVIEW -->
+<section id="clarity-review" class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);background:var(--white);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline" style="margin-bottom:32px;">Before you commit</span>
+    <article class="audit-card-grid" aria-label="Website and Google Clarity Review">
+
+      <!-- Left: visual -->
+      <div class="audit-card-visual">
+        <img src="/clarity-review.jpg" alt="Practitioner reviewing her website audit" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+
+      <!-- Right: content -->
+      <div class="audit-card-content">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px;">One-time</span>
+        <h3 style="font-size:22px;letter-spacing:-0.5px;font-weight:400;margin-bottom:4px;">Website &amp; Google Clarity Review</h3>
+        <p class="pkg-price">$297</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:0;">Not sure what your website is actually missing? The Clarity Review gives you a complete picture of what is costing you patients, delivered as a written PDF report and a private video walkthrough, in 5 business days.</p>
+        <p class="pkg-best">Best for: Practitioners who want to know what&rsquo;s broken before committing to a full redesign.</p>
+        <a href="/website-audit" class="btn-primary" style="display:inline-block;margin-top:24px;">Learn more &rarr;</a>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
 <!-- SECTION 4: WHAT'S ALWAYS INCLUDED -->
 <section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);position:relative;overflow:hidden;">
   <div style="max-width:1100px;margin:0 auto;position:relative;">
@@ -400,7 +431,7 @@
 </section>
 
 <!-- SECTION 5: HOW IT WORKS -->
-<section class="reveal sp" style="padding:100px 48px;background:var(--tone);border-bottom:1px solid var(--light-border);">
+<section class="reveal sp" style="padding:100px 48px;background:#FAF8F4;border-bottom:1px solid var(--light-border);">
   <div style="max-width:1100px;margin:0 auto;">
     <span class="overline">How It Works</span>
     <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;max-width:640px;">Three steps from first call to launched system.</h2>
