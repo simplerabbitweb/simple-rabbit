@@ -200,8 +200,8 @@ CSS = """
       --accent:#AA737D;--accent-dark:#8a5d66;
       --mid:#111;--dark:#333;--light-border:#dfe0e1;
       --font-display:'Raleway',sans-serif;
-      --font-body:'Outfit',system-ui,sans-serif;
-      --font-mono:'DM Mono',monospace;
+      --font-body:'DM Sans',system-ui,sans-serif;
+      --font-mono:'DM Sans',sans-serif;
     }
     html{overflow-x:hidden;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
     h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-0.5px;font-weight:400;}
@@ -347,7 +347,7 @@ PUBLISHED: {pub_date_display}
   <link rel="canonical" href="https://simplerabbit.studio/blog/{slug}">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
   <style>{CSS}  </style>
