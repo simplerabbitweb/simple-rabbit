@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIW Timeline Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{--accent:#AA737D;--dark:#555;--black:#000;--white:#fff;--light-border:#dfe0e1;--mid:#888;--font-display:'Raleway',sans-serif;--font-body:'DM Sans',system-ui,sans-serif;--font-mono:'DM Sans',sans-serif;}
+  body{font-family:var(--font-body);background:#f0eeea;-webkit-font-smoothing:antialiased;padding:48px;}
+  .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;}
+
+  .hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:1;}
+  .hiw-steps::before{content:'';position:absolute;top:19px;left:calc(100%/6);right:calc(100%/6);height:1px;background:var(--light-border);z-index:0;}
+  .hiw-node{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--accent);background:#FAF8F4;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;letter-spacing:1px;color:var(--accent);margin:0 auto 32px;position:relative;z-index:1;}
+  .hiw-step{padding:0 40px 40px;}
+
+  @media(max-width:900px){
+    .hiw-steps{grid-template-columns:1fr!important;}
+    .hiw-steps::before{display:none!important;}
+    .hiw-step{padding:0 0 40px 64px!important;position:relative;}
+    .hiw-step::before{content:'';position:absolute;top:40px;left:19px;width:1px;bottom:0;background:var(--light-border);}
+    .hiw-step:last-child::before{display:none!important;}
+    .hiw-node{margin:0 0 20px!important;position:absolute!important;left:0!important;top:0!important;}
+  }
+</style>
+</head>
+<body>
+<section style="background:#FAF8F4;padding:60px 48px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="overline">How It Works</span>
+    <h2 style="font-family:var(--font-display);font-size:38px;line-height:1.15;margin-bottom:56px;font-weight:400;">Three steps from first call to launched system.</h2>
+
+    <div class="hiw-steps">
+
+      <div class="hiw-step">
+        <div class="hiw-node">01</div>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Discovery and strategy</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">I start with a real conversation about your practice, your patients, and the system you actually need. From there, I map out the strategy: how patients will find you, what your website has to do, and how email keeps them engaged. You get a clear plan before any build work begins.</p>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-node">02</div>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Build and consult</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">Depending on your package, I build the pieces that need building, the website, the email workflow, the conversion paths, and consult on the rest. You see the work as it comes together, with check-ins along the way.</p>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-node">03</div>
+        <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Launch and care</h3>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">I launch when the site is ready, not when a deadline says so. The day it goes live, your care plan starts. Hosting, security, updates, and content changes are handled from there.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</body>
+</html>
