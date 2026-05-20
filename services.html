@@ -77,7 +77,12 @@
     .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--light-border);}
     .pkg-card{padding:40px;border-right:1px solid var(--light-border);display:flex;flex-direction:column;}
     .pkg-card:last-child{border-right:none;}
-    .pkg-card.featured{border-top:3px solid var(--accent);}
+    .pkg-card.featured{background:#474D73;color:#fff;border-top:none;}
+    .pkg-card.featured h3{color:#fff;}
+    .pkg-card.featured .pkg-price{color:#fff;}
+    .pkg-card.featured .pkg-best{color:rgba(255,255,255,0.6);border-top-color:rgba(255,255,255,0.15);}
+    .pkg-card.featured .pkg-includes li{color:rgba(255,255,255,0.85);}
+    .pkg-card.featured .pkg-includes li::before{color:rgba(255,255,255,0.5);}
     .pkg-price{font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);letter-spacing:-0.5px;font-weight:400;color:var(--black);margin:16px 0;}
     .pkg-includes{list-style:none;margin:24px 0;display:flex;flex-direction:column;gap:10px;}
     .pkg-includes li{font-size:15px;line-height:1.6;color:var(--dark);padding-left:20px;position:relative;}
@@ -318,11 +323,11 @@
       <div class="pkg-card featured">
         <img src="Line icons/bloom.png" alt="Bloom" width="80" height="80" style="width:80px;height:80px;object-fit:contain;display:block;margin-bottom:24px;filter:invert(1);opacity:0.85;">
         <h3 style="font-size:22px;letter-spacing:-0.5px;font-weight:400;margin-bottom:4px;">Bloom</h3>
-        <p style="font-size:14px;font-style:italic;color:var(--dark);line-height:1.4;">Strategy + Website Build</p>
-        <span style="display:inline-block;background:var(--accent);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;padding:3px 10px;text-transform:uppercase;margin-bottom:12px;">Launch Special</span>
-        <p class="pkg-price">Starting at <s style="font-size:0.72em;color:var(--mid);font-weight:400;opacity:0.7;">$9,000</s> $5,400</p>
-        <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:1px;color:var(--mid);margin-top:-8px;margin-bottom:16px;">Through August 30, 2026</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);">Everything in Seed, plus I build your website for you. Designed around the strategy we mapped, written for the patients you actually want, and structured to convert visitors into booked appointments.</p>
+        <p style="font-size:14px;font-style:italic;color:rgba(255,255,255,0.7);line-height:1.4;">Strategy + Website Build</p>
+        <span style="display:inline-block;background:rgba(255,255,255,0.2);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;padding:3px 10px;text-transform:uppercase;margin-bottom:12px;">Launch Special</span>
+        <p class="pkg-price">Starting at <s style="font-size:0.72em;color:rgba(255,255,255,0.45);font-weight:400;">$9,000</s> $5,400</p>
+        <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-top:-8px;margin-bottom:16px;">Through August 30, 2026</p>
+        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.82);">Everything in Seed, plus I build your website for you. Designed around the strategy we mapped, written for the patients you actually want, and structured to convert visitors into booked appointments.</p>
         <ul class="pkg-includes">
           <li>Everything in Seed</li>
           <li>Custom website design and development</li>
@@ -330,7 +335,7 @@
           <li>Launch-ready site optimized for your ideal patient</li>
         </ul>
         <p class="pkg-best">Best for: Practitioners who want a done-for-you website backed by real strategy.</p>
-        <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" style="display:inline-block;margin-top:32px;background:#474D73;color:#fff;padding:12px 28px;font-size:13px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Clarity Call &rarr;</a>
+        <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" style="display:inline-block;margin-top:32px;background:#fff;color:#474D73;padding:12px 28px;font-size:13px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Clarity Call &rarr;</a>
       </div>
 
       <!-- Card 03: Flourish -->
