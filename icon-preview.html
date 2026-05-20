@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Icon Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --accent:#AA737D;--dark:#333;--black:#000;--white:#fff;--light-border:#dfe0e1;--tone:#E2D8D6;
+    --font-display:'Raleway',sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-mono:'DM Sans',sans-serif;
+  }
+  body{font-family:var(--font-body);background:#f0eeea;color:var(--black);-webkit-font-smoothing:antialiased;padding:40px 48px;}
+  .section-label{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:16px;display:block;}
+  .panel{background:#FAF8F4;padding:56px 56px 48px;margin-bottom:32px;}
+  .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;}
+  .section-title{font-family:var(--font-display);font-size:36px;font-weight:400;letter-spacing:-1.5px;line-height:1.1;margin-bottom:48px;max-width:560px;}
+
+  /* ---- INDUSTRY GRID (Option C) ---- */
+  .industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+  .industry-card{background:#fff;padding:36px 24px 28px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;}
+  .industry-card img{width:110px;height:110px;object-fit:contain;object-position:center;}
+  .industry-card h3{font-family:var(--font-display);font-size:14px;font-weight:400;line-height:1.4;color:var(--black);}
+  .industry-card a{color:inherit;text-decoration:none;}
+
+  /* ---- PACKAGE CARDS ---- */
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
+  .pkg-card{background:#fff;padding:36px 32px 40px;display:flex;flex-direction:column;gap:0;position:relative;}
+  .pkg-card.featured{background:#474D73;color:#fff;}
+  .pkg-icon{width:80px;height:80px;object-fit:contain;object-position:center;margin-bottom:24px;display:block;}
+  .pkg-num{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;}
+  .pkg-card.featured .pkg-num{color:rgba(255,255,255,0.55);}
+  .pkg-name{font-family:var(--font-display);font-size:24px;letter-spacing:-0.5px;font-weight:400;margin-bottom:4px;}
+  .pkg-type{font-size:14px;font-style:italic;color:var(--dark);line-height:1.4;margin-bottom:16px;}
+  .pkg-card.featured .pkg-type{color:rgba(255,255,255,0.7);}
+  .pkg-price{font-family:var(--font-display);font-size:28px;font-weight:400;letter-spacing:-1px;color:var(--black);margin-bottom:16px;}
+  .pkg-card.featured .pkg-price{color:#fff;}
+  .pkg-desc{font-size:14px;line-height:1.75;color:var(--dark);margin-bottom:24px;}
+  .pkg-card.featured .pkg-desc{color:rgba(255,255,255,0.8);}
+  .pkg-list{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:8px;}
+  .pkg-list li{font-size:13px;line-height:1.5;color:var(--dark);padding-left:16px;position:relative;}
+  .pkg-list li::before{content:'—';position:absolute;left:0;color:var(--accent);}
+  .pkg-card.featured .pkg-list li{color:rgba(255,255,255,0.8);}
+  .pkg-list.featured li::before{color:rgba(255,255,255,0.5);}
+  .pkg-btn{display:inline-block;background:#474D73;color:#fff;padding:12px 28px;font-size:13px;font-weight:500;text-decoration:none;margin-top:auto;}
+  .pkg-card.featured .pkg-btn{background:#fff;color:#474D73;}
+</style>
+</head>
+<body>
+
+<!-- INDUSTRY SECTION -->
+<span class="section-label">Who it's for — industry grid with illustrations (Option C)</span>
+<div class="panel">
+  <span class="overline">Who it&rsquo;s for</span>
+  <h2 class="section-title">Private-pay women&rsquo;s medical practices ready to grow.</h2>
+  <div class="industry-grid">
+    <div class="industry-card">
+      <img src="Line%20icons/hormone-and-menopause-care.png" alt="Women's hormone and menopause care">
+      <h3><a href="/menopause-practice-web-design">Women&rsquo;s hormone and menopause care</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/funtional-and-integrative.png" alt="Functional and integrative medicine">
+      <h3><a href="/functional-medicine-web-design">Functional and integrative medicine</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/holistic-gynecology.png" alt="Holistic gynecology">
+      <h3><a href="/holistic-gynecology-web-design">Holistic gynecology</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/concierge-and-direct-primary-care.png" alt="Concierge and direct primary care">
+      <h3><a href="/concierge-primary-care-web-design">Concierge and direct primary care</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/fertility-and-preconception.png" alt="Fertility and preconception care">
+      <h3><a href="/fertility-practice-web-design">Fertility and preconception care</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/psychiatry-and-mental-health.png" alt="Cash-pay psychiatry and mental health">
+      <h3><a href="/cash-pay-psychiatry-web-design">Cash-pay psychiatry and mental health</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/pelvic-floor-therapy.png" alt="Pelvic floor therapy">
+      <h3><a href="/pelvic-floor-physical-therapy-web-design">Pelvic floor therapy</a></h3>
+    </div>
+    <div class="industry-card">
+      <img src="Line%20icons/lactation-and-postnatal.png" alt="Lactation and postnatal care">
+      <h3><a href="/lactation-postnatal-web-design">Lactation and postnatal care</a></h3>
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGE SECTION -->
+<span class="section-label">Packages — botanical icons replacing the 01/02/03 number label</span>
+<div class="panel">
+  <span class="overline">The packages</span>
+  <h2 class="section-title">Every package is built around the patient journey.</h2>
+  <div class="pkg-grid">
+
+    <div class="pkg-card">
+      <img class="pkg-icon" src="Line%20icons/line-art-09.png" alt="Seed">
+      <span class="pkg-num">Strategy Consulting</span>
+      <div class="pkg-name">Seed</div>
+      <p class="pkg-price">$1,997</p>
+      <p class="pkg-desc">The full roadmap. Together we map out how patients will find your practice, what your website needs to do to convert them, and how email keeps the relationship going.</p>
+      <ul class="pkg-list">
+        <li>Social media attraction strategy</li>
+        <li>Website content and conversion planning</li>
+        <li>Email nurture workflow blueprint</li>
+        <li>Personalized patient journey roadmap</li>
+      </ul>
+      <a href="#" class="pkg-btn">Book a Clarity Call &rarr;</a>
+    </div>
+
+    <div class="pkg-card featured">
+      <img class="pkg-icon" src="Line%20icons/line-art-10.png" alt="Bloom" style="filter:invert(1);opacity:0.85;">
+      <span class="pkg-num">Strategy + Website Build</span>
+      <div class="pkg-name">Bloom</div>
+      <p class="pkg-price">Starting at $5,400</p>
+      <p class="pkg-desc">Everything in Seed, plus I build your website for you. Designed around the strategy we mapped, written for the patients you actually want.</p>
+      <ul class="pkg-list featured">
+        <li>Everything in Seed</li>
+        <li>Custom website design and development</li>
+        <li>Conversion-focused copy written by hand</li>
+        <li>Launch-ready site optimized for your ideal patient</li>
+      </ul>
+      <a href="#" class="pkg-btn">Book a Clarity Call &rarr;</a>
+    </div>
+
+    <div class="pkg-card">
+      <img class="pkg-icon" src="Line%20icons/line-art-14.png" alt="Flourish">
+      <span class="pkg-num">Full Patient Journey System</span>
+      <div class="pkg-name">Flourish</div>
+      <p class="pkg-price">Starting at $12,000</p>
+      <p class="pkg-desc">The complete done-for-you experience. Strategy, website, and email nurture working together as one system — not three separate pieces.</p>
+      <ul class="pkg-list">
+        <li>Everything in Bloom</li>
+        <li>Email workflow setup and consultation</li>
+        <li>Ongoing nurture strategy guidance</li>
+        <li>Full patient journey optimization</li>
+      </ul>
+      <a href="#" class="pkg-btn">Book a Clarity Call &rarr;</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
