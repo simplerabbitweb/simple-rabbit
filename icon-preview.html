@@ -21,8 +21,10 @@
 
   /* ---- INDUSTRY GRID (Option C) ---- */
   .industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-  .industry-card{background:#fff;padding:36px 24px 28px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;}
-  .industry-card img{width:110px;height:110px;object-fit:contain;object-position:center;}
+  .industry-card{background:#fff;padding:36px 24px 28px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;transition:background 0.3s ease;}
+  .industry-card:hover{background:#F5EFED;}
+  .industry-card img{width:110px;height:110px;object-fit:contain;object-position:center;transition:transform 0.35s ease;}
+  .industry-card:hover img{transform:translateY(-6px);}
   .industry-card h3{font-family:var(--font-display);font-size:14px;font-weight:400;line-height:1.4;color:var(--black);}
   .industry-card a{color:inherit;text-decoration:none;}
 

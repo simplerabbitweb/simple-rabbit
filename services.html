@@ -71,6 +71,9 @@
     .process-step:hover{background:#FAF8F4;}
     .included-grid{display:grid;grid-template-columns:1fr 1fr;}
     .included-cell{padding:40px 40px;}
+    .included-num{display:flex;flex-direction:column;align-items:flex-start;padding-top:4px;margin-bottom:16px;}
+    .included-num .step-label{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.28);margin-bottom:1px;}
+    .included-num .step-val{font-family:var(--font-mono);font-size:40px;color:var(--accent);line-height:1;}
     .faq-row{border-bottom:1px solid var(--light-border);padding:32px 0;}
     .faq-row:first-child{border-top:1px solid var(--light-border);}
     .also-avail-grid{display:grid;grid-template-columns:repeat(3,1fr);}
@@ -100,6 +103,7 @@
       .invest-blocks{flex-direction:column!important;gap:0!important;}
       .invest-block{border-right:none!important;border-bottom:1px solid var(--light-border)!important;}
       .how-it-works-grid{grid-template-columns:1fr!important;}
+      .hiw-deco{display:none!important;}
     }
     @media(max-width:600px){
       .also-avail-grid{grid-template-columns:1fr!important;}
@@ -395,37 +399,37 @@
     <div class="included-grid">
 
       <div class="included-cell">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">01</span>
+        <div class="included-num"><span class="step-label">Included</span><span class="step-val">01</span></div>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Custom strategy, top to bottom</h3>
-        <p style="font-size:17px;line-height:1.75;color:var(--dark);">No recycled playbooks from other practices. Your strategy is built around your patients, your services, and how they actually search for and decide on care.</p>
+        <p style="font-size:17px;line-height:1.75;color:var(--dark);">I use best practices and wisdom from other projects, but your strategy is built around your patients, your services, and how they actually search for and decide on care.</p>
       </div>
 
       <div class="included-cell">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">02</span>
+        <div class="included-num"><span class="step-label">Included</span><span class="step-val">02</span></div>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Strategic copywriting</h3>
         <p style="font-size:17px;line-height:1.75;color:var(--dark);">Whether I&rsquo;m guiding you to write it or writing it myself, every word is tailored to the patient you&rsquo;re trying to reach and the decision you&rsquo;re trying to help them make.</p>
       </div>
 
       <div class="included-cell">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">03</span>
+        <div class="included-num"><span class="step-label">Included</span><span class="step-val">03</span></div>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Local SEO foundations</h3>
         <p style="font-size:17px;line-height:1.75;color:var(--dark);">Pages and structure designed to rank for what your patients are actually searching. Plus Google Business Profile guidance that helps you show up in the local map.</p>
       </div>
 
       <div class="included-cell">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">04</span>
+        <div class="included-num"><span class="step-label">Included</span><span class="step-val">04</span></div>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Booking and conversion paths</h3>
         <p style="font-size:17px;line-height:1.75;color:var(--dark);">Clear ways for a patient to book, call, or message from every touchpoint. No dead ends. No &ldquo;contact us&rdquo; as the only option.</p>
       </div>
 
       <div class="included-cell">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">05</span>
+        <div class="included-num"><span class="step-label">Included</span><span class="step-val">05</span></div>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">Email nurture strategy</h3>
         <p style="font-size:17px;line-height:1.75;color:var(--dark);">A plan for the patients who aren&rsquo;t ready to book yet. Whether we set it up together or I build it for you, your email keeps the conversation going.</p>
       </div>
 
       <div class="included-cell">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">06</span>
+        <div class="included-num"><span class="step-label">Included</span><span class="step-val">06</span></div>
         <h3 style="font-size:20px;letter-spacing:-0.5px;margin-bottom:10px;font-weight:400;">One point of contact</h3>
         <p style="font-size:17px;line-height:1.75;color:var(--dark);">You work directly with <a href="/about" style="color:var(--black);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;">me</a>. Not a project manager, account exec, or an offshore team. When you email, I answer.</p>
       </div>
@@ -437,11 +441,14 @@
 
 <!-- SECTION 5: HOW IT WORKS -->
 <section class="reveal sp" style="padding:100px 48px;background:#FAF8F4;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <span class="overline">How It Works</span>
-    <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;max-width:640px;">Three steps from first call to launched system.</h2>
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
+    <img src="Line icons/service-image.png" alt="" aria-hidden="true" class="hiw-deco" style="position:absolute;top:-20px;right:0;width:300px;height:auto;pointer-events:none;z-index:0;opacity:0.9;">
+    <div style="position:relative;z-index:1;max-width:640px;">
+      <span class="overline">How It Works</span>
+      <h2 style="font-size:clamp(26px,3vw,38px);line-height:1.15;margin-bottom:56px;">Three steps from first call to launched system.</h2>
+    </div>
 
-    <div class="how-it-works-grid" style="display:grid;grid-template-columns:repeat(3,1fr);">
+    <div class="how-it-works-grid" style="display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:1;">
 
       <div class="process-step" style="padding:40px;">
         <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:14px;">01</span>

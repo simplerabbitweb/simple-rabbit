@@ -127,6 +127,10 @@
       .testi-grid{grid-template-columns:1fr!important;}
     }
     .practices-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+    .practice-card{transition:background 0.3s ease;}
+    .practice-card:hover{background:#F5EFED;}
+    .practice-card img{transition:transform 0.35s ease;}
+    .practice-card:hover img{transform:translateY(-6px);}
     @media(max-width:600px){
       .practices-grid{grid-template-columns:repeat(2,1fr);}
       .practices-section{padding-left:24px!important;padding-right:24px!important;}
