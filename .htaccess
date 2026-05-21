@@ -29,8 +29,15 @@ RewriteRule ^blog/ai-search-visibility-service-business/?$ /articles [R=301,L]
 RewriteRule ^blog/nj-businesses-need-solid-website/?$ /articles [R=301,L]
 RewriteRule ^blog/about-page-service-business/?$ /articles [R=301,L]
 
-# --- County/location pages → /articles ---
-RewriteRule ^web-design-bergen-county-nj/?$ /articles [R=301,L]
+# --- Off-niche county pages → Bergen County page (keep Bergen, retire the rest) ---
+RewriteRule ^web-design-essex-county-nj/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-hudson-county-nj/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-morris-county-nj/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-passaic-county-nj/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-sussex-county-nj/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-warren-county-nj/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-rockland-county-ny/?$ /web-design-bergen-county-nj [R=301,L]
+RewriteRule ^web-design-westchester-county-ny/?$ /web-design-bergen-county-nj [R=301,L]
 
 # --- Force HTTPS ---
 RewriteCond %{HTTPS} off
