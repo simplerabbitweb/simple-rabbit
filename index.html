@@ -93,23 +93,22 @@
     .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    .mobile-nav {
+        .mobile-nav {
       display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
-      background: var(--white); z-index: 99;
+      background: var(--white,#FDFAF7); z-index: 200;
       flex-direction: column; overflow-y: auto;
-      border-top: 1px solid var(--rule-dk);
+      border-top: 1px solid rgba(0,0,0,0.10);
     }
-    .mobile-nav.open { display: flex; }
+    .mobile-nav.open { display: flex !important; }
     .mobile-nav a {
       font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--black); padding: 22px 24px;
-      border-bottom: 1px solid var(--rule-dk); font-family: var(--font-b);
+      color: var(--black,#0A0905); padding: 22px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.10); font-family: inherit; text-decoration: none;
     }
     .mobile-nav a.mobile-nav-cta {
-      background: var(--black); color: var(--white) !important;
+      background: #0A0905; color: #FDFAF7 !important;
       text-align: center; font-weight: 600; border-bottom: none !important;
-      margin: 16px 24px; display: block; letter-spacing: 1.5px; text-transform: uppercase;
-      font-size: 15px;
+      margin: 16px 24px; display: block; letter-spacing: 1.5px; text-transform: uppercase; font-size: 15px;
     }
 
     /* ── LABELS ── */
@@ -206,32 +205,42 @@
       .hero-inner { grid-template-columns: 1fr !important; min-height: auto !important; }
       .hero-inner > div:last-child { height: 380px; }
       .hero-inner > div:first-child { padding: 64px 24px 48px !important; }
+      /* Hero eyebrow: reposition to left edge, hide line, add space above H1 */
+      .hero-eyebrow { left: 24px !important; margin-bottom: 32px !important; }
+      .hero-eyebrow-line { display: none !important; }
       .grid-2 { grid-template-columns: 1fr !important; gap: 0 !important; }
       .grid-2 > div:last-child { padding: 48px 24px !important; }
       .grid-3 { grid-template-columns: 1fr !important; gap: 2px !important; }
       .grid-cs { grid-template-columns: 1fr !important; gap: 2px !important; }
       .buckets { grid-template-columns: 1fr 1fr !important; }
-      .offer-row { flex-direction: column !important; gap: 20px !important; align-items: flex-start !important; }
+      /* Section 05 ACRR grid: stack vertically on mobile */
+      .acrr-grid { grid-template-columns: 1fr !important; }
+      /* Section 10 offers: stack with button right-aligned + padding */
+      .offer-row { flex-direction: column !important; gap: 20px !important; align-items: stretch !important; }
+      .offer-row > div:last-child { align-self: flex-end !important; padding-right: 24px !important; }
       .offer-featured { margin: 0 -24px !important; padding-left: 24px !important; padding-right: 24px !important; }
-      .featured-in-row { gap: 40px !important; }
+      .featured-in-row { gap: 40px !important; flex-wrap: nowrap !important; justify-content: space-around !important; }
     }
     @media (max-width: 768px) {
       .hamburger { display: flex !important; }
       .nav-links { display: none !important; }
       .nav-inner { padding: 0 20px !important; }
-      .nav-inner a img { max-height: 40px !important; }
+      .nav-inner a img { max-height: 52px !important; }
       .hero-h1 { font-size: clamp(36px, 10vw, 72px) !important; letter-spacing: -2px !important; }
       .buckets { grid-template-columns: 1fr !important; }
+      /* Prevent overflow — ensure text wraps */
+      * { word-wrap: break-word; overflow-wrap: break-word; }
       /* Reduce vertical padding on all sections on mobile */
       section { padding-top: 60px !important; padding-bottom: 60px !important; }
-      /* Buttons fill width in offer rows on mobile */
-      .offer-row a[class^="btn"] { display: block !important; text-align: center !important; }
       /* Footer stacks on mobile */
       footer > div > div { flex-direction: column !important; gap: 20px !important; }
       footer > div { padding-left: 24px !important; padding-right: 24px !important; }
     }
     @media (max-width: 600px) {
-      .featured-in-row { flex-direction: column !important; gap: 32px !important; align-items: center !important; }
+      /* Section 03: logos fill full width horizontally */
+      .featured-in-row { flex-direction: row !important; gap: 0 !important; align-items: center !important; flex-wrap: nowrap !important; justify-content: space-between !important; width: 100% !important; }
+      .featured-in-row a { flex: 1 !important; display: flex !important; justify-content: center !important; }
+      .featured-in-row img { height: clamp(36px, 10vw, 64px) !important; width: auto !important; max-width: 100% !important; }
       section { padding-top: 48px !important; padding-bottom: 48px !important; }
       .card-body { padding: 24px !important; }
       .card-foot { padding: 14px 24px !important; }
@@ -248,7 +257,7 @@
     <span style="opacity:0.7;">Free Resource</span>
     <span style="width:1px; height:12px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
     <strong style="font-weight:600; color:#fff;">Get the Free ACRR Patient Acquisition Checklist</strong>
-    <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 12px; letter-spacing:1.5px;">Download &rarr;</span>
+    <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 12px; letter-spacing:1.5px;">Get Now &rarr;</span>
   </a>
 </div>
 
@@ -282,8 +291,8 @@
   <div class="hero-grain"></div>
 
   <div style="position:relative; z-index:1; display:flex; flex-direction:column; justify-content:flex-end; padding:80px 64px 80px 64px;">
-    <div style="position:absolute; top:48px; left:64px; display:flex; align-items:center; gap:16px;">
-      <span style="display:block; width:32px; height:1px; background:var(--mid-lt);"></span>
+    <div class="hero-eyebrow" style="position:absolute; top:48px; left:64px; display:flex; align-items:center; gap:16px;">
+      <span class="hero-eyebrow-line" style="display:block; width:32px; height:1px; background:var(--mid-lt);"></span>
       <span class="sec-num">01 / ACRR Patient Growth System</span>
     </div>
 
@@ -425,7 +434,7 @@
       Specifically built for concierge functional and precision medicine practices.
     </p>
 
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); border-left:1px solid var(--rule-dk);">
+    <div class="acrr-grid" style="display:grid; grid-template-columns:repeat(4,1fr); border-left:1px solid var(--rule-dk);">
 
       <div style="padding:40px 32px; border-right:1px solid var(--rule-dk);">
         <span style="font-family:var(--font-b); font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:20px;"><strong style="text-decoration:underline;">A</strong>ttract</span>
@@ -462,7 +471,7 @@
 <section class="reveal" style="background:var(--bg); padding:96px 64px; border-bottom:1px solid var(--rule-vt); text-align:center;">
   <div style="max-width:680px; margin:0 auto;">
     <h2 style="font-family:var(--font-d); font-size:clamp(30px,3.5vw,52px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:48px;">
-      Ready to stop leaving ideal patients<br><em>to chance?</em>
+      Ready to stop leaving ideal patients <em>to chance?</em>
     </h2>
     <a href="#" class="btn-wt">Apply to Work Together &rarr;</a>
   </div>
@@ -698,40 +707,31 @@
     <div class="grid-3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px;">
 
       <!-- BLOG-FEED-START -->
-      <a href="/blog/local-keywords-your-wellness-practice-should-target" class="article-card reveal" style="max-width:none;border:1px solid var(--light-border);">
-        <div class="article-card-img"><img src="previews/local-keywords-wellness.jpg" alt="The Local Keywords Your Wellness Practice Should Be Targeting" loading="lazy"></div>
-        <div class="article-card-body">
-          <span class="overline">Local SEO</span>
-          <h3 style="font-family:var(--font-display);font-size:20px;line-height:1.3;font-weight:400;margin-bottom:12px;">The Local Keywords Your Wellness Practice Should Be Targeting</h3>
+      <a href="/blog/local-keywords-your-wellness-practice-should-target" class="card reveal">
+        <div class="card-img"><img src="previews/local-keywords-wellness.jpg" alt="The Local Keywords Your Wellness Practice Should Be Targeting" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">The Local Keywords Your Wellness Practice Should Be Targeting</h3>
         </div>
-        <div class="article-card-arrow">
-          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-          <span>&rarr;</span>
-        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
       </a>
 
-      <a href="/blog/private-pay-healthcare-boom" class="article-card reveal" style="max-width:none;border:1px solid var(--light-border);">
-        <div class="article-card-img"><img src="previews/article-private-pay.jpg" alt="The Boom in Private-Pay Healthcare (And Why It Matters for Your Practice)" loading="lazy"></div>
-        <div class="article-card-body">
-          <span class="overline">The Industry</span>
-          <h3 style="font-family:var(--font-display);font-size:20px;line-height:1.3;font-weight:400;margin-bottom:12px;">The Boom in Private-Pay Healthcare (And Why It Matters for Your Practice)</h3>
+      <a href="/blog/private-pay-healthcare-boom" class="card reveal">
+        <div class="card-img"><img src="previews/article-private-pay.jpg" alt="The Boom in Private-Pay Healthcare (And Why It Matters for Your Practice)" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">The Industry</span>
+          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">The Boom in Private-Pay Healthcare (And Why It Matters for Your Practice)</h3>
         </div>
-        <div class="article-card-arrow">
-          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-          <span>&rarr;</span>
-        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
       </a>
 
-      <a href="/blog/google-business-profile-virtual-practice" class="article-card reveal" style="max-width:none;border:1px solid var(--light-border);">
-        <div class="article-card-img"><img src="previews/article-gbp-virtual.jpg" alt="Can&rsquo;t Get Verified on Google Business Profile Because You&rsquo;re Virtual?" loading="lazy"></div>
-        <div class="article-card-body">
-          <span class="overline">SEO &amp;amp; Visibility</span>
-          <h3 style="font-family:var(--font-display);font-size:20px;line-height:1.3;font-weight:400;margin-bottom:12px;">Can&rsquo;t Get Verified on Google Business Profile Because You&rsquo;re Virtual?</h3>
+      <a href="/blog/google-business-profile-virtual-practice" class="card reveal">
+        <div class="card-img"><img src="previews/article-gbp-virtual.jpg" alt="Can&rsquo;t Get Verified on Google Business Profile Because You&rsquo;re Virtual?" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">SEO &amp;amp; Visibility</span>
+          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">Can&rsquo;t Get Verified on Google Business Profile Because You&rsquo;re Virtual?</h3>
         </div>
-        <div class="article-card-arrow">
-          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-          <span>&rarr;</span>
-        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
       </a>
       <!-- BLOG-FEED-END -->
 
@@ -787,26 +787,21 @@
 </button>
 
 <script>
-  var ham = document.getElementById('hamburger');
-  var mob = document.getElementById('mobile-nav');
-  ham.addEventListener('click', function(){
-    ham.classList.toggle('open');
-    mob.classList.toggle('open');
+  var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
   });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.05 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  setTimeout(() => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible')); }, 1400);
-
-  (function(){
-    var b = document.getElementById('sr-top');
-    window.addEventListener('scroll', function(){
-      b.style.opacity = window.scrollY > 500 ? '1' : '0';
-      b.style.pointerEvents = window.scrollY > 500 ? 'auto' : 'none';
-    }, { passive: true });
-  })();
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      _hbtn.classList.remove('open');
+      _mnav.classList.remove('open');
+    });
+  });
+}
 </script>
 </body>
 </html>

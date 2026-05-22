@@ -72,16 +72,13 @@ def card_html(p):
     )
     safe_category = p["category"].replace("&", "&amp;")
     return (
-        f'      <a href="/blog/{p["slug"]}" class="article-card reveal" style="max-width:none;border:1px solid var(--light-border);">\n'
-        f'        <div class="article-card-img"><img src="{p["img"]}" alt="{safe_title}" loading="lazy"></div>\n'
-        f'        <div class="article-card-body">\n'
-        f'          <span class="overline">{safe_category}</span>\n'
-        f'          <h3 style="font-family:var(--font-display);font-size:20px;line-height:1.3;font-weight:400;margin-bottom:12px;">{safe_title}</h3>\n'
+        f'      <a href="/blog/{p["slug"]}" class="card reveal">\n'
+        f'        <div class="card-img"><img src="{p["img"]}" alt="{safe_title}" loading="lazy"></div>\n'
+        f'        <div class="card-body">\n'
+        f'          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">{safe_category}</span>\n'
+        f'          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">{safe_title}</h3>\n'
         f'        </div>\n'
-        f'        <div class="article-card-arrow">\n'
-        f'          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>\n'
-        f'          <span>&rarr;</span>\n'
-        f'        </div>\n'
+        f'        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>\n'
         f'      </a>'
     )
 

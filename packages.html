@@ -84,10 +84,6 @@
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--color-primary); z-index: 99; flex-direction: column; overflow-y: auto; border-top: 1px solid rgba(255,255,255,0.1); }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 16px; color: #fff; text-decoration: none; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-body); }
-    .mobile-nav a.mobile-nav-cta { background: var(--color-white); color: var(--color-black) !important; text-align: center; font-weight: 500; border-bottom: none !important; margin: 16px 24px; display: block; }
     .mobile-nav a.mobile-nav-cta:hover { background: #e8e8e8 !important; }
 
     /* ====================================================
@@ -278,27 +274,25 @@
 <!-- ====================================================
      NAV
 ==================================================== -->
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:56px;display:block;"></a>
     <div class="nav-links">
       <a href="/about">About</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="nav-cta">Book a Clarity Call</a>
+      <a href="/contact">Contact</a>
+      <a href="/apply" class="nav-cta">Apply</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+<div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
-  <a href="/services">Services</a>
+  <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="mobile-nav-cta">Book a Clarity Call</a>
+  <a href="/contact">Contact</a>
+  <a href="/apply" class="mobile-nav-cta">Apply</a>
 </div>
 
 <main id="main-content">
@@ -567,28 +561,21 @@
 
 <!-- Mobile nav -->
 <script>
-  var hbtn = document.getElementById('hamburger');
-  var mnav = document.getElementById('mobile-nav');
-  if (hbtn && mnav) {
-    hbtn.addEventListener('click', function() {
-      var isOpen = mnav.classList.toggle('open');
-      hbtn.classList.toggle('open');
-      hbtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-      if (isOpen) {
-        var navEl = document.querySelector('.nav');
-        mnav.style.top = navEl ? navEl.getBoundingClientRect().bottom + 'px' : '64px';
-      }
+  var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      _hbtn.classList.remove('open');
+      _mnav.classList.remove('open');
     });
-    mnav.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        hbtn.classList.remove('open');
-        mnav.classList.remove('open');
-        hbtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
-  }
+  });
+}
 </script>
 
 <!-- FAQ accordion — single open, first open by default -->

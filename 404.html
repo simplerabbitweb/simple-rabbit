@@ -51,12 +51,25 @@
     .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     .hamburger.open span:nth-child(2){opacity:0;}
     .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--rule-dk);}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);text-decoration:none;padding:22px 24px;border-bottom:1px solid var(--rule-dk);font-family:var(--font-b);}
-    .mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;letter-spacing:1.5px;text-transform:uppercase;}
+        .mobile-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+      background: var(--white,#FDFAF7); z-index: 200;
+      flex-direction: column; overflow-y: auto;
+      border-top: 1px solid rgba(0,0,0,0.10);
+    }
+    .mobile-nav.open { display: flex !important; }
+    .mobile-nav a {
+      font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--black,#0A0905); padding: 22px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.10); font-family: inherit; text-decoration: none;
+    }
+    .mobile-nav a.mobile-nav-cta {
+      background: #0A0905; color: #FDFAF7 !important;
+      text-align: center; font-weight: 600; border-bottom: none !important;
+      margin: 16px 24px; display: block; letter-spacing: 1.5px; text-transform: uppercase; font-size: 15px;
+    }
     @media(max-width:900px){.grid-2{grid-template-columns:1fr;gap:24px;}.nav-inner{padding:0 24px;}}
-    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:52px!important;}}
     @media(max-width:600px){footer>div{padding-left:20px!important;padding-right:20px!important;}.footer-social-links{flex-wrap:wrap!important;gap:12px!important;justify-content:center!important;}}
   </style>
   <!-- Google Analytics -->
@@ -72,7 +85,7 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:48px;display:block;"></a>
+    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:56px;display:block;"></a>
     <div class="nav-links">
       <a href="/about">About</a>
       <a href="/case-studies">Case Studies</a>
@@ -156,8 +169,21 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 <script>
-var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
-if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
+var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      _hbtn.classList.remove('open');
+      _mnav.classList.remove('open');
+    });
+  });
+}
 var stgl=document.querySelector('#mobile-nav .mobile-nav-toggle');
 if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=document.querySelectorAll('#mobile-nav .mobile-nav-sub');var open=subs[0].classList.contains('open');subs.forEach(function(s){s.classList.toggle('open',!open);});stgl.textContent=open?'+':'−';});}
 </script>
