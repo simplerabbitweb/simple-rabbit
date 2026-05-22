@@ -22,47 +22,47 @@ Running log of SEO decisions, changes, and recommendations for simplerabbit.stud
 
 ---
 
-## Session 4: FM and HG page rewrites (proposals)
+## Session 4: FM and HG page rewrites
 
-**007** — FM page title: 76 chars → 46 chars ("Functional Medicine Web Design | Simple Rabbit") · `pending`
+**007** — FM page title: 76 chars → 46 chars ("Functional Medicine Web Design | Simple Rabbit") · ✅ DEPLOYED 2026-05-22
 
-**008** — FM page meta: 165 chars → 146 chars · `pending`
+**008** — FM page meta: 165 chars → 146 chars · ✅ DEPLOYED 2026-05-22
 
-**009** — FM page: remove both WordPress references, replace sidebar line with /website-audit CTA · `pending`
+**009** — FM page: remove both WordPress references, replace sidebar line with /website-audit CTA · ✅ DEPLOYED 2026-05-22
 
-**010** — FM page: add telehealth/virtual FAQ entry · `pending`
+**010** — FM page: add telehealth/virtual FAQ entry · ✅ DEPLOYED 2026-05-22
 
-**011** — FM page: add /website-audit mention to redesign FAQ · `pending`
+**011** — FM page: add /website-audit mention to redesign FAQ · ✅ DEPLOYED 2026-05-22
 
-**012** — FM page: add link to /blog/how-to-rank-for-functional-medicine-near-me in local SEO FAQ · `pending`
+**012** — FM page: add link to /blog/how-to-rank-for-functional-medicine-near-me in local SEO FAQ · ✅ DEPLOYED 2026-05-22
 
-**013** — HG page title: 60 chars → 46 chars ("Holistic Gynecology Web Design | Simple Rabbit") · `pending`
+**013** — HG page title: 60 chars → 46 chars ("Holistic Gynecology Web Design | Simple Rabbit") · ✅ DEPLOYED 2026-05-22
 
-**014** — HG page meta: 175 chars → 144 chars · `pending`
+**014** — HG page meta: 175 chars → 144 chars · ✅ DEPLOYED 2026-05-22
 
-**015** — HG page: remove both WordPress references · `pending`
+**015** — HG page: remove both WordPress references · ✅ DEPLOYED 2026-05-22
 
-**016** — HG page: add patient specificity paragraph (PCOS, endometriosis, perimenopause) to Problem section · `pending`
+**016** — HG page: add patient specificity paragraph (PCOS, endometriosis, perimenopause) to Problem section · ✅ DEPLOYED 2026-05-22
 
-**017** — HG page: add /website-audit FAQ entry · `pending`
+**017** — HG page: add /website-audit FAQ entry · ✅ DEPLOYED 2026-05-22
 
-**018** — HG page: add local keywords blog link to SEO FAQ · `pending`
+**018** — HG page: add local keywords blog link to SEO FAQ · ✅ DEPLOYED 2026-05-22
 
 ---
 
-## Session 5: Cluster audit + internal linking (recommendations)
+## Session 5: Cluster audit + internal linking
 
-**019** — Noindex `blog/case-study-the-home-refresh` (off-niche, home organizing) · `pending`
+**019** — Noindex `blog/case-study-the-home-refresh` (off-niche, home organizing) · ✅ DEPLOYED 2026-05-22
 
-**020** — Noindex `blog/how-to-drive-traffic-to-your-website` (attracts wrong searcher — DIY business owners, 96 impressions, 0 conversions) · `pending`
+**020** — Noindex `blog/how-to-drive-traffic-to-your-website` (attracts wrong searcher — DIY business owners, 96 impressions, 0 conversions) · ✅ DEPLOYED 2026-05-22
 
-**021** — `how-to-rank-for-functional-medicine-near-me` → add link to `/functional-medicine-web-design` (critical gap — primary FM cluster post has no link to FM pillar) · `pending`
+**021** — `how-to-rank-for-functional-medicine-near-me` → added link to `/functional-medicine-web-design` · ✅ DEPLOYED 2026-05-22
 
-**022** — `why-menopause-practice-websites-dont-rank-locally` → add link to `/menopause-practice-web-design` · `pending`
+**022** — `why-menopause-practice-websites-dont-rank-locally` → added link to `/menopause-practice-web-design` · ✅ DEPLOYED 2026-05-22
 
-**023** — `how-womens-wellness-practices-get-found-on-google` → add link to `/holistic-gynecology-web-design` · `pending`
+**023** — `how-womens-wellness-practices-get-found-on-google` → added link to `/holistic-gynecology-web-design` · ✅ DEPLOYED 2026-05-22
 
-**024** — Fix 7 broken internal links: posts linking to retired `/blog/google-business-profile-not-getting-clicks` (→ /articles) — replace with `/blog/google-business-profile-virtual-practice` or remove · `pending`
+**024** — Fixed 6 broken internal links: replaced `/blog/google-business-profile-not-getting-clicks` with `/blog/google-business-profile-virtual-practice` in 5 posts; removed referencing paragraph from `google-business-profile-virtual-practice` post · ✅ DEPLOYED 2026-05-22
 
 **025** — `local-keywords-your-wellness-practice-should-target` → add links to FM, HG, and menopause pillar pages · `pending`
 
@@ -105,6 +105,14 @@ Running log of SEO decisions, changes, and recommendations for simplerabbit.stud
 **131** — Homepage schema: 9 specialty service types added to `serviceType` array in `ProfessionalService` block · ✅ DEPLOYED 2026-05-21
 
 **132** — Homepage schema: FAQPage "what types of practices" answer updated to name all 9 specialties · ✅ DEPLOYED 2026-05-21
+
+---
+
+## Session 7: Package section removal
+
+**133** — `services.html`: removed "THREE WAYS TO WORK TOGETHER" section (Seed / Bloom / Flourish cards) · ✅ DEPLOYED 2026-05-21
+
+**134** — `packages.html`: removed "THREE WAYS TO WORK TOGETHER" section (Lead Path Audit / Foundation Build / Care Plan cards) · ✅ DEPLOYED 2026-05-21
 
 ---
 
