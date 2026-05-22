@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply to Work Together | Simple Rabbit</title>
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #474D73;
+      --bg-dk:    #2D3154;
+      --white:    #FDFAF7;
+      --warm:     #F5F0EB;
+      --black:    #0A0905;
+      --mid-lt:   #7A756E;
+      --accent:   #AA737D;
+      --rule-dk:  rgba(0,0,0,0.10);
+      --font-d:   'Instrument Serif', Georgia, serif;
+      --font-b:   'DM Sans', system-ui, sans-serif;
+    }
+
+    html { overflow-x: hidden; }
+    body { font-family: var(--font-b); color: var(--black); background: var(--warm); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 48px; border-bottom: 1px solid var(--rule-dk);
+      background: var(--white);
+    }
+    .return-link {
+      font-size: 13px; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--mid-lt); font-family: var(--font-b);
+      display: flex; align-items: center; gap: 8px; transition: color 0.2s;
+    }
+    .return-link:hover { color: var(--black); }
+
+    /* ── FORM WRAPPER ── */
+    .form-wrap {
+      max-width: 720px; margin: 0 auto;
+      padding: 72px 48px 100px;
+    }
+
+    /* ── INTRO ── */
+    .form-title {
+      font-family: var(--font-d);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05; letter-spacing: -2px; font-weight: 300;
+      color: var(--black); margin-bottom: 32px;
+    }
+    .form-intro {
+      font-size: 16px; line-height: 1.85; color: var(--mid-lt);
+      margin-bottom: 56px; padding-bottom: 56px;
+      border-bottom: 1px solid var(--rule-dk);
+    }
+
+    /* ── SECTIONS ── */
+    .form-section { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--rule-dk); }
+    .form-section:last-of-type { border-bottom: none; }
+    .section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent);
+      font-family: var(--font-b); margin-bottom: 32px; display: block;
+    }
+
+    /* ── FORM GROUPS ── */
+    .form-group { margin-bottom: 36px; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label {
+      font-size: 15px; font-weight: 500; color: var(--black);
+      font-family: var(--font-b); display: block; margin-bottom: 12px; line-height: 1.4;
+    }
+    .form-label .req { color: var(--accent); margin-left: 2px; }
+    .form-hint {
+      font-size: 13px; color: var(--mid-lt); font-family: var(--font-b);
+      margin-bottom: 12px; display: block;
+    }
+
+    /* ── TEXT INPUTS ── */
+    .form-input {
+      width: 100%; border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.18);
+      padding: 10px 0; font-size: 16px;
+      background: transparent; outline: none;
+      font-family: var(--font-b); color: var(--black);
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-bottom-color: var(--accent); }
+    .form-input::placeholder { color: rgba(0,0,0,0.22); }
+    textarea.form-input { resize: vertical; min-height: 110px; padding-top: 8px; }
+
+    /* ── RADIO + CHECKBOX ── */
+    .options-list { display: flex; flex-direction: column; gap: 12px; }
+    .option-item { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+    .option-item input[type="radio"],
+    .option-item input[type="checkbox"] {
+      appearance: none; -webkit-appearance: none;
+      width: 18px; height: 18px; flex-shrink: 0;
+      border: 1.5px solid rgba(0,0,0,0.25);
+      background: var(--white); cursor: pointer;
+      margin-top: 2px; transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .option-item input[type="radio"] { border-radius: 50%; }
+    .option-item input[type="radio"]:checked {
+      border-color: var(--accent); background: var(--accent);
+    }
+    .option-item input[type="radio"]:checked::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 6px; height: 6px; border-radius: 50%; background: white;
+    }
+    .option-item input[type="checkbox"]:checked {
+      border-color: var(--accent); background: var(--accent);
+    }
+    .option-item input[type="checkbox"]:checked::after {
+      content: ''; position: absolute; top: 2px; left: 5px;
+      width: 5px; height: 9px;
+      border-right: 2px solid white; border-bottom: 2px solid white;
+      transform: rotate(45deg);
+    }
+    .option-label {
+      font-size: 15px; color: var(--black); font-family: var(--font-b);
+      line-height: 1.4; cursor: pointer; padding-top: 1px;
+    }
+
+    /* ── OTHER TEXT SUB-FIELD ── */
+    .other-input {
+      margin-top: 8px; width: 100%;
+      border: none; border-bottom: 1px solid rgba(0,0,0,0.15);
+      padding: 8px 0; font-size: 14px;
+      background: transparent; outline: none;
+      font-family: var(--font-b); color: var(--black);
+      transition: border-color 0.2s;
+    }
+    .other-input:focus { border-bottom-color: var(--accent); }
+    .other-input::placeholder { color: rgba(0,0,0,0.22); }
+
+    /* ── SUBMIT ── */
+    .btn-submit {
+      background: var(--black); color: var(--white);
+      padding: 18px 56px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      font-family: var(--font-b); border: none; cursor: pointer;
+      transition: background 0.25s; width: 100%; margin-top: 48px;
+    }
+    .btn-submit:hover { background: var(--bg); }
+    .btn-submit:disabled { background: var(--mid-lt); cursor: not-allowed; }
+
+    /* ── SUCCESS STATE ── */
+    #success-msg {
+      display: none; text-align: center;
+      padding: 80px 0;
+    }
+    #success-msg h2 {
+      font-family: var(--font-d); font-size: clamp(28px,3vw,42px);
+      line-height: 1.1; letter-spacing: -1.5px; font-weight: 300;
+      color: var(--black); margin-bottom: 24px;
+    }
+    #success-msg p {
+      font-size: 17px; line-height: 1.85; color: var(--mid-lt); margin-bottom: 40px;
+    }
+    .btn-return {
+      display: inline-block; background: var(--black); color: var(--white);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b);
+      border: none; cursor: pointer; transition: background 0.25s;
+    }
+    .btn-return:hover { background: var(--bg); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .top-bar { padding: 20px 24px; }
+      .form-wrap { padding: 48px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <img src="sign-logo.png" alt="Simple Rabbit" style="max-height:48px;">
+  <a href="/" class="return-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Back to website
+  </a>
+</div>
+
+
+<!-- FORM WRAPPER -->
+<div class="form-wrap">
+
+  <!-- INTRO -->
+  <h1 class="form-title">Application to Work Together</h1>
+  <div class="form-intro">
+    <p style="margin-bottom:16px;">Thank you for your interest in working with Simple Rabbit.</p>
+    <p style="margin-bottom:16px;">This application helps me determine if your practice is a good fit for The ACRR System. I work exclusively with established concierge, functional, and precision medicine practitioners who are fully (or primarily) private-pay.</p>
+    <p>Please fill this out thoughtfully. I review every application personally.</p>
+  </div>
+
+  <!-- FORM -->
+  <form id="apply-form" action="https://formspree.io/f/mgoqyroq" method="POST">
+
+    <!-- ─── SECTION 1 ─── -->
+    <div class="form-section">
+      <span class="section-label">Section 1 — Practice Information</span>
+
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name <span class="req">*</span></label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="credentials">Professional Title / Credentials</label>
+        <input class="form-input" type="text" id="credentials" name="credentials" placeholder="MD, DO, NP, etc.">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="practice_name">Practice Name <span class="req">*</span></label>
+        <input class="form-input" type="text" id="practice_name" name="practice_name" placeholder="Your practice name" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="website">Practice Website</label>
+        <input class="form-input" type="text" id="website" name="website" placeholder="https://yourpractice.com">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">What is your primary clinical focus? <span class="req">*</span></label>
+        <span class="form-hint">Select all that apply.</span>
+        <div class="options-list">
+          <label class="option-item">
+            <input type="checkbox" name="clinical_focus" value="Concierge Functional Medicine">
+            <span class="option-label">Concierge Functional Medicine</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="clinical_focus" value="Precision Medicine">
+            <span class="option-label">Precision Medicine</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="clinical_focus" value="Root-Cause Integrative Medicine">
+            <span class="option-label">Root-Cause Integrative Medicine</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="clinical_focus" value="Personalized / Advanced Functional Medicine">
+            <span class="option-label">Personalized / Advanced Functional Medicine</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="clinical_focus" value="Other" id="focus-other-check">
+            <span class="option-label">Other</span>
+          </label>
+          <input class="other-input" type="text" name="clinical_focus_other" id="focus-other-text" placeholder="Please specify..." style="display:none;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">How many providers are in your practice? <span class="req">*</span></label>
+        <div class="options-list">
+          <label class="option-item">
+            <input type="radio" name="providers" value="Solo (just me)" required>
+            <span class="option-label">Solo (just me)</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="providers" value="2–3 providers">
+            <span class="option-label">2–3 providers</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="providers" value="4+ providers">
+            <span class="option-label">4+ providers</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 2 ─── -->
+    <div class="form-section">
+      <span class="section-label">Section 2 — Practice Status &amp; Model</span>
+
+      <div class="form-group">
+        <label class="form-label">How long has your practice been primarily private-pay? <span class="req">*</span></label>
+        <div class="options-list">
+          <label class="option-item">
+            <input type="radio" name="cash_based_duration" value="Less than 1 year" required>
+            <span class="option-label">Less than 1 year</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="cash_based_duration" value="1–3 years">
+            <span class="option-label">1–3 years</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="cash_based_duration" value="3–5 years">
+            <span class="option-label">3–5 years</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="cash_based_duration" value="5+ years">
+            <span class="option-label">5+ years</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">What is your current approximate annual practice revenue?</label>
+        <div class="options-list">
+          <label class="option-item">
+            <input type="radio" name="revenue" value="Under $500,000">
+            <span class="option-label">Under $500,000</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="revenue" value="$500,000 – $800,000">
+            <span class="option-label">$500,000 – $800,000</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="revenue" value="$800,000 – $1.5M">
+            <span class="option-label">$800,000 – $1.5M</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="revenue" value="$1.5M – $2.5M+">
+            <span class="option-label">$1.5M – $2.5M+</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="revenue" value="Prefer not to say">
+            <span class="option-label">Prefer not to say</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="new_patients_monthly">On average, how many new patients does your practice attract per month?</label>
+        <input class="form-input" type="number" id="new_patients_monthly" name="new_patients_monthly" placeholder="e.g. 8" min="0">
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 3 ─── -->
+    <div class="form-section">
+      <span class="section-label">Section 3 — Challenges &amp; Goals</span>
+
+      <div class="form-group">
+        <label class="form-label">What are your biggest patient acquisition challenges right now?</label>
+        <span class="form-hint">Select up to 3.</span>
+        <div class="options-list" id="challenges-list">
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Inconsistent / unpredictable new patient flow">
+            <span class="option-label">Inconsistent / unpredictable new patient flow</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Attracting too many price-sensitive or poor-fit leads">
+            <span class="option-label">Attracting too many price-sensitive or poor-fit leads</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Website does not clearly communicate our approach">
+            <span class="option-label">Website does not clearly communicate our approach</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Low conversion from leads to new patients">
+            <span class="option-label">Low conversion from leads to new patients</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Over-reliance on word-of-mouth">
+            <span class="option-label">Over-reliance on word-of-mouth</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Difficulty standing out in the functional/precision medicine space">
+            <span class="option-label">Difficulty standing out in the functional/precision medicine space</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" name="challenges" value="Other" id="challenges-other-check">
+            <span class="option-label">Other</span>
+          </label>
+          <input class="other-input" type="text" name="challenges_other" id="challenges-other-text" placeholder="Please describe..." style="display:none;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="goals">What are your top 3 goals for the next 12 months? <span class="req">*</span></label>
+        <textarea class="form-input" id="goals" name="goals" placeholder="Share your top goals for the practice over the next year..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="ideal_patients_monthly">How many new patients per month would you ideally like to consistently add?</label>
+        <input class="form-input" type="number" id="ideal_patients_monthly" name="ideal_patients_monthly" placeholder="e.g. 15" min="0">
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 4 ─── -->
+    <div class="form-section">
+      <span class="section-label">Section 4 — Fit &amp; Readiness</span>
+
+      <div class="form-group">
+        <label class="form-label">Have you previously invested in marketing support (website redesign, funnels, ads, consultant, etc.)? <span class="req">*</span></label>
+        <div class="options-list">
+          <label class="option-item">
+            <input type="radio" name="previous_marketing" value="Yes" required>
+            <span class="option-label">Yes</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="previous_marketing" value="No">
+            <span class="option-label">No</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">If I determine we&rsquo;re a good fit, when would you be looking to start? <span class="req">*</span></label>
+        <div class="options-list">
+          <label class="option-item">
+            <input type="radio" name="start_timeline" value="Within the next 30 days" required>
+            <span class="option-label">Within the next 30 days</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="start_timeline" value="Within 1–3 months">
+            <span class="option-label">Within 1–3 months</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" name="start_timeline" value="Just exploring options for now">
+            <span class="option-label">Just exploring options for now</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="additional_info">Is there anything else I should know about your practice, philosophy, or goals?</label>
+        <textarea class="form-input" id="additional_info" name="additional_info" placeholder="Anything you&rsquo;d like to add..."></textarea>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <button type="submit" class="btn-submit" id="submit-btn">Submit Application &rarr;</button>
+
+  </form>
+
+  <!-- SUCCESS MESSAGE (hidden until submit) -->
+  <div id="success-msg">
+    <div style="display:inline-block; width:48px; height:48px; border-radius:50%; background:var(--accent); margin-bottom:32px; display:flex; align-items:center; justify-content:center; margin:0 auto 32px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h2>Your application has been received.</h2>
+    <p>I only accept a limited number of new practices at a time. If your practice is a strong fit for The ACRR System, I will reach out within 48–72 hours to schedule a discovery call.</p>
+    <a href="/" class="btn-return">Back to Simple Rabbit</a>
+  </div>
+
+</div><!-- /form-wrap -->
+
+
+<script>
+  // Show/hide "Other" text fields
+  document.getElementById('focus-other-check').addEventListener('change', function() {
+    document.getElementById('focus-other-text').style.display = this.checked ? 'block' : 'none';
+  });
+  document.getElementById('challenges-other-check').addEventListener('change', function() {
+    document.getElementById('challenges-other-text').style.display = this.checked ? 'block' : 'none';
+  });
+
+  // Limit challenges checkboxes to 3
+  var challengeBoxes = document.querySelectorAll('#challenges-list input[type="checkbox"]');
+  challengeBoxes.forEach(function(box) {
+    box.addEventListener('change', function() {
+      var checked = document.querySelectorAll('#challenges-list input[type="checkbox"]:checked').length;
+      challengeBoxes.forEach(function(b) {
+        if (!b.checked) b.disabled = checked >= 3;
+      });
+    });
+  });
+
+  // AJAX submit to Formspree
+  document.getElementById('apply-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    try {
+      var response = await fetch('https://formspree.io/f/mgoqyroq', {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        document.getElementById('apply-form').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Application →';
+        alert('Something went wrong. Please try again or email hello@simplerabbit.studio.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Submit Application →';
+      alert('Something went wrong. Please try again or email hello@simplerabbit.studio.');
+    }
+  });
+</script>
+
+</body>
+</html>

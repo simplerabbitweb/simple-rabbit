@@ -9,68 +9,51 @@
   <link rel="canonical" href="https://simplerabbit.studio/privacy-policy">
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
   <style>
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
       color-scheme:light only;
-      --black:#000;--white:#fff;--tone:#E2D8D6;
-      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
-      --mid:#111;--dark:#333;--light-border:#dfe0e1;
-      --font-display:'Raleway',sans-serif;
-      --font-body:'DM Sans',system-ui,sans-serif;
-      --font-mono:'DM Sans',sans-serif;
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      /* legacy compat */
+      --mid:#555;--dark:#4A4540;--light-border:rgba(0,0,0,0.10);
+      --accent-dark:#8a5d66;--accent-light:#D7AF99;
+      --font-display:var(--font-d);--font-body:var(--font-b);--font-mono:var(--font-b);
     }
-    html{overflow-x:hidden;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    html{overflow-x:hidden;}body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3{font-family:var(--font-d);letter-spacing:-1px;font-weight:400;}
     a{color:inherit;}
-    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
-    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
-    .nav-links a:hover{color:var(--white);}
-    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
-    .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    .nav-item{position:relative;display:flex;align-items:center;}
-    .nav-item>a::after{content:'\25BE';font-size:9px;margin-left:4px;opacity:0.6;}
-    .nav-dropdown{display:none;position:absolute;top:calc(100% + 10px);left:-20px;background:var(--white);border:1px solid var(--light-border);min-width:210px;z-index:200;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
-    .nav-item::before{content:'';position:absolute;top:100%;left:0;right:0;height:10px;}
-    .nav-item:hover .nav-dropdown{display:block;}
-    .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
-    .nav-dropdown a:last-child{border-bottom:none;}
-    .nav-dropdown a:hover{background:#FAF8F4;color:var(--black);}
-    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:rgba(255,255,255,0.65)!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
-    .mobile-nav-sub:hover{color:var(--white)!important;}
-    .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
-    .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
-    .mobile-nav-sub{display:none!important;}
-    .mobile-nav-sub.open{display:block!important;}
-    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-links{display:flex;align-items:center;gap:36px;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--bg)!important;}
+    .overline{font-family:var(--font-b);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     footer{display:block;padding:0;border:none;}
-    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
-    .footer-link:hover{color:#fff;}
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
-    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--rule-dk);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:rgba(255,255,255,0.85);text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    @media(max-width:900px){
-      .nav-inner{padding:0 24px;}
-      .footer-cols{grid-template-columns:1fr 1fr!important;gap:40px!important;}
-      .footer-cols{grid-template-columns:1fr!important;}
-    }
-    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
-
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);text-decoration:none;padding:22px 24px;border-bottom:1px solid var(--rule-dk);font-family:var(--font-b);}
+    .mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;letter-spacing:1.5px;text-transform:uppercase;}
     /* Page content */
     .policy-wrap{max-width:720px;margin:0 auto;padding:80px 48px 120px;}
     .policy-wrap h1{font-size:clamp(32px,4vw,48px);margin-bottom:8px;}
-    .policy-wrap .updated{font-size:13px;color:var(--mid);font-family:var(--font-mono);margin-bottom:48px;}
+    .policy-wrap .updated{font-size:13px;color:var(--mid);font-family:var(--font-b);margin-bottom:48px;}
     .policy-wrap h2{font-size:22px;letter-spacing:-0.5px;margin:40px 0 12px;}
     .policy-wrap p{font-size:15px;line-height:1.8;color:var(--dark);margin-bottom:16px;}
     .policy-wrap ul{margin:0 0 16px 0;padding:0;list-style:none;}
@@ -78,46 +61,34 @@
     .policy-wrap ul li::before{content:"&#x2192;";position:absolute;left:0;color:var(--accent);}
     .policy-wrap a{color:var(--accent);text-decoration:underline;}
     .policy-wrap a:hover{color:var(--accent-dark);}
-    @media(max-width:900px){.policy-wrap{padding:48px 24px 80px;}.home-cta{aspect-ratio:unset!important;min-height:560px!important;justify-content:center!important;padding-right:0!important;}}
-
-    @media(max-width:600px){
-      footer > div { padding-left:20px!important; padding-right:20px!important; }
-      .footer-social-links { flex-wrap:wrap!important; gap:12px!important; }
-    }
-    @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
+    @media(max-width:900px){.policy-wrap{padding:48px 24px 80px;}.nav-inner{padding:0 24px;}}
+    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
+    @media(max-width:600px){footer>div{padding-left:20px!important;padding-right:20px!important;}.footer-social-links{flex-wrap:wrap!important;gap:12px!important;}}
   </style>
 </head>
 <body>
 
 
-<!-- ANNOUNCEMENT BANNER -->
-<div id="announcement-banner" style="background:#829AAB;padding:11px 24px;text-align:center;position:relative;">
-  <a href="/fully-booked" style="font-size:13px;color:#fff;font-family:'DM Sans',system-ui,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;">
-    <span style="font-weight:400;opacity:0.88;">Free 5-day email series &rarr;</span>
-    <strong style="font-weight:600;letter-spacing:0.1px;">5 Days to a Fully-Booked Practice</strong>
-    <span style="background:rgba(255,255,255,0.18);padding:2px 10px;font-size:12px;letter-spacing:0.5px;border:1px solid rgba(255,255,255,0.3);">Get it free</span>
-  </a>
-</div>
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:48px;display:block;"></a>
     <div class="nav-links">
       <a href="/about">About</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="nav-cta">Book a Clarity Call</a>
+      <a href="/contact">Contact</a>
+      <a href="/apply" class="nav-cta">Apply</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
-  <a href="/services">Services</a>
+  <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="mobile-nav-cta">Book a Clarity Call</a>
+  <a href="/contact">Contact</a>
+  <a href="/apply" class="mobile-nav-cta">Apply</a>
 </div>
 
 <!-- CONTENT -->
@@ -179,87 +150,30 @@
 </div>
 
 
-<!-- FULL-WIDTH CTA -->
-<section class="home-cta" style="position:relative;aspect-ratio:2048/1367;display:flex;align-items:center;justify-content:flex-end;padding-right:8%;overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;"></div>
-  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.72);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:560px;width:calc(100% - 48px);text-align:center;" class="cta-box">
-    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#000;display:block;margin-bottom:16px;">Ready when you are</span>
-    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#000;">Imagine a practice that brings the right patients in on its own.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#000;margin-bottom:32px;">Tell me about your practice. I&rsquo;ll show you what that could look like.</p>
-    <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" style="display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Book a Clarity Call &rarr;</a>
-  </div>
-</section>
-
 <!-- FOOTER -->
-<footer style="background:#474D73;border-top:none;padding:0;display:block;">
-
-  <!-- Newsletter row -->
-  <div style="border-bottom:1px solid rgba(255,255,255,0.1);padding:56px 48px;">
-    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-      <div>
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E2D8D6;display:block;margin-bottom:10px;">The Hutch &middot; A Weekly Newsletter</span>
-        <p style="font-size:clamp(18px,2vw,24px);color:#fff;margin:0;line-height:1.3;font-family:var(--font-display);">SEO insights and web design thinking, delivered weekly.</p>
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:40px 64px; border-bottom:1px solid var(--rule-lt);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+      <div style="width:100%; margin-bottom:8px;">
+        <p style="font-size:13px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.3); margin:0;">Patient Growth Systems for Concierge Functional &amp; Precision Medicine &bull; No HIPAA involvement &bull; I only work on public-facing marketing assets</p>
       </div>
-      <form onsubmit="submitNewsletter(event,this)" style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;align-items:center;">
-      <input type="email" name="email" placeholder="Your email" required style="border:none;border-bottom:1px solid rgba(255,255,255,0.35);background:transparent;color:#fff;font-size:14px;padding:10px 0;outline:none;font-family:var(--font-body);min-width:180px;">
-      <button type="submit" style="background:#fff;color:#000;padding:13px 32px;font-size:14px;font-weight:500;letter-spacing:0.5px;border:none;cursor:pointer;font-family:var(--font-body);white-space:nowrap;flex-shrink:0;">Join The Hutch &rarr;</button>
-      <p class="nl-msg" style="font-size:13px;color:#E2D8D6;width:100%;margin:4px 0 0;display:none;"></p>
-    </form>
+      <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+        <span style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Client Portal</a>
+        <a href="/contact" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Contact</a>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">LinkedIn</a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Newsletter</a>
+      </div>
     </div>
   </div>
-
-  <!-- Main columns -->
-  <div style="padding:64px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div class="footer-cols" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
-
-      <!-- Brand -->
-      <div>
-
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="mailto:hello@simplerabbit.studio" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">hello@simplerabbit.studio</a>
-          <div style="display:flex;gap:20px;margin-top:4px;">
-            <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;">Instagram</a>
-            <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;">Facebook</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Studio pages -->
-      <div>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Studio</span>
-        <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/about" style="font-size:14px;color:#fff;text-decoration:none;">About</a>
-          <a href="/portfolio" style="font-size:14px;color:#fff;text-decoration:none;">Portfolio</a>
-          <a href="/articles" style="font-size:14px;color:#fff;text-decoration:none;">Articles</a>
-          <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" style="font-size:14px;color:#fff;text-decoration:none;">Contact</a>
-        </nav>
-      </div>
-
-      <!-- Services -->
-      <div>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:block;margin-bottom:20px;">Services</span>
-        <nav style="display:flex;flex-direction:column;gap:13px;">
-          <a href="/services" style="font-size:14px;color:#fff;text-decoration:none;">All Services</a>
-        </nav>
-      </div>
-
-
-    </div>
+  <div style="padding:28px 64px;">
+    <p style="font-size:14px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.2); font-style:italic; text-align:center; margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
-
-  <!-- Bottom bar -->
-  <div style="padding:28px 48px;">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
-        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
-        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
-        <a href="/contact" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Contact</a>
-      </div>
-      <p style="font-size:14px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; Romans 1:16</p>
-    </div>
-  </div>
-
 </footer>
 
 <script>

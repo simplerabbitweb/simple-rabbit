@@ -3,534 +3,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles | Notes on Websites, Patients, and Practice</title>
+  <title>Articles | Simple Rabbit</title>
   <meta name="description" content="Practical notes on getting found online, attracting better patients, and running a private practice on your own terms.">
-  <meta property="og:title" content="Articles | Notes on Websites, Patients, and Practice">
-  <meta property="og:description" content="Practical notes on getting found online, attracting better patients, and running a private practice on your own terms.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://simplerabbit.studio/articles">
-  <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      color-scheme:light only;
-      --black:#000;--white:#fff;--tone:#E2D8D6;
-      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
-      --mid:#111;--dark:#333;--light-border:#dfe0e1;
-      --font-display:'Raleway',sans-serif;
-      --font-body:'DM Sans',system-ui,sans-serif;
-      --font-mono:'DM Sans',sans-serif;
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
-    html{overflow-x:hidden;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
-    a{color:inherit;}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
-    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
-    .nav-links a:hover{color:var(--white);}
-    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
-    .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    .nav-item{position:relative;display:flex;align-items:center;}
-    .nav-item>a::after{content:'\25BE';font-size:9px;margin-left:4px;opacity:0.6;}
-    .nav-dropdown{display:none;position:absolute;top:calc(100% + 10px);left:-20px;background:var(--white);border:1px solid var(--light-border);min-width:210px;z-index:200;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
-    .nav-item::before{content:'';position:absolute;top:100%;left:0;right:0;height:10px;}
-    .nav-item:hover .nav-dropdown{display:block;}
-    .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
-    .nav-dropdown a:last-child{border-bottom:none;}
-    .nav-dropdown a:hover{background:#FAF8F4;color:var(--black);}
-    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
-    .mobile-nav-sub:hover{color:var(--white)!important;}
-    .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
-    .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
-    .mobile-nav-sub{display:none!important;}
-    .mobile-nav-sub.open{display:block!important;}
-    .btn-primary{display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
-    .btn-primary:hover{background:var(--dark);}
-    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
-    .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-    .article-card{background:var(--white);text-decoration:none;color:var(--black);display:flex;flex-direction:column;border:1px solid var(--light-border);transition:border-color 0.2s;}
-    .article-card:hover{border-color:var(--light-border);}
-    .article-card-body{padding:32px;}
-    .article-card-arrow{font-size:13px;color:var(--mid);margin-top:auto;padding:20px 32px;border-top:1px solid var(--light-border);background:#FAF8F4;display:flex;align-items:center;justify-content:space-between;transition:color 0.2s;}
-    .article-card:hover .article-card-arrow{color:var(--black);}
-    .article-card-img{aspect-ratio:16/10;overflow:hidden;background:#FAF8F4;}
-    .article-card-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 0.4s ease;}
-    .article-card:hover .article-card-img img{transform:scale(1.03);}
-    footer{display:block;padding:0;border:none;}
-    .footer-link{color:var(--mid);text-decoration:none;font-size:13px;transition:color 0.2s;}
-    .footer-link:hover{color:#fff;}
-    @media(max-width:900px){
-      .article-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
-      .nav-inner{padding:0 24px;}
-      footer{padding:24px;}
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
     }
-    @media(max-width:600px){
-      .article-grid{grid-template-columns:1fr;gap:20px;}
-      .footer-cols{grid-template-columns:1fr!important;}
-      footer > div { padding-left:20px!important; padding-right:20px!important; }
-      footer > div > div { justify-content:center!important; }
-      footer > div > div > div { justify-content:center!important; }
-      .footer-social-links { flex-wrap:wrap!important; gap:12px!important; justify-content:center!important; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #474D73;
+      --bg-dk:   #2D3154;
+      --bg-mid:  #3B4168;
+      --bg-lt:   #535980;
+      --white:   #FDFAF7;
+      --warm:    #F5F0EB;
+      --black:   #0A0905;
+      --mid-lt:  #7A756E;
+      --accent:  #AA737D;
+      --mid-vt:  #B0B5D0;
+      --rule-dk: rgba(0,0,0,0.10);
+      --rule-vt: rgba(255,255,255,0.10);
+      --rule-lt: rgba(255,255,255,0.12);
+      --font-d:  'Instrument Serif', Georgia, serif;
+      --font-b:  'DM Sans', system-ui, sans-serif;
     }
-    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
-    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
-    .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
-    @media(max-width:768px){
-      .inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}
-      .hero-h1 span{padding-left:0!important;text-align:left;}
-      .cta-box{padding:40px 28px!important;}
-      .home-cta{aspect-ratio:unset!important;min-height:560px!important;justify-content:center!important;padding-right:0!important;}
+
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body { font-family: var(--font-b); color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule-dk); }
+    .nav-inner { padding: 0 64px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: 14px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-lt); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 10px 24px; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--bg) !important; }
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--black); transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 99; flex-direction: column; overflow-y: auto; border-top: 1px solid var(--rule-dk); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); padding: 22px 24px; border-bottom: 1px solid var(--rule-dk); font-family: var(--font-b); }
+    .mobile-nav a.mobile-nav-cta { background: var(--black); color: var(--white) !important; text-align: center; font-weight: 600; border-bottom: none !important; margin: 16px 24px; display: block; letter-spacing: 1.5px; text-transform: uppercase; font-size: 15px; }
+
+    /* BUTTONS */
+    .btn-wt { display: inline-block; background: var(--white); color: var(--black); padding: 16px 48px; font-size: 15px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b); border: none; cursor: pointer; transition: background 0.25s; }
+    .btn-wt:hover { background: #efe9e2; }
+
+/* CARDS */
+    .card { background: var(--white); border: 1px solid rgba(0,0,0,0.08); display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.25s; color: var(--black); }
+    .card:hover { border-color: rgba(0,0,0,0.18); transform: translateY(-3px); }
+    .card-img { aspect-ratio: 16/10; overflow: hidden; background: var(--warm); }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.5s ease; }
+    .card:hover .card-img img { transform: scale(1.04); }
+    .card-body { padding: 32px; flex: 1; }
+    .card-foot { padding: 18px 32px; border-top: 1px solid rgba(0,0,0,0.07); background: var(--warm); display: flex; align-items: center; justify-content: space-between; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-lt); font-family: var(--font-b); transition: color 0.2s; }
+    .card:hover .card-foot { color: var(--black); }
+
+    /* GRID */
+    .article-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 0 40px !important; }
     }
-    @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px !important; }
+      .article-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex !important; }
+      .nav-links { display: none !important; }
+      .nav-inner { padding: 0 20px !important; }
+      .nav-inner a img { max-height: 40px !important; }
+    }
+    @media (max-width: 600px) {
+      .article-grid { grid-template-columns: 1fr !important; }
+      .card-body { padding: 24px !important; }
+      .card-foot { padding: 14px 24px !important; }
+      footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+      footer > div > div { flex-direction: column !important; gap: 20px !important; }
+    }
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-77EEVJRJJD');
-  </script>
-<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
-  <link rel="canonical" href="https://simplerabbit.studio/articles">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
 
 
-<!-- ANNOUNCEMENT BANNER -->
-<div id="announcement-banner" style="background:#829AAB;padding:11px 24px;text-align:center;position:relative;">
-  <a href="/fully-booked" style="font-size:13px;color:#fff;font-family:'DM Sans',system-ui,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;">
-    <span style="font-weight:400;opacity:0.88;">Free 5-day email series &rarr;</span>
-    <strong style="font-weight:600;letter-spacing:0.1px;">5 Days to a Fully-Booked Practice</strong>
-    <span style="background:rgba(255,255,255,0.18);padding:2px 10px;font-size:12px;letter-spacing:0.5px;border:1px solid rgba(255,255,255,0.3);">Get it free</span>
+<!-- ANNOUNCEMENT (violet) -->
+<div style="background:var(--bg-dk); border-bottom:1px solid var(--rule-lt); padding:11px 24px; text-align:center;">
+  <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" style="font-size:13px; font-weight:500; font-family:var(--font-b); text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.7); text-decoration:none; display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;">
+    <span style="opacity:0.7;">Free Resource</span>
+    <span style="width:1px; height:12px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
+    <strong style="font-weight:600; color:#fff;">Get the Free ACRR Patient Acquisition Checklist</strong>
+    <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 12px; letter-spacing:1.5px;">Download &rarr;</span>
   </a>
 </div>
+
+<!-- NAV (light) -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:56px;"></a>
     <div class="nav-links">
       <a href="/about">About</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="nav-cta">Book a Clarity Call</a>
+      <a href="/contact">Contact</a>
+      <a href="/apply" class="nav-cta">Apply</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
-  <a href="/services">Services</a>
+  <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="mobile-nav-cta">Book a Clarity Call</a>
+  <a href="/contact">Contact</a>
+  <a href="/apply" class="mobile-nav-cta">Apply</a>
 </div>
 
-<!-- 1. HERO -->
-<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:#ffffff;overflow:hidden;">
-  <div class="hero-grain"></div>
-  <!-- ink splashes -->
-<div style="position:relative;z-index:1;padding:80px 0 0;max-width:960px;">
-    <span class="overline" style="margin-bottom:28px;">Articles</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">Notes on websites, patients, and running a practice on your own terms.</h1>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" style="display:inline-block;background:#474D73;color:#fff;padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;text-align:center;">Book a Clarity Call &rarr;</a>
-    </div>
+
+<!-- HERO -->
+<section style="padding:80px 64px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:960px;">
+    <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--mid-lt); display:block; margin-bottom:24px;">Articles</span>
+    <h1 style="font-family:var(--font-d); font-size:clamp(36px,5.5vw,72px); line-height:1.05; letter-spacing:-2px; font-weight:400; color:var(--black); margin:0;">
+      Notes on websites, patients,<br>and running a practice <em>on your own terms.</em>
+    </h1>
   </div>
-  <div></div>
 </section>
 
 <!-- AUTHOR STRIP -->
-<section class="sp" style="padding:32px 48px;border-bottom:1px solid var(--light-border);display:flex;align-items:center;gap:20px;">
-  <img src="leann-articles.jpg" alt="Leann Frank" style="width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0;" loading="lazy">
+<section style="padding:24px 64px; border-bottom:1px solid var(--rule-dk); background:var(--white); display:flex; align-items:center; gap:20px;">
+  <img src="leann-articles.jpg" alt="Leann Frank" style="width:52px; height:52px; border-radius:50%; object-fit:cover; object-position:top; flex-shrink:0;" loading="lazy">
   <div>
-    <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);margin-bottom:4px;">Leann Frank</p>
-    <p style="font-size:13px;color:var(--dark);">Founder of Simple Rabbit &middot; Web design, Consulting, &amp; SEO for women&rsquo;s wellness practices</p>
+    <p style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--black); margin-bottom:4px;">Leann Frank</p>
+    <p style="font-size:13px; color:var(--mid-lt); line-height:1.5;">Founder, Simple Rabbit &middot; Patient acquisition consulting for private-pay practices</p>
   </div>
 </section>
 
-<!-- 2. ARTICLE GRID -->
-<section class="reveal sp" style="padding:80px 48px;max-width:1100px;margin:0 auto;">
-  <div class="article-grid">
-    <!-- May 21, 2026 -->
-    <a href="/blog/local-keywords-your-wellness-practice-should-target" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/local-keywords-wellness.jpg" alt="The Local Keywords Your Wellness Practice Should Be Targeting" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">Local SEO</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">The Local Keywords Your Wellness Practice Should Be Targeting</h3>
-        <p style="font-size:14px;line-height:1.75;color:var(--dark);">You're targeting local keywords, but probably not the right ones. Here's how to find the specific search terms your ideal patients actually use.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
 
-    <!-- May 17, 2026 -->
-    <a href="/blog/private-pay-healthcare-boom" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-private-pay.jpg" alt="The quiet boom in private-pay healthcare" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">The Industry</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">The Boom in Private-Pay Healthcare (And Why It Matters for Your Practice)</h3>
-        <p style="font-size:14px;line-height:1.75;color:var(--dark);">The private-pay healthcare market is growing fast, and 2026 quietly removed one of the biggest barriers patients had. Here&rsquo;s what the data actually says.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+<!-- ARTICLE GRID -->
+<section style="padding:80px 64px; background:var(--white);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="article-grid">
 
-    <!-- May 14, 2026 -->
-    <a href="/blog/google-business-profile-virtual-practice" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-gbp-virtual.jpg" alt="Can't Get Verified on Google Business Profile Because You're Virtual?" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">SEO &amp; Visibility</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">Can&rsquo;t get verified on Google Business Profile because you&rsquo;re virtual? Here&rsquo;s what to do.</h3>
-        <p style="font-size:14px;line-height:1.75;color:var(--dark);">If you run a virtual or telehealth practice and Google won&rsquo;t verify your listing, you&rsquo;re not stuck. Here&rsquo;s what&rsquo;s actually going on and how to get listed.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- May 21, 2026 -->
+      <a href="/blog/local-keywords-your-wellness-practice-should-target" class="card">
+        <div class="card-img"><img src="previews/local-keywords-wellness.jpg" alt="The Local Keywords Your Wellness Practice Should Be Targeting" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">The Local Keywords Your Wellness Practice Should Be Targeting</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">You're targeting local keywords, but probably not the right ones. Here's how to find the specific search terms your ideal patients actually use.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- May 14, 2026 -->
-    <a href="/blog/how-to-rank-for-functional-medicine-near-me" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/how-to-rank-for-functional-medicine-near-me.jpg" alt="How to Rank for 'Functional Medicine Near Me' Without Paying for Ads" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">Local SEO</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How to Rank for 'Functional Medicine Near Me' Without Paying for Ads</h3>
-        <p style="font-size:14px;line-height:1.75;color:var(--dark);">Paid ads disappear when you stop paying. Local SEO builds visibility that lasts. Here's how to rank for 'functional medicine near me' organically.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- May 17, 2026 -->
+      <a href="/blog/private-pay-healthcare-boom" class="card">
+        <div class="card-img"><img src="previews/article-private-pay.jpg" alt="The Boom in Private-Pay Healthcare" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">The Industry</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">The Boom in Private-Pay Healthcare (And Why It Matters for Your Practice)</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">The private-pay healthcare market is growing fast, and 2026 quietly removed one of the biggest barriers patients had. Here's what the data actually says.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- May 6, 2026 -->
-    <a href="/blog/why-menopause-practice-websites-dont-rank-locally" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/why-menopause-practice-websites-dont-rank-locally.jpg" alt="Why Most Menopause and Perimenopause Practice Websites Don't Rank Locally" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">Local SEO</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">Why Most Menopause and Perimenopause Practice Websites Don&rsquo;t Rank Locally</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Most menopause practice websites were built for patients who already know your name. Here&rsquo;s why they don&rsquo;t rank for strangers, and the order to fix it in.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- May 14, 2026 -->
+      <a href="/blog/google-business-profile-virtual-practice" class="card">
+        <div class="card-img"><img src="previews/article-gbp-virtual.jpg" alt="Can't Get Verified on Google Business Profile" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">SEO &amp; Visibility</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">Can't get verified on Google Business Profile because you're virtual? Here's what to do.</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">If you run a virtual or telehealth practice and Google won't verify your listing, you're not stuck. Here's what's actually going on and how to get listed.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- April 30, 2026 -->
-    <a href="/blog/why-your-practice-isnt-showing-up-in-local-map-pack" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/why-your-practice-isnt-showing-up-in-local-map-pack.jpg" alt="Why Your Practice Isn't Showing Up in the Local Map Pack" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">Local SEO</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">Why Your Practice Isn't Showing Up in the Local Map Pack</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">The Local Map Pack puts three businesses in front of patients searching for care in their area. Here's why your practice isn't one of them, and how to fix it.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- May 14, 2026 -->
+      <a href="/blog/how-to-rank-for-functional-medicine-near-me" class="card">
+        <div class="card-img"><img src="previews/how-to-rank-for-functional-medicine-near-me.jpg" alt="How to Rank for Functional Medicine Near Me" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">How to Rank for 'Functional Medicine Near Me' Without Paying for Ads</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Paid ads disappear when you stop paying. Local SEO builds visibility that lasts. Here's how to rank for 'functional medicine near me' organically.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- April 29, 2026 -->
-    <a href="/blog/local-seo-for-private-pay-practices" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/local-seo-for-private-pay-practices.jpg" alt="Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">Local SEO</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Most private-pay practices struggle to show up in local search. These five things actually move rankings, and none of them require technical expertise.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- May 6, 2026 -->
+      <a href="/blog/why-menopause-practice-websites-dont-rank-locally" class="card">
+        <div class="card-img"><img src="previews/why-menopause-practice-websites-dont-rank-locally.jpg" alt="Why Most Menopause Practice Websites Don't Rank Locally" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">Why Most Menopause and Perimenopause Practice Websites Don't Rank Locally</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Most menopause practice websites were built for patients who already know your name. Here's why they don't rank for strangers, and the order to fix it in.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- April 28, 2026 -->
-    <a href="/blog/how-womens-wellness-practices-get-found-on-google" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/how-womens-wellness-practices-get-found-on-google.jpg" alt="How Women's Wellness Practices Get Found on Google Without Running Ads" loading="lazy"></div>
-      <div class="article-card-body">
-        <span class="overline">Local SEO</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How Women's Wellness Practices Get Found on Google Without Running Ads</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">You don't need ads to get found on Google. You need a website built to rank. Here's what actually works for women's wellness practices.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- April 30, 2026 -->
+      <a href="/blog/why-your-practice-isnt-showing-up-in-local-map-pack" class="card">
+        <div class="card-img"><img src="previews/why-your-practice-isnt-showing-up-in-local-map-pack.jpg" alt="Why Your Practice Isn't Showing Up in the Local Map Pack" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">Why Your Practice Isn't Showing Up in the Local Map Pack</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">The Local Map Pack puts three businesses in front of patients searching for care in their area. Here's why your practice isn't one of them, and how to fix it.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
+      <!-- April 29, 2026 -->
+      <a href="/blog/local-seo-for-private-pay-practices" class="card">
+        <div class="card-img"><img src="previews/local-seo-for-private-pay-practices.jpg" alt="Local SEO for Private-Pay Practices" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Most private-pay practices struggle to show up in local search. These five things actually move rankings, and none of them require technical expertise.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Apr 15, 2026 -->
-    <a href="/blog/how-to-drive-traffic-to-your-website" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-drive-traffic.jpg" alt="How to drive traffic to your website"></div>
-      <div class="article-card-body">
-        <span class="overline">SEO &amp; Visibility</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How to drive traffic to your website (without waiting years for SEO to kick in)</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">SEO is the long game. But there are eight things you can do right now to get more eyes on your site and more inquiries in your inbox.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- April 28, 2026 -->
+      <a href="/blog/how-womens-wellness-practices-get-found-on-google" class="card">
+        <div class="card-img"><img src="previews/how-womens-wellness-practices-get-found-on-google.jpg" alt="How Women's Wellness Practices Get Found on Google" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Local SEO</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">How Women's Wellness Practices Get Found on Google Without Running Ads</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">You don't need ads to get found on Google. You need a website built to rank. Here's what actually works for women's wellness practices.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Apr 7, 2026 -->
-    <a href="/blog/mobile-friendly-websites-2026" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-mobile-friendly.jpg" alt="Why mobile-friendly websites matter so much in 2026"></div>
-      <div class="article-card-body">
-        <span class="overline">Web Design</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">Why mobile-friendly websites matter so much in 2026</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">More than 60% of web traffic is mobile. If your site wasn&rsquo;t built for a phone, you&rsquo;re losing clients in the first five seconds - before they&rsquo;ve read a word.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Apr 15, 2026 -->
+      <a href="/blog/how-to-drive-traffic-to-your-website" class="card">
+        <div class="card-img"><img src="previews/article-drive-traffic.jpg" alt="How to drive traffic to your website" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">SEO &amp; Visibility</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">How to drive traffic to your website (without waiting years for SEO to kick in)</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">SEO is the long game. But there are eight things you can do right now to get more eyes on your site and more inquiries in your inbox.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
+      <!-- Apr 7, 2026 -->
+      <a href="/blog/mobile-friendly-websites-2026" class="card">
+        <div class="card-img"><img src="previews/article-mobile-friendly.jpg" alt="Why mobile-friendly websites matter in 2026" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Web Design</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">Why mobile-friendly websites matter so much in 2026</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">More than 60% of web traffic is mobile. If your site wasn't built for a phone, you're losing clients in the first five seconds, before they've read a word.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Apr 1, 2026 -->
-    <a href="/blog/case-study-smooth-laser-center" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/smooth-laser-center-website.png" alt="Smooth Laser Center website case study"></div>
-      <div class="article-card-body">
-        <span class="overline">Case Study</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How Smooth Laser Center went from invisible online to getting clients from search every week</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Mona had the skills and the clientele, but her old website didn&rsquo;t reflect any of it. Here&rsquo;s how a new site changed her visibility on Google.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Apr 1, 2026 -->
+      <a href="/blog/case-study-smooth-laser-center" class="card">
+        <div class="card-img"><img src="previews/smooth-laser-center-website.png" alt="Smooth Laser Center website case study" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Case Study</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">How Smooth Laser Center went from invisible online to getting clients from search every week</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Mona had the skills and the clientele, but her old website didn't reflect any of it. Here's how a new site changed her visibility on Google.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Mar 28, 2026 -->
-    <a href="/blog/website-losing-you-clients" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-losing-clients.jpg" alt="5 signs your website is losing you clients"></div>
-      <div class="article-card-body">
-        <span class="overline">Strategy</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">5 signs your website is losing you clients</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Most website problems are invisible until they are not. Here are five specific signs your site is costing you clients, and what to do about each one.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Mar 28, 2026 -->
+      <a href="/blog/website-losing-you-clients" class="card">
+        <div class="card-img"><img src="previews/article-losing-clients.jpg" alt="5 signs your website is losing you clients" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Strategy</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">5 signs your website is losing you clients</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Most website problems are invisible until they're not. Here are five specific signs your site is costing you clients, and what to do about each one.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Mar 9, 2026 -->
-    <a href="/blog/hesitate-before-sending-website-link" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-Hesitate-Before-Sending.jpg" alt="If you hesitate before sending your website link, read this"></div>
-      <div class="article-card-body">
-        <span class="overline">Strategy</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">If you hesitate before sending your website link, read this</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">That split-second pause before you share your URL with a potential client is not anxiety. It is data. Here is what it is costing you, and what to do about it.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Mar 9, 2026 -->
+      <a href="/blog/hesitate-before-sending-website-link" class="card">
+        <div class="card-img"><img src="previews/article-Hesitate-Before-Sending.jpg" alt="If you hesitate before sending your website link" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Strategy</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">If you hesitate before sending your website link, read this</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">That split-second pause before you share your URL with a potential client is not anxiety. It's data. Here's what it's costing you, and what to do about it.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-
+    </div>
   </div>
 </section>
+
 
 <!-- SEE PAST POSTS -->
-<section style="padding:0 48px 64px;max-width:1100px;margin:0 auto;text-align:center;">
-  <button id="past-posts-btn" onclick="togglePastPosts()" style="background:none;border:1px solid var(--light-border);color:var(--dark);font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;cursor:pointer;transition:border-color 0.2s,color 0.2s;">See past posts &darr;</button>
+<section style="padding:0 64px 64px; background:var(--white); text-align:center;">
+  <button id="past-posts-btn" onclick="togglePastPosts()" style="background:none; border:1px solid rgba(0,0,0,0.15); color:var(--mid-lt); font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; padding:14px 36px; cursor:pointer; transition:border-color 0.2s, color 0.2s;">See past posts &darr;</button>
 </section>
 
-<!-- PAST POSTS GRID (hidden by default) -->
-<section id="past-posts" style="display:none;padding:0 48px 80px;max-width:1100px;margin:0 auto;">
-  <div class="article-grid">
+<!-- PAST POSTS GRID -->
+<section id="past-posts" style="display:none; padding:0 64px 80px; background:var(--white);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="article-grid">
 
-    <!-- Mar 3, 2026 -->
-    <a href="/blog/case-study-the-home-refresh" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/the-home-refresh-website.png" alt="The Home Refresh website case study"></div>
-      <div class="article-card-body">
-        <span class="overline">Case Study</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How The Home Refresh went from an outdated website to booked solid</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Melissa Simon's home organizing business needed a website that matched her expertise. Here's what Simple Rabbit built, and what happened next.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Mar 3, 2026 -->
+      <a href="/blog/case-study-the-home-refresh" class="card">
+        <div class="card-img"><img src="previews/the-home-refresh-website.png" alt="The Home Refresh website case study" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Case Study</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">How The Home Refresh went from an outdated website to booked solid</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Melissa Simon's home organizing business needed a website that matched her expertise. Here's what Simple Rabbit built, and what happened next.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Feb 27, 2026 -->
-    <a href="/blog/charge-more-better-website" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-charge-more.jpg" alt="How your website affects what clients expect to pay"></div>
-      <div class="article-card-body">
-        <span class="overline">Pricing &amp; positioning</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">Why clients balk at your rates, and how the right website fixes it</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Most of the time, pricing isn't the problem. The website is. Here's what your site is telling clients before you open your mouth.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Feb 27, 2026 -->
+      <a href="/blog/charge-more-better-website" class="card">
+        <div class="card-img"><img src="previews/article-charge-more.jpg" alt="How your website affects what clients expect to pay" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Pricing &amp; Positioning</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">Why clients balk at your rates, and how the right website fixes it</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Most of the time, pricing isn't the problem. The website is. Here's what your site is telling clients before you open your mouth.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Feb 27, 2026 -->
-    <a href="/blog/5-things-premium-clients" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-5-things.jpg" alt="5 things your website needs to book premium clients"></div>
-      <div class="article-card-body">
-        <span class="overline">Web design</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">5 things your website needs to book premium clients (most sites miss #3)</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Premium clients aren't comparing you on price, they're comparing you on trust. These five elements determine whether they reach out or move on to a competitor.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Feb 27, 2026 -->
+      <a href="/blog/5-things-premium-clients" class="card">
+        <div class="card-img"><img src="previews/article-5-things.jpg" alt="5 things your website needs to book premium clients" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Web Design</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">5 things your website needs to book premium clients (most sites miss #3)</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Premium clients aren't comparing you on price, they're comparing you on trust. These five elements determine whether they reach out or move on.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Feb 27, 2026 -->
-    <a href="/blog/diy-website-wrong-price" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-diy-website.jpg" alt="Why DIY websites keep you at the wrong price point"></div>
-      <div class="article-card-body">
-        <span class="overline">Branding</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">The real reason DIY websites keep you stuck at the wrong price point</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">The templates look better than ever. But DIY websites still anchor clients to lower price expectations, not because of how they look, but because of what they signal.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Feb 27, 2026 -->
+      <a href="/blog/diy-website-wrong-price" class="card">
+        <div class="card-img"><img src="previews/article-diy-website.jpg" alt="Why DIY websites keep you at the wrong price point" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Branding</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">The real reason DIY websites keep you stuck at the wrong price point</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">The templates look better than ever. But DIY websites still anchor clients to lower price expectations, not because of how they look, but because of what they signal.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
-    <!-- Feb 27, 2026 -->
-    <a href="/blog/convert-visitors-to-clients" class="article-card reveal">
-      <div class="article-card-img"><img src="previews/article-convert-visitors.jpg" alt="How to convert website visitors into booked calls"></div>
-      <div class="article-card-body">
-        <span class="overline">Strategy</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;line-height:1.3;font-weight:400;margin-bottom:16px;">How to turn website visitors into booked calls, without a sales call</h3>
-        <p style="font-size:16px;line-height:1.75;color:var(--dark);">Traffic without conversions means people are looking and leaving. Here's the structure that turns website visitors into client inquiries, no sales call required.</p>
-      </div>
-      <div class="article-card-arrow">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;">Read article</span>
-        <span>&rarr;</span>
-      </div>
-    </a>
+      <!-- Feb 27, 2026 -->
+      <a href="/blog/convert-visitors-to-clients" class="card">
+        <div class="card-img"><img src="previews/article-convert-visitors.jpg" alt="How to convert website visitors into booked calls" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Strategy</span>
+          <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; margin-bottom:16px;">How to turn website visitors into booked calls, without a sales call</h3>
+          <p style="font-size:14px; line-height:1.75; color:var(--mid-lt);">Traffic without conversions means people are looking and leaving. Here's the structure that turns website visitors into client inquiries, no sales call required.</p>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
 
+    </div>
   </div>
 </section>
 
 <script>
-function togglePastPosts(){
-  var section=document.getElementById('past-posts');
-  var btn=document.getElementById('past-posts-btn');
-  if(section.style.display==='none'){
-    section.style.display='block';
-    btn.textContent='Hide past posts \u2191';
-    section.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+function togglePastPosts() {
+  var section = document.getElementById('past-posts');
+  var btn = document.getElementById('past-posts-btn');
+  if (section.style.display === 'none') {
+    section.style.display = 'block';
+    btn.textContent = 'Hide past posts ↑';
   } else {
-    section.style.display='none';
-    btn.textContent='See past posts \u2193';
+    section.style.display = 'none';
+    btn.textContent = 'See past posts ↓';
   }
 }
 </script>
 
-<!-- FULL-WIDTH CTA -->
-<section class="home-cta" style="position:relative;aspect-ratio:2048/1367;display:flex;align-items:center;justify-content:flex-end;padding-right:8%;overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;"></div>
-  <div style="position:relative;z-index:1;background:rgba(255,255,255,0.72);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.10);padding:64px 56px;max-width:560px;width:calc(100% - 48px);text-align:center;" class="cta-box">
-    <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#000;display:block;margin-bottom:16px;">Ready when you are</span>
-    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;font-weight:400;color:#000;">Imagine a practice that brings the right patients in on its own.</h2>
-    <p style="font-size:15px;line-height:1.75;color:#000;margin-bottom:32px;">Tell me about your practice. I&rsquo;ll show you what that could look like.</p>
-    <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" style="display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Book a Clarity Call &rarr;</a>
+
+<!-- CTA (violet) -->
+<section style="background:var(--bg); padding:96px 64px; text-align:center;">
+  <div style="max-width:720px; margin:0 auto;">
+    <span style="font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--mid-vt); display:block; margin-bottom:24px;">Ready when you are</span>
+    <h2 style="font-family:var(--font-d); font-size:clamp(30px,3.5vw,52px); line-height:1.1; letter-spacing:-1.5px; font-weight:400; color:var(--white); margin-bottom:20px;">
+      Good medicine is worth finding.<br><em>Let's build the system that makes it happen.</em>
+    </h2>
+    <p style="font-size:16px; line-height:1.75; color:var(--mid-vt); margin-bottom:40px;">I take a limited number of practices at a time. If it looks like a strong fit, I'll be in touch within 48 hours.</p>
+    <a href="/apply" class="btn-wt">Apply to Work Together</a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#474D73;border-top:none;padding:0;display:block;">
 
-  <!-- Row 1: copyright + social -->
-  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
-        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
-        <a href="/contact" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Contact</a>
+<!-- FOOTER -->
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:40px 64px; border-bottom:1px solid var(--rule-lt);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+
+      <div style="width:100%; margin-bottom:8px;">
+        <p style="font-size:13px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.3); margin:0;">Patient Growth Systems for Concierge Functional &amp; Precision Medicine &bull; No HIPAA involvement &bull; I only work on public-facing marketing assets</p>
       </div>
-      <div class="footer-social-links" style="display:flex;gap:28px;">
-        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
-        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
-        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
-        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Newsletter</a>
+
+      <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+        <span style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Client Portal</a>
+        <a href="/contact" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Contact</a>
       </div>
+
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">LinkedIn</a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Newsletter</a>
+      </div>
+
     </div>
   </div>
-
-  <!-- Row 2: scripture -->
-  <div style="padding:20px 48px;">
-    <p style="font-size:14px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  <div style="padding:28px 64px;">
+    <p style="font-size:14px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.2); font-style:italic; text-align:center; margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
-
 </footer>
 
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
 
-</script>
+<!-- SCROLL TO TOP -->
+<style>
+  #sr-top { position:fixed; bottom:32px; right:32px; width:44px; height:44px; background:var(--black); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:998; opacity:0; pointer-events:none; transition:opacity .25s, background .2s; }
+  #sr-top:hover { background:var(--bg); }
+  @media(max-width:768px){ #sr-top { bottom:20px; right:20px; } }
+</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
+
+<!-- HAMBURGER JS -->
 <script>
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
-if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
-var stgl=document.querySelector('#mobile-nav .mobile-nav-toggle');
-if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=document.querySelectorAll('#mobile-nav .mobile-nav-sub');var open=subs[0].classList.contains('open');subs.forEach(function(s){s.classList.toggle('open',!open);});stgl.textContent=open?'+':'−';});}
+if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'80px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
 </script>
 
-<!-- FLODESK NEWSLETTER -->
-<script>
-  (function(w, d, t, h, s, n) {
-    w.FlodeskObject = n;
-    var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
-    w[n] = w[n] || fn;
-    var f = d.getElementsByTagName(t)[0];
-    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
-    var sm = d.createElement(t); sm.async = true; sm.type = 'module';
-    sm.src = h + s + '.mjs' + v; f.parentNode.insertBefore(sm, f);
-    var sn = d.createElement(t); sn.async = true; sn.noModule = true;
-    sn.src = h + s + '.js' + v; f.parentNode.insertBefore(sn, f);
-  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
-</script>
-<script>
-  (function(){
-    if(window.location.pathname.replace(/\/$/,'').indexOf('/contact')!==-1)return;
-    setTimeout(function(){window.fd('form',{formId:'69f243ce0a1f098d7fb37e63'});},10000);
-  })();
-</script>
 
-<script src="/tracking.js" defer></script>
-<!-- SCROLL TO TOP -->
-<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
-<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
-<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
 </body>
 </html>

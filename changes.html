@@ -9,73 +9,60 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <style>
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
       color-scheme:light only;
-      --black:#000;--white:#fff;--tone:#E2D8D6;
-      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
-      --mid:#111;--dark:#333;--light-border:#dfe0e1;
-      --font-display:'Raleway',sans-serif;
-      --font-body:'DM Sans',system-ui,sans-serif;
-      --font-mono:'DM Sans',sans-serif;
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      /* legacy compat */
+      --mid:#555;--dark:#4A4540;--light-border:rgba(0,0,0,0.10);
+      --accent-dark:#8a5d66;--accent-light:#D7AF99;
+      --font-display:var(--font-d);--font-body:var(--font-b);--font-mono:var(--font-b);
     }
-    html{overflow-x:hidden;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
+    html{overflow-x:hidden;}body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3{font-family:var(--font-d);letter-spacing:-1px;font-weight:400;}
     a{color:inherit;}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
-    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
-    .nav-links a:hover{color:var(--white);}
-    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
-    .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-links{display:flex;align-items:center;gap:36px;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--bg)!important;}
+    .overline{font-family:var(--font-b);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
-    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid var(--rule-dk);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
-    .mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}
-    .mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;}
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);text-decoration:none;padding:22px 24px;border-bottom:1px solid var(--rule-dk);font-family:var(--font-b);}
+    .mobile-nav a.mobile-nav-cta{background:var(--black);color:var(--white)!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;letter-spacing:1.5px;text-transform:uppercase;}
     .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
     .info-cell{padding:40px 36px;}
     .info-cell:last-child{border-right:none;}
-    .info-cell h3{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;font-weight:400;}
+    .info-cell h3{font-family:var(--font-b);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;font-weight:400;}
     .info-cell ul{list-style:none;padding:0;margin:0;}
     .info-cell ul li{font-size:14px;line-height:1.7;color:var(--dark);padding:6px 0;border-bottom:1px solid var(--light-border);display:flex;align-items:flex-start;gap:10px;}
     .info-cell ul li:last-child{border-bottom:none;}
     .info-cell ul li::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px;}
     .info-cell p{font-size:14px;line-height:1.75;color:var(--dark);}
     footer{display:block;padding:0;border:none;}
-    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
-    .footer-link:hover{color:#fff;}
-    @media(max-width:900px){
-      .nav-inner{padding:0 24px;}
-      .info-grid{grid-template-columns:1fr!important;}
-      .info-cell{border-right:none!important;}
-      .info-cell:last-child{border-bottom:none;}
-      .sp{padding-left:24px!important;padding-right:24px!important;}
-    }
-    @media(max-width:768px){
-      .hamburger{display:flex!important;}
-      .nav-links{display:none!important;}
-      .nav-inner a img{max-height:44px!important;}
-      .inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}
-      .inner-hero>div{padding-top:40px!important;}
-    }
-    @media(max-width:600px){
-      footer > div { padding-left:20px!important; padding-right:20px!important; }
-      .footer-social-links { flex-wrap:wrap!important; gap:12px!important; }
-    }
-    @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
+    @media(max-width:900px){.nav-inner{padding:0 24px;}.info-grid{grid-template-columns:1fr!important;}.info-cell{border-right:none!important;}.info-cell:last-child{border-bottom:none;}.sp{padding-left:24px!important;padding-right:24px!important;}}
+    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}.inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}.inner-hero>div{padding-top:40px!important;}}
+    @media(max-width:600px){footer>div{padding-left:20px!important;padding-right:20px!important;}.footer-social-links{flex-wrap:wrap!important;gap:12px!important;}}
   </style>
 </head>
 <body>
@@ -83,23 +70,23 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:48px;display:block;"></a>
     <div class="nav-links">
       <a href="/about">About</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="nav-cta">Book a Clarity Call</a>
+      <a href="/contact">Contact</a>
+      <a href="/apply" class="nav-cta">Apply</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
-  <a href="/services">Services</a>
+  <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="mobile-nav-cta">Book a Clarity Call</a>
+  <a href="/contact">Contact</a>
+  <a href="/apply" class="mobile-nav-cta">Apply</a>
 </div>
 
 <!-- HERO -->
@@ -116,7 +103,7 @@
 <!-- FORM LINK -->
 <section style="padding:64px 48px 0;background:#fff;" class="sp">
   <div style="max-width:1100px;margin:0 auto;">
-    <a href="https://roan-egret-400.notion.site/ebd//4e13a23bf9a34c71a3ae3e27f5441087" target="_blank" style="display:inline-block;background:#474D73;color:#fff;padding:16px 44px;font-size:15px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#474D73'">Submit a change request &rarr;</a>
+    <a href="https://roan-egret-400.notion.site/ebd//4e13a23bf9a34c71a3ae3e27f5441087" target="_blank" style="display:inline-block;background:#0A0905;color:#FDFAF7;padding:16px 44px;font-size:15px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;font-family:var(--font-b);transition:background 0.2s;" onmouseover="this.style.background='#474D73'" onmouseout="this.style.background='#0A0905'">Submit a change request &rarr;</a>
   </div>
 </section>
 
@@ -161,24 +148,28 @@
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#474D73;border-top:none;padding:0;display:block;">
-  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
-        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
-        <a href="/contact" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Contact</a>
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:40px 64px; border-bottom:1px solid var(--rule-lt);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+      <div style="width:100%; margin-bottom:8px;">
+        <p style="font-size:13px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.3); margin:0;">Patient Growth Systems for Concierge Functional &amp; Precision Medicine &bull; No HIPAA involvement &bull; I only work on public-facing marketing assets</p>
       </div>
-      <div class="footer-social-links" style="display:flex;gap:28px;">
-        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
-        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
-        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+      <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+        <span style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Client Portal</a>
+        <a href="/contact" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Contact</a>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">LinkedIn</a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Newsletter</a>
       </div>
     </div>
   </div>
-  <div style="padding:20px 48px;">
-    <p style="font-size:14px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  <div style="padding:28px 64px;">
+    <p style="font-size:14px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.2); font-style:italic; text-align:center; margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
 </footer>
 

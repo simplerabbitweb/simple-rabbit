@@ -3,197 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Clarity Call | Simple Rabbit</title>
-  <meta name="description" content="Tell me about your practice. If we're a good fit, I'll set up a 30-minute call to talk through your goals and the work.">
-  <meta property="og:title" content="Start a Project | Simple Rabbit">
-  <meta property="og:description" content="Tell me about your practice. If we're a good fit, I'll set up a 30-minute call to talk through your goals and the work.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://simplerabbit.studio/contact">
-  <meta property="og:image" content="https://simplerabbit.studio/Leann-4.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <title>Contact | Simple Rabbit</title>
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      color-scheme:light only;
-      --black:#000;--white:#fff;--tone:#E2D8D6;
-      --accent:#AA737D;--accent-dark:#8a5d66;--accent-light:#D7AF99;
-      --mid:#111;--dark:#333;--light-border:#dfe0e1;
-      --font-display:'Raleway',sans-serif;
-      --font-body:'DM Sans',system-ui,sans-serif;
-      --font-mono:'DM Sans',sans-serif;
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
-    html{overflow-x:hidden;}body{font-family:var(--font-body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-    h1,h2,h3{font-family:var(--font-display);letter-spacing:-1px;font-weight:400;}
-    a{color:inherit;}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-    .nav{position:sticky;top:0;background:#474D73;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100;}
-    .nav-inner{max-width:1280px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;height:88px;}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{font-size:14px;color:#fff;text-decoration:none;transition:color 0.2s;}
-    .nav-links a:hover{color:var(--white);}
-    .nav-cta{background:var(--white)!important;color:var(--black)!important;padding:10px 24px;font-size:13px;font-weight:500;transition:background 0.2s!important;}
-    .nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    .nav-item{position:relative;display:flex;align-items:center;}
-    .nav-item>a::after{content:'\25BE';font-size:9px;margin-left:4px;opacity:0.6;}
-    .nav-dropdown{display:none;position:absolute;top:calc(100% + 10px);left:-20px;background:var(--white);border:1px solid var(--light-border);min-width:210px;z-index:200;box-shadow:0 6px 24px rgba(0,0,0,0.08);}
-    .nav-item::before{content:'';position:absolute;top:100%;left:0;right:0;height:10px;}
-    .nav-item:hover .nav-dropdown{display:block;}
-    .nav-dropdown a{display:block;padding:13px 20px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light-border);white-space:nowrap;}
-    .nav-dropdown a:last-child{border-bottom:none;}
-    .nav-dropdown a:hover{background:#FAF8F4;color:var(--black);}
-    .mobile-nav-sub{font-size:14px!important;padding:13px 24px 13px 40px!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
-    .mobile-nav-sub:hover{color:var(--white)!important;}
-    .mobile-nav-services{display:flex;align-items:center;justify-content:space-between;}
-    .mobile-nav-toggle{background:none;border:none;font-size:20px;line-height:1;padding:0 24px;color:var(--white);cursor:pointer;font-family:var(--font-body);}
-    .mobile-nav-sub{display:none!important;}
-    .mobile-nav-sub.open{display:block!important;}
-    .btn-primary{display:inline-block;background:#474D73;color:var(--white);padding:14px 36px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);border:none;cursor:pointer;transition:background 0.2s;}
-    .btn-primary:hover{background:var(--dark);}
-    .overline{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
-    .form-input{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent;outline:none;font-family:var(--font-body);color:var(--black);}
-    .form-input:focus{border-bottom-color:var(--accent);}
-    .form-input::placeholder{color:#b0b0b0;}
-    .form-select{width:100%;border:none;border-bottom:1px solid var(--light-border);padding:10px 0;font-size:15px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23949698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center;-webkit-appearance:none;outline:none;font-family:var(--font-body);color:var(--black);cursor:pointer;}
-    .form-select:focus{border-bottom-color:var(--accent);}
-    .form-label{font-size:12px;font-family:var(--font-mono);letter-spacing:1px;color:var(--mid);display:block;margin-bottom:8px;}
-    .form-group{margin-bottom:28px;}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-    .contact-cols{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--light-border);}
-    .contact-form-col{padding:56px 48px;border-right:1px solid var(--light-border);}
-    .contact-book-col{background:#FAF8F4;padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
-    textarea.form-input{resize:vertical;min-height:120px;padding-top:8px;}
-    .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
-    footer{display:block;padding:0;border:none;}
-    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
-    .footer-link:hover{color:#fff;}
-    .detail-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-border);align-items:flex-start;}
-    .detail-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);flex-shrink:0;padding-top:2px;min-width:120px;}
-    .detail-value{font-size:15px;color:var(--dark);overflow-wrap:break-word;word-break:break-word;}
-    @media(max-width:900px){
-      .nav-inner{padding:0 24px;}
-      .footer-cols{grid-template-columns:1fr 1fr!important;gap:40px!important;}
-      .sp{padding-left:24px!important;padding-right:24px!important;}
-      .grid-2{grid-template-columns:1fr!important;gap:48px!important;}
-      .footer-cols{grid-template-columns:1fr!important;}
-      .contact-intro-grid{grid-template-columns:1fr!important;gap:40px!important;}
-      .contact-cols{grid-template-columns:1fr!important;}
-      .contact-form-col{border-right:none!important;border-bottom:1px solid var(--light-border);}
-      .contact-form-col,.contact-book-col{padding:40px 28px!important;}
-      .form-row-2{grid-template-columns:1fr!important;}
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
     }
-    @media(max-width:600px){
-      .form-row{grid-template-columns:1fr!important;}
-      body{padding-bottom:calc(68px + env(safe-area-inset-bottom));}
-      footer > div { padding-left:20px!important; padding-right:20px!important; }
-      .footer-social-links { flex-wrap:wrap!important; gap:12px!important; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #474D73;
+      --bg-dk:    #2D3154;
+      --white:    #FDFAF7;
+      --warm:     #F5F0EB;
+      --black:    #0A0905;
+      --mid-lt:   #7A756E;
+      --accent:   #AA737D;
+      --mid-vt:   #B0B5D0;
+      --rule-dk:  rgba(0,0,0,0.10);
+      --rule-lt:  rgba(255,255,255,0.12);
+      --font-d:   'Instrument Serif', Georgia, serif;
+      --font-b:   'DM Sans', system-ui, sans-serif;
     }
-    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
-    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#474D73;z-index:99;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.1);}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-size:16px;color:#fff;text-decoration:none;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-body);}
-    .mobile-nav a:hover{color:var(--white);}.mobile-nav a.mobile-nav-cta{background:var(--white);color:var(--black)!important;text-align:center;font-weight:500;border-bottom:none!important;margin:16px 24px;display:block;}.mobile-nav a.mobile-nav-cta:hover{background:#e8e8e8!important;color:var(--black)!important;}
-    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-inner a img{max-height:44px!important;}}
-    .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
-    @media(max-width:768px){
-      .inner-hero{min-height:unset!important;grid-template-columns:1fr!important;}
-      .inner-hero .hero-text{padding:48px 24px 40px!important;}
-      .inner-hero .hero-image{display:none!important;}
-      .hero-h1 span{padding-left:0!important;text-align:left;}
-      .cta-box{padding:40px 28px!important;}
-      .parallax-bg{background-attachment:scroll!important;background-size:cover!important;}
+
+    html { overflow-x: hidden; }
+    body { font-family: var(--font-b); color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; }
+
+    /* ── NAV ── */
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule-dk); }
+    .nav-inner { padding: 0 64px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: 14px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-lt); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--black); transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 99; flex-direction: column; overflow-y: auto; border-top: 1px solid var(--rule-dk); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); padding: 22px 24px; border-bottom: 1px solid var(--rule-dk); }
+
+    /* ── BUTTONS ── */
+    .btn-dk { display: inline-block; background: var(--black); color: var(--white); padding: 16px 48px; font-size: 15px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b); border: none; cursor: pointer; transition: background 0.25s; }
+    .btn-dk:hover { background: var(--bg); }
+    .btn-accent { display: inline-block; background: var(--accent); color: var(--white); padding: 16px 48px; font-size: 15px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b); border: none; cursor: pointer; transition: background 0.25s; }
+    .btn-accent:hover { background: #8a5d66; }
+
+    /* ── FORM ── */
+    .form-label { font-size: 12px; font-family: var(--font-b); letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-lt); display: block; margin-bottom: 10px; }
+    .form-input { width: 100%; border: none; border-bottom: 1px solid rgba(0,0,0,0.15); padding: 10px 0; font-size: 16px; background: transparent; outline: none; font-family: var(--font-b); color: var(--black); transition: border-color 0.2s; }
+    .form-input:focus { border-bottom-color: var(--accent); }
+    .form-input::placeholder { color: rgba(0,0,0,0.25); }
+    textarea.form-input { resize: vertical; min-height: 120px; padding-top: 8px; }
+    .form-group { margin-bottom: 32px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 0 40px !important; }
+      .contact-grid { gap: 60px !important; }
     }
-    @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px !important; }
+      .contact-grid { grid-template-columns: 1fr !important; gap: 56px !important; }
+      .form-row { grid-template-columns: 1fr !important; }
+      section { padding-left: 24px !important; padding-right: 24px !important; }
+      footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex !important; }
+      .nav-links { display: none !important; }
+      .nav-inner { padding: 0 20px !important; }
+      .form-col { padding: 40px 28px !important; }
+    }
+    @media (max-width: 600px) {
+      footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+    }
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-77EEVJRJJD');
-  </script>
-<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
-  <link rel="canonical" href="https://simplerabbit.studio/contact">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
 
 
-<!-- ANNOUNCEMENT BANNER -->
-<div id="announcement-banner" style="background:#829AAB;padding:11px 24px;text-align:center;position:relative;">
-  <a href="/fully-booked" style="font-size:13px;color:#fff;font-family:'DM Sans',system-ui,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;">
-    <span style="font-weight:400;opacity:0.88;">Free 5-day email series &rarr;</span>
-    <strong style="font-weight:600;letter-spacing:0.1px;">5 Days to a Fully-Booked Practice</strong>
-    <span style="background:rgba(255,255,255,0.18);padding:2px 10px;font-size:12px;letter-spacing:0.5px;border:1px solid rgba(255,255,255,0.3);">Get it free</span>
+<!-- ANNOUNCEMENT (violet) -->
+<div style="background:var(--bg-dk); border-bottom:1px solid var(--rule-lt); padding:11px 24px; text-align:center;">
+  <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" style="font-size:13px; font-weight:500; font-family:var(--font-b); text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.7); text-decoration:none; display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;">
+    <span style="opacity:0.7;">Free Resource</span>
+    <span style="width:1px; height:12px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
+    <strong style="font-weight:600; color:#fff;">Get the Free ACRR Patient Acquisition Checklist</strong>
+    <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 12px; letter-spacing:1.5px;">Download &rarr;</span>
   </a>
 </div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
+    <a href="/"><img src="sign-logo.png" alt="Simple Rabbit" style="max-height:56px;"></a>
     <div class="nav-links">
-      <a href="/about" class="nav-link-about">About</a>
-      <a href="/portfolio" class="nav-link-portfolio">Portfolio</a>
-      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="nav-cta">Book a Clarity Call</a>
+      <a href="/contact">Contact</a>
+      <a href="/apply" class="nav-cta">Apply</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
-  <a href="/services">Services</a>
+  <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="mobile-nav-cta">Book a Clarity Call</a>
+  <a href="/contact">Contact</a>
+  <a href="/apply" class="mobile-nav-cta">Apply</a>
 </div>
 
-<!-- 1. HERO -->
-<section class="inner-hero" style="min-height:52vh;display:grid;grid-template-columns:1fr 1fr;position:relative;background:#ffffff;overflow:hidden;">
-  <div class="hero-grain"></div>
-  <!-- Left: text -->
-  <div class="hero-text" style="position:relative;z-index:1;padding:100px 56px 80px 48px;display:flex;flex-direction:column;justify-content:center;">
-    <span class="overline" style="margin-bottom:28px;">Book a Clarity Call</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,68px);line-height:1.05;letter-spacing:-2px;color:#000;font-weight:400;margin:0 0 20px;" class="hero-h1">Let&rsquo;s talk about your practice.</h1>
-    <p style="font-size:clamp(15px,1.2vw,18px);line-height:1.75;max-width:520px;color:rgba(0,0,0,0.6);margin-bottom:28px;">Book a free 30-minute call. I&rsquo;ll talk through your practice, what you&rsquo;re trying to fix, and whether we&rsquo;re a good fit to work together.</p>
-    <div style="max-width:400px;border-top:1px solid var(--light-border);">
-      <div style="display:flex;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--light-border);">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Email</span>
-        <a href="mailto:hello@simplerabbit.studio" style="font-size:15px;color:rgba(0,0,0,0.6);text-decoration:none;">hello@simplerabbit.studio</a>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--light-border);">
-        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Location</span>
-        <span style="font-size:15px;color:rgba(0,0,0,0.6);">Bergen County, NJ</span>
-      </div>
+
+<!-- ════════════════════════════════════════════
+     MAIN
+     ════════════════════════════════════════════ -->
+<section style="padding:100px 64px 120px; background:var(--warm); min-height:80vh;">
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <!-- Section marker -->
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:72px;">
+      <span style="display:block; width:32px; height:1px; background:var(--mid-lt);"></span>
+      <span style="font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Contact</span>
     </div>
-  </div>
-  <!-- Right: image -->
-  <div class="hero-image" style="position:relative;overflow:hidden;min-height:400px;">
-    <img src="contact-page.jpg" alt="Simple Rabbit Studio" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;">
-  </div>
-</section>
 
-<!-- 2. CONTACT + BOOKING -->
-<section class="reveal sp" style="padding:80px 48px;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div class="contact-cols">
+    <!-- Two columns -->
+    <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:start;">
 
-      <!-- Left: Short form -->
-      <div class="contact-form-col">
-        <span class="overline">Send a message</span>
-        <h2 style="font-family:var(--font-display);font-size:clamp(22px,2.2vw,28px);letter-spacing:-0.5px;font-weight:400;margin-bottom:10px;line-height:1.2;">Have a question first?</h2>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:36px;">Can&rsquo;t find a time, not ready to book, or just want to ask something first &mdash; send a message and I&rsquo;ll get back to you within one business day.</p>
+      <!-- LEFT: Apply CTA + contact info -->
+      <div>
+        <h1 style="font-family:var(--font-d); font-size:clamp(34px,4vw,54px); line-height:1.05; letter-spacing:-2px; font-weight:300; color:var(--black); margin-bottom:24px;">
+          Ready to build a patient acquisition system that <em>actually works?</em>
+        </h1>
+        <p style="font-size:17px; line-height:1.85; color:var(--mid-lt); margin-bottom:40px;">
+          I take on a small number of clients at a time. Apply to work together and I&rsquo;ll reach out to schedule a call.
+        </p>
+        <a href="#" class="btn-accent">Apply to Work Together &rarr;</a>
+
+        <!-- Contact details -->
+        <div style="margin-top:64px; padding-top:40px; border-top:1px solid var(--rule-dk);">
+          <p style="font-size:12px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:20px;">Or reach out directly</p>
+
+          <a href="mailto:hello@simplerabbit.studio" style="font-size:17px; font-family:var(--font-b); color:var(--black); border-bottom:1px solid var(--accent); padding-bottom:2px; display:inline-block; margin-bottom:36px; transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--black)'">hello@simplerabbit.studio</a>
+
+          <div style="display:flex; gap:28px; flex-wrap:wrap;">
+            <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--mid-lt)'">Instagram</a>
+            <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--mid-lt)'">LinkedIn</a>
+            <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--mid-lt)'">Facebook</a>
+            <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" style="font-size:13px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--mid-lt)'">Newsletter</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact form -->
+      <div class="form-col" style="background:var(--white); padding:56px 48px;">
+        <p style="font-size:12px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:8px;">Send a message</p>
+        <h2 style="font-family:var(--font-d); font-size:clamp(22px,2vw,30px); line-height:1.15; letter-spacing:-0.5px; font-weight:300; color:var(--black); margin-bottom:40px;">
+          Have a question first?<br><em>I&rsquo;ll get back to you within one business day.</em>
+        </h2>
+
         <form action="https://formspree.io/f/mojndlrg" method="POST">
           <input type="hidden" name="_next" value="https://simplerabbit.studio/thank-you">
-          <div class="form-row-2">
+
+          <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0 32px;">
             <div class="form-group">
               <label class="form-label" for="cf-name">Your name</label>
               <input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
@@ -203,35 +194,14 @@
               <input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@yourpractice.com" required>
             </div>
           </div>
+
           <div class="form-group">
             <label class="form-label" for="cf-message">Your message</label>
-            <textarea class="form-input" id="cf-message" name="message" placeholder="Tell us a bit about your practice and what you&rsquo;re looking for..." required></textarea>
+            <textarea class="form-input" id="cf-message" name="message" placeholder="Tell me a bit about your practice and what you&rsquo;re looking for..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary">Send message &rarr;</button>
-        </form>
-      </div>
 
-      <!-- Right: Book a Clarity Call -->
-      <div class="contact-book-col">
-        <img src="Line icons/contact-image.png.png" alt="" aria-hidden="true" style="width:88px;height:auto;display:block;margin-bottom:28px;">
-        <span class="overline">Free 30-Minute Call</span>
-        <h2 style="font-family:var(--font-display);font-size:clamp(24px,2.5vw,32px);letter-spacing:-1px;font-weight:400;margin-bottom:12px;line-height:1.15;">Book a Clarity Call</h2>
-        <p style="font-size:15px;line-height:1.75;color:var(--dark);margin-bottom:32px;">Not sure if your website is costing you patients? Book a free 30-minute call and I&rsquo;ll look at it with you.</p>
-        <div style="border-top:1px solid var(--light-border);margin-bottom:36px;">
-          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--light-border);">
-            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Duration</span>
-            <span style="font-size:14px;color:var(--dark);">30 minutes</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--light-border);">
-            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Format</span>
-            <span style="font-size:14px;color:var(--dark);">Google Meet</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--light-border);">
-            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);min-width:80px;">Cost</span>
-            <span style="font-size:14px;color:var(--dark);">Free</span>
-          </div>
-        </div>
-        <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener" class="btn-primary" style="align-self:flex-start;">Book a Clarity Call &rarr;</a>
+          <button type="submit" class="btn-dk">Send Message &rarr;</button>
+        </form>
       </div>
 
     </div>
@@ -239,89 +209,47 @@
 </section>
 
 
-<!-- FOOTER -->
-<footer style="background:#474D73;border-top:none;padding:0;display:block;">
+<!-- ════════════════════════════════════════════
+     FOOTER (violet)
+     ════════════════════════════════════════════ -->
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:40px 64px; border-bottom:1px solid var(--rule-lt);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
 
-  <!-- Row 1: copyright + social -->
-  <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
-    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-        <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
-        <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
-        <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
-        <a href="/contact" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Contact</a>
+      <div style="width:100%; margin-bottom:8px;">
+        <p style="font-size:13px; font-weight:400; font-family:var(--font-b); color:rgba(255,255,255,0.3); margin:0;">Patient Growth Systems for Concierge Functional &amp; Precision Medicine &bull; No HIPAA involvement &bull; I only work on public-facing marketing assets</p>
       </div>
-      <div class="footer-social-links" style="display:flex;gap:28px;">
-        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Facebook</a>
-        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Instagram</a>
-        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:13px;color:#fff;text-decoration:none;font-family:var(--font-mono);">LinkedIn</a>
+
+      <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+        <span style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC</span>
+        <a href="/privacy-policy" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Client Portal</a>
+        <a href="/contact" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Contact</a>
       </div>
+
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Facebook</a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Instagram</a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">LinkedIn</a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Newsletter</a>
+      </div>
+
     </div>
   </div>
-
-  <!-- Row 2: scripture -->
-  <div style="padding:20px 48px;">
-    <p style="font-size:14px;font-family:var(--font-mono);color:#fff;font-style:italic;text-align:center;margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
+  <div style="padding:28px 64px;">
+    <p style="font-size:14px; font-family:var(--font-b); color:rgba(255,255,255,0.2); font-style:italic; text-align:center; margin:0;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
   </div>
-
 </footer>
 
+
 <script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
-
-</script>
-<script>
-var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobile-nav');
-if(hbtn&&mnav){hbtn.addEventListener('click',function(){hbtn.classList.toggle('open');mnav.classList.toggle('open');document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';if(mnav.classList.contains('open')){var navEl=document.querySelector('.nav');mnav.style.top=navEl?navEl.getBoundingClientRect().bottom+'px':'64px';}});mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbtn.classList.remove('open');mnav.classList.remove('open');document.body.style.overflow='';});});}
-var stgl=document.querySelector('#mobile-nav .mobile-nav-toggle');
-if(stgl){stgl.addEventListener('click',function(e){e.stopPropagation();var subs=document.querySelectorAll('#mobile-nav .mobile-nav-sub');var open=subs[0].classList.contains('open');subs.forEach(function(s){s.classList.toggle('open',!open);});stgl.textContent=open?'+':'−';});}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Simple Rabbit",
-  "url": "https://simplerabbit.studio",
-  "telephone": "+15514862779",
-  "email": "hello@simplerabbit.studio",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Bergen County",
-    "addressRegion": "NJ",
-    "addressCountry": "US"
-  },
-  "description": "Simple Rabbit is a high-end web design studio for service businesses. Projects start at $4,800.",
-  "priceRange": "$$$$",
-  "areaServed": [
-    {
-      "@type": "State",
-      "name": "New Jersey"
-    },
-    {
-      "@type": "Country",
-      "name": "United States"
-    }
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer service",
-    "email": "hello@simplerabbit.studio",
-    "telephone": "+15514862779",
-    "availableLanguage": "English"
-  }
-}
+  var ham = document.getElementById('hamburger');
+  var mob = document.getElementById('mobile-nav');
+  ham.addEventListener('click', function(){
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
 </script>
 
-
-
-<script src="/tracking.js" defer></script>
-<!-- SCROLL TO TOP -->
-<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
-<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
-<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
 </body>
 </html>
