@@ -786,6 +786,18 @@
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </button>
 
+<!-- Scroll reveal -->
+<script>
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) { el.classList.add('visible'); });
+  }, 1500);
+</script>
+
+<!-- Mobile nav -->
 <script>
   var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
 if(_hbtn&&_mnav){
