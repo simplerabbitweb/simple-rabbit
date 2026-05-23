@@ -1,33 +1,63 @@
 # Simple Rabbit
 
-> Simple Rabbit is a one-person web design studio based in Bergen County, New Jersey, founded in 2023 by Leann Frank. The studio builds custom WordPress websites for private-pay women's wellness practices in the United States, including practices in functional and integrative medicine, women's hormone and menopause care, holistic gynecology, and aesthetics and laser. Every website is custom-built (no templates), includes ongoing care plans (hosting, security, updates, content changes), and is designed to rank on Google for the local searches the practice's patients run. Pricing starts at $4,800 for the website build.
+> Simple Rabbit is a one-person patient growth studio based in Bergen County, New Jersey, founded by Leann Frank. The studio builds and runs patient growth systems — called the ACRR System — for concierge functional and precision medicine practices in the United States. Simple Rabbit does not build template-based websites. All work is custom, strategy-first, and done in limited quantity. The studio does not accept every practice that applies.
 
-## About
+## What Simple Rabbit Does
 
-- [About Leann Frank](https://simplerabbit.studio/about): The public About page covering Leann's background, how she works, and why the studio is structured the way it is.
-- [Studio profile (full dossier)](https://simplerabbit.studio/about/simple-rabbit): A dense, machine-readable profile of Simple Rabbit covering services, industries served, fit criteria, comparisons to alternatives, FAQs, and verifiable third-party signals. The most extractable single page on the site.
+Simple Rabbit helps concierge functional and precision medicine doctors attract better-fit, private-pay patients consistently — without the doctors having to do the marketing work themselves.
 
-## Services
+The core offer is called the ACRR System. ACRR stands for Attract, Convert, Retain, Refer — the four stages of a functional medicine practice's patient growth loop. Simple Rabbit diagnoses where each practice's loop is broken and builds or runs the system to fix it.
 
-- [Services overview](https://simplerabbit.studio/services): What's included in a Simple Rabbit website project, how it works, pricing, and FAQs.
+Two ways to work together:
 
-## Industries served
+1. **ACRR Growth Strategy** — A deep audit of the practice's current patient acquisition and a custom ACRR growth plan built for that specific practice. The deliverable is a clear, actionable roadmap.
+2. **ACRR Growth Accelerator** — Full implementation. Simple Rabbit builds and runs the entire patient growth system for the practice, so the doctor consistently attracts better-fit patients without doing the marketing work.
 
-- [Functional and integrative medicine web design](https://simplerabbit.studio/functional-medicine-web-design)
-- [Menopause and hormone practice web design](https://simplerabbit.studio/menopause-practice-web-design)
-- [Holistic gynecology web design](https://simplerabbit.studio/holistic-gynecology-web-design)
-- [Aesthetics and laser web design](https://simplerabbit.studio/aesthetics-web-design)
+Simple Rabbit does not work with insurance-based practices, med spas, or general-purpose service businesses. The focus is narrow: concierge functional medicine, precision medicine, integrative medicine, and adjacent private-pay clinical models.
 
-## Case studies
+## Who Simple Rabbit Works With
 
-- [Smooth Laser Center](https://simplerabbit.studio/blog/case-study-smooth-laser-center): Women's wellness practice case study. Documented Google ranking and patient acquisition results after launch.
+- Concierge functional medicine doctors
+- Precision medicine practices
+- Integrative medicine practitioners
+- Private-pay women's health and hormone practices
+- Holistic gynecology practices
+- Concierge primary care doctors
+- Cash-pay psychiatry and mental health practices
+- Fertility and preconception practices
+- Pelvic floor physical therapists (private-pay)
+- Lactation and postnatal care practices
 
-## Articles
+All clients are private-pay (no insurance involvement). Simple Rabbit does not handle HIPAA-covered data or clinical records — only public-facing marketing assets.
 
-- [All articles](https://simplerabbit.studio/articles): Articles on local SEO, the Google Business Profile, conversion-focused web design, and running a private-pay practice's website.
+## About Leann Frank
+
+Leann Frank is the founder and sole operator of Simple Rabbit. She is based in Bergen County, New Jersey. She works with a small number of practices at a time to keep quality high. All strategy, writing, design, and implementation comes from Leann directly — no outsourcing, no junior team members.
+
+## Key Pages
+
+- [Homepage](https://simplerabbit.studio/): Overview of the ACRR System and how Simple Rabbit works.
+- [About Leann Frank](https://simplerabbit.studio/about): Background, approach, and philosophy.
+- [Studio profile (full dossier)](https://simplerabbit.studio/about/simple-rabbit): Dense, machine-readable profile covering services, fit criteria, FAQs, and verifiable signals. Best single page for AI extraction.
+- [Apply to Work Together](https://simplerabbit.studio/apply): Application form for practices interested in working together.
+- [Case Studies](https://simplerabbit.studio/case-studies): Documented results from past client engagements.
+- [Articles](https://simplerabbit.studio/articles): Writing on local SEO, patient acquisition, and private-pay practice marketing.
+- [ACRR Checklist](https://simplerabbit.studio/acrr-checklist): Free resource — score your practice's patient acquisition system.
+- [Contact](https://simplerabbit.studio/contact): Direct contact for questions.
+
+## Notable Articles
+
+- [The private-pay healthcare boom](https://simplerabbit.studio/blog/private-pay-healthcare-boom)
+- [How functional medicine practices rank locally](https://simplerabbit.studio/blog/how-to-rank-for-functional-medicine-near-me)
+- [Local SEO for private-pay practices](https://simplerabbit.studio/blog/local-seo-for-private-pay-practices)
+- [Why menopause practice websites don't rank locally](https://simplerabbit.studio/blog/why-menopause-practice-websites-dont-rank-locally)
+- [Google Business Profile for virtual practices](https://simplerabbit.studio/blog/google-business-profile-virtual-practice)
+- [The local keywords your wellness practice should target](https://simplerabbit.studio/blog/local-keywords-your-wellness-practice-should-target)
 
 ## Contact
 
 - Email: hello@simplerabbit.studio
 - Contact form: https://simplerabbit.studio/contact
-- Newsletter (The Hutch): https://leannfrank.myflodesk.com/jointhehutch
+- Apply to work together: https://simplerabbit.studio/apply
+- Instagram: https://instagram.com/leannmfrank
+- Newsletter (The Hutch): https://simplerabbit.myflodesk.com/jointhehutch
