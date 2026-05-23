@@ -220,6 +220,10 @@
       .offer-row > div:last-child { align-self: center !important; padding-right: 0 !important; text-align: center !important; }
       .offer-featured { margin: 0 -24px !important; padding-left: 24px !important; padding-right: 24px !important; }
       .featured-in-row { gap: 40px !important; flex-wrap: nowrap !important; justify-content: space-around !important; }
+      /* Section 11 CTA: stack on mobile, image on top */
+      .cta-2col { grid-template-columns: 1fr !important; }
+      .cta-2col > div:first-child { height: 300px; }
+      .cta-2col > div:last-child { padding: 48px 24px !important; }
     }
     @media (max-width: 768px) {
       .hamburger { display: flex !important; }
@@ -236,8 +240,8 @@
       footer > div > div { flex-direction: column !important; gap: 20px !important; }
       footer > div { padding-left: 24px !important; padding-right: 24px !important; }
       /* Footer links: row with pipe separators on mobile */
-      .footer-links-row { flex-direction: row !important; flex-wrap: wrap !important; gap: 0 8px !important; align-items: center !important; }
-      .footer-links-row > *:not(:last-child)::after { content: " |"; margin-left: 8px; color: rgba(255,255,255,0.25); }
+      .footer-links-row, .footer-social-row { flex-direction: row !important; flex-wrap: wrap !important; gap: 0 8px !important; align-items: center !important; }
+      .footer-links-row > *:not(:last-child)::after, .footer-social-row > *:not(:last-child)::after { content: " |"; margin-left: 8px; color: rgba(255,255,255,0.25); }
     }
     @media (max-width: 600px) {
       /* Section 03: logos fill full width horizontally */
@@ -649,14 +653,21 @@
 <!-- ════════════════════════════════════════════
      11 — FINAL CTA (violet)
      ════════════════════════════════════════════ -->
-<section class="reveal" style="background:var(--bg); padding:96px 64px; border-bottom:1px solid var(--rule-vt); text-align:center;">
-  <div style="max-width:720px; margin:0 auto;">
-    <h2 style="font-family:var(--font-d); font-size:clamp(30px,3.5vw,52px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:24px;">
-      Is your private-pay practice ready for <em>consistent patient growth?</em>
-    </h2>
-    <p style="font-size:17px; line-height:1.8; color:var(--mid-vt); margin-bottom:40px; max-width:580px; margin-left:auto; margin-right:auto;">Most private-pay practitioners are excellent at the medicine and unsure about the marketing. The ACRR Patient Acquisition Checklist shows you exactly where your patient acquisition stands. Eighteen questions, four pillars, one honest score.</p>
-    <div style="display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap;">
-      <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" class="btn-wt">Score Your Practice &rarr;</a>
+<section class="reveal" style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule-vt); overflow:hidden;">
+  <div class="cta-2col" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
+    <!-- Left: checklist image -->
+    <div style="overflow:hidden; position:relative;">
+      <img src="acrr-checklist.png" alt="ACRR Patient Acquisition Checklist" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block;">
+    </div>
+    <!-- Right: text -->
+    <div style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center;">
+      <h2 style="font-family:var(--font-d); font-size:clamp(28px,3vw,48px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:24px;">
+        Is your private-pay practice ready for <em>consistent patient growth?</em>
+      </h2>
+      <p style="font-size:17px; line-height:1.8; color:var(--mid-vt); margin-bottom:40px;">Most private-pay practitioners are excellent at the medicine and unsure about the marketing. The ACRR Patient Acquisition Checklist shows you exactly where your patient acquisition stands.</p>
+      <div>
+        <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" class="btn-wt">Score Your Practice &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
@@ -733,7 +744,7 @@
       </div>
 
       <!-- Right: social links -->
-      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+      <div class="footer-social-row" style="display:flex; gap:32px; flex-wrap:wrap;">
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Facebook</a>
         <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Instagram</a>
         <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">LinkedIn</a>

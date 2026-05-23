@@ -175,6 +175,11 @@
       .px-lg { padding-left: 24px !important; padding-right: 24px !important; }
       .case-grid { grid-template-columns: 1fr !important; }
       .port-grid { grid-template-columns: repeat(2,1fr) !important; }
+      /* Footer mobile */
+      footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+      footer > div > div { flex-direction: column !important; gap: 16px !important; }
+      .footer-links-row, .footer-social-row { flex-direction: row !important; flex-wrap: wrap !important; gap: 0 8px !important; align-items: center !important; }
+      .footer-links-row > *:not(:last-child)::after, .footer-social-row > *:not(:last-child)::after { content: " |"; margin-left: 8px; color: rgba(255,255,255,0.25); }
     }
     @media (max-width: 768px) {
       .hamburger { display: flex !important; }
@@ -316,7 +321,7 @@
         <a href="/contact" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Contact</a>
       </div>
 
-      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+      <div class="footer-social-row" style="display:flex; gap:32px; flex-wrap:wrap;">
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Facebook</a>
         <a href="https://instagram.com/leannmfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Instagram</a>
         <a href="https://linkedin.com/in/leannfrank" target="_blank" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">LinkedIn</a>
