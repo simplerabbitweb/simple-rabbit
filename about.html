@@ -188,7 +188,8 @@
       .letter-grid { grid-template-columns: 1fr !important; }
       .letter-grid .letter-photo { max-width: 400px !important; margin: 0 auto; }
       .grid-3 { grid-template-columns: 1fr !important; gap: 2px !important; }
-      .offer-row { flex-direction: column !important; gap: 20px !important; align-items: flex-start !important; }
+      .offer-row { flex-direction: column !important; gap: 20px !important; align-items: stretch !important; }
+      .offer-row > div:last-child { align-self: center !important; padding-right: 0 !important; text-align: center !important; }
     }
     @media (max-width: 768px) {
       .hamburger { display: flex !important; }
@@ -227,8 +228,7 @@
       <a href="/about">About</a>
       <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="/contact">Contact</a>
-      <a href="/apply" class="nav-cta">Apply</a>
+      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Apply to Work Together</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -237,8 +237,7 @@
   <a href="/about">About</a>
   <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/apply" class="mobile-nav-cta">Apply</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
 </div>
 
 
@@ -361,7 +360,7 @@
             <h3 style="font-family:var(--font-d); font-size:clamp(24px,2.5vw,36px); letter-spacing:-1px; font-weight:300; color:var(--black); margin-bottom:6px;">ACRR Growth Strategy</h3>
             <p style="font-family:var(--font-d); font-size:18px; font-style:italic; color:var(--mid-lt); margin-bottom:20px;">The Strategic Roadmap</p>
             <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px; margin-bottom:16px;">For concierge functional and precision medicine practitioners experiencing inconsistent patient flow who need a clear, professional plan.</p>
-            <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px; margin-bottom:16px;">I perform a deep audit of your current patient acquisition efforts and build a custom ACRR strategy tailored to your practice. You&rsquo;ll receive a detailed roadmap that shows exactly how to attract the right patients, convert leads more effectively, retain them longer, and generate consistent referrals.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px; margin-bottom:16px;">I perform a deep audit of your current patient acquisition efforts and build a custom ACRR strategy tailored to your practice.</p>
             <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px;">You&rsquo;ll walk away with a <strong>clear, actionable growth plan</strong> designed specifically for your clinical model.</p>
           </div>
         </div>
@@ -380,7 +379,7 @@
             <h3 style="font-family:var(--font-d); font-size:clamp(24px,2.5vw,36px); letter-spacing:-1px; font-weight:300; color:var(--black); margin-bottom:6px;">ACRR Growth Accelerator</h3>
             <p style="font-family:var(--font-d); font-size:18px; font-style:italic; color:var(--mid-lt); margin-bottom:20px;">The Full Implementation Package</p>
             <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px; margin-bottom:16px;">For busy practitioners who want the heavy lifting handled.</p>
-            <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px; margin-bottom:16px;">I take full ownership of building and implementing The ACRR System for you: strategy, website and funnel optimization, automated nurture sequences, referral systems, performance tracking, and everything needed to create a complete patient acquisition system.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px; margin-bottom:16px;">I take full ownership of building and implementing The ACRR System for you.</p>
             <p style="font-size:16px; line-height:1.8; color:var(--mid-lt); max-width:560px;">You&rsquo;ll end up with a professional, <strong>done-for-you patient growth system</strong> that consistently attracts higher-quality patients while reflecting the sophistication of your concierge functional or precision medicine practice.</p>
           </div>
         </div>
@@ -405,7 +404,7 @@
         <p style="font-size:13px; font-weight:400; letter-spacing:0.3px; font-family:var(--font-b); color:rgba(255,255,255,0.3); margin:0;">Patient Growth Systems for Concierge Functional &amp; Precision Medicine &bull; No HIPAA involvement &bull; I only work on public-facing marketing assets</p>
       </div>
 
-      <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+      <div class="footer-links-row" style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
         <span style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC</span>
         <a href="/privacy-policy" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
         <a href="/changes" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Client Portal</a>

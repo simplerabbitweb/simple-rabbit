@@ -99,6 +99,9 @@
       .form-row { grid-template-columns: 1fr !important; }
       section { padding-left: 24px !important; padding-right: 24px !important; }
       footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+      /* Footer links: row with pipe separators on mobile */
+      .footer-links-row { flex-direction: row !important; flex-wrap: wrap !important; gap: 0 8px !important; align-items: center !important; }
+      .footer-links-row > *:not(:last-child)::after { content: " |"; margin-left: 8px; color: rgba(255,255,255,0.25); }
     }
     @media (max-width: 768px) {
       .hamburger { display: flex !important; }
@@ -133,8 +136,7 @@
       <a href="/about">About</a>
       <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="/contact">Contact</a>
-      <a href="/apply" class="nav-cta">Apply</a>
+      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Apply to Work Together</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -143,8 +145,7 @@
   <a href="/about">About</a>
   <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="/contact">Contact</a>
-  <a href="/apply" class="mobile-nav-cta">Apply</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
 </div>
 
 
@@ -234,7 +235,7 @@
         <p style="font-size:13px; font-weight:400; font-family:var(--font-b); color:rgba(255,255,255,0.3); margin:0;">Patient Growth Systems for Concierge Functional &amp; Precision Medicine &bull; No HIPAA involvement &bull; I only work on public-facing marketing assets</p>
       </div>
 
-      <div style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+      <div class="footer-links-row" style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
         <span style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC</span>
         <a href="/privacy-policy" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
         <a href="/changes" style="font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.35); font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Client Portal</a>
