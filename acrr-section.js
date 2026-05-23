@@ -1,27 +1,37 @@
 /* ── ACRR CHECKLIST SECTION ─────────────────────────────────────────────────
    Edit the HTML below to update this section on every blog post at once.
-   Injected above the "More Articles" 3-card section on all posts.
+   Injected before the footer on all posts.
    ────────────────────────────────────────────────────────────────────────── */
 
 (function () {
   var html = `
 <!-- ACRR CHECKLIST PROMO -->
-<div style="padding:48px 0;">
-  <div style="max-width:960px; margin:0 auto; padding:0 24px;">
-    <div style="background:#849aa9; display:flex; align-items:stretch; overflow:hidden; border-radius:4px; flex-wrap:wrap;">
-      <img src="/acrr-checklist.png" alt="ACRR Checklist" style="width:320px; flex-shrink:0; display:block; object-fit:cover; align-self:stretch;">
-      <div style="flex:1; min-width:260px; padding:48px 48px;">
-        <p style="font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:16px;">Free Resource</p>
-        <h2 style="font-family:'Instrument Serif', Georgia, serif; font-size:clamp(28px,4vw,42px); font-weight:400; color:#fff; line-height:1.15; margin-bottom:20px;">Score Your Practice</h2>
-        <p style="font-size:16px; line-height:1.65; color:rgba(255,255,255,0.8); margin-bottom:32px;">Placeholder copy — paste your section content here and deploy.</p>
+<style>
+  @media(max-width:768px){
+    .acrr-grid{grid-template-columns:1fr !important; min-height:auto !important;}
+    .acrr-img{height:280px !important;}
+    .acrr-text{padding:48px 32px !important;}
+  }
+</style>
+<section style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule-vt); overflow:hidden;">
+  <div class="acrr-grid" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
+    <div class="acrr-img" style="overflow:hidden;">
+      <img src="/acrr-checklist.png" alt="ACRR Patient Acquisition Checklist" style="width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+    <div class="acrr-text" style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center;">
+      <h2 style="font-family:var(--font-d); font-size:clamp(28px,3vw,48px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:24px;">
+        Is your private-pay practice ready for <em>consistent patient growth?</em>
+      </h2>
+      <p style="font-size:17px; line-height:1.8; color:var(--mid-vt); margin-bottom:40px;">Most private-pay practitioners are excellent at the medicine and unsure about the marketing. The ACRR Patient Acquisition Checklist shows you exactly where your patient acquisition stands.</p>
+      <div>
         <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener"
-           style="display:inline-block; background:#0A0905; color:#FDFAF7; padding:14px 40px; font-size:13px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; font-family:'DM Sans',system-ui,sans-serif; text-decoration:none; transition:background 0.2s;">
-          Get the Checklist &rarr;
+           style="display:inline-block; background:var(--white); color:var(--black); padding:16px 48px; font-size:15px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; font-family:var(--font-b); text-decoration:none;">
+          Score Your Practice &rarr;
         </a>
       </div>
     </div>
   </div>
-</div>
+</section>
 `;
 
   var el = document.getElementById('acrr-section');
