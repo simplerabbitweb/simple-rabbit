@@ -788,13 +788,26 @@
 
 <!-- Scroll reveal -->
 <script>
-  const obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0 });
-  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
-  setTimeout(function() {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) { el.classList.add('visible'); });
-  }, 1500);
+  (function() {
+    var revealEls = document.querySelectorAll('.reveal');
+    // Immediately show anything already in the viewport so page is never blank
+    revealEls.forEach(function(el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 100) el.classList.add('visible');
+    });
+    // Observer for below-fold scroll-in animation
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function(el) { if (!el.classList.contains('visible')) obs.observe(el); });
+    } else {
+      // Fallback for no observer support
+      revealEls.forEach(function(el) { el.classList.add('visible'); });
+    }
+  })();
 </script>
 
 <!-- Mobile nav -->
