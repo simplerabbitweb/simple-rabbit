@@ -247,6 +247,9 @@
     @media (max-width: 600px) {
       footer > div { padding-left: 20px !important; padding-right: 20px !important; }
       .footer-social-links { flex-wrap: wrap !important; gap: 12px !important; }
+      /* Footer links: row with pipe separators on mobile */
+      .footer-links-row { flex-direction: row !important; flex-wrap: wrap !important; gap: 0 8px !important; align-items: center !important; }
+      .footer-links-row > *:not(:last-child)::after { content: " |"; margin-left: 8px; color: rgba(255,255,255,0.25); }
       .pkg-card { padding: 32px 24px !important; }
     }
     @media (min-width: 901px) {
@@ -523,7 +526,7 @@
 
   <div style="padding:28px 48px;border-bottom:1px solid rgba(255,255,255,0.1);">
     <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div class="footer-links-row" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
         <span style="font-size:12px;color:#fff;font-family:var(--font-mono);">&#169; 2026 Simple Rabbit LLC</span>
         <a href="/privacy-policy" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Privacy Policy</a>
         <a href="/changes" style="font-size:12px;color:#fff;text-decoration:none;font-family:var(--font-mono);">Client Portal</a>
