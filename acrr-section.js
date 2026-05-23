@@ -6,8 +6,8 @@
 (function () {
   var html = `
 <!-- ACRR CHECKLIST PROMO -->
-<section style="background:#849aa9; padding:80px 48px;">
-  <div style="max-width:960px; margin:0 auto; display:flex; align-items:center; gap:64px; flex-wrap:wrap;">
+<section style="background:#849aa9; padding:56px 48px;">
+  <div style="max-width:960px; margin:0 auto; display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
     <img src="/acrr-checklist.png" alt="ACRR Checklist" style="width:260px; height:260px; object-fit:cover; flex-shrink:0; display:block;">
     <div style="flex:1; min-width:260px;">
       <p style="font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:16px;">Free Resource</p>
