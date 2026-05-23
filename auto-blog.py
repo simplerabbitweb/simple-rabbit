@@ -360,20 +360,20 @@ PUBLISHED: {pub_date_display}
     <a href="/"><img src="../logo.png" alt="Simple Rabbit" style="max-height:88px;display:block;"></a>
     <div class="nav-links">
       <a href="/about">About</a>
-      <a href="/portfolio">Portfolio</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/services">Services</a>
       <a href="/articles">Articles</a>
-      <a href="/contact" class="nav-cta">Start a Project</a>
+      <a href="/apply" class="nav-cta">Apply to Work Together</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
+  <a href="/case-studies">Case Studies</a>
   <a href="/services">Services</a>
   <a href="/articles">Articles</a>
-  <a href="/contact" class="mobile-nav-cta">Start a Project</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
 </div>
 
 <!-- ARTICLE HEADER -->
@@ -405,6 +405,9 @@ PUBLISHED: {pub_date_display}
 
 </article>
 
+<!-- ACRR CHECKLIST -->
+<div id="acrr-section"></div><script src="../acrr-section.js"></script>
+
 <!-- FULL-WIDTH CTA -->
 <section style="position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
   <div class="parallax-bg" style="position:absolute;inset:0;background-image:url('/CTA-banner.jpg');background-size:cover;background-position:center;background-attachment:fixed;"></div>
@@ -425,11 +428,6 @@ PUBLISHED: {pub_date_display}
     <a href="https://leannfrank.myflodesk.com/jointhehutch" target="_blank" rel="noopener" style="display:inline-block;background:#474D73;color:var(--white);padding:14px 40px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Join The Hutch &rarr;</a>
   </div>
 </section>
-
-<!-- SCRIPTURE -->
-<div style="border-top:1px solid var(--light-border);padding:20px 48px;text-align:center;">
-  <p style="font-size:12px;font-family:var(--font-mono);letter-spacing:0.5px;color:var(--mid);font-style:italic;">&ldquo;For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.&rdquo; &mdash; Romans 1:16</p>
-</div>
 
 <!-- FOOTER -->
 <footer>
