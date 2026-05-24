@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Rabbit — Brand Style Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');
+      font-weight: 400; font-style: italic; font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #474D73;
+      --bg-dk:    #2D3154;
+      --bg-mid:   #3B4168;
+      --bg-lt:    #535980;
+      --white:    #FDFAF7;
+      --warm:     #F5F0EB;
+      --black:    #0A0905;
+      --mid-lt:   #7A756E;
+      --accent:   #AA737D;
+      --mid-vt:   #B0B5D0;
+      --slate:    #849AA9;
+      --rule-dk:  rgba(0,0,0,0.10);
+      --rule-vt:  rgba(255,255,255,0.10);
+      --font-d:   'Instrument Serif', Georgia, serif;
+      --font-b:   'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--warm);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ── */
+    .page { max-width: 1200px; margin: 0 auto; padding: 80px 48px; }
+    .section { margin-bottom: 96px; }
+    .section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--mid-lt); margin-bottom: 32px; display: block;
+      padding-bottom: 16px; border-bottom: 1px solid var(--rule-dk);
+    }
+
+    /* ── COVER ── */
+    .cover {
+      background: var(--bg-dk);
+      padding: 96px 80px;
+      margin-bottom: 80px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .cover h1 {
+      font-family: var(--font-d);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -3px;
+      color: var(--white);
+    }
+    .cover h1 em { color: var(--accent); }
+    .cover-meta {
+      text-align: right;
+    }
+    .cover-meta p {
+      font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); font-family: var(--font-b);
+      line-height: 2;
+    }
+
+    /* ── COLOR PALETTE ── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 2px;
+    }
+    .swatch {
+      display: flex; flex-direction: column;
+    }
+    .swatch-block {
+      height: 120px;
+    }
+    .swatch-info {
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .swatch-name {
+      font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      display: block; margin-bottom: 4px; color: var(--black);
+    }
+    .swatch-hex {
+      font-size: 12px; color: var(--mid-lt); font-family: monospace; letter-spacing: 0.5px;
+    }
+    .swatch-use {
+      font-size: 11px; color: var(--mid-lt); margin-top: 4px; line-height: 1.5;
+    }
+
+    /* ── PALETTE GROUPS ── */
+    .palette-group { margin-bottom: 40px; }
+    .palette-group-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px; display: block;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .type-specimen { margin-bottom: 48px; border-bottom: 1px solid var(--rule-dk); padding-bottom: 48px; }
+    .type-specimen:last-child { border-bottom: none; padding-bottom: 0; }
+    .type-meta {
+      display: flex; gap: 32px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .type-meta-item { font-size: 12px; color: var(--mid-lt); }
+    .type-meta-item strong { color: var(--black); display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
+
+    .spec-hero {
+      font-family: var(--font-d); font-size: clamp(52px,6.5vw,88px);
+      line-height: 1.0; letter-spacing: -3px; font-weight: 300; color: var(--black);
+    }
+    .spec-h2 {
+      font-family: var(--font-d); font-size: clamp(32px,4vw,56px);
+      line-height: 1.05; letter-spacing: -2px; font-weight: 300; color: var(--black);
+    }
+    .spec-h3 {
+      font-family: var(--font-d); font-size: clamp(22px,2.5vw,36px);
+      line-height: 1.15; letter-spacing: -1px; font-weight: 300; color: var(--black);
+    }
+    .spec-label {
+      font-family: var(--font-b); font-size: 13px; font-weight: 500;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--mid-lt);
+    }
+    .spec-nav {
+      font-family: var(--font-b); font-size: 14px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-lt);
+    }
+    .spec-body {
+      font-family: var(--font-b); font-size: 17px; line-height: 1.85; color: var(--mid-lt); max-width: 600px;
+    }
+    .spec-body-vt {
+      font-family: var(--font-b); font-size: 17px; line-height: 1.85; color: var(--mid-vt);
+      max-width: 600px; background: var(--bg); padding: 32px; display: inline-block;
+    }
+    .spec-caption {
+      font-family: var(--font-b); font-size: 13px; color: var(--mid-lt); letter-spacing: 0.3px;
+    }
+
+    /* ── BUTTONS ── */
+    .button-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-dk {
+      display: inline-block; background: var(--black); color: var(--white);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b);
+      text-decoration: none; border: none; cursor: pointer;
+    }
+    .btn-wt {
+      display: inline-block; background: var(--white); color: var(--black);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b);
+      text-decoration: none; border: none; cursor: pointer;
+    }
+    .btn-outline {
+      display: inline-block; background: transparent; color: var(--black);
+      padding: 15px 46px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b);
+      border: 1px solid var(--black); text-decoration: none; cursor: pointer;
+    }
+    .btn-wt-vt {
+      display: inline-block; background: var(--white); color: var(--black);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b);
+      text-decoration: none;
+    }
+
+    .btn-on-violet {
+      background: var(--bg); padding: 40px 48px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+    }
+
+    .btn-label {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--mid-lt); display: block; margin-top: 10px; font-family: var(--font-b);
+      text-align: center;
+    }
+    .btn-wrap { display: flex; flex-direction: column; align-items: flex-start; }
+
+    /* ── COMPONENTS ── */
+    .component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+    /* Nav mockup */
+    .nav-mock {
+      background: var(--white); border-bottom: 1px solid var(--rule-dk);
+      padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .nav-mock .logo-text {
+      font-family: var(--font-b); font-size: 13px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--black);
+    }
+    .nav-mock .links { display: flex; gap: 28px; align-items: center; }
+    .nav-mock .links span {
+      font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-lt);
+    }
+    .nav-mock .nav-cta {
+      background: var(--black); color: var(--white); padding: 8px 20px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; font-family: var(--font-b);
+    }
+
+    /* Card mockup */
+    .card-mock {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.08);
+    }
+    .card-mock-img {
+      height: 180px; background: var(--warm); overflow: hidden;
+    }
+    .card-mock-img div {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #c8cdd8 0%, #e8e4df 100%);
+    }
+    .card-mock-body { padding: 28px; }
+    .card-mock-foot {
+      padding: 14px 28px; border-top: 1px solid rgba(0,0,0,0.07);
+      background: var(--warm); display: flex; justify-content: space-between;
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-lt);
+      font-family: var(--font-b);
+    }
+
+    /* Testimonial mockup */
+    .testimonial-mock {
+      background: var(--bg-mid); padding: 56px 48px;
+    }
+    .testimonial-mock blockquote {
+      font-family: var(--font-d); font-size: clamp(20px,2.5vw,30px); line-height: 1.3;
+      letter-spacing: -0.5px; font-weight: 300; color: var(--white); margin-bottom: 32px;
+    }
+    .testimonial-mock .attr { font-family: var(--font-d); font-size: 16px; color: var(--white); margin-bottom: 4px; }
+    .testimonial-mock .attr-sub { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); font-family: var(--font-b); }
+
+    /* ACRR grid mockup */
+    .acrr-mock {
+      display: grid; grid-template-columns: repeat(4,1fr); border-left: 1px solid var(--rule-dk);
+      background: var(--white);
+    }
+    .acrr-col {
+      padding: 28px 24px; border-right: 1px solid var(--rule-dk);
+    }
+    .acrr-col .pillar {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); display: block; margin-bottom: 12px; font-family: var(--font-b);
+    }
+    .acrr-col h4 {
+      font-family: var(--font-d); font-size: 16px; font-weight: 400; line-height: 1.3;
+      color: var(--black); letter-spacing: -0.3px; margin-bottom: 10px;
+    }
+    .acrr-col p { font-size: 13px; color: var(--mid-lt); line-height: 1.7; }
+
+    /* ── MOOD BOARD ── */
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 2px;
+    }
+    .mood-cell { overflow: hidden; }
+
+    .mood-violet-hero {
+      grid-column: span 7; grid-row: span 2;
+      background: var(--bg-dk);
+      padding: 64px 56px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      min-height: 400px;
+    }
+    .mood-warm-quote {
+      grid-column: span 5;
+      background: var(--warm);
+      padding: 48px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .mood-accent-block {
+      grid-column: span 5;
+      background: var(--accent);
+      padding: 40px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mood-light-copy {
+      grid-column: span 4;
+      background: var(--white);
+      padding: 40px 36px;
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .mood-mid-vt {
+      grid-column: span 3;
+      background: var(--bg);
+      padding: 40px 32px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .mood-warm-2 {
+      grid-column: span 5;
+      background: var(--warm);
+      padding: 40px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    /* ── VOICE CARD ── */
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .voice-cell {
+      padding: 40px 36px;
+    }
+    .voice-cell.do { background: var(--white); border: 1px solid rgba(0,0,0,0.07); }
+    .voice-cell.dont { background: var(--warm); border: 1px solid rgba(0,0,0,0.07); }
+    .voice-cell h4 {
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 24px; font-family: var(--font-b);
+    }
+    .voice-cell.do h4 { color: var(--accent); }
+    .voice-cell.dont h4 { color: var(--mid-lt); }
+    .voice-item {
+      font-size: 15px; line-height: 1.7; color: var(--black); margin-bottom: 12px;
+      padding-left: 20px; position: relative; font-family: var(--font-b);
+    }
+    .voice-item::before {
+      position: absolute; left: 0; font-weight: 600;
+    }
+    .voice-cell.do .voice-item::before { content: "✓"; color: var(--accent); }
+    .voice-cell.dont .voice-item::before { content: "×"; color: var(--mid-lt); }
+    .voice-item span { color: var(--mid-lt); font-size: 13px; display: block; }
+
+    /* ── SPACING SCALE ── */
+    .spacing-row { display: flex; align-items: flex-end; gap: 2px; margin-bottom: 16px; }
+    .spacing-block { background: var(--bg); display: block; width: 48px; }
+    .spacing-label { font-size: 11px; letter-spacing: 1px; color: var(--mid-lt); margin-top: 8px; text-align: center; font-family: monospace; }
+    .spacing-col { display: flex; flex-direction: column; align-items: center; }
+
+    /* ── GRID DEMO ── */
+    .grid-demo {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    }
+    .grid-cell {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.07);
+      height: 100px; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-lt); font-family: var(--font-b);
+    }
+    .grid-cell.fill { background: var(--bg); color: var(--mid-vt); }
+
+    /* Announcement bar mock */
+    .ann-mock {
+      background: var(--bg-dk); padding: 11px 24px; text-align: center;
+      font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); font-family: var(--font-b);
+    }
+
+    /* Section divider */
+    .divider {
+      border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 96px 0;
+    }
+
+    /* Rule accent */
+    .rule-accent {
+      width: 64px; height: 1px; background: var(--accent); display: block; margin-bottom: 32px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <p style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:24px;">Brand Style Guide</p>
+    <h1>Simple<br>Rabbit<br><em>Studio.</em></h1>
+  </div>
+  <div class="cover-meta">
+    <p>Version 1.0</p>
+    <p>simplerabbit.studio</p>
+    <p>Bergen County, NJ</p>
+    <p style="margin-top:16px; color:rgba(255,255,255,0.2);">Patient Growth Systems</p>
+    <p style="color:rgba(255,255,255,0.2);">Concierge + Functional Medicine</p>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ═══════════════════════════════
+       MOOD BOARD
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">01 — Mood Board</span>
+
+    <div class="mood-grid">
+
+      <!-- Large violet hero block -->
+      <div class="mood-cell mood-violet-hero">
+        <p style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:20px;">Patient Growth Systems</p>
+        <h2 style="font-family:var(--font-d); font-size:clamp(36px,4vw,60px); font-weight:300; line-height:1.05; letter-spacing:-2px; color:var(--white); margin-bottom:20px;">You deserve a consistent flow of <em>ideal patients.</em></h2>
+        <p style="font-size:14px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); font-family:var(--font-b);">The ACRR System</p>
+      </div>
+
+      <!-- Warm quote block -->
+      <div class="mood-cell mood-warm-quote">
+        <span class="rule-accent"></span>
+        <p style="font-family:var(--font-d); font-size:clamp(20px,2.5vw,28px); line-height:1.3; letter-spacing:-0.5px; color:var(--black); margin-bottom:20px;">"The website wasn't the problem. The problem was the missing steps."</p>
+        <p style="font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Leann Frank, Founder</p>
+      </div>
+
+      <!-- Accent block -->
+      <div class="mood-cell mood-accent-block">
+        <p style="font-family:var(--font-d); font-size:clamp(28px,3vw,44px); font-weight:300; line-height:1.1; letter-spacing:-1px; color:var(--white); text-align:center;">Attract.<br>Convert.<br>Retain.<br>Refer.</p>
+      </div>
+
+      <!-- Light copy block -->
+      <div class="mood-cell mood-light-copy">
+        <p style="font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--mid-lt); margin-bottom:16px; font-family:var(--font-b);">The Problem</p>
+        <p style="font-size:15px; line-height:1.85; color:var(--mid-lt);">Running a concierge functional or precision medicine practice shouldn't feel this uncertain.</p>
+        <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+          <span style="background:var(--warm); border:1px solid rgba(0,0,0,0.08); padding:6px 14px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Functional Medicine</span>
+          <span style="background:var(--warm); border:1px solid rgba(0,0,0,0.08); padding:6px 14px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Precision Medicine</span>
+          <span style="background:var(--warm); border:1px solid rgba(0,0,0,0.08); padding:6px 14px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Concierge</span>
+        </div>
+      </div>
+
+      <!-- Violet texture block -->
+      <div class="mood-cell mood-mid-vt">
+        <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-vt); font-family:var(--font-b); margin-bottom:12px;">Token</p>
+        <p style="font-family:monospace; font-size:13px; color:rgba(255,255,255,0.5); line-height:2;">--bg #474D73<br>--bg-dk #2D3154<br>--accent #AA737D<br>--mid-vt #B0B5D0</p>
+      </div>
+
+      <!-- Warm secondary -->
+      <div class="mood-cell mood-warm-2">
+        <p style="font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; font-family:var(--font-b);">Instrument Serif</p>
+        <p style="font-family:var(--font-d); font-size:clamp(24px,3vw,40px); font-weight:300; line-height:1.1; letter-spacing:-1.5px; color:var(--black);">Where clinical excellence meets <em>consistent growth.</em></p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       COLOR PALETTE
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">02 — Color Palette</span>
+
+    <!-- Violet Palette -->
+    <div class="palette-group">
+      <span class="palette-group-label">Violet Palette — Nav, Footer, Testimonials, ACRR Section</span>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-block" style="background:#2D3154;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">BG Dark</span>
+            <span class="swatch-hex">#2D3154 · --bg-dk</span>
+            <span class="swatch-use">Footer, announcement bar, deepest sections</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#3B4168;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">BG Mid</span>
+            <span class="swatch-hex">#3B4168 · --bg-mid</span>
+            <span class="swatch-use">Testimonial section</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#474D73;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">BG</span>
+            <span class="swatch-hex">#474D73 · --bg</span>
+            <span class="swatch-use">Primary violet background, Leann section, ACRR CTA</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#535980;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">BG Light</span>
+            <span class="swatch-hex">#535980 · --bg-lt</span>
+            <span class="swatch-use">Hover states, lighter violet panels</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#B0B5D0;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Mid Violet</span>
+            <span class="swatch-hex">#B0B5D0 · --mid-vt</span>
+            <span class="swatch-use">Body text on violet backgrounds, secondary labels</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light Palette -->
+    <div class="palette-group">
+      <span class="palette-group-label">Light Palette — Hero, Content Sections, Blog, Offers</span>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-block" style="background:#FDFAF7; border:1px solid rgba(0,0,0,0.08);"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">White</span>
+            <span class="swatch-hex">#FDFAF7 · --white</span>
+            <span class="swatch-use">Primary light background, warm white (not pure)</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#F5F0EB; border:1px solid rgba(0,0,0,0.06);"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Warm</span>
+            <span class="swatch-hex">#F5F0EB · --warm</span>
+            <span class="swatch-use">Alternate sections, card footers, featured-in strip</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#0A0905;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Black</span>
+            <span class="swatch-hex">#0A0905 · --black</span>
+            <span class="swatch-use">Primary text, buttons, nav CTA</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#7A756E; border:1px solid rgba(0,0,0,0.06);"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Mid Light</span>
+            <span class="swatch-hex">#7A756E · --mid-lt</span>
+            <span class="swatch-use">Body text on light, secondary labels, nav links</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accent -->
+    <div class="palette-group">
+      <span class="palette-group-label">Accent + CTA</span>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-block" style="background:#AA737D;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Accent</span>
+            <span class="swatch-hex">#AA737D · --accent</span>
+            <span class="swatch-use">Category labels, eyebrows, decorative rules, hover underlines. Used sparingly.</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#849AA9;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Slate Blue</span>
+            <span class="swatch-hex">#849AA9 · --slate</span>
+            <span class="swatch-use">Mid-page CTA band. Sits between the violet and light palettes. Used on the "Stop leaving ideal patients to chance" section.</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:rgba(0,0,0,0.10); border:1px solid rgba(0,0,0,0.08);"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Rule Dark</span>
+            <span class="swatch-hex">rgba(0,0,0,0.10)</span>
+            <span class="swatch-use">Dividers on light backgrounds</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.2);"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Rule Violet</span>
+            <span class="swatch-hex">rgba(255,255,255,0.10)</span>
+            <span class="swatch-use">Dividers on violet backgrounds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contrast preview -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:8px;">
+      <div style="background:var(--bg); padding:28px 24px;">
+        <p style="font-family:var(--font-d); font-size:20px; color:var(--white); font-weight:300; line-height:1.3; margin-bottom:8px;">White on Violet</p>
+        <p style="font-size:14px; color:var(--mid-vt);">Secondary text uses --mid-vt for visual hierarchy on dark.</p>
+      </div>
+      <div style="background:var(--white); padding:28px 24px; border:1px solid rgba(0,0,0,0.07);">
+        <p style="font-family:var(--font-d); font-size:20px; color:var(--black); font-weight:300; line-height:1.3; margin-bottom:8px;">Black on White</p>
+        <p style="font-size:14px; color:var(--mid-lt);">Secondary text uses --mid-lt for visual hierarchy on light.</p>
+      </div>
+      <div style="background:var(--warm); padding:28px 24px; border:1px solid rgba(0,0,0,0.06);">
+        <p style="font-family:var(--font-d); font-size:20px; color:var(--black); font-weight:300; line-height:1.3; margin-bottom:8px;">Black on Warm</p>
+        <p style="font-size:14px; color:var(--mid-lt);">Warm is used for alternating sections to avoid flat monotony.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       TYPOGRAPHY
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">03 — Typography</span>
+
+    <!-- Typeface intro -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-bottom:48px;">
+      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.07); padding:40px 36px;">
+        <p style="font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:24px;">Display — Headings</p>
+        <p style="font-family:var(--font-d); font-size:56px; font-weight:300; line-height:1.0; letter-spacing:-2px; color:var(--black);">Instrument<br><em>Serif</em></p>
+        <p style="font-size:14px; color:var(--mid-lt); margin-top:20px; line-height:1.7;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z<br>0 1 2 3 4 5 6 7 8 9</p>
+      </div>
+      <div style="background:var(--warm); border:1px solid rgba(0,0,0,0.06); padding:40px 36px;">
+        <p style="font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:24px;">Body + UI — All Else</p>
+        <p style="font-family:var(--font-b); font-size:48px; font-weight:300; line-height:1.0; letter-spacing:-1px; color:var(--black);">DM Sans</p>
+        <p style="font-size:14px; color:var(--mid-lt); margin-top:20px; line-height:1.7; font-family:var(--font-b);">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z<br>0 1 2 3 4 5 6 7 8 9</p>
+      </div>
+    </div>
+
+    <!-- Type specimens -->
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Hero H1</div>
+        <div class="type-meta-item"><strong>Font</strong>Instrument Serif</div>
+        <div class="type-meta-item"><strong>Size</strong>clamp(52px, 6.5vw, 96px)</div>
+        <div class="type-meta-item"><strong>Weight</strong>300</div>
+        <div class="type-meta-item"><strong>Letter Spacing</strong>-3px</div>
+        <div class="type-meta-item"><strong>Line Height</strong>1.0</div>
+      </div>
+      <p class="spec-hero">You deserve a consistent<br>flow of <em>ideal patients.</em></p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Section H2</div>
+        <div class="type-meta-item"><strong>Font</strong>Instrument Serif</div>
+        <div class="type-meta-item"><strong>Size</strong>clamp(32px, 4vw, 56px)</div>
+        <div class="type-meta-item"><strong>Weight</strong>300</div>
+        <div class="type-meta-item"><strong>Letter Spacing</strong>-2px</div>
+      </div>
+      <p class="spec-h2">Running a private-pay practice<br>shouldn't feel <em>this uncertain.</em></p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Card / Offer H3</div>
+        <div class="type-meta-item"><strong>Font</strong>Instrument Serif</div>
+        <div class="type-meta-item"><strong>Size</strong>clamp(22px, 2.5vw, 36px)</div>
+        <div class="type-meta-item"><strong>Weight</strong>300</div>
+        <div class="type-meta-item"><strong>Letter Spacing</strong>-1px</div>
+      </div>
+      <p class="spec-h3">ACRR Growth Strategy — <em>The Strategic Roadmap</em></p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Body Copy (light bg)</div>
+        <div class="type-meta-item"><strong>Font</strong>DM Sans</div>
+        <div class="type-meta-item"><strong>Size</strong>17px</div>
+        <div class="type-meta-item"><strong>Weight</strong>400</div>
+        <div class="type-meta-item"><strong>Line Height</strong>1.85</div>
+        <div class="type-meta-item"><strong>Color</strong>--mid-lt</div>
+      </div>
+      <p class="spec-body">I help functional and precision medicine doctors get new patients consistently, so they can spend their time on medicine instead of marketing. The ACRR System is a four-part framework built specifically for concierge private-pay practices.</p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Body Copy (violet bg)</div>
+        <div class="type-meta-item"><strong>Font</strong>DM Sans</div>
+        <div class="type-meta-item"><strong>Size</strong>17px</div>
+        <div class="type-meta-item"><strong>Color</strong>--mid-vt</div>
+      </div>
+      <p class="spec-body-vt">My background is web design, mostly local service businesses with some wellness mixed in. I got good at building sites that looked right and converted reasonably well. But I kept seeing the same pattern after launch: the practice had a new site and still wasn't getting the patients they expected.</p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Eyebrow / Label</div>
+        <div class="type-meta-item"><strong>Font</strong>DM Sans</div>
+        <div class="type-meta-item"><strong>Size</strong>11–13px</div>
+        <div class="type-meta-item"><strong>Weight</strong>500–600</div>
+        <div class="type-meta-item"><strong>Letter Spacing</strong>2–3px</div>
+        <div class="type-meta-item"><strong>Transform</strong>Uppercase</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <p class="spec-label" style="color:var(--accent);">Category Label (--accent)</p>
+        <p class="spec-label" style="color:var(--mid-lt);">Section Label (--mid-lt)</p>
+        <p class="spec-label" style="color:var(--mid-vt);">Label on Violet (--mid-vt)</p>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Use</strong>Navigation Links</div>
+        <div class="type-meta-item"><strong>Font</strong>DM Sans</div>
+        <div class="type-meta-item"><strong>Size</strong>14px</div>
+        <div class="type-meta-item"><strong>Weight</strong>500</div>
+        <div class="type-meta-item"><strong>Letter Spacing</strong>1.5px</div>
+      </div>
+      <p class="spec-nav">About &nbsp;&nbsp;/&nbsp;&nbsp; Case Studies &nbsp;&nbsp;/&nbsp;&nbsp; Articles &nbsp;&nbsp;/&nbsp;&nbsp; Apply to Work Together</p>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       BUTTONS
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">04 — Buttons</span>
+
+    <p style="font-size:14px; color:var(--mid-lt); margin-bottom:32px; line-height:1.7;">All buttons use sharp corners (no border-radius). Font: DM Sans 600, 15px, 1.2px letter spacing, uppercase. Buttons never have rounded corners or drop shadows.</p>
+
+    <div style="background:var(--white); padding:48px; border:1px solid rgba(0,0,0,0.07); margin-bottom:2px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:28px;">On Light Backgrounds</p>
+      <div class="button-row">
+        <div class="btn-wrap">
+          <span class="btn-dk">Apply to Work Together &rarr;</span>
+          <span class="btn-label">Primary / btn-dk</span>
+        </div>
+        <div class="btn-wrap">
+          <span class="btn-outline">Apply &rarr;</span>
+          <span class="btn-label">Secondary / btn-outline</span>
+        </div>
+        <div class="btn-wrap" style="opacity:0.45; pointer-events:none;">
+          <span class="btn-dk">Disabled State</span>
+          <span class="btn-label">Disabled</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-on-violet">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-vt); font-family:var(--font-b); width:100%; margin-bottom:16px;">On Violet Backgrounds</p>
+      <div class="button-row">
+        <div class="btn-wrap">
+          <span class="btn-wt-vt">Score Your Practice &rarr;</span>
+          <span class="btn-label" style="color:var(--mid-vt);">Primary / btn-wt</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       UI COMPONENTS
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">05 — UI Components</span>
+
+    <!-- Announcement bar -->
+    <div style="margin-bottom:2px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:8px;">Announcement Bar</p>
+      <div class="ann-mock">
+        Free Resource &nbsp;|&nbsp; <strong style="color:#fff; font-weight:600;">Score Your Practice</strong> &nbsp; <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 10px;">Get Now &rarr;</span>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <div style="margin-bottom:40px; margin-top:24px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:8px;">Navigation Bar</p>
+      <div class="nav-mock">
+        <div class="logo-text">Simple Rabbit</div>
+        <div class="links">
+          <span>About</span>
+          <span>Case Studies</span>
+          <span>Articles</span>
+          <div class="nav-cta">Apply to Work Together</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards + Testimonial -->
+    <div style="margin-bottom:40px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:8px;">Blog Card + Testimonial</p>
+      <div class="component-grid">
+        <div class="card-mock">
+          <div class="card-mock-img"><div></div></div>
+          <div class="card-mock-body">
+            <span style="font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:12px; font-family:var(--font-b);">Local SEO</span>
+            <h3 style="font-family:var(--font-d); font-size:22px; line-height:1.3; font-weight:400; letter-spacing:-0.5px; color:var(--black);">The Local Keywords Your Wellness Practice Should Be Targeting</h3>
+          </div>
+          <div class="card-mock-foot"><span>Read article</span><span>&rarr;</span></div>
+        </div>
+        <div class="testimonial-mock">
+          <blockquote>"I get so many clients now from the website search. Leann brought my ideas and vision into life."</blockquote>
+          <hr style="border:none; border-top:1px solid rgba(255,255,255,0.15); width:48px; margin-bottom:24px;">
+          <p class="attr">Mona Perez</p>
+          <p class="attr-sub">Smooth Laser Center &middot; Bergen County, NJ</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACRR grid -->
+    <div style="margin-bottom:40px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:8px;">ACRR System Grid</p>
+      <div class="acrr-mock">
+        <div class="acrr-col">
+          <span class="pillar"><strong style="text-decoration:underline;">A</strong>ttract</span>
+          <h4>Draw in the right patients.</h4>
+          <p>Build a clear online presence that reaches patients who value root-cause medicine.</p>
+        </div>
+        <div class="acrr-col">
+          <span class="pillar"><strong style="text-decoration:underline;">C</strong>onvert</span>
+          <h4>Turn interest into booked appointments.</h4>
+          <p>Move interested leads into committed new patients through optimized funnels.</p>
+        </div>
+        <div class="acrr-col">
+          <span class="pillar"><strong style="text-decoration:underline;">R</strong>etain</span>
+          <h4>Keep ideal patients engaged.</h4>
+          <p>Build long-term relationships with nurture systems that keep patients connected.</p>
+        </div>
+        <div class="acrr-col">
+          <span class="pillar"><strong style="text-decoration:underline;">R</strong>efer</span>
+          <h4>Turn patients into advocates.</h4>
+          <p>Satisfied patients naturally refer others who share their philosophy.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       LAYOUT SYSTEM
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">06 — Layout System</span>
+
+    <p style="font-size:14px; color:var(--mid-lt); margin-bottom:32px; line-height:1.7; max-width:640px;">Pages alternate between violet and light sections. No section uses the same background twice in a row. Two-column 50/50 grid is the primary layout. Sections are full-width, separated by 1px rules.</p>
+
+    <!-- Section rhythm visualization -->
+    <div style="margin-bottom:40px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:12px;">Page Rhythm — Background Alternation</p>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <div style="background:var(--white); border:1px solid rgba(0,0,0,0.07); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Hero</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-lt);">--white #FDFAF7</span>
+        </div>
+        <div style="background:var(--white); border:1px solid rgba(0,0,0,0.07); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Problem</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-lt);">--white #FDFAF7</span>
+        </div>
+        <div style="background:var(--warm); border:1px solid rgba(0,0,0,0.06); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Featured In</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-lt);">--warm #F5F0EB</span>
+        </div>
+        <div style="background:var(--bg); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-vt); font-family:var(--font-b);">Hi I'm Leann</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-vt);">--bg #474D73</span>
+        </div>
+        <div style="background:var(--white); border:1px solid rgba(0,0,0,0.07); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">ACRR System</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-lt);">--white #FDFAF7</span>
+        </div>
+        <div style="background:#849AA9; padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-family:var(--font-b);">CTA Band</span>
+          <span style="font-family:monospace; font-size:12px; color:rgba(255,255,255,0.7);">#849AA9 · --slate</span>
+        </div>
+        <div style="background:var(--warm); border:1px solid rgba(0,0,0,0.06); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b);">Outcomes</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-lt);">--warm #F5F0EB</span>
+        </div>
+        <div style="background:var(--bg-mid); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-vt); font-family:var(--font-b);">Testimonial</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-vt);">--bg-mid #3B4168</span>
+        </div>
+        <div style="background:var(--bg-dk); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-vt); font-family:var(--font-b);">Footer</span>
+          <span style="font-family:monospace; font-size:12px; color:var(--mid-vt);">--bg-dk #2D3154</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacing scale -->
+    <div style="margin-bottom:40px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:20px;">Spacing Scale</p>
+      <div style="display:flex; align-items:flex-end; gap:8px; flex-wrap:wrap;">
+        <div class="spacing-col"><div class="spacing-block" style="height:8px;"></div><span class="spacing-label">8</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:16px;"></div><span class="spacing-label">16</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:24px;"></div><span class="spacing-label">24</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:32px;"></div><span class="spacing-label">32</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:40px;"></div><span class="spacing-label">40</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:48px;"></div><span class="spacing-label">48</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:64px;"></div><span class="spacing-label">64</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:80px;"></div><span class="spacing-label">80</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:96px;"></div><span class="spacing-label">96</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:100px;"></div><span class="spacing-label">100</span></div>
+        <div class="spacing-col"><div class="spacing-block" style="height:120px;"></div><span class="spacing-label">120</span></div>
+      </div>
+      <p style="font-size:12px; color:var(--mid-lt); margin-top:16px;">Section padding (desktop): 100px top/bottom. Padding (mobile): 48–60px. Max content width: 1100–1280px.</p>
+    </div>
+
+    <!-- Grid system -->
+    <div>
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:12px;">Primary Grid — 2 Column, 0 Gap (2px rule)</p>
+      <div class="grid-demo" style="margin-bottom:2px;">
+        <div class="grid-cell">Column 1</div>
+        <div class="grid-cell fill">Column 2 (violet)</div>
+      </div>
+      <div class="grid-demo" style="grid-template-columns:repeat(3,1fr);">
+        <div class="grid-cell">Col 1</div>
+        <div class="grid-cell">Col 2</div>
+        <div class="grid-cell">Col 3</div>
+      </div>
+      <p style="font-size:12px; color:var(--mid-lt); margin-top:12px;">Columns use 2px gap (not a CSS gap value — two separate full-bleed blocks placed 2px apart). Sharp edges, no rounded corners on any grid cell.</p>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       VOICE + TONE
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">07 — Voice and Tone</span>
+
+    <p style="font-size:15px; line-height:1.8; color:var(--mid-lt); margin-bottom:32px; max-width:640px;">Three words: <strong style="color:var(--black);">Direct. Warm. Quietly confident.</strong> All three at once. Direct without warm is cold. Warm without direct is soft. Confident without warm is arrogant.</p>
+
+    <div class="voice-grid" style="margin-bottom:32px;">
+      <div class="voice-cell do">
+        <h4>Write this</h4>
+        <div class="voice-item">Short sentences. Then a slightly longer one. Then short again.<span>Vary length, lean short</span></div>
+        <div class="voice-item">Specific nouns over generic ones.<span>"A menopause specialist" not "a healthcare provider"</span></div>
+        <div class="voice-item">Concrete verbs over abstract ones.<span>"Ranks on Google" not "achieves visibility"</span></div>
+        <div class="voice-item">Active voice throughout.<span>"We build custom sites" not "Custom sites are built"</span></div>
+        <div class="voice-item">Name the problem plainly.<span>"Your contact form isn't visible on mobile"</span></div>
+        <div class="voice-item">One idea per sentence.<span>If it has three commas, it's probably two ideas</span></div>
+      </div>
+      <div class="voice-cell dont">
+        <h4>Not this</h4>
+        <div class="voice-item">Em-dashes anywhere.<span>Hard rule. Use a comma, period, or colon instead.</span></div>
+        <div class="voice-item">Triple adjective lists.<span>"Clean, intentional, and strategic" — one is sharper.</span></div>
+        <div class="voice-item">"Not just X, but Y" constructions.<span>An AI tell. Just say the thing.</span></div>
+        <div class="voice-item">Spa/coach language.<span>Elevate, transform, journey, manifest, soul-led</span></div>
+        <div class="voice-item">Borrowed proof points.<span>No client results that don't exist yet</span></div>
+        <div class="voice-item">"Cash-pay" anywhere.<span>Always: private-pay</span></div>
+      </div>
+    </div>
+
+    <!-- Sample copy side by side -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px;">
+      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.07); padding:36px;">
+        <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:16px;">On brand</p>
+        <p style="font-size:16px; line-height:1.85; color:var(--black);">I help functional and precision medicine doctors get new patients consistently. Not by running ads or building a social following. By fixing the parts of their patient acquisition that are broken.</p>
+      </div>
+      <div style="background:var(--warm); border:1px solid rgba(0,0,0,0.06); padding:36px;">
+        <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); font-family:var(--font-b); margin-bottom:16px;">Off brand</p>
+        <p style="font-size:16px; line-height:1.85; color:var(--mid-lt); text-decoration:line-through; text-decoration-color:var(--accent);">I empower visionary practitioners to unlock their full patient acquisition potential through transformative, comprehensive, and holistic digital strategies that elevate their online presence.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       BRAND SUMMARY
+  ═══════════════════════════════ -->
+  <div class="section">
+    <span class="section-label">08 — Brand Summary</span>
+    <div style="background:var(--bg-dk); padding:72px 64px;">
+      <div style="max-width:800px; margin:0 auto;">
+        <p style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:32px;">The North Star</p>
+        <p style="font-family:var(--font-d); font-size:clamp(32px,4vw,56px); font-weight:300; line-height:1.1; letter-spacing:-2px; color:var(--white); margin-bottom:48px;">"You should never have to think about your website again."</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:32px; border-top:1px solid var(--rule-vt); padding-top:40px;">
+          <div>
+            <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:12px;">Positioning</p>
+            <p style="font-size:14px; color:var(--mid-vt); line-height:1.7;">Patient growth systems for concierge functional and precision medicine doctors.</p>
+          </div>
+          <div>
+            <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:12px;">Framework</p>
+            <p style="font-size:14px; color:var(--mid-vt); line-height:1.7;">ACRR System: Attract, Convert, Retain, Refer.</p>
+          </div>
+          <div>
+            <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-family:var(--font-b); margin-bottom:12px;">Voice</p>
+            <p style="font-size:14px; color:var(--mid-vt); line-height:1.7;">Direct. Warm. Quietly confident. Never an em-dash.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

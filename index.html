@@ -376,7 +376,7 @@
   <div style="max-width:1280px; margin:0 auto;">
 
     <h2 style="font-family:var(--font-d); font-size:clamp(32px,4vw,56px); line-height:1.05; letter-spacing:-2px; font-weight:300; margin-bottom:72px; color:var(--black);">
-      Running a concierge functional or precision medicine practice shouldn&rsquo;t feel <em>this uncertain.</em>
+      Running a private medicine practice shouldn&rsquo;t feel <em>this uncertain.</em>
     </h2>
 
     <div class="buckets" style="display:grid; grid-template-columns:repeat(3,1fr); border-left:1px solid var(--rule-dk);">
@@ -389,13 +389,13 @@
 
       <div style="padding:40px 36px; border-right:1px solid var(--rule-dk);">
         <img src="X.png" alt="" style="display:block; margin:0 auto 24px; height:32px; width:auto;">
-        <h3 style="font-family:var(--font-d); font-size:clamp(20px,1.8vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Marketing takes up space that belongs to patient care.</h3>
+        <h3 style="font-family:var(--font-d); font-size:clamp(20px,1.8vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Marketing takes up time &amp; energy that belongs to patient care.</h3>
         <p style="font-size:15px; color:var(--mid-lt); line-height:1.75;">You feel frustrated by unpredictable patient flow. You didn&rsquo;t go into this field to become a marketer, yet marketing now takes up mental space that should go to patient care and continuing education.</p>
       </div>
 
       <div style="padding:40px 36px; border-right:1px solid var(--rule-dk);">
         <img src="X.png" alt="" style="display:block; margin:0 auto 24px; height:32px; width:auto;">
-        <h3 style="font-family:var(--font-d); font-size:clamp(20px,1.8vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">This level of care deserves more than unpredictable growth.</h3>
+        <h3 style="font-family:var(--font-d); font-size:clamp(20px,1.8vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Your standard of care deserves patients who value it.</h3>
         <p style="font-size:15px; color:var(--mid-lt); line-height:1.75;">High-quality, personalized medicine should come with a steady stream of the right patients. Not generic marketing that doesn&rsquo;t reflect the depth of your work.</p>
       </div>
 
@@ -509,8 +509,16 @@
 <!-- ════════════════════════════════════════════
      06 — CTA (violet)
      ════════════════════════════════════════════ -->
-<section class="reveal" style="background:#849aa9; padding:96px 64px; border-bottom:1px solid var(--rule-vt); text-align:center;">
-  <div style="max-width:680px; margin:0 auto;">
+<section class="reveal" style="background:#849aa9; padding:96px 64px; border-bottom:1px solid var(--rule-vt); text-align:center; position:relative; overflow:hidden;">
+  <!-- Circle left, partially off-screen -->
+  <svg style="position:absolute;top:50%;left:-160px;transform:translateY(-50%);width:400px;height:400px;pointer-events:none;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="195" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  </svg>
+  <!-- Circle right, smaller, peeking from upper right -->
+  <svg style="position:absolute;top:-80px;right:-80px;width:260px;height:260px;pointer-events:none;" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="130" cy="130" r="125" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  </svg>
+  <div style="max-width:680px; margin:0 auto; position:relative; z-index:1;">
     <h2 style="font-family:var(--font-d); font-size:clamp(30px,3.5vw,52px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:48px;">
       Stop leaving ideal patients <em>to chance.</em>
     </h2>
@@ -535,7 +543,7 @@
       <!-- Right: headline + benefits -->
       <div>
         <h2 style="font-family:var(--font-d); font-size:clamp(28px,3vw,44px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--black); margin-bottom:40px;">
-          When your patient flow is <em>predictable,</em> everything changes.
+          When your patient flow is <em>predictable,</em> everything gets better.
         </h2>
         <div style="display:flex; flex-direction:column; gap:20px;">
 
@@ -582,7 +590,7 @@
   <div style="max-width:1280px; margin:0 auto;">
 
     <h2 style="font-family:var(--font-d); font-size:clamp(32px,4vw,56px); line-height:1.05; letter-spacing:-2px; font-weight:300; margin-bottom:64px; color:var(--black);">
-      Real Results from<br>Practices Like Yours.
+      Real Results from<br>Real Clients.
     </h2>
 
     <div class="grid-cs" style="display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-bottom:48px;">
@@ -699,17 +707,25 @@
      ════════════════════════════════════════════ -->
 <section class="reveal" style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule-vt); overflow:hidden;">
   <div class="cta-2col" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
-    <!-- Left: checklist image -->
-    <div style="overflow:hidden;">
-      <img src="acrr-checklist.png" alt="ACRR Patient Acquisition Checklist" style="width:100%; height:100%; object-fit:cover; display:block;">
+    <!-- Left: checklist image with circle behind -->
+    <div style="overflow:hidden; position:relative;">
+      <!-- Circle 1: large, centered behind the image -->
+      <svg style="position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="300" cy="310" r="260" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      </svg>
+      <img src="acrr-checklist.png" alt="ACRR Patient Acquisition Checklist" style="width:100%; height:100%; object-fit:cover; display:block; position:relative; z-index:1;">
     </div>
-    <!-- Right: text -->
-    <div style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center;">
-      <h2 style="font-family:var(--font-d); font-size:clamp(28px,3vw,48px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:24px;">
+    <!-- Right: text with circle peeking from upper right -->
+    <div style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+      <!-- Circle 2: partially visible from upper right corner -->
+      <svg style="position:absolute; top:-120px; right:-120px; width:320px; height:320px; pointer-events:none; z-index:0;" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="160" r="155" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      </svg>
+      <h2 style="font-family:var(--font-d); font-size:clamp(28px,3vw,48px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:24px; position:relative; z-index:1;">
         Is your private-pay practice ready for <em>consistent patient growth?</em>
       </h2>
-      <p style="font-size:17px; line-height:1.8; color:var(--mid-vt); margin-bottom:40px;">Most private-pay practitioners are excellent at the medicine and unsure about the marketing. The ACRR Patient Acquisition Checklist shows you exactly where your patient acquisition stands.</p>
-      <div>
+      <p style="font-size:17px; line-height:1.8; color:var(--mid-vt); margin-bottom:40px; position:relative; z-index:1;">Most private-pay practitioners are excellent at the medicine and unsure about the marketing. The ACRR Patient Acquisition Checklist shows you exactly where your patient acquisition stands.</p>
+      <div style="position:relative; z-index:1;">
         <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" class="btn-wt">Score Your Practice &rarr;</a>
       </div>
     </div>
