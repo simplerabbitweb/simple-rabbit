@@ -105,7 +105,7 @@
     /* WHAT'S INSIDE */
     .inside-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule-dk); margin-top: 56px; }
     .inside-card { padding: 52px 44px; }
-    .inside-num { font-family: var(--font-d); font-size: 56px; line-height: 1; color: var(--bg-dk); opacity: 0.12; margin-bottom: 20px; }
+    .inside-num { font-family: var(--font-d); font-size: 120px; line-height: 1; color: var(--bg-dk); opacity: 0.09; margin-bottom: 0; letter-spacing: -4px; }
     .inside-label { font-family: var(--font-b); font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
     .inside-title { font-family: var(--font-d); font-size: 28px; letter-spacing: -0.5px; color: var(--black); margin-bottom: 16px; line-height: 1.2; }
     .inside-body { font-size: 15px; line-height: 1.8; color: var(--mid-lt); }
@@ -119,7 +119,7 @@
     .for-no { color: var(--mid-lt); flex-shrink: 0; opacity: 0.45; line-height: 1.65; }
 
     /* PULL QUOTE */
-    .quote-section { background: var(--bg-mid); padding: 80px 64px; text-align: center; }
+    .quote-section { background: var(--bg-mid); padding: 80px 64px; text-align: center; position: relative; overflow: hidden; }
     .quote-inner { max-width: 740px; margin: 0 auto; }
     .pull-quote { font-family: var(--font-d); font-size: clamp(22px, 2.5vw, 34px); font-weight: 400; font-style: italic; line-height: 1.5; color: var(--white); letter-spacing: -0.5px; margin-bottom: 28px; }
     .pull-attr { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); }
@@ -192,6 +192,7 @@
     <div class="hero-img">
       <span class="hero-tag">Free Download</span>
       <img src="acrr-checklist.png" alt="ACRR Patient Growth Checklist">
+      <span style="position:absolute; bottom:16px; left:16px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:var(--white); font-family:var(--font-b); font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:8px 16px; backdrop-filter:blur(8px);">&#9654;&nbsp; Interactive</span>
     </div>
   </div>
 </section>
@@ -285,8 +286,17 @@
 
 <!-- PULL QUOTE -->
 <section class="quote-section">
-  <div class="quote-inner">
-    <p class="pull-quote">"You did not leave insurance to become a marketer. But you do need a patient growth system that works while you focus on care."</p>
+  <!-- Circle left, partially off-screen -->
+  <svg style="position:absolute;top:50%;left:-180px;transform:translateY(-50%);width:480px;height:480px;pointer-events:none;" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="240" cy="240" r="234" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <circle cx="240" cy="240" r="180" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  </svg>
+  <!-- Circle right, peeking from bottom right -->
+  <svg style="position:absolute;bottom:-120px;right:-120px;width:380px;height:380px;pointer-events:none;" viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="190" cy="190" r="185" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  </svg>
+  <div class="quote-inner" style="position:relative;z-index:1;">
+    <p class="pull-quote">"You did not leave insurance to become a marketer. But you do need a patient growth system that works while you focus on&nbsp;care."</p>
     <p class="pull-attr">Leann Frank &nbsp;&middot;&nbsp; Simple Rabbit</p>
   </div>
 </section>
@@ -336,11 +346,11 @@
         <h2 class="about-h2">I built this because most practitioners are running blind.</h2>
         <div class="about-body">
           <p>I work with private-pay healthcare and wellness practices on their websites and patient growth systems. What I found, over and over, was that practitioners were doing serious clinical work but had no clear picture of where their patient pipeline was breaking down.</p>
-          <p>They were not sure if their website was working. Their Google listing was set up wrong, or not set up at all. They were not asking for referrals in any systematic way. They were doing good work and hoping it was enough.</p>
-          <p>The ACRR Checklist takes every question I ask at the start of a new engagement and puts it in one place, so you can run the audit yourself. You do not need to hire anyone to get a clear picture. You just need to know where to look.</p>
+          <p>They were not sure if their website was working, if their Google listing was set up wrong, or not set up at all. They were not asking for referrals in any systematic way, but they were doing good work and hoping it was enough.</p>
+          <p><strong>The ACRR Checklist takes every question I ask at the start of a new engagement and puts it in one place, so you can run the audit yourself.</strong> You do not need to hire anyone to get a clear picture. You just need to know where to look.</p>
         </div>
         <p class="about-sig">Leann Frank</p>
-        <p style="font-size:13px; color:var(--mid-lt); margin-top:6px; font-family:var(--font-b);">Founder, Simple Rabbit &nbsp;&middot;&nbsp; Bergen County, NJ</p>
+        <p style="font-size:13px; color:var(--mid-lt); margin-top:6px; font-family:var(--font-b);">Founder, Simple Rabbit</p>
         <div style="margin-top:36px;">
           <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" class="btn btn-dk">Get the Free Checklist &rarr;</a>
         </div>
@@ -355,7 +365,7 @@
   <div class="final-inner">
     <p class="final-pre">Free Download</p>
     <h2 class="final-h2">Start with a clear picture.</h2>
-    <p class="final-body">The checklist is free. It takes 10 minutes. You will finish it knowing more about where your practice is losing patients than most practitioners figure out in years of guessing.</p>
+    <p class="final-body">The checklist is free and you'll learn quickly where your practice is losing patients.</p>
     <a href="https://simplerabbit.myflodesk.com/acrr-checklist" target="_blank" rel="noopener" class="btn btn-lt">Get the Free Checklist &rarr;</a>
     <p class="final-note">No spam &nbsp;&middot;&nbsp; Unsubscribe any time</p>
   </div>
