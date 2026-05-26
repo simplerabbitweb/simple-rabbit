@@ -11,8 +11,9 @@ import re
 import sys
 from pathlib import Path
 
-BLOG_DIR = Path(__file__).parent / "blog"
-INDEX    = Path(__file__).parent / "index.html"
+SITE_ROOT = Path(__file__).parent.parent
+BLOG_DIR = SITE_ROOT / "blog"
+INDEX    = SITE_ROOT / "index.html"
 MARKER_START = "<!-- BLOG-FEED-START -->"
 MARKER_END   = "<!-- BLOG-FEED-END -->"
 
