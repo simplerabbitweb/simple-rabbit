@@ -62,13 +62,15 @@ PUBLISHED: May 27, 2026
     .mobile-nav a.mobile-nav-cta{background:#0A0905;color:#FDFAF7!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;}
     .back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;font-family:var(--font-b);transition:color 0.2s;}
     .back-link:hover{color:var(--black);}
-    .article-title{font-size:clamp(32px,5vw,60px);line-height:1.05;letter-spacing:-2px;font-weight:400;color:var(--black);margin-bottom:24px;}
-    .article-body{font-size:18px;line-height:1.85;color:#3a3530;max-width:720px;}
-    .article-body h2{font-size:clamp(22px,2.5vw,30px);line-height:1.2;margin:56px 0 20px;color:var(--black);}
-    .article-body h3{font-size:clamp(18px,2vw,24px);line-height:1.3;margin:40px 0 16px;color:var(--black);}
-    .article-body p{margin-bottom:24px;}
-    .article-body ul,.article-body ol{padding-left:24px;margin-bottom:24px;}
-    .article-body li{margin-bottom:10px;}
+    .article-header{padding:72px 48px 56px;border-bottom:1px solid var(--rule-dk);}
+    .article-header-inner{max-width:720px;margin:0 auto;}
+    .article-title{font-size:clamp(32px,4.5vw,52px);letter-spacing:-1.5px;line-height:1.1;margin-bottom:24px;}
+    .article-body{max-width:720px;margin:0 auto;padding:64px 48px 80px;}
+    .article-body p{font-size:17px;line-height:1.85;color:#3a3530;margin-bottom:28px;}
+    .article-body h2{font-size:26px;line-height:1.25;letter-spacing:-0.5px;margin:52px 0 18px;color:var(--black);}
+    .article-body h3{font-size:20px;line-height:1.3;margin:36px 0 14px;color:var(--black);}
+    .article-body ul,.article-body ol{margin:0 0 28px 24px;}
+    .article-body li{font-size:17px;line-height:1.8;color:#3a3530;margin-bottom:10px;}
     .article-body strong{font-weight:600;color:var(--black);}
     .article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
     .article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:40px 0;font-style:italic;color:var(--mid-lt);}
@@ -134,15 +136,14 @@ PUBLISHED: May 27, 2026
 </div>
 
 
-<!-- ARTICLE HERO -->
-<section style="padding:80px 64px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
-  <div style="max-width:800px; margin:0 auto;">
+<!-- ARTICLE HEADER -->
+<header class="article-header reveal">
+  <div class="article-header-inner">
     <a href="/articles" class="back-link" style="margin-bottom:40px; display:inline-flex;">&larr; All articles</a>
     <span class="article-category">Strategy</span>
     <h1 class="article-title">Why So Many Private-Pay Physicians Are Suddenly Asking Me About Email</h1>
-    <p style="font-size:18px; line-height:1.7; color:var(--mid-lt); max-width:640px;">The requests have shifted. What used to be almost entirely about websites and search is now also about email — and the instinct behind it is exactly right.</p>
   </div>
-</section>
+</header>
 
 <!-- FEATURED IMAGE -->
 <div class="article-hero-img">
@@ -151,55 +152,49 @@ PUBLISHED: May 27, 2026
 
 
 <!-- ARTICLE BODY -->
-<section style="padding:80px 64px; background:var(--white);">
-  <div style="max-width:800px; margin:0 auto;">
-    <article class="article-body">
+<article class="article-body reveal">
 
-      <p>Something has shifted in the last few months. The requests I'm getting from private-pay practices used to be almost entirely about websites and getting found on Google, and a lot of them still are. But more and more of them now start somewhere else: "Can you help me with my email?"</p>
+  <p>Something has shifted in the last few months. The requests I'm getting from private-pay practices used to be almost entirely about websites and getting found on Google, and a lot of them still are. But more and more of them now start somewhere else: "Can you help me with my email?"</p>
 
-      <p>Sometimes it's email templates, sometimes a welcome sequence for new patients. Often it's a way to follow up with the people who fill out a form and then go quiet, or a monthly note that doesn't sound like it came from a hospital marketing department.</p>
+  <p>Sometimes it's email templates, sometimes a welcome sequence for new patients. Often it's a way to follow up with the people who fill out a form and then go quiet, or a monthly note that doesn't sound like it came from a hospital marketing department.</p>
 
-      <p>I think the instinct behind those requests is exactly right, and it's worth explaining why.</p>
+  <p>I think the instinct behind those requests is exactly right, and it's worth explaining why.</p>
 
-      <h2>The math most practices never run</h2>
+  <h2>The math most practices never run</h2>
 
-      <p>The people on your email list already raised their hand. They found you, read enough to trust you a little, and gave you their address. That is a warmer audience than anyone you'll reach through an ad or a search result, and most practices do almost nothing with it.</p>
+  <p>The people on your email list already raised their hand. They found you, read enough to trust you a little, and gave you their address. That is a warmer audience than anyone you'll reach through an ad or a search result, and most practices do almost nothing with it.</p>
 
-      <p>A patient who's been with you for two years and a prospective patient who downloaded your guide last week are at completely different points. But they have one thing in common: a short, well-written email is the cheapest, most direct way to stay in front of both of them. There's no algorithm deciding who sees it and no ad spend involved. It just lands in the inbox of someone who already knows your name.</p>
+  <p>A patient who's been with you for two years and a prospective patient who downloaded your guide last week are at completely different points. They have one thing in common, though: a short, well-written email is the cheapest, most direct way to stay in front of both of them. No algorithm decides who sees it. No ad spend involved. It just lands in the inbox of someone who already knows your name.</p>
 
-      <p>That's why I built email into the framework I use with every practice, not as an afterthought but as two of its four pillars.</p>
+  <p>That's why I built email into the framework I use with every practice, not as an afterthought but as two of its four pillars.</p>
 
-      <h2>Where email actually lives in the ACRR system</h2>
+  <h2>Where email actually lives in the ACRR system</h2>
 
-      <p>I organize patient growth around four stages: Attract, Convert, Retain, Refer. Email does real work in two of them.</p>
+  <p>I organize patient growth around four stages: Attract, Convert, Retain, Refer. Email does real work in two of them.</p>
 
-      <p><strong>Convert.</strong> Plenty of people find a practice, get interested, and then nothing happens. They meant to book, and life got in the way. A simple follow-up sequence — two or three short emails after someone shows interest — catches a meaningful share of the people who would have quietly drifted off. These aren't strangers. They're people who already looked at you and liked what they saw, and they just needed a reason to come back this week instead of someday.</p>
+  <p><strong>Convert.</strong> Plenty of people find a practice, get interested, and then nothing happens. They meant to book, and life got in the way. A simple follow-up sequence (two or three short emails after someone shows interest) catches a meaningful share of the people who would have quietly drifted off. These are people who already looked at you and liked what they saw. They just needed a reason to come back this week instead of someday.</p>
 
-      <p><strong>Retain.</strong> This is the one practices underuse the most. Your established patients are the easiest people in the world to lose track of, because everything is going fine until it isn't. A patient who hasn't heard from you in eight months is a patient who's a little more likely to drift, a little more likely to forget what made your care different in the first place. A short, genuinely useful note every few weeks keeps the relationship warm. It reminds people why they chose a practice like yours — the kind that thinks in root causes and long arcs instead of fifteen-minute slots.</p>
+  <p><strong>Retain.</strong> This is the pillar practices underuse the most. Established patients are the easiest people in the world to lose track of, because everything is going fine until it isn't. A patient who hasn't heard from you in eight months is a patient who's a little more likely to drift, a little more likely to forget what made your care different in the first place. A short, genuinely useful note every few weeks keeps the relationship warm. It reminds people why they chose a practice like yours, the kind that thinks in root causes and long arcs instead of fifteen-minute slots.</p>
 
-      <p>I want to be precise about what this is and isn't. This is marketing email — educational notes, re-engagement, the occasional update about what you're doing in the practice. It is not clinical communication, it is not the patient portal, and it never touches anything protected. The line is firm, and I keep all of my work on the marketing side of it.</p>
+  <p>A note on scope: this is marketing email. Educational notes, re-engagement, the occasional update about what you're doing in the practice. Clinical communication lives in the patient portal, and nothing in this work touches protected information. The line is firm, and I keep all of my work on the marketing side of it.</p>
 
-      <h2>The tool I actually use: Flodesk</h2>
+  <h2>The tool I actually use: Flodesk</h2>
 
-      <p>People ask me what to send this through, and I send almost everyone to the same place. I use <a href="https://flodesk.com/c/LEANNFRANK" target="_blank" rel="noopener">Flodesk</a> and I recommend it for this exact kind of practice.</p>
+  <p>People ask me what to send this through, and I send almost everyone to the same place. I use <a href="https://flodesk.com/c/LEANNFRANK" target="_blank" rel="noopener">Flodesk</a> and I recommend it for this kind of practice.</p>
 
-      <p>There are two reasons I keep recommending it. The first is that the emails look like you, not like a software template. The design is clean and adult, which matters when your whole brand is built on looking more credible than the practice down the street. A lot of email platforms produce mail that screams "automated marketing," and for a private-pay physician that's the opposite of the impression you want to make. The second is the pricing, which is flat. You pay one rate whether your list is 300 people or 30,000, so you're never punished for the list growing. For a practice that's planning to grow, that's the right kind of math.</p>
+  <p>The main reason I keep coming back to it is how user-friendly it is. Setting up a welcome sequence or a re-engagement flow doesn't require a developer or a week of setup. You can do it yourself in an afternoon, and the emails look polished from the start. The design is clean and grown-up, which matters when your whole brand is built on looking more credible than the practice down the street. A lot of email platforms produce mail that reads as automated marketing. For a private-pay physician, that's the opposite of the impression you want to make.</p>
 
-      <p>The welcome sequences and re-engagement flows I described above are straightforward to set up in it, which is part of why I keep coming back to it.</p>
+  <p>If you want to look at it, here's <a href="https://flodesk.com/c/LEANNFRANK" target="_blank" rel="noopener">my link</a>. I'll be upfront: that's an affiliate link, so I earn a small commission if you sign up through it. I'd recommend the tool either way. The link just means I get a little credit for the referral.</p>
 
-      <p>If you want to look at it, here's <a href="https://flodesk.com/c/LEANNFRANK" target="_blank" rel="noopener">my link</a>. I'll be upfront — that's an affiliate link, so I earn a small commission if you sign up through it. I'd recommend the tool either way. The link just means I get a little credit for the recommendation.</p>
+  <h2>If you've been thinking about this</h2>
 
-      <h2>If you've been thinking about this</h2>
+  <p>The fact that this keeps coming up tells me a lot of practices are sitting on a warm list and a quiet inbox at the same time. If that's you, the most useful starting point is figuring out where the leaks actually are across your whole patient acquisition picture, because email is usually one piece of a bigger pattern.</p>
 
-      <p>The fact that this keeps coming up tells me a lot of practices are sitting on a warm list and a quiet inbox at the same time. If that's you, the first thing worth doing isn't writing emails. It's figuring out where the leaks actually are across your whole patient acquisition picture, because email is usually one piece of a bigger pattern.</p>
+  <p>That's what my ACRR Patient Acquisition Checklist is for. It's a short self-assessment that scores how ready your practice is for steady, predictable patient growth, and it'll show you fairly quickly whether email is your weak spot or just one of several. You can work through it on your own, and if you want to talk through what it surfaces, you can book a call from there.</p>
 
-      <p>That's what my ACRR Patient Acquisition Checklist is for. It's a short self-assessment that scores how ready your practice is for steady, predictable patient growth, and it'll show you fairly quickly whether email is your weak spot or just one of several. You can work through it on your own, and if you want to talk through what it surfaces, you can book a call from there.</p>
+  <p>Either way, if patients and prospective patients keep slipping through the gaps between visits, your list is probably the least expensive place to start closing them.</p>
 
-      <p>Either way, if patients and prospective patients keep slipping through the gaps between visits, your list is probably the least expensive place to start closing them.</p>
-
-    </article>
-  </div>
-</section>
+</article>
 
 
 <!-- ▼▼▼ REQUIRED: ACRR CHECKLIST SECTION — do not remove ▼▼▼ -->
