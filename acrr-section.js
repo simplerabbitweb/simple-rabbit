@@ -15,8 +15,8 @@
 </style>
 <section style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule-vt); overflow:hidden;">
   <div class="acrr-grid" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
-    <div class="acrr-img" style="overflow:hidden;">
-      <img src="/acrr-checklist.png" alt="ACRR Patient Acquisition Checklist" style="width:100%; height:100%; object-fit:cover; display:block;">
+    <div class="acrr-img" style="overflow:hidden; position:relative; min-height:360px;">
+      <img src="/acrr-checklist.png" alt="ACRR Patient Acquisition Checklist" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
     </div>
     <div class="acrr-text" style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center;">
       <h2 style="font-family:var(--font-d); font-size:clamp(28px,3vw,48px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:24px;">
