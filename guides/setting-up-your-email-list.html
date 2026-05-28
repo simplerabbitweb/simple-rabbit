@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Set Up an Email List for Your Practice | Client Guide</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="../favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --mid:#555;--dark:#4A4540;--light-border:rgba(0,0,0,0.10);
+      --accent-dark:#8a5d66;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:var(--font-d);letter-spacing:-0.5px;font-weight:400;}
+    a{color:inherit;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
+    .nav-inner{padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-links{display:flex;align-items:center;gap:36px;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--bg)!important;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(0,0,0,0.10);}
+    .mobile-nav.open{display:flex!important;}
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);padding:22px 24px;border-bottom:1px solid rgba(0,0,0,0.10);font-family:inherit;text-decoration:none;}
+    .mobile-nav a.mobile-nav-cta{background:#0A0905;color:#FDFAF7!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;}
+
+    /* ARTICLE */
+    .back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;font-family:var(--font-b);transition:color 0.2s;}
+    .back-link:hover{color:var(--black);}
+    .article-header{padding:72px 48px 56px;border-bottom:1px solid var(--rule-dk);}
+    .article-header-inner{max-width:720px;margin:0 auto;}
+    .article-title{font-size:clamp(32px,4.5vw,52px);letter-spacing:-1.5px;line-height:1.1;margin-bottom:24px;}
+    .article-category{font-family:var(--font-b);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;}
+    .article-body{max-width:720px;margin:0 auto;padding:64px 48px 100px;}
+    .article-body p{font-size:17px;line-height:1.85;color:#3a3530;margin-bottom:28px;}
+    .article-body h2{font-size:26px;line-height:1.25;letter-spacing:-0.5px;margin:52px 0 18px;color:var(--black);}
+    .article-body h3{font-size:20px;line-height:1.3;margin:36px 0 14px;color:var(--black);}
+    .article-body ul,.article-body ol{margin:0 0 28px 24px;}
+    .article-body li{font-size:17px;line-height:1.8;color:#3a3530;margin-bottom:10px;}
+    .article-body strong{font-weight:600;color:var(--black);}
+    .article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .callout{background:var(--warm);border-left:3px solid var(--accent);padding:20px 28px;margin:32px 0;border-radius:0 4px 4px 0;}
+    .callout p{margin-bottom:0;font-size:16px;font-style:italic;}
+    .callout p+p{margin-top:12px;}
+    .tip-box{background:#f0f4fb;border-left:3px solid #7A8DC4;padding:20px 28px;margin:32px 0;border-radius:0 4px 4px 0;}
+    .tip-box p{margin-bottom:0;font-size:16px;}
+
+    .toc{background:var(--warm);border:1px solid var(--rule-dk);padding:24px 32px 20px;margin-bottom:52px;}
+    .toc-label{font-family:var(--font-b);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px;font-weight:500;}
+    .toc ol{list-style:none;margin:0;padding:0;}
+    .toc>ol>li{font-size:15px;line-height:1.65;color:var(--black);margin-bottom:5px;}
+    .toc a{color:var(--black);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.15);transition:color 0.2s,border-color 0.2s;}
+    .toc a:hover{color:var(--accent);border-color:var(--accent);}
+    .toc-sub{list-style:none;margin:6px 0 8px 18px;padding:0;}
+    .toc-sub li{font-size:14px;line-height:1.6;color:var(--mid-lt);margin-bottom:3px;}
+    @media(max-width:768px){
+      .nav-inner{padding:0 24px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .article-header{padding:56px 24px 40px;}
+      .article-body{padding:48px 24px 80px;}
+      .toc{padding:20px 24px 16px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="../sign-logo.png" alt="Simple Rabbit" style="max-height:48px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/apply" class="nav-cta">Apply to Work Together</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/case-studies">Case Studies</a>
+  <a href="/articles">Articles</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
+</div>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <div class="article-header-inner">
+    <a href="/client-hub" class="back-link">&larr; Back to Client Resources</a>
+    <div style="height:32px;"></div>
+    <span class="article-category">Client Guide</span>
+    <h1 class="article-title">How to Set Up an Email List for Your Practice</h1>
+    <p style="font-size:18px;line-height:1.75;color:var(--mid-lt);margin-top:8px;">Your email list is the one marketing channel you actually own. Here&rsquo;s how to get started, step by step.</p>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <nav class="toc" aria-label="Table of contents">
+    <span class="toc-label">In this guide</span>
+    <ol>
+      <li><a href="#step-1">Step 1: Choose an email platform</a></li>
+      <li><a href="#step-2">Step 2: Set up your account</a></li>
+      <li><a href="#step-3">Step 3: Create a signup form</a></li>
+      <li><a href="#step-4">Step 4: Write a welcome email or sequence</a></li>
+      <li><a href="#step-5">Step 5: Start sending (once a month is enough)</a></li>
+      <li><a href="#step-6">Step 6: Grow your list</a></li>
+      <li><a href="#clean-list">Keeping your list clean</a></li>
+      <li>
+        <a href="#hipaa">HIPAA and email marketing</a>
+        <ul class="toc-sub">
+          <li><a href="#hipaa-baa">The BAA requirement</a></li>
+          <li><a href="#hipaa-flodesk">What this means for Flodesk</a></li>
+          <li><a href="#hipaa-platforms">Platforms that sign BAAs</a></li>
+          <li><a href="#hipaa-lists">The two types of email lists</a></li>
+          <li><a href="#hipaa-intake">The intake checkbox approach</a></li>
+          <li><a href="#hipaa-auth">Patient authorization for marketing emails</a></li>
+          <li><a href="#hipaa-content">What you can and can&rsquo;t put in the emails</a></li>
+        </ul>
+      </li>
+    </ol>
+  </nav>
+
+  <h2 id="step-1">Step 1: Choose an email platform</h2>
+
+  <p>You need a tool to manage your subscriber list and send emails. There are a lot of options out there, but the one I recommend for practices like yours is <a href="https://flodesk.com/c/LEANNFRANK" target="_blank" rel="noopener">Flodesk</a>.</p>
+
+  <p>Here&rsquo;s why I like it: it&rsquo;s designed for small businesses and service providers, it&rsquo;s genuinely easy to use, and the emails look polished right out of the box. That last part matters more than people realize. Well-designed emails get opened; plain ones get ignored or flagged as spam.</p>
+
+  <div class="tip-box">
+    <p><strong>Note:</strong> I use Flodesk for my own newsletter and recommend it to clients. If you sign up through <a href="https://flodesk.com/c/LEANNFRANK" target="_blank" rel="noopener">my link</a>, I may receive a commission at no extra cost to you.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>If your practice is HIPAA-covered:</strong> There are important rules about which email platforms you can legally use with patient data. See the HIPAA section at the end of this guide before choosing a platform or loading any patient emails into one.</p>
+  </div>
+
+  <h2 id="step-2">Step 2: Set up your account</h2>
+
+  <p>Once you&rsquo;re signed up, go through the initial setup. You&rsquo;ll need to:</p>
+
+  <ul>
+    <li><strong>Add your practice name and physical address.</strong> This is required by the <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business" target="_blank" rel="noopener">CAN-SPAM Act</a>. All commercial emails must include a valid physical address. Your practice address works fine.</li>
+    <li><strong>Upload your logo.</strong> Flodesk makes this easy and uses it automatically in your email templates.</li>
+    <li><strong>Verify your email domain.</strong> This step helps your emails land in the inbox instead of spam. Flodesk walks you through it with clear instructions. It takes about 10&ndash;15 minutes and involves a small DNS update (if that sounds intimidating, it&rsquo;s really just copying and pasting a few lines; your web host or I can help if needed).</li>
+  </ul>
+
+  <h2 id="step-3">Step 3: Create a signup form</h2>
+
+  <p>This is how people get onto your list. In Flodesk, go to <strong>Forms</strong> and create either an embedded form (to put on your website) or a standalone landing page (a shareable link).</p>
+
+  <p>What to offer on the form:</p>
+
+  <ul>
+    <li>&ldquo;Monthly health notes from Dr. [Name]&rdquo; (simple and honest)</li>
+    <li>A downloadable resource if you have one (a patient or client FAQ, a seasonal wellness tip sheet)</li>
+    <li>Or simply: &ldquo;Stay in touch with what&rsquo;s new at [Practice Name]&rdquo;</li>
+  </ul>
+
+  <p>You don&rsquo;t need a lead magnet or a freebie to get signups. Many patients or clients will subscribe simply because they already like you and want to stay connected.</p>
+
+  <p>Once the form is ready, embed it on your website (your contact page or homepage works well), and copy the shareable link to use in your email signature and Instagram bio.</p>
+
+  <h2 id="step-4">Step 4: Write a welcome email or sequence</h2>
+
+  <p>Set up one automated email that goes out to everyone who subscribes. This is the first thing they&rsquo;ll receive from you. Make it feel personal, not like a newsletter from a corporation.</p>
+
+  <p>Keep it short. Something like:</p>
+
+  <div class="callout">
+    <p>Hi [First Name],</p>
+    <p>Thanks for subscribing. I&rsquo;m Dr. [Name], and once a month I share [a quick description of what you plan to send]. No fluff. Just things I think are actually worth knowing.</p>
+    <p>Talk soon.</p>
+  </div>
+
+  <p>The goal is for it to feel like a note from a real person, not an automated marketing sequence. Because it is.</p>
+
+  <p>Simple Rabbit can help set up an engaging email sequence.</p>
+
+  <h2 id="step-5">Step 5: Start sending (once a month is enough)</h2>
+
+  <p>Pick a day each month and stick to it. Consistency matters a lot more than frequency. One email a month that patients or clients look forward to is worth far more than four emails a month they start ignoring.</p>
+
+  <p>Ideas for what to send:</p>
+
+  <ul>
+    <li>A health topic you&rsquo;re seeing a lot of in your practice right now</li>
+    <li>A question patients or clients ask you all the time, answered</li>
+    <li>A seasonal wellness tip (what you&rsquo;re telling patients or clients this time of year)</li>
+    <li>A reminder that you&rsquo;re accepting new patients or clients</li>
+    <li>Something a little personal, like a book you&rsquo;ve been reading or a reflection on your practice philosophy</li>
+  </ul>
+
+  <p>Keep each email focused on one main idea. People skim. One clear, useful thing is better than five half-developed ones.</p>
+
+  <h2 id="step-6">Step 6: Grow your list</h2>
+
+  <p>Beyond your website form, here are the easiest ways to grow:</p>
+
+  <ul>
+    <li><strong>Ask new patients or clients at intake or onboarding</strong> if they&rsquo;d like to receive your monthly emails. A simple checkbox works.</li>
+    <li><strong>Add your signup link to your email signature.</strong> Every email you send is an opportunity.</li>
+    <li><strong>Mention it on Instagram,</strong> something like &ldquo;Monthly health notes from me, no spam: link in bio.&rdquo;</li>
+    <li><strong>Include it in onboarding materials</strong> you send to new patients or clients.</li>
+  </ul>
+
+  <p>You don&rsquo;t need thousands of subscribers to see results. A list of 300 engaged patients or clients who trust you is worth more than 3,000 people who barely remember signing up.</p>
+
+  <h2 id="clean-list">Keeping your list clean</h2>
+
+  <p>A clean list is a healthy list. Over time, people change email addresses, lose interest, or stop opening your emails. If you keep sending to them anyway, it hurts your deliverability, meaning more of your emails land in spam for everyone, including the people who actually want to hear from you.</p>
+
+  <p><strong>Unsubscribes are handled automatically.</strong> When someone clicks "unsubscribe," Flodesk removes them without you doing anything. You don&rsquo;t need to manage this manually.</p>
+
+  <p><strong>Remove hard bounces.</strong> A hard bounce means the email address no longer exists or is permanently unreachable. Most platforms flag these automatically. Check your bounce report every few months and remove them to keep your list accurate.</p>
+
+  <p><strong>Re-engage before you remove.</strong> Every 6 to 12 months, look at who hasn&rsquo;t opened any of your emails in a while. Before removing them, send one short email:</p>
+
+  <div class="callout">
+    <p>&ldquo;Still want to hear from us? Click here to stay on the list.&rdquo;</p>
+  </div>
+
+  <p>Anyone who clicks stays. Anyone who doesn&rsquo;t can be removed. It&rsquo;s a quick way to trim the list without losing people who are just quiet but still interested.</p>
+
+  <p><strong>Why this matters.</strong> Email platforms track how many people open and click your emails. A list full of unengaged addresses drags that number down, which signals to email providers like Gmail that your messages aren&rsquo;t worth delivering. A smaller, engaged list will almost always outperform a large, unresponsive one.</p>
+
+  <h2 id="hipaa">HIPAA and email marketing: what your practice needs to know</h2>
+
+  <p>Most concierge, functional, and precision medicine practices are HIPAA-covered entities. That has real implications for how you set up an email list and which platforms you can legally use.</p>
+
+  <h3 id="hipaa-baa">The issue most people don&rsquo;t know about: the BAA</h3>
+
+  <p>When you load patient email addresses into a third-party platform, that platform is now handling what HIPAA calls Protected Health Information (PHI). An email address combined with the fact that it belongs to a patient of a healthcare practice qualifies.</p>
+
+  <p>That means the email platform becomes a &ldquo;business associate&rdquo; under HIPAA, and it must sign a legal contract called a <a href="https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html" target="_blank" rel="noopener">Business Associate Agreement (BAA)</a> before you can load any patient data into it. No signed BAA = not legal to use with patient information, no matter how good the platform is or how general your email content is.</p>
+
+  <h3 id="hipaa-flodesk">What this means for Flodesk</h3>
+
+  <p>Flodesk is a genuinely excellent platform for many businesses, and I stand behind it for that reason. But as of the time this guide was written, Flodesk does not appear to offer a Business Associate Agreement.</p>
+
+  <p>That means: if your email list includes existing patients (as opposed to people who found your website and opted in on their own with no prior patient relationship), using Flodesk may put your practice out of compliance with HIPAA.</p>
+
+  <p>Before loading any patient data into Flodesk, contact them directly to confirm whether they will sign a BAA. If they won&rsquo;t, you&rsquo;ll need a different platform for that portion of your list.</p>
+
+  <h3 id="hipaa-platforms">Platforms that do sign BAAs</h3>
+
+  <p>If you need a fully HIPAA-covered email platform, some options that have been documented to sign BAAs include Constant Contact (on eligible plans) and ActiveCampaign (enterprise tier). These tend to be pricier and more complex than Flodesk, but if your list includes patient information, a signed BAA is non-negotiable.</p>
+
+  <h3 id="hipaa-lists">The two types of email lists and why it matters</h3>
+
+  <p>Not every email list is treated the same under HIPAA. The key distinction is how a subscriber ended up on your list:</p>
+
+  <ul>
+    <li><strong>Self-initiated public opt-in:</strong> Someone finds your website, clicks a signup form, and subscribes entirely on their own. They may or may not be a current patient. They&rsquo;re signing up for a newsletter, not as part of a clinical interaction. This is the lower-risk scenario. Most HIPAA compliance experts treat this as a marketing relationship rather than a healthcare one, and a standard email platform like Flodesk is generally considered appropriate for this use case.</li>
+    <li><strong>Practice-sourced list:</strong> You are adding contacts you know are your patients, by importing from your records, adding them manually, or using an intake checkbox to pull known patients into a marketing platform. Here, the platform is handling information the practice has connected to a clinical relationship. This is where the BAA requirement applies most clearly.</li>
+  </ul>
+
+  <p>The practical upshot: if a patient goes to your website and signs up for your newsletter on their own, that&rsquo;s the clean scenario. Flodesk is likely fine for that. The complication arises when you start proactively building the list from your patient roster.</p>
+
+  <h3 id="hipaa-intake">The intake checkbox approach</h3>
+
+  <p>This guide suggests asking patients at intake if they&rsquo;d like to receive monthly emails. That&rsquo;s a good way to get consent, but it also means you&rsquo;re building a list you know contains your patients, which puts it in the practice-sourced category above.</p>
+
+  <p>If you want to use the intake checkbox AND Flodesk, you have a few options:</p>
+  <ul>
+    <li>Contact Flodesk directly to ask if they will sign a BAA. If they will, you&rsquo;re covered.</li>
+    <li>Use a BAA-covered platform (like Constant Contact or ActiveCampaign enterprise) for intake-sourced contacts, and keep Flodesk for your public opt-in list.</li>
+    <li>Confirm with your attorney whether your specific setup requires a BAA given how the data flows.</li>
+  </ul>
+
+  <h3 id="hipaa-auth">Patient authorization for marketing emails</h3>
+
+  <p>Under <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/marketing/index.html" target="_blank" rel="noopener">HIPAA&rsquo;s marketing rule</a> (45 CFR &sect;164.501), &ldquo;marketing&rdquo; covers communications that promote your services, including most newsletters, health tips, and &ldquo;we&rsquo;re accepting new patients&rdquo; emails. To send these to patients, you need either their written authorization or an explicit opt-in that makes clear what they&rsquo;re signing up for.</p>
+
+  <p>Both the public signup form and the intake checkbox handle this, as long as the language is clear and it&rsquo;s not buried in a treatment consent form. Patients need to know what they&rsquo;re signing up for.</p>
+
+  <h3 id="hipaa-content">What you can and can&rsquo;t put in the emails</h3>
+
+  <p>General content is fine. Condition-specific or patient-specific content is not:</p>
+
+  <ul>
+    <li><strong>Fine:</strong> health tips, seasonal wellness advice, practice updates, reflections on what you&rsquo;re seeing clinically (without identifying any patient)</li>
+    <li><strong>Not fine:</strong> personalizing an email with anything clinical (&ldquo;Hi [Name], following up on your recent bloodwork&rdquo;)</li>
+    <li><strong>Subject lines:</strong> don&rsquo;t include condition names or anything that would reveal health information in someone&rsquo;s inbox. &ldquo;October health notes from Dr. [Name]&rdquo; is fine. &ldquo;Your PCOS update, October&rdquo; is not.</li>
+    <li><strong>Segmentation:</strong> don&rsquo;t create list segments based on diagnoses, conditions, or clinical data. That&rsquo;s using PHI for marketing purposes and requires specific authorization.</li>
+  </ul>
+
+  <p style="font-size:15px;line-height:1.75;color:var(--mid-lt);font-style:italic;border-top:1px solid var(--rule-dk);padding-top:20px;margin-top:8px;">This section is a general overview, not legal advice. HIPAA and email marketing is an area where the details matter. Before loading patient data into any platform, confirm with your compliance officer or attorney that your setup is covered.</p>
+
+  <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--rule-dk);">
+    <a href="/client-hub" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;font-family:var(--font-b);transition:color 0.2s;" onmouseover="this.style.color='#0A0905'" onmouseout="this.style.color=''">
+      &larr; Back to Client Resources
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:72px 64px 48px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; margin-bottom:48px;">
+      <div style="max-width:400px;">
+        <a href="/"><img src="../Logo-light.png" alt="Simple Rabbit" style="height:44px; width:auto; display:block; margin-bottom:20px;"></a>
+        <p style="font-size:15px; line-height:1.75; color:rgba(255,255,255,0.65); font-family:var(--font-b); font-weight:400; margin:0;">Patient growth systems for concierge, functional, and precision medicine practitioners who want consistent, better-fit patients.</p>
+      </div>
+      <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" rel="noopener" aria-label="Newsletter" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
+      <div style="display:flex; gap:28px; flex-wrap:wrap;">
+        <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Website Change Requests</a>
+        <a href="/contact" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Contact</a>
+        <a href="/portfolio" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Design Portfolio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
+<script>
+var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){_hbtn.classList.remove('open');_mnav.classList.remove('open');});
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Get More Google Reviews | Client Guide</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="../favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --mid:#555;--dark:#4A4540;--light-border:rgba(0,0,0,0.10);
+      --accent-dark:#8a5d66;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:var(--font-d);letter-spacing:-0.5px;font-weight:400;}
+    a{color:inherit;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
+    .nav-inner{padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-links{display:flex;align-items:center;gap:36px;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--bg)!important;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(0,0,0,0.10);}
+    .mobile-nav.open{display:flex!important;}
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);padding:22px 24px;border-bottom:1px solid rgba(0,0,0,0.10);font-family:inherit;text-decoration:none;}
+    .mobile-nav a.mobile-nav-cta{background:#0A0905;color:#FDFAF7!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;}
+
+    /* ARTICLE */
+    .back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;font-family:var(--font-b);transition:color 0.2s;}
+    .back-link:hover{color:var(--black);}
+    .article-header{padding:72px 48px 56px;border-bottom:1px solid var(--rule-dk);}
+    .article-header-inner{max-width:720px;margin:0 auto;}
+    .article-title{font-size:clamp(32px,4.5vw,52px);letter-spacing:-1.5px;line-height:1.1;margin-bottom:24px;}
+    .article-category{font-family:var(--font-b);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;}
+    .article-body{max-width:720px;margin:0 auto;padding:64px 48px 100px;}
+    .article-body p{font-size:17px;line-height:1.85;color:#3a3530;margin-bottom:28px;}
+    .article-body h2{font-size:26px;line-height:1.25;letter-spacing:-0.5px;margin:52px 0 18px;color:var(--black);}
+    .article-body h3{font-size:20px;line-height:1.3;margin:36px 0 14px;color:var(--black);}
+    .article-body ul,.article-body ol{margin:0 0 28px 24px;}
+    .article-body li{font-size:17px;line-height:1.8;color:#3a3530;margin-bottom:10px;}
+    .article-body strong{font-weight:600;color:var(--black);}
+    .article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .callout{background:var(--warm);border-left:3px solid var(--accent);padding:20px 28px;margin:32px 0;border-radius:0 4px 4px 0;}
+    .callout p{margin-bottom:0;font-size:16px;font-style:italic;}
+    .callout p+p{margin-top:12px;}
+
+    .toc{background:var(--warm);border:1px solid var(--rule-dk);padding:24px 32px 20px;margin-bottom:52px;}
+    .toc-label{font-family:var(--font-b);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px;font-weight:500;}
+    .toc ol{list-style:none;margin:0;padding:0;}
+    .toc>ol>li{font-size:15px;line-height:1.65;color:var(--black);margin-bottom:5px;}
+    .toc a{color:var(--black);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.15);transition:color 0.2s,border-color 0.2s;}
+    .toc a:hover{color:var(--accent);border-color:var(--accent);}
+    .toc-sub{list-style:none;margin:6px 0 8px 18px;padding:0;}
+    .toc-sub li{font-size:14px;line-height:1.6;color:var(--mid-lt);margin-bottom:3px;}
+    @media(max-width:768px){
+      .nav-inner{padding:0 24px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .article-header{padding:56px 24px 40px;}
+      .article-body{padding:48px 24px 80px;}
+      .toc{padding:20px 24px 16px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="../sign-logo.png" alt="Simple Rabbit" style="max-height:48px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/apply" class="nav-cta">Apply to Work Together</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/case-studies">Case Studies</a>
+  <a href="/articles">Articles</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
+</div>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <div class="article-header-inner">
+    <a href="/client-hub" class="back-link">&larr; Back to Client Resources</a>
+    <div style="height:32px;"></div>
+    <span class="article-category">Client Guide</span>
+    <h1 class="article-title">How to Get More Google Reviews</h1>
+    <p style="font-size:18px;line-height:1.75;color:var(--mid-lt);margin-top:8px;">Google reviews are one of the first things a potential patient or client sees. Here&rsquo;s a simple system for getting them consistently.</p>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <nav class="toc" aria-label="Table of contents">
+    <span class="toc-label">In this guide</span>
+    <ol>
+      <li><a href="#step-1">Step 1: Get your Google review link</a></li>
+      <li><a href="#step-2">Step 2: Ask right after a good appointment</a></li>
+      <li><a href="#step-3">Step 3: Follow up with a text or email</a></li>
+      <li><a href="#step-4">Step 4: Put a QR code in your office</a></li>
+      <li><a href="#step-5">Step 5: Respond to every review</a></li>
+      <li>
+        <a href="#hipaa">HIPAA and online reviews</a>
+        <ul class="toc-sub">
+          <li><a href="#hipaa-rule">The rule that trips most practices up</a></li>
+          <li><a href="#hipaa-consequences">Real consequences</a></li>
+          <li><a href="#hipaa-templates">HIPAA-safe response templates</a></li>
+          <li><a href="#hipaa-followup">The follow-up text and email</a></li>
+          <li><a href="#hipaa-repost">Sharing or reposting a patient&rsquo;s review</a></li>
+          <li><a href="#hipaa-staff">A note on your staff</a></li>
+        </ul>
+      </li>
+      <li><a href="#avoid">A few other things to avoid</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="step-1">Step 1: Get your Google review link</h2>
+
+  <p>You need a direct link that takes someone straight to the review form, no searching, no hunting for your profile. Here&rsquo;s how to get it:</p>
+
+  <ol>
+    <li>Go to <a href="https://business.google.com" target="_blank" rel="noopener">business.google.com</a> and sign in</li>
+    <li>In the left menu, click <strong>Ask for reviews</strong></li>
+    <li>Copy the short link Google generates for you</li>
+  </ol>
+
+  <p>Save this link somewhere easy to access. You&rsquo;ll be sharing it by text and email on a regular basis.</p>
+
+  <h2 id="step-2">Step 2: Ask right after a good appointment</h2>
+
+  <p>The best time to ask is in the moment, right after an appointment where the patient or client was clearly happy, or after a meaningful milestone in your work together. Not three months later in a mass email.</p>
+
+  <p>You don&rsquo;t need a polished script. Just be direct:</p>
+
+  <div class="callout">
+    <p>&ldquo;I&rsquo;m really glad we were able to [help you with X]. If you have a minute, I&rsquo;d love a Google review. It makes a big difference for people searching for a doctor like me. I&rsquo;ll text you the link.&rdquo;</p>
+  </div>
+
+  <p>Most patients or clients will say yes if you ask in person first. Getting verbal agreement before sending the link dramatically improves follow-through.</p>
+
+  <h2 id="step-3">Step 3: Follow up with a text or email</h2>
+
+  <p>Send the link the same day, or within 24 hours while the visit is still fresh. The longer you wait, the less likely they are to do it.</p>
+
+  <p><strong>Text example:</strong></p>
+  <div class="callout">
+    <p>Hi [Name], great seeing you today. Here&rsquo;s that Google review link if you get a chance (takes about a minute). Thank you! [your link]</p>
+  </div>
+
+  <p><strong>Email subject:</strong> &ldquo;A quick favor from Dr. [Last Name]&rdquo;</p>
+  <div class="callout">
+    <p>Hi [Name],</p>
+    <p>It was really great seeing you [today / this week]. If you have a moment, I&rsquo;d appreciate a Google review. It helps other patients or clients who are looking for what we offer find their way to us.</p>
+    <p>Here&rsquo;s the link: [your link]</p>
+    <p>No pressure either way. I just wanted to ask. Thank you!</p>
+  </div>
+
+  <h2 id="step-4">Step 4: Put a QR code in your office</h2>
+
+  <p>Print a small sign or tent card with a QR code that links directly to your review page. Place it at checkout or in your waiting area so patients or clients can scan it before they leave.</p>
+
+  <p>You can generate a free QR code at <strong>qr-code-generator.com</strong>. Just paste in your Google review link. Print it, frame it, and you&rsquo;re done.</p>
+
+  <h2 id="step-5">Step 5: Respond to every review</h2>
+
+  <p>Google rewards practices that respond, and potential patients read your responses when deciding whether to book. That said, because your practice is covered by HIPAA, how you respond matters a lot. See the section below for the full breakdown, but the short version: keep responses warm, professional, and generic. Don&rsquo;t confirm anyone is a patient or reference their visit or care in any way.</p>
+
+  <p><strong>Safe response for a positive review:</strong></p>
+  <div class="callout">
+    <p>&ldquo;Thank you so much for taking the time to share your experience. We truly appreciate your kind words and are so glad you had a positive visit with us.&rdquo;</p>
+  </div>
+
+  <p><strong>Safe response for a negative review:</strong></p>
+  <div class="callout">
+    <p>&ldquo;Thank you for sharing your feedback. We take all concerns seriously and would love the opportunity to address this directly. Please reach out to our office at [phone/email] so we can connect.&rdquo;</p>
+  </div>
+
+  <p>Both are warm, professional, and HIPAA-safe. More on why that matters below.</p>
+
+  <h2 id="hipaa">HIPAA and online reviews: what your practice needs to know</h2>
+
+  <p>Most concierge, functional, and precision medicine practices are covered entities under the <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html" target="_blank" rel="noopener">HIPAA Privacy Rule</a>. There are specific rules around online reviews that every practice owner should understand before anyone on your team starts responding publicly.</p>
+
+  <p><strong>Asking for reviews is fine.</strong> HIPAA does not prohibit you from asking patients to leave a review. The risk is not in the ask. It&rsquo;s in the response.</p>
+
+  <h3 id="hipaa-rule">The rule that trips most practices up</h3>
+
+  <p>When a patient leaves a Google review, they are choosing to share their own information. That&rsquo;s their right. But when you respond to that review, any response that acknowledges the reviewer as a patient becomes your disclosure, and HIPAA governs what you can disclose publicly.</p>
+
+  <p>This means the following are all potential HIPAA violations in a public review response:</p>
+
+  <ul>
+    <li>Saying &ldquo;Thank you for visiting our office&rdquo; (you just confirmed they&rsquo;re a patient)</li>
+    <li>Thanking someone by first name in a way that confirms the relationship</li>
+    <li>Referencing their visit, treatment, condition, or anything about their care</li>
+    <li>Responding to a negative review with any specifics about what happened</li>
+  </ul>
+
+  <p>Here&rsquo;s the part that surprises people: even if a reviewer posts their full name, their diagnosis, and every detail of their care, your response still cannot confirm any of it. The rule applies regardless of what the patient chose to share publicly.</p>
+
+  <h3 id="hipaa-consequences">Real consequences</h3>
+
+  <p>The <a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/index.html" target="_blank" rel="noopener">HHS Office for Civil Rights</a> has pursued enforcement actions specifically over review responses. <a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/new-vision/index.html" target="_blank" rel="noopener">A North Carolina dental practice was fined $50,000</a> for disclosing a patient&rsquo;s name, visit dates, treatment plans, and clinical details in a Google review response. <a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/manasa/index.html" target="_blank" rel="noopener">Manasa Health Center, a New Jersey psychiatric practice, paid $30,000</a> and entered a corrective action plan after disclosing patients&rsquo; mental health diagnoses in Google review responses. These are not hypothetical risks.</p>
+
+  <h3 id="hipaa-templates">What HIPAA-safe response templates look like</h3>
+
+  <p>The key is that your response should not confirm the reviewer is a patient, reference their visit, or include any detail specific to their experience. Generic is good here.</p>
+
+  <p><strong>Positive review:</strong></p>
+  <div class="callout">
+    <p>&ldquo;Thank you so much for taking the time to share your experience. We truly appreciate your kind words and are so glad you had a positive visit with us.&rdquo;</p>
+  </div>
+
+  <p><strong>Negative review:</strong></p>
+  <div class="callout">
+    <p>&ldquo;Thank you for sharing your feedback. We take all concerns seriously and would love the opportunity to address this directly. Please reach out to our office at [phone/email] so we can connect.&rdquo;</p>
+  </div>
+
+  <h3 id="hipaa-followup">The follow-up text and email</h3>
+
+  <p>Sending a message that says &ldquo;great seeing you today&rdquo; is low risk but worth knowing: it implicitly confirms someone visited your practice. If you want to be conservative, keep your ask neutral: &ldquo;Hi [Name], I wanted to share a quick link. We&rsquo;d love a Google review if you have a moment: [link].&rdquo;</p>
+
+  <h3 id="hipaa-repost">Sharing or reposting a patient&rsquo;s review</h3>
+
+  <p>A patient writing their own review is their choice. You screenshotting that review and posting it to your website, Instagram, or anywhere else is your disclosure, and that requires the patient&rsquo;s written authorization. Don&rsquo;t amplify patient reviews without it.</p>
+
+  <h3 id="hipaa-staff">A note on your staff</h3>
+
+  <p>If anyone on your team manages your Google Business Profile or responds to reviews on your behalf, they need to know these rules. A well-meaning front desk person thanking a reviewer by name can create a compliance issue even if you never see it. Keep approved response templates somewhere easy to find, and make sure anyone with access to your profile has been briefed.</p>
+
+  <p style="font-size:15px;line-height:1.75;color:var(--mid-lt);font-style:italic;border-top:1px solid var(--rule-dk);padding-top:20px;margin-top:8px;">This section is a general overview, not legal advice. For specific situations or to review your current process, your own attorney or HIPAA compliance officer should be your final word.</p>
+
+  <h2 id="avoid">A few other things to avoid</h2>
+
+  <ul style="list-style:none;padding:0;margin:0 0 28px 0;">
+    <li style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:17px;line-height:1.8;color:#3a3530;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">&#10007;</span><span><strong>Don&rsquo;t offer incentives</strong> (discounts, gifts, free visits) in exchange for reviews. Google prohibits it and can remove your listing.</span></li>
+    <li style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:17px;line-height:1.8;color:#3a3530;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">&#10007;</span><span><strong>Don&rsquo;t ask for reviews in bulk</strong> all at once. A sudden spike looks suspicious and may trigger a Google filter.</span></li>
+    <li style="display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.8;color:#3a3530;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">&#10007;</span><span><strong>Don&rsquo;t have staff or family write reviews.</strong> Fake reviews can get your profile penalized.</span></li>
+  </ul>
+
+  <p>That&rsquo;s really all there is to it. Ask after every good visit, make it easy with a link, and the reviews will build on their own over time.</p>
+
+  <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--rule-dk);">
+    <a href="/client-hub" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;font-family:var(--font-b);transition:color 0.2s;" onmouseover="this.style.color='#0A0905'" onmouseout="this.style.color=''">
+      &larr; Back to Client Resources
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:72px 64px 48px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; margin-bottom:48px;">
+      <div style="max-width:400px;">
+        <a href="/"><img src="../Logo-light.png" alt="Simple Rabbit" style="height:44px; width:auto; display:block; margin-bottom:20px;"></a>
+        <p style="font-size:15px; line-height:1.75; color:rgba(255,255,255,0.65); font-family:var(--font-b); font-weight:400; margin:0;">Patient growth systems for concierge, functional, and precision medicine practitioners who want consistent, better-fit patients.</p>
+      </div>
+      <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" rel="noopener" aria-label="Newsletter" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
+      <div style="display:flex; gap:28px; flex-wrap:wrap;">
+        <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Website Change Requests</a>
+        <a href="/contact" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Contact</a>
+        <a href="/portfolio" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Design Portfolio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
+<script>
+var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){_hbtn.classList.remove('open');_mnav.classList.remove('open');});
+  });
+}
+</script>
+
+</body>
+</html>
