@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leann Frank | Media Kit</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/jpeg" href="https://simplerabbit.studio/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#474D73; --bg-dk:#2D3154; --bg-lt:#535980;
+    --white:#FDFAF7; --warm:#F5F0EB; --black:#0A0905;
+    --mid-lt:#7A756E; --mid-vt:#B0B5D0; --accent:#AA737D;
+    --rule-dk:rgba(0,0,0,0.10); --rule-vt:rgba(255,255,255,0.14);
+    --font-d:'Instrument Serif',Georgia,serif;
+    --font-b:'DM Sans',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#e7e2db;font-family:var(--font-b);color:var(--black);
+    -webkit-font-smoothing:antialiased;padding:40px 16px;}
+  .sheet{max-width:820px;margin:0 auto;background:var(--white);
+    box-shadow:0 24px 60px rgba(0,0,0,0.18);overflow:hidden;}
+
+  /* ---- header band ---- */
+  .head{background:var(--bg);color:var(--white);padding:48px 56px;
+    display:grid;grid-template-columns:1fr 150px;gap:32px;align-items:center;
+    border-bottom:1px solid var(--rule-vt);}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+    color:var(--mid-vt);margin-bottom:14px;}
+  .head h1{font-family:var(--font-d);font-weight:400;font-size:clamp(40px,7vw,64px);
+    line-height:.98;letter-spacing:-1.5px;}
+  .head .tag{font-size:16px;line-height:1.55;color:var(--mid-vt);margin-top:16px;max-width:42ch;}
+  .photo{width:150px;height:180px;background:var(--bg-lt);border:1px solid var(--rule-vt);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mid-vt);padding:12px;}
+
+  /* ---- body ---- */
+  .body{padding:48px 56px;}
+  .section{padding-bottom:40px;}
+  .section:last-child{padding-bottom:8px;}
+  h2{font-family:var(--font-d);font-weight:400;font-size:30px;letter-spacing:-.6px;
+    line-height:1.1;margin-bottom:18px;}
+  p{font-size:15.5px;line-height:1.75;color:var(--mid-lt);}
+  .lead{font-size:17px;color:var(--black);line-height:1.7;}
+  .lead .name{font-weight:600;}
+
+  .rule{height:1px;background:var(--rule-dk);margin:40px 0;}
+
+  /* talks */
+  .talk{padding:22px 0;border-top:1px solid var(--rule-dk);}
+  .talk:first-of-type{border-top:none;padding-top:0;}
+  .talk .audience{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;}
+  .talk h3{font-family:var(--font-d);font-weight:400;font-size:23px;letter-spacing:-.4px;
+    line-height:1.2;margin-bottom:8px;color:var(--black);}
+  .talk p{font-size:15px;}
+
+  /* takeaways + formats two col */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  ul{list-style:none;}
+  li{font-size:15px;line-height:1.5;color:var(--mid-lt);padding:9px 0 9px 22px;
+    position:relative;border-bottom:1px solid var(--rule-dk);}
+  li:last-child{border-bottom:none;}
+  li::before{content:"";position:absolute;left:0;top:17px;width:9px;height:9px;
+    background:var(--accent);}
+
+  /* quote slot */
+  .quote{background:var(--warm);padding:32px 36px;border-left:3px solid var(--accent);}
+  .quote p{font-family:var(--font-d);font-size:22px;line-height:1.35;color:var(--black);font-style:italic;}
+  .quote .who{font-family:var(--font-b);font-style:normal;font-size:12px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--mid-lt);margin-top:16px;}
+  .placeholder-note{font-family:var(--font-b);font-style:normal;font-size:12px;
+    color:var(--accent);margin-top:14px;letter-spacing:.3px;}
+
+  /* footer band */
+  .foot{background:var(--bg-dk);color:var(--white);padding:40px 56px;}
+  .foot h2{color:var(--white);margin-bottom:20px;}
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;}
+  .contact div{font-size:14px;color:var(--mid-vt);line-height:1.5;}
+  .contact .label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:3px;}
+  .contact a{color:var(--white);text-decoration:none;}
+  .avail{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule-vt);
+    font-size:14px;color:var(--mid-vt);}
+
+  @media (max-width:680px){
+    .head{grid-template-columns:1fr;}
+    .photo{width:140px;height:168px;}
+    .body,.head,.foot{padding-left:28px;padding-right:28px;}
+    .cols,.contact{grid-template-columns:1fr;gap:24px;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{box-shadow:none;max-width:100%;}
+    .head,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .quote{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="head">
+    <div>
+      <div class="eyebrow">Media Kit</div>
+<h1>Leann Frank</h1>
+      <p class="tag">Patient growth strategist for women's health practices. I help private-pay practitioners build consistent new patient flow without turning into marketers.</p>
+    </div>
+    <img src="https://simplerabbit.studio/about-photo-1.jpg" alt="Leann Frank" style="width:150px;height:180px;object-fit:cover;object-position:top;display:block;border:1px solid var(--rule-vt);">
+  </header>
+
+  <div class="body">
+
+    <section class="section">
+      <p class="lead"><span class="name">Leann Frank</span> runs Simple Rabbit, a patient growth consultancy for women's health practices in Bergen County, New Jersey. She built the ACRR System, a four-stage framework covering Attract, Convert, Retain, and Refer, to give private-pay practitioners a clear, repeatable way to grow their practice without becoming marketers. She talks about patient acquisition, what actually moves the needle in private-pay healthcare marketing, and how to build something of your own from one skill and a laptop.</p>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="section">
+      <h2>Topics I cover</h2>
+
+      <div class="talk">
+        <h3><img src="https://simplerabbit.studio/check.png" alt="" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:10px;position:relative;top:-2px;">How to turn one skill into a business</h3>
+        <p>What it actually takes to go from knowing how to do one thing to getting paid for it. Where the first clients come from, how to price your time, and the real difference between a hobby and a business.</p>
+      </div>
+
+      <div class="talk">
+        <h3><img src="https://simplerabbit.studio/check.png" alt="" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:10px;position:relative;top:-2px;">Getting found online without becoming a marketer</h3>
+        <p>Most people who run a business never wanted to do marketing and were never taught how. This one covers the handful of things that actually move the needle: showing up in search, saying the right thing on your website, and getting the right people to call.</p>
+      </div>
+
+      <div class="talk">
+        <h3><img src="https://simplerabbit.studio/check.png" alt="" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:10px;position:relative;top:-2px;">Attract, Convert, Retain, Refer: a simple way to grow</h3>
+        <p>A clear way to look at where your business gets people, where it loses them, and what to fix first. Built for owners who want a plan they can follow, not a marketing degree.</p>
+      </div>
+
+      <div class="talk">
+        <h3><img src="https://simplerabbit.studio/check.png" alt="" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:10px;position:relative;top:-2px;">Using AI tools to enhance your marketing efforts</h3>
+        <p>AI is not going to replace your marketing strategy, but it will change how you execute it. This topic covers how to use AI tools practically and without the overwhelm: writing better content faster, showing up in AI-powered search results, and knowing which tools are worth your time and which are not.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="section">
+      <h2>What people say</h2>
+      <div class="quote">
+        <p>"As a business owner, I'm constantly looking for meaningful ways to learn and grow, but I've never been interested in workshops that leave you with vague inspiration and a long list of ideas that aren't actually actionable.</p>
+        <p style="margin-top:16px;">This workshop was different. I walked away with clear direction, tangible next steps, and marketing strategies I could implement immediately in my business. It wasn't just motivating, it was practical, strategic, and worth every minute."</p>
+        <div class="who">Melissa &nbsp;&middot;&nbsp; attended Content, Conversion, &amp; Coffee &nbsp;&middot;&nbsp; Old Tappan, NJ</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot">
+    <h2>Book Leann</h2>
+    <div class="contact">
+      <div>
+        <div class="label">Email</div>
+        <a href="mailto:leann@simplerabbit.studio">leann@simplerabbit.studio</a>
+      </div>
+      <div>
+        <div class="label">Website</div>
+        <a href="https://simplerabbit.studio">simplerabbit.studio</a>
+      </div>
+      <div>
+        <div class="label">Instagram</div>
+        @leannmfrank
+      </div>
+      <div>
+        <div class="label">X</div>
+        @leannfrank
+      </div>
+      <div>
+        <div class="label">Facebook</div>
+        simplerabbitnj
+      </div>
+    </div>
+    <div class="avail">Based in Bergen County, New Jersey. Available in person around the NJ and NY metro area, and virtually anywhere.</div>
+  </footer>
+
+</div>
+</body>
+</html>
