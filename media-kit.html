@@ -98,10 +98,23 @@
     .sheet{box-shadow:none;max-width:100%;}
     .head,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .quote{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .print-btn{display:none;}
   }
+
+  .print-btn{
+    position:fixed;top:20px;right:20px;z-index:999;
+    background:var(--accent);color:#fff;
+    font-family:var(--font-b);font-size:11px;font-weight:600;
+    letter-spacing:1.5px;text-transform:uppercase;
+    border:none;padding:12px 22px;cursor:pointer;
+    box-shadow:0 4px 16px rgba(0,0,0,0.18);
+    transition:background 0.2s;
+  }
+  .print-btn:hover{background:#96616a;}
 </style>
 </head>
 <body>
+<button class="print-btn" onclick="window.print()">Save as PDF</button>
 <div class="sheet">
 
   <header class="head">
