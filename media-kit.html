@@ -86,11 +86,25 @@
   .avail{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule-vt);
     font-size:14px;color:var(--mid-vt);}
 
+  /* rates dropdown */
+  .rates-drop{border:none;outline:none;}
+  .rates-summary{list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:4px 0;}
+  .rates-summary::-webkit-details-marker{display:none;}
+  .rates-arrow{font-size:22px;color:var(--accent);transition:transform 0.25s;display:inline-block;line-height:1;}
+  details[open] .rates-arrow{transform:rotate(90deg);}
+  .rates-body{margin-top:24px;}
+  .rate-row{display:grid;grid-template-columns:90px 1fr auto;gap:12px 24px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule-dk);}
+  .rate-type{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);}
+  .rate-name{font-size:15px;color:var(--black);}
+  .rate-price{font-size:14px;color:var(--mid-lt);text-align:right;white-space:nowrap;}
+
   @media (max-width:680px){
     .head{grid-template-columns:1fr;}
     .photo{width:140px;height:168px;}
     .body,.head,.foot{padding-left:28px;padding-right:28px;}
     .cols,.contact{grid-template-columns:1fr;gap:24px;}
+    .rate-row{grid-template-columns:1fr;gap:4px;}
+    .rate-price{text-align:left;}
   }
 
   @media print{
@@ -167,6 +181,39 @@
         <p style="margin-top:16px;">This workshop was different. I walked away with clear direction, tangible next steps, and marketing strategies I could implement immediately in my business. It wasn't just motivating, it was practical, strategic, and worth every minute."</p>
         <div class="who">Melissa &nbsp;&middot;&nbsp; attended Content, Conversion, &amp; Coffee &nbsp;&middot;&nbsp; Old Tappan, NJ</div>
       </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="section" style="padding-bottom:8px;">
+      <details class="rates-drop">
+        <summary class="rates-summary">
+          <h2 style="font-family:var(--font-d);font-weight:400;font-size:30px;letter-spacing:-.6px;line-height:1.1;display:inline;">Rates</h2>
+          <span class="rates-arrow">&#8250;</span>
+        </summary>
+        <div class="rates-body">
+          <div class="rate-row">
+            <span class="rate-type">In-person</span>
+            <span class="rate-name">Half-Day Workshop (2&ndash;4 hrs)</span>
+            <span class="rate-price">$2,500 flat fee</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-type">In-person</span>
+            <span class="rate-name">Panel Discussion (45&ndash;90 min)</span>
+            <span class="rate-price">$300 flat fee &nbsp;&middot;&nbsp; accommodation covered separately</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-type">Virtual</span>
+            <span class="rate-name">Half-Day Workshop (2&ndash;4 hrs)</span>
+            <span class="rate-price">$1,750 flat fee</span>
+          </div>
+          <div class="rate-row" style="border-bottom:none;">
+            <span class="rate-type">Education</span>
+            <span class="rate-name">Student events</span>
+            <span class="rate-price">Rate on request</span>
+          </div>
+        </div>
+      </details>
     </section>
 
   </div>
