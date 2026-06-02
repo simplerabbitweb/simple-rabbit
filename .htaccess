@@ -20,6 +20,9 @@ RewriteRule ^blog/why-private-pay-physicians-asking-about-email/?$ /blog/why-pri
 # --- Redirect /audit to /website-audit ---
 RewriteRule ^audit$ /website-audit [R=301,L]
 
+# --- Redirect old checklist URL to assessment ---
+RewriteRule ^acrr-checklist/?$ /acrr-assessment [R=301,L]
+
 # --- Redirect old playbook URLs to /fully-booked ---
 RewriteRule ^the-fully-booked-practice-playbook/?$ /fully-booked [R=301,L]
 RewriteRule ^playbook/?$ /fully-booked [R=301,L]
