@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Simple Rabbit</title>
+  <meta name="description" content="Thanks for reaching out. Book a time to talk, or I'll be in touch shortly.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77EEVJRJJD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-77EEVJRJJD');</script>
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-b);color:var(--white);background:var(--bg-dk);-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+
+    .ty-nav{padding:26px 64px;display:flex;justify-content:center;border-bottom:1px solid var(--rule-lt);}
+    .ty-nav img{height:46px;width:auto;}
+
+    /* confirmation */
+    .ty-hero{text-align:center;padding:72px 32px 48px;position:relative;overflow:hidden;}
+    .ty-eyebrow{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:22px;position:relative;z-index:1;}
+    .ty-h1{font-family:var(--font-d);font-size:clamp(44px,6.5vw,80px);line-height:1.02;letter-spacing:-2px;color:var(--white);font-weight:400;margin-bottom:22px;position:relative;z-index:1;}
+    .ty-h1 em{font-style:italic;color:var(--mid-vt);}
+    .ty-sub{font-size:18px;line-height:1.75;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto;position:relative;z-index:1;}
+    .ty-circle{position:absolute;pointer-events:none;}
+
+    /* calendar embed */
+    .ty-cal{background:var(--white);padding:56px 32px 72px;}
+    .ty-cal-inner{max-width:900px;margin:0 auto;text-align:center;}
+    .ty-cal-label{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+    .ty-cal-h2{font-family:var(--font-d);font-size:clamp(28px,3vw,42px);line-height:1.1;letter-spacing:-1px;color:var(--black);font-weight:400;margin-bottom:36px;}
+    .ty-cal-frame{width:100%;border:1px solid var(--rule-dk);background:#fff;min-height:720px;}
+    .ty-cal-frame iframe{width:100%;height:720px;border:none;display:block;}
+    .ty-cal-fallback{font-size:14px;color:var(--mid-lt);margin-top:20px;}
+    .ty-cal-fallback a{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px;}
+
+    footer{background:var(--bg-dk);border-top:1px solid var(--rule-lt);padding:24px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    footer span,footer a{font-size:13px;color:rgba(255,255,255,0.45);font-family:var(--font-b);}
+    footer a{transition:color 0.2s;}
+    footer a:hover{color:#fff;}
+
+    @media(max-width:600px){
+      .ty-nav{padding:20px 24px;}
+      .ty-hero{padding:52px 24px 36px;}
+      .ty-sub{font-size:16px;}
+      .ty-cal{padding:40px 20px 56px;}
+      footer{padding:24px;flex-direction:column;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ty-nav">
+    <a href="/"><img src="Logo-light.png" alt="Simple Rabbit"></a>
+  </div>
+
+  <section class="ty-hero">
+    <svg class="ty-circle" style="width:480px;height:480px;top:50%;left:-200px;transform:translateY(-50%);" viewBox="0 0 480 480"><circle cx="240" cy="240" r="239" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></svg>
+    <p class="ty-eyebrow">Message Received</p>
+    <h1 class="ty-h1">Thank you. <em>Talk soon.</em></h1>
+    <p class="ty-sub">Your message just landed in my inbox. Want to skip the back-and-forth? Grab a 30-minute call below and we&rsquo;ll talk it through.</p>
+  </section>
+
+  <section class="ty-cal">
+    <div class="ty-cal-inner">
+      <p class="ty-cal-label">Book a Call</p>
+      <h2 class="ty-cal-h2">Find a time that works for you.</h2>
+      <div class="ty-cal-frame">
+        <iframe src="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins" title="Book a 30-minute call with Leann Frank" loading="lazy"></iframe>
+      </div>
+      <p class="ty-cal-fallback">Calendar not loading? <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins" target="_blank" rel="noopener">Open the scheduler in a new tab &rarr;</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <span>&#169; 2026 Simple Rabbit LLC</span>
+    <a href="/articles">Read the Blog</a>
+  </footer>
+
+</body>
+</html>
