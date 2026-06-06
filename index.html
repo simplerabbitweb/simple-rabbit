@@ -227,7 +227,8 @@
     .acrr-rows { border-top: 1px solid var(--rule-dk); margin-top: 8px; }
     .acrr-row { display: grid; grid-template-columns: 130px 1fr; gap: 48px; align-items: center; padding: 38px 8px; border-bottom: 1px solid var(--rule-dk); transition: padding-left 0.3s ease; }
     .acrr-row:hover { padding-left: 24px; }
-    .acrr-row-letter { font-family: var(--font-d); font-size: clamp(60px,6vw,104px); line-height: 0.9; color: var(--bg); letter-spacing: -2px; }
+    .acrr-row-letter { font-family: var(--font-d); font-size: clamp(60px,6vw,104px); line-height: 0.9; letter-spacing: -2px; color: transparent; -webkit-text-stroke: 1.5px rgba(45,49,84,0.30); transition: -webkit-text-stroke-color 0.3s ease; }
+    .acrr-row:hover .acrr-row-letter { -webkit-text-stroke-color: rgba(45,49,84,0.8); }
     .acrr-row-stage { font-family: var(--font-d); font-size: clamp(26px,2.4vw,38px); font-weight: 400; letter-spacing: -1px; color: var(--black); line-height: 1.05; margin-bottom: 8px; }
     .acrr-row-desc { font-size: 18px; line-height: 1.65; color: var(--mid-lt); max-width: 640px; }
     @media (max-width: 600px) {
@@ -556,6 +557,27 @@
 
 
 <!-- ════════════════════════════════════════════
+     06 — CTA (violet)
+     ════════════════════════════════════════════ -->
+<section class="reveal" style="background:#849aa9; padding:96px 64px; border-bottom:1px solid var(--rule-vt); text-align:center; position:relative; overflow:hidden;">
+  <!-- Circle left, partially off-screen -->
+  <svg style="position:absolute;top:50%;left:-160px;transform:translateY(-50%);width:400px;height:400px;pointer-events:none;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="195" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  </svg>
+  <!-- Circle right, smaller, peeking from upper right -->
+  <svg style="position:absolute;top:-80px;right:-80px;width:260px;height:260px;pointer-events:none;" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="130" cy="130" r="125" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  </svg>
+  <div style="max-width:680px; margin:0 auto; position:relative; z-index:1;">
+    <h2 style="font-family:var(--font-d); font-size:clamp(32px,3.5vw,54px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:48px;">
+      Stop leaving ideal patients <em style="color:var(--white);">to chance.</em>
+    </h2>
+    <a href="/apply" class="btn-wt">Apply to Work Together &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
      05 — THE PLAN (light)
      ════════════════════════════════════════════ -->
 <section id="acrr" class="reveal px-lg" style="padding:100px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
@@ -603,27 +625,6 @@
       </div>
 
     </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     06 — CTA (violet)
-     ════════════════════════════════════════════ -->
-<section class="reveal" style="background:#849aa9; padding:96px 64px; border-bottom:1px solid var(--rule-vt); text-align:center; position:relative; overflow:hidden;">
-  <!-- Circle left, partially off-screen -->
-  <svg style="position:absolute;top:50%;left:-160px;transform:translateY(-50%);width:400px;height:400px;pointer-events:none;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="200" cy="200" r="195" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-  </svg>
-  <!-- Circle right, smaller, peeking from upper right -->
-  <svg style="position:absolute;top:-80px;right:-80px;width:260px;height:260px;pointer-events:none;" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="130" cy="130" r="125" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
-  </svg>
-  <div style="max-width:680px; margin:0 auto; position:relative; z-index:1;">
-    <h2 style="font-family:var(--font-d); font-size:clamp(32px,3.5vw,54px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:48px;">
-      Stop leaving ideal patients <em style="color:var(--white);">to chance.</em>
-    </h2>
-    <a href="/apply" class="btn-wt">Apply to Work Together &rarr;</a>
   </div>
 </section>
 
