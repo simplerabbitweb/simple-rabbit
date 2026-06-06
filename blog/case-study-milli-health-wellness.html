@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--
+TITLE: Case Study: A Concierge Menopause Practice Gets a Brand, a Website, and an Email Engine That Match
+SLUG: case-study-milli-health-wellness
+META DESCRIPTION: Dr. Lisa Milli runs a concierge menopause practice. Her website didn't reflect any of it. Here's the brand, website, and email system Simple Rabbit built.
+SUGGESTED CATEGORIES: Case Study, Web Design
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Milli Health &amp; Wellness | Simple Rabbit</title>
+  <meta name="description" content="Dr. Lisa Milli runs a concierge menopause practice. Her website didn't reflect any of it. Here's the brand, website, and email system Simple Rabbit built.">
+  <meta property="og:title" content="Case Study: Milli Health &amp; Wellness | Simple Rabbit">
+  <meta property="og:description" content="Dr. Lisa Milli runs a concierge menopause practice. Her website didn't reflect any of it. Here's the brand, website, and email system Simple Rabbit built.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://simplerabbit.studio/blog/case-study-milli-health-wellness">
+  <meta property="og:image" content="https://simplerabbit.studio/previews/portfolio/milli-health-wellness.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://simplerabbit.studio/blog/case-study-milli-health-wellness">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="../favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLFL8E7Z8F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLFL8E7Z8F');</script>
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--accent-dark:#8a5d66;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --light-border:#dfe0e1;--mid:#555;--dark:#333;
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --font-display:var(--font-d);--font-body:var(--font-b);--font-mono:var(--font-b);
+    }
+    html{overflow-x:hidden;}body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:var(--font-d);letter-spacing:-0.5px;font-weight:400;}
+    a{color:inherit;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
+    .nav-inner{padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-links{display:flex;align-items:center;gap:36px;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--bg)!important;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(0,0,0,0.10);}
+    .mobile-nav.open{display:flex!important;}
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);padding:22px 24px;border-bottom:1px solid rgba(0,0,0,0.10);text-decoration:none;}
+    .mobile-nav a.mobile-nav-cta{background:#0A0905;color:#FDFAF7!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;}
+    .article-header{padding:72px 48px 56px;border-bottom:1px solid var(--light-border);}
+    .article-header-inner{max-width:760px;margin:0 auto;}
+    .article-category{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;}
+    .article-title{font-size:clamp(36px,4.5vw,58px);letter-spacing:-1.5px;line-height:1.08;margin-bottom:24px;}
+    .article-subtitle{font-size:20px;line-height:1.6;color:var(--mid-lt);max-width:620px;}
+    .back-link{font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:32px;transition:color 0.2s;}
+    .back-link:hover{color:var(--black);}
+    .article-body{max-width:760px;margin:0 auto;padding:64px 48px 80px;}
+    .article-body p{font-size:19px;line-height:1.85;color:var(--black);margin-bottom:28px;}
+    .article-body h2{font-size:clamp(28px,3vw,38px);line-height:1.15;letter-spacing:-0.8px;margin:56px 0 20px;color:var(--black);}
+    .article-body strong{font-weight:600;}
+    .article-body hr{border:none;border-top:1px solid var(--light-border);margin:52px 0;}
+    .article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .article-body a:hover{color:var(--accent-dark);}
+    /* Client overview card */
+    .client-card{background:var(--warm);padding:32px 36px;margin:0 0 8px;border-left:3px solid var(--accent);}
+    .client-card-label{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block;}
+    .client-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;}
+    .client-card-item-label{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mid-lt);margin-bottom:5px;}
+    .client-card-item-value{font-size:15px;color:var(--black);line-height:1.5;}
+    /* Image placeholder */
+    .ph{background:repeating-linear-gradient(45deg,#ece7e1,#ece7e1 12px,#f4f0eb 12px,#f4f0eb 24px);border:1px dashed #c9beb5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;color:#9a8e83;}
+    .ph-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+    .ph-sub{font-family:var(--font-b);font-size:12px;color:#b3a89e;max-width:260px;line-height:1.5;}
+    .ph-full{width:100%;aspect-ratio:16/10;margin:8px 0;}
+    .ph-wide{width:100%;aspect-ratio:16/7;margin:8px 0;}
+    .img-caption{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-align:center;margin-top:12px;margin-bottom:8px;}
+    /* Before/After compare grid */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--light-border);margin:36px 0 8px;}
+    .compare-item{position:relative;overflow:hidden;background:var(--white);}
+    .compare-item .ph{aspect-ratio:4/3;height:100%;}
+    .compare-badge{position:absolute;top:12px;left:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;background:var(--black);color:var(--white);padding:5px 10px;z-index:1;}
+    /* Brand swatches */
+    .swatch-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin:36px 0 8px;}
+    .swatch{aspect-ratio:1/1;display:flex;align-items:flex-end;padding:12px;}
+    .swatch span{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;line-height:1.6;}
+    /* Design gallery */
+    .design-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0 8px;}
+    .design-grid .ph{aspect-ratio:4/3;}
+    /* Results grid */
+    .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-border);margin:36px 0;}
+    .results-grid-item{background:var(--white);padding:28px 24px;text-align:center;}
+    .results-grid-stat{font-family:var(--font-d);font-size:34px;letter-spacing:-1px;color:var(--black);margin-bottom:8px;}
+    .results-grid-label{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);line-height:1.5;}
+    .quote-ph{border-left:3px solid var(--accent);padding:8px 0 8px 28px;margin:40px 0;}
+    .quote-ph p{font-family:var(--font-d);font-style:italic;font-size:24px;line-height:1.4;color:var(--mid-lt);margin-bottom:8px;}
+    /* Final CTA */
+    .article-cta{background:var(--bg-dk);color:var(--white);padding:80px 48px;text-align:center;}
+    .article-cta h3{font-size:clamp(28px,3vw,40px);letter-spacing:-0.8px;line-height:1.15;margin-bottom:20px;color:var(--white);}
+    .article-cta p{font-size:19px;line-height:1.7;color:rgba(255,255,255,0.65);margin:0 auto 36px;max-width:560px;}
+    .article-cta-btn{display:inline-block;background:var(--white);color:var(--black);padding:18px 48px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-family:var(--font-b);transition:background 0.2s;}
+    .article-cta-btn:hover{background:var(--warm);}
+    footer{background:var(--bg-dk);padding:0;display:block;}
+    /* Lightbox */
+    .zoomable{cursor:zoom-in;transition:opacity 0.2s;}
+    .zoomable:hover{opacity:0.9;}
+    .lb-overlay{display:none;position:fixed;inset:0;background:rgba(10,9,5,0.94);z-index:400;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+    .lb-overlay.active{display:flex;}
+    .lb-close{position:fixed;top:16px;right:22px;background:none;border:none;color:#fff;font-size:42px;cursor:pointer;z-index:401;line-height:1;opacity:0.75;transition:opacity 0.15s;font-family:Arial,sans-serif;}
+    .lb-close:hover{opacity:1;}
+    .lb-overlay img{max-width:94vw;max-height:90vh;display:block;object-fit:contain;box-shadow:0 12px 48px rgba(0,0,0,0.5);}
+    @media(max-width:900px){
+      .article-header{padding:48px 24px 40px;}
+      .article-body{padding:48px 24px 64px;}
+      .nav-inner{padding:0 24px;}
+      .results-grid{grid-template-columns:1fr;}
+      .design-grid{grid-template-columns:1fr;}
+      .swatch-row{grid-template-columns:repeat(5,1fr);}
+      .article-cta{padding:64px 24px;}
+    }
+    @media(max-width:600px){
+      .article-body p{font-size:17px;}
+      .client-card-grid{grid-template-columns:1fr;}
+      .compare-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:768px){.hamburger{display:flex!important;}.nav-links{display:none!important;}}
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div style="background:var(--bg-dk); border-bottom:1px solid var(--rule-lt); padding:11px 24px; text-align:center;">
+  <a href="https://simplerabbit.myflodesk.com/practice-assessment" target="_blank" rel="noopener" style="font-size:13px; font-weight:500; font-family:var(--font-b); text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.7); text-decoration:none; display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;">
+    <span style="opacity:0.7;">Free Resource</span>
+    <span style="width:1px; height:12px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
+    <strong style="font-weight:600; color:#fff;">Score Your Practice</strong>
+    <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 12px; letter-spacing:1.5px;">Get Now &rarr;</span>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="../sign-logo.png" alt="Simple Rabbit" style="max-height:56px;display:block;"></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Apply to Work Together</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/case-studies">Case Studies</a>
+  <a href="/articles">Articles</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
+</div>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header reveal">
+  <div class="article-header-inner">
+    <a href="/articles" class="back-link">&larr; All articles</a>
+    <span class="article-category">Case Study</span>
+    <h1 class="article-title">A concierge menopause practice gets a website, a brand, and an email engine that finally match the woman behind them</h1>
+    <p class="article-subtitle">Dr. Lisa Milli was already doing the work. Her website said almost none of it. Here's what we built.</p>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body reveal">
+
+  <!-- HERO IMAGE -->
+  <img src="../previews/milli/milli-hero.png" alt="Milli Health &amp; Wellness" style="width:100%;display:block;border:1px solid var(--light-border);">
+  <p class="img-caption">Milli Health &amp; Wellness</p>
+
+  <!-- CLIENT SNAPSHOT -->
+  <div class="client-card">
+    <span class="client-card-label">Project Overview</span>
+    <div class="client-card-grid">
+      <div class="client-card-item">
+        <div class="client-card-item-label">Client</div>
+        <div class="client-card-item-value">Dr. Lisa Milli, WHNP-BC, MSCP &mdash; founder, Milli Health &amp; Wellness</div>
+      </div>
+      <div class="client-card-item">
+        <div class="client-card-item-label">Industry</div>
+        <div class="client-card-item-value">Concierge women's health and menopause care (telemedicine), New Jersey</div>
+      </div>
+      <div class="client-card-item">
+        <div class="client-card-item-label">Services Delivered</div>
+        <div class="client-card-item-value">Brand identity, full website design and build, Flodesk email setup</div>
+      </div>
+      <div class="client-card-item">
+        <div class="client-card-item-label">Platform &amp; Scope</div>
+        <div class="client-card-item-value">WordPress with Divi 5 &middot; Six-page site, brand direction, automated welcome sequence</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The starting point</h2>
+
+  <p>Lisa is a nurse practitioner who specializes in perimenopause and menopause. She runs a private-pay practice for women who are done being rushed, dismissed, and told to wait until things get worse before anyone takes them seriously. She listens, she takes her time, and she gets results. As she puts it, she saves marriages and helps high-powered women stay in their high-powered careers.</p>
+
+  <p>Her website said almost none of that.</p>
+
+  <p>It was clunky, it didn't sound like her, and it didn't carry the authority she's earned in the menopause space. The bigger problem was that the women who needed her couldn't find her. The site was close to invisible on Google, so the people searching for exactly what Lisa does were landing on everyone else's pages instead of hers.</p>
+
+  <p>So the brief came down to three things. Make the site reflect who she actually is. Make it feel like the plush concierge practice she runs. And make her findable by the women looking for her.</p>
+
+  <!-- BEFORE / AFTER HOMEPAGE -->
+  <div class="compare-grid" role="group" aria-label="Before and after homepage comparison">
+    <div class="compare-item">
+      <span class="compare-badge">Before</span>
+      <img src="../previews/milli/milli-before-homepage.png" alt="Old Milli homepage" style="width:100%;display:block;">
+    </div>
+    <div class="compare-item">
+      <span class="compare-badge">After</span>
+      <img src="../previews/milli/milli-home.png" alt="New Milli homepage" style="width:100%;display:block;">
+    </div>
+  </div>
+  <p class="img-caption">The homepage, before and after</p>
+
+  <h2>Who we were designing for</h2>
+
+  <p>Before I touched a single page, I got clear on the one woman this site had to speak to.</p>
+
+  <p>She's high-achieving and time-strapped. She's been to multiple providers who didn't listen or didn't have the time to. Her sleep, her mood, her cycle, and her relationship are all feeling the effects of hormones that are shifting, and she's ready to invest in herself to fix it. Many of these women are Latina professionals, and Lisa wanted the brand to feel like her own warmth and culture, the way her office would feel if it were in Puerto Rico, polished and alive at the same time.</p>
+
+  <p>Everything I designed and wrote was for her. Not a general audience, not a search engine, her.</p>
+
+  <h2>The approach</h2>
+
+  <p>Lisa's voice is the whole product, so I built the project around it. She's warm and nurturing and also completely straightforward, the brilliant friend who happens to be a clinician and won't give you a runaround. I wrote the copy to sound like her talking to one woman across a table, and I built the look around the feeling she wanted people to walk away with, which is the sense that they just stepped into a calm, high-end space where someone finally gets it.</p>
+
+  <p>From there the work split into three pieces that had to feel like one thing: the brand, the website, and the email sequence.</p>
+
+  <hr>
+
+  <h2>The brand</h2>
+
+  <p>Lisa wanted greens and a little blue, modern and luxurious but soft, never the cold teal of a hospital. I built a palette around a warm cream base with a deep, grounded teal, a soft sage, and small hits of terracotta and gold for warmth. It reads as elevated and expensive without feeling sterile, which is the line she cared about most.</p>
+
+  <!-- BRAND PALETTE -->
+  <div class="swatch-row">
+    <div class="swatch" style="background:#47541f;"><span style="color:rgba(255,255,255,0.85);">Deep Green<br>#47541F</span></div>
+    <div class="swatch" style="background:#6f7a51;"><span style="color:rgba(255,255,255,0.85);">Sage<br>#6F7A51</span></div>
+    <div class="swatch" style="background:#8a9ab5;"><span style="color:rgba(255,255,255,0.9);">Soft Blue<br>#8A9AB5</span></div>
+    <div class="swatch" style="background:#c57b54;"><span style="color:rgba(255,255,255,0.9);">Terracotta<br>#C57B54</span></div>
+    <div class="swatch" style="background:#f0efea;border:1px solid var(--light-border);"><span style="color:#9a8e83;">Cream<br>#F0EFEA</span></div>
+  </div>
+  <p class="img-caption">The Milli brand palette</p>
+
+  <p>For type I paired Tenor Sans for headings with Lato for body copy. The headings feel premium and a touch editorial, the body stays clean and easy to read, and together they hit the same note as the rest of the brand: professional, but approachable.</p>
+
+  <!-- BRAND BOARD -->
+  <img src="../previews/milli/milli-brand-board.png" alt="Milli brand board" style="width:100%;display:block;border:1px solid var(--light-border);">
+  <p class="img-caption">The Milli brand system</p>
+
+  <p>I held the logo for a later phase on purpose. Lisa wanted to see options before committing, and she's also weighing a possible move toward a symbolic brand name down the line, so locking a final mark now would have been premature. The brand system I built gives her a consistent, finished look to launch with and a clear foundation for whatever the logo becomes.</p>
+
+  <hr>
+
+  <h2>The website</h2>
+
+  <p>I designed and built a six-page site in WordPress using Divi 5, chosen so Lisa can maintain it easily under an ongoing care plan rather than needing a developer every time she wants a small change.</p>
+
+  <p>The pages walk a visitor cleanly from "I found her" to "I booked," which was the whole point. The messaging makes it obvious right away what Lisa does, who she helps, and why she's different from a regular OB-GYN or primary care doctor. Her existing self-scheduling carried over so patients can pick their own appointment, and every booking link opens in a new tab so no one loses the page they were reading. Her testimonials stayed front and center, and I added an FAQ section and expandable content sections, two things she liked on the reference practices she admired.</p>
+
+  <!-- FINAL DESIGN GALLERY PLACEHOLDERS -->
+  <div class="design-grid">
+    <div class="ph"><span class="ph-label">About</span><span class="ph-sub">Final design</span></div>
+    <div class="ph"><span class="ph-label">Services</span><span class="ph-sub">Final design</span></div>
+    <div class="ph"><span class="ph-label">New Patients</span><span class="ph-sub">Final design</span></div>
+    <div class="ph"><span class="ph-label">Blog</span><span class="ph-sub">Final design</span></div>
+  </div>
+  <p class="img-caption">Selected pages from the new site</p>
+
+  <p>SEO sat underneath all of it. The content is written around the terms her future patients are actually typing, perimenopause, menopause, women's hormonal health, and concierge care in New Jersey, so the women searching for a specialist have a real chance of landing on Lisa instead of scrolling past her.</p>
+
+  <hr>
+
+  <h2>The email sequence</h2>
+
+  <p>A beautiful site that captures a lead and then goes quiet is a leak. So the third piece was an email setup in Flodesk that catches a new subscriber and warms her toward booking.</p>
+
+  <p>I built the opt-in form, embedded it across the site, and wrote a four-email welcome sequence that delivers Lisa's free guide and then keeps the conversation going in her voice. The sequence introduces who she is, speaks to what this woman is actually feeling, and points her toward booking a consultation, all automated so it runs without Lisa lifting a finger once a new subscriber comes in.</p>
+
+  <!-- EMAIL SEQUENCE -->
+  <img src="../previews/milli/milli-email.png" alt="Milli welcome email sequence" style="width:100%;display:block;border:1px solid var(--light-border);">
+  <p class="img-caption">The Flodesk welcome sequence</p>
+
+  <hr>
+
+  <h2>Results</h2>
+
+  <p>Numbers to be added once the site has been live long enough to measure.</p>
+
+  <div class="results-grid">
+    <div class="results-grid-item">
+      <div class="results-grid-stat">&mdash;</div>
+      <div class="results-grid-label">Change in Google visibility for target keywords</div>
+    </div>
+    <div class="results-grid-item">
+      <div class="results-grid-stat">&mdash;</div>
+      <div class="results-grid-label">Growth in organic traffic</div>
+    </div>
+    <div class="results-grid-item">
+      <div class="results-grid-stat">&mdash;</div>
+      <div class="results-grid-label">New consultation bookings from the site</div>
+    </div>
+  </div>
+
+  <div class="quote-ph">
+    <p>"[Testimonial from Lisa goes here once collected.]"</p>
+    <p style="font-size:14px;font-style:normal;font-family:var(--font-b);letter-spacing:1px;text-transform:uppercase;color:var(--mid-lt);">Dr. Lisa Milli, Milli Health &amp; Wellness</p>
+  </div>
+
+  <p style="font-size:14px;color:var(--mid-lt);font-style:italic;">Project by Simple Rabbit LLC. Brand, website, and email copy and design by Leann Frank.</p>
+
+</article>
+
+<!-- FINAL CTA -->
+<section class="article-cta reveal">
+  <h3>Want a brand and website that match the work you actually do?</h3>
+  <p>Start by finding out where your practice stands today. The free assessment scores you across the four stages of patient growth.</p>
+  <a href="https://simplerabbit.myflodesk.com/practice-assessment" target="_blank" rel="noopener" class="article-cta-btn">Get the Free Assessment &rarr;</a>
+</section>
+
+<!-- ACRR CHECKLIST SECTION -->
+<div id="acrr-section"></div><script src="../acrr-section.js"></script>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:28px 64px 24px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; margin-bottom:10px;">
+      <div style="max-width:400px;">
+        <a href="/"><img src="../Logo-light.png" alt="Simple Rabbit" style="height:44px; width:auto; display:block; margin-bottom:20px;"></a>
+        </div>
+      <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://x.com/leannfrank" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" rel="noopener" aria-label="Newsletter" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
+      <div style="display:flex; gap:28px; flex-wrap:wrap;">
+        <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Website Change Requests</a>
+        <a href="/contact" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Contact</a>
+        <a href="/portfolio" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Design Portfolio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" onclick="lbClose()">
+  <button class="lb-close" id="lb-close" onclick="lbClose()" aria-label="Close">&times;</button>
+  <img id="lb-img" src="" alt="" onclick="event.stopPropagation()">
+</div>
+<script>
+  function lbOpen(src, alt){
+    var img=document.getElementById('lb-img');
+    img.src=src; img.alt=alt||'';
+    document.getElementById('lb').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function lbClose(){
+    document.getElementById('lb').classList.remove('active');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
+  document.querySelectorAll('.article-body img').forEach(function(img){
+    if(img.classList.contains('no-zoom')) return;
+    img.classList.add('zoomable');
+    img.addEventListener('click',function(){lbOpen(img.src,img.alt);});
+  });
+</script>
+
+<script src="/tracking.js" defer></script>
+<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
+<script>
+var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){_hbtn.classList.remove('open');_mnav.classList.remove('open');});
+  });
+}
+(function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.05});els.forEach(function(el){io.observe(el);});setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);})();
+</script>
+<!-- SR-SCROLLNAV -->
+<style>
+  .nav{position:fixed!important;top:0;left:0;right:0;transform:translateY(-100%);transition:transform .35s ease, background .3s ease, box-shadow .3s ease;will-change:transform;}
+  .nav.sr-nav-show{transform:translateY(0);background:rgba(253,250,247,0.82)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 24px rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.06)!important;}
+</style>
+<script>
+(function(){
+  var nav=document.querySelector('.nav');
+  if(!nav)return;
+  function upd(){nav.classList.toggle('sr-nav-show',window.scrollY>100);}
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>

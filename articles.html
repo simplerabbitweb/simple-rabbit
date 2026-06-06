@@ -183,7 +183,7 @@
       <span style="font-family:var(--font-b); font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt);">Articles</span>
       <div style="flex:1; height:1px; background:var(--rule-dk); position:relative; top:-4px;"></div>
     </div>
-    <h1 style="font-family:var(--font-d); font-size:clamp(38px,5.5vw,74px); line-height:1.05; letter-spacing:-2px; font-weight:400; color:var(--black); margin:0;">
+    <h1 style="font-family:var(--font-d); font-size:clamp(32px,5.5vw,68px); line-height:1.05; letter-spacing:-2px; font-weight:400; color:var(--black); margin:0;">
       Notes on websites, patients,<br>and running a practice <em>on your own terms.</em>
     </h1>
   </div>
@@ -473,16 +473,15 @@ function togglePastPosts() {
 
 <!-- FOOTER -->
 <footer style="background:var(--bg-dk); padding:0; display:block;">
-  <div style="padding:72px 64px 48px;">
+  <div style="padding:28px 64px 24px;">
 
     <!-- Top: logo + social icons -->
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; margin-bottom:48px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; margin-bottom:10px;">
 
       <!-- Logo + description -->
       <div style="max-width:400px;">
         <a href="/"><img src="Logo-light.png" alt="Simple Rabbit" style="height:44px; width:auto; display:block; margin-bottom:20px;"></a>
-        <p style="font-size: 17px; line-height:1.75; color:rgba(255,255,255,0.65); font-family:var(--font-b); font-weight:400; margin:0;">Patient growth systems for women’s health practices who want consistent, better-fit patients.</p>
-      </div>
+        </div>
 
       <!-- Social icons -->
       <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
@@ -506,7 +505,7 @@ function togglePastPosts() {
     </div>
 
     <!-- Divider -->
-    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
       <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
       <div style="display:flex; gap:28px; flex-wrap:wrap;">
         <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
@@ -551,5 +550,20 @@ if(_hbtn&&_mnav){
 </script>
 
 
+<!-- SR-SCROLLNAV -->
+<style>
+  .nav{position:fixed!important;top:0;left:0;right:0;transform:translateY(-100%);transition:transform .35s ease, background .3s ease, box-shadow .3s ease;will-change:transform;}
+  .nav.sr-nav-show{transform:translateY(0);background:rgba(253,250,247,0.82)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 24px rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.06)!important;}
+</style>
+<script>
+(function(){
+  var nav=document.querySelector('.nav');
+  if(!nav)return;
+  function upd(){nav.classList.toggle('sr-nav-show',window.scrollY>100);}
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
+</script>
 </body>
 </html>
