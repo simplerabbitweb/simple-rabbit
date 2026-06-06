@@ -202,6 +202,24 @@
     }
 
     /* ── RESPONSIVE ── */
+    /* ── ACRR words ── */
+    .acrr-word { font-family: var(--font-d); font-size: clamp(34px,3.6vw,52px); line-height: 1.05; letter-spacing: -1.5px; color: var(--bg-dk); opacity: 0.26; display: block; margin-bottom: 18px; transition: opacity 0.25s ease, color 0.25s ease; }
+    .acrr-word .fl { transition: color 0.25s ease; }
+    .acrr-card:hover .acrr-word { opacity: 1; color: var(--black); }
+    .acrr-card:hover .acrr-word .fl { color: var(--bg); text-decoration: underline; text-underline-offset: 3px; }
+    /* ── ACRR editorial rows ── */
+    .acrr-rows { border-top: 1px solid var(--rule-dk); margin-top: 8px; }
+    .acrr-row { display: grid; grid-template-columns: 130px 1fr; gap: 48px; align-items: center; padding: 38px 8px; border-bottom: 1px solid var(--rule-dk); transition: padding-left 0.3s ease; }
+    .acrr-row:hover { padding-left: 24px; }
+    .acrr-row-letter { font-family: var(--font-d); font-size: clamp(60px,6vw,104px); line-height: 0.9; color: var(--bg); letter-spacing: -2px; }
+    .acrr-row-stage { font-family: var(--font-d); font-size: clamp(26px,2.4vw,38px); font-weight: 400; letter-spacing: -1px; color: var(--black); line-height: 1.05; margin-bottom: 8px; }
+    .acrr-row-desc { font-size: 18px; line-height: 1.65; color: var(--mid-lt); max-width: 640px; }
+    @media (max-width: 600px) {
+      .acrr-row { grid-template-columns: 56px 1fr; gap: 22px; padding: 26px 0; align-items: start; }
+      .acrr-row:hover { padding-left: 0; }
+      .acrr-row-letter { font-size: 48px; }
+    }
+
     @media (max-width: 1024px) {
       .nav-inner { padding: 0 40px !important; }
       .px-lg { padding-left: 40px !important; padding-right: 40px !important; }
@@ -223,6 +241,9 @@
       .buckets { grid-template-columns: 1fr 1fr !important; }
       /* Section 05 ACRR grid: stack vertically on mobile */
       .acrr-grid { grid-template-columns: 1fr !important; }
+      /* ACRR words show active state on mobile (no hover) */
+      .acrr-word { opacity: 1 !important; color: var(--black) !important; }
+      .acrr-word .fl { color: var(--bg) !important; text-decoration: underline; text-underline-offset: 3px; }
       /* Section 10 offers: stack with button right-aligned + padding */
       .offer-row { flex-direction: column !important; gap: 20px !important; align-items: stretch !important; }
       .offer-row > div:last-child { align-self: center !important; padding-right: 0 !important; text-align: center !important; }
@@ -308,6 +329,12 @@
     ]
   }
   </script>
+<style>
+/* SR-MOBILE-BODY: uniform 17px body copy on phones; desktop unchanged */
+@media (max-width:600px){
+  [style*="font-size: 19px"],[style*="font-size:19px"],[style*="font-size: 18px"],[style*="font-size:18px"]{font-size:17px !important;}
+}
+</style>
 </head>
 <body>
 
@@ -506,7 +533,7 @@
 
       <span class="label label-accent">Meet the Founder</span>
       <h2 style="font-family:var(--font-d); font-size:clamp(32px,3.2vw,50px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; margin-bottom:32px; color:var(--white);">
-        I built websites. Then I noticed what they couldn&rsquo;t do <em style="color:#AA737D;">alone.</em>
+        I built websites. Then I noticed what they couldn&rsquo;t do <em style="color:var(--white);">alone.</em>
       </h2>
       <p style="font-size: 19px; line-height:1.9; color:var(--mid-vt); margin-bottom:16px;">
         My background is web design, mostly local service businesses with some wellness mixed in. I got good at building sites that looked right and converted reasonably well. But I kept seeing the same pattern after launch: the practice had a new site and still wasn&rsquo;t getting the patients they expected.
@@ -537,34 +564,38 @@
       Specifically built for women’s health practices.
     </p>
 
-    <div class="acrr-grid" style="display:grid; grid-template-columns:repeat(4,1fr); border-left:1px solid var(--rule-dk);">
+    <div class="acrr-rows">
 
-      <div style="padding:40px 32px; border-right:1px solid var(--rule-dk);">
-        <div style="font-family:var(--font-d); font-size:clamp(50px,4.5vw,74px); line-height:1; color:var(--bg-dk); opacity:0.09; margin-bottom:0; letter-spacing:-2px;">01</div>
-        <span style="font-family:var(--font-b); font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:20px;"><strong style="text-decoration:underline;">A</strong>ttract</span>
-        <h3 style="font-family:var(--font-d); font-size:clamp(24px,1.6vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Draw in the right patients.</h3>
-        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">Build a clear, sophisticated online presence that reaches patients who value root-cause and personalized medicine.</p>
+      <div class="acrr-row">
+        <div class="acrr-row-letter">A</div>
+        <div>
+          <h3 class="acrr-row-stage">Attract</h3>
+          <p class="acrr-row-desc">Draw in the right patients with an online presence built to be found.</p>
+        </div>
       </div>
 
-      <div style="padding:40px 32px; border-right:1px solid var(--rule-dk);">
-        <div style="font-family:var(--font-d); font-size:clamp(50px,4.5vw,74px); line-height:1; color:var(--bg-dk); opacity:0.09; margin-bottom:0; letter-spacing:-2px;">02</div>
-        <span style="font-family:var(--font-b); font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:20px;"><strong style="text-decoration:underline;">C</strong>onvert</span>
-        <h3 style="font-family:var(--font-d); font-size:clamp(24px,1.6vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Turn interest into booked appointments.</h3>
-        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">Move interested leads into committed new patients through optimized funnels and consultation processes.</p>
+      <div class="acrr-row">
+        <div class="acrr-row-letter">C</div>
+        <div>
+          <h3 class="acrr-row-stage">Convert</h3>
+          <p class="acrr-row-desc">Turn interest into booked appointments instead of missed opportunities.</p>
+        </div>
       </div>
 
-      <div style="padding:40px 32px; border-right:1px solid var(--rule-dk);">
-        <div style="font-family:var(--font-d); font-size:clamp(50px,4.5vw,74px); line-height:1; color:var(--bg-dk); opacity:0.09; margin-bottom:0; letter-spacing:-2px;">03</div>
-        <span style="font-family:var(--font-b); font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:20px;"><strong style="text-decoration:underline;">R</strong>etain</span>
-        <h3 style="font-family:var(--font-d); font-size:clamp(24px,1.6vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Keep ideal patients engaged and returning.</h3>
-        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">Build long-term relationships with automated nurture systems that keep patients connected between visits.</p>
+      <div class="acrr-row">
+        <div class="acrr-row-letter">R</div>
+        <div>
+          <h3 class="acrr-row-stage">Retain</h3>
+          <p class="acrr-row-desc">Keep ideal patients engaged and coming back between visits.</p>
+        </div>
       </div>
 
-      <div style="padding:40px 32px; border-right:1px solid var(--rule-dk);">
-        <div style="font-family:var(--font-d); font-size:clamp(50px,4.5vw,74px); line-height:1; color:var(--bg-dk); opacity:0.09; margin-bottom:0; letter-spacing:-2px;">04</div>
-        <span style="font-family:var(--font-b); font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:20px;"><strong style="text-decoration:underline;">R</strong>efer</span>
-        <h3 style="font-family:var(--font-d); font-size:clamp(24px,1.6vw,26px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Turn patients into advocates.</h3>
-        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">Satisfied patients naturally refer others who share their philosophy and are ready to invest in their health.</p>
+      <div class="acrr-row">
+        <div class="acrr-row-letter">R</div>
+        <div>
+          <h3 class="acrr-row-stage">Refer</h3>
+          <p class="acrr-row-desc">Turn happy patients into advocates who send you more like them.</p>
+        </div>
       </div>
 
     </div>
@@ -586,7 +617,7 @@
   </svg>
   <div style="max-width:680px; margin:0 auto; position:relative; z-index:1;">
     <h2 style="font-family:var(--font-d); font-size:clamp(32px,3.5vw,54px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:48px;">
-      Stop leaving ideal patients <em style="color:#AA737D;">to chance.</em>
+      Stop leaving ideal patients <em style="color:var(--white);">to chance.</em>
     </h2>
     <a href="/apply" class="btn-wt">Apply to Work Together &rarr;</a>
   </div>

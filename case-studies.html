@@ -216,6 +216,12 @@
     "publisher": { "@type": "Organization", "name": "Simple Rabbit", "url": "https://simplerabbit.studio" }
   }
   </script>
+<style>
+/* SR-MOBILE-BODY: uniform 17px body copy on phones; desktop unchanged */
+@media (max-width:600px){
+  [style*="font-size: 19px"],[style*="font-size:19px"],[style*="font-size: 18px"],[style*="font-size:18px"]{font-size:17px !important;}
+}
+</style>
 </head>
 <body>
 
@@ -325,7 +331,7 @@
   </svg>
   <div style="max-width:720px; margin:0 auto; position:relative; z-index:1;">
     <h2 style="font-family:var(--font-d); font-size:clamp(32px,3.5vw,54px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--white); margin-bottom:48px;">
-      Your practice deserves a system that <em style="color:#AA737D;">matches the quality of your care.</em>
+      Your practice deserves a system that <em style="color:var(--white);">matches the quality of your care.</em>
     </h2>
     <a href="/apply" class="btn-wt">Apply to Work Together &rarr;</a>
   </div>

@@ -147,7 +147,13 @@ INTERNAL LINKS NEEDED: ../website-audit.html, ../contact.html, google-business-p
     gtag('js', new Date());
     gtag('config', 'G-77EEVJRJJD');
   </script>
-  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript></head>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript><style>
+/* SR-MOBILE-BODY: uniform 17px body copy on phones; desktop unchanged */
+@media (max-width:600px){
+  [style*="font-size: 19px"],[style*="font-size:19px"],[style*="font-size: 18px"],[style*="font-size:18px"]{font-size:17px !important;}
+}
+</style>
+</head>
 <body>
 
 <!-- ANNOUNCEMENT (violet) -->

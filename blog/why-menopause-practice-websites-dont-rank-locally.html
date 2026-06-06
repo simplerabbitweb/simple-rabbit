@@ -109,7 +109,13 @@
       footer > div{flex-wrap:wrap;justify-content:center;}
     }
     @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
-  </style></head>
+  </style><style>
+/* SR-MOBILE-BODY: uniform 17px body copy on phones; desktop unchanged */
+@media (max-width:600px){
+  [style*="font-size: 19px"],[style*="font-size:19px"],[style*="font-size: 18px"],[style*="font-size:18px"]{font-size:17px !important;}
+}
+</style>
+</head>
 <body>
 
 <!-- ANNOUNCEMENT (violet) -->
