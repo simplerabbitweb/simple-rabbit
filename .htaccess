@@ -17,8 +17,9 @@ RewriteRule ^blog/google-business-profile-not-getting-clicks/?$ /articles [R=301
 RewriteRule ^blog/google-business-profile-mistakes-wellness-practices/?$ /articles [R=301,L]
 RewriteRule ^blog/why-private-pay-physicians-asking-about-email/?$ /blog/why-private-practices-asking-about-email [R=301,L]
 
-# --- Redirect /audit to /website-audit ---
-RewriteRule ^audit$ /website-audit [R=301,L]
+# --- Redirect /audit + old /website-audit to /blind-spot-breakdown ---
+RewriteRule ^audit$ /blind-spot-breakdown [R=301,L]
+RewriteRule ^website-audit(\.html)?/?$ /blind-spot-breakdown [R=301,L]
 
 # --- Redirect old checklist URL to assessment ---
 RewriteRule ^acrr-checklist/?$ /acrr-assessment [R=301,L]
