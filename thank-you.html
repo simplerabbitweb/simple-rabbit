@@ -44,10 +44,8 @@
     .ty-cal-inner{max-width:900px;margin:0 auto;text-align:center;}
     .ty-cal-label{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
     .ty-cal-h2{font-family:var(--font-d);font-size:clamp(28px,3vw,42px);line-height:1.1;letter-spacing:-1px;color:var(--black);font-weight:400;margin-bottom:36px;}
-    .ty-cal-frame{width:100%;border:1px solid var(--rule-dk);background:#fff;min-height:720px;}
-    .ty-cal-frame iframe{width:100%;height:720px;border:none;display:block;}
-    .ty-cal-fallback{font-size:14px;color:var(--mid-lt);margin-top:20px;}
-    .ty-cal-fallback a{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px;}
+    .ty-cal-btn{display:inline-block;background:#474D73;color:#FDFAF7;padding:18px 48px;font-family:var(--font-b);font-size:15px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+    .ty-cal-btn:hover{background:#2D3154;}
 
     footer{background:var(--bg-dk);border-top:1px solid var(--rule-lt);padding:24px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
     footer span,footer a{font-size:13px;color:rgba(255,255,255,0.45);font-family:var(--font-b);}
@@ -80,10 +78,7 @@
     <div class="ty-cal-inner">
       <p class="ty-cal-label">Book a Call</p>
       <h2 class="ty-cal-h2">Find a time that works for you.</h2>
-      <div class="ty-cal-frame">
-        <iframe src="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins" title="Book a 30-minute call with Leann Frank" loading="lazy"></iframe>
-      </div>
-      <p class="ty-cal-fallback">Calendar not loading? <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins" target="_blank" rel="noopener">Open the scheduler in a new tab &rarr;</a></p>
+      <a class="ty-cal-btn" href="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins" target="_blank" rel="noopener">Book a 30-Minute Call &rarr;</a>
     </div>
   </section>
 
