@@ -51,7 +51,7 @@
         '<button id="sr-wl-close" aria-label="Close">&times;</button>' +
         '<div id="sr-wl-body">' +
           '<span class="eb">Coming Fall 2026</span>' +
-          '<h3>Stop sending patients to voicemail.</h3>' +
+          '<h3>The front desk that&rsquo;s always on.</h3>' +
           '<p class="sub">An AI front desk that answers your phone and website, books appointments, and follows up. Join the waitlist for early access.</p>' +
           '<form id="sr-wl-form" action="https://formspree.io/f/xnjeaaeo" method="POST">' +
             '<label for="sr-wl-name">Your name</label>' +
