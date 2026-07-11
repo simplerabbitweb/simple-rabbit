@@ -542,9 +542,7 @@
       });
 
       if (response.ok) {
-        document.getElementById('apply-form').style.display = 'none';
-        document.getElementById('success-msg').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.location.href = '/thank-you';
       } else {
         btn.disabled = false;
         btn.textContent = 'Submit Application →';
