@@ -10,6 +10,8 @@
   var EXCLUDE = ['/ai-front-desk', '/apply', '/thank-you', '/contact', '/changes',
                  '/client-hub', '/privacy-policy', '/404', '/media-kit'];
   if (EXCLUDE.indexOf(path) !== -1) return;
+  // Skip all client-facing help guides (e.g. /guides/getting-more-google-reviews)
+  if (path.indexOf('/guides/') === 0 || path === '/guides') return;
 
   // Once per visit. sessionStorage resets on a new visit (new tab/session).
   try { if (sessionStorage.getItem('srWaitlistShown')) return; } catch (e) {}
