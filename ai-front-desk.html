@@ -135,7 +135,7 @@
       <a href="/about">About</a>
       <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Apply to Work Together</a>
+      <a href="#waitlist" class="nav-cta" style="white-space:nowrap;">Join the Waitlist</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -144,7 +144,7 @@
   <a href="/about">About</a>
   <a href="/case-studies">Case Studies</a>
   <a href="/articles">Articles</a>
-  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
+  <a href="#waitlist" class="mobile-nav-cta">Join the Waitlist</a>
 </div>
 
 <!-- HERO -->
@@ -164,7 +164,7 @@
       </div>
       <h1 style="font-family:var(--font-display);font-size:clamp(38px,5.5vw,72px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 28px;" class="hero-h1">Never send another patient to voicemail.</h1>
       <p style="font-size:clamp(16px,1.3vw,19px);line-height:1.75;color:rgba(0,0,0,0.65);margin:0 0 32px;max-width:520px;">I set up an AI front desk that answers your phone and your website, books the appointment, and follows up. The patients you miss after hours and between calls finally reach you. Built on healthcare-grade, HIPAA-ready tools.</p>
-      <a href="/apply" style="display:inline-block;background:#474D73;color:#fff;padding:16px 44px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Apply to Work Together &rarr;</a>
+      <a href="#waitlist" style="display:inline-block;background:#474D73;color:#fff;padding:16px 44px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;font-family:var(--font-body);transition:background 0.2s;">Join the Waitlist &rarr;</a>
     </div>
     <div>
       <img src="leann-on-phone.jpg" alt="Leann Frank taking a call" style="width:100%;height:auto;display:block;border:1px solid var(--light-border);">
@@ -258,7 +258,7 @@
 <!-- APPLY CTA -->
 <section class="reveal sp" style="padding:72px 48px;border-bottom:1px solid var(--light-border);text-align:center;">
   <p style="font-family:var(--font-d);font-size:clamp(22px,2.6vw,32px);line-height:1.2;letter-spacing:-0.5px;color:var(--black);max-width:640px;margin:0 auto 28px;">Want an AI front desk built and run for your practice?</p>
-  <a href="/apply" class="btn-primary" style="padding:16px 44px;font-size:15px;">Apply to Work Together &rarr;</a>
+  <a href="#waitlist" class="btn-primary" style="padding:16px 44px;font-size:15px;">Join the Waitlist &rarr;</a>
 </section>
 
 <!-- GUARDRAILS -->
@@ -274,40 +274,52 @@
   </div>
 </section>
 
-<!-- APPLY CTA -->
-<section class="reveal sp" style="padding:72px 48px;border-bottom:1px solid var(--light-border);text-align:center;">
-  <p style="font-family:var(--font-d);font-size:clamp(22px,2.6vw,32px);line-height:1.2;letter-spacing:-0.5px;color:var(--black);max-width:640px;margin:0 auto 28px;">Let&rsquo;s get your front desk covered.</p>
-  <a href="/apply" class="btn-primary" style="padding:16px 44px;font-size:15px;">Apply to Work Together &rarr;</a>
-</section>
-
-<!-- HOW IT WORKS -->
+<!-- WAITLIST -->
 <style>
-  .hiw-item{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center;padding:44px 0;border-top:1px solid var(--rule-dk);}
-  .hiw-item:last-child{border-bottom:1px solid var(--rule-dk);}
-  .hiw-num{font-family:var(--font-d);font-size:clamp(72px,8vw,130px);line-height:0.8;letter-spacing:-4px;color:transparent;-webkit-text-stroke:1.5px rgba(45,49,84,0.30);transition:-webkit-text-stroke-color 0.3s ease;}
-  .hiw-item:hover .hiw-num{-webkit-text-stroke-color:rgba(45,49,84,0.8);}
-  .hiw-title{font-family:var(--font-d);font-size:clamp(24px,2.6vw,34px);font-weight:400;line-height:1.05;letter-spacing:-1px;color:var(--black);margin-bottom:12px;}
-  .hiw-desc{font-size:17px;line-height:1.65;color:var(--mid-lt);max-width:620px;margin:0;}
-  @media(max-width:800px){.hiw-item{grid-template-columns:1fr;gap:8px;padding:32px 0;}.hiw-num{font-size:72px;}}
+  html{scroll-behavior:smooth;}
+  .wl-form label{display:block;font-family:var(--font-b);font-size:13px;font-weight:600;letter-spacing:0.4px;color:var(--black);margin-bottom:8px;}
+  .wl-form input{width:100%;padding:14px 16px;font-family:var(--font-b);font-size:16px;color:var(--black);background:var(--white);border:1px solid var(--light-border);margin-bottom:22px;border-radius:2px;}
+  .wl-form input:focus{outline:none;border-color:var(--accent);}
+  .wl-form button{width:100%;background:#474D73;color:#fff;border:none;padding:17px;font-family:var(--font-b);font-size:15px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+  .wl-form button:hover{background:var(--bg-dk);}
+  .wl-form button:disabled{background:var(--mid-lt);cursor:not-allowed;}
 </style>
-<section class="reveal sp" style="padding:100px 48px;border-bottom:1px solid var(--light-border);">
-  <div style="max-width:1000px;margin:0 auto;">
-    <h2 style="font-size:clamp(28px,3.5vw,40px);line-height:1.15;margin-bottom:28px;">How the setup works.</h2>
-    <div class="hiw-item"><div class="hiw-num">01</div><div><h3 class="hiw-title">Scope</h3><p class="hiw-desc">We map what your front desk misses in a typical week, and decide what the agent handles versus what routes to a person.</p></div></div>
-    <div class="hiw-item"><div class="hiw-num">02</div><div><h3 class="hiw-title">Build</h3><p class="hiw-desc">I set up your platform account, help you get your Business Associate Agreement in place, and configure the phone and website agents to your practice.</p></div></div>
-    <div class="hiw-item"><div class="hiw-num">03</div><div><h3 class="hiw-title">Guardrails and test</h3><p class="hiw-desc">I lock in the limits and run the agent against real scenarios before a single patient hears it.</p></div></div>
-    <div class="hiw-item"><div class="hiw-num">04</div><div><h3 class="hiw-title">Launch and train</h3><p class="hiw-desc">We go live, I train your team, and you get everything documented so you are never dependent on me.</p></div></div>
+<section id="waitlist" class="reveal sp" style="padding:110px 48px;border-top:1px solid var(--light-border);background:var(--warm);scroll-margin-top:90px;">
+  <div style="max-width:580px;margin:0 auto;text-align:center;">
+    <span class="overline">Join the Waitlist</span>
+    <h2 style="font-size:clamp(30px,4vw,50px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;">Be first in line for Fall 2026.</h2>
+    <p style="font-size:18px;line-height:1.75;color:var(--dark);max-width:500px;margin:0 auto 40px;">Leave your details and I&rsquo;ll reach out with early access before the Always-On Front Desk opens to everyone.</p>
+    <form class="wl-form" id="waitlist-form" action="https://formspree.io/f/xnjeaaeo" method="POST" style="text-align:left;">
+      <label for="wl-name">Your name</label>
+      <input id="wl-name" name="name" type="text" autocomplete="name">
+      <label for="wl-email">Email <span style="color:var(--accent);">*</span></label>
+      <input id="wl-email" name="email" type="email" required autocomplete="email">
+      <label for="wl-practice">Practice name</label>
+      <input id="wl-practice" name="practice" type="text">
+      <label for="wl-need">What should your front desk agent handle first? <span style="color:var(--mid-lt);font-weight:400;">(optional)</span></label>
+      <input id="wl-need" name="priority" type="text" placeholder="After-hours calls, booking, website chat...">
+      <button type="submit">Join the Waitlist &rarr;</button>
+    </form>
+    <div id="waitlist-success" style="display:none;padding:36px 28px;background:var(--white);border:1px solid var(--light-border);text-align:center;">
+      <h3 style="font-size:26px;font-weight:400;letter-spacing:-0.5px;margin-bottom:10px;">You&rsquo;re on the list.</h3>
+      <p style="font-size:16px;line-height:1.6;color:var(--dark);margin:0;">I&rsquo;ll be in touch with early access before Fall 2026. Talk soon.</p>
+    </div>
   </div>
 </section>
-
-<!-- FINAL CTA -->
-<section class="reveal sp" style="padding:110px 48px;">
-  <div style="max-width:900px;margin:0 auto;text-align:center;">
-    <h2 style="font-size:clamp(30px,4vw,52px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:24px;">Stop losing patients to a phone nobody answers.</h2>
-    <p style="font-size:18px;line-height:1.75;color:var(--dark);max-width:560px;margin:0 auto 36px;">The Always-On Front Desk launches Fall 2026. Apply to work together now, and you&rsquo;ll be first in line when it opens.</p>
-    <a href="/apply" class="btn-primary" style="padding:18px 48px;font-size:15px;">Apply to Work Together &rarr;</a>
-  </div>
-</section>
+<script>
+(function(){
+  var wf=document.getElementById('waitlist-form'); if(!wf) return;
+  wf.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn=wf.querySelector('button'); btn.disabled=true; btn.textContent='Joining...';
+    try{
+      var r=await fetch(wf.action,{method:'POST',body:new FormData(wf),headers:{'Accept':'application/json'}});
+      if(r.ok){ wf.style.display='none'; document.getElementById('waitlist-success').style.display='block'; }
+      else { btn.disabled=false; btn.innerHTML='Join the Waitlist &rarr;'; }
+    }catch(err){ btn.disabled=false; btn.innerHTML='Join the Waitlist &rarr;'; }
+  });
+})();
+</script>
 
 <!-- FOOTER -->
 <footer style="background:var(--bg-dk); padding:0; display:block;">
@@ -335,7 +347,7 @@
         <a href="https://x.com/leannfrank" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://simplerabbit.myflodesk.com/jointhehutch" target="_blank" rel="noopener" aria-label="Newsletter" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+        <a href="https://simplerabbit.myflodesk.com/newsletter" target="_blank" rel="noopener" aria-label="Newsletter" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
