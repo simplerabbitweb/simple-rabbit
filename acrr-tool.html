@@ -96,7 +96,7 @@
 <main class="sheet">
   <!-- COVER -->
   <header class="cover">
-    <img src="sign-logo.png" alt="Simple Rabbit" style="height:52px; width:auto; display:block; margin-bottom:28px;">
+    <img src="sign-logo.png" alt="Simple Rabbit" style="height:52px; width:auto; display:block; margin:0 auto 28px;">
     <h1>The Missing Marketing <em>Checklist.</em></h1>
     <p class="deck">How ready is your private-pay practice for a consistent flow of new patients?</p>
     <p class="howto"><strong>How to use it:</strong> Check off everything already in place at your practice. Whatever you can&rsquo;t check is where you could be losing patients and leaving money on the table.</p>
@@ -142,12 +142,9 @@
 
   <!-- NEXT STEP -->
   <section class="cta">
-    <div class="eyebrow">The Next Step</div>
-    <p class="gapline" id="gapline">Check the boxes above to see where you stand.</p>
     <h2>Let&rsquo;s close the <em>gaps</em> stopping the steady flow of patients you need to thrive.</h2>
     <div class="actions">
       <a class="btn btn-primary" href="/apply" target="_blank" rel="noopener">Apply to Work Together</a>
-      <a class="btn btn-ghost" href="/ai-front-desk" target="_blank" rel="noopener">Explore the AI Front Desk</a>
     </div>
   </section>
 </main>
@@ -173,7 +170,6 @@
   var KEY = 'srMissingMarketing';
   var prog = document.getElementById('prog');
   var fill = document.getElementById('fill');
-  var gapline = document.getElementById('gapline');
 
   function saved(){ try{ return JSON.parse(localStorage.getItem(KEY)) || []; }catch(e){ return []; } }
   function store(){ try{ localStorage.setItem(KEY, JSON.stringify(items.map(function(it){return it.querySelector('input').checked?1:0;}))); }catch(e){} }
@@ -184,9 +180,6 @@
     items.forEach(function(it){ it.classList.toggle('done', it.querySelector('input').checked); });
     prog.innerHTML = '<b>'+done+'</b> of '+total+' in place';
     fill.style.width = (done/total*100)+'%';
-    if(done===0){ gapline.textContent = 'Check the boxes above to see where you stand.'; }
-    else if(gaps===0){ gapline.textContent = 'All 18 in place. Your growth engine is fully built.'; }
-    else { gapline.textContent = 'You’ve got '+gaps+' gap'+(gaps===1?'':'s')+' costing you the right patients.'; }
     store();
   }
 
