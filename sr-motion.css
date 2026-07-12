@@ -1,0 +1,95 @@
+/* ═══════════════════════════════════════════════════════════
+   SR-MOTION — sitewide motion & hover refinement
+   One easing signature: cubic-bezier(.22,1,.36,1) (fast start, soft landing)
+   Loaded at end of <body> so it wins the cascade over per-page styles.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Reveal: slower, weightier, with character ── */
+.reveal {
+  transform: translateY(26px);
+  transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible { transform: none; }
+
+/* ── Cards: deeper lift, layered shadow, slow zoom, sliding arrow ──
+   (declared after .reveal so hover transform wins the cascade) */
+.card {
+  transition: border-color .3s ease, transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1),
+              opacity .9s cubic-bezier(.22,1,.36,1);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(45,49,84,0.10), 0 3px 10px rgba(45,49,84,0.05);
+}
+.card-img img { transition: transform .9s cubic-bezier(.22,1,.36,1); }
+.card:hover .card-img img { transform: scale(1.05); }
+.card-foot span:last-child { transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.card:hover .card-foot span:last-child { transform: translateX(6px); }
+
+/* ── Buttons: directional sweep-fill + gentle lift ── */
+.btn-dk, .btn-wt, .btn-outline, .btn-accent {
+  position: relative; overflow: hidden; z-index: 0;
+  transition: color .3s ease, transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1);
+}
+.btn-dk::before, .btn-wt::before, .btn-outline::before, .btn-accent::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+.btn-dk:hover::before, .btn-wt:hover::before, .btn-outline:hover::before, .btn-accent:hover::before { transform: scaleX(1); }
+/* pin base backgrounds so the sweep does the work */
+.btn-dk:hover     { background: #0A0905; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(10,9,5,0.18); }
+.btn-dk::before   { background: #474D73; }
+.btn-wt:hover     { background: #FDFAF7; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(10,9,5,0.16); }
+.btn-wt::before   { background: #efe9e2; }
+.btn-accent:hover { background: #AA737D; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(138,93,102,0.28); }
+.btn-accent::before { background: #8a5d66; }
+.btn-outline:hover  { background: transparent; color: #FDFAF7; transform: translateY(-2px); }
+.btn-outline::before { background: #0A0905; }
+
+/* nav CTA sweep (its base rules use !important, so match it) */
+.nav-cta { position: relative; overflow: hidden; z-index: 0; }
+.nav-cta::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: #474D73;
+  transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+.nav-cta:hover::before { transform: scaleX(1); }
+.nav-cta:hover { background: #0A0905 !important; }
+
+/* ── Nav links: underline draws in from the left ── */
+.nav-links a:not(.nav-cta) { position: relative; }
+.nav-links a:not(.nav-cta)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1.5px;
+  background: #AA737D; transform: scaleX(0); transform-origin: right;
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+}
+.nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* ── Featured-in logos: color returns on hover ── */
+img[style*="grayscale"] { transition: filter .45s ease, transform .45s cubic-bezier(.22,1,.36,1); }
+img[style*="grayscale"]:hover { filter: grayscale(0) !important; transform: translateY(-2px); }
+
+/* ── Work-with-me rows: indent on hover (matches number-stroke effect) ── */
+.work-item { transition: padding-left .35s cubic-bezier(.22,1,.36,1); }
+.work-item:hover { padding-left: 14px; }
+
+/* ── Back-to-top: lift ── */
+#sr-top { transition: opacity .25s, background .2s, transform .3s cubic-bezier(.22,1,.36,1); }
+#sr-top:hover { transform: translateY(-3px); }
+
+/* ── Hero entrance choreography (homepage .hero-inner only) ── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes srUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  .hero-inner > div:nth-of-type(2) > * { animation: srUp .85s cubic-bezier(.22,1,.36,1) both; }
+  .hero-inner > div:nth-of-type(2) > *:nth-child(1) { animation-delay: .08s; }
+  .hero-inner > div:nth-of-type(2) > *:nth-child(2) { animation-delay: .2s; }
+  .hero-inner > div:nth-of-type(2) > *:nth-child(3) { animation-delay: .32s; }
+  .hero-inner > div:nth-of-type(3) { animation: srUp 1s cubic-bezier(.22,1,.36,1) .18s both; }
+}
+
+/* ── Reduced motion: settle everything instantly ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero-inner > div:nth-of-type(2) > *, .hero-inner > div:nth-of-type(3) { animation: none !important; }
+  .card, .card-img img, .btn-dk, .btn-wt, .btn-outline, .btn-accent { transition-duration: .01s !important; }
+}
