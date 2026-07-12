@@ -889,16 +889,7 @@
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
-          if (e.isIntersecting) {
-            var el = e.target, delay = 0, p = el.parentElement;
-            if (p) {
-              var sibs = [].filter.call(p.children, function(c) { return c.classList && c.classList.contains('reveal'); });
-              var idx = sibs.indexOf(el);
-              if (idx > 0) delay = Math.min(idx * 90, 360);
-            }
-            setTimeout(function() { el.classList.add('visible'); }, delay);
-            obs.unobserve(el);
-          }
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
         });
       }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
       revealEls.forEach(function(el) { if (!el.classList.contains('visible')) obs.observe(el); });
@@ -943,6 +934,5 @@ if(_hbtn&&_mnav){
 })();
 </script>
 <script src="/waitlist-popup.js" defer></script>
-<link rel="stylesheet" href="/sr-motion.css">
 </body>
 </html>
