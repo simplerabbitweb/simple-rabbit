@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Ad Creatives · The Missing Marketing Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#474D73; --bg-dk:#2D3154; --white:#FDFAF7; --warm:#F5F0EB;
+    --black:#0A0905; --mid:#7A756E; --accent:#AA737D; --line:rgba(45,49,84,0.14);
+    --d:'Instrument Serif',Georgia,serif; --b:'DM Sans',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#3a3a3a;font-family:var(--b);padding:40px;display:flex;flex-direction:column;align-items:center;gap:56px;}
+  .note{color:#bbb;font-size:13px;max-width:1080px;line-height:1.6;}
+  .note b{color:#fff;}
+  .label{color:#888;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .wrap{width:1080px;}
+
+  /* ── shared artboard ── */
+  .ad{width:1080px;height:1080px;background:var(--white);position:relative;overflow:hidden;display:flex;flex-direction:column;}
+  .ad .logo{height:56px;width:auto;display:block;align-self:flex-start;flex-shrink:0;}
+  .eyebrow{font-size:20px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--accent);}
+  .pill{display:inline-flex;align-items:center;gap:14px;background:var(--black);color:var(--white);font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:22px 44px;}
+  .pill .arw{font-family:var(--b);}
+  .foot{display:flex;align-items:center;justify-content:space-between;}
+  .free{font-size:22px;color:var(--mid);letter-spacing:0.5px;}
+
+  /* ── AD 1 · silent leak ── */
+  .ad1{padding:72px 80px 80px;background:var(--white);}
+  .ad1 h1{font-family:var(--d);font-weight:400;font-size:88px;line-height:1.02;letter-spacing:-2.5px;color:var(--black);margin:36px 0 52px;}
+  .ad1 h1 em{font-style:italic;color:var(--bg);}
+  .list{background:#FFFDFA;border:1px solid var(--line);box-shadow:0 24px 60px rgba(45,49,84,0.10);padding:14px 44px;}
+  .row{display:flex;align-items:center;gap:26px;padding:27px 0;border-top:1px solid var(--line);}
+  .row:first-child{border-top:none;}
+  .box{width:40px;height:40px;border:2.5px solid var(--bg);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--bg);}
+  .box svg{width:22px;height:22px;}
+  .row.gap .box{background:transparent;border-color:var(--accent);}
+  .row.gap .box svg{display:none;}
+  .row .txt{font-size:31px;color:var(--black);letter-spacing:-0.2px;}
+  .row.gap .txt{color:var(--accent);font-weight:500;}
+  .row .tag{margin-left:auto;font-family:var(--d);font-style:italic;font-size:30px;color:var(--accent);white-space:nowrap;}
+  .ad1 .foot{margin-top:auto;}
+
+  /* ── AD 2 · second job ── */
+  .ad2{padding:80px;background:var(--warm);justify-content:space-between;}
+  .ad2 h1{font-family:var(--d);font-weight:400;font-size:112px;line-height:1.03;letter-spacing:-3px;color:var(--black);max-width:15ch;}
+  .ad2 h1 em{font-style:italic;color:var(--bg);}
+  .ad2 .sub{font-size:34px;line-height:1.5;color:var(--mid);max-width:24ch;margin-top:44px;}
+  .rule{height:1px;background:var(--line);margin:56px 0 48px;}
+
+  /* ── AD 3 · referral ceiling ── */
+  .ad3{padding:80px;background:var(--white);justify-content:space-between;}
+  .ad3 h1{font-family:var(--d);font-weight:400;font-size:96px;line-height:1.04;letter-spacing:-2.5px;color:var(--black);max-width:17ch;}
+  .ad3 h1 em{font-style:italic;color:var(--bg);}
+  .chart{margin:52px 0 8px;}
+  .ad3 .sub{font-size:33px;line-height:1.5;color:var(--mid);max-width:26ch;}
+</style>
+</head>
+<body>
+
+<p class="note"><b>How to export:</b> each artboard below is exactly 1080&times;1080 (Meta feed 1:1). Screenshot each square at 100% zoom (on a Mac: &#8984;&#8679;4, drag the square), or tell me which one you want and I&rsquo;ll fine-tune it. Text kept minimal per Meta&rsquo;s low-text-on-image preference.</p>
+
+<!-- ═══════════ AD 1 · THE SILENT LEAK ═══════════ -->
+<div class="wrap">
+  <div class="label">Ad 1 · The silent leak (pairs with &ldquo;A patient looked you up last week&rdquo; primary text)</div>
+  <div class="ad ad1">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <img class="logo" src="sign-logo.png" alt="Simple Rabbit">
+      <span class="eyebrow">Free Checklist</span>
+    </div>
+    <h1>Where do your ideal patients <em>slip away?</em></h1>
+    <div class="list">
+      <div class="row">
+        <span class="box"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="#FDFAF7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="txt">Get found by the right patients</span>
+      </div>
+      <div class="row">
+        <span class="box"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="#FDFAF7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="txt">Turn interest into booked visits</span>
+      </div>
+      <div class="row gap">
+        <span class="box"></span>
+        <span class="txt">Follow up before she books elsewhere</span>
+        <span class="tag">&larr; the gap</span>
+      </div>
+      <div class="row">
+        <span class="box"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="#FDFAF7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="txt">Turn happy patients into referrals</span>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="free">The Missing Marketing Checklist &middot; free &middot; 5 minutes</span>
+      <span class="pill">Get the checklist <span class="arw">&rarr;</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ AD 2 · THE SECOND JOB ═══════════ -->
+<div class="wrap">
+  <div class="label">Ad 2 · The second job (pairs with &ldquo;You left insurance&rdquo; primary text)</div>
+  <div class="ad ad2">
+    <img class="logo" src="sign-logo.png" alt="Simple Rabbit">
+    <div>
+      <h1>You didn&rsquo;t leave insurance to become <em>a marketer.</em></h1>
+      <p class="sub">The 18-point checklist that fills a private-pay schedule, from getting found to the follow-up that brings patients back.</p>
+    </div>
+    <div>
+      <div class="rule"></div>
+      <div class="foot">
+        <span class="free">The Missing Marketing Checklist &middot; free</span>
+        <span class="pill">Get the checklist <span class="arw">&rarr;</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ AD 3 · THE REFERRAL CEILING ═══════════ -->
+<div class="wrap">
+  <div class="label">Ad 3 · The referral ceiling (pairs with &ldquo;Referrals built your practice&rdquo; primary text)</div>
+  <div class="ad ad3">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <img class="logo" src="sign-logo.png" alt="Simple Rabbit">
+      <span class="eyebrow">Free Checklist</span>
+    </div>
+    <div>
+      <h1>Referrals built your practice. Then they <em>flattened.</em></h1>
+      <svg class="chart" width="640" height="150" viewBox="0 0 640 150" fill="none" aria-hidden="true">
+        <path d="M8 132 C120 128 180 96 260 62 C320 37 380 30 448 30 L632 30" stroke="#474D73" stroke-width="5" stroke-linecap="round"/>
+        <path d="M448 30 L632 30" stroke="#AA737D" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 16"/>
+        <circle cx="448" cy="30" r="9" fill="#AA737D"/>
+        <text x="448" y="86" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="30" fill="#AA737D" text-anchor="middle">the ceiling</text>
+      </svg>
+      <p class="sub">Find the 18 marketing pieces referrals let you skip.</p>
+    </div>
+    <div class="foot">
+      <span class="free">The Missing Marketing Checklist &middot; free &middot; 5 minutes</span>
+      <span class="pill">Get the checklist <span class="arw">&rarr;</span></span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
