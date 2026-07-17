@@ -28,6 +28,9 @@ RewriteRule ^acrr-checklist/?$ / [R=301,L]
 # --- Renamed landing page: website-review → missing-marketing-checklist ---
 RewriteRule ^website-review(\.html)?/?$ /missing-marketing-checklist [R=301,L]
 
+# --- Deleted ACRR tool page → missing-marketing-checklist ---
+RewriteRule ^acrr-tool(\.html)?/?$ /missing-marketing-checklist [R=301,L]
+
 # --- Redirect old playbook URLs to /fully-booked ---
 RewriteRule ^the-fully-booked-practice-playbook/?$ /fully-booked [R=301,L]
 RewriteRule ^playbook/?$ /fully-booked [R=301,L]
