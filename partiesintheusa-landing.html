@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Parties in the USA — The kids birthday party directory for your city</title>
+<meta name="description" content="Find kids party venues, entertainers, and suppliers near you. Parties in the USA is a growing network of hand-curated local kids birthday party directories. Join the waitlist for your area.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Parties in the USA — Find kids party venues near you">
+<meta property="og:description" content="A growing network of hand-curated local kids birthday party directories. Find venues, entertainers, and suppliers near you, and help local party businesses get discovered.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://partiesintheusa.com">
+
+<!-- Fonts: DM Sans + Caveat from Google Fonts. "Eighties Comeback" is a licensed display face served from the brand host; serif fallback below. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Brand tokens ---------- */
+  :root {
+    /* Full palette — each color stands in for a different market */
+    --pink: #EC1E8C;
+    --chartreuse: #D6F74C;
+    --vista: #8C9EFF;
+    --tomato: #F06038;
+    --apricot: #FCD9BE;
+    --ink: #1C1B29;
+    --cream: #FBF6EE;
+
+    /* Darker shade of each family — for text on that color's fill (never plain black) */
+    --pink-ink: #5C0A34;
+    --chartreuse-ink: #46550A;
+    --vista-ink: #2A2F7A;
+    --tomato-ink: #6E2410;
+    --apricot-ink: #7A4A22;
+
+    --display: "Eighties Comeback", "Georgia", "Times New Roman", serif;
+    --body: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --script: "Caveat", "DM Sans", cursive;
+
+    /* Semantic (light) — ink + cream lead as the base */
+    --bg: var(--cream);
+    --bg-alt: #FFFFFF;
+    --surface: #FFFFFF;
+    --text: var(--ink);
+    --text-soft: #4a4958;
+    --border: rgba(28, 27, 41, 0.10);
+    --shadow: 0 18px 40px -20px rgba(28, 27, 41, 0.28);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14131f;
+      --bg-alt: #1c1b29;
+      --surface: #22212f;
+      --text: #f6f3ee;
+      --text-soft: #c3c0cc;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 18px 44px -20px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  /* ---------- Reset / base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.05; letter-spacing: 0; margin: 0; }
+  p { margin: 0 0 1rem; }
+
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+  section { padding: 72px 0; }
+
+  /* ---------- Buttons: filled, borderless pills, varied across the palette ---------- */
+  /* Text on each fill uses a darker shade of that same color family. */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: var(--body); font-weight: 700; font-size: 1rem;
+    padding: 14px 30px; border-radius: 999px; border: none; cursor: pointer;
+    text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+    line-height: 1;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.03); }
+  .btn:focus-visible { outline: 3px solid var(--vista); outline-offset: 3px; }
+  .btn-ink { background: var(--ink); color: var(--cream); }
+  .btn-cream { background: var(--cream); color: var(--ink); }
+  .btn-chartreuse { background: var(--chartreuse); color: var(--chartreuse-ink); }
+  .btn-vista { background: var(--vista); color: var(--vista-ink); }
+  .btn-tomato { background: var(--tomato); color: var(--tomato-ink); }
+  .btn-apricot { background: var(--apricot); color: var(--apricot-ink); }
+  @media (prefers-color-scheme: dark) {
+    .btn-ink { background: var(--cream); color: var(--ink); }
+  }
+
+  /* ---------- Word-mark with multi-color star (a network of local sites) ---------- */
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 400;
+    letter-spacing: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    white-space: nowrap;
+  }
+  .wordmark .star { color: var(--tomato); font-size: 0.82em; line-height: 1; }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .wordmark .star {
+      background: linear-gradient(120deg, var(--pink) 0%, var(--tomato) 28%, var(--apricot) 46%, var(--chartreuse) 68%, var(--vista) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+  }
+
+  /* ---------- Announcement bar ---------- */
+  .announce {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 9px 16px;
+    letter-spacing: 0;
+  }
+  .announce strong { color: var(--chartreuse); font-weight: 700; }
+  @media (prefers-color-scheme: dark) {
+    .announce { background: #000; }
+  }
+
+  /* ---------- Header ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 22px; max-width: 1120px; margin: 0 auto; gap: 12px; }
+  .nav .brand { font-size: 1.45rem; }
+  .nav-cta { display: none; }
+  @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; padding: 80px 0 64px; overflow: hidden; }
+  .hero .wrap { position: relative; z-index: 2; }
+  .hero-eyebrow {
+    font-family: var(--script); color: var(--tomato);
+    font-size: 1.6rem; line-height: 1; display: inline-block; margin-bottom: 8px;
+    transform: rotate(-2deg);
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    max-width: 15ch;
+    margin-bottom: 20px;
+  }
+  /* Multi-color highlight — the network, not one market */
+  .hero h1 .hl { color: var(--tomato); }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .hero h1 .hl {
+      background: linear-gradient(100deg, var(--pink) 0%, var(--tomato) 34%, var(--vista) 70%, var(--chartreuse) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+  }
+  .hero-sub {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--text-soft);
+    max-width: 44ch;
+    margin-bottom: 30px;
+  }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  /* Organic blobs — rotate palette colors so no one dominates */
+  .blob { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5; z-index: 1; pointer-events: none; }
+  .hero .blob-1 { width: 340px; height: 340px; background: var(--vista); top: -90px; right: -80px; }
+  .hero .blob-3 { width: 160px; height: 160px; background: var(--apricot); top: 42%; right: 12%; opacity: .5; }
+  @media (prefers-color-scheme: dark) { .blob { opacity: .26; } }
+  @media (max-width: 640px) { .hero .blob-1 { width: 220px; height: 220px; } .hero .blob-3 { display: none; } }
+
+  /* ---------- Scalloped divider ---------- */
+  .scallop { position: relative; height: 34px; line-height: 0; }
+  .scallop svg { display: block; width: 100%; height: 100%; }
+
+  /* ---------- Section heads ---------- */
+  .sec-head { max-width: 42ch; margin-bottom: 40px; }
+  .sec-head .kicker {
+    font-family: var(--script); font-size: 1.4rem; display: block; margin-bottom: 4px; transform: rotate(-1.5deg);
+  }
+  .sec-head h2 { font-size: clamp(2rem, 5vw, 3rem); }
+  .sec-head p { color: var(--text-soft); margin-top: 12px; font-size: 1.08rem; }
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
+  .k-tomato { color: var(--tomato); }
+  .k-pink { color: var(--pink); }
+
+  /* ---------- How it works ---------- */
+  .how { position: relative; overflow: hidden; }
+  .how .blob-b { width: 220px; height: 220px; background: var(--tomato); bottom: -90px; right: -70px; opacity: .16; }
+  .how .wrap { position: relative; z-index: 2; }
+  .cards { display: grid; gap: 22px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 22px;
+    padding: 30px 26px; box-shadow: var(--shadow);
+  }
+  .card .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 14px;
+    font-family: var(--display); font-size: 1.4rem; margin-bottom: 16px;
+  }
+  .card:nth-child(1) .num { background: var(--chartreuse); color: var(--chartreuse-ink); }
+  .card:nth-child(2) .num { background: var(--vista); color: var(--vista-ink); }
+  .card:nth-child(3) .num { background: var(--tomato); color: var(--tomato-ink); }
+  .card h3 { font-size: 1.5rem; margin-bottom: 8px; }
+  .card p { color: var(--text-soft); margin: 0; }
+
+  /* ---------- Where we are ---------- */
+  .where { background: var(--bg-alt); }
+  /* Network motif: a color for every city */
+  .net-note {
+    display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+    font-family: var(--script); font-size: 1.35rem; color: var(--text-soft);
+    margin: -22px 0 34px; text-align: center;
+  }
+  .net-dots { display: inline-flex; gap: 7px; }
+  .net-dots span { width: 15px; height: 15px; border-radius: 50%; display: inline-block; }
+  .net-dots .d1 { background: var(--pink); }
+  .net-dots .d2 { background: var(--tomato); }
+  .net-dots .d3 { background: var(--apricot); }
+  .net-dots .d4 { background: var(--chartreuse); }
+  .net-dots .d5 { background: var(--vista); }
+
+  .tiles { display: grid; gap: 22px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .tiles { grid-template-columns: 1fr 1fr; } }
+  .tile {
+    border-radius: 24px; padding: 34px 30px; border: 1px solid var(--border);
+    box-shadow: var(--shadow); position: relative; overflow: hidden;
+  }
+  /* Bergen tile carries Bergen Parties' own color (pink) — its market identity */
+  .tile-live { background: linear-gradient(135deg, var(--pink), var(--tomato)); color: var(--cream); border-color: transparent; }
+  .tile-live .badge {
+    display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,.22);
+    color: #fff; font-weight: 700; font-size: .82rem; letter-spacing: 0; text-transform: uppercase;
+    padding: 6px 13px; border-radius: 999px; margin-bottom: 16px;
+  }
+  .tile-live .badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--chartreuse); box-shadow: 0 0 0 0 rgba(214,247,76,.7); animation: pulse 2s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(214,247,76,.7); } 70% { box-shadow: 0 0 0 10px rgba(214,247,76,0); } 100% { box-shadow: 0 0 0 0 rgba(214,247,76,0); } }
+  .tile-live h3 { font-size: 2rem; margin-bottom: 8px; color: var(--cream); }
+  .tile-live p { color: rgba(255,255,255,.92); margin-bottom: 22px; }
+
+  /* "Coming soon" tile — could be any market, so a multi-color top accent */
+  .tile-soon { background: var(--surface); }
+  .tile-soon::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 7px;
+    background: linear-gradient(90deg, var(--pink) 0 20%, var(--tomato) 20% 40%, var(--apricot) 40% 60%, var(--chartreuse) 60% 80%, var(--vista) 80% 100%);
+  }
+  .tile-soon .badge {
+    display: inline-flex; background: var(--vista); color: var(--vista-ink);
+    font-weight: 700; font-size: .82rem; letter-spacing: 0; text-transform: uppercase;
+    padding: 6px 13px; border-radius: 999px; margin: 12px 0 16px;
+  }
+  .tile-soon h3 { font-size: 2rem; margin-bottom: 8px; }
+  .tile-soon p { color: var(--text-soft); margin-bottom: 22px; }
+
+  /* ---------- Capture blocks ---------- */
+  .capture { display: grid; gap: 30px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 860px) { .capture { grid-template-columns: 0.9fr 1.1fr; } }
+  .capture.flip .copy { order: 2; }
+  @media (max-width: 859px) { .capture.flip .copy { order: 0; } }
+
+  .capture .copy h2 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); margin-bottom: 12px; }
+  .capture .copy p { color: var(--text-soft); }
+  .capture .copy .kicker { font-family: var(--script); font-size: 1.4rem; display: block; margin-bottom: 4px; }
+
+  .for-parents { background: var(--bg-alt); }
+  .for-parents .kicker { color: var(--pink); }
+  .for-biz .kicker { color: var(--tomato); }
+
+  .form-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+    padding: 30px 28px; box-shadow: var(--shadow);
+  }
+  .form-card h3 { font-size: 1.35rem; margin-bottom: 6px; }
+  .form-card > p { color: var(--text-soft); font-size: .98rem; margin-bottom: 18px; }
+
+  /* Fallback native form (used until Flodesk snippet is pasted in) */
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
+  .field input {
+    width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--bg); color: var(--text); font: inherit; font-size: 1rem;
+  }
+  .field input:focus-visible { outline: 3px solid var(--vista); outline-offset: 1px; border-color: var(--vista); }
+  .form-card .btn { width: 100%; margin-top: 4px; }
+  .form-note { font-size: .82rem; color: var(--text-soft); margin: 12px 0 0; }
+
+  .flodesk-placeholder { /* container where the real embed will be injected */ }
+
+  /* ---------- Footer ---------- */
+  footer.site { background: var(--ink); color: var(--cream); padding: 56px 0 34px; }
+  @media (prefers-color-scheme: dark) { footer.site { background: #0e0d16; } }
+  .foot-grid { display: flex; flex-wrap: wrap; gap: 26px 40px; justify-content: space-between; align-items: flex-start; }
+  footer.site .brand { font-size: 1.8rem; }
+  footer.site .mission { color: rgba(251,246,238,.72); max-width: 34ch; margin-top: 10px; font-size: .98rem; }
+  .foot-social { display: flex; gap: 20px; flex-wrap: wrap; }
+  .foot-social a { color: rgba(251,246,238,.85); text-decoration: none; font-weight: 500; }
+  .foot-social a:hover { color: var(--chartreuse); }
+  .foot-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid rgba(251,246,238,.14); font-size: .85rem; color: rgba(251,246,238,.6); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+
+<!-- 1. Announcement bar -->
+<div class="announce" role="note">
+  <span>Now live in <strong>Bergen County, NJ</strong>. More cities coming soon.</span>
+</div>
+
+<!-- Header -->
+<header class="site">
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="wordmark brand" style="text-decoration:none;">
+      Parties <span class="star" aria-hidden="true">★</span> in the USA
+    </a>
+    <a href="#for-businesses" class="btn btn-vista nav-cta">List your business</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 2. Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <span class="blob blob-1" aria-hidden="true"></span>
+    <span class="blob blob-3" aria-hidden="true"></span>
+    <div class="wrap">
+      <span class="hero-eyebrow">the local party people</span>
+      <h1 id="hero-heading">The local guide to your kid's <span class="hl">next birthday party</span></h1>
+      <p class="hero-sub">Parties in the USA is a growing network of hand-curated local directories, connecting families with the best party venues, entertainers, and suppliers in their area, one city at a time.</p>
+      <div class="hero-ctas">
+        <a href="#for-parents" class="btn btn-ink">Find parties near you</a>
+        <a href="#for-businesses" class="btn btn-chartreuse">List your business</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scalloped divider -->
+  <div class="scallop" aria-hidden="true">
+    <svg viewBox="0 0 1200 34" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,34 L0,17 Q30,0 60,17 T120,17 T180,17 T240,17 T300,17 T360,17 T420,17 T480,17 T540,17 T600,17 T660,17 T720,17 T780,17 T840,17 T900,17 T960,17 T1020,17 T1080,17 T1140,17 T1200,17 L1200,34 Z" fill="var(--bg-alt)"/>
+    </svg>
+  </div>
+
+  <!-- 3. How it works -->
+  <section class="how" style="background:var(--bg-alt);" aria-labelledby="how-heading">
+    <span class="blob blob-b" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker k-pink">how it works</span>
+        <h2 id="how-heading">Local directories, built by hand</h2>
+        <p>No endless search results. Just a warm, curated guide to the party people in your own backyard.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="num" aria-hidden="true">1</span>
+          <h3>We curate your area</h3>
+          <p>We build a hand-picked party directory for your town, so you skip the guesswork and find people you can actually trust.</p>
+        </div>
+        <div class="card">
+          <span class="num" aria-hidden="true">2</span>
+          <h3>Parents find the good stuff</h3>
+          <p>Search venues, entertainers, and suppliers nearby, from bounce houses to balloon artists to the perfect party room.</p>
+        </div>
+        <div class="card">
+          <span class="num" aria-hidden="true">3</span>
+          <h3>Local businesses get found</h3>
+          <p>The small businesses that make birthdays magic get discovered by the families right around the corner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Where we are -->
+  <section class="where" aria-labelledby="where-heading">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker k-tomato">where we are</span>
+        <h2 id="where-heading">Live now, and growing</h2>
+        <p>We are starting local and expanding city by city. Here is where you can find us today.</p>
+      </div>
+      <p class="net-note">
+        <span class="net-dots" aria-hidden="true"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span></span>
+        A different color for every city we build.
+      </p>
+      <div class="tiles">
+        <div class="tile tile-live">
+          <span class="badge"><span class="dot" aria-hidden="true"></span> Live now</span>
+          <h3>Bergen County, NJ</h3>
+          <p>Our first local directory is open for business. Explore party venues, entertainers, and suppliers across Bergen County.</p>
+          <a href="https://bergenparties.com" class="btn btn-chartreuse" target="_blank" rel="noopener">Visit Bergen Parties</a>
+        </div>
+        <div class="tile tile-soon">
+          <span class="badge">Your city, coming soon</span>
+          <h3>Is your town next?</h3>
+          <p>We add new cities based on where families and businesses are asking for us. Tell us where you are and we will keep you posted.</p>
+          <a href="#for-parents" class="btn btn-tomato">Request your area</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. For parents -->
+  <section class="for-parents" id="for-parents" aria-labelledby="parents-heading">
+    <div class="wrap">
+      <div class="capture">
+        <div class="copy">
+          <span class="kicker">for parents</span>
+          <h2 id="parents-heading">Party planning, made a whole lot easier</h2>
+          <p>Most areas are not live just yet, but they are on the way. Tell us your town and we will let you know the moment Parties in the USA launches near you.</p>
+          <p>No spam, no noise. Just a friendly heads-up when your local guide is ready.</p>
+        </div>
+        <div class="form-card">
+          <h3>Get notified when your area launches</h3>
+          <p>Join the parent waitlist and be first in line.</p>
+
+          <!-- ============================================================
+               FLODESK INLINE FORM — PARENTS WAITLIST
+               Paste the Flodesk inline embed snippet inside this div.
+               Then delete the fallback <form> below it.
+               (Do not reuse the business form ID here.)
+          ============================================================ -->
+          <div class="flodesk-placeholder" id="flodesk-parents" data-list="parents-waitlist">
+            <!-- >>> PASTE PARENTS FLODESK EMBED SNIPPET HERE <<< -->
+          </div>
+
+          <!-- Fallback form (remove once Flodesk snippet above is live) -->
+          <form class="fallback-form" aria-label="Parent waitlist signup" onsubmit="return false;">
+            <div class="field">
+              <label for="p-name">First name</label>
+              <input id="p-name" name="name" type="text" autocomplete="given-name" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="p-email">Email address</label>
+              <input id="p-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com">
+            </div>
+            <div class="field">
+              <label for="p-town">Your town or area</label>
+              <input id="p-town" name="town" type="text" placeholder="e.g. Montclair, NJ">
+            </div>
+            <button type="submit" class="btn btn-vista">Join the parent waitlist</button>
+            <p class="form-note">We will only email you about your local launch. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. For businesses -->
+  <section class="for-biz" id="for-businesses" aria-labelledby="biz-heading">
+    <div class="wrap">
+      <div class="capture flip">
+        <div class="copy">
+          <span class="kicker">for party businesses</span>
+          <h2 id="biz-heading">Own a party venue or service? Get discovered</h2>
+          <p>Reach local families who are actively planning their kid's next birthday. Get listed in your local directory, or bring Parties in the USA to a city that does not have us yet.</p>
+          <p>Venues, entertainers, bakers, rentals, face painters, and every kind of party maker in between are welcome.</p>
+        </div>
+        <div class="form-card">
+          <h3>Get listed and reach local families</h3>
+          <p>Tell us about your business and where you are based.</p>
+
+          <!-- ============================================================
+               FLODESK INLINE FORM — BUSINESS LIST
+               Paste the Flodesk inline embed snippet inside this div.
+               Then delete the fallback <form> below it.
+               (This is the BUSINESS list, separate from the parents list.)
+          ============================================================ -->
+          <div class="flodesk-placeholder" id="flodesk-business" data-list="business-inquiry">
+            <!-- >>> PASTE BUSINESS FLODESK EMBED SNIPPET HERE <<< -->
+          </div>
+
+          <!-- Fallback form (remove once Flodesk snippet above is live) -->
+          <form class="fallback-form" aria-label="Business listing inquiry" onsubmit="return false;">
+            <div class="field">
+              <label for="b-business">Business name</label>
+              <input id="b-business" name="business" type="text" placeholder="Your business">
+            </div>
+            <div class="field">
+              <label for="b-email">Email address</label>
+              <input id="b-email" name="email" type="email" autocomplete="email" required placeholder="you@business.com">
+            </div>
+            <div class="field">
+              <label for="b-city">City and state</label>
+              <input id="b-city" name="city" type="text" placeholder="e.g. Hoboken, NJ">
+            </div>
+            <button type="submit" class="btn btn-tomato">Get listed</button>
+            <p class="form-note">We will reach out about listing options in your area.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 7. Footer -->
+<footer class="site" aria-labelledby="footer-heading">
+  <div class="wrap">
+    <h2 id="footer-heading" class="visually-hidden">Parties in the USA footer</h2>
+    <div class="foot-grid">
+      <div>
+        <span class="wordmark brand">Parties <span class="star" aria-hidden="true">★</span> in the USA</span>
+        <p class="mission">Helping families find the best local party people, and helping small party businesses get discovered, one city at a time.</p>
+      </div>
+      <nav class="foot-social" aria-label="Social media">
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">Facebook</a>
+        <a href="#" rel="noopener">TikTok</a>
+        <a href="mailto:hello@partiesintheusa.com">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year">2026</span> Parties in the USA. All rights reserved.</span>
+      <span>Made with love for local birthdays.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
