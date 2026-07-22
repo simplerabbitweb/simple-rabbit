@@ -181,13 +181,6 @@
   }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
-  /* Organic blobs — rotate palette colors so no one dominates */
-  .blob { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5; z-index: 1; pointer-events: none; }
-  .hero .blob-1 { width: 340px; height: 340px; background: var(--vista); top: -90px; right: -80px; }
-  .hero .blob-3 { width: 160px; height: 160px; background: var(--apricot); top: 42%; right: 12%; opacity: .5; }
-  @media (prefers-color-scheme: dark) { .blob { opacity: .26; } }
-  @media (max-width: 640px) { .hero .blob-1 { width: 220px; height: 220px; } .hero .blob-3 { display: none; } }
-
   /* ---------- Scalloped divider ---------- */
   .scallop { position: relative; height: 34px; line-height: 0; }
   .scallop svg { display: block; width: 100%; height: 100%; }
@@ -204,9 +197,6 @@
   .k-pink { color: var(--pink); }
 
   /* ---------- How it works ---------- */
-  .how { position: relative; overflow: hidden; }
-  .how .blob-b { width: 220px; height: 220px; background: var(--tomato); bottom: -90px; right: -70px; opacity: .16; }
-  .how .wrap { position: relative; z-index: 2; }
   .cards { display: grid; gap: 22px; grid-template-columns: 1fr; }
   @media (min-width: 720px) { .cards { grid-template-columns: repeat(3, 1fr); } }
   .card {
@@ -226,20 +216,6 @@
 
   /* ---------- Where we are ---------- */
   .where { background: var(--bg-alt); }
-  /* Network motif: a color for every city */
-  .net-note {
-    display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
-    font-family: var(--script); font-size: 1.35rem; color: var(--text-soft);
-    margin: -22px 0 34px; text-align: center;
-  }
-  .net-dots { display: inline-flex; gap: 7px; }
-  .net-dots span { width: 15px; height: 15px; border-radius: 50%; display: inline-block; }
-  .net-dots .d1 { background: var(--pink); }
-  .net-dots .d2 { background: var(--tomato); }
-  .net-dots .d3 { background: var(--apricot); }
-  .net-dots .d4 { background: var(--chartreuse); }
-  .net-dots .d5 { background: var(--vista); }
-
   .tiles { display: grid; gap: 22px; grid-template-columns: 1fr; }
   @media (min-width: 720px) { .tiles { grid-template-columns: 1fr 1fr; } }
   .tile {
@@ -296,11 +272,12 @@
   /* Fallback native form (used until Flodesk snippet is pasted in) */
   .field { margin-bottom: 14px; }
   .field label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
-  .field input {
+  .field input, .field select {
     width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid var(--border);
     background: var(--bg); color: var(--text); font: inherit; font-size: 1rem;
   }
-  .field input:focus-visible { outline: 3px solid var(--vista); outline-offset: 1px; border-color: var(--vista); }
+  .field select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+  .field input:focus-visible, .field select:focus-visible { outline: 3px solid var(--vista); outline-offset: 1px; border-color: var(--vista); }
   .form-card .btn { width: 100%; margin-top: 4px; }
   .form-note { font-size: .82rem; color: var(--text-soft); margin: 12px 0 0; }
 
@@ -331,9 +308,9 @@
 <header class="site">
   <nav class="nav" aria-label="Primary">
     <a href="#top" class="wordmark brand" style="text-decoration:none;">
-      Parties <span class="star" aria-hidden="true">★</span> in the USA
+      <span class="star" aria-hidden="true">★</span> Parties in the USA
     </a>
-    <a href="#for-businesses" class="btn btn-vista nav-cta">List your business</a>
+    <a href="#request-directory" class="btn btn-vista nav-cta">Request a directory</a>
   </nav>
 </header>
 
@@ -341,15 +318,13 @@
 
   <!-- 2. Hero -->
   <section class="hero" aria-labelledby="hero-heading">
-    <span class="blob blob-1" aria-hidden="true"></span>
-    <span class="blob blob-3" aria-hidden="true"></span>
     <div class="wrap">
       <span class="hero-eyebrow">the local party people</span>
       <h1 id="hero-heading">The local guide to your kid's <span class="hl">next birthday party</span></h1>
       <p class="hero-sub">Parties in the USA is a growing network of hand-curated local directories, connecting families with the best party venues, entertainers, and suppliers in their area, one city at a time.</p>
       <div class="hero-ctas">
         <a href="#for-parents" class="btn btn-ink">Find parties near you</a>
-        <a href="#for-businesses" class="btn btn-chartreuse">List your business</a>
+        <a href="#request-directory" class="btn btn-chartreuse">Request a directory in your area</a>
       </div>
     </div>
   </section>
@@ -363,7 +338,6 @@
 
   <!-- 3. How it works -->
   <section class="how" style="background:var(--bg-alt);" aria-labelledby="how-heading">
-    <span class="blob blob-b" aria-hidden="true"></span>
     <div class="wrap">
       <div class="sec-head center">
         <span class="kicker k-pink">how it works</span>
@@ -398,10 +372,6 @@
         <h2 id="where-heading">Live now, and growing</h2>
         <p>We are starting local and expanding city by city. Here is where you can find us today.</p>
       </div>
-      <p class="net-note">
-        <span class="net-dots" aria-hidden="true"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span></span>
-        A different color for every city we build.
-      </p>
       <div class="tiles">
         <div class="tile tile-live">
           <span class="badge"><span class="dot" aria-hidden="true"></span> Live now</span>
@@ -413,7 +383,7 @@
           <span class="badge">Your city, coming soon</span>
           <h3>Is your town next?</h3>
           <p>We add new cities based on where families and businesses are asking for us. Tell us where you are and we will keep you posted.</p>
-          <a href="#for-parents" class="btn btn-tomato">Request your area</a>
+          <a href="#request-directory" class="btn btn-tomato">Request a directory</a>
         </div>
       </div>
     </div>
@@ -465,46 +435,45 @@
     </div>
   </section>
 
-  <!-- 6. For businesses -->
-  <section class="for-biz" id="for-businesses" aria-labelledby="biz-heading">
+  <!-- 6. Request a directory in your area -->
+  <section class="for-biz" id="request-directory" aria-labelledby="request-heading">
     <div class="wrap">
       <div class="capture flip">
         <div class="copy">
-          <span class="kicker">for party businesses</span>
-          <h2 id="biz-heading">Own a party venue or service? Get discovered</h2>
-          <p>Reach local families who are actively planning their kid's next birthday. Get listed in your local directory, or bring Parties in the USA to a city that does not have us yet.</p>
+          <span class="kicker">bring us to your city</span>
+          <h2 id="request-heading">Request a directory in your area</h2>
+          <p>Not live near you yet? Let us know. Whether you are a family who wants a local guide or a party business who wants to be in it, telling us where you are helps us decide which city we build next.</p>
           <p>Venues, entertainers, bakers, rentals, face painters, and every kind of party maker in between are welcome.</p>
         </div>
         <div class="form-card">
-          <h3>Get listed and reach local families</h3>
-          <p>Tell us about your business and where you are based.</p>
+          <h3>Request a directory in your area</h3>
+          <p>Tell us where you are and we will keep you posted.</p>
 
-          <!-- ============================================================
-               FLODESK INLINE FORM — BUSINESS LIST
-               Paste the Flodesk inline embed snippet inside this div.
-               Then delete the fallback <form> below it.
-               (This is the BUSINESS list, separate from the parents list.)
-          ============================================================ -->
-          <div class="flodesk-placeholder" id="flodesk-business" data-list="business-inquiry">
-            <!-- >>> PASTE BUSINESS FLODESK EMBED SNIPPET HERE <<< -->
-          </div>
-
-          <!-- Fallback form (remove once Flodesk snippet above is live) -->
-          <form class="fallback-form" aria-label="Business listing inquiry" onsubmit="return false;">
+          <!-- Live Formspree form -->
+          <form action="https://formspree.io/f/xeeylzpl" method="POST" aria-label="Request a directory in your area">
+            <input type="hidden" name="_subject" value="New directory request - Parties in the USA">
             <div class="field">
-              <label for="b-business">Business name</label>
-              <input id="b-business" name="business" type="text" placeholder="Your business">
+              <label for="r-name">First name</label>
+              <input id="r-name" name="name" type="text" autocomplete="given-name" placeholder="Your name">
             </div>
             <div class="field">
-              <label for="b-email">Email address</label>
-              <input id="b-email" name="email" type="email" autocomplete="email" required placeholder="you@business.com">
+              <label for="r-email">Email address</label>
+              <input id="r-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com">
             </div>
             <div class="field">
-              <label for="b-city">City and state</label>
-              <input id="b-city" name="city" type="text" placeholder="e.g. Hoboken, NJ">
+              <label for="r-city">City and state</label>
+              <input id="r-city" name="city" type="text" required placeholder="e.g. Hoboken, NJ">
             </div>
-            <button type="submit" class="btn btn-tomato">Get listed</button>
-            <p class="form-note">We will reach out about listing options in your area.</p>
+            <div class="field">
+              <label for="r-role">I am a</label>
+              <select id="r-role" name="role">
+                <option value="Parent or family">Parent or family</option>
+                <option value="Party business">Party business</option>
+                <option value="A bit of both">A bit of both</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-tomato">Request a directory in your area</button>
+            <p class="form-note">We will let you know as we plan new cities. No spam, ever.</p>
           </form>
         </div>
       </div>
@@ -519,7 +488,7 @@
     <h2 id="footer-heading" class="visually-hidden">Parties in the USA footer</h2>
     <div class="foot-grid">
       <div>
-        <span class="wordmark brand">Parties <span class="star" aria-hidden="true">★</span> in the USA</span>
+        <span class="wordmark brand"><span class="star" aria-hidden="true">★</span> Parties in the USA</span>
         <p class="mission">Helping families find the best local party people, and helping small party businesses get discovered, one city at a time.</p>
       </div>
       <nav class="foot-social" aria-label="Social media">
