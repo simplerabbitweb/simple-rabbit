@@ -13,12 +13,34 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://partiesintheusa.com">
 
+<!-- Favicon: the ombre gradient star from the logo (inline SVG, self-contained) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjEiIHgyPSIxIiB5Mj0iMCI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRUMxRThDIi8+PHN0b3Agb2Zmc2V0PSIuMjgiIHN0b3AtY29sb3I9IiNGMDYwMzgiLz48c3RvcCBvZmZzZXQ9Ii40NiIgc3RvcC1jb2xvcj0iI0ZDRDlCRSIvPjxzdG9wIG9mZnNldD0iLjY4IiBzdG9wLWNvbG9yPSIjRDZGNzRDIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOEM5RUZGIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTE2IDEgMTkuNTMgMTEuMTUgMzAuMjcgMTEuMzcgMjEuNzEgMTcuODUgMjQuODIgMjguMTQgMTYgMjIgNy4xOCAyOC4xNCAxMC4yOSAxNy44NSAxLjczIDExLjM3IDEyLjQ3IDExLjE1WiIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==">
+
 <!-- Fonts: DM Sans + Caveat from Google Fonts. "Eighties Comeback" is a licensed display face served from the brand host; serif fallback below. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* ---------- Display font: Eighties Comeback (licensed, self-hosted) ----------
+     Self-hosted OTFs live in the "fonts" folder next to index.html. Same files
+     and weights the Bergen Parties theme ships. Upload the "fonts" folder to
+     SiteGround alongside index.html so these relative paths resolve. */
+  @font-face {
+    font-family: "Eighties Comeback";
+    src: url("fonts/EightiesComeback-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Eighties Comeback";
+    src: url("fonts/EightiesComeback-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
   /* ---------- Brand tokens ---------- */
   :root {
     /* Full palette — each color stands in for a different market */
@@ -78,7 +100,7 @@
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
-  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.05; letter-spacing: 0; margin: 0; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; letter-spacing: -0.5px; margin: 0; }
   p { margin: 0 0 1rem; }
 
   .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 22px; }
@@ -108,7 +130,7 @@
   /* ---------- Word-mark with multi-color star (a network of local sites) ---------- */
   .wordmark {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 900;
     letter-spacing: 0;
     display: inline-flex;
     align-items: center;
@@ -160,6 +182,7 @@
     transform: rotate(-2deg);
   }
   .hero h1 {
+    font-weight: 900;
     font-size: clamp(2.6rem, 7vw, 4.6rem);
     max-width: 15ch;
     margin-bottom: 20px;
@@ -180,6 +203,16 @@
     margin-bottom: 30px;
   }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  /* ---------- Ambient background blobs ---------- */
+  /* Each blob is clipped to its own section and only bleeds off the page's
+     left/right edges, so it is never sliced by a section boundary. */
+  .has-blobs { position: relative; overflow: hidden; }
+  .has-blobs > .wrap { position: relative; z-index: 1; }
+  .blob { position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; }
+  .blob-soft { opacity: .5; }
+  .blob-faint { opacity: .16; }
+  @media (prefers-color-scheme: dark) { .blob-soft { opacity: .30; } .blob-faint { opacity: .24; } }
 
   /* ---------- Scalloped divider ---------- */
   .scallop { position: relative; height: 34px; line-height: 0; }
@@ -258,8 +291,6 @@
   .capture .copy p { color: var(--text-soft); }
   .capture .copy .kicker { font-family: var(--script); font-size: 1.4rem; display: block; margin-bottom: 4px; }
 
-  .for-parents { background: var(--bg-alt); }
-  .for-parents .kicker { color: var(--pink); }
   .for-biz .kicker { color: var(--tomato); }
 
   .form-card {
@@ -289,9 +320,8 @@
   .foot-grid { display: flex; flex-wrap: wrap; gap: 26px 40px; justify-content: space-between; align-items: flex-start; }
   footer.site .brand { font-size: 1.8rem; }
   footer.site .mission { color: rgba(251,246,238,.72); max-width: 34ch; margin-top: 10px; font-size: .98rem; }
-  .foot-social { display: flex; gap: 20px; flex-wrap: wrap; }
-  .foot-social a { color: rgba(251,246,238,.85); text-decoration: none; font-weight: 500; }
-  .foot-social a:hover { color: var(--chartreuse); }
+  .foot-contact a { color: rgba(251,246,238,.85); text-decoration: none; font-weight: 500; }
+  .foot-contact a:hover { color: var(--chartreuse); }
   .foot-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid rgba(251,246,238,.14); font-size: .85rem; color: rgba(251,246,238,.6); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
 
   .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
@@ -308,7 +338,7 @@
 <header class="site">
   <nav class="nav" aria-label="Primary">
     <a href="#top" class="wordmark brand" style="text-decoration:none;">
-      <span class="star" aria-hidden="true">★</span> Parties in the USA
+      <span class="star" aria-hidden="true">★</span> <span style="text-transform:uppercase;">Parties</span> in the USA
     </a>
     <a href="#request-directory" class="btn btn-vista nav-cta">Request a directory</a>
   </nav>
@@ -317,13 +347,16 @@
 <main id="top">
 
   <!-- 2. Hero -->
-  <section class="hero" aria-labelledby="hero-heading">
+  <section class="hero has-blobs" aria-labelledby="hero-heading">
+    <span class="blob blob-soft" style="width:360px;height:360px;background:var(--vista);top:-70px;right:-110px;" aria-hidden="true"></span>
+    <span class="blob blob-soft" style="width:300px;height:300px;background:var(--chartreuse);top:210px;left:-120px;" aria-hidden="true"></span>
+    <span class="blob blob-soft" style="width:170px;height:170px;background:var(--apricot);top:250px;right:13%;" aria-hidden="true"></span>
     <div class="wrap">
       <span class="hero-eyebrow">the local party people</span>
       <h1 id="hero-heading">The local guide to your kid's <span class="hl">next birthday party</span></h1>
       <p class="hero-sub">Parties in the USA is a growing network of hand-curated local directories, connecting families with the best party venues, entertainers, and suppliers in their area, one city at a time.</p>
       <div class="hero-ctas">
-        <a href="#for-parents" class="btn btn-ink">Find parties near you</a>
+        <a href="#where" class="btn btn-ink">Find parties near you</a>
         <a href="#request-directory" class="btn btn-chartreuse">Request a directory in your area</a>
       </div>
     </div>
@@ -337,7 +370,9 @@
   </div>
 
   <!-- 3. How it works -->
-  <section class="how" style="background:var(--bg-alt);" aria-labelledby="how-heading">
+  <section class="how has-blobs" style="background:var(--bg-alt);" aria-labelledby="how-heading">
+    <span class="blob blob-faint" style="width:260px;height:260px;background:var(--tomato);top:70px;right:-90px;" aria-hidden="true"></span>
+    <span class="blob blob-faint" style="width:240px;height:240px;background:var(--chartreuse);top:300px;left:-90px;" aria-hidden="true"></span>
     <div class="wrap">
       <div class="sec-head center">
         <span class="kicker k-pink">how it works</span>
@@ -365,7 +400,9 @@
   </section>
 
   <!-- 4. Where we are -->
-  <section class="where" aria-labelledby="where-heading">
+  <section class="where has-blobs" id="where" aria-labelledby="where-heading">
+    <span class="blob blob-faint" style="width:240px;height:240px;background:var(--vista);top:90px;left:-90px;" aria-hidden="true"></span>
+    <span class="blob blob-faint" style="width:220px;height:220px;background:var(--apricot);top:280px;right:-80px;" aria-hidden="true"></span>
     <div class="wrap">
       <div class="sec-head center">
         <span class="kicker k-tomato">where we are</span>
@@ -389,54 +426,10 @@
     </div>
   </section>
 
-  <!-- 5. For parents -->
-  <section class="for-parents" id="for-parents" aria-labelledby="parents-heading">
-    <div class="wrap">
-      <div class="capture">
-        <div class="copy">
-          <span class="kicker">for parents</span>
-          <h2 id="parents-heading">Party planning, made a whole lot easier</h2>
-          <p>Most areas are not live just yet, but they are on the way. Tell us your town and we will let you know the moment Parties in the USA launches near you.</p>
-          <p>No spam, no noise. Just a friendly heads-up when your local guide is ready.</p>
-        </div>
-        <div class="form-card">
-          <h3>Get notified when your area launches</h3>
-          <p>Join the parent waitlist and be first in line.</p>
-
-          <!-- ============================================================
-               FLODESK INLINE FORM — PARENTS WAITLIST
-               Paste the Flodesk inline embed snippet inside this div.
-               Then delete the fallback <form> below it.
-               (Do not reuse the business form ID here.)
-          ============================================================ -->
-          <div class="flodesk-placeholder" id="flodesk-parents" data-list="parents-waitlist">
-            <!-- >>> PASTE PARENTS FLODESK EMBED SNIPPET HERE <<< -->
-          </div>
-
-          <!-- Fallback form (remove once Flodesk snippet above is live) -->
-          <form class="fallback-form" aria-label="Parent waitlist signup" onsubmit="return false;">
-            <div class="field">
-              <label for="p-name">First name</label>
-              <input id="p-name" name="name" type="text" autocomplete="given-name" placeholder="Your name">
-            </div>
-            <div class="field">
-              <label for="p-email">Email address</label>
-              <input id="p-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com">
-            </div>
-            <div class="field">
-              <label for="p-town">Your town or area</label>
-              <input id="p-town" name="town" type="text" placeholder="e.g. Montclair, NJ">
-            </div>
-            <button type="submit" class="btn btn-vista">Join the parent waitlist</button>
-            <p class="form-note">We will only email you about your local launch. Unsubscribe anytime.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. Request a directory in your area -->
-  <section class="for-biz" id="request-directory" aria-labelledby="request-heading">
+  <!-- 5. Request a directory in your area -->
+  <section class="for-biz has-blobs" id="request-directory" aria-labelledby="request-heading">
+    <span class="blob blob-soft" style="width:260px;height:260px;background:var(--apricot);top:90px;left:-90px;" aria-hidden="true"></span>
+    <span class="blob blob-soft" style="width:220px;height:220px;background:var(--vista);top:320px;right:-80px;" aria-hidden="true"></span>
     <div class="wrap">
       <div class="capture flip">
         <div class="copy">
@@ -488,15 +481,12 @@
     <h2 id="footer-heading" class="visually-hidden">Parties in the USA footer</h2>
     <div class="foot-grid">
       <div>
-        <span class="wordmark brand"><span class="star" aria-hidden="true">★</span> Parties in the USA</span>
+        <span class="wordmark brand"><span class="star" aria-hidden="true">★</span> <span style="text-transform:uppercase;">Parties</span> in the USA</span>
         <p class="mission">Helping families find the best local party people, and helping small party businesses get discovered, one city at a time.</p>
       </div>
-      <nav class="foot-social" aria-label="Social media">
-        <a href="#" rel="noopener">Instagram</a>
-        <a href="#" rel="noopener">Facebook</a>
-        <a href="#" rel="noopener">TikTok</a>
-        <a href="mailto:hello@partiesintheusa.com">Contact</a>
-      </nav>
+      <div class="foot-contact">
+        <a href="mailto:hello@partiesintheusa.com">hello@partiesintheusa.com</a>
+      </div>
     </div>
     <div class="foot-bottom">
       <span>&copy; <span id="year">2026</span> Parties in the USA. All rights reserved.</span>
