@@ -13,6 +13,7 @@ RewriteRule ^about/?$ /about.html [L]
 RewriteRule ^portfolio/?$ /portfolio.html [L]
 
 # --- Redirect merged/deleted blog posts ---
+RewriteRule ^blog/local-seo-for-private-practices/?$ /blog/local-seo-for-private-pay-practices [R=301,L]
 RewriteRule ^blog/google-business-profile-not-getting-clicks/?$ /articles [R=301,L]
 RewriteRule ^blog/google-business-profile-mistakes-wellness-practices/?$ /articles [R=301,L]
 RewriteRule ^blog/why-private-pay-physicians-asking-about-email/?$ /blog/why-private-practices-asking-about-email [R=301,L]

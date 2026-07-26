@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <!--
-TITLE: Local SEO for Private-Pay Practices: The 5 Things That Actually Move the Needle
+TITLE: Local SEO for Private-Pay Practices: The Step-by-Step Playbook
 SLUG: local-seo-for-private-pay-practices
-META DESCRIPTION: Local SEO for private-pay practices comes down to five things: your Google profile, reviews, location signals, keywords, and citations. Here's what works.
-PUBLISHED: April 29, 2026
+META DESCRIPTION: The step-by-step local SEO playbook for private-pay practices: NAP, Google Business Profile, on-page basics, service and location pages, citations, and reviews.
+PUBLISHED: July 25, 2026
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle | Simple Rabbit</title>
-  <meta name="description" content="Local SEO for private-pay practices comes down to five things: your Google profile, reviews, location signals, keywords, and citations. Here's what works.">
-  <meta property="og:title" content="Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle | Simple Rabbit">
-  <meta property="og:description" content="Local SEO for private-pay practices comes down to five things: your Google profile, reviews, location signals, keywords, and citations. Here's what works.">
+  <title>Local SEO for Private-Pay Practices: The Step-by-Step Playbook | Simple Rabbit</title>
+  <meta name="description" content="The step-by-step local SEO playbook for private-pay practices: NAP, Google Business Profile, on-page basics, service and location pages, citations, and reviews.">
+  <meta property="og:title" content="Local SEO for Private-Pay Practices: The Step-by-Step Playbook | Simple Rabbit">
+  <meta property="og:description" content="The step-by-step local SEO playbook for private-pay practices: NAP, Google Business Profile, on-page basics, service and location pages, citations, and reviews.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://simplerabbit.studio/blog/local-seo-for-private-pay-practices">
   <meta property="og:image" content="https://simplerabbit.studio/previews/local-seo-for-private-pay-practices.jpg">
@@ -35,7 +35,6 @@ PUBLISHED: April 29, 2026
       --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
       --font-d:'Instrument Serif',Georgia,serif;
       --font-b:'DM Sans',system-ui,sans-serif;
-      /* legacy compat */
       --mid:#555;--dark:#4A4540;--light-border:rgba(0,0,0,0.10);
       --accent-dark:#8a5d66;
       --font-display:var(--font-d);--font-body:var(--font-b);--font-mono:var(--font-b);
@@ -46,93 +45,70 @@ PUBLISHED: April 29, 2026
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
     .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
-    .nav-inner{ padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-inner{padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
     .nav-links{display:flex;align-items:center;gap:36px;}
-    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);transition:color 0.2s;text-decoration:none;}
     .nav-links a:hover{color:var(--black);}
     .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
     .nav-cta:hover{background:var(--bg)!important;}
-    .article-header{padding:72px 48px 56px;border-bottom:1px solid var(--light-border);}
-    .article-header-inner{max-width:720px;margin:0 auto;}
-    .article-category{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;}
-    .article-title{font-size:clamp(34px,4.5vw,54px);letter-spacing:-1.5px;line-height:1.1;margin-bottom:24px;}
-    .article-meta{display:flex;gap:24px;align-items:center;font-family:var(--font-mono);font-size:11px;letter-spacing:1px;color:var(--mid);}
-    .article-hero-img{width:100%;max-width:720px;margin:0 auto;display:block;padding:48px 48px 0;}
-    .article-hero-img img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;}
-    .article-hero-credit{max-width:720px;margin:0 auto;padding:8px 48px 0;font-family:var(--font-mono);font-size:10px;color:var(--mid);}
-    .article-hero-credit a{color:var(--mid);text-decoration:underline;text-underline-offset:2px;}
-    .article-body{max-width:720px;margin:0 auto;padding:64px 48px 80px;}
-    .article-body p{font-size: 19px;line-height:1.85;color:var(--dark);margin-bottom:28px;}
-    .article-body h2{font-size:26px;line-height:1.25;letter-spacing:-0.5px;margin:52px 0 18px;color:var(--black);}
-    .article-body h3{font-size:20px;line-height:1.3;margin:36px 0 14px;color:var(--black);}
-    .article-body ul,.article-body ol{margin:0 0 28px 24px;}
-    .article-body li{font-size: 19px;line-height:1.8;color:var(--dark);margin-bottom:10px;}
-    .article-body strong{color:var(--black);font-weight:600;}
-    .article-body hr{border:none;border-top:1px solid var(--light-border);margin:52px 0;}
-    .article-body blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 24px;margin:36px 0;}
-    .article-body blockquote p{font-size:19px;line-height:1.7;font-style:italic;color:var(--black);margin-bottom:0;}
-    .article-body a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
-    .article-body a:hover{color:var(--accent-dark);}
-    .back-link{font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mid);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:32px;transition:color 0.2s;}
-    .back-link:hover{color:var(--black);}
-    footer{border-top:none;padding:0;display:block;background:var(--bg-dk);}
-    .footer-link{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
-    .footer-link:hover{color:#fff;}
     .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
     .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     .hamburger.open span:nth-child(2){opacity:0;}
     .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-        .mobile-nav {
-      display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
-      background: var(--white,#FDFAF7); z-index: 200;
-      flex-direction: column; overflow-y: auto;
-      border-top: 1px solid rgba(0,0,0,0.10);
-    }
-    .mobile-nav.open { display: flex !important; }
-    .mobile-nav a {
-      font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--black,#0A0905); padding: 22px 24px;
-      border-bottom: 1px solid rgba(0,0,0,0.10); font-family: inherit; text-decoration: none;
-    }
-    .mobile-nav a.mobile-nav-cta {
-      background: #0A0905; color: #FDFAF7 !important;
-      text-align: center; font-weight: 600; border-bottom: none !important;
-      margin: 16px 24px; display: block; letter-spacing: 1.5px; text-transform: uppercase; font-size: 15px;
-    }
-    .article-cta{background:var(--bg-dk);color:var(--white);padding:80px 48px;text-align:center;}
-    .article-cta h3{font-size:clamp(26px,3vw,34px);letter-spacing:-0.5px;line-height:1.2;margin-bottom:20px;color:var(--white);font-family:var(--font-d);font-weight:400;}
-    .article-cta p{font-size: 19px;line-height:1.7;color:rgba(255,255,255,0.7);margin:0 auto 36px;max-width:560px;}
-    .article-cta-btn{display:inline-block;background:var(--white);color:var(--black);padding:16px 48px;font-size:14px;font-weight:600;letter-spacing:1px;text-decoration:none;font-family:var(--font-b);transition:background 0.2s;}
-    .article-cta-btn:hover{background:#efe9e2;}
-    @media(max-width:900px){
-      .article-header{padding:48px 32px 40px;}
-      .article-body{padding:48px 32px 64px;}
-      .article-hero-img{padding:40px 32px 0;}
-      .article-hero-credit{padding:8px 32px 0;}
-      .nav-inner{padding:0 24px;}
-      footer{padding:24px;}
-      .article-cta{padding:64px 32px;}
-    }
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(0,0,0,0.10);}
+    .mobile-nav.open{display:flex!important;}
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);padding:22px 24px;border-bottom:1px solid rgba(0,0,0,0.10);font-family:inherit;text-decoration:none;}
+    .mobile-nav a.mobile-nav-cta{background:#0A0905;color:#FDFAF7!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;}
+    .back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;font-family:var(--font-b);transition:color 0.2s;}
+    .back-link:hover{color:var(--black);}
+    .article-title{font-size:clamp(34px,5vw,62px);line-height:1.05;letter-spacing:-2px;font-weight:400;color:var(--black);margin-bottom:24px;}
+    .article-body{font-size:18px;line-height:1.85;color:#3a3530;max-width:720px;}
+    .article-body h2{font-size:clamp(24px,2.5vw,32px);line-height:1.2;margin:56px 0 20px;color:var(--black);}
+    .article-body h3{font-size:clamp(18px,2vw,24px);line-height:1.3;margin:40px 0 16px;color:var(--black);}
+    .article-body p{margin-bottom:24px;}
+    .article-body ul,.article-body ol{padding-left:24px;margin-bottom:24px;}
+    .article-body li{margin-bottom:10px;}
+    .article-body strong{font-weight:600;color:var(--black);}
+    .article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:40px 0;font-style:italic;color:var(--mid-lt);}
+    .inline-cta{background:var(--warm);border:1px solid var(--rule-dk);padding:36px 40px;margin:48px 0;}
+    .inline-cta p{font-size:17px;line-height:1.7;color:var(--dark);margin:0 0 20px;}
+    .inline-cta a.btn{display:inline-block;background:var(--bg-dk);color:var(--white);padding:14px 32px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-family:var(--font-b);}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+    .article-card{background:#fff;text-decoration:none;color:#000;display:flex;flex-direction:column;border:1px solid #dfe0e1;transition:border-color 0.2s;}
+    .article-card:hover{border-color:#bbb;}
+    .article-card-img{aspect-ratio:16/10;overflow:hidden;background:#FAF8F4;}
+    .article-card-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 0.4s ease;}
+    .article-card:hover .article-card-img img{transform:scale(1.03);}
+    .article-card-body{padding:32px;flex:1;}
+    .article-card-arrow{font-size:13px;color:#111;margin-top:auto;padding:20px 32px;border-top:1px solid #dfe0e1;background:#FAF8F4;display:flex;align-items:center;justify-content:space-between;transition:color 0.2s;}
+    .article-card:hover .article-card-arrow{color:#000;}
+    .article-card-cat{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;}
+    @media(max-width:900px){.related-grid{grid-template-columns:1fr!important;}}
     @media(max-width:768px){
-      .hamburger{display:flex!important;}
-      .nav-links{display:none!important;}
-      .nav-inner a img{max-height:52px!important;}
-    }
-    @media(max-width:600px){
-      .article-header{padding:40px 24px 32px;}
-      .article-body{padding:40px 24px 56px;}
-      .article-hero-img{padding:32px 24px 0;}
-      .article-hero-credit{padding:8px 24px 0;}
-      .article-body p,.article-body li{font-size:16px;}
-      .article-meta{flex-direction:column;align-items:flex-start;gap:8px;}
-      footer{padding:24px;flex-direction:column;gap:12px;text-align:center;}
-      footer>div{flex-wrap:wrap;justify-content:center;gap:12px;}
-      .article-cta{padding:48px 24px;}
-      .article-cta h3{font-size:22px;}
+      .nav-inner{padding:0 24px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .article-body{font-size:17px;}
+      .inline-cta{padding:28px 24px;}
     }
   </style>
-  <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript><style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Local SEO for Private-Pay Practices: The Step-by-Step Playbook",
+    "description": "The step-by-step local SEO playbook for private-pay practices: NAP, Google Business Profile, on-page basics, service and location pages, citations, and reviews.",
+    "url": "https://simplerabbit.studio/blog/local-seo-for-private-pay-practices",
+    "datePublished": "2026-07-25",
+    "dateModified": "2026-07-25",
+    "author": {"@type": "Person", "name": "Leann Frank", "url": "https://simplerabbit.studio/about"},
+    "publisher": {"@type": "Organization", "name": "Simple Rabbit", "url": "https://simplerabbit.studio"},
+    "image": "https://simplerabbit.studio/previews/local-seo-for-private-pay-practices.jpg"
+  }
+  </script>
+<style>
 /* SR-MOBILE-BODY: uniform 17px body copy on phones; desktop unchanged */
 @media (max-width:600px){
   [style*="font-size: 19px"],[style*="font-size:19px"],[style*="font-size: 18px"],[style*="font-size:18px"]{font-size:17px !important;}
@@ -141,15 +117,7 @@ PUBLISHED: April 29, 2026
 </head>
 <body>
 
-<!-- ANNOUNCEMENT (violet) -->
-<div style="background:var(--bg-dk); border-bottom:1px solid var(--rule-lt); padding:11px 24px; text-align:center;">
-  <a href="/missing-marketing-checklist" style="font-size:13px; font-weight:500; font-family:var(--font-b); text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.7); text-decoration:none; display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;">
-    <span style="opacity:0.7;">Free Resource</span>
-    <span style="width:1px; height:12px; background:rgba(255,255,255,0.2); display:inline-block;"></span>
-    <strong style="font-weight:600; color:#fff;">Score Your Practice</strong>
-    <span style="border:1px solid rgba(255,255,255,0.25); padding:2px 12px; letter-spacing:1.5px;">Learn More &rarr;</span>
-  </a>
-</div>
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" aria-label="Simple Rabbit" style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(26px,2.4vw,32px); line-height:1; letter-spacing:-0.5px; color:#474D73; text-decoration:none; white-space:nowrap;">Simple <em style="font-style:italic;">Rabbit</em></a>
@@ -157,9 +125,11 @@ PUBLISHED: April 29, 2026
       <a href="/about">About</a>
       <a href="/case-studies">Case Studies</a>
       <a href="/articles">Articles</a>
-      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Apply to Work Together</a>
+      <a href="/apply" class="nav-cta">Apply to Work Together</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
@@ -169,148 +139,168 @@ PUBLISHED: April 29, 2026
   <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
 </div>
 
-<!-- ARTICLE HEADER -->
-<header class="article-header reveal">
-  <div class="article-header-inner">
-    <a href="/articles" class="back-link">&larr; All articles</a>
-    <span class="article-category">Local SEO</span>
-    <h1 class="article-title">Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle</h1>
+<!-- ARTICLE HERO -->
+<section style="padding:80px 64px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:800px; margin:0 auto;">
+    <a href="/articles" class="back-link" style="margin-bottom:40px; display:inline-flex;">&larr; All articles</a>
+    <span style="display:block; font-family:var(--font-b); font-size:11px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin-bottom:20px;">Local SEO</span>
+    <h1 class="article-title">Local SEO for Private-Pay Practices: The Step-by-Step Playbook</h1>
+    <p style="font-size:18px; line-height:1.7; color:var(--mid-lt); max-width:640px;">Nine steps, in order. Work through them and your private-pay practice starts showing up when the right woman in your area searches for what you do.</p>
   </div>
-</header>
+</section>
 
-<!-- FEATURED IMAGE -->
+<!-- HERO IMAGE -->
+<div style="background:var(--warm); border-bottom:1px solid var(--rule-dk);">
+  <img src="../previews/local-seo-for-private-pay-practices.jpg" alt="A private-pay women's health practice website ranking in local Google search" style="width:100%; max-height:480px; object-fit:cover; object-position:top center; display:block;">
+</div>
+
 <!-- ARTICLE BODY -->
-<article class="article-body reveal">
+<section style="padding:80px 64px; background:var(--white);">
+  <div style="max-width:800px; margin:0 auto;">
+    <article class="article-body">
 
-<p>You've invested in a beautiful website. You're paying for a Google Business Profile. You might even be posting on social media. But when someone in your town searches for the exact service you offer, you're nowhere to be found.</p>
+      <p>A private-pay practice runs on being found. Not by everyone. By the specific woman in your town who's searching for hormone testing, or a menopause specialist, or a root-cause approach she can't get from her insurance doctor. If she can't find you, she books with whoever she can find. Usually that's the practice that did its local SEO.</p>
 
-<p>This is the reality for most private-pay practices. The women's wellness space is competitive. Google's algorithm doesn't care how skilled you are or how transformative your services are for patients. It cares about signals. Specific, measurable signals that tell it whether you're the right result for a local search.</p>
+      <p>Here's the part that stings. Google doesn't rank you on how skilled you are. It ranks you on signals: specific, checkable signals that tell it you're a real practice, in a real place, that answers the exact thing someone searched. The practices sitting at the top of local results aren't always the best clinicians in town. They're the ones who sent Google the clearest signals.</p>
 
-<p>I've worked with enough independent practices to know what actually moves rankings. It's not magic. It's not gaming the system. It's doing five things well, consistently.</p>
+      <p>We build websites for private-pay women's health practices, and local search is wired into every one of them from the first page we design. This post is the checklist we work through. Do these steps in order. Each one builds on the last, and skipping ahead is how a practice ends up with a beautiful website that never shows up.</p>
 
-<h2>1. Your Google Business Profile needs real attention</h2>
+      <h2>Step 1: Lock down your NAP before anything else</h2>
 
-<p>Most practitioners set up their Google Business Profile once and forget it exists. That's a mistake.</p>
+      <p>NAP stands for name, address, and phone number. It sounds too basic to matter. It's the foundation everything else sits on.</p>
 
-<p>Your GBP is often the first thing a potential patient sees. It shows up in the map pack, those three local results that appear before the regular search results. For searches like "hormone specialist near me" or "pelvic floor therapy Bergen County," the map pack gets the clicks.</p>
+      <p>Google cross-checks your business details across the whole web to decide whether you're a real, trustworthy local business. If your practice name is "Willow Women's Health" on your site, "Willow Women's Health LLC" on Google, and "Willow Health &amp; Wellness" on an old directory, Google sees three businesses instead of one, and it trusts all three a little less.</p>
 
-<p>Here's what a complete profile looks like:</p>
+      <p>So before you touch anything else, write down the single correct version of these three things:</p>
 
-<ul>
-<li>Every category that applies to your practice selected (you get one primary and several secondary)</li>
-<li>Services listed with descriptions, not just names</li>
-<li>Business hours that are accurate and updated for holidays</li>
-<li>Photos of your actual space, not stock images</li>
-<li>Posts published weekly or biweekly</li>
-</ul>
+      <ul>
+        <li>Your exact business name, formatted the same way every time</li>
+        <li>Your full address, including suite number, written identically everywhere</li>
+        <li>One phone number you'll use for the practice, consistently</li>
+      </ul>
 
-<p>The posts matter more than people realize. Google wants to see that a business is active. A profile that hasn't been touched in six months looks abandoned. One with regular updates signals relevance.</p>
+      <p>This is your source of truth. Every profile, every listing, every page uses this exact format. If you run a virtual or telehealth practice without a public address, that changes how you set up Google, and we covered that case in <a href="/blog/google-business-profile-virtual-practice">getting verified when you're virtual</a>.</p>
 
-<p>Your photos matter too. Practices with more than 10 photos get significantly more clicks than those with fewer. Patients want to see where they'll be going. They want to picture themselves in your waiting room, your treatment space, your office.</p>
+      <h2>Step 2: Claim and build out your Google Business Profile</h2>
 
-<h2>2. Reviews are currency</h2>
+      <p>Your Google Business Profile is what shows up in the map pack, the little cluster of three local results that sits above the regular links. For "near me" searches, the map pack gets most of the clicks. This is the highest-leverage thing you own, and most practices set it up once and never touch it again.</p>
 
-<p>You know reviews matter. Everyone knows reviews matter. But knowing and doing are different things.</p>
+      <p>Claim the profile, verify it, then fill it out completely:</p>
 
-<p>The practices that rank well locally have systems for getting reviews. Not aggressive tactics. Not incentives that violate Google's terms. Just simple, consistent asks.</p>
+      <ul>
+        <li><strong>Primary category.</strong> Pick the one that matches what you actually want to rank for. You get one primary and several secondary categories, so use them.</li>
+        <li><strong>Services.</strong> List each service with a real description, not just a name. "Bioidentical hormone therapy" with two sentences beats a bare label.</li>
+        <li><strong>Hours.</strong> Accurate, and updated for holidays. Wrong hours cost you trust.</li>
+        <li><strong>Photos.</strong> Your real space, your real team, not stock. Add several, and keep adding new ones over time. Profiles with real photos, and plenty of them, pull more clicks than bare ones, because a patient wants to picture where she'll be sitting.</li>
+        <li><strong>Posts.</strong> Publish a short update every week or two. An active profile reads as a real, current business. A profile untouched for six months reads as closed.</li>
+      </ul>
 
-<p>The best time to ask is right after a positive interaction. A patient mentions they're feeling better. They thank you. They say something kind. That's when you say, "I'm so glad. If you have a minute, a Google review would really help other women find us."</p>
+      <p>Match every field to the NAP you locked down in step one. Name spelled the same, address formatted the same, phone number the same.</p>
 
-<p>Make it easy. Send a direct link to your review page. Include it in your follow-up emails. Put a small sign at checkout.</p>
+      <h2>Step 3: Fix the on-page basics on your website</h2>
 
-<p>Recency matters as much as quantity. A practice with 50 reviews from two years ago looks stale. A practice with 30 reviews, five of them from the last month, looks active and trusted.</p>
+      <p>Google can't rank you locally if your own site never says where you are. This trips up more practice websites than anything else. Beautiful design, zero location signals.</p>
 
-<p>Respond to every review. Yes, every one. Thank people for positive reviews with something specific, not a generic copy-paste response. Address negative reviews professionally, briefly, and offer to continue the conversation offline.</p>
+      <p>Here's what your site needs at minimum:</p>
 
-<h2>3. Your website needs location signals everywhere</h2>
+      <ul>
+        <li><strong>Title tags</strong> on your key pages that include your city or region. The homepage title should name what you do and where.</li>
+        <li><strong>One clear H1</strong> per page that describes that page honestly.</li>
+        <li><strong>Your full address in the footer</strong> of every page, matching your NAP.</li>
+        <li><strong>A contact page</strong> with your address, phone number, and an embedded Google map.</li>
+        <li><strong>LocalBusiness schema markup</strong>, the bit of code that spells out your name, address, and services for search engines. Visitors never see it. Google reads it first.</li>
+      </ul>
 
-<p>Google can't rank you for local searches if it doesn't know where you are. This sounds obvious. But I see websites all the time that mention their location once, maybe twice, and expect Google to figure it out.</p>
+      <p>None of this shows up in your design. All of it tells Google you're a specific practice in a specific place.</p>
 
-<p>Your website needs location signals built into its structure:</p>
+      <div class="inline-cta">
+        <p>Not sure which of these your current site is missing? The Missing Marketing Checklist walks you through the exact gaps that keep private-pay practices from getting found, booked, and full.</p>
+        <a href="/missing-marketing-checklist" class="btn">Get the Missing Marketing Checklist</a>
+      </div>
 
-<ul>
-<li>Your city and state in the title tag of your homepage</li>
-<li>Your full address in the footer of every page</li>
-<li>A contact page with your address, phone number, and an embedded Google Map</li>
-<li>Service pages that mention your location naturally in the content</li>
-</ul>
+      <h2>Step 4: Give every core service its own page</h2>
 
-<p>If you serve multiple towns, you can create location-specific pages. "Hormone therapy in Ridgewood" and "Hormone therapy in Paramus" can be separate pages with unique content. Not duplicate content with the city name swapped out. Unique, useful content that speaks to each area.</p>
+      <p>A single "Services" page with a bullet list won't rank for the services on it. Google ranks pages, and a page that tries to cover eight things ranks for none of them.</p>
 
-<p>Schema markup helps too. This is code that tells Google exactly what your business is, where it's located, and what services you offer. Most website platforms can add this, or your developer can implement it. It's invisible to visitors but visible to search engines.</p>
+      <p>So each core service gets its own page. Hormone therapy, one page. Perimenopause care, another. Thyroid, another. On each one:</p>
 
-<h2>4. The right keywords on the right pages</h2>
+      <ul>
+        <li>An H1 that names the service and, where it reads naturally, your area</li>
+        <li>Enough real content to be useful, roughly 500 to 800 words</li>
+        <li>Who it's for, what to expect, and how your approach differs</li>
+        <li>One clear next step to book or ask a question</li>
+      </ul>
 
-<p>Keyword research for local practices isn't complicated. You need to know two things: what services you offer and what words people use to search for them.</p>
+      <p>These pages do the work of a conversation before anyone calls. A woman searching for perimenopause care lands on your perimenopause page, reads it, feels understood, and picks up the phone already warm. That's the difference between a website that decorates your practice and one that fills your schedule.</p>
 
-<p>Those words aren't always what you'd expect. You might call it "integrative hormone optimization." Your patients might search "bioidentical hormones near me" or "menopause doctor Bergen County."</p>
+      <h2>Step 5: Add location pages only if you truly serve multiple towns</h2>
 
-<p>Each core service you offer should have its own page. Not a bullet point on a general services page. A dedicated page with:</p>
+      <p>If real patients come to you from several distinct towns, you can build a page for each: "Menopause care in Ridgewood," "Menopause care in Montclair." Done right, these help you show up in each of those areas.</p>
 
-<ul>
-<li>A clear H1 that includes the service and location</li>
-<li>500 to 800 words of useful content about that service</li>
-<li>Information about who it's for, what to expect, and why your approach is different</li>
-<li>A clear call to action</li>
-</ul>
+      <p>Done wrong, they hurt you. Copying one page and swapping the town name is the wrong way, and Google treats it as thin, duplicate content. Each location page needs its own genuine content: why patients in that area come to you, how to reach you from there, something specific and true. If you can't write a real page for a town, skip it.</p>
 
-<p>These pages do the selling before anyone picks up the phone. A woman searching for pelvic floor therapy lands on your pelvic floor therapy page. She reads about your approach. She sees you understand her situation. She's already warm by the time she calls.</p>
+      <h2>Step 6: Map local keywords to the right pages</h2>
 
-<p>Blog content supports these pages. Write about questions your patients ask. "How long does pelvic floor therapy take to work?" "What to expect at your first hormone consultation." These posts bring in searches and link back to your service pages.</p>
+      <p>Keyword research for a practice isn't complicated. You need two things: the services you offer, and the words patients actually type to find them.</p>
 
-<h2>5. Consistent citations across the web</h2>
+      <p>Those rarely match. You might say "integrative hormone optimization." She searches "bioidentical hormones near me" or "hormone doctor" plus your town. Write down the plain-language phrases real people use, then assign each one to the single page that best answers it. One primary phrase per page. Don't make five pages compete for the same search, and don't cram five searches onto one page.</p>
 
-<p>A citation is any online mention of your business name, address, and phone number. Google uses citations to verify that your business is real and that the information is accurate.</p>
+      <p>Supporting blog content helps here too. Write the questions patients ask out loud, like what to expect at a first hormone consultation, and link those posts back to the service page they relate to. If you want a worked example of this for one search, we did it in <a href="/blog/how-to-rank-for-functional-medicine-near-me">how to rank for "functional medicine near me" without paying for ads</a>.</p>
 
-<p>The problem: most practices have inconsistent citations scattered across the internet. Your name is spelled one way on Yelp, another way on Healthgrades. Your suite number appears on some directories, not on others. Your phone number is different on a listing you forgot existed.</p>
+      <h2>Step 7: Build consistent local citations</h2>
 
-<p>These inconsistencies create doubt. Google doesn't like doubt.</p>
+      <p>A citation is any online mention of your name, address, and phone number. Google uses them to confirm you're real and that your details line up. Inconsistent citations create doubt, and Google resolves doubt by ranking you lower.</p>
 
-<p>Start with the major directories: Yelp, Healthgrades, Vitals, Zocdoc if applicable, your state's medical board directory. Make sure every listing matches exactly. Same business name. Same address format. Same phone number.</p>
+      <p>Work through the listings that matter for a practice, using your exact NAP each time:</p>
 
-<p>Then expand to local directories. Your town's chamber of commerce. Local wellness directories. Any professional associations you belong to.</p>
+      <ul>
+        <li>The big health directories: Healthgrades, Vitals, Zocdoc where it applies</li>
+        <li>Yelp and your Google Business Profile</li>
+        <li>Your state licensing board or medical board directory</li>
+        <li>Local sources: your chamber of commerce, local wellness directories, any association you belong to</li>
+      </ul>
 
-<p>This is tedious work. But it's foundational. Once your citations are clean, they stay clean. It's a one-time investment that pays off for years. Functional and integrative medicine practices have specific local SEO considerations — more on that at <a href="/functional-medicine-web-design" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">the functional medicine web design page</a>.</p>
+      <p>This is tedious, one-time work. Once your citations are clean and matching, they stay that way and keep paying off for years.</p>
 
-<hr>
+      <h2>Step 8: Turn reviews into a steady trickle</h2>
 
-<p>Local SEO for private-pay practices comes down to these five things. None of them require technical expertise. All of them require attention and consistency.</p>
+      <p>Reviews influence both how you rank and whether someone chooses you once they find you. What matters is a steady, recent flow, not a pile of old ones. A practice with a few new reviews each month looks alive. Fifty reviews from two years ago looks stale.</p>
 
-<p>The practices that show up in local search aren't necessarily the best at what they do. They're the ones who've sent the right signals to Google. They've made it clear who they are, where they are, and what they offer.</p>
+      <p>Build a simple, honest habit. When a patient is clearly happy with her care, ask, and make it easy: hand her a direct link to your Google review page, or include one in a follow-up email. No incentives, no pressure, nothing that trades for a review. Reply to the reviews you get, warmly and briefly, so the profile reads as tended rather than abandoned.</p>
 
-<p>You can do this work yourself. Or you can build it into a website designed from the start to rank well and bring in the right patients. That's what I do at Simple Rabbit, building sites for private-pay women's wellness practices that are visible, clear, and structured to grow with you. If you're ready, <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/clarity-call" target="_blank" rel="noopener">start a project here</a>.</p>
+      <p>One important guardrail, because this is healthcare. When a patient writes a review, that's her choice. Reposting it, screenshotting it, or building marketing around a specific patient's story is your practice disclosing that she's a patient, and that needs her signed, written authorization first. So collect reviews on Google and reply to them professionally, but don't turn a named patient's review into a social post or a webpage graphic without that written permission on file. When in doubt, keep the patient out of it.</p>
 
-</article>
+      <h2>Step 9: Check your work</h2>
+
+      <p>Give the changes a few weeks, then look at what's happening. In your Google Business Profile you can see how many people found you, what they searched, and what they did next. In a free tool like Google Search Console you can see which searches bring your site up and where you rank.</p>
+
+      <p>You're watching for one trend: are the right searches starting to surface your practice, and are those people taking a next step. Local SEO isn't a one-time project you finish. It's a handful of signals you keep consistent while you focus on patients.</p>
+
+      <p>That's the whole point, really. A private-pay practice that's easy to find is a practice that fills its own schedule, which is a practice that stops depending on you to hustle for every patient. The website does the finding. You get your evenings back.</p>
+
+      <p>If you'd rather read the studio's thinking than a checklist, that's what <a href="https://simplerabbit.myflodesk.com/newsletter" target="_blank" rel="noopener">the Hutch newsletter</a> is for. It's where we work through the getting-found side of running a private-pay practice, one short letter at a time.</p>
+
+    </article>
+  </div>
+</section>
 
 <!-- BLOG CTA -->
 <section style="background:#474D73; padding:84px 48px;">
   <div style="max-width:780px; margin:0 auto; text-align:center;">
-    <h2 style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(28px,3.5vw,44px); line-height:1.1; letter-spacing:-1px; font-weight:400; color:#FDFAF7; margin:0 0 18px;">Ready for consistent patient growth?</h2>
-    <p style="font-family:'DM Sans',system-ui,sans-serif; font-size:18px; line-height:1.7; color:#B0B5D0; max-width:560px; margin:0 auto 34px;">Let&rsquo;s build the system that gets your practice found, booked, and full.</p>
+    <h2 style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(28px,3.5vw,44px); line-height:1.1; letter-spacing:-1px; font-weight:400; color:#FDFAF7; margin:0 0 18px;">Want this built in from the start?</h2>
+    <p style="font-family:'DM Sans',system-ui,sans-serif; font-size:18px; line-height:1.7; color:#B0B5D0; max-width:560px; margin:0 auto 34px;">We design websites for private-pay women's health practices with local SEO wired in, so the right patients find you, book, and fill your schedule.</p>
     <a href="/apply" style="display:inline-block; background:#FDFAF7; color:#2D3154; padding:16px 44px; font-family:'DM Sans',system-ui,sans-serif; font-size:14px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none;">Apply to Work Together</a>
   </div>
 </section>
 
 <!-- MORE FROM THE BLOG -->
-<style>
-  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-  .article-card{background:#fff;text-decoration:none;color:#000;display:flex;flex-direction:column;border:1px solid #dfe0e1;transition:border-color 0.2s;}
-  .article-card:hover{border-color:#dfe0e1;}
-  .article-card-img{aspect-ratio:16/10;overflow:hidden;background:#FAF8F4;}
-  .article-card-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 0.4s ease;}
-  .article-card:hover .article-card-img img{transform:scale(1.03);}
-  .article-card-body{padding:32px;flex:1;}
-  .article-card-arrow{font-size:13px;color:#111;margin-top:auto;padding:20px 32px;border-top:1px solid #dfe0e1;background:#FAF8F4;display:flex;align-items:center;justify-content:space-between;transition:color 0.2s;}
-  .article-card:hover .article-card-arrow{color:#000;}
-  .article-card-cat{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;}
-  @media(max-width:900px){.related-grid{grid-template-columns:1fr!important;}}
-</style>
 <section style="padding:80px 48px;border-bottom:1px solid #dfe0e1;background:#fff;">
   <div style="max-width:1100px;margin:0 auto;">
     <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#AA737D;display:block;margin-bottom:16px;">From the blog</span>
-    <h2 style="font-family:var(--font-display);font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-1px;font-weight:400;margin-bottom:48px;">What you wish you&rsquo;d known before you built the site yourself.</h2>
+    <h2 style="font-family:var(--font-display);font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-1px;font-weight:400;margin-bottom:48px;">Keep going on getting found online.</h2>
     <div class="related-grid" style="margin-bottom:40px;">
 
+      <!-- Card 1 -->
       <a href="/blog/google-business-profile-virtual-practice" class="article-card">
         <div class="article-card-img"><img src="../previews/article-gbp-virtual.jpg" alt="Can't get verified on Google Business Profile because you're virtual?" loading="lazy"></div>
         <div class="article-card-body">
@@ -323,6 +313,7 @@ PUBLISHED: April 29, 2026
         </div>
       </a>
 
+      <!-- Card 2 -->
       <a href="/blog/how-to-rank-for-functional-medicine-near-me" class="article-card">
         <div class="article-card-img"><img src="../previews/how-to-rank-for-functional-medicine-near-me.jpg" alt="How to rank for functional medicine near me without paying for ads" loading="lazy"></div>
         <div class="article-card-body">
@@ -335,6 +326,7 @@ PUBLISHED: April 29, 2026
         </div>
       </a>
 
+      <!-- Card 3 -->
       <a href="/blog/why-menopause-practice-websites-dont-rank-locally" class="article-card">
         <div class="article-card-img"><img src="../previews/why-menopause-practice-websites-dont-rank-locally.jpg" alt="Why most menopause practice websites don't rank locally" loading="lazy"></div>
         <div class="article-card-body">
@@ -352,18 +344,13 @@ PUBLISHED: April 29, 2026
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer style="background:var(--bg-dk); padding:0; display:block;">
   <div style="padding:28px 64px 24px;">
-
-    <!-- Top: logo + social icons -->
     <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; margin-bottom:10px;">
-
-      <!-- Logo + description -->
       <div style="max-width:400px;">
         <a href="/"><img src="../Logo-light.png" alt="Simple Rabbit" style="height:44px; width:auto; display:block; margin-bottom:20px;"></a>
         </div>
-
-      <!-- Social icons -->
       <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
         <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -381,10 +368,7 @@ PUBLISHED: April 29, 2026
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
-
     </div>
-
-    <!-- Divider -->
     <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
       <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
       <div style="display:flex; gap:28px; flex-wrap:wrap;">
@@ -395,43 +379,13 @@ PUBLISHED: April 29, 2026
         <a href="/portfolio" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Design Portfolio</a>
       </div>
     </div>
-
   </div>
 </footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Local SEO for Private-Pay Practices: 5 Things That Actually Move the Needle",
-  "author": {
-    "@type": "Person",
-    "name": "Leann Frank",
-    "url": "https://simplerabbit.studio/about"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Simple Rabbit",
-    "url": "https://simplerabbit.studio",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://simplerabbit.studio/logo.png"
-    }
-  },
-  "datePublished": "2026-04-29",
-  "dateModified": "2026-04-29",
-  "image": "https://simplerabbit.studio/previews/local-seo-for-private-pay-practices.jpg",
-  "url": "https://simplerabbit.studio/blog/local-seo-for-private-pay-practices",
-  "description": "Local SEO for private-pay practices comes down to five things: your Google profile, reviews, location signals, keywords, and citations. Here's what works."
-}
-</script>
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1500);
-</script>
+<script src="/tracking.js" defer></script>
+<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
 <script>
 var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
 if(_hbtn&&_mnav){
@@ -442,18 +396,11 @@ if(_hbtn&&_mnav){
     _mnav.classList.toggle('open');
   });
   _mnav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      _hbtn.classList.remove('open');
-      _mnav.classList.remove('open');
-    });
+    a.addEventListener('click',function(){_hbtn.classList.remove('open');_mnav.classList.remove('open');});
   });
 }
+(function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});els.forEach(function(el){io.observe(el);});})();
 </script>
-<script src="/tracking.js" defer></script>
-<!-- SCROLL TO TOP -->
-<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
-<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
-<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
 <!-- SR-SCROLLNAV -->
 <style>
   .nav{position:fixed!important;top:0;left:0;right:0;transform:translateY(-100%);transition:transform .35s ease, background .3s ease, box-shadow .3s ease;will-change:transform;}
