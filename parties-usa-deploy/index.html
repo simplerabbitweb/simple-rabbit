@@ -49,6 +49,7 @@
     --vista: #8C9EFF;
     --tomato: #F06038;
     --apricot: #FCD9BE;
+    --periwinkle: #ADB3F5;
     --ink: #1C1B29;
     --cream: #FBF6EE;
 
@@ -249,8 +250,7 @@
 
   /* ---------- Where we are ---------- */
   .where { background: var(--bg-alt); }
-  .tiles { display: grid; gap: 22px; grid-template-columns: 1fr; }
-  @media (min-width: 720px) { .tiles { grid-template-columns: 1fr 1fr; } }
+  .tiles { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
   .tile {
     border-radius: 24px; padding: 34px 30px; border: 1px solid var(--border);
     box-shadow: var(--shadow); position: relative; overflow: hidden;
@@ -266,6 +266,17 @@
   @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(214,247,76,.7); } 70% { box-shadow: 0 0 0 10px rgba(214,247,76,0); } 100% { box-shadow: 0 0 0 0 rgba(214,247,76,0); } }
   .tile-live h3 { font-size: 2rem; margin-bottom: 8px; color: var(--cream); }
   .tile-live p { color: rgba(255,255,255,.92); margin-bottom: 22px; }
+
+  /* Westchester — coming soon; periwinkle card with white text */
+  .tile-westchester { background: linear-gradient(135deg, #7B82E8, #5158CC); color: #fff; border-color: transparent; }
+  .tile-westchester .badge {
+    display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,.24);
+    color: #fff; font-weight: 700; font-size: .82rem; letter-spacing: 0;
+    text-transform: uppercase; padding: 6px 13px; border-radius: 999px; margin-bottom: 16px;
+  }
+  .tile-westchester h3 { font-size: 2rem; margin-bottom: 8px; color: #fff; }
+  .tile-westchester p { color: rgba(255,255,255,.92); margin-bottom: 22px; }
+  .tile-westchester .btn { background: var(--ink); color: #fff; }
 
   /* "Coming soon" tile — could be any market, so a multi-color top accent */
   .tile-soon { background: var(--surface); }
@@ -416,6 +427,12 @@
           <p>Our first local directory is open for business. Explore party venues, entertainers, and suppliers across Bergen County.</p>
           <a href="https://bergenparties.com" class="btn btn-chartreuse" target="_blank" rel="noopener">Visit Bergen Parties</a>
         </div>
+        <div class="tile tile-westchester">
+          <span class="badge">Coming soon</span>
+          <h3>Westchester County, NY</h3>
+          <p>A hand-curated directory for Westchester families is in the works. Tell us you want it and we will let you know the moment it opens.</p>
+          <a href="https://simplerabbit.myflodesk.com/eeqbpdewj4" class="btn btn-ink" target="_blank" rel="noopener">Get on the list</a>
+        </div>
         <div class="tile tile-soon">
           <span class="badge">Your city, coming soon</span>
           <h3>Is your town next?</h3>
@@ -485,7 +502,7 @@
         <p class="mission">Helping families find the best local party people, and helping small party businesses get discovered, one city at a time.</p>
       </div>
       <div class="foot-contact">
-        <a href="mailto:hello@partiesintheusa.com">hello@partiesintheusa.com</a>
+        <a href="mailto:info@partiesintheusa.com">info@partiesintheusa.com</a>
       </div>
     </div>
     <div class="foot-bottom">
