@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3NSS9Z26P"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W3NSS9Z26P');</script>
+  <title>Simple Rabbit | Patient Growth Systems for Concierge Functional &amp; Precision Medicine</title>
+  <meta name="description" content="Simple Rabbit builds patient growth systems for private-pay women's health practices, so the right patients can find you and book.">
+  <link rel="canonical" href="https://simplerabbit.studio/">
+  <meta property="og:title" content="Simple Rabbit | Patient Growth Systems for Concierge Functional &amp; Precision Medicine">
+  <meta property="og:description" content="Simple Rabbit builds patient growth systems for private-pay women's health practices, so the right patients can find you and book.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/">
+  <meta property="og:image" content="https://simplerabbit.studio/homepage-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Violet palette (nav, leann, testimonial, footer) */
+      --bg:       #474D73;
+      --bg-dk:    #2D3154;
+      --bg-mid:   #3B4168;
+      --bg-lt:    #535980;
+      /* Light palette (hero, practices, featured-in, case studies, offers, blog) */
+      --white:    #FDFAF7;
+      --warm:     #F5F0EB;
+      --black:    #0A0905;
+      --mid-lt:   #7A756E;
+      /* Shared */
+      --accent:   #AA737D;
+      --mid-vt:   #B0B5D0;
+      --rule-dk:  rgba(0,0,0,0.10);
+      --rule-vt:  rgba(255,255,255,0.10);
+      --rule-lt:  rgba(255,255,255,0.12);
+      --font-d:   'Instrument Serif', Georgia, serif;
+      --font-b:   'DM Sans', system-ui, sans-serif;
+    }
+
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-b);
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── NAV (light, full-width) ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--rule-dk);
+    }
+    .nav-inner {
+      padding: 0 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 80px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--mid-lt); transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta {
+      background: var(--black) !important; color: var(--white) !important;
+      padding: 10px 24px; font-size: 14px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--bg) !important; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--black); transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+        .mobile-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+      background: var(--white,#FDFAF7); z-index: 200;
+      flex-direction: column; overflow-y: auto;
+      border-top: 1px solid rgba(0,0,0,0.10);
+    }
+    .mobile-nav.open { display: flex !important; }
+    .mobile-nav a {
+      font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--black,#0A0905); padding: 22px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.10); font-family: inherit; text-decoration: none;
+    }
+    .mobile-nav a.mobile-nav-cta {
+      background: #0A0905; color: #FDFAF7 !important;
+      text-align: center; font-weight: 600; border-bottom: none !important;
+      margin: 16px 24px; display: block; letter-spacing: 1.5px; text-transform: uppercase; font-size: 15px;
+    }
+
+    /* ── LABELS ── */
+    .label {
+      font-family: var(--font-b); font-size: 13px; font-weight: 500;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--mid-lt); display: block; margin-bottom: 20px;
+    }
+    .label-accent { color: var(--accent); }
+    .label-vt { color: var(--mid-vt); }
+
+    /* ── SECTION NUMBERS ── */
+    .sec-num {
+      font-family: var(--font-b); font-size: 13px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--mid-lt);
+    }
+    .sec-num-vt { color: var(--mid-vt); }
+
+    /* ── BUTTONS ── */
+    .btn-dk {
+      display: inline-block; background: var(--black); color: var(--white);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      font-family: var(--font-b); border: none; cursor: pointer; transition: background 0.25s;
+    }
+    .btn-dk:hover { background: var(--bg); }
+    .btn-wt {
+      display: inline-block; background: var(--white); color: var(--black);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      font-family: var(--font-b); border: none; cursor: pointer; transition: background 0.25s;
+    }
+    .btn-wt:hover { background: #efe9e2; }
+    .btn-outline {
+      display: inline-block; background: transparent; color: var(--black);
+      padding: 15px 46px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; font-family: var(--font-b);
+      border: 1px solid var(--black); cursor: pointer; transition: background 0.25s, color 0.25s;
+    }
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+    .btn-accent {
+      display: inline-block; background: var(--accent); color: var(--white);
+      padding: 16px 48px; font-size: 15px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      font-family: var(--font-b); border: none; cursor: pointer; transition: background 0.25s;
+    }
+    .btn-accent:hover { background: #8a5d66; }
+
+    /* ── WORK-WITH-ME numbered rows ── */
+    .work-item { display: grid; grid-template-columns: 220px 1fr auto; gap: 48px; align-items: center; padding: 48px 0; border-top: 1px solid var(--rule-dk); }
+    .work-item:last-of-type { border-bottom: 1px solid var(--rule-dk); }
+    .work-num { font-family: var(--font-d); font-size: clamp(80px,9vw,150px); line-height: 0.8; letter-spacing: -4px; color: transparent; -webkit-text-stroke: 1.5px rgba(45,49,84,0.30); transition: -webkit-text-stroke-color 0.3s ease; }
+    .work-item:hover .work-num { -webkit-text-stroke-color: rgba(45,49,84,0.8); }
+    .work-eyebrow { font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 12px; }
+    .work-title { font-family: var(--font-d); font-size: clamp(30px,3.4vw,48px); font-weight: 400; line-height: 1.02; letter-spacing: -1.5px; color: var(--black); margin-bottom: 14px; }
+    .work-desc { font-size: 18px; line-height: 1.6; color: var(--mid-lt); max-width: 560px; }
+    .work-cta { font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; transition: gap 0.25s ease; }
+    .work-cta:hover { gap: 18px; }
+    @media (max-width: 800px) {
+      .work-item { grid-template-columns: 1fr; gap: 12px; padding: 34px 0; }
+      .work-num { font-size: 76px; }
+      .work-cta { justify-self: start; }
+    }
+
+    /* ── TESTIMONIALS two-up ── */
+    .tgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 768px) { .tgrid { grid-template-columns: 1fr; gap: 56px; } }
+
+    /* ── HERO GRAIN ── */
+    .hero-grain {
+      position: absolute; inset: 0; pointer-events: none;
+      mix-blend-mode: multiply; opacity: 0.15;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* ── CARDS — light version ── */
+    .card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.08);
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.25s;
+    }
+    .card:hover { border-color: rgba(0,0,0,0.18); transform: translateY(-3px); }
+    .card-img { aspect-ratio: 16/10; overflow: hidden; background: var(--warm); }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease; }
+    .card:hover .card-img img { transform: scale(1.04); }
+    .card-body { padding: 32px; flex: 1; }
+    .card-foot {
+      padding: 18px 32px; border-top: 1px solid rgba(0,0,0,0.07);
+      background: var(--warm);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--mid-lt); font-family: var(--font-b); transition: color 0.2s;
+    }
+    .card:hover .card-foot { color: var(--black); }
+
+    /* ── OFFER FEATURED ROW — negative margin helper ── */
+    .offer-featured {
+      border-top: 1px solid var(--rule-dk);
+      padding: 48px 64px;
+      background: var(--bg);
+      margin: 0 -64px;
+    }
+
+    /* ── RESPONSIVE ── */
+    /* ── ACRR words ── */
+    .acrr-word { font-family: var(--font-d); font-size: clamp(34px,3.6vw,52px); line-height: 1.05; letter-spacing: -1.5px; color: var(--bg-dk); opacity: 0.26; display: block; margin-bottom: 18px; transition: opacity 0.25s ease, color 0.25s ease; }
+    .acrr-word .fl { transition: color 0.25s ease; }
+    .acrr-card:hover .acrr-word { opacity: 1; color: var(--black); }
+    .acrr-card:hover .acrr-word .fl { color: var(--bg); text-decoration: underline; text-underline-offset: 3px; }
+    /* ── ACRR editorial rows ── */
+    .acrr-rows { border-top: 1px solid var(--rule-dk); margin-top: 8px; }
+    .acrr-row { display: grid; grid-template-columns: 130px 1fr; gap: 48px; align-items: center; padding: 38px 8px; border-bottom: 1px solid var(--rule-dk); transition: padding-left 0.3s ease; }
+    .acrr-row:hover { padding-left: 24px; }
+    .acrr-row-letter { font-family: var(--font-d); font-size: clamp(60px,6vw,104px); line-height: 0.9; letter-spacing: -2px; color: transparent; -webkit-text-stroke: 1.5px rgba(45,49,84,0.30); transition: -webkit-text-stroke-color 0.3s ease; }
+    .acrr-row:hover .acrr-row-letter { -webkit-text-stroke-color: rgba(45,49,84,0.8); }
+    .acrr-row-stage { font-family: var(--font-d); font-size: clamp(26px,2.4vw,38px); font-weight: 400; letter-spacing: -1px; color: var(--black); line-height: 1.05; margin-bottom: 8px; }
+    .acrr-row-desc { font-size: 18px; line-height: 1.65; color: var(--mid-lt); max-width: 640px; }
+    @media (max-width: 600px) {
+      .acrr-row { grid-template-columns: 56px 1fr; gap: 22px; padding: 26px 0; align-items: start; }
+      .acrr-row:hover { padding-left: 0; }
+      .acrr-row-letter { font-size: 48px; }
+    }
+
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 0 40px !important; }
+      .px-lg { padding-left: 40px !important; padding-right: 40px !important; }
+      .offer-featured { margin: 0 -40px !important; padding-left: 40px !important; padding-right: 40px !important; }
+    }
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px !important; }
+      .px-lg { padding-left: 24px !important; padding-right: 24px !important; }
+      .hero-inner { grid-template-columns: 1fr !important; min-height: auto !important; }
+      .hero-inner > div:last-child { height: 380px; }
+      .hero-inner > div:nth-child(2) { padding: 32px 24px 48px !important; }
+      /* Hero eyebrow: reposition to left edge, hide line, add space above H1 */
+      .hero-eyebrow { left: 24px !important; margin-bottom: 32px !important; }
+      .hero-eyebrow-line { display: none !important; }
+      .grid-2 { grid-template-columns: 1fr !important; gap: 0 !important; }
+      .grid-2 > div:last-child { padding: 48px 24px !important; }
+      .grid-3 { grid-template-columns: 1fr !important; gap: 2px !important; }
+      .grid-cs { grid-template-columns: 1fr !important; gap: 2px !important; }
+      .buckets { grid-template-columns: 1fr 1fr !important; }
+      /* Section 05 ACRR grid: stack vertically on mobile */
+      .acrr-grid { grid-template-columns: 1fr !important; }
+      /* ACRR words show active state on mobile (no hover) */
+      .acrr-word { opacity: 1 !important; color: var(--black) !important; }
+      .acrr-word .fl { color: var(--bg) !important; text-decoration: underline; text-underline-offset: 3px; }
+      /* Section 10 offers: stack with button right-aligned + padding */
+      .offer-row { flex-direction: column !important; gap: 20px !important; align-items: stretch !important; }
+      .offer-row > div:last-child { align-self: center !important; padding-right: 0 !important; text-align: center !important; }
+      .offer-featured { margin: 0 -24px !important; padding-left: 24px !important; padding-right: 24px !important; }
+      .featured-in-row { gap: 40px !important; flex-wrap: nowrap !important; justify-content: space-around !important; }
+      /* Section 11 CTA: stack on mobile, image on top */
+      .cta-2col { grid-template-columns: 1fr !important; }
+      .cta-2col > div:first-child { height: 300px; }
+      .cta-2col > div:last-child { padding: 48px 24px !important; }
+    }
+    .desk-br { display: block; }
+    @media (max-width: 768px) {
+      .desk-br { display: none; }
+      .hamburger { display: flex !important; }
+      .nav-links { display: none !important; }
+      .nav-inner { padding: 0 20px !important; }
+      .nav-inner a img { max-height: 52px !important; }
+      .hero-h1 { font-size: clamp(32px, 10vw, 68px) !important; letter-spacing: -2px !important; }
+      .buckets { grid-template-columns: 1fr !important; }
+      /* Prevent overflow — ensure text wraps */
+      * { word-wrap: break-word; overflow-wrap: break-word; }
+      /* Reduce vertical padding on all sections on mobile */
+      section { padding-top: 60px !important; padding-bottom: 60px !important; }
+      /* Footer stacks on mobile */
+      footer > div > div { flex-direction: column !important; gap: 20px !important; }
+      footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+      /* Footer links: row with pipe separators on mobile */
+      .footer-links-row, .footer-social-row { flex-direction: row !important; flex-wrap: wrap !important; gap: 0 8px !important; align-items: center !important; }
+      .footer-links-row > *:not(:last-child)::after, .footer-social-row > *:not(:last-child)::after { content: " |"; margin-left: 8px; color: rgba(255,255,255,0.25); }
+    }
+    @media (max-width: 600px) {
+      /* Section 03: logos fill full width horizontally */
+      .featured-in-row { flex-direction: row !important; gap: 0 !important; align-items: center !important; flex-wrap: nowrap !important; justify-content: space-between !important; width: 100% !important; }
+      .featured-in-row a { flex: 1 !important; display: flex !important; justify-content: center !important; }
+      .featured-in-row img { height: clamp(38px, 10vw, 66px) !important; width: auto !important; max-width: 100% !important; }
+      section { padding-top: 48px !important; padding-bottom: 48px !important; }
+      .card-body { padding: 24px !important; }
+      .card-foot { padding: 14px 24px !important; }
+    }
+  </style>
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Simple Rabbit",
+        "url": "https://simplerabbit.studio",
+        "logo": "https://simplerabbit.studio/sign-logo.png",
+        "image": "https://simplerabbit.studio/homepage-hero.jpg",
+        "description": "Simple Rabbit builds patient growth systems for private-pay women's health practices, so the right patients can find you and book.",
+        "founder": { "@type": "Person", "name": "Leann Frank" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen County",
+          "addressRegion": "NJ",
+          "addressCountry": "US"
+        },
+        "email": "hello@simplerabbit.studio",
+        "areaServed": "United States",
+        "knowsAbout": ["Patient acquisition", "Local SEO", "Functional medicine marketing", "Concierge medicine marketing", "Private-pay practice growth"]
+      },
+      {
+        "@type": "Person",
+        "name": "Leann Frank",
+        "jobTitle": "Founder, Simple Rabbit",
+        "url": "https://simplerabbit.studio/about",
+        "worksFor": { "@type": "Organization", "name": "Simple Rabbit" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen County",
+          "addressRegion": "NJ",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://simplerabbit.studio",
+        "name": "Simple Rabbit",
+        "publisher": { "@type": "Organization", "name": "Simple Rabbit" }
+      }
+    ]
+  }
+  </script>
+<style>
+/* SR-MOBILE-BODY: uniform 17px body copy on phones; desktop unchanged */
+@media (max-width:600px){
+  [style*="font-size: 19px"],[style*="font-size:19px"],[style*="font-size: 18px"],[style*="font-size:18px"]{font-size:17px !important;}
+}
+</style>
+</head>
+<body>
+
+
+<!-- NAV (violet) -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Simple Rabbit" style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(26px,2.4vw,32px); line-height:1; letter-spacing:-0.5px; color:#474D73; text-decoration:none; white-space:nowrap;">Simple <em style="font-style:italic;">Rabbit</em></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Apply to Work Together</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/case-studies">Case Studies</a>
+  <a href="/articles">Articles</a>
+  <a href="/apply" class="mobile-nav-cta">Apply to Work Together</a>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     01 — HERO (light)
+     ════════════════════════════════════════════ -->
+<section class="hero-inner" style="display:grid; grid-template-columns:1fr 1fr; min-height:72vh; position:relative; background:var(--white); overflow:hidden;">
+  <div class="hero-grain"></div>
+
+  <div style="position:relative; z-index:1; display:flex; flex-direction:column; justify-content:center; padding:0 64px 80px 64px;">
+
+    <span class="label label-accent" style="margin-bottom:20px;">A Design Studio for Women&rsquo;s Health Practices</span>
+
+    <h1 class="hero-h1" style="font-family:var(--font-d); font-size:clamp(40px,5vw,74px); line-height:1.05; letter-spacing:-2px; color:var(--black); font-weight:300; margin-bottom:28px;">
+      Never wonder where your <em style="color:#474D73;">next patient</em> is coming from.
+    </h1>
+
+    <p style="font-size: 19px; line-height:1.85; color:var(--mid-lt); margin-bottom:16px; max-width:520px; font-weight:400;">
+      We design the websites, brands, and growth systems that get private-pay women&rsquo;s health practices found, booked, and full, with patients who are the right fit.
+    </p>
+
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <a href="/apply" class="btn-dk">Apply to Work Together</a>
+    </div>
+  </div>
+
+  <div style="position:relative; display:flex; align-items:center; justify-content:flex-end;">
+    <img src="hero-image.webp" alt="A website designed by Simple Rabbit for a women&rsquo;s health practice" style="width:100%; height:auto; display:block;">
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     03 — AS FEATURED IN (light)
+     ════════════════════════════════════════════ -->
+<section class="reveal px-lg" style="padding:7px 64px; background:var(--warm); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:1280px; margin:0 auto; display:flex; align-items:center; gap:64px; flex-wrap:wrap;">
+
+    <span class="sec-num" style="white-space:nowrap;">As featured in</span>
+    <div style="flex:1; height:1px; background:var(--rule-dk);"></div>
+
+    <div class="featured-in-row" style="display:flex; align-items:center; justify-content:center; gap:64px; flex-wrap:wrap;">
+      <a href="https://bergenmama.com/article/spotlight-bergen-mamas-who-can-help-you-grow-your-business" target="_blank" rel="noopener" aria-label="Bergen Mama" style="display:block; opacity:0.45; transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='0.45'">
+        <img src="social-proof/bergen-mama.png" alt="Bergen Mama" style="height:clamp(52px,9vw,88px); width:auto; filter:grayscale(1);">
+      </a>
+      <a href="https://citylifestyle.com/articles/hopping-toward-success" target="_blank" rel="noopener" aria-label="City Lifestyle" style="display:block; opacity:0.45; transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='0.45'">
+        <img src="social-proof/pascack-valley-city-lifestyle.png" alt="Pascack Valley City Lifestyle" style="height:clamp(52px,9vw,88px); width:auto; filter:grayscale(1);">
+      </a>
+      <a href="https://youtu.be/byNjrmPNz8M?si=W_EjthPGU_f1r8Xa" target="_blank" rel="noopener" aria-label="Local Biz Cast" style="display:block; opacity:0.45; transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='0.45'">
+        <img src="social-proof/local-biz-cast.png" alt="Local Biz Cast" style="height:clamp(52px,9vw,88px); width:auto; filter:grayscale(1);">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     02 — THE PROBLEM (light)
+     ════════════════════════════════════════════ -->
+<section class="reveal px-lg" style="padding:100px 64px; background:var(--white); border-top:1px solid var(--rule-dk); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:1280px; margin:0 auto;">
+
+    <h2 style="font-family:var(--font-d); font-size:clamp(34px,4vw,58px); line-height:1.05; letter-spacing:-2px; font-weight:300; margin-bottom:20px; color:var(--black);">
+      Running a women’s health practice shouldn&rsquo;t feel <em style="color:#474D73;">this uncertain.</em>
+    </h2>
+    <p style="font-size:19px; line-height:1.8; color:var(--mid-lt); max-width:680px; margin-bottom:64px;">You went into medicine to care for people, not to market. <em style="font-style:italic; color:#474D73;">That part&rsquo;s on us.</em></p>
+
+    <div class="buckets" style="display:grid; grid-template-columns:repeat(3,1fr); border-left:1px solid var(--rule-dk);">
+
+      <div style="padding:40px 36px; border-right:1px solid var(--rule-dk);">
+        <img src="X.png" alt="" style="display:block; margin:0 auto 24px; height:32px; width:auto;">
+        <h3 style="font-family:var(--font-d); font-size:clamp(26px,1.8vw,28px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Your online presence isn&rsquo;t attracting the right patients.</h3>
+        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">Your website and online presence aren&rsquo;t consistently reaching the committed patients who are ready to invest in root-cause and personalized care.</p>
+      </div>
+
+      <div style="padding:40px 36px; border-right:1px solid var(--rule-dk);">
+        <img src="X.png" alt="" style="display:block; margin:0 auto 24px; height:32px; width:auto;">
+        <h3 style="font-family:var(--font-d); font-size:clamp(26px,1.8vw,28px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Marketing takes up time &amp; energy that belongs to patient care.</h3>
+        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">You feel frustrated by unpredictable patient flow. You didn&rsquo;t go into this field to become a marketer, yet marketing now takes up mental space that should go to patient care and continuing education.</p>
+      </div>
+
+      <div style="padding:40px 36px; border-right:1px solid var(--rule-dk);">
+        <img src="X.png" alt="" style="display:block; margin:0 auto 24px; height:32px; width:auto;">
+        <h3 style="font-family:var(--font-d); font-size:clamp(26px,1.8vw,28px); font-weight:400; line-height:1.25; color:var(--black); letter-spacing:-0.5px; margin-bottom:16px;">Your standard of care deserves patients who value it.</h3>
+        <p style="font-size: 17px; color:var(--mid-lt); line-height:1.75;">High-quality, personalized medicine should come with a steady stream of the right patients. Not generic marketing that doesn&rsquo;t reflect the depth of your work.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     THE SIMPLE RABBIT SYSTEM (light)
+     ════════════════════════════════════════════ -->
+<style>
+  @media (max-width:1024px){ .sr-system-grid{ grid-template-columns:repeat(2,1fr) !important; } }
+  @media (max-width:600px){ .sr-system-grid{ grid-template-columns:1fr !important; } }
+</style>
+<section id="acrr" class="reveal px-lg" style="padding:100px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:1280px; margin:0 auto;">
+
+    <div style="text-align:center; max-width:720px; margin:0 auto 64px;">
+      <h2 style="font-family:var(--font-d); font-size:clamp(34px,4vw,58px); line-height:1.05; letter-spacing:-2px; font-weight:300; color:var(--black); margin-bottom:24px;">
+        Four <em style="font-style:italic; color:#474D73;">interconnected</em> parts to fill your schedule.
+      </h2>
+      <p style="font-size:19px; line-height:1.7; color:var(--mid-lt);">
+        Strategy and design working together so the right patients find you, trust you, book with you, and stay with you.
+      </p>
+    </div>
+
+    <div class="sr-system-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px;">
+
+      <div style="background:var(--warm); border-radius:16px; padding:40px 32px; display:flex; flex-direction:column;">
+        <div style="color:#474D73; margin-bottom:26px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3 style="font-family:var(--font-d); font-size:28px; font-weight:400; letter-spacing:-0.5px; color:var(--black); margin-bottom:12px;">Attract</h3>
+        <p style="font-size:16px; line-height:1.55; color:var(--black); margin-bottom:26px;">Get found by the exact patients you want.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>SEO &amp; content strategy</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Optimized Google Business Profile</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>High-quality visual content &amp; brand assets</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Targeted lead generation that feels premium</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--warm); border-radius:16px; padding:40px 32px; display:flex; flex-direction:column;">
+        <div style="color:#474D73; margin-bottom:26px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3 style="font-family:var(--font-d); font-size:28px; font-weight:400; letter-spacing:-0.5px; color:var(--black); margin-bottom:12px;">Convert</h3>
+        <p style="font-size:16px; line-height:1.55; color:var(--black); margin-bottom:26px;">Turn visitors into booked patients.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Custom website design &amp; UX that builds trust</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Patient journey mapping &amp; conversion layouts</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Beautiful lead magnets &amp; nurturing sequences</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Optimized booking flows &amp; clear CTAs</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--warm); border-radius:16px; padding:40px 32px; display:flex; flex-direction:column;">
+        <div style="color:#474D73; margin-bottom:26px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+        <h3 style="font-family:var(--font-d); font-size:28px; font-weight:400; letter-spacing:-0.5px; color:var(--black); margin-bottom:12px;">Retain</h3>
+        <p style="font-size:16px; line-height:1.55; color:var(--black); margin-bottom:26px;">Keep patients engaged and coming back.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Thoughtful post-appointment communication systems</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Patient education content &amp; value-driven emails</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Loyalty touchpoints &amp; relationship nurturing</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Beautifully designed follow-up experiences</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--warm); border-radius:16px; padding:40px 32px; display:flex; flex-direction:column;">
+        <div style="color:#474D73; margin-bottom:26px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+        <h3 style="font-family:var(--font-d); font-size:28px; font-weight:400; letter-spacing:-0.5px; color:var(--black); margin-bottom:12px;">Refer</h3>
+        <p style="font-size:16px; line-height:1.55; color:var(--black); margin-bottom:26px;">Turn happy patients into your best growth channel.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Review &amp; reputation management systems</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Shareable patient success stories &amp; branded assets</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Natural referral programs &amp; easy tools</li>
+          <li style="font-size:15px; line-height:1.5; color:var(--mid-lt); padding-left:18px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">&bull;</span>Word-of-mouth amplification strategies</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     04 — HI I'M LEANN (violet — kept)
+     ════════════════════════════════════════════ -->
+<section class="reveal" style="border-bottom:1px solid var(--rule-lt); overflow:hidden;">
+  <div class="grid-2" style="display:grid; grid-template-columns:1fr 1fr;">
+
+    <div style="overflow:hidden; min-height:600px;">
+      <img src="Leann.jpg" alt="Leann Frank, Founder of Simple Rabbit" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="lazy">
+    </div>
+
+    <div style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center; background:var(--bg);">
+
+      <span class="label label-accent">A Note from Our Founder</span>
+      <h2 style="font-family:var(--font-d); font-size:clamp(32px,3.2vw,50px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; margin-bottom:32px; color:var(--white);">
+        I&rsquo;m the <em style="color:var(--white);">patient</em> you&rsquo;re trying to attract.
+      </h2>
+      <p style="font-size: 19px; line-height:1.9; color:var(--mid-vt); margin-bottom:16px;">
+        So I know what it&rsquo;s like on the other side of the search. I&rsquo;m the woman your practice is built for: private-pay, doing my own research, with plenty of options and no patience for a practice that&rsquo;s hard to find or hard to trust.
+      </p>
+      <p style="font-size: 19px; line-height:1.9; color:var(--mid-vt); margin-bottom:16px;">
+        I know why a woman like me books one practice and scrolls right past another. It&rsquo;s rarely about who&rsquo;s the better clinician. It&rsquo;s whether I could find you, whether your website made me feel understood, and whether you followed up like you actually wanted me there. I lose interest in most practices, and I never tell them why.
+      </p>
+      <p style="font-size: 19px; line-height:1.9; color:var(--mid-vt); margin-bottom:48px;">
+        That&rsquo;s the whole reason Simple Rabbit exists. It&rsquo;s why we design the websites and brands that make a practice easy to find, easy to trust, and impossible to scroll past.
+      </p>
+      <a href="/about" style="font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--white); border-bottom:1px solid var(--accent); padding-bottom:4px; font-family:var(--font-b); font-weight:500; width:fit-content; transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--white)'">A letter from me &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     07 — SUCCESS (warm)
+     ════════════════════════════════════════════ -->
+<section class="reveal px-lg" style="padding:96px 64px; background:var(--warm); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <div class="grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+
+      <!-- Left: placeholder image -->
+      <div style="aspect-ratio:4/5; overflow:hidden;">
+        <img src="section07.jpg?v=2" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+      </div>
+
+      <!-- Right: headline + benefits -->
+      <div>
+        <h2 style="font-family:var(--font-d); font-size:clamp(30px,3vw,46px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--black); margin-bottom:40px;">
+          When your website and brand do the <em style="color:#474D73;">heavy lifting,</em> everything gets better.
+        </h2>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <img src="check.png" alt="" style="width:24px; height:24px; flex-shrink:0; margin-top:3px;">
+            <p style="font-size:18px; line-height:1.75; color:var(--mid-lt);">A polished website that brings in the right patients, month after month</p>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <img src="check.png" alt="" style="width:24px; height:24px; flex-shrink:0; margin-top:3px;">
+            <p style="font-size: 18px; line-height:1.75; color:var(--mid-lt);">A clear, intuitive path to book that turns more visitors into patients</p>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <img src="check.png" alt="" style="width:24px; height:24px; flex-shrink:0; margin-top:3px;">
+            <p style="font-size: 18px; line-height:1.75; color:var(--mid-lt);">More time on medicine, because your site does the explaining for you</p>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <img src="check.png" alt="" style="width:24px; height:24px; flex-shrink:0; margin-top:3px;">
+            <p style="font-size: 18px; line-height:1.75; color:var(--mid-lt);">A professional online presence that finally reflects the quality of your care</p>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <img src="check.png" alt="" style="width:24px; height:24px; flex-shrink:0; margin-top:3px;">
+            <p style="font-size: 18px; line-height:1.75; color:var(--mid-lt);">A cohesive brand that looks and feels unmistakably yours</p>
+          </div>
+
+        </div>
+        <div style="margin-top:40px;">
+          <a href="/apply" class="btn-dk">Apply to Work Together &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     08 — CASE STUDIES (light)
+     ════════════════════════════════════════════ -->
+<section class="reveal px-lg" style="padding:100px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:1280px; margin:0 auto;">
+
+    <h2 style="font-family:var(--font-d); font-size:clamp(34px,4vw,58px); line-height:1.05; letter-spacing:-2px; font-weight:300; margin-bottom:64px; color:var(--black);">
+      Real Results from<br>Real Clients.
+    </h2>
+
+    <div class="grid-cs" style="display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-bottom:48px;">
+
+      <a href="/blog/case-study-smooth-laser-center" class="card">
+        <div class="card-img">
+          <img src="previews/smooth-laser-center-website.png" alt="Smooth Laser Center" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="label label-accent">Case Study</span>
+          <h3 style="font-family:var(--font-d); font-size:clamp(20px,2vw,28px); line-height:1.2; font-weight:400; letter-spacing:-0.5px; color:var(--black);">
+            How Smooth Laser Center went from invisible online to booked from Google.
+          </h3>
+        </div>
+        <div class="card-foot">
+          <span>Read case study</span><span>&rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/case-study-milli-health-wellness" class="card">
+        <div class="card-img">
+          <img src="previews/milli-health-wellness-case-study.JPG" alt="Milli Health &amp; Wellness case study" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="label label-accent">Case Study</span>
+          <h3 style="font-family:var(--font-d); font-size:clamp(20px,2vw,28px); line-height:1.2; font-weight:400; letter-spacing:-0.5px; color:var(--black);">
+            How Dr. Lisa Milli launched a concierge menopause practice that gets found.
+          </h3>
+        </div>
+        <div class="card-foot">
+          <span>Read case study</span><span>&rarr;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="/case-studies" style="font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); border-bottom:1px solid var(--accent); padding-bottom:3px; font-family:var(--font-b); transition:color 0.2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--mid-lt)'">See all work &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     TESTIMONIALS (band, 2-up)
+     ════════════════════════════════════════════ -->
+<style>@media(max-width:820px){ .tst-2up{ grid-template-columns:1fr !important; gap:52px !important; } .tst-2up .tst-div{ display:none !important; } }</style>
+<section class="reveal" style="background:#849aa9; padding:96px 64px; border-bottom:1px solid var(--rule-vt); position:relative; overflow:hidden;">
+  <!-- Circle right, partially off-screen -->
+  <svg style="position:absolute;top:50%;right:-160px;transform:translateY(-50%);width:400px;height:400px;pointer-events:none;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="195" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  </svg>
+  <!-- Circle left, smaller, peeking from upper left -->
+  <svg style="position:absolute;top:-80px;left:-80px;width:260px;height:260px;pointer-events:none;" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="130" cy="130" r="125" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  </svg>
+  <div style="max-width:1120px; margin:0 auto; position:relative; z-index:1;">
+    <div class="tst-2up" style="display:grid; grid-template-columns:1fr 1px 1fr; gap:56px; align-items:start;">
+
+      <!-- Michelle -->
+      <div style="text-align:center;">
+        <div style="color:#E0A526; font-size:18px; letter-spacing:5px; margin-bottom:22px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote style="font-family:var(--font-d); font-size:clamp(19px,1.7vw,26px); line-height:1.45; letter-spacing:-0.5px; font-weight:300; color:var(--white); margin:0 0 24px;">
+          &ldquo;Leann was so great to work with! She broke all the social media stuff down for me to understand exactly what I needed to do, how to do it, and why. She took something totally out of my wheelhouse, that I found frustrating, and made it super simple. I can&rsquo;t wait to work with her again on another project (she does so much more than social media stuff) and absolutely recommend you work with her, too.&rdquo;
+        </blockquote>
+        <p style="font-family:var(--font-b); font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.9); margin:0 0 5px;">Michelle Davidoff</p>
+        <p style="font-family:var(--font-b); font-size:12px; font-weight:400; letter-spacing:0.5px; color:rgba(255,255,255,0.7); margin:0;">Latchling Lactation Consultancy</p>
+      </div>
+
+      <!-- Divider -->
+      <div class="tst-div" style="width:1px; background:rgba(255,255,255,0.18); align-self:stretch;"></div>
+
+      <!-- Lisa -->
+      <div style="text-align:center;">
+        <div style="color:#E0A526; font-size:18px; letter-spacing:5px; margin-bottom:22px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote style="font-family:var(--font-d); font-size:clamp(19px,1.7vw,26px); line-height:1.45; letter-spacing:-0.5px; font-weight:300; color:var(--white); margin:0 0 24px;">
+          &ldquo;I initially hired Leann to do a website audit. I quickly learned that she was the person to redo my website, which I felt didn&rsquo;t reflect me. She was on time, communicated, and helped me along the way to improve business operations. Would highly recommend her!&rdquo;
+        </blockquote>
+        <p style="font-family:var(--font-b); font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.9); margin:0 0 5px;">Dr. Lisa Milli</p>
+        <p style="font-family:var(--font-b); font-size:12px; font-weight:400; letter-spacing:0.5px; color:rgba(255,255,255,0.7); margin:0;">Milli Health &amp; Wellness</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     11 — FINAL CTA (violet)
+     ════════════════════════════════════════════ -->
+<section class="reveal" style="background:var(--white); padding:0; border-top:1px solid var(--rule-dk); border-bottom:1px solid var(--rule-dk); overflow:hidden;">
+  <div class="cta-2col" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
+    <!-- Left: checklist image with circle behind -->
+    <div style="overflow:hidden; position:relative; min-height:300px;">
+      <img src="acrr-assessment.png" alt="The Missing Marketing Checklist on a tablet" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+    </div>
+    <!-- Right: text with circle peeking from upper right -->
+    <div style="padding:80px 64px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+      <!-- Circle 2: partially visible from upper right corner -->
+      <svg style="position:absolute; top:-120px; right:-120px; width:320px; height:320px; pointer-events:none; z-index:0;" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="160" r="155" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+      </svg>
+      <h2 style="font-family:var(--font-d); font-size:clamp(30px,3vw,50px); line-height:1.1; letter-spacing:-1.5px; font-weight:300; color:var(--black); margin-bottom:24px; position:relative; z-index:1;">
+        Ready for <em style="color:#474D73;">consistent patient growth?</em>
+      </h2>
+      <p style="font-size: 19px; line-height:1.8; color:var(--mid-lt); margin-bottom:40px; position:relative; z-index:1;">Most private-pay practitioners are excellent at the medicine and unsure about the marketing. The Missing Marketing Checklist shows you exactly where the right patients are slipping away.</p>
+      <div style="position:relative; z-index:1;">
+        <a href="/missing-marketing-checklist" class="btn-dk">Get the Checklist &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     12 — BLOG (light)
+     ════════════════════════════════════════════ -->
+<section class="reveal px-lg" style="padding:100px 64px; background:var(--white); border-bottom:1px solid var(--rule-dk);">
+  <div style="max-width:1280px; margin:0 auto;">
+
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <a href="/articles" style="font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt); border-bottom:1px solid var(--accent); padding-bottom:3px; font-family:var(--font-b); white-space:nowrap; transition:color 0.2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--mid-lt)'">All articles &rarr;</a>
+    </div>
+
+    <h2 style="font-family:var(--font-d); font-size:clamp(30px,3.5vw,50px); line-height:1.05; letter-spacing:-1.5px; font-weight:300; margin-bottom:56px; color:var(--black);">
+      What you wish you&rsquo;d known<br>before you started <em style="color:#474D73;">your practice.</em>
+    </h2>
+
+    <div class="grid-3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px;">
+
+      <!-- BLOG-FEED-START -->
+      <a href="/blog/leaving-insurance-private-pay-practice" class="card reveal">
+        <div class="card-img"><img src="previews/leaving-insurance-private-pay-practice.jpg" alt="Leaving Insurance to Go Private-Pay: A Guide for Functional Medicine &amp;amp; Women&rsquo;s Health Practitioners" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">From the Blog</span>
+          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">Leaving Insurance to Go Private-Pay: A Guide for Functional Medicine &amp;amp; Women&rsquo;s Health Practitioners</h3>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
+
+      <a href="/blog/how-to-market-a-functional-medicine-practice" class="card reveal">
+        <div class="card-img"><img src="previews/how-to-market-a-functional-medicine-practice.jpg" alt="How to Market a Functional Medicine Practice: A Practical Guide" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">From the Blog</span>
+          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">How to Market a Functional Medicine Practice: A Practical Guide</h3>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
+
+      <a href="/blog/local-seo-for-private-pay-practices" class="card reveal">
+        <div class="card-img"><img src="previews/local-seo-for-private-pay-practices.jpg" alt="Local SEO for Private-Pay Practices: The Step-by-Step Playbook" loading="lazy"></div>
+        <div class="card-body">
+          <span style="font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px;">From the Blog</span>
+          <h3 style="font-family:var(--font-d);font-size:22px;line-height:1.3;font-weight:400;letter-spacing:-0.5px;margin-bottom:16px;">Local SEO for Private-Pay Practices: The Step-by-Step Playbook</h3>
+        </div>
+        <div class="card-foot"><span>Read article</span><span>&rarr;</span></div>
+      </a>
+      <!-- BLOG-FEED-END -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER (violet — kept)
+     ════════════════════════════════════════════ -->
+<footer style="background:var(--bg-dk); padding:0; display:block;">
+  <div style="padding:28px 64px 24px;">
+
+    <!-- Top: logo + social icons -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; margin-bottom:10px;">
+
+      <!-- Logo + description -->
+      <div style="max-width:400px;">
+        <a href="/"><img src="Logo-light.png" alt="Simple Rabbit" style="height:44px; width:auto; display:block; margin-bottom:20px;"></a>
+        </div>
+
+      <!-- Social icons -->
+      <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://x.com/leannfrank" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://simplerabbit.myflodesk.com/newsletter" target="_blank" rel="noopener" aria-label="Newsletter" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
+      <div style="display:flex; gap:28px; flex-wrap:wrap;">
+        <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
+        <a href="/changes" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Website Change Requests</a>
+        <a href="/contact" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Contact</a>
+        <a href="/ai-front-desk" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">AI Front Desk</a>
+        <a href="/portfolio" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Design Portfolio</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- SCROLL TO TOP -->
+<style>
+  #sr-top { position:fixed; bottom:32px; right:32px; width:44px; height:44px; background:var(--black); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:998; opacity:0; pointer-events:none; transition:opacity .25s, background .2s; }
+  #sr-top:hover { background:var(--bg); }
+  @media(max-width:768px){ #sr-top { bottom:20px; right:20px; } }
+</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Scroll reveal -->
+<script>
+  (function() {
+    var revealEls = document.querySelectorAll('.reveal');
+    // Immediately show anything already in the viewport so page is never blank
+    revealEls.forEach(function(el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 100) el.classList.add('visible');
+    });
+    // Observer for below-fold scroll-in animation
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function(el) { if (!el.classList.contains('visible')) obs.observe(el); });
+    } else {
+      // Fallback for no observer support
+      revealEls.forEach(function(el) { el.classList.add('visible'); });
+    }
+  })();
+</script>
+
+<!-- Mobile nav -->
+<script>
+  var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      _hbtn.classList.remove('open');
+      _mnav.classList.remove('open');
+    });
+  });
+}
+</script>
+<!-- SR-SCROLLNAV -->
+<style>
+  .nav{position:fixed!important;top:0;left:0;right:0;transform:translateY(-100%);transition:transform .35s ease, background .3s ease, box-shadow .3s ease;will-change:transform;}
+  .nav.sr-nav-show{transform:translateY(0);background:rgba(253,250,247,0.82)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 24px rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.06)!important;}
+</style>
+<script>
+(function(){
+  var nav=document.querySelector('.nav');
+  if(!nav)return;
+  function upd(){nav.classList.toggle('sr-nav-show',window.scrollY>100);}
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
