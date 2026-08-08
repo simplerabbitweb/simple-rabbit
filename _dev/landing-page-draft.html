@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3NSS9Z26P"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W3NSS9Z26P');</script>
+  <title>Simple Rabbit | Design Studio for Women's Health &amp; Wellness</title>
+  <meta name="description" content="Simple Rabbit is a boutique design studio creating brands and websites for women's health and wellness practices and brands.">
+  <link rel="canonical" href="https://simplerabbit.studio/">
+  <meta property="og:title" content="Simple Rabbit | Design Studio for Women's Health &amp; Wellness">
+  <meta property="og:description" content="A boutique design studio creating brands and websites for women's health and wellness.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplerabbit.studio/">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    :root{
+      --bg:#474D73; --white:#FDFAF7; --warm:#F5F0EB; --black:#0A0905; --mid-lt:#7A756E;
+      --accent:#AA737D; --rule:rgba(0,0,0,0.10);
+      --font-d:'Instrument Serif',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--font-b);color:var(--black);background:var(--warm);-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;}
+    a{color:inherit;text-decoration:none;}
+
+    .hero{max-width:680px;width:100%;margin:0 auto;padding:clamp(48px,9vh,96px) 28px clamp(38px,6vh,56px);display:flex;flex-direction:column;align-items:center;text-align:center;}
+
+    .featured{padding:0 28px clamp(52px,8vh,76px);text-align:center;}
+    .featured-label{display:block;font-family:var(--font-b);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid-lt);margin-bottom:24px;}
+    .featured-row{display:flex;align-items:center;justify-content:center;gap:clamp(26px,6vw,60px);flex-wrap:wrap;}
+    .featured-row a{display:block;opacity:0.5;transition:opacity 0.25s;}
+    .featured-row a:hover{opacity:0.9;}
+    .featured-row img{height:clamp(40px,7vw,62px);width:auto;filter:grayscale(1);}
+
+    .tst-band{background:#849aa9;padding:clamp(58px,9vh,90px) 28px;}
+    .tst-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,64px);align-items:start;}
+    .tst{text-align:center;}
+    .tst-stars{color:#E0A526;font-size:16px;letter-spacing:4px;margin-bottom:18px;}
+    .tst blockquote{font-family:var(--font-d);font-weight:300;font-size:clamp(18px,1.6vw,23px);line-height:1.5;letter-spacing:-0.3px;color:var(--white);margin:0 0 20px;}
+    .tst .t-name{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.92);margin:0 0 4px;}
+    .tst .t-biz{font-family:var(--font-b);font-size:12px;color:rgba(255,255,255,0.7);margin:0;}
+    @media(max-width:760px){.tst-inner{grid-template-columns:1fr;gap:48px;max-width:440px;}}
+
+    .contact-sec{padding:clamp(52px,8vh,76px) 28px clamp(24px,4vh,36px);display:flex;justify-content:center;}
+
+    .wordmark{font-family:var(--font-d);font-size:clamp(30px,5vw,40px);line-height:1;letter-spacing:-0.5px;color:var(--bg);margin-bottom:clamp(48px,10vh,90px);}
+    .wordmark em{font-style:italic;}
+
+    .eyebrow{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:26px;}
+
+    h1{font-family:var(--font-d);font-weight:300;font-size:clamp(38px,6.4vw,62px);line-height:1.06;letter-spacing:-1.5px;color:var(--black);margin-bottom:28px;max-width:640px;}
+    h1 em{font-style:italic;color:var(--bg);}
+
+    .lead{font-size:clamp(17px,2vw,19px);line-height:1.75;color:var(--mid-lt);max-width:520px;margin-bottom:44px;}
+
+    .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:clamp(56px,9vh,80px);}
+    .btn{display:inline-block;background:var(--black);color:var(--white);padding:15px 34px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s;}
+    .btn:hover{background:var(--bg);}
+    .btn-out{display:inline-block;background:transparent;color:var(--black);padding:15px 30px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(0,0,0,0.2);transition:border-color 0.2s,color 0.2s;}
+    .btn-out:hover{border-color:var(--accent);color:var(--accent);}
+
+    .contact{width:100%;max-width:460px;text-align:center;}
+    .contact h2{font-family:var(--font-d);font-weight:300;font-size:clamp(26px,3.6vw,34px);letter-spacing:-1px;color:var(--black);margin-bottom:10px;}
+    .contact p.sub{font-size:16px;color:var(--mid-lt);margin-bottom:26px;}
+    .contact a.email{display:inline-block;font-family:var(--font-d);font-style:italic;font-size:clamp(20px,3vw,26px);color:var(--bg);margin-bottom:30px;border-bottom:1px solid var(--accent);padding-bottom:2px;transition:color 0.2s;}
+    .contact a.email:hover{color:var(--accent);}
+
+    form{display:flex;flex-direction:column;gap:14px;text-align:left;}
+    form input,form textarea{width:100%;font-family:var(--font-b);font-size:15px;color:var(--black);background:var(--white);border:1px solid rgba(0,0,0,0.14);padding:13px 15px;outline:none;transition:border-color 0.2s;}
+    form input:focus,form textarea:focus{border-color:var(--accent);}
+    form textarea{resize:vertical;min-height:96px;}
+    form button{background:var(--bg);color:var(--white);border:none;padding:15px;font-family:var(--font-b);font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+    form button:hover{background:#363c5e;}
+    form button:disabled{opacity:0.6;cursor:default;}
+    .cf-msg{font-size:14px;color:var(--bg);text-align:center;margin-top:4px;min-height:18px;}
+
+    .social{display:flex;gap:22px;justify-content:center;margin-top:34px;}
+    .social a{color:var(--mid-lt);transition:color 0.2s;}
+    .social a:hover{color:var(--bg);}
+
+    footer{text-align:center;padding:28px 24px;font-size:12px;letter-spacing:0.4px;color:var(--mid-lt);border-top:1px solid var(--rule);}
+  </style>
+</head>
+<body>
+
+  <main class="hero">
+    <a href="/" class="wordmark" aria-label="Simple Rabbit">Simple <em>Rabbit</em></a>
+
+    <span class="eyebrow">Websites &middot; Brands &middot; Email Marketing</span>
+    <h1>Become the practice high-paying patients <em>choose.</em></h1>
+    <p class="lead">Simple Rabbit is a boutique design studio. We help women&rsquo;s health and wellness practices and brands look as good as the care they give, and get chosen by the right clients.</p>
+
+    <div class="actions">
+      <a href="/portfolio" class="btn">See our work</a>
+      <a href="mailto:hello@simplerabbit.studio" class="btn-out">Email us</a>
+    </div>
+  </main>
+
+  <section class="featured">
+    <span class="featured-label">As featured in</span>
+    <div class="featured-row">
+      <a href="https://bergenmama.com/article/spotlight-bergen-mamas-who-can-help-you-grow-your-business" target="_blank" rel="noopener" aria-label="Bergen Mama">
+        <img src="social-proof/bergen-mama.png" alt="Bergen Mama">
+      </a>
+      <a href="https://citylifestyle.com/articles/hopping-toward-success" target="_blank" rel="noopener" aria-label="City Lifestyle">
+        <img src="social-proof/pascack-valley-city-lifestyle.png" alt="Pascack Valley City Lifestyle">
+      </a>
+      <a href="https://youtu.be/byNjrmPNz8M?si=W_EjthPGU_f1r8Xa" target="_blank" rel="noopener" aria-label="Local Biz Cast">
+        <img src="social-proof/local-biz-cast.png" alt="Local Biz Cast">
+      </a>
+    </div>
+  </section>
+
+  <section class="tst-band">
+    <div class="tst-inner">
+      <div class="tst">
+        <div class="tst-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Leann was so great to work with! She broke all the social media stuff down for me to understand exactly what I needed to do, how to do it, and why. She took something totally out of my wheelhouse, that I found frustrating, and made it super simple. I can&rsquo;t wait to work with her again on another project (she does so much more than social media stuff) and absolutely recommend you work with her, too.&rdquo;</blockquote>
+        <p class="t-name">Michelle Davidoff</p>
+        <p class="t-biz">Latchling Lactation Consultancy</p>
+      </div>
+      <div class="tst">
+        <div class="tst-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;I initially hired Leann to do a website audit. I quickly learned that she was the person to redo my website, which I felt didn&rsquo;t reflect me. She was on time, communicated, and helped me along the way to improve business operations. Would highly recommend her!&rdquo;</blockquote>
+        <p class="t-name">Dr. Lisa Milli</p>
+        <p class="t-biz">Milli Health &amp; Wellness</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-sec">
+    <section class="contact">
+      <h2>Let&rsquo;s work together.</h2>
+      <p class="sub">Tell us a little about your practice or brand and what you need.</p>
+      <a class="email" href="mailto:hello@simplerabbit.studio">hello@simplerabbit.studio</a>
+
+      <form id="cf" action="https://formspree.io/f/mojndlrg" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <button type="submit">Send message</button>
+        <p class="cf-msg" role="status"></p>
+      </form>
+
+      <div class="social">
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </section>
+  </section>
+
+  <footer>&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</footer>
+
+  <script>
+    (function(){
+      var cf=document.getElementById('cf');
+      if(!cf)return;
+      cf.addEventListener('submit',function(e){
+        e.preventDefault();
+        var b=cf.querySelector('button'), m=cf.querySelector('.cf-msg');
+        b.disabled=true; b.textContent='Sending...';
+        fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{'Accept':'application/json'}})
+          .then(function(r){
+            if(r.ok){ cf.reset(); b.textContent='Sent'; m.textContent='Thank you. We’ll be in touch soon.'; }
+            else { b.disabled=false; b.textContent='Send message'; m.textContent='Something went wrong. Please email us directly.'; }
+          })
+          .catch(function(){ b.disabled=false; b.textContent='Send message'; m.textContent='Something went wrong. Please email us directly.'; });
+      });
+    })();
+  </script>
+</body>
+</html>
