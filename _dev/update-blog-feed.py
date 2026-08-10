@@ -7,6 +7,7 @@ and updates the 'From the blog' section in index.html between marker comments.
 Run automatically by deploy.sh before each deploy.
 """
 
+import html as _html
 import re
 import sys
 from pathlib import Path
@@ -38,7 +39,9 @@ for f in sorted(BLOG_DIR.glob("*.html")):
     title_match = re.search(r'<meta property="og:title" content="([^"]+)"', html)
     if not title_match:
         continue
-    title = title_match.group(1).replace(" | Simple Rabbit", "").strip()
+    # og:title is already HTML-encoded; decode to plain text so card_html
+    # can re-escape once (prevents &amp; becoming &amp;amp;)
+    title = _html.unescape(title_match.group(1).replace(" | Simple Rabbit", "").strip())
 
     # Preview image — relative path (strip domain)
     img_match = re.search(
@@ -48,7 +51,7 @@ for f in sorted(BLOG_DIR.glob("*.html")):
 
     # Category label from article body
     cat_match = re.search(r'<span class="article-category">([^<]+)</span>', html)
-    category = cat_match.group(1).strip() if cat_match else "From the Blog"
+    category = _html.unescape(cat_match.group(1).strip()) if cat_match else "From the Blog"
 
     posts.append({"date": date, "slug": slug, "title": title, "img": img, "category": category})
 
