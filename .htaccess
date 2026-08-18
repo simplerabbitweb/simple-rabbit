@@ -42,29 +42,12 @@ RewriteRule ^website-design/?$ /functional-medicine-website-design [R=301,L]
 RewriteRule ^ongoing-support/?$ / [R=301,L]
 
 # --- Deleted blog posts → /articles ---
-RewriteRule ^blog/ai-search-visibility-service-business/?$ /articles [R=301,L]
-RewriteRule ^blog/nj-businesses-need-solid-website/?$ /articles [R=301,L]
-RewriteRule ^blog/about-page-service-business/?$ /articles [R=301,L]
+RewriteRule ^blog/(ai-search-visibility-service-business|nj-businesses-need-solid-website|about-page-service-business)/?$ /articles [R=301,L]
 
-# --- Deleted county + specialty pages → homepage ---
-RewriteRule ^web-design-bergen-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-essex-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-hudson-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-morris-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-passaic-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-sussex-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-warren-county-nj/?$ / [R=301,L]
-RewriteRule ^web-design-rockland-county-ny/?$ / [R=301,L]
-RewriteRule ^web-design-westchester-county-ny/?$ / [R=301,L]
-RewriteRule ^aesthetics-web-design/?$ / [R=301,L]
-RewriteRule ^cash-pay-psychiatry-web-design/?$ / [R=301,L]
-RewriteRule ^concierge-primary-care-web-design/?$ / [R=301,L]
-RewriteRule ^fertility-practice-web-design/?$ / [R=301,L]
-RewriteRule ^functional-medicine-web-design/?$ / [R=301,L]
-RewriteRule ^holistic-gynecology-web-design/?$ / [R=301,L]
-RewriteRule ^lactation-postnatal-web-design/?$ / [R=301,L]
-RewriteRule ^menopause-practice-web-design/?$ / [R=301,L]
-RewriteRule ^pelvic-floor-physical-therapy-web-design/?$ / [R=301,L]
+# --- Deleted county + specialty landing pages → homepage ---
+RewriteRule ^web-design-(bergen|essex|hudson|morris|passaic|sussex|warren)-county-nj/?$ / [R=301,L]
+RewriteRule ^web-design-(rockland|westchester)-county-ny/?$ / [R=301,L]
+RewriteRule ^(aesthetics|cash-pay-psychiatry|concierge-primary-care|fertility-practice|functional-medicine|holistic-gynecology|lactation-postnatal|menopause-practice|pelvic-floor-physical-therapy)-web-design/?$ / [R=301,L]
 
 # --- Force HTTPS ---
 RewriteCond %{HTTPS} off
