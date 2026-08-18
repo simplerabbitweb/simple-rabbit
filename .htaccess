@@ -36,9 +36,10 @@ RewriteRule ^acrr-tool(\.html)?/?$ /missing-marketing-checklist [R=301,L]
 RewriteRule ^the-fully-booked-practice-playbook/?$ /fully-booked [R=301,L]
 RewriteRule ^playbook/?$ /fully-booked [R=301,L]
 
-# --- Service sub-pages → /services ---
-RewriteRule ^website-design/?$ /services [R=301,L]
-RewriteRule ^ongoing-support/?$ /services [R=301,L]
+# --- /services page removed → redirect it and its former sub-page URLs ---
+RewriteRule ^services/?$ / [R=301,L]
+RewriteRule ^website-design/?$ /functional-medicine-website-design [R=301,L]
+RewriteRule ^ongoing-support/?$ / [R=301,L]
 
 # --- Deleted blog posts → /articles ---
 RewriteRule ^blog/ai-search-visibility-service-business/?$ /articles [R=301,L]
