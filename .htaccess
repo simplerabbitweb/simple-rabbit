@@ -24,7 +24,9 @@ RewriteRule ^website-audit(\.html)?/?$ /blind-spot-breakdown [R=301,L]
 
 # --- Deleted ACRR assessment page (and old checklist URL) → homepage ---
 RewriteRule ^acrr-assessment(\.html)?/?$ / [R=301,L]
-RewriteRule ^acrr-checklist/?$ / [R=301,L]
+RewriteRule ^acrr-checklist(\.html)?/?$ / [R=301,L]
+RewriteRule ^checklist-thank-you(\.html)?/?$ / [R=301,L]
+RewriteRule ^ai-front-desk(\.html)?/?$ / [R=301,L]
 
 # --- Renamed landing page: website-review → missing-marketing-checklist ---
 RewriteRule ^website-review(\.html)?/?$ /missing-marketing-checklist [R=301,L]
