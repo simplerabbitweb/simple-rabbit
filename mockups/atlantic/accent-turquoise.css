@@ -1,0 +1,23 @@
+/*
+ * Turquoise accent, proposal only. Not part of the theme yet.
+ * Loaded after main.css so it overrides the blue-only version.
+ */
+:root {
+	--aqua-deep:   #12707f;  /* safe for small text and icons on white */
+	--aqua:        #2aa5b3;  /* shapes and fills */
+	--aqua-bright: #3fbcc6;  /* only on the navy */
+	--aqua-pale:   #8edce1;  /* only on the navy */
+	--aqua-wash:   #e3f4f6;  /* tinted backgrounds */
+}
+
+/* The ocean, where it belongs: shallow water over deep. */
+.site-footer__wave-back  { fill: var(--aqua-pale);   opacity: 0.5; }
+.site-footer__wave-mid   { fill: var(--aqua);        opacity: 0.55; }
+.site-footer__wave-front { fill: var(--blue-deep);   opacity: 1; }
+
+/* Small accents. The blue still owns every button. */
+.capabilities__tick   { color: var(--aqua-deep); }
+.work__closing        { border-left-color: var(--aqua); }
+.tom__facts li::before{ background: var(--aqua); }
+.area__address        { background: var(--aqua-wash); }
+.carriers            { border-bottom-color: #cfe6ea; }

@@ -1,0 +1,909 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goodwin Decorative Finishes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+
+<style>
+/* ─────────────────────────────  TOKENS  ───────────────────────────── */
+:root{
+  --ground:      #E7E4DD;   /* dry lime */
+  --ground-2:    #DCD8CF;   /* troweled */
+  --panel:       #F1EFEA;   /* burnished */
+  --ink:         #1B1D1C;   /* kiln black */
+  --ink-2:       #3A3D3A;
+  --muted:       #6C6C63;   /* stone */
+  --accent:      #4E5F59;   /* wet lime */
+  --accent-soft: #7E9189;
+  --hairline:    rgba(27,29,28,.16);
+  --hairline-2:  rgba(27,29,28,.08);
+  --shadow:      0 24px 60px -30px rgba(27,29,28,.45);
+  --rake:        rgba(255,255,255,.55);
+
+  --display: "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --body:    "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --max: 1560px;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#151714; --ground-2:#1D201C; --panel:#20231F;
+    --ink:#EAE7DF; --ink-2:#C7C4BB; --muted:#95978C;
+    --accent:#A8BDB2; --accent-soft:#7E9189;
+    --hairline:rgba(234,231,223,.18); --hairline-2:rgba(234,231,223,.09);
+    --shadow:0 24px 60px -30px rgba(0,0,0,.8); --rake:rgba(255,255,255,.13);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#151714; --ground-2:#1D201C; --panel:#20231F;
+  --ink:#EAE7DF; --ink-2:#C7C4BB; --muted:#95978C;
+  --accent:#A8BDB2; --accent-soft:#7E9189;
+  --hairline:rgba(234,231,223,.18); --hairline-2:rgba(234,231,223,.09);
+  --shadow:0 24px 60px -30px rgba(0,0,0,.8); --rake:rgba(255,255,255,.13);
+}
+
+/* ─────────────────────────────  BASE  ───────────────────────────── */
+*,*::before,*::after{ box-sizing:border-box }
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-weight:300; font-size:1rem; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:var(--grain); opacity:.05; mix-blend-mode:multiply;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) body::before{ mix-blend-mode:screen; opacity:.06 } }
+:root[data-theme="dark"] body::before{ mix-blend-mode:screen; opacity:.06 }
+
+img{ max-width:100%; display:block }
+a{ color:inherit; text-decoration:none }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px }
+
+h1,h2,h3{ font-family:var(--display); font-weight:400; margin:0; text-wrap:balance; letter-spacing:0 }
+h1{ font-size:clamp(3.3rem,8vw,6.9rem); line-height:1 }
+h2{ font-size:clamp(2.1rem,4vw,3.6rem); line-height:1.08 }
+h3{ font-size:clamp(1.3rem,1.7vw,1.6rem); line-height:1.22 }
+p{ margin:0 0 1.1em }
+
+.label{
+  font-size:.68rem; letter-spacing:.24em; text-transform:uppercase;
+  font-weight:400; color:var(--muted);
+}
+.lede{ font-size:clamp(1.05rem,1.35vw,1.2rem); line-height:1.75; color:var(--ink-2); max-width:62ch }
+h2 + .lede, h2 + p, .label + h2{ margin-top:1.1rem }
+.wrap{ max-width:var(--max); margin-inline:auto; padding-inline:var(--gutter) }
+.rule{ height:1px; background:var(--hairline-2); border:0; margin:0 }
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:.7em;
+  padding:1.05em 2.1em; border:1px solid var(--ink);
+  font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+  transition:background .35s ease, color .35s ease, border-color .35s ease;
+}
+.btn:hover{ background:var(--ink); color:var(--ground) }
+.btn--solid{ background:var(--ink); color:var(--ground) }
+.btn--solid:hover{ background:transparent; color:var(--ink) }
+.btn--light{ border-color:rgba(255,255,255,.55); color:#fff }
+.btn--light:hover{ background:#fff; color:var(--ink); border-color:#fff }
+
+/* ─────────────────────────────  NAV  ───────────────────────────── */
+.topbar{
+  position:fixed; inset:0 0 auto 0; z-index:60;
+  display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  padding:1.15rem var(--gutter);
+  transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+}
+.topbar.is-stuck{
+  background:color-mix(in srgb, var(--ground) 92%, transparent);
+  backdrop-filter:blur(14px); padding-block:.7rem;
+  box-shadow:0 1px 0 var(--hairline-2);
+}
+.mark{ display:block; line-height:0; color:var(--ink) }
+.mark svg{
+  height:clamp(1.9rem,2.6vw,2.5rem); width:auto; display:block; fill:currentColor;
+  transition:height .4s ease;
+}
+.topbar.is-stuck .mark svg{ height:1.75rem }
+@media (max-width:560px){ .mark svg{ height:1.85rem } }
+.nav{ display:flex; align-items:center; gap:clamp(1.1rem,2.2vw,2.4rem) }
+.nav a{ font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; position:relative; padding-block:.3em }
+.nav a::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform .35s ease;
+}
+.nav a:hover::after{ transform:scaleX(1) }
+.nav .tel{ font-size:.8rem; letter-spacing:.06em; text-transform:none; color:var(--accent) }
+.navtoggle{ display:none; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase }
+
+@media (max-width:860px){
+  .navtoggle{ display:block }
+  .nav{
+    position:absolute; top:100%; right:var(--gutter); left:var(--gutter);
+    flex-direction:column; align-items:flex-start; gap:.9rem;
+    background:var(--panel); border:1px solid var(--hairline-2); padding:1.4rem;
+    display:none;
+  }
+  .nav.is-open{ display:flex }
+}
+
+/* ─────────────────────────────  HERO  ───────────────────────────── */
+.hero{
+  display:grid; grid-template-columns:1.02fr .98fr; min-height:100svh;
+  position:relative; z-index:1; padding-top:5.2rem;
+}
+.hero__type{
+  display:flex; flex-direction:column; justify-content:center;
+  padding:3.5rem var(--gutter);
+  position:relative; overflow:hidden;
+}
+/* raking light — the way a trowelled wall reads when the sun crosses it */
+.hero__type::after{
+  content:""; position:absolute; inset:-30% -10%; pointer-events:none;
+  background:linear-gradient(104deg,transparent 34%,var(--rake) 50%,transparent 66%);
+  transform:translateX(-60%); animation:rake 2.6s cubic-bezier(.2,.7,.2,1) .35s both;
+}
+@keyframes rake{ from{ transform:translateX(-75%) } to{ transform:translateX(75%) } }
+.hero h1{ margin:.5rem 0 0 }
+.hero h1 em{ font-style:italic; display:block; color:var(--accent); margin-top:.06em }
+.hero__sub{ max-width:40ch; margin-top:1.9rem; color:var(--ink-2) }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2.4rem }
+.hero__meta{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.6rem; margin-top:3.4rem;
+  padding-top:1.4rem; border-top:1px solid var(--hairline-2); max-width:44rem;
+}
+.hero__meta b{ display:block; font-family:var(--display); font-size:1.75rem; font-weight:400 }
+.hero__img{ position:relative; overflow:hidden; background:var(--ground-2) }
+.hero__img img{ width:100%; height:100%; object-fit:cover; animation:sink 1.8s cubic-bezier(.2,.7,.2,1) both }
+@keyframes sink{ from{ transform:scale(1.08) } to{ transform:scale(1) } }
+.hero__caption{
+  position:absolute; left:0; bottom:0; padding:1.1rem 1.4rem;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-2);
+}
+@media (max-width:900px){
+  .hero{ grid-template-columns:1fr; min-height:auto }
+  .hero__type{ padding-top:2.5rem }
+  .hero__img{ aspect-ratio:4/5 }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero__type::after, .hero__img img{ animation:none }
+  .hero__type::after{ display:none }
+}
+
+/* ─────────────────────────────  INTRO  ───────────────────────────── */
+.intro{ padding:clamp(4.5rem,9vw,8rem) 0; border-top:1px solid var(--hairline-2) }
+.intro__grid{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(2rem,6vw,6rem); align-items:start }
+@media (max-width:860px){ .intro__grid{ grid-template-columns:1fr } }
+
+/* ─────────────────────────────  FINISHES  ───────────────────────────── */
+.finishes{ padding-bottom:clamp(3rem,6vw,5rem) }
+.finishes__head{ display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-bottom:2.6rem }
+.finishes__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(.4rem,1vw,1rem) }
+@media (max-width:1000px){ .finishes__grid{ grid-template-columns:repeat(2,1fr) } }
+@media (max-width:560px){ .finishes__grid{ grid-template-columns:1fr } }
+.finish{ display:flex; flex-direction:column; gap:1rem }
+.finish__img{ position:relative; overflow:hidden; aspect-ratio:3/4; background:var(--ground-2) }
+.finish__img img{ width:100%; height:100%; object-fit:cover; transition:transform 1.1s cubic-bezier(.2,.7,.2,1) }
+.finish:hover .finish__img img{ transform:scale(1.05) }
+.finish__use{ font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted) }
+.finish h3{ margin-top:-.35rem }
+.finish p{ font-size:.94rem; color:var(--ink-2); margin:0 }
+.finish a{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--hairline); padding-bottom:.35em; align-self:flex-start }
+.finish a:hover{ border-color:var(--accent) }
+
+/* ─────────────────────────────  GALLERY  ───────────────────────────── */
+.work{ padding-block:clamp(4.5rem,9vw,8rem) clamp(3rem,6vw,5rem) }
+.work__head{ display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap }
+.filters{
+  display:flex; flex-wrap:wrap; gap:.4rem 1.6rem; align-items:center;
+  margin:2.2rem 0 1.4rem; padding-bottom:1.1rem; border-bottom:1px solid var(--hairline-2);
+}
+.filters button{
+  font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+  padding-block:.35em; border-bottom:1px solid transparent; transition:color .3s, border-color .3s;
+}
+.filters button:hover{ color:var(--ink) }
+.filters button[aria-pressed="true"]{ color:var(--ink); border-bottom-color:var(--ink) }
+.filters .count{ margin-left:auto; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-variant-numeric:tabular-nums }
+
+.grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:6px }
+@media (max-width:1180px){ .grid{ grid-template-columns:repeat(4,1fr) } }
+@media (max-width:860px){ .grid{ grid-template-columns:repeat(3,1fr); gap:4px } }
+@media (max-width:560px){ .grid{ grid-template-columns:repeat(2,1fr) } }
+.tile{
+  position:relative; overflow:hidden; aspect-ratio:3/4; background:var(--ground-2); margin:0;
+  opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.tile.in{ opacity:1; transform:none }
+.tile.is-hidden{ display:none }
+.tile--wide{ grid-column:span 2; aspect-ratio:3/2 }
+@media (max-width:560px){ .tile--wide{ grid-column:span 2; aspect-ratio:3/2 } }
+.tile img{ width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(.2,.7,.2,1) }
+.tile:hover img{ transform:scale(1.06) }
+.tile__veil{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end;
+  gap:.25rem; padding:1rem;
+  background:linear-gradient(to top, rgba(20,22,20,.72), rgba(20,22,20,.12) 52%, transparent);
+  color:#F3F1EC; opacity:0; transition:opacity .45s ease;
+}
+.tile:hover .tile__veil{ opacity:1 }
+/* No hover on touch, so the caption stays put there. */
+@media (hover: none){ .tile__veil{ opacity:1 } }
+.tile__veil b{ font-family:var(--display); font-weight:500; font-size:1.15rem; line-height:1.18 }
+.tile__veil span{ font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(243,241,236,.78) }
+.work__more{ display:flex; justify-content:center; margin-top:2.8rem }
+
+/* ─────────────────────────────  ABOUT  ───────────────────────────── */
+.about{ padding:clamp(4.5rem,9vw,8rem) 0; border-top:1px solid var(--hairline-2) }
+.about__grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(2rem,6vw,6rem); align-items:center }
+@media (max-width:860px){ .about__grid{ grid-template-columns:1fr } }
+.about__img{ aspect-ratio:4/5; overflow:hidden; background:var(--ground-2) }
+.about__img img{ width:100%; height:100%; object-fit:cover }
+.creds{ list-style:none; margin:2rem 0 2.4rem; padding:0; display:grid; gap:.1rem; max-width:34rem }
+.creds li{ display:flex; justify-content:space-between; gap:1.5rem; padding:.85rem 0; border-top:1px solid var(--hairline-2); font-size:.9rem }
+.creds li span:last-child{ color:var(--muted); text-align:right }
+
+/* ─────────────────────────────  WORDS  ───────────────────────────── */
+.words{ padding:clamp(4.5rem,9vw,8rem) 0; background:var(--ground-2) }
+.words__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hairline-2); margin-top:2.8rem; border-block:1px solid var(--hairline-2) }
+@media (max-width:900px){ .words__grid{ grid-template-columns:1fr } }
+.quote{ margin:0; background:var(--ground-2); padding:clamp(1.6rem,3vw,2.6rem); display:flex; flex-direction:column; gap:1.2rem }
+.quote p{ font-family:var(--display); font-size:1.22rem; line-height:1.5; margin:0 }
+.quote footer{ font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted) }
+.quote footer em{ display:block; font-style:normal; letter-spacing:.12em; margin-top:.4em; color:var(--accent) }
+
+/* ─────────────────────────────  INSTAGRAM  ───────────────────────────── */
+.ig{ padding-block:clamp(4rem,7vw,6rem) 0 }
+.ig__head h2{ font-size:clamp(1.5rem,2.7vw,2.5rem); overflow-wrap:anywhere }
+.ig__head{ display:flex; align-items:flex-end; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.8rem }
+.ig__strip{ display:grid; grid-template-columns:repeat(6,1fr); gap:2px }
+@media (max-width:760px){ .ig__strip{ grid-template-columns:repeat(3,1fr) } }
+.ig__strip a{ position:relative; aspect-ratio:1; overflow:hidden; background:var(--ground-2) }
+.ig__strip img{ width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1), opacity .4s }
+.ig__strip a:hover img{ transform:scale(1.07); opacity:.82 }
+
+/* ─────────────────────────────  CONTACT  ───────────────────────────── */
+.contact{ margin-top:clamp(4rem,8vw,7rem); background:#15170F; color:#EDEAE1; padding:clamp(3.5rem,7vw,6.5rem) 0 2.5rem }
+.contact a{ color:inherit }
+.contact__grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(2.5rem,6vw,6rem) }
+@media (max-width:860px){ .contact__grid{ grid-template-columns:1fr } }
+.contact h2{ margin-bottom:1.4rem }
+.contact h2 em{ font-style:italic; color:#B9C9BC }
+.contact .label{ color:rgba(237,234,225,.6) }
+.details{ list-style:none; padding:0; margin:2rem 0 0; display:grid; gap:1px }
+.details li{ padding:1rem 0; border-top:1px solid rgba(237,234,225,.16); display:flex; justify-content:space-between; gap:1.5rem; font-size:.92rem }
+.details li span:first-child{ font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(237,234,225,.55); padding-top:.3em }
+.form{ display:grid; gap:1.4rem }
+.field{ display:grid; gap:.5rem }
+.field label{ font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(237,234,225,.6) }
+.field input,.field select,.field textarea{
+  font:inherit; font-size:.95rem; color:#EDEAE1; background:transparent;
+  border:0; border-bottom:1px solid rgba(237,234,225,.28); padding:.6rem 0; border-radius:0;
+}
+.field select option{ color:#15170F }
+.field input:focus,.field select:focus,.field textarea:focus{ outline:0; border-bottom-color:#B9C9BC }
+.field textarea{ resize:vertical; min-height:5.5rem }
+.form .btn{ justify-self:start }
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden }
+.accred{ margin-top:2.4rem; padding-top:1.4rem; border-top:1px solid rgba(237,234,225,.16) }
+.accred svg{
+  height:1.5rem; width:auto; max-width:100%; margin-top:.9rem;
+  fill:currentColor; color:rgba(237,234,225,.8);
+}
+.colophon a{ border-bottom:1px solid rgba(237,234,225,.28); padding-bottom:.15em }
+.colophon a:hover{ border-bottom-color:rgba(237,234,225,.7) }
+.colophon{
+  margin-top:clamp(3rem,6vw,5rem); padding-top:1.4rem; border-top:1px solid rgba(237,234,225,.16);
+  display:flex; flex-wrap:wrap; gap:1rem 2rem; justify-content:space-between;
+  font-size:.7rem; letter-spacing:.12em; color:rgba(237,234,225,.55);
+}
+
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1) }
+.reveal.in{ opacity:1; transform:none }
+@media (prefers-reduced-motion: reduce){
+  .reveal,.tile{ opacity:1 !important; transform:none !important; transition:none }
+  *{ scroll-behavior:auto !important }
+}
+html{ scroll-behavior:smooth }
+</style>
+
+<header class="topbar" id="topbar">
+  <a class="mark" href="#top" aria-label="Lauren Goodwin Decorative Finishes — home">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="18 31 340 81" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Lauren Goodwin Decorative Finishes">
+  <defs>
+    <g></g>
+  </defs>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(22.876142, 77.398563)">
+      <g>
+        <path d="M 27.214844 1.96875 C 30.988281 1.96875 35.332031 -0.492188 40.824219 -5.984375 C 40.90625 -6.066406 40.988281 -6.148438 40.988281 -6.230469 C 40.988281 -6.558594 40.742188 -6.722656 40.496094 -6.722656 C 40.332031 -6.722656 40.25 -6.640625 40.167969 -6.558594 C 34.839844 -1.230469 30.742188 0.984375 27.214844 0.984375 C 23.28125 0.984375 19.183594 -0.574219 15.328125 -2.296875 C 20.003906 -4.835938 24.511719 -8.933594 28.445312 -13.035156 C 37.957031 -16.230469 44.347656 -22.625 44.347656 -25.578125 C 44.347656 -26.5625 43.777344 -27.132812 42.792969 -27.132812 C 40.25 -27.132812 36.5625 -23.117188 32.136719 -18.363281 C 30.824219 -16.886719 29.347656 -15.328125 27.871094 -13.773438 C 22.953125 -12.214844 17.214844 -11.476562 11.066406 -12.460938 L 10.984375 -12.460938 C 10.738281 -12.460938 10.574219 -12.296875 10.574219 -11.96875 C 10.574219 -11.804688 10.738281 -11.558594 10.902344 -11.558594 C 16.558594 -10.65625 21.886719 -11.148438 26.5625 -12.460938 C 22.707031 -8.691406 18.609375 -5 14.183594 -2.789062 C 7.542969 -5.820312 5.574219 -6.640625 3.359375 -6.640625 C 1.066406 -6.640625 -0.492188 -5.492188 -0.492188 -3.769531 C -0.492188 -1.3125 2.214844 0.246094 6.230469 0.246094 C 8.933594 0.246094 11.640625 -0.492188 14.183594 -1.804688 C 18.363281 0.0820312 22.871094 1.96875 27.214844 1.96875 Z M 29.757812 -14.429688 C 30.824219 -15.574219 31.890625 -16.640625 32.789062 -17.707031 C 37.21875 -22.460938 40.660156 -26.152344 42.792969 -26.152344 C 43.285156 -26.152344 43.449219 -25.988281 43.449219 -25.578125 C 43.449219 -23.035156 38.039062 -17.625 29.757812 -14.429688 Z M 6.230469 -0.738281 C 2.707031 -0.738281 0.492188 -1.886719 0.492188 -3.769531 C 0.492188 -4.917969 1.558594 -5.65625 3.359375 -5.65625 C 5.246094 -5.65625 7.296875 -4.917969 13.117188 -2.296875 C 10.820312 -1.3125 8.527344 -0.738281 6.230469 -0.738281 Z M 6.230469 -0.738281 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(61.89106, 77.398563)">
+      <g>
+        <path d="M 11.066406 0.0820312 C 13.9375 0.0820312 21.476562 -3.03125 26.070312 -6.3125 C 26.152344 -6.394531 26.234375 -6.558594 26.234375 -6.722656 C 26.234375 -6.96875 26.070312 -7.132812 25.824219 -7.132812 C 25.660156 -7.132812 25.578125 -7.132812 25.496094 -7.050781 C 20.902344 -3.605469 13.609375 -0.902344 11.066406 -0.902344 C 9.671875 -0.902344 9.015625 -1.3125 9.015625 -2.378906 C 9.015625 -3.933594 10.328125 -5.902344 11.3125 -7.296875 C 11.886719 -8.117188 12.214844 -8.609375 12.214844 -8.933594 C 12.214844 -9.261719 11.96875 -9.507812 11.640625 -9.507812 C 11.230469 -9.507812 10.246094 -8.855469 8.527344 -7.542969 C 8.035156 -8.445312 7.460938 -8.773438 6.230469 -8.773438 C 3.441406 -8.773438 -3.933594 -4.179688 -3.933594 -1.394531 C -3.933594 -0.574219 -3.359375 -0.0820312 -2.460938 -0.0820312 C -0.164062 -0.0820312 4.917969 -3.851562 8.363281 -6.3125 C 9.015625 -6.804688 9.589844 -7.214844 10 -7.460938 C 10.164062 -7.625 10.410156 -7.542969 10.164062 -7.296875 C 9.179688 -5.820312 8.117188 -4.015625 8.117188 -2.378906 C 8.117188 -0.738281 9.097656 0.0820312 11.066406 0.0820312 Z M -2.460938 -1.066406 C -2.871094 -1.066406 -3.03125 -1.148438 -3.03125 -1.394531 C -3.03125 -3.359375 3.441406 -7.871094 6.230469 -7.871094 C 7.132812 -7.871094 7.378906 -7.707031 7.707031 -7.050781 C 4.34375 -4.507812 -0.492188 -1.066406 -2.460938 -1.066406 Z M -2.460938 -1.066406 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(85.824576, 77.398563)">
+      <g>
+        <path d="M 9.671875 0 C 12.542969 0 20.496094 -3.523438 24.675781 -6.394531 C 24.757812 -6.476562 24.839844 -6.558594 24.839844 -6.722656 C 24.839844 -6.96875 24.675781 -7.214844 24.429688 -7.214844 C 24.265625 -7.214844 24.183594 -7.214844 24.101562 -7.132812 C 19.839844 -4.179688 12.214844 -0.902344 9.671875 -0.902344 C 8.199219 -0.902344 7.625 -1.394531 7.625 -2.460938 C 7.625 -4.015625 9.425781 -6.066406 10.65625 -7.460938 C 11.558594 -8.527344 12.296875 -9.589844 11.148438 -9.589844 C 10.65625 -9.589844 9.589844 -8.691406 6.96875 -6.558594 C 2.789062 -3.195312 0.410156 -1.558594 -0.574219 -1.558594 C -0.738281 -1.558594 -0.820312 -1.722656 -0.820312 -1.96875 C -0.820312 -3.03125 0.820312 -5.246094 3.605469 -7.707031 C 3.6875 -7.789062 3.769531 -7.871094 3.769531 -8.035156 C 3.769531 -8.28125 3.523438 -8.527344 3.277344 -8.527344 C 3.113281 -8.527344 3.03125 -8.445312 2.953125 -8.363281 C -0.0820312 -5.65625 -1.804688 -3.359375 -1.804688 -1.886719 C -1.804688 -1.148438 -1.3125 -0.65625 -0.574219 -0.65625 C 0.738281 -0.65625 3.113281 -2.214844 7.542969 -5.820312 C 8.527344 -6.558594 8.445312 -6.394531 7.871094 -5.574219 C 7.214844 -4.507812 6.722656 -3.441406 6.722656 -2.460938 C 6.722656 -0.820312 7.707031 0 9.671875 0 Z M 9.671875 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(108.364711, 77.398563)">
+      <g>
+        <path d="M 1.066406 8.855469 C 5.984375 8.855469 20.25 -0.410156 28.445312 -6.3125 C 28.527344 -6.394531 28.609375 -6.558594 28.609375 -6.722656 C 28.609375 -6.96875 28.445312 -7.132812 28.117188 -7.132812 C 28.035156 -7.132812 27.953125 -7.132812 27.871094 -7.050781 C 19.757812 -1.148438 5.738281 7.871094 1.066406 7.871094 C 0.0820312 7.871094 -0.246094 7.542969 -0.246094 6.722656 C -0.246094 4.34375 3.933594 0.246094 7.953125 -3.6875 C 11.476562 -7.214844 15 -10.65625 15 -12.625 C 15 -13.609375 13.855469 -14.265625 12.460938 -15.574219 C 15.574219 -18.9375 17.871094 -21.96875 17.871094 -23.117188 C 17.871094 -23.691406 17.542969 -24.101562 16.96875 -24.101562 C 14.429688 -24.101562 8.691406 -19.757812 8.691406 -17.707031 C 8.691406 -16.96875 9.507812 -16.394531 10.984375 -15.410156 C 8.28125 -12.542969 4.835938 -9.425781 1.558594 -7.050781 C 1.476562 -6.96875 1.394531 -6.804688 1.394531 -6.722656 C 1.394531 -6.394531 1.558594 -6.230469 1.804688 -6.230469 C 1.96875 -6.230469 2.050781 -6.230469 2.132812 -6.3125 C 5.082031 -8.445312 8.773438 -11.722656 11.804688 -14.917969 C 13.445312 -13.773438 14.019531 -13.199219 14.019531 -12.625 C 14.019531 -11.066406 10.820312 -7.871094 7.296875 -4.425781 C 3.277344 -0.410156 -1.148438 3.933594 -1.148438 6.722656 C -1.148438 8.035156 -0.492188 8.855469 1.066406 8.855469 Z M 11.640625 -16.066406 C 10.164062 -17.050781 9.671875 -17.542969 9.671875 -17.707031 C 9.671875 -19.101562 14.347656 -22.625 16.558594 -23.035156 C 16.804688 -23.117188 16.96875 -22.953125 16.886719 -22.707031 C 16.3125 -21.3125 13.363281 -17.871094 11.640625 -16.066406 Z M 11.640625 -16.066406 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(134.675195, 77.398563)">
+      <g>
+        <path d="M 2.707031 0.246094 C 5.246094 0.246094 13.199219 -2.050781 18.9375 -6.3125 C 19.101562 -6.394531 19.183594 -6.558594 19.183594 -6.722656 C 19.183594 -6.96875 18.9375 -7.132812 18.691406 -7.132812 C 18.609375 -7.132812 18.527344 -7.132812 18.445312 -7.050781 C 12.789062 -2.953125 5.082031 -0.738281 2.707031 -0.738281 C 0.820312 -0.738281 -0.164062 -1.230469 -0.164062 -2.296875 C -0.164062 -3.359375 0.65625 -4.671875 1.722656 -5.820312 C 2.214844 -5.574219 2.871094 -5.492188 3.769531 -5.492188 C 5.246094 -5.492188 7.132812 -6.722656 7.132812 -7.789062 C 7.132812 -8.609375 6.558594 -9.097656 5.65625 -9.097656 C 2.953125 -9.097656 -1.148438 -5 -1.148438 -2.296875 C -1.148438 -0.65625 0.328125 0.246094 2.707031 0.246094 Z M 3.769531 -6.394531 C 3.195312 -6.394531 2.789062 -6.476562 2.460938 -6.558594 C 3.523438 -7.460938 4.671875 -8.117188 5.65625 -8.117188 C 6.066406 -8.117188 6.230469 -8.035156 6.230469 -7.789062 C 6.230469 -7.296875 4.671875 -6.394531 3.769531 -6.394531 Z M 3.769531 -6.394531 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(151.477833, 77.398563)">
+      <g>
+        <path d="M -2.296875 0 C -1.96875 0 -1.230469 -0.65625 -0.246094 -1.3125 C 2.953125 -3.605469 9.425781 -8.363281 12.050781 -8.363281 C 12.378906 -8.363281 12.460938 -8.117188 12.460938 -7.953125 C 12.460938 -7.542969 12.132812 -6.230469 11.804688 -5.082031 C 11.558594 -4.015625 11.3125 -2.953125 11.3125 -2.460938 C 11.3125 -1.476562 12.050781 -0.902344 13.199219 -0.902344 C 16.148438 -0.902344 21.3125 -3.03125 26.316406 -6.3125 C 26.480469 -6.394531 26.5625 -6.558594 26.5625 -6.722656 C 26.5625 -6.96875 26.316406 -7.132812 26.070312 -7.132812 L 25.824219 -7.132812 C 20.902344 -3.851562 15.902344 -1.804688 13.199219 -1.804688 C 12.542969 -1.804688 12.296875 -2.050781 12.296875 -2.460938 C 12.296875 -2.871094 12.460938 -3.769531 12.789062 -4.835938 C 13.035156 -6.066406 13.363281 -7.378906 13.363281 -8.117188 C 13.363281 -8.855469 12.871094 -9.261719 12.050781 -9.261719 C 9.917969 -9.261719 6.066406 -7.050781 -0.410156 -2.378906 C -0.820312 -2.132812 -0.902344 -2.460938 -0.738281 -2.707031 C 1.066406 -5.246094 4.589844 -9.34375 7.871094 -11.804688 C 7.953125 -11.886719 8.035156 -12.050781 8.035156 -12.214844 C 8.035156 -12.460938 7.871094 -12.625 7.625 -12.625 C 7.460938 -12.625 7.378906 -12.625 7.296875 -12.542969 C 2.542969 -8.933594 -2.707031 -1.96875 -2.953125 -0.902344 C -3.03125 -0.410156 -2.789062 0 -2.296875 0 Z M -2.296875 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(175.657246, 77.398563)">
+      <g></g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(193.771309, 77.398563)">
+      <g>
+        <path d="M -1.148438 18.199219 C 4.671875 18.199219 13.855469 10.246094 20.738281 1.476562 C 27.625 -1.96875 33.9375 -5 35.988281 -6.3125 C 36.152344 -6.394531 36.234375 -6.558594 36.234375 -6.722656 C 36.234375 -6.96875 35.988281 -7.132812 35.742188 -7.132812 L 35.496094 -7.132812 C 34.019531 -6.148438 30.414062 -4.34375 25.90625 -2.132812 L 21.96875 -0.164062 C 24.019531 -2.871094 25.742188 -5.65625 27.132812 -8.28125 C 27.214844 -8.527344 27.214844 -8.773438 26.96875 -8.933594 C 26.722656 -9.179688 26.5625 -9.179688 26.316406 -9.015625 C 25.414062 -8.527344 24.511719 -7.871094 23.527344 -7.132812 C 18.363281 -3.6875 11.230469 1.148438 5.328125 1.148438 C 2.214844 1.148438 0.984375 -0.246094 1.476562 -2.953125 C 2.871094 -10.738281 16.96875 -26.722656 28.28125 -26.722656 C 30.824219 -26.722656 32.136719 -25.742188 32.136719 -23.609375 C 32.136719 -21.886719 30.824219 -19.921875 28.035156 -17.132812 C 27.953125 -17.050781 27.871094 -16.886719 27.871094 -16.804688 C 27.871094 -16.558594 28.117188 -16.3125 28.363281 -16.3125 C 28.445312 -16.3125 28.609375 -16.394531 28.691406 -16.476562 C 31.726562 -19.429688 33.035156 -21.640625 33.035156 -23.609375 C 33.035156 -26.234375 31.316406 -27.707031 28.28125 -27.707031 C 16.558594 -27.707031 1.96875 -11.148438 0.492188 -3.113281 C -0.0820312 0.246094 1.640625 2.050781 5.328125 2.050781 C 11.558594 2.050781 18.855469 -2.871094 24.019531 -6.394531 L 24.839844 -6.96875 C 25.085938 -7.132812 25.332031 -6.96875 25.167969 -6.640625 C 23.773438 -4.179688 21.96875 -1.722656 20.167969 0.738281 C 3.523438 9.179688 -3.523438 13.527344 -3.523438 16.230469 C -3.523438 17.296875 -2.707031 18.199219 -1.148438 18.199219 Z M -1.148438 17.296875 C -2.214844 17.296875 -2.542969 16.804688 -2.542969 16.230469 C -2.542969 14.265625 3.851562 10.164062 18.691406 2.542969 C 12.132812 10.410156 4.015625 17.296875 -1.148438 17.296875 Z M -1.148438 17.296875 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(227.704452, 77.398563)">
+      <g>
+        <path d="M -0.492188 0.65625 C 2.132812 0.65625 4.671875 -3.769531 4.179688 -6.96875 C 4.179688 -7.132812 4.261719 -7.296875 4.425781 -7.132812 C 9.179688 -4.179688 15.492188 -3.851562 19.757812 -6.3125 C 19.921875 -6.394531 20.085938 -6.558594 20.085938 -6.722656 C 20.085938 -6.96875 19.839844 -7.132812 19.59375 -7.132812 L 19.347656 -7.132812 C 15.410156 -4.835938 9.671875 -5.164062 5.246094 -7.789062 C 5.082031 -7.871094 5.082031 -7.953125 5.246094 -8.035156 C 5.328125 -8.117188 5.492188 -8.117188 5.574219 -8.199219 C 5.820312 -8.199219 5.902344 -8.363281 5.902344 -8.609375 C 5.902344 -8.855469 5.738281 -9.097656 5.492188 -9.097656 C 5.410156 -9.097656 5.328125 -9.097656 5.328125 -9.015625 C 4.917969 -8.933594 4.507812 -8.773438 4.179688 -8.609375 C 4.015625 -8.527344 4.015625 -8.527344 3.851562 -8.609375 C 3.523438 -8.691406 3.195312 -8.445312 3.03125 -8.117188 C 3.03125 -8.035156 2.953125 -8.035156 2.953125 -7.953125 C 0.0820312 -6.230469 -2.050781 -3.523438 -2.050781 -1.230469 C -2.050781 -0.0820312 -1.476562 0.65625 -0.492188 0.65625 Z M -0.492188 -0.246094 C -0.902344 -0.246094 -1.148438 -0.574219 -1.148438 -1.230469 C -1.148438 -3.113281 0.738281 -5.492188 3.277344 -7.050781 C 3.6875 -4.425781 1.476562 -0.246094 -0.492188 -0.246094 Z M -0.492188 -0.246094 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(245.408706, 77.398563)">
+      <g>
+        <path d="M -0.492188 0.65625 C 2.132812 0.65625 4.671875 -3.769531 4.179688 -6.96875 C 4.179688 -7.132812 4.261719 -7.296875 4.425781 -7.132812 C 9.179688 -4.179688 15.492188 -3.851562 19.757812 -6.3125 C 19.921875 -6.394531 20.085938 -6.558594 20.085938 -6.722656 C 20.085938 -6.96875 19.839844 -7.132812 19.59375 -7.132812 L 19.347656 -7.132812 C 15.410156 -4.835938 9.671875 -5.164062 5.246094 -7.789062 C 5.082031 -7.871094 5.082031 -7.953125 5.246094 -8.035156 C 5.328125 -8.117188 5.492188 -8.117188 5.574219 -8.199219 C 5.820312 -8.199219 5.902344 -8.363281 5.902344 -8.609375 C 5.902344 -8.855469 5.738281 -9.097656 5.492188 -9.097656 C 5.410156 -9.097656 5.328125 -9.097656 5.328125 -9.015625 C 4.917969 -8.933594 4.507812 -8.773438 4.179688 -8.609375 C 4.015625 -8.527344 4.015625 -8.527344 3.851562 -8.609375 C 3.523438 -8.691406 3.195312 -8.445312 3.03125 -8.117188 C 3.03125 -8.035156 2.953125 -8.035156 2.953125 -7.953125 C 0.0820312 -6.230469 -2.050781 -3.523438 -2.050781 -1.230469 C -2.050781 -0.0820312 -1.476562 0.65625 -0.492188 0.65625 Z M -0.492188 -0.246094 C -0.902344 -0.246094 -1.148438 -0.574219 -1.148438 -1.230469 C -1.148438 -3.113281 0.738281 -5.492188 3.277344 -7.050781 C 3.6875 -4.425781 1.476562 -0.246094 -0.492188 -0.246094 Z M -0.492188 -0.246094 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(263.112947, 77.398563)">
+      <g>
+        <path d="M 8.28125 0.0820312 C 11.394531 0.0820312 18.691406 -2.460938 24.265625 -6.3125 C 24.429688 -6.394531 24.511719 -6.558594 24.511719 -6.722656 C 24.511719 -6.96875 24.347656 -7.214844 24.019531 -7.214844 C 23.9375 -7.214844 23.855469 -7.132812 23.773438 -7.132812 C 18.363281 -3.359375 11.230469 -0.902344 8.28125 -0.902344 C 6.886719 -0.902344 6.230469 -1.3125 6.230469 -2.378906 C 6.230469 -3.113281 7.050781 -4.589844 8.28125 -6.640625 C 8.28125 -6.640625 8.28125 -6.640625 8.28125 -6.558594 C 8.28125 -6.3125 8.527344 -6.066406 8.773438 -6.066406 C 9.015625 -6.066406 9.179688 -6.230469 9.261719 -6.476562 C 9.261719 -6.96875 9.179688 -7.378906 9.015625 -7.707031 L 10.574219 -10 C 22.789062 -21.3125 39.59375 -38.855469 39.59375 -40.988281 C 39.59375 -41.644531 39.183594 -42.054688 38.445312 -42.054688 C 35.496094 -42.054688 18.609375 -22.789062 10.164062 -10.902344 C 9.34375 -10.164062 8.609375 -9.507812 7.871094 -8.773438 C 7.542969 -9.015625 7.050781 -9.097656 6.558594 -9.097656 C 2.871094 -9.097656 -2.871094 -4.261719 -2.871094 -1.230469 C -2.871094 -0.492188 -2.378906 -0.0820312 -1.804688 -0.0820312 C -0.410156 -0.0820312 2.625 -2.707031 6.886719 -6.640625 C 7.214844 -6.886719 7.378906 -6.722656 7.132812 -6.394531 C 5.984375 -4.507812 5.328125 -3.113281 5.328125 -2.378906 C 5.328125 -0.738281 6.394531 0.0820312 8.28125 0.0820312 Z M 13.855469 -14.429688 C 22.707031 -25.988281 36.234375 -41.152344 38.445312 -41.152344 C 38.691406 -41.152344 38.691406 -41.070312 38.691406 -40.988281 C 38.691406 -39.429688 25.25 -25.414062 13.855469 -14.429688 Z M -1.640625 -1.066406 C -1.722656 -1.066406 -1.886719 -1.066406 -1.886719 -1.3125 C -1.886719 -3.769531 3.441406 -8.117188 6.558594 -8.117188 L 7.132812 -8.117188 C 2.542969 -3.851562 -0.820312 -1.066406 -1.640625 -1.066406 Z M -1.640625 -1.066406 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(285.325227, 77.398563)">
+      <g>
+        <path d="M -3.851562 4.015625 C -1.804688 4.015625 2.789062 0.738281 5.65625 -1.886719 C 5.902344 -2.132812 6.066406 -1.96875 5.984375 -1.722656 C 5.738281 -0.984375 5.492188 -0.0820312 5.492188 0.574219 C 5.492188 1.558594 5.984375 2.132812 6.886719 2.132812 C 9.507812 2.132812 14.265625 -3.113281 15.492188 -6.886719 C 15.574219 -7.050781 15.65625 -7.050781 15.738281 -6.96875 C 17.214844 -6.148438 20.003906 -4.671875 23.527344 -4.671875 C 26.5625 -4.671875 28.363281 -5.164062 30.414062 -6.3125 C 30.496094 -6.394531 30.660156 -6.558594 30.660156 -6.722656 C 30.660156 -6.96875 30.414062 -7.132812 30.167969 -7.132812 L 29.921875 -7.132812 C 28.035156 -5.984375 26.398438 -5.65625 23.527344 -5.65625 C 20.003906 -5.65625 17.214844 -7.214844 15.902344 -8.035156 C 15.820312 -8.035156 15.820312 -8.117188 15.820312 -8.28125 L 15.820312 -8.609375 C 15.820312 -9.425781 15.574219 -10 14.917969 -10 C 14.347656 -10 14.019531 -9.671875 14.019531 -9.097656 C 14.019531 -8.691406 14.265625 -8.117188 14.675781 -7.789062 C 14.757812 -7.707031 14.757812 -7.625 14.757812 -7.542969 C 13.773438 -4.179688 9.179688 1.230469 6.886719 1.230469 C 6.558594 1.230469 6.476562 0.902344 6.476562 0.574219 C 6.476562 -0.492188 7.132812 -2.542969 7.953125 -4.015625 C 8.117188 -4.261719 8.035156 -4.507812 7.789062 -4.671875 C 7.542969 -4.835938 7.296875 -4.835938 7.132812 -4.589844 C 5.164062 -2.378906 -1.476562 3.113281 -3.851562 3.113281 C -4.015625 3.113281 -4.179688 3.03125 -4.179688 2.789062 C -4.179688 0.65625 1.148438 -6.066406 4.507812 -8.199219 C 4.671875 -8.28125 4.753906 -8.445312 4.753906 -8.609375 C 4.753906 -8.855469 4.507812 -9.097656 4.261719 -9.097656 C 4.179688 -9.097656 4.097656 -9.015625 4.015625 -9.015625 C 0.65625 -6.96875 -5.164062 0.164062 -5.164062 2.871094 C -5.164062 3.605469 -4.671875 4.015625 -3.851562 4.015625 Z M -3.851562 4.015625 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(313.602857, 77.398563)">
+      <g>
+        <path d="M 5.902344 -10.574219 C 6.066406 -10.574219 6.148438 -10.574219 6.230469 -10.738281 L 6.558594 -11.066406 C 6.804688 -11.476562 7.132812 -11.886719 7.296875 -12.050781 C 7.378906 -12.132812 7.378906 -12.296875 7.378906 -12.378906 C 7.378906 -12.625 7.214844 -12.871094 6.96875 -12.871094 C 6.804688 -12.871094 6.640625 -12.789062 6.558594 -12.707031 C 6.394531 -12.460938 6.066406 -11.96875 5.820312 -11.640625 L 5.492188 -11.3125 C 5.410156 -11.230469 5.410156 -11.148438 5.410156 -10.984375 C 5.410156 -10.738281 5.65625 -10.574219 5.902344 -10.574219 Z M 0.65625 0.492188 C 3.441406 0.492188 12.050781 -3.523438 16.476562 -6.3125 C 16.558594 -6.394531 16.640625 -6.558594 16.640625 -6.722656 C 16.640625 -6.96875 16.476562 -7.132812 16.148438 -7.132812 L 15.902344 -7.132812 C 11.640625 -4.34375 3.195312 -0.492188 0.65625 -0.492188 C -0.246094 -0.492188 -0.65625 -0.820312 -0.65625 -1.640625 C -0.65625 -2.789062 1.3125 -5.574219 4.097656 -8.445312 C 4.179688 -8.527344 4.261719 -8.609375 4.261719 -8.773438 C 4.261719 -9.015625 4.015625 -9.179688 3.769531 -9.179688 C 3.605469 -9.179688 3.523438 -9.179688 3.441406 -9.097656 C 0.410156 -5.984375 -1.558594 -3.195312 -1.558594 -1.640625 C -1.558594 -0.328125 -0.738281 0.492188 0.65625 0.492188 Z M 0.65625 0.492188 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(327.946556, 77.398563)">
+      <g>
+        <path d="M -2.296875 0 C -1.96875 0 -1.230469 -0.65625 -0.246094 -1.3125 C 2.953125 -3.605469 9.425781 -8.363281 12.050781 -8.363281 C 12.378906 -8.363281 12.460938 -8.117188 12.460938 -7.953125 C 12.460938 -7.542969 12.132812 -6.230469 11.804688 -5.082031 C 11.558594 -4.015625 11.3125 -2.953125 11.3125 -2.460938 C 11.3125 -1.476562 12.050781 -0.902344 13.199219 -0.902344 C 16.148438 -0.902344 21.3125 -3.03125 26.316406 -6.3125 C 26.480469 -6.394531 26.5625 -6.558594 26.5625 -6.722656 C 26.5625 -6.96875 26.316406 -7.132812 26.070312 -7.132812 L 25.824219 -7.132812 C 20.902344 -3.851562 15.902344 -1.804688 13.199219 -1.804688 C 12.542969 -1.804688 12.296875 -2.050781 12.296875 -2.460938 C 12.296875 -2.871094 12.460938 -3.769531 12.789062 -4.835938 C 13.035156 -6.066406 13.363281 -7.378906 13.363281 -8.117188 C 13.363281 -8.855469 12.871094 -9.261719 12.050781 -9.261719 C 9.917969 -9.261719 6.066406 -7.050781 -0.410156 -2.378906 C -0.820312 -2.132812 -0.902344 -2.460938 -0.738281 -2.707031 C 1.066406 -5.246094 4.589844 -9.34375 7.871094 -11.804688 C 7.953125 -11.886719 8.035156 -12.050781 8.035156 -12.214844 C 8.035156 -12.460938 7.871094 -12.625 7.625 -12.625 C 7.460938 -12.625 7.378906 -12.625 7.296875 -12.542969 C 2.542969 -8.933594 -2.707031 -1.96875 -2.953125 -0.902344 C -3.03125 -0.410156 -2.789062 0 -2.296875 0 Z M -2.296875 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(112.350261, 107.762411)">
+      <g>
+        <path d="M 6.476562 -3.652344 C 6.476562 -4.179688 6.371094 -4.664062 6.175781 -5.113281 C 5.984375 -5.566406 5.714844 -5.953125 5.382812 -6.273438 C 5.039062 -6.597656 4.640625 -6.84375 4.191406 -7.027344 C 3.726562 -7.207031 3.234375 -7.304688 2.71875 -7.304688 L 0.804688 -7.304688 L 0.804688 0 L 2.71875 0 C 3.234375 0 3.726562 -0.0859375 4.191406 -0.269531 C 4.640625 -0.453125 5.039062 -0.710938 5.382812 -1.03125 C 5.714844 -1.355469 5.984375 -1.730469 6.175781 -2.179688 C 6.371094 -2.632812 6.476562 -3.117188 6.476562 -3.652344 Z M 5.746094 -3.652344 C 5.746094 -2.816406 5.445312 -2.117188 4.867188 -1.570312 C 4.285156 -1.019531 3.578125 -0.753906 2.738281 -0.753906 L 1.558594 -0.753906 L 1.558594 -6.554688 L 2.738281 -6.554688 C 3.578125 -6.554688 4.285156 -6.273438 4.867188 -5.738281 C 5.445312 -5.179688 5.746094 -4.480469 5.746094 -3.652344 Z M 5.746094 -3.652344 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(122.458422, 107.762411)">
+      <g>
+        <path d="M 5.144531 0 L 5.144531 -0.699219 L 1.558594 -0.699219 L 1.558594 -3.296875 L 5.039062 -3.296875 L 5.039062 -4.007812 L 1.558594 -4.007812 L 1.558594 -6.605469 L 5.144531 -6.605469 L 5.144531 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 5.144531 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(131.557091, 107.762411)">
+      <g>
+        <path d="M 7.507812 -2.234375 L 6.683594 -2.234375 C 6.425781 -1.761719 6.070312 -1.375 5.617188 -1.097656 C 5.167969 -0.804688 4.664062 -0.667969 4.125 -0.667969 C 3.320312 -0.667969 2.632812 -0.957031 2.0625 -1.558594 C 1.503906 -2.128906 1.234375 -2.824219 1.234375 -3.640625 C 1.234375 -4.457031 1.503906 -5.15625 2.0625 -5.738281 C 2.320312 -6.003906 2.632812 -6.21875 2.988281 -6.382812 C 3.332031 -6.542969 3.675781 -6.628906 4.019531 -6.628906 C 4.351562 -6.628906 4.640625 -6.585938 4.898438 -6.511719 C 5.683594 -6.273438 6.273438 -5.800781 6.671875 -5.082031 L 7.5 -5.082031 C 7.21875 -5.769531 6.777344 -6.328125 6.167969 -6.757812 C 5.542969 -7.1875 4.867188 -7.402344 4.125 -7.402344 C 3.105469 -7.402344 2.246094 -7.027344 1.535156 -6.285156 C 1.203125 -5.941406 0.945312 -5.53125 0.761719 -5.082031 C 0.570312 -4.628906 0.484375 -4.148438 0.484375 -3.640625 C 0.484375 -2.609375 0.828125 -1.742188 1.535156 -1.011719 C 2.246094 -0.257812 3.105469 0.109375 4.125 0.109375 C 4.867188 0.109375 5.542969 -0.109375 6.175781 -0.539062 C 6.789062 -0.96875 7.230469 -1.527344 7.507812 -2.234375 Z M 7.507812 -2.234375 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(142.535125, 107.762411)">
+      <g>
+        <path d="M 7.242188 -3.675781 C 7.242188 -2.835938 6.941406 -2.128906 6.359375 -1.546875 C 5.769531 -0.957031 5.058594 -0.667969 4.234375 -0.667969 C 3.40625 -0.667969 2.695312 -0.957031 2.117188 -1.546875 C 1.527344 -2.128906 1.234375 -2.835938 1.234375 -3.675781 C 1.234375 -4.492188 1.527344 -5.199219 2.117188 -5.789062 C 2.695312 -6.371094 3.40625 -6.671875 4.234375 -6.671875 C 5.058594 -6.671875 5.769531 -6.371094 6.359375 -5.789062 C 6.941406 -5.199219 7.242188 -4.492188 7.242188 -3.675781 Z M 7.992188 -3.675781 C 7.992188 -4.191406 7.886719 -4.671875 7.691406 -5.136719 C 7.5 -5.585938 7.230469 -5.984375 6.886719 -6.328125 C 6.542969 -6.660156 6.144531 -6.929688 5.695312 -7.121094 C 5.230469 -7.316406 4.75 -7.421875 4.234375 -7.421875 C 3.71875 -7.421875 3.222656 -7.316406 2.773438 -7.121094 C 2.320312 -6.929688 1.921875 -6.660156 1.578125 -6.328125 C 1.234375 -5.984375 0.96875 -5.585938 0.773438 -5.136719 C 0.582031 -4.671875 0.484375 -4.191406 0.484375 -3.675781 C 0.484375 -3.160156 0.582031 -2.664062 0.773438 -2.214844 C 0.96875 -1.75 1.234375 -1.355469 1.578125 -1.011719 C 1.921875 -0.667969 2.320312 -0.398438 2.773438 -0.203125 C 3.222656 -0.0117188 3.71875 0.0859375 4.234375 0.0859375 C 4.75 0.0859375 5.230469 -0.0117188 5.695312 -0.203125 C 6.144531 -0.398438 6.542969 -0.667969 6.886719 -1.011719 C 7.230469 -1.355469 7.5 -1.75 7.691406 -2.214844 C 7.886719 -2.664062 7.992188 -3.160156 7.992188 -3.675781 Z M 7.992188 -3.675781 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(154.157512, 107.762411)">
+      <g>
+        <path d="M 1.558594 -3.609375 L 1.558594 -6.585938 L 3.253906 -6.585938 C 3.695312 -6.585938 4.050781 -6.445312 4.320312 -6.167969 C 4.578125 -5.886719 4.714844 -5.542969 4.714844 -5.113281 C 4.714844 -4.683594 4.578125 -4.328125 4.296875 -4.039062 C 4.019531 -3.75 3.675781 -3.609375 3.253906 -3.609375 Z M 5.46875 -5.101562 C 5.46875 -5.726562 5.230469 -6.261719 4.78125 -6.683594 C 4.339844 -7.089844 3.792969 -7.304688 3.148438 -7.304688 L 0.804688 -7.304688 L 0.804688 0 L 1.558594 0 L 1.558594 -2.890625 L 2.429688 -2.890625 L 4.578125 0 L 5.585938 0 L 3.332031 -2.890625 C 3.898438 -2.921875 4.382812 -3.125 4.78125 -3.503906 C 5.230469 -3.921875 5.46875 -4.457031 5.46875 -5.101562 Z M 5.46875 -5.101562 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(163.148799, 107.762411)">
+      <g>
+        <path d="M 1.988281 -2.6875 L 3.320312 -6.046875 L 4.640625 -2.6875 Z M 6.519531 0 L 3.320312 -7.808594 L 0.109375 0 L 0.925781 0 L 1.707031 -1.988281 L 4.921875 -1.988281 L 5.703125 0 Z M 6.519531 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(172.924044, 107.762411)">
+      <g>
+        <path d="M 0.214844 -6.628906 L 1.988281 -6.628906 L 1.988281 -0.0234375 L 2.738281 -0.0234375 L 2.738281 -6.628906 L 4.511719 -6.628906 L 4.511719 -7.328125 L 0.214844 -7.328125 Z M 0.214844 -6.628906 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(180.798444, 107.762411)">
+      <g>
+        <path d="M 1.558594 0 L 1.558594 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 1.558594 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(186.310224, 107.762411)">
+      <g>
+        <path d="M 3.425781 0.441406 L 6.734375 -7.304688 L 5.917969 -7.304688 L 3.425781 -1.417969 L 0.925781 -7.304688 L 0.109375 -7.304688 Z M 3.425781 0.441406 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(196.300257, 107.762411)">
+      <g>
+        <path d="M 5.144531 0 L 5.144531 -0.699219 L 1.558594 -0.699219 L 1.558594 -3.296875 L 5.039062 -3.296875 L 5.039062 -4.007812 L 1.558594 -4.007812 L 1.558594 -6.605469 L 5.144531 -6.605469 L 5.144531 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 5.144531 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(205.398926, 107.762411)">
+      <g></g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(211.447663, 107.762411)">
+      <g>
+        <path d="M 5.144531 -6.605469 L 5.144531 -7.304688 L 0.804688 -7.304688 L 0.804688 0 L 1.558594 0 L 1.558594 -3.296875 L 5.039062 -3.296875 L 5.039062 -4.007812 L 1.558594 -4.007812 L 1.558594 -6.605469 Z M 5.144531 -6.605469 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(219.955683, 107.762411)">
+      <g>
+        <path d="M 1.558594 0 L 1.558594 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 1.558594 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(225.467462, 107.762411)">
+      <g>
+        <path d="M 1.558594 -5.382812 L 5.660156 0.453125 L 5.660156 -7.304688 L 4.910156 -7.304688 L 4.910156 -1.933594 L 0.804688 -7.765625 L 0.804688 0 L 1.558594 0 Z M 1.558594 -5.382812 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(235.081622, 107.762411)">
+      <g>
+        <path d="M 1.558594 0 L 1.558594 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 1.558594 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(240.593401, 107.762411)">
+      <g>
+        <path d="M 2.824219 -3.4375 C 3.769531 -3.210938 4.414062 -2.964844 4.757812 -2.6875 C 4.996094 -2.492188 5.113281 -2.246094 5.113281 -1.945312 C 5.113281 -1.644531 5.050781 -1.398438 4.921875 -1.226562 C 4.597656 -0.773438 4.019531 -0.546875 3.203125 -0.546875 C 2.0625 -0.546875 1.417969 -0.933594 1.277344 -1.707031 L 0.398438 -1.707031 C 0.65625 -0.472656 1.589844 0.140625 3.203125 0.140625 C 3.921875 0.140625 4.523438 -0.0117188 5.007812 -0.332031 C 5.585938 -0.710938 5.886719 -1.269531 5.886719 -2 C 5.886719 -2.601562 5.652344 -3.0625 5.179688 -3.382812 C 4.84375 -3.621094 4.308594 -3.835938 3.566406 -4.027344 C 2.816406 -4.222656 2.332031 -4.382812 2.105469 -4.5 C 1.613281 -4.75 1.363281 -5.09375 1.375 -5.542969 C 1.375 -5.78125 1.417969 -5.984375 1.527344 -6.132812 C 1.804688 -6.554688 2.300781 -6.769531 3.007812 -6.769531 C 4.007812 -6.769531 4.578125 -6.445312 4.726562 -5.824219 L 5.542969 -5.824219 C 5.273438 -6.875 4.425781 -7.414062 3.007812 -7.414062 C 2.363281 -7.414062 1.792969 -7.242188 1.320312 -6.898438 C 0.839844 -6.554688 0.589844 -6.046875 0.589844 -5.359375 C 0.589844 -4.425781 1.34375 -3.78125 2.824219 -3.4375 Z M 2.824219 -3.4375 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(249.906858, 107.762411)">
+      <g>
+        <path d="M 1.558594 0 L 1.558594 -3.265625 L 4.878906 -3.265625 L 4.878906 0 L 5.628906 0 L 5.628906 -7.304688 L 4.878906 -7.304688 L 4.878906 -4.019531 L 1.558594 -4.019531 L 1.558594 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 1.558594 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(259.488794, 107.762411)">
+      <g>
+        <path d="M 5.144531 0 L 5.144531 -0.699219 L 1.558594 -0.699219 L 1.558594 -3.296875 L 5.039062 -3.296875 L 5.039062 -4.007812 L 1.558594 -4.007812 L 1.558594 -6.605469 L 5.144531 -6.605469 L 5.144531 -7.304688 L 0.804688 -7.304688 L 0.804688 0 Z M 5.144531 0 "></path>
+      </g>
+    </g>
+  </g>
+  <g fill="currentColor" fill-opacity="1">
+    <g transform="translate(268.587462, 107.762411)">
+      <g>
+        <path d="M 2.824219 -3.4375 C 3.769531 -3.210938 4.414062 -2.964844 4.757812 -2.6875 C 4.996094 -2.492188 5.113281 -2.246094 5.113281 -1.945312 C 5.113281 -1.644531 5.050781 -1.398438 4.921875 -1.226562 C 4.597656 -0.773438 4.019531 -0.546875 3.203125 -0.546875 C 2.0625 -0.546875 1.417969 -0.933594 1.277344 -1.707031 L 0.398438 -1.707031 C 0.65625 -0.472656 1.589844 0.140625 3.203125 0.140625 C 3.921875 0.140625 4.523438 -0.0117188 5.007812 -0.332031 C 5.585938 -0.710938 5.886719 -1.269531 5.886719 -2 C 5.886719 -2.601562 5.652344 -3.0625 5.179688 -3.382812 C 4.84375 -3.621094 4.308594 -3.835938 3.566406 -4.027344 C 2.816406 -4.222656 2.332031 -4.382812 2.105469 -4.5 C 1.613281 -4.75 1.363281 -5.09375 1.375 -5.542969 C 1.375 -5.78125 1.417969 -5.984375 1.527344 -6.132812 C 1.804688 -6.554688 2.300781 -6.769531 3.007812 -6.769531 C 4.007812 -6.769531 4.578125 -6.445312 4.726562 -5.824219 L 5.542969 -5.824219 C 5.273438 -6.875 4.425781 -7.414062 3.007812 -7.414062 C 2.363281 -7.414062 1.792969 -7.242188 1.320312 -6.898438 C 0.839844 -6.554688 0.589844 -6.046875 0.589844 -5.359375 C 0.589844 -4.425781 1.34375 -3.78125 2.824219 -3.4375 Z M 2.824219 -3.4375 "></path>
+      </g>
+    </g>
+  </g>
+</svg>
+  </a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav">
+    <a href="#work">Projects</a>
+    <a href="#finishes">Finishes</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="tel" href="tel:+61488330997">+61 488 330 997</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO ─────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__type">
+      <p class="label">Decorative wall finishes · Newcastle &amp; Port Stephens</p>
+      <h1>Turning walls into <em>Works of Art</em></h1>
+      <p class="hero__sub lede">Hand-troweled microcement, Venetian plaster and lime wash for builders, interior designers and homeowners across Newcastle.</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#contact">Book a free quote</a>
+        <a class="btn" href="#work">See the work</a>
+      </div>
+      <div class="hero__meta">
+        <div><b>2018</b><span class="label">Studio founded</span></div>
+        <div><b>30</b><span class="label">Projects</span></div>
+        <div><b>200+</b><span class="label">Walls finished</span></div>
+      </div>
+    </div>
+    <figure class="hero__img">
+      <img src="img/IMG_6530-scaled-e1733666879220.jpg" alt="Arched niche in hand-troweled Venetian plaster catching raking afternoon light, Newcastle bathroom">
+      <figcaption class="hero__caption">Marmorino arch · Merewether</figcaption>
+    </figure>
+  </section>
+
+  <!-- INTRO ─────────────────────────────────────────────── -->
+  <section class="intro">
+    <div class="wrap intro__grid reveal">
+      <div>
+        <p class="label">The work</p>
+        <h2>Bring nature indoors, one wall at a time</h2>
+      </div>
+      <div>
+        <p class="lede">Every surface is mixed, tinted and troweled on site, so the finish suits the light in your room rather than a sample in a showroom. Lauren works alongside builders and designers from the first coat to the final seal — and stays in touch long after the drop sheets come up.</p>
+        <p class="lede">Bathrooms, kitchens, feature walls, whole homes and commercial fitouts, finished in microcement, Venetian plaster, Marmorino and lime wash.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINISHES ─────────────────────────────────────────────── -->
+  <section class="finishes wrap" id="finishes">
+    <div class="finishes__head reveal">
+      <div>
+        <p class="label">Finishes</p>
+        <h2>A finish for every space</h2>
+      </div>
+      <a class="btn" href="#work">View projects by finish</a>
+    </div>
+    <div class="finishes__grid">
+      <article class="finish reveal">
+        <div class="finish__img"><img src="img/IMG_3137.jpg" alt="Microcement bathroom with curved wall and rain shower, Warners Bay" loading="lazy"></div>
+        <p class="finish__use">Wet areas · floors · joinery</p>
+        <h3>Microcement</h3>
+        <p>A seamless, waterproof surface for bathrooms, floors and joinery. Modern, hard-wearing, and grout-free.</p>
+        <a href="#work" data-jump="microcement">See microcement projects</a>
+      </article>
+      <article class="finish reveal">
+        <div class="finish__img"><img src="img/IMG_8747-scaled.jpg" alt="Polished Venetian plaster wall with half-moon wall lights" loading="lazy"></div>
+        <p class="finish__use">Feature walls · fireplaces</p>
+        <h3>Venetian Plaster<br>&amp; Marmorino</h3>
+        <p>Fine lime and marble dust, burnished in layers until the wall holds depth and light like stone.</p>
+        <a href="#work" data-jump="venetian">See plaster projects</a>
+      </article>
+      <article class="finish reveal">
+        <div class="finish__img"><img src="img/IMG_3648.jpg" alt="Soft pink lime wash feature wall with cloudy movement" loading="lazy"></div>
+        <p class="finish__use">Whole rooms · ceilings</p>
+        <h3>Lime Wash</h3>
+        <p>Soft, chalky movement across a whole room. Breathable, low-sheen, and endlessly tintable.</p>
+        <a href="#work" data-jump="limewash">See lime wash projects</a>
+      </article>
+      <article class="finish reveal">
+        <div class="finish__img"><img src="img/IMG_6879.jpg" alt="Aged timber effect faux finish on a corrugated wall with wall light" loading="lazy"></div>
+        <p class="finish__use">Bespoke effects · commercial</p>
+        <h3>Decorative<br>&amp; Faux</h3>
+        <p>Aged timber, rusted steel, weathered stone, metallic leaf — effects painted by hand to order.</p>
+        <a href="#work" data-jump="faux">See decorative projects</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- WORK ─────────────────────────────────────────────── -->
+  <section class="work wrap" id="work">
+    <div class="work__head reveal">
+      <div>
+        <p class="label">Selected projects</p>
+        <h2>Thirty walls, up close</h2>
+      </div>
+      <p class="lede" style="max-width:34ch;margin:0">Filter by finish to see one kind of work at a time.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button data-filter="all" aria-pressed="true">All</button>
+      <button data-filter="microcement" aria-pressed="false">Microcement</button>
+      <button data-filter="venetian" aria-pressed="false">Venetian / Marmorino</button>
+      <button data-filter="limewash" aria-pressed="false">Lime wash</button>
+      <button data-filter="faux" aria-pressed="false">Decorative / Faux</button>
+      <button data-filter="commercial" aria-pressed="false">Commercial</button>
+      <span class="count" id="count">30 projects</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="work__more"><a class="btn" href="#contact">Enquire about a similar finish</a></div>
+  </section>
+
+  <!-- ABOUT ─────────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="wrap about__grid">
+      <div class="about__img reveal"><img src="img/lauren-goodwin.jpg" alt="Lauren Goodwin, decorative painter, Newcastle" loading="lazy"></div>
+      <div class="reveal">
+        <p class="label">About Lauren</p>
+        <h2>An artist's hand, a tradesperson's preparation</h2>
+        <p class="lede">Lauren Goodwin is a decorative painter based in Mayfield East. Her career began in New York, applying design work across film, retail and interiors. In 2018 she founded Lauren Goodwin Decorative Finishes, bringing together art, architecture and the textures she grew up around.</p>
+        <ul class="creds">
+          <li><span>Specialist in</span><span>Microcement, Venetian plaster, Marmorino</span></li>
+          <li><span>Trained in</span><span>New York City</span></li>
+          <li><span>Based in</span><span>Mayfield East, Newcastle NSW</span></li>
+          <li><span>Working across</span><span>Newcastle · Port Stephens · Central Coast</span></li>
+          <li><span>Works with</span><span>Builders · Interior designers · Homeowners</span></li>
+        </ul>
+        <a class="btn" href="#contact">Talk to Lauren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORDS ─────────────────────────────────────────────── -->
+  <section class="words">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="label">In their words</p>
+        <h2>What clients say afterwards</h2>
+      </div>
+      <div class="words__grid reveal">
+        <blockquote class="quote">
+          <p>“Lauren is exceptional at her craft. She knows how to achieve your ideal finish to the highest of quality. My clients are blown away with how much her finishes have elevated their homes.”</p>
+          <footer>Katrina H.<em>Interior designer</em></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Our bathroom involved micro-cementing everything except the ceiling. It was a big job but the quality was exceptional. She guided us through the whole process, even talking the other trades through it.”</p>
+          <footer>Martha B.<em>Full bathroom</em></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“I contacted her when another company did horrible quality work in my tattoo studio. Every client I have comments on how beautiful the paintwork is now.”</p>
+          <footer>Ellie M.<em>Tattoo studio</em></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM ─────────────────────────────────────────────── -->
+  <section class="ig wrap">
+    <div class="ig__head reveal">
+      <div>
+        <p class="label">Follow the work</p>
+        <h2>@laurengoodwin_decorativefinish</h2>
+      </div>
+      <a class="btn" href="https://www.instagram.com/laurengoodwin_decorativefinish/" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+    <div class="ig__strip" id="igstrip"></div>
+  </section>
+
+  <!-- CONTACT ─────────────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="wrap contact__grid">
+      <div>
+        <p class="label">Get in touch</p>
+        <h2>Tell me about the <em>room</em></h2>
+        <p class="lede" style="color:rgba(237,234,225,.78)">Send through the space, the finish you have in mind and a photo if you have one. Quotes are free, and Lauren will tell you honestly if a different finish would suit the room better.</p>
+        <ul class="details">
+          <li><span>Phone</span><span><a href="tel:+61488330997">+61 488 330 997</a></span></li>
+          <li><span>Email</span><span><a href="mailto:hello@goodwinfinishes.com.au">hello@goodwinfinishes.com.au</a></span></li>
+          <li><span>Studio</span><span>Mayfield East, Newcastle NSW 2304</span></li>
+          <li><span>Instagram</span><span><a href="https://www.instagram.com/laurengoodwin_decorativefinish/" target="_blank" rel="noopener">@laurengoodwin_decorativefinish</a></span></li>
+          <li><span>Licence</span><span>#456042C</span></li>
+        </ul>
+
+        <div class="accred">
+          <p class="label">Accredited applicator</p>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Mineral Fix accredited applicator" viewBox="0 0 460.7 57.7" xml:space="preserve">
+<polygon fill="currentColor" points="80.6,17.1 70,32.8 59.3,17.1 57,17.1 57,40.7 60,40.7 60,23 68.9,36.2 71,36.2 79.9,23.1 79.9,40.7   83,40.7 83,17.1 "></polygon>
+<rect x="103.9" y="17.1" fill="currentColor" width="3.1" height="23.6"></rect>
+<polygon fill="currentColor" points="147.6,17.1 147.6,35.9 130.5,17.1 127.9,17.1 127.9,40.7 131,40.7 131,22.1 148.1,40.7 150.7,40.7   150.7,17.1 "></polygon>
+<polygon fill="currentColor" points="171.6,17.1 171.6,40.7 190.3,40.7 190.3,38.1 174.8,38.1 174.8,30.2 188.7,30.2 188.7,27.7 174.8,27.7   174.8,19.6 190.3,19.6 190.3,17.1 "></polygon>
+<path fill="currentColor" d="M213.1,29.7h6.9c4.1,0,7.2-1.9,7.2-5.1s-3.1-5-7.2-5h-6.9L213.1,29.7z M219.9,32.2h-6.8v8.4H210V17.1h10.1  c6,0,10.2,2.9,10.2,7.5c0,3.8-2.7,6.4-6.9,7.2l8.1,8.8h-3.8L219.9,32.2z"></path>
+<path fill="currentColor" d="M261.2,20.3l5.6,11.3h-11.3L261.2,20.3z M259.7,17.1l-12,23.6h3.3l3.3-6.6H268l3.3,6.6h3.3l-12-23.6H259.7z"></path>
+<polygon fill="currentColor" points="293.2,17.1 293.2,40.7 310.9,40.7 310.9,38.1 296.3,38.1 296.3,17.1 "></polygon>
+<polygon fill="currentColor" points="353.8,17.1 353.8,40.7 356.9,40.7 356.9,30.8 370.4,30.8 370.4,28.3 356.9,28.3 356.9,19.6 372.1,19.6   372.1,17.1 "></polygon>
+<path fill="currentColor" d="M413.5,28.9c0-5.3-4.7-9.6-10.7-9.6S392,23.5,392,28.9s4.7,9.6,10.7,9.6S413.5,34.2,413.5,28.9 M416.6,28.9  c0,6.8-6.2,12.2-13.9,12.2s-13.9-5.4-13.9-12.2s6.2-12.2,13.9-12.2S416.6,22.1,416.6,28.9"></path>
+<polygon fill="currentColor" points="452.2,17.1 444.3,26.8 436.3,17.1 432.5,17.1 442.2,28.9 432.2,40.7 435.8,40.7 444.3,31 452.7,40.7   456.3,40.7 446.3,28.9 456,17.1 "></polygon>
+<path fill="currentColor" d="M25.3,23.4c-1.6,1.7-2.9,3.6-3.7,5.8c-0.1,0.2-0.2,0.4-0.2,0.6c0.7-0.6,1.4-1.1,2.2-1.5c2-1.1,4.3-1.8,6.5-2.2  l0.8-0.1v3.1l-0.6,0.1c-1.9,0.3-3.7,0.9-5.3,1.8c-3.3,1.8-5.3,5.3-5.1,9v0.7h-3V40c0.1-3.7-0.5-7.3-1.7-10.8  C14.3,27,13,25,11.4,23.4c-1-1-2.1-1.8-3.4-2.4v19.7H5V17.1l1.8,0.3c2.6,0.6,4.9,1.9,6.7,3.8c2,1.9,3.5,4.3,4.4,6.9  c0.2,0.4,0.3,0.9,0.5,1.3c0.1-0.5,0.3-0.9,0.5-1.3c1-2.6,2.5-4.9,4.5-6.9c1.9-1.8,4.2-3.2,6.8-3.9l0.8-0.2v3.1l-0.5,0.1  c-0.5,0.1-1,0.3-1.5,0.5C27.6,21.5,26.4,22.4,25.3,23.4"></path>
+</svg>
+        </div>
+      </div>
+
+      <form class="form" id="quoteform" action="https://formspree.io/f/mqpzjnyl" method="POST" data-email="hello@goodwinfinishes.com.au">
+        <input type="hidden" name="_subject" value="New enquiry from goodwinfinishes.com.au">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-address">Property address</label><input id="f-address" name="address" type="text" autocomplete="street-address"></div>
+        <div class="field">
+          <label for="f-finish">Finish you're after</label>
+          <select id="f-finish" name="finish">
+            <option>Not sure yet</option>
+            <option>Microcement</option>
+            <option>Venetian plaster / Marmorino</option>
+            <option>Lime wash</option>
+            <option>Decorative / faux</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-msg">About the space</label><textarea id="f-msg" name="message" rows="3"></textarea></div>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--light" type="submit">Request a free quote</button>
+        <p class="label" id="formstatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="wrap colophon">
+      <span>© 2026 Lauren Goodwin Decorative Finishes</span>
+      <span>Decorative wall finishes · Newcastle · Port Stephens · Central Coast</span>
+      <span>Website designed and managed by <a href="https://simplerabbit.studio" target="_blank" rel="noopener">Simple Rabbit</a></span>
+    </div>
+  </section>
+</main>
+
+<script>
+/* Project data — in the build this comes from the Project custom post type. */
+const PROJECTS = [
+  {img:"IMG_6530-scaled-e1733666879220.jpg", t:"Arched niche, ensuite", cat:"venetian", finish:"Marmorino, burnished", loc:"Merewether", space:"Ensuite", d:"A curved niche cut into the wall and plastered in three coats, so the arch reads as one continuous surface when the afternoon light rakes across it.", wide:false},
+  {img:"IMG_7984.jpg", t:"Fireplace surround", cat:"venetian", finish:"Venetian plaster", loc:"Bar Beach", space:"Living room", d:"A warm off-white plaster wrapped around the firebox, tinted half a shade deeper than the walls either side.", wide:false},
+  {img:"IMG_3137.jpg", t:"Curved ensuite", cat:"microcement", finish:"Microcement, sealed", loc:"Warners Bay", space:"Ensuite", d:"Walls, curved shower return and floor in a single microcement system — no grout lines anywhere in the room.", wide:true},
+  {img:"IMG_0731.jpg", t:"Walk-in shower", cat:"microcement", finish:"Microcement, matte seal", loc:"Newcastle East", space:"Bathroom", d:"Brass tapware set against a soft white microcement wall, with a recessed shelf formed before the finish coat.", wide:false},
+  {img:"IMG_0719.jpg", t:"Guest bathroom", cat:"venetian", finish:"Polished plaster", loc:"Port Stephens", space:"Bathroom", d:"A warm sand-toned plaster that picks up the timber louvre door and the bushland outside the window.", wide:false},
+  {img:"IMG_0746.jpg", t:"Bath alcove", cat:"venetian", finish:"Venetian plaster", loc:"Hamilton", space:"Bathroom", d:"A quiet alcove finished corner to corner, with the arched niche formed and plastered in the same pass.", wide:false},
+  {img:"IMG_3154.jpg", t:"Wet room", cat:"microcement", finish:"Microcement", loc:"Merewether", space:"Wet room", d:"Ceiling, walls and floor in one tone so the shower reads as a single carved volume.", wide:false},
+  {img:"IMG_3215.jpg", t:"Family bathroom", cat:"microcement", finish:"Microcement", loc:"Medowie", space:"Bathroom", d:"A curved shower wall built and finished on site, sitting above a tiled floor from the original build.", wide:false},
+  {img:"IMG_3175.jpg", t:"Vanity wall", cat:"microcement", finish:"Microcement", loc:"Cooks Hill", space:"Bathroom", d:"A soft, cloud-free finish behind a stone basin, kept deliberately flat so the tapware does the talking.", wide:false},
+  {img:"IMG_3135-scaled.jpg", t:"Full wet area", cat:"microcement", finish:"Microcement", loc:"Newcastle", space:"Ensuite", d:"Every surface except the ceiling, including the vanity and a wrapped cupboard.", wide:false},
+  {img:"IMG_4844.jpg", t:"Entry column", cat:"limewash", finish:"Lime wash", loc:"Stockton", space:"Entry", d:"Lime wash over a rendered column and adjoining wall, laid on in soft cross-strokes for movement.", wide:false},
+  {img:"IMG_7445.jpg", t:"Vaulted booths", cat:"commercial", finish:"Marmorino, tinted", loc:"Newcastle West", space:"Hospitality", d:"Arched booth vaults finished in a pale blue Marmorino, with LED strips set into the reveal.", wide:true},
+  {img:"IMG_7585.jpg", t:"Shower surround", cat:"venetian", finish:"Venetian plaster", loc:"New Lambton", space:"Bathroom", d:"Plaster taken to the glass line where it meets travertine tile, sealed for daily wet-area use.", wide:false},
+  {img:"IMG_8440.jpg", t:"Butler's pantry", cat:"microcement", finish:"Microcement", loc:"Fern Bay", space:"Kitchen", d:"Walls and open shelving niches finished together so the joinery disappears into the wall.", wide:false},
+  {img:"IMG_8487.jpg", t:"Powder room", cat:"limewash", finish:"Lime wash", loc:"Medowie", space:"Powder room", d:"A warm, mottled lime wash that shifts through the day with the light off the paddocks.", wide:false},
+  {img:"IMG_8489.jpg", t:"Bench and window reveal", cat:"microcement", finish:"Microcement", loc:"Medowie", space:"Bathroom", d:"A built-in bench wrapped in microcement, carried up the wall and around the window reveal.", wide:false},
+  {img:"IMG_8500.jpg", t:"Niche and bench", cat:"venetian", finish:"Marmorino", loc:"Medowie", space:"Bathroom", d:"A square niche and seat finished in a cream Marmorino above a terracotta tiled floor.", wide:false},
+  {img:"IMG_8553.jpg", t:"Kitchen splashback", cat:"microcement", finish:"Microcement", loc:"Adamstown", space:"Kitchen", d:"A grout-free splashback taken up behind the timber shelf and returned into the reveal.", wide:false},
+  {img:"IMG_8570.jpg", t:"Reception counter", cat:"commercial", finish:"Marmorino", loc:"Newcastle CBD", space:"Commercial", d:"A curved reception counter finished on site, with a timber kick and cap left exposed.", wide:false},
+  {img:"IMG_8722-scaled.jpg", t:"Shower niches", cat:"microcement", finish:"Microcement", loc:"Charlestown", space:"Bathroom", d:"Three stacked niches formed in the wall and finished seamlessly with the surrounding surface.", wide:false},
+  {img:"IMG_8747-scaled.jpg", t:"Half-moon wall lights", cat:"venetian", finish:"Venetian plaster", loc:"Bar Beach", space:"Hallway", d:"Plaster burnished to a low sheen so the wall lights wash across it without hot spots.", wide:false},
+  {img:"IMG_8741-scaled.jpg", t:"Lit entry niches", cat:"venetian", finish:"Marmorino", loc:"Merewether", space:"Entry", d:"Three lit niches set into a plastered entry wall beside a solid timber door.", wide:false},
+  {img:"IMG_2723-1.jpeg", t:"Wet area and mosaic", cat:"microcement", finish:"Microcement", loc:"Mayfield", space:"Bathroom", d:"Microcement walls meeting a pebble mosaic band, with black tapware set through the finish.", wide:true},
+  {img:"IMG_3472.jpg", t:"Backlit porthole hallway", cat:"faux", finish:"Textured render, hand-worked", loc:"Newcastle", space:"Hallway", d:"A deep grey textured wall worked around a backlit porthole, so the light throws its own texture.", wide:false},
+  {img:"IMG_3648.jpg", t:"Pink feature wall", cat:"limewash", finish:"Lime wash, custom tint", loc:"Hamilton", space:"Feature wall", d:"A custom rose tint laid in soft cloudy passes — three samples on site before the colour was locked.", wide:false},
+  {img:"IMG_6896.jpg", t:"Bar arches", cat:"commercial", finish:"Marmorino, tinted", loc:"Newcastle CBD", space:"Hospitality", d:"Back-bar arches finished in a deep blue-grey to sit behind glassware and warm lighting.", wide:false},
+  {img:"IMG_6879.jpg", t:"Aged timber effect", cat:"faux", finish:"Faux timber", loc:"Stockton", space:"Feature wall", d:"A weathered timber effect painted by hand over a corrugated profile, grain and all.", wide:false},
+  {img:"IMG_2938.jpg", t:"Metallic ceiling feature", cat:"faux", finish:"Metallic leaf", loc:"Newcastle CBD", space:"Commercial", d:"A burnished metallic panel set into the ceiling, lit from a concealed cove around the edge.", wide:false},
+  {img:"IMG_2737.jpg", t:"Stone-effect corridor", cat:"commercial", finish:"Faux stone", loc:"Sydney", space:"Commercial", d:"Curved corridor walls painted to read as book-matched stone, matched to a sample supplied by the architect.", wide:true},
+  {img:"IMG_6711.jpg", t:"Concrete-look ceiling", cat:"microcement", finish:"Microcement, ceiling", loc:"Port Stephens", space:"Living room", d:"A concrete-look ceiling applied overhead in thin coats, with rattan pendants dropped through.", wide:false}
+];
+
+const SRC = f => (typeof IMGDATA !== 'undefined' && IMGDATA[f]) ? IMGDATA[f] : 'img/' + f;
+const LABELS = {microcement:"Microcement", venetian:"Venetian / Marmorino", limewash:"Lime wash", faux:"Decorative / Faux", commercial:"Commercial"};
+
+/* ── Build the grid ── */
+const grid = document.getElementById('grid');
+PROJECTS.forEach((p,i)=>{
+  const a = document.createElement('figure');
+  a.className = 'tile' + (p.wide ? ' tile--wide' : '');
+  a.dataset.cat = p.cat;
+  a.innerHTML =
+    '<img src="'+SRC(p.img)+'" alt="'+p.t+' in '+LABELS[p.cat].toLowerCase()+', '+p.loc+' — Lauren Goodwin Decorative Finishes" loading="lazy">' +
+    '<figcaption class="tile__veil"><b>'+p.t+'</b><span>'+LABELS[p.cat]+' · '+p.loc+'</span></figcaption>';
+  grid.appendChild(a);
+});
+
+/* ── Reveal on scroll ── */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target) } });
+},{ rootMargin:'0px 0px -8% 0px', threshold:.06 });
+document.querySelectorAll('.reveal, .tile').forEach((el,i)=>{ el.style.transitionDelay = (i%5)*60 + 'ms'; io.observe(el) });
+
+/* ── Filters ── */
+const countEl = document.getElementById('count');
+function applyFilter(f){
+  let n = 0;
+  document.querySelectorAll('.tile').forEach(t=>{
+    const show = (f === 'all' || t.dataset.cat === f);
+    t.classList.toggle('is-hidden', !show);
+    if(show){ n++; t.classList.add('in') }
+  });
+  countEl.textContent = n + (n === 1 ? ' project' : ' projects');
+  document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.filter === f)));
+}
+document.getElementById('filters').addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(b) applyFilter(b.dataset.filter);
+});
+document.querySelectorAll('[data-jump]').forEach(a=>{
+  a.addEventListener('click', ()=> applyFilter(a.dataset.jump));
+});
+
+/* ── Instagram strip (Smash Balloon slot in the build) ── */
+const ig = document.getElementById('igstrip');
+["IMG_8747-scaled.jpg","IMG_3648.jpg","IMG_6896.jpg","IMG_4844.jpg","IMG_8741-scaled.jpg","IMG_2938.jpg"].forEach(src=>{
+  const a = document.createElement('a');
+  a.href = 'https://www.instagram.com/laurengoodwin_decorativefinish/';
+  a.target = '_blank'; a.rel = 'noopener';
+  a.innerHTML = '<img src="'+SRC(src)+'" alt="Recent decorative finish work from Instagram" loading="lazy">';
+  ig.appendChild(a);
+});
+
+/* ── Nav ── */
+const topbar = document.getElementById('topbar');
+addEventListener('scroll', ()=> topbar.classList.toggle('is-stuck', scrollY > 40), {passive:true});
+const nav = document.getElementById('nav'), navtoggle = document.getElementById('navtoggle');
+navtoggle.addEventListener('click', ()=>{
+  const open = nav.classList.toggle('is-open');
+  navtoggle.setAttribute('aria-expanded', String(open));
+  navtoggle.textContent = open ? 'Close' : 'Menu';
+});
+nav.addEventListener('click', e=>{ if(e.target.tagName === 'A'){ nav.classList.remove('is-open'); navtoggle.textContent = 'Menu' } });
+
+/* ── Enquiry form: posts straight to Formspree, stays on the page ── */
+const form = document.getElementById('quoteform');
+if (form) {
+  const statusEl = document.getElementById('formstatus');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    statusEl.textContent = 'Sending…';
+    btn.disabled = true;
+
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(r => {
+        if (r.ok) return;
+        return r.json().then(d => {
+          throw new Error((d.errors || []).map(x => x.message).join(', ') || 'That did not send.');
+        });
+      })
+      .then(() => {
+        form.innerHTML =
+          '<p class="label">Thank you</p>' +
+          '<p class="lede" style="color:rgba(237,234,225,.8);margin:0">Your enquiry is on its way. Lauren will be in touch within two business days.</p>';
+      })
+      .catch(err => {
+        statusEl.textContent = err.message + ' Email ' + form.dataset.email + ' instead.';
+        btn.disabled = false;
+      });
+  });
+}
+</script>

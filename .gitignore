@@ -12,3 +12,6 @@ deploy.sh
 .env
 audit-proxy.php
 .blog-config.json
+linkedin-drafts/
+social-drafts/
+networking/
