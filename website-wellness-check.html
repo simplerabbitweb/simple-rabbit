@@ -97,7 +97,9 @@
     }
     .hero-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:0.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;}
     @media(max-width:768px){
-      .inner-hero{min-height:22vh!important;padding:32px 24px 40px!important;}
+      .inner-hero{grid-template-columns:1fr!important;min-height:auto!important;}
+      .inner-hero .hero-text{padding:44px 24px 12px!important;}
+      .inner-hero .hero-img-col{min-height:340px!important;}
     }
     @media(min-width:901px){#announcement-banner a{font-size:15px!important;}#announcement-banner a span:last-child{font-size:14px!important;}}
   </style>
@@ -168,20 +170,24 @@
 </div>
 
 <!-- HERO -->
-<section class="inner-hero" style="min-height:44vh;display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 60px;position:relative;background:#ffffff;overflow:hidden;">
+<section class="inner-hero" style="display:grid; grid-template-columns:1fr 1fr; min-height:72vh; position:relative; background:#ffffff; overflow:hidden;">
   <div class="hero-grain"></div>
-  <div style="position:relative;z-index:1;padding:80px 0 32px;max-width:960px;">
-    <div style="display:flex; align-items:baseline; gap:24px; margin-bottom:72px;">
+
+  <div class="hero-text" style="position:relative; z-index:1; display:flex; flex-direction:column; justify-content:center; padding:64px 56px;">
+    <div style="display:flex; align-items:baseline; gap:24px; margin-bottom:36px;">
       <span style="font-family:var(--font-b); font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--mid-lt);">The Website Wellness Check</span>
       <div style="flex:1; height:1px; background:var(--rule-dk); position:relative; top:-4px;"></div>
     </div>
-    <h1 style="font-family:var(--font-display);font-size:clamp(38px,6.5vw,84px);line-height:1.03;letter-spacing:-2.5px;color:#000;font-weight:400;margin:0 0 36px;" class="hero-h1">You&rsquo;re too close to your website to see what&rsquo;s wrong with it.</h1>
-    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;">
-      <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;color:rgba(0,0,0,0.65);margin:0;max-width:560px;">Every site has problems the owner stops seeing. I go through yours page by page, plus your Google presence, then get on a call and show you exactly what&rsquo;s costing you patients and what to fix first.</p>
+    <h1 style="font-family:var(--font-display);font-size:clamp(34px,4.2vw,62px);line-height:1.05;letter-spacing:-2px;color:#000;font-weight:400;margin:0 0 28px;" class="hero-h1">You&rsquo;re too close to your website to see what&rsquo;s wrong with it.</h1>
+    <p style="font-size:clamp(15px,1.4vw,19px);line-height:1.75;color:rgba(0,0,0,0.65);margin:0 0 32px;max-width:520px;">Every site has problems the owner stops seeing. I go through yours page by page, plus your Google presence, then get on a call and show you exactly what&rsquo;s costing you patients and what to fix first.</p>
+    <div>
       <a href="https://buy.stripe.com/dRmdRbd7w9nw0Qc0cM9R603" class="btn-primary" style="white-space:nowrap;" target="_blank" rel="noopener">I want the Website Wellness Check &rarr;</a>
     </div>
   </div>
-  <div></div>
+
+  <div class="hero-img-col" style="position:relative; overflow:hidden; min-height:420px;">
+    <img src="website-wellness.jpg" alt="The Website Wellness Check by Simple Rabbit" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 25%; display:block;">
+  </div>
 </section>
 
 <!-- BANNER STRIP -->
@@ -286,9 +292,9 @@
       </div>
     </div>
 
-    <div>
-      <img src="website-wellness.jpg" alt="The Website Wellness Check by Simple Rabbit" style="width:100%;display:block;margin-bottom:24px;border:1px solid var(--light-border);">
+    <div style="display:flex; flex-direction:column; justify-content:center;">
       <a href="https://buy.stripe.com/dRmdRbd7w9nw0Qc0cM9R603" class="btn-primary" style="display:block;text-align:center;padding:18px 40px;font-size:15px;" target="_blank" rel="noopener">I want the Website Wellness Check &rarr;</a>
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--mid);text-align:center;margin-top:16px;">One-time &middot; Delivered in 5 business days</p>
     </div>
 
   </div>
