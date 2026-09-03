@@ -245,33 +245,48 @@
   <h1 class="form-title">Book a discovery call</h1>
   <div class="form-intro">
     <p style="margin-bottom:16px;">Thanks for considering Simple Rabbit.</p>
-    <p style="margin-bottom:16px;">A discovery call is a relaxed 30 minutes: your practice, what you want the website to do, and whether I&rsquo;m the right fit to build it. No pitch, no pressure.</p>
-    <p>I work with established women&rsquo;s health practitioners who are fully (or primarily) private-pay.</p>
+    <p>A discovery call is a relaxed 30 minutes: your practice, what you want the website to do, and whether I&rsquo;m the right fit to build it.</p>
   </div>
 
-  <!-- OFFER SNAPSHOT -->
-  <div style="background:var(--warm,#F5F0EB); border:1px solid var(--rule-dk,rgba(0,0,0,0.08)); border-radius:12px; padding:28px 32px; margin:28px 0 8px;">
-    <p style="font-family:var(--font-b); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--accent,#AA737D); margin:0 0 20px;">The offer, in brief</p>
-    <div style="display:flex; flex-direction:column; gap:16px;">
-      <div>
-        <span style="font-family:var(--font-b); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt,#7A756E); display:block; margin-bottom:4px;">Two projects</span>
-        <p style="font-family:var(--font-b); font-size:15px; line-height:1.55; color:#0A0905; margin:0;">Signature Site &middot; $6,000 (website, with your existing brand), or Brand + Site &middot; $10,000+ (new brand and website).</p>
-      </div>
-      <div>
-        <span style="font-family:var(--font-b); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt,#7A756E); display:block; margin-bottom:4px;">After launch</span>
-        <p style="font-family:var(--font-b); font-size:15px; line-height:1.55; color:#0A0905; margin:0;">Monthly website care: hosting and site updates.</p>
-      </div>
-      <div>
-        <span style="font-family:var(--font-b); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid-lt,#7A756E); display:block; margin-bottom:4px;">Best fit</span>
-        <p style="font-family:var(--font-b); font-size:15px; line-height:1.55; color:#0A0905; margin:0;">Concierge and private-pay women&rsquo;s health, and similar practices: menopause, functional medicine, fertility, aesthetics or laser.</p>
-      </div>
+  <!-- BOOKING FORM -->
+  <form id="book-form" action="https://formspree.io/f/mgoqyroq" method="POST" style="margin-top:44px;">
+    <input type="hidden" name="_next" value="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins">
+    <input type="hidden" name="_subject" value="New discovery call request">
+    <div class="form-group">
+      <label class="form-label" for="name">Your name <span class="req">*</span></label>
+      <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" required>
     </div>
-  </div>
-  <!-- BOOKING CTA -->
-  <a href="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins" target="_blank" rel="noopener" class="btn-submit" style="display:block; text-align:center; text-decoration:none; box-sizing:border-box;">Book your 30-minute call &rarr;</a>
-  <p style="text-align:center; font-family:var(--font-b); font-size:14px; color:var(--mid-lt); line-height:1.6; margin:20px 0 0;">Opens my booking calendar in a new tab. Prefer email? <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent); font-weight:600; text-decoration:none; border-bottom:1px solid var(--accent);">hello@simplerabbit.studio</a></p>
+    <div class="form-group">
+      <label class="form-label" for="email">Email <span class="req">*</span></label>
+      <input class="form-input" type="email" id="email" name="email" placeholder="you@yourpractice.com" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="website">Your practice website <span style="color:var(--mid-lt); font-weight:400;">(optional)</span></label>
+      <input class="form-input" type="url" id="website" name="website" placeholder="https://yourpractice.com">
+    </div>
+    <button type="submit" class="btn-submit" id="book-submit">Book my call &rarr;</button>
+  </form>
+  <p style="text-align:center; font-family:var(--font-b); font-size:14px; color:var(--mid-lt); line-height:1.6; margin:20px 0 0;">After you submit, you&rsquo;ll go straight to my calendar to pick a time. Prefer email? <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent); font-weight:600; text-decoration:none; border-bottom:1px solid var(--accent);">hello@simplerabbit.studio</a></p>
 
 </div><!-- /form-wrap -->
+
+<script>
+  document.getElementById('book-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = document.getElementById('book-submit');
+    btn.disabled = true;
+    btn.textContent = 'One moment…';
+    var CAL = 'https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins';
+    try {
+      await fetch('https://formspree.io/f/mgoqyroq', {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+    } catch (err) { /* still send them to the calendar */ }
+    window.location.href = CAL;
+  });
+</script>
 
 </body>
 </html>
