@@ -14,8 +14,6 @@ RewriteRule ^portfolio/?$ /portfolio.html [L]
 
 # --- Redirect merged/deleted blog posts ---
 RewriteRule ^blog/local-seo-for-private-practices/?$ /blog/local-seo-for-private-pay-practices [R=301,L]
-RewriteRule ^blog/google-business-profile-not-getting-clicks/?$ /articles [R=301,L]
-RewriteRule ^blog/google-business-profile-mistakes-wellness-practices/?$ /articles [R=301,L]
 RewriteRule ^blog/why-private-pay-physicians-asking-about-email/?$ /blog/why-private-practices-asking-about-email [R=301,L]
 
 # --- Redirect /audit + old /website-audit + old /blind-spot-breakdown to /website-wellness-check ---
@@ -45,7 +43,7 @@ RewriteRule ^website-design/?$ /functional-medicine-website-design [R=301,L]
 RewriteRule ^ongoing-support/?$ / [R=301,L]
 
 # --- Deleted blog posts → /articles ---
-RewriteRule ^blog/(ai-search-visibility-service-business|nj-businesses-need-solid-website|about-page-service-business)/?$ /articles [R=301,L]
+RewriteRule ^blog/nj-businesses-need-solid-website/?$ /articles [R=301,L]
 
 # --- Deleted county + specialty landing pages → homepage ---
 RewriteRule ^web-design-(bergen|essex|hudson|morris|passaic|sussex|warren)-county-nj/?$ / [R=301,L]
