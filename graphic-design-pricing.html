@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3NSS9Z26P"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W3NSS9Z26P');</script>
+  <title>Graphic Design Price List | Simple Rabbit</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --bg:#474D73;--bg-dk:#2D3154;--bg-mid:#3B4168;--bg-lt:#535980;
+      --white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;--mid-lt:#7A756E;
+      --accent:#AA737D;--mid-vt:#B0B5D0;
+      --rule-dk:rgba(0,0,0,0.10);--rule-vt:rgba(255,255,255,0.10);--rule-lt:rgba(255,255,255,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'Helvetica Neue', Helvetica, Arial,system-ui,sans-serif;
+      --mid:#555;--dark:#4A4540;--light-border:rgba(0,0,0,0.10);
+      --accent-dark:#8a5d66;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    h1,h2,h3{font-family:var(--font-d);letter-spacing:-0.5px;font-weight:400;}
+    a{color:inherit;text-decoration:none;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* NAV */
+    .nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--rule-dk);z-index:100;}
+    .nav-inner{padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:80px;}
+    .nav-links{display:flex;align-items:center;gap:36px;}
+    .nav-links a{font-size:14px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--black);}
+    .nav-cta{background:var(--black)!important;color:var(--white)!important;padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.2s!important;}
+    .nav-cta:hover{background:var(--bg)!important;}
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;overflow-y:auto;border-top:1px solid rgba(0,0,0,0.10);}
+    .mobile-nav.open{display:flex!important;}
+    .mobile-nav a{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);padding:22px 24px;border-bottom:1px solid rgba(0,0,0,0.10);font-family:inherit;text-decoration:none;}
+    .mobile-nav a.mobile-nav-cta{background:#0A0905;color:#FDFAF7!important;text-align:center;font-weight:600;border-bottom:none!important;margin:16px 24px;display:block;}
+
+    /* PAGE HEADER */
+    .page-header{padding:80px 64px 56px;border-bottom:1px solid var(--rule-dk);}
+    .page-header-inner{max-width:760px;}
+    .page-label{font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;}
+    .page-title{font-size:clamp(32px,4.5vw,52px);letter-spacing:-1.5px;line-height:1.08;margin-bottom:20px;}
+    .page-intro{font-size:19px;line-height:1.75;color:var(--mid-lt);}
+
+    /* PRICING */
+    .pricing-wrap{padding:56px 64px 100px;}
+    .pricing-inner{max-width:760px;}
+    .price-note{background:var(--warm);border:1px solid var(--rule-dk);border-radius:14px;padding:24px 28px;font-size:15px;line-height:1.7;color:var(--mid-lt);margin-bottom:56px;}
+    .price-group{margin-bottom:52px;}
+    .price-group h2{font-size:27px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--black);}
+    .price-group .grp-sub{font-size:14px;line-height:1.6;color:var(--mid-lt);margin-bottom:18px;}
+    .price-row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule-dk);}
+    .price-row:last-child{border-bottom:none;}
+    .price-item{font-size:16px;line-height:1.5;color:var(--black);}
+    .price-item .sub{display:block;font-size:13px;color:var(--mid-lt);margin-top:3px;}
+    .price-amt{font-family:var(--font-d);font-size:24px;letter-spacing:-0.5px;color:var(--bg);white-space:nowrap;}
+    .price-amt.quote{font-size:16px;font-family:var(--font-b);font-style:italic;color:var(--mid-lt);}
+    .pricing-cta{margin-top:16px;padding:40px 36px;background:var(--bg-dk);border-radius:16px;text-align:center;}
+    .pricing-cta h3{color:var(--white);font-size:26px;letter-spacing:-0.5px;margin-bottom:12px;}
+    .pricing-cta p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;max-width:480px;margin:0 auto 26px;}
+    .pricing-cta a.btn{display:inline-block;background:var(--white);color:var(--black);padding:15px 40px;font-size:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;transition:background 0.2s;}
+    .pricing-cta a.btn:hover{background:var(--warm);}
+
+    @media(max-width:768px){
+      .nav-inner{padding:0 24px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .page-header{padding:56px 24px 40px;}
+      .pricing-wrap{padding:40px 24px 80px;}
+      .price-amt{font-size:21px;}
+    }
+  </style>
+  <style>/*NAVFIX-1024*/@media(max-width:1024px){.nav-links{display:none!important}.hamburger{display:flex!important}}</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Simple Rabbit" style="display:flex;align-items:center;text-decoration:none;"><img src="/logo.png" alt="Simple Rabbit" style="height:60px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="/portfolio">Portfolio</a>
+      <a href="/about">About</a>
+      <a href="/website-wellness-check">Website Wellness Check</a>
+      <a href="/apply" class="nav-cta" style="white-space:nowrap;">Book a Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/portfolio">Portfolio</a>
+  <a href="/about">About</a>
+  <a href="/website-wellness-check">Website Wellness Check</a>
+  <a href="/apply" class="mobile-nav-cta">Book a Call</a>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <span class="page-label">Website Care Clients</span>
+    <h1 class="page-title">Graphic Design Price List</h1>
+    <p class="page-intro">Design add-ons for my Website Care clients, beyond what your site care plan covers. Simple, flat pricing so you always know what something costs before we start.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-wrap reveal">
+  <div class="pricing-inner">
+
+    <div class="price-note">
+      These rates are for Website Care clients only. Anything bigger, like a brand refresh, a full print suite, or a custom project, is quoted separately. If you need something that isn&rsquo;t listed here, just ask and I&rsquo;ll price it for you.
+    </div>
+
+    <!-- Single items -->
+    <div class="price-group">
+      <h2>Single items</h2>
+      <div class="price-row"><span class="price-item">Social graphic (1)</span><span class="price-amt">$75</span></div>
+      <div class="price-row"><span class="price-item">Social graphics (2)</span><span class="price-amt">$125</span></div>
+      <div class="price-row"><span class="price-item">QR code card / small print piece</span><span class="price-amt">$75</span></div>
+      <div class="price-row"><span class="price-item">Business card design</span><span class="price-amt">$150</span></div>
+      <div class="price-row"><span class="price-item">Flyer (1-sided)</span><span class="price-amt">$150</span></div>
+      <div class="price-row"><span class="price-item">Flyer (2-sided)</span><span class="price-amt">$225</span></div>
+      <div class="price-row"><span class="price-item">Brochure (tri-fold)</span><span class="price-amt">$350</span></div>
+      <div class="price-row"><span class="price-item">Canva template<span class="sub">Up to 5 layouts</span></span><span class="price-amt">$200</span></div>
+    </div>
+
+    <!-- Bundles -->
+    <div class="price-group">
+      <h2>Bundles</h2>
+      <div class="price-row"><span class="price-item">4 social graphics</span><span class="price-amt">$225</span></div>
+      <div class="price-row"><span class="price-item">Monthly social pack<span class="sub">8 graphics</span></span><span class="price-amt">$400</span></div>
+    </div>
+
+    <!-- Presentation work -->
+    <div class="price-group">
+      <h2>Presentation work</h2>
+      <div class="price-row"><span class="price-item">Deck layout cleanup<span class="sub">Up to 10 slides, you supply the content</span></span><span class="price-amt">$250</span></div>
+      <div class="price-row"><span class="price-item">Custom PowerPoint template<span class="sub">Up to 15 layouts</span></span><span class="price-amt">$900</span></div>
+    </div>
+
+    <!-- Bigger projects -->
+    <div class="price-group">
+      <h2>Bigger projects</h2>
+      <div class="price-row"><span class="price-item">Brand refresh, full print suite, or a custom project</span><span class="price-amt quote">By quote</span></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="pricing-cta">
+      <h3>Need something designed?</h3>
+      <p>Tell me what you have in mind and I&rsquo;ll confirm the price and timeline before we start.</p>
+      <a href="mailto:hello@simplerabbit.studio?subject=Graphic%20design%20project" class="btn">Request a project</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--black); padding:0; display:block;">
+  <div style="padding:28px 64px 24px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; margin-bottom:10px;">
+      <div style="max-width:400px;">
+        <p style="font-family:var(--font-b),'Helvetica Neue', Helvetica, Arial,system-ui,sans-serif; font-size:14px; line-height:1.6; color:rgba(255,255,255,0.55); margin:0;">Based in Bergen County, NJ. Working with businesses remotely across the US.</p>
+        </div>
+      <div style="display:flex; gap:24px; align-items:center; padding-top:8px;">
+        <a href="https://www.facebook.com/simplerabbitnj/" target="_blank" rel="noopener" aria-label="Facebook" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/leannmfrank" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/leannfrank" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://x.com/leannfrank" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:rgba(255,255,255,0.6); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <span style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b);">&#169; 2026 Simple Rabbit LLC &nbsp;&middot;&nbsp; Bergen County, NJ</span>
+      <div style="display:flex; gap:28px; flex-wrap:wrap;">
+        <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
+        <a href="/client-hub" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Client Hub</a>
+        <a href="/contact" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Contact</a>
+        <a href="/case-studies" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Case Studies</a>
+        <a href="/articles" style="font-size:13px; color:rgba(255,255,255,0.45); font-family:var(--font-b); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Articles</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>#sr-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:#474D73;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:opacity .25s;}#sr-top:hover{background:#363c5e;}@media(max-width:768px){#sr-top{bottom:20px;right:20px;}}</style>
+<button id="sr-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>(function(){var b=document.getElementById('sr-top');window.addEventListener('scroll',function(){b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});})();</script>
+<script>
+var _hbtn=document.getElementById('hamburger'),_mnav=document.getElementById('mobile-nav');
+if(_hbtn&&_mnav){
+  _hbtn.addEventListener('click',function(){
+    _hbtn.classList.toggle('open');
+    var _navEl=document.querySelector('.nav');
+    _mnav.style.top=(_navEl?_navEl.getBoundingClientRect().bottom:80)+'px';
+    _mnav.classList.toggle('open');
+  });
+  _mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){_hbtn.classList.remove('open');_mnav.classList.remove('open');});
+  });
+}
+</script>
+<script>
+document.querySelectorAll('.reveal').forEach(function(el){
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
+  io.observe(el);
+});
+</script>
+
+<!-- SR-SCROLLNAV -->
+<style>
+  .nav{position:fixed!important;top:0;left:0;right:0;transform:translateY(-100%);transition:transform .35s ease, background .3s ease, box-shadow .3s ease;will-change:transform;}
+  .nav.sr-nav-show{transform:translateY(0);background:rgba(253,250,247,0.82)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 24px rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.06)!important;}
+</style>
+<script>
+(function(){
+  var nav=document.querySelector('.nav');
+  if(!nav)return;
+  function upd(){nav.classList.toggle('sr-nav-show',window.scrollY>100);}
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
