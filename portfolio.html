@@ -105,6 +105,11 @@
     }
     .port-label { font-family: var(--font-b); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; display: block; text-align: center; }
     .port-title { font-family: var(--font-d); font-size: 18px; font-weight: 400; letter-spacing: -0.3px; color: var(--black); text-align: center; }
+    .port-cell { display: block; }
+    .port-links { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .port-links a { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+    .port-links a:hover { color: var(--black); border-bottom-color: var(--accent); }
+    .port-links .sep { color: var(--mid-lt); font-size: 11px; opacity: 0.6; }
 
     @media (max-width: 1024px) { .port-section { padding: 64px 40px; } }
     @media (max-width: 900px) {
@@ -174,109 +179,148 @@
 
     <div class="port-grid">
 
-      <a href="https://atlanticinsuranceagents.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/atlantic-agents.png" alt="Atlantic Insurance Agents">
-        </div>
-        <span class="port-label">Corporate Insurance Broker</span>
-        <p class="port-title">Atlantic Insurance Agents</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://atlanticinsuranceagents.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/atlantic-agents.png" alt="Atlantic Insurance Agents">
+          </div>
+          <span class="port-label">Corporate Insurance Broker</span>
+          <p class="port-title">Atlantic Insurance Agents</p>
+        </a>
+        <div class="port-links"><a href="https://atlanticinsuranceagents.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="/blog/case-study-deramo-orthopaedics" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/deramo-ortho.jpg" alt="Deramo Orthopaedics">
-        </div>
-        <span class="port-label">Orthopaedic Surgeon &amp; Wellness Center</span>
-        <p class="port-title">Deramo Orthopaedics</p>
-      </a>
+      <div class="port-cell">
+        <a href="/blog/case-study-deramo-orthopaedics" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/deramo-ortho.jpg" alt="Deramo Orthopaedics">
+          </div>
+          <span class="port-label">Orthopaedic Surgeon &amp; Wellness Center</span>
+          <p class="port-title">Deramo Orthopaedics</p>
+        </a>
+        <div class="port-links"><a href="/blog/case-study-deramo-orthopaedics">Case study</a></div>
+      </div>
 
-      <a href="https://thehomerefresh.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/the-home-refresh.png" alt="The Home Refresh">
-        </div>
-        <span class="port-label">Home organizing</span>
-        <p class="port-title">The Home Refresh</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://thehomerefresh.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/the-home-refresh.png" alt="The Home Refresh">
+          </div>
+          <span class="port-label">Home organizing</span>
+          <p class="port-title">The Home Refresh</p>
+        </a>
+        <div class="port-links"><a href="https://thehomerefresh.com" target="_blank" rel="noopener">Live website</a><span class="sep">|</span><a href="/blog/case-study-the-home-refresh">Case study</a></div>
+      </div>
 
-      <a href="https://millihealthandwellness.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/milli-health-wellness.png" alt="Milli Health &amp; Wellness">
-        </div>
-        <span class="port-label">Menopause &amp; hormone practice</span>
-        <p class="port-title">Milli Health &amp; Wellness</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://millihealthandwellness.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/milli-health-wellness.png" alt="Milli Health &amp; Wellness">
+          </div>
+          <span class="port-label">Menopause &amp; hormone practice</span>
+          <p class="port-title">Milli Health &amp; Wellness</p>
+        </a>
+        <div class="port-links"><a href="https://millihealthandwellness.com" target="_blank" rel="noopener">Live website</a><span class="sep">|</span><a href="/blog/case-study-milli-health-wellness">Case study</a></div>
+      </div>
 
-      <a href="https://partiesintheusa.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/PITUSA-preview.png" alt="Parties in the USA">
-        </div>
-        <span class="port-label">National Party Venue Directory</span>
-        <p class="port-title">Parties in the USA</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://partiesintheusa.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/PITUSA-preview.png" alt="Parties in the USA">
+          </div>
+          <span class="port-label">National Party Venue Directory</span>
+          <p class="port-title">Parties in the USA</p>
+        </a>
+        <div class="port-links"><a href="https://partiesintheusa.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://eventscustomtaylored.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/events-custom-taylored.png" alt="Events Custom Taylored">
-        </div>
-        <span class="port-label">Bespoke event planning</span>
-        <p class="port-title">Events Custom Taylored</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://eventscustomtaylored.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/events-custom-taylored.png" alt="Events Custom Taylored">
+          </div>
+          <span class="port-label">Bespoke event planning</span>
+          <p class="port-title">Events Custom Taylored</p>
+        </a>
+        <div class="port-links"><a href="https://eventscustomtaylored.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://goodwinfinishes.com.au" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/lauren-goodwin-decorative-finishes.png" alt="Lauren Goodwin Decorative Finishes">
-        </div>
-        <span class="port-label">Custom wall finishes</span>
-        <p class="port-title">Lauren Goodwin Decorative Finishes</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://goodwinfinishes.com.au" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/lauren-goodwin-decorative-finishes.png" alt="Lauren Goodwin Decorative Finishes">
+          </div>
+          <span class="port-label">Custom wall finishes</span>
+          <p class="port-title">Lauren Goodwin Decorative Finishes</p>
+        </a>
+        <div class="port-links"><a href="https://goodwinfinishes.com.au" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://novateurstyle.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/novateur-style.png" alt="Novateur Style">
-        </div>
-        <span class="port-label">Luxury fashion stylist</span>
-        <p class="port-title">Novateur Style</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://novateurstyle.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/novateur-style.png" alt="Novateur Style">
+          </div>
+          <span class="port-label">Luxury fashion stylist</span>
+          <p class="port-title">Novateur Style</p>
+        </a>
+        <div class="port-links"><a href="https://novateurstyle.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://reviveandbloomtherapy.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/revive-and-bloom.png" alt="Revive &amp; Bloom">
-        </div>
-        <span class="port-label">Women&rsquo;s psychotherapy</span>
-        <p class="port-title">Revive &amp; Bloom</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://reviveandbloomtherapy.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/revive-and-bloom.png" alt="Revive &amp; Bloom">
+          </div>
+          <span class="port-label">Women&rsquo;s psychotherapy</span>
+          <p class="port-title">Revive &amp; Bloom</p>
+        </a>
+        <div class="port-links"><a href="https://reviveandbloomtherapy.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://davidgileslaw.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/david-giles-law.png" alt="Law Office of David R. Giles">
-        </div>
-        <span class="port-label">Education attorney</span>
-        <p class="port-title">Law Office of David R. Giles</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://davidgileslaw.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/david-giles-law.png" alt="Law Office of David R. Giles">
+          </div>
+          <span class="port-label">Education attorney</span>
+          <p class="port-title">Law Office of David R. Giles</p>
+        </a>
+        <div class="port-links"><a href="https://davidgileslaw.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://thecallwithnancysabato.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/the-call.png" alt="The Call with Nancy Sabato">
-        </div>
-        <span class="port-label">Podcaster</span>
-        <p class="port-title">The Call with Nancy Sabato</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://thecallwithnancysabato.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/the-call.png" alt="The Call with Nancy Sabato">
+          </div>
+          <span class="port-label">Podcaster</span>
+          <p class="port-title">The Call with Nancy Sabato</p>
+        </a>
+        <div class="port-links"><a href="https://thecallwithnancysabato.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://innovativesoftware.solutions" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="portfolio-images/innovative-software-solutions.png" alt="Innovative Software Solutions shipping and supply-chain software website">
-        </div>
-        <span class="port-label">Shipping &amp; supply-chain software</span>
-        <p class="port-title">Innovative Software Solutions</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://innovativesoftware.solutions" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="portfolio-images/innovative-software-solutions.png" alt="Innovative Software Solutions shipping and supply-chain software website">
+          </div>
+          <span class="port-label">Shipping &amp; supply-chain software</span>
+          <p class="port-title">Innovative Software Solutions</p>
+        </a>
+        <div class="port-links"><a href="https://innovativesoftware.solutions" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
-      <a href="https://braveshapes.com" target="_blank" rel="noopener" class="port-item">
-        <div class="port-img">
-          <img src="previews/portfolio/brave-shapes.png" alt="Brave Shapes">
-        </div>
-        <span class="port-label">Book series</span>
-        <p class="port-title">Brave Shapes</p>
-      </a>
+      <div class="port-cell">
+        <a href="https://braveshapes.com" target="_blank" rel="noopener" class="port-item">
+          <div class="port-img">
+            <img src="previews/portfolio/brave-shapes.png" alt="Brave Shapes">
+          </div>
+          <span class="port-label">Book series</span>
+          <p class="port-title">Brave Shapes</p>
+        </a>
+        <div class="port-links"><a href="https://braveshapes.com" target="_blank" rel="noopener">Live website</a></div>
+      </div>
 
       <div class="port-item">
         <div class="port-img">
