@@ -328,19 +328,31 @@
   </div>
 </section>
 
-<!-- PHOTO STRIP -->
-<section style="display:grid; grid-template-columns:repeat(4,1fr); margin:0; padding:0; line-height:0;">
-  <div style="aspect-ratio:1/1; overflow:hidden; background:var(--warm);">
-    <img src="about-photo-1.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-  </div>
-  <div style="aspect-ratio:1/1; overflow:hidden; background:var(--warm);">
-    <img src="about-photo-2.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;">
-  </div>
-  <div style="aspect-ratio:1/1; overflow:hidden; background:var(--warm);">
-    <img src="about-photo-3.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
-  </div>
-  <div style="aspect-ratio:1/1; overflow:hidden; background:var(--warm);">
-    <img src="about-photo-4.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
+<!-- PHOTO STRIP (slow auto-scroll, 4 visible) -->
+<style>
+  .photo-strip{overflow:hidden; line-height:0; width:100%;}
+  .photo-track{display:flex; width:max-content; animation:photo-scroll 50s linear infinite;}
+  .photo-track:hover{animation-play-state:paused;}
+  .photo-slide{flex:0 0 25vw; aspect-ratio:1/1; overflow:hidden; background:var(--warm);}
+  .photo-slide img{width:100%; height:100%; object-fit:cover; display:block;}
+  /* one full set = half the duplicated track */
+  @keyframes photo-scroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){ .photo-track{animation:none;} }
+</style>
+<section class="photo-strip" aria-label="Simple Rabbit at work">
+  <div class="photo-track">
+    <!-- set 1 -->
+    <div class="photo-slide"><img src="about-photo-1.jpg" alt="" style="object-position:center bottom;"></div>
+    <div class="photo-slide"><img src="about-photo-2.jpg" alt="" style="object-position:center bottom;"></div>
+    <div class="photo-slide"><img src="about-photo-3.jpg" alt=""></div>
+    <div class="photo-slide"><img src="about-photo-4.png" alt=""></div>
+    <div class="photo-slide"><img src="about-photo-5.jpg" alt="Leann Frank teaching a web design class"></div>
+    <!-- set 2 (duplicate for seamless loop) -->
+    <div class="photo-slide" aria-hidden="true"><img src="about-photo-1.jpg" alt="" style="object-position:center bottom;"></div>
+    <div class="photo-slide" aria-hidden="true"><img src="about-photo-2.jpg" alt="" style="object-position:center bottom;"></div>
+    <div class="photo-slide" aria-hidden="true"><img src="about-photo-3.jpg" alt=""></div>
+    <div class="photo-slide" aria-hidden="true"><img src="about-photo-4.png" alt=""></div>
+    <div class="photo-slide" aria-hidden="true"><img src="about-photo-5.jpg" alt=""></div>
   </div>
 </section>
 
