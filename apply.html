@@ -117,6 +117,12 @@
     .form-input:focus { border-bottom-color: var(--accent); }
     .form-input::placeholder { color: rgba(0,0,0,0.22); }
     textarea.form-input { resize: vertical; min-height: 110px; padding-top: 8px; }
+    select.form-input {
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      cursor: pointer; padding-right: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237A756E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0 center; background-size: 16px;
+    }
 
     /* ── RADIO + CHECKBOX ── */
     .options-list { display: flex; flex-direction: column; gap: 12px; }
@@ -264,6 +270,27 @@
       <label class="form-label" for="website">Your business website <span style="color:var(--mid-lt); font-weight:400;">(optional)</span></label>
       <input class="form-input" type="url" id="website" name="website" placeholder="https://yourbusiness.com">
     </div>
+    <div class="form-group">
+      <label class="form-label" for="found_me">How did you find me? <span style="color:var(--mid-lt); font-weight:400;">(optional)</span></label>
+      <select class="form-input" id="found_me" name="how_found" style="color:rgba(0,0,0,0.22);">
+        <option value="" disabled selected>Select one&hellip;</option>
+        <option value="Facebook Group">Facebook Group</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Event">Event</option>
+        <option value="Referral">Referral</option>
+        <option value="Google">Google</option>
+        <option value="AI (ChatGPT, etc.)">AI (ChatGPT, etc.)</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group" id="referral-group" style="display:none;">
+      <label class="form-label" for="referral_name">Who can I thank for the referral?</label>
+      <input class="form-input" type="text" id="referral_name" name="referral_name" placeholder="Their name">
+    </div>
+    <div class="form-group" id="other-group" style="display:none;">
+      <label class="form-label" for="found_other">Tell me more</label>
+      <input class="form-input" type="text" id="found_other" name="how_found_other" placeholder="Where exactly?">
+    </div>
     <button type="submit" class="btn-submit" id="book-submit">Book my call &rarr;</button>
   </form>
   <p style="text-align:center; font-family:var(--font-b); font-size:14px; color:var(--mid-lt); line-height:1.6; margin:20px 0 0;">After you submit, you&rsquo;ll go straight to my calendar to pick a time. Prefer email? <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent); font-weight:600; text-decoration:none; border-bottom:1px solid var(--accent);">hello@simplerabbit.studio</a></p>
@@ -286,6 +313,18 @@
     } catch (err) { /* still send them to the calendar */ }
     window.location.href = CAL;
   });
+
+  (function(){
+    var sel = document.getElementById('found_me');
+    var refG = document.getElementById('referral-group');
+    var othG = document.getElementById('other-group');
+    if(!sel) return;
+    sel.addEventListener('change', function(){
+      sel.style.color = sel.value ? 'var(--black)' : 'rgba(0,0,0,0.22)';
+      refG.style.display = (sel.value === 'Referral') ? 'block' : 'none';
+      othG.style.display = (sel.value === 'Other') ? 'block' : 'none';
+    });
+  })();
 </script>
 
 </body>
