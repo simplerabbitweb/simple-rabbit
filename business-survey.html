@@ -83,12 +83,12 @@
   <div id="intro">
     <span class="eyebrow">2-minute survey</span>
     <h1>Tell me about your business.</h1>
-    <p class="lede">I&rsquo;m doing some research on how small business owners really market and grow. The wins, the dead ends, all of it. Answer a few honest questions below and you&rsquo;ll be entered to win a $50 Amazon gift card. I read every single response.</p>
+    <p class="lede">I&rsquo;m doing some research on how small business owners really market and grow. Answer a few honest questions below and you&rsquo;ll be entered to win a $50 Amazon gift card. Everything you share is kept confidential, and I read every single response.</p>
     <div class="prize-card">
       <img src="amazon-gift-card.jpg" alt="$50 Amazon gift card" loading="lazy">
       <div class="prize-copy">
         <span class="ideas-win">Win a $50 Amazon gift card</span>
-        <p>One winner, drawn from all entries. Takes about two minutes.</p>
+        <p>One winner, drawn at random on November 20th.</p>
       </div>
     </div>
   </div>
@@ -140,19 +140,19 @@
 
     <!-- Q4 -->
     <div class="q">
-      <label class="q-label" for="sources">Where do most of your clients come from right now? <span class="opt">(optional)</span></label>
+      <label class="q-label" for="sources">Where do most of your clients come from right now?</label>
       <textarea class="f-input" id="sources" name="client_sources" placeholder="Referrals, social, Google, networking, ads&hellip;"></textarea>
     </div>
 
     <!-- Q5 -->
     <div class="q">
-      <label class="q-label" for="didntwork">What marketing have you tried in the last year that didn&rsquo;t seem to pay off? <span class="opt">(optional)</span></label>
+      <label class="q-label" for="didntwork">What marketing have you tried in the last year that didn&rsquo;t seem to pay off?</label>
       <textarea class="f-input" id="didntwork" name="marketing_didnt_work" placeholder="What fell flat?"></textarea>
     </div>
 
     <!-- Q6 -->
     <div class="q">
-      <label class="q-label" for="networking">When you go to a networking event, what usually happens afterward? <span class="opt">(optional)</span></label>
+      <label class="q-label" for="networking">When you go to a networking event, what usually happens afterward?</label>
       <textarea class="f-input" id="networking" name="after_networking" placeholder="Be honest"></textarea>
     </div>
 
@@ -176,7 +176,7 @@
 
     <!-- Q9 -->
     <div class="q">
-      <label class="q-label" for="sixmonths">If your marketing were working, what would be different six months from now? <span class="opt">(optional)</span></label>
+      <label class="q-label" for="sixmonths">If your marketing were working, what would be different six months from now?</label>
       <textarea class="f-input" id="sixmonths" name="six_months_vision" placeholder="Paint the picture"></textarea>
     </div>
 
@@ -193,7 +193,7 @@
 
     <!-- Q11 -->
     <div class="q">
-      <label class="q-label" for="pasthelp">Have you ever invested in business help? What made it worth it, or not? <span class="opt">(optional)</span></label>
+      <label class="q-label" for="pasthelp">Have you ever invested in business help? What made it worth it, or not?</label>
       <textarea class="f-input" id="pasthelp" name="past_business_help" placeholder="A course, coach, program, consultant&hellip;"></textarea>
     </div>
 
@@ -212,7 +212,7 @@
 
     <!-- Faith -->
     <div class="q">
-      <span class="q-label">How much does your faith shape the way you run your business? <span class="opt">(optional)</span></span>
+      <span class="q-label">How much does your faith shape the way you run your business?</span>
       <div class="opts">
         <label class="opt-row"><input type="radio" name="faith" value="Not at all"> Not at all</label>
         <label class="opt-row"><input type="radio" name="faith" value="A little"> A little</label>
@@ -223,13 +223,39 @@
 
     <!-- Q13 -->
     <div class="q">
-      <span class="q-label">Which describes you? <span class="opt">(optional)</span></span>
+      <span class="q-label">Which describes you?</span>
       <div class="opts">
         <label class="opt-row"><input type="radio" name="describes_you" value="Mom who was home with kids before starting"> A mom who was home with kids before starting</label>
         <label class="opt-row"><input type="radio" name="describes_you" value="Mom who started while working"> A mom who started while working</label>
         <label class="opt-row"><input type="radio" name="describes_you" value="Not a mom"> Not a mom</label>
         <label class="opt-row"><input type="radio" name="describes_you" value="Prefer not to say"> Prefer not to say</label>
       </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="q">
+      <span class="q-label">What&rsquo;s your gender?</span>
+      <div class="opts">
+        <label class="opt-row"><input type="radio" name="gender" value="Woman"> Woman</label>
+        <label class="opt-row"><input type="radio" name="gender" value="Man"> Man</label>
+        <label class="opt-row"><input type="radio" name="gender" value="Non-binary"> Non-binary</label>
+        <label class="opt-row"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+      </div>
+    </div>
+
+    <!-- Age range -->
+    <div class="q">
+      <label class="q-label" for="age">What&rsquo;s your age range?</label>
+      <select class="f-input" id="age" name="age_range">
+        <option value="" disabled selected>Select one&hellip;</option>
+        <option>Under 25</option>
+        <option>25&ndash;34</option>
+        <option>35&ndash;44</option>
+        <option>45&ndash;54</option>
+        <option>55&ndash;64</option>
+        <option>65+</option>
+        <option>Prefer not to say</option>
+      </select>
     </div>
 
     <!-- ENTRY / EMAIL -->
@@ -260,7 +286,7 @@
         <input type="checkbox" name="email_optin" value="Yes, add me to the list" checked style="margin-top:3px;accent-color:var(--bg);flex-shrink:0;width:17px;height:17px;">
         <span>Add me to Leann&rsquo;s email list for occasional notes for business owners. Uncheck if you&rsquo;d rather not. You can unsubscribe anytime.</span>
       </label>
-      <p class="consent">No purchase necessary to enter. One winner drawn from all entries.</p>
+      <p class="consent">No purchase necessary to enter. Winner drawn at random on November 20th.</p>
     </div>
 
     <button type="submit" class="btn-submit" id="submit-btn">Submit my answers</button>
