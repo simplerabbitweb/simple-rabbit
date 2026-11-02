@@ -198,15 +198,15 @@
     <!-- ENTRY / EMAIL -->
     <div class="entry">
       <h2>Enter to win the $50 gift card</h2>
-      <p>Add at least one way for me to reach you if you win: email, Instagram, or phone. I&rsquo;ll send you the results once they&rsquo;re in, too.</p>
+      <p>Your email enters you in the drawing so I can reach you if you win, and I&rsquo;ll send you the results too. Instagram and phone are optional.</p>
       <div class="row">
         <div>
           <label for="first_name">First name</label>
           <input class="f-input" type="text" id="first_name" name="first_name" placeholder="First name">
         </div>
         <div>
-          <label for="email">Email</label>
-          <input class="f-input" type="email" id="email" name="email" placeholder="you@email.com">
+          <label for="email">Email <span style="color:var(--accent);">*</span></label>
+          <input class="f-input" type="email" id="email" name="email" placeholder="you@email.com" required>
         </div>
       </div>
       <div class="row" style="margin-top:18px;">
@@ -219,8 +219,11 @@
           <input class="f-input" type="tel" id="phone" name="phone" placeholder="(201) 555-0100">
         </div>
       </div>
-      <p id="entry-error" style="display:none;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:0.3px;margin-top:16px;">Please add at least one way to reach you: email, Instagram, or phone.</p>
-      <p class="consent">Entering adds you to my email list, where I send occasional notes for business owners. No spam, and you can unsubscribe anytime. No purchase necessary to enter.</p>
+      <label class="optin-row" style="display:flex;align-items:flex-start;gap:12px;margin-top:22px;font-size:14px;line-height:1.55;color:var(--black);cursor:pointer;">
+        <input type="checkbox" name="email_optin" value="Yes, add me to the list" checked style="margin-top:3px;accent-color:var(--bg);flex-shrink:0;width:17px;height:17px;">
+        <span>Add me to Leann&rsquo;s email list for occasional notes for business owners. Uncheck if you&rsquo;d rather not. You can unsubscribe anytime.</span>
+      </label>
+      <p class="consent">No purchase necessary to enter. One winner drawn from all entries.</p>
     </div>
 
     <button type="submit" class="btn-submit" id="submit-btn">Submit my answers</button>
@@ -236,16 +239,6 @@
 <script>
   document.getElementById('survey-form').addEventListener('submit', async function(e){
     e.preventDefault();
-    var email = document.getElementById('email').value.trim();
-    var ig = document.getElementById('instagram').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var errEl = document.getElementById('entry-error');
-    if (!email && !ig && !phone) {
-      errEl.style.display = 'block';
-      errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-    errEl.style.display = 'none';
     var btn = document.getElementById('submit-btn');
     btn.disabled = true;
     btn.textContent = 'Sending…';
