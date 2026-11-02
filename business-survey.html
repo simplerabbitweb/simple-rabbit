@@ -198,7 +198,7 @@
     <!-- ENTRY / EMAIL -->
     <div class="entry">
       <h2>Enter to win the $50 gift card</h2>
-      <p>Leave your email and you&rsquo;re entered in the drawing. I&rsquo;ll send you the results once they&rsquo;re in, too.</p>
+      <p>Add at least one way for me to reach you if you win: email, Instagram, or phone. I&rsquo;ll send you the results once they&rsquo;re in, too.</p>
       <div class="row">
         <div>
           <label for="first_name">First name</label>
@@ -209,6 +209,17 @@
           <input class="f-input" type="email" id="email" name="email" placeholder="you@email.com">
         </div>
       </div>
+      <div class="row" style="margin-top:18px;">
+        <div>
+          <label for="instagram">Instagram</label>
+          <input class="f-input" type="text" id="instagram" name="instagram" placeholder="@yourhandle">
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input class="f-input" type="tel" id="phone" name="phone" placeholder="(201) 555-0100">
+        </div>
+      </div>
+      <p id="entry-error" style="display:none;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:0.3px;margin-top:16px;">Please add at least one way to reach you: email, Instagram, or phone.</p>
       <p class="consent">Entering adds you to my email list, where I send occasional notes for business owners. No spam, and you can unsubscribe anytime. No purchase necessary to enter.</p>
     </div>
 
@@ -225,6 +236,16 @@
 <script>
   document.getElementById('survey-form').addEventListener('submit', async function(e){
     e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var ig = document.getElementById('instagram').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var errEl = document.getElementById('entry-error');
+    if (!email && !ig && !phone) {
+      errEl.style.display = 'block';
+      errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    errEl.style.display = 'none';
     var btn = document.getElementById('submit-btn');
     btn.disabled = true;
     btn.textContent = 'Sending…';
