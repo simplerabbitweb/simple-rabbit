@@ -13,6 +13,7 @@
   <style>
     @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
     @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    @font-face{font-family:'Ideas';src:url('fonts/Ideas-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
       color-scheme:light only;
@@ -33,6 +34,11 @@
     .lede{font-size:18px;line-height:1.7;color:var(--mid-lt);max-width:620px;margin-bottom:12px;}
     .prize{display:inline-block;background:var(--warm);border:1px solid var(--rule-dk);border-radius:10px;padding:12px 18px;font-size:15px;line-height:1.5;color:var(--black);margin-top:20px;}
     .prize strong{font-weight:600;}
+    .prize-card{display:flex;align-items:center;gap:26px;margin-top:30px;background:var(--warm);border:1px solid var(--rule-dk);border-radius:16px;padding:22px 26px;flex-wrap:wrap;}
+    .prize-card img{width:210px;max-width:44vw;height:auto;border-radius:8px;display:block;box-shadow:0 8px 22px rgba(0,0,0,0.18);}
+    .prize-copy{flex:1;min-width:200px;}
+    .ideas-win{font-family:'Ideas',var(--font-d);font-size:clamp(28px,4vw,42px);line-height:1.02;color:var(--black);display:block;margin-bottom:10px;}
+    .prize-copy p{font-size:14px;line-height:1.55;color:var(--mid-lt);margin:0;}
     form{margin-top:52px;}
     .q{padding:30px 0;border-top:1px solid var(--rule-dk);}
     .q:first-of-type{border-top:none;}
@@ -75,10 +81,16 @@
 <div class="wrap">
 
   <div id="intro">
-    <span class="eyebrow">2-minute survey &middot; Win a $50 Amazon gift card</span>
+    <span class="eyebrow">2-minute survey</span>
     <h1>Tell me about your business.</h1>
     <p class="lede">I&rsquo;m doing some research on how small business owners really market and grow. The wins, the dead ends, all of it. Answer a few honest questions below and you&rsquo;ll be entered to win a $50 Amazon gift card. I read every single response.</p>
-    <span class="prize"><strong>One winner</strong> drawn from all entries. Takes about two minutes.</span>
+    <div class="prize-card">
+      <img src="amazon-gift-card.jpg" alt="$50 Amazon gift card" loading="lazy">
+      <div class="prize-copy">
+        <span class="ideas-win">Win a $50 Amazon gift card</span>
+        <p>One winner, drawn from all entries. Takes about two minutes.</p>
+      </div>
+    </div>
   </div>
 
   <form id="survey-form" action="https://formspree.io/f/mljjoper" method="POST">
@@ -101,6 +113,18 @@
         <option>3&ndash;5 years</option>
         <option>6&ndash;10 years</option>
         <option>More than 10 years</option>
+      </select>
+    </div>
+
+    <!-- Stage -->
+    <div class="q">
+      <label class="q-label" for="stage">Roughly where is your business right now?<span class="req">*</span></label>
+      <select class="f-input" id="stage" name="business_stage" required>
+        <option value="" disabled selected>Select one&hellip;</option>
+        <option>Just starting</option>
+        <option>Under $50K a year</option>
+        <option>$50K to $150K</option>
+        <option>Over $150K</option>
       </select>
     </div>
 
@@ -171,6 +195,30 @@
     <div class="q">
       <label class="q-label" for="pasthelp">Have you ever invested in business help? What made it worth it, or not? <span class="opt">(optional)</span></label>
       <textarea class="f-input" id="pasthelp" name="past_business_help" placeholder="A course, coach, program, consultant&hellip;"></textarea>
+    </div>
+
+    <!-- Money -->
+    <div class="q">
+      <label class="q-label" for="most_invested">What&rsquo;s the most you&rsquo;ve invested in business help, such as a course, coach or program?<span class="req">*</span></label>
+      <select class="f-input" id="most_invested" name="most_invested" required>
+        <option value="" disabled selected>Select one&hellip;</option>
+        <option>Under $500</option>
+        <option>$500 to $2K</option>
+        <option>$2K to $5K</option>
+        <option>$5K to $10K</option>
+        <option>Over $10K</option>
+      </select>
+    </div>
+
+    <!-- Faith -->
+    <div class="q">
+      <span class="q-label">How much does your faith shape the way you run your business? <span class="opt">(optional)</span></span>
+      <div class="opts">
+        <label class="opt-row"><input type="radio" name="faith" value="Not at all"> Not at all</label>
+        <label class="opt-row"><input type="radio" name="faith" value="A little"> A little</label>
+        <label class="opt-row"><input type="radio" name="faith" value="Quite a bit"> Quite a bit</label>
+        <label class="opt-row"><input type="radio" name="faith" value="It shapes everything"> It shapes everything</label>
+      </div>
     </div>
 
     <!-- Q13 -->
