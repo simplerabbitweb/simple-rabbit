@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3NSS9Z26P"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W3NSS9Z26P');</script>
+  <title>A quick survey for business owners</title>
+  <meta name="description" content="A short survey about how small business owners market and grow. Answer a few questions and enter to win a $50 Amazon gift card.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Regular copy.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Instrument Serif';src:url('fonts/InstrumentSerif-Italic copy.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      color-scheme:light only;
+      --bg:#474D73;--bg-dk:#2D3154;--white:#FDFAF7;--warm:#F5F0EB;--black:#0A0905;
+      --mid-lt:#7A756E;--accent:#AA737D;--rule-dk:rgba(0,0,0,0.12);
+      --font-d:'Instrument Serif',Georgia,serif;
+      --font-b:'Helvetica Neue', Helvetica, Arial,system-ui,sans-serif;
+    }
+    html{overflow-x:hidden;}
+    body{font-family:var(--font-b);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    .nav{border-bottom:1px solid var(--rule-dk);background:var(--white);}
+    .nav-inner{max-width:760px;margin:0 auto;padding:0 24px;height:78px;display:flex;align-items:center;}
+    .nav-inner img{height:56px;width:auto;display:block;}
+    .wrap{max-width:760px;margin:0 auto;padding:64px 24px 100px;}
+    .eyebrow{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;}
+    h1{font-family:var(--font-d);font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-1.5px;font-weight:400;color:var(--black);margin-bottom:22px;}
+    .lede{font-size:18px;line-height:1.7;color:var(--mid-lt);max-width:620px;margin-bottom:12px;}
+    .prize{display:inline-block;background:var(--warm);border:1px solid var(--rule-dk);border-radius:10px;padding:12px 18px;font-size:15px;line-height:1.5;color:var(--black);margin-top:20px;}
+    .prize strong{font-weight:600;}
+    form{margin-top:52px;}
+    .q{padding:30px 0;border-top:1px solid var(--rule-dk);}
+    .q:first-of-type{border-top:none;}
+    .q-label{display:block;font-family:var(--font-d);font-size:22px;line-height:1.3;letter-spacing:-0.3px;color:var(--black);margin-bottom:18px;}
+    .q-label .req{color:var(--accent);margin-left:2px;}
+    .q-label .opt{font-family:var(--font-b);font-size:13px;color:var(--mid-lt);letter-spacing:0;font-style:italic;}
+    .f-input{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,0.22);padding:10px 0;font-size:16px;background:transparent;outline:none;font-family:var(--font-b);color:var(--black);transition:border-color 0.2s;}
+    .f-input:focus{border-bottom-color:var(--accent);}
+    .f-input::placeholder{color:rgba(0,0,0,0.24);}
+    textarea.f-input{resize:vertical;min-height:90px;padding-top:6px;line-height:1.6;}
+    select.f-input{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237A756E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center;background-size:16px;}
+    .opts{display:flex;flex-direction:column;gap:12px;}
+    .opt-row{display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:var(--black);cursor:pointer;padding:10px 14px;border:1px solid var(--rule-dk);border-radius:10px;transition:border-color 0.15s,background 0.15s;}
+    .opt-row:hover{border-color:var(--accent);background:var(--warm);}
+    .opt-row input{margin-top:3px;accent-color:var(--bg);flex-shrink:0;}
+    .entry{margin-top:40px;background:var(--warm);border:1px solid var(--rule-dk);border-radius:16px;padding:32px 28px;}
+    .entry h2{font-family:var(--font-d);font-size:26px;letter-spacing:-0.5px;font-weight:400;margin-bottom:10px;}
+    .entry p{font-size:15px;line-height:1.6;color:var(--mid-lt);margin-bottom:22px;}
+    .entry .row{display:flex;gap:18px;flex-wrap:wrap;}
+    .entry .row>div{flex:1;min-width:180px;}
+    .entry label{display:block;font-size:13px;font-weight:600;letter-spacing:0.5px;color:var(--black);margin-bottom:8px;}
+    .consent{font-size:12px;line-height:1.6;color:var(--mid-lt);margin-top:18px;}
+    .btn-submit{margin-top:36px;width:100%;background:#474D73;color:var(--white);border:none;border-radius:10px;padding:18px 28px;font-size:15px;font-weight:400;letter-spacing:1.2px;text-transform:uppercase;font-family:var(--font-b);cursor:pointer;transition:background 0.2s;}
+    .btn-submit:hover{background:#2D3154;}
+    .btn-submit:disabled{opacity:0.6;cursor:default;}
+    #thanks{display:none;padding:48px 0;}
+    #thanks h2{font-family:var(--font-d);font-size:clamp(28px,4vw,44px);letter-spacing:-1px;font-weight:400;margin-bottom:18px;}
+    #thanks p{font-size:18px;line-height:1.7;color:var(--mid-lt);max-width:560px;}
+    @media(max-width:600px){ .wrap{padding:44px 20px 80px;} .q-label{font-size:19px;} }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Home"><img src="/logo.png" alt=""></a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div id="intro">
+    <span class="eyebrow">2-minute survey &middot; Win a $50 Amazon gift card</span>
+    <h1>Tell me about your business.</h1>
+    <p class="lede">I&rsquo;m doing some research on how small business owners really market and grow. The wins, the dead ends, all of it. Answer a few honest questions below and you&rsquo;ll be entered to win a $50 Amazon gift card. I read every single response.</p>
+    <span class="prize"><strong>One winner</strong> drawn from all entries. Takes about two minutes.</span>
+  </div>
+
+  <form id="survey-form" action="https://formspree.io/f/mljjoper" method="POST">
+    <input type="hidden" name="_subject" value="New business survey response">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <!-- Q1 -->
+    <div class="q">
+      <label class="q-label" for="business">What kind of business do you run, and what do you sell?<span class="req">*</span></label>
+      <textarea class="f-input" id="business" name="business" placeholder="Tell me a little about it" required></textarea>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q">
+      <label class="q-label" for="years">How long have you been in business?<span class="req">*</span></label>
+      <select class="f-input" id="years" name="years_in_business" required>
+        <option value="" disabled selected>Select one&hellip;</option>
+        <option>Less than a year</option>
+        <option>1&ndash;2 years</option>
+        <option>3&ndash;5 years</option>
+        <option>6&ndash;10 years</option>
+        <option>More than 10 years</option>
+      </select>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q">
+      <span class="q-label">Is it just you, or do you have help?<span class="req">*</span></span>
+      <div class="opts">
+        <label class="opt-row"><input type="radio" name="team" value="Just me" required> Just me</label>
+        <label class="opt-row"><input type="radio" name="team" value="I have some help (contractors or part-time)"> I have some help (contractors or part-time)</label>
+        <label class="opt-row"><input type="radio" name="team" value="I have employees"> I have employees</label>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q">
+      <label class="q-label" for="sources">Where do most of your clients come from right now? <span class="opt">(optional)</span></label>
+      <textarea class="f-input" id="sources" name="client_sources" placeholder="Referrals, social, Google, networking, ads&hellip;"></textarea>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q">
+      <label class="q-label" for="didntwork">What marketing have you tried in the last year that didn&rsquo;t seem to pay off? <span class="opt">(optional)</span></label>
+      <textarea class="f-input" id="didntwork" name="marketing_didnt_work" placeholder="What fell flat?"></textarea>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q">
+      <label class="q-label" for="networking">When you go to a networking event, what usually happens afterward? <span class="opt">(optional)</span></label>
+      <textarea class="f-input" id="networking" name="after_networking" placeholder="Be honest"></textarea>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q">
+      <label class="q-label" for="hours">If you had a clear plan, how many hours a week could you realistically spend on marketing?<span class="req">*</span></label>
+      <select class="f-input" id="hours" name="marketing_hours" required>
+        <option value="" disabled selected>Select one&hellip;</option>
+        <option>1&ndash;2 hours</option>
+        <option>3&ndash;5 hours</option>
+        <option>6&ndash;10 hours</option>
+        <option>More than 10 hours</option>
+      </select>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q">
+      <label class="q-label" for="frustrating">What&rsquo;s the most frustrating part of marketing your business?<span class="req">*</span></label>
+      <textarea class="f-input" id="frustrating" name="biggest_frustration" placeholder="The thing that drives you nuts" required></textarea>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q">
+      <label class="q-label" for="sixmonths">If your marketing were working, what would be different six months from now? <span class="opt">(optional)</span></label>
+      <textarea class="f-input" id="sixmonths" name="six_months_vision" placeholder="Paint the picture"></textarea>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q">
+      <span class="q-label">When you&rsquo;ve gotten stuck before, what helped most?<span class="req">*</span></span>
+      <div class="opts">
+        <label class="opt-row"><input type="radio" name="what_helped" value="A course" required> A course</label>
+        <label class="opt-row"><input type="radio" name="what_helped" value="A coach"> A coach</label>
+        <label class="opt-row"><input type="radio" name="what_helped" value="A group of peers"> A group of peers</label>
+        <label class="opt-row"><input type="radio" name="what_helped" value="Figuring it out alone"> Figuring it out alone</label>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="q">
+      <label class="q-label" for="pasthelp">Have you ever invested in business help? What made it worth it, or not? <span class="opt">(optional)</span></label>
+      <textarea class="f-input" id="pasthelp" name="past_business_help" placeholder="A course, coach, program, consultant&hellip;"></textarea>
+    </div>
+
+    <!-- Q12 -->
+    <div class="q">
+      <span class="q-label">How much does your faith shape the way you run your business? <span class="opt">(optional)</span></span>
+      <div class="opts">
+        <label class="opt-row"><input type="radio" name="faith" value="Not at all"> Not at all</label>
+        <label class="opt-row"><input type="radio" name="faith" value="A little"> A little</label>
+        <label class="opt-row"><input type="radio" name="faith" value="Quite a bit"> Quite a bit</label>
+        <label class="opt-row"><input type="radio" name="faith" value="It shapes everything"> It shapes everything</label>
+      </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="q">
+      <span class="q-label">Which describes you? <span class="opt">(optional)</span></span>
+      <div class="opts">
+        <label class="opt-row"><input type="radio" name="describes_you" value="Mom who was home with kids before starting"> A mom who was home with kids before starting</label>
+        <label class="opt-row"><input type="radio" name="describes_you" value="Mom who started while working"> A mom who started while working</label>
+        <label class="opt-row"><input type="radio" name="describes_you" value="Not a mom"> Not a mom</label>
+        <label class="opt-row"><input type="radio" name="describes_you" value="Prefer not to say"> Prefer not to say</label>
+      </div>
+    </div>
+
+    <!-- ENTRY / EMAIL -->
+    <div class="entry">
+      <h2>Enter to win the $50 gift card</h2>
+      <p>Leave your email and you&rsquo;re entered in the drawing. I&rsquo;ll send you the results once they&rsquo;re in, too.</p>
+      <div class="row">
+        <div>
+          <label for="first_name">First name</label>
+          <input class="f-input" type="text" id="first_name" name="first_name" placeholder="First name">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input class="f-input" type="email" id="email" name="email" placeholder="you@email.com">
+        </div>
+      </div>
+      <p class="consent">Entering adds you to my email list, where I send occasional notes for business owners. No spam, and you can unsubscribe anytime. No purchase necessary to enter.</p>
+    </div>
+
+    <button type="submit" class="btn-submit" id="submit-btn">Submit my answers</button>
+  </form>
+
+  <div id="thanks">
+    <h2>Thank you. You&rsquo;re in.</h2>
+    <p>I appreciate you taking the time, truly. Your answers are a huge help, and you&rsquo;re entered in the drawing for the $50 Amazon gift card. I&rsquo;ll be in touch.</p>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('survey-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      var res = await fetch('https://formspree.io/f/mljjoper', {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('intro').style.display = 'none';
+        this.style.display = 'none';
+        var t = document.getElementById('thanks');
+        t.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+    } catch (err) { /* fall through to re-enable */ }
+    btn.disabled = false;
+    btn.textContent = 'Submit my answers';
+    alert('Something went wrong sending that. Please try again in a moment.');
+  });
+</script>
+
+</body>
+</html>
