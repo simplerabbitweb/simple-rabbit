@@ -92,7 +92,7 @@
 <div class="wrap">
 
   <div id="intro">
-    <span class="eyebrow">2-minute survey</span>
+    <span class="eyebrow">5-minute survey</span>
     <h1>Tell me about your business.</h1>
     <p class="lede">I&rsquo;m doing some research on how small business owners really market and grow. Answer a few honest questions below and you&rsquo;ll be entered to win a $50 Amazon gift card. Everything you share is kept confidential, and I read every single response.</p>
     <div class="prize-card">
@@ -129,8 +129,8 @@
 
     <!-- Stage -->
     <div class="q">
-      <label class="q-label" for="stage">Roughly where is your business right now?<span class="req">*</span></label>
-      <select class="f-input" id="stage" name="business_stage" required>
+      <label class="q-label" for="stage">Roughly where is your business right now?</label>
+      <select class="f-input" id="stage" name="business_stage">
         <option value="" disabled selected>Select one&hellip;</option>
         <option>Just starting</option>
         <option>Under $50K a year</option>
@@ -225,16 +225,10 @@
       </div>
     </div>
 
-    <!-- Q11 -->
-    <div class="q">
-      <label class="q-label" for="pasthelp">Have you ever invested in business help? What made it worth it, or not?</label>
-      <textarea class="f-input" id="pasthelp" name="past_business_help" placeholder="A course, coach, program, consultant&hellip;"></textarea>
-    </div>
-
     <!-- Money -->
     <div class="q">
-      <label class="q-label" for="most_invested">What&rsquo;s the most you&rsquo;ve invested in business help, such as a course, coach or program?<span class="req">*</span></label>
-      <select class="f-input" id="most_invested" name="most_invested" required>
+      <label class="q-label" for="most_invested">What&rsquo;s the most you&rsquo;ve invested in business help, such as a course, coach or program?</label>
+      <select class="f-input" id="most_invested" name="most_invested">
         <option value="" disabled selected>Select one&hellip;</option>
         <option>Under $500</option>
         <option>$500 to $2K</option>
@@ -242,6 +236,12 @@
         <option>$5K to $10K</option>
         <option>Over $10K</option>
       </select>
+    </div>
+
+    <!-- Money follow-up (open) -->
+    <div class="q">
+      <label class="q-label" for="pasthelp">What made that worth it, or not?</label>
+      <textarea class="f-input" id="pasthelp" name="past_business_help" placeholder="If you&rsquo;ve worked with a course, coach, or program before"></textarea>
     </div>
 
     <!-- Faith -->
@@ -263,16 +263,6 @@
         <label class="opt-row"><input type="radio" name="describes_you" value="Mom who started while working"> A mom who started while working</label>
         <label class="opt-row"><input type="radio" name="describes_you" value="Not a mom"> Not a mom</label>
         <label class="opt-row"><input type="radio" name="describes_you" value="Prefer not to say"> Prefer not to say</label>
-      </div>
-    </div>
-
-    <!-- Gender -->
-    <div class="q">
-      <span class="q-label">What&rsquo;s your gender?</span>
-      <div class="opts">
-        <label class="opt-row"><input type="radio" name="gender" value="Female"> Female</label>
-        <label class="opt-row"><input type="radio" name="gender" value="Male"> Male</label>
-        <label class="opt-row"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
       </div>
     </div>
 
