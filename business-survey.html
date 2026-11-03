@@ -61,6 +61,17 @@
     .entry .row>div{flex:1;min-width:180px;}
     .entry label{display:block;font-size:13px;font-weight:600;letter-spacing:0.5px;color:var(--black);margin-bottom:8px;}
     .consent{font-size:12px;line-height:1.6;color:var(--mid-lt);margin-top:18px;}
+    .consent a{color:var(--accent);text-decoration:underline;}
+    .rules{margin-top:52px;border-top:1px solid var(--rule-dk);padding-top:22px;}
+    .rules summary{cursor:pointer;font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-lt);list-style:none;display:inline-flex;align-items:center;gap:8px;}
+    .rules summary::-webkit-details-marker{display:none;}
+    .rules summary::after{content:"+";font-size:15px;line-height:1;}
+    .rules[open] summary::after{content:"\2013";}
+    .rules summary:hover{color:var(--black);}
+    .rules-body{font-size:12.5px;line-height:1.7;color:var(--mid-lt);max-width:680px;margin-top:18px;}
+    .rules-body p{margin-bottom:12px;}
+    .rules-body strong{color:var(--black);font-weight:600;}
+    .rules-body a{color:var(--accent);text-decoration:underline;}
     .btn-submit{margin-top:36px;width:100%;background:#474D73;color:var(--white);border:none;border-radius:10px;padding:18px 28px;font-size:15px;font-weight:400;letter-spacing:1.2px;text-transform:uppercase;font-family:var(--font-b);cursor:pointer;transition:background 0.2s;}
     .btn-submit:hover{background:#2D3154;}
     .btn-submit:disabled{opacity:0.6;cursor:default;}
@@ -304,7 +315,7 @@
         <input type="checkbox" name="email_optin" value="Yes, add me to the list" checked style="margin-top:3px;accent-color:var(--bg);flex-shrink:0;width:17px;height:17px;">
         <span>Add me to Leann&rsquo;s email list for occasional notes for business owners. Uncheck if you&rsquo;d rather not. You can unsubscribe anytime.</span>
       </label>
-      <p class="consent">No purchase necessary to enter. Winner drawn at random on November 20th.</p>
+      <p class="consent">No purchase necessary to enter. Winner drawn at random on November 20th. This promotion is not sponsored or endorsed by Amazon. See the <a href="#rules">official rules</a> and how I use your info in my <a href="/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.</p>
     </div>
 
     <button type="submit" class="btn-submit" id="submit-btn">Submit my answers</button>
@@ -314,6 +325,24 @@
     <h2>Thank you. You&rsquo;re in.</h2>
     <p>I appreciate you taking the time, truly. Your answers are a huge help, and you&rsquo;re entered in the drawing for the $50 Amazon gift card. I&rsquo;ll be in touch.</p>
   </div>
+
+  <details class="rules" id="rules">
+    <summary>Official rules</summary>
+    <div class="rules-body">
+      <p><strong>$50 Amazon Gift Card Drawing &mdash; Official Rules</strong></p>
+      <p><strong>1. Sponsor.</strong> This giveaway is run by Simple Rabbit LLC (Leann Frank), Bergen County, New Jersey. Questions? Email <a href="mailto:hello@simplerabbit.studio">hello@simplerabbit.studio</a>.</p>
+      <p><strong>2. No purchase necessary.</strong> No purchase or payment of any kind is necessary to enter or win, and a purchase will not improve your chances of winning.</p>
+      <p><strong>3. Eligibility.</strong> Open to legal residents of the United States who are 18 or older at the time of entry. Void where prohibited.</p>
+      <p><strong>4. How to enter.</strong> Complete the survey and provide a valid email address. Limit one entry per person. Entries with incomplete or invalid contact information may be disqualified.</p>
+      <p><strong>5. Entry period.</strong> Entries are accepted through 11:59 PM Eastern Time on November 19, 2026.</p>
+      <p><strong>6. Winner selection.</strong> One winner will be chosen at random from all eligible entries on November 20, 2026. Odds of winning depend on the number of eligible entries received.</p>
+      <p><strong>7. Notification.</strong> The winner will be notified by email and must respond within 7 days to claim the prize. If the winner does not respond within that time, another winner may be drawn.</p>
+      <p><strong>8. Prize.</strong> One (1) $50 Amazon.com gift card. The prize is non-transferable, and no cash or other substitution is offered except at the Sponsor&rsquo;s discretion.</p>
+      <p><strong>9. Amazon.</strong> This promotion is not sponsored, endorsed, or administered by, or associated with, Amazon. Amazon.com Gift Cards are issued by ACI Gift Cards LLC. Amazon, the Amazon logo, and the Amazon Gift Card logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
+      <p><strong>10. Your information.</strong> The name and email you provide are used to administer the giveaway and contact the winner. If you choose to join the email list, your email is also used to send occasional updates, and you can unsubscribe at any time. See the <a href="/privacy-policy" target="_blank" rel="noopener">privacy policy</a> for details.</p>
+      <p><strong>11. General.</strong> By entering, you agree to these rules and to the decisions of the Sponsor, which are final. This giveaway is not sponsored, endorsed, or administered by Instagram, Facebook/Meta, or any other platform.</p>
+    </div>
+  </details>
 
 </div>
 
