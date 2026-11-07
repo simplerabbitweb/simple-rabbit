@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>emailbyhuman | Emails that sound like you, and follow up for you</title>
+  <meta name="description" content="Done-for-you email marketing for small service businesses and coaches. Human-written emails in your voice, plus automated follow-up that runs on its own.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    =====================================================================
+    PRICES: edit them here and only here.
+    Every price on the page is filled in from this list.
+    =====================================================================
+  -->
+  <script>
+    window.PRICES = {
+      setup:   "$750",        // Email Workflow Setup, founding price
+      addon:   "$350",        // extra workflows, starting price
+      monthly: "$400/month"   // optional monthly plan
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg: #FBF8F3;
+      --bg-alt: #F3EDE4;
+      --card: #FFFFFF;
+      --text: #2B2622;
+      --muted: #5E554D;
+      --line: #E4DBCF;
+      --accent: #A34A24;
+      --accent-dark: #85391A;
+      --accent-soft: #F6E4DA;
+      --radius: 14px;
+      --max: 1080px;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-dark); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 0.6em;
+      color: var(--text);
+    }
+    h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); letter-spacing: -0.01em; }
+    h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); }
+    h3 { font-size: 1.25rem; }
+    p { margin: 0 0 1em; }
+
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      background: var(--text); color: #fff; padding: 0.75rem 1rem; z-index: 100;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    .narrow { max-width: 720px; }
+    section { padding: 4.5rem 0; }
+    .alt { background: var(--bg-alt); }
+    .eyebrow {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+    }
+    .lead { font-size: 1.2rem; color: var(--muted); }
+
+    /* Header */
+    .site-header { padding: 1.25rem 0; }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .header-link { font-weight: 500; font-size: 0.95rem; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 1rem 1.6rem;
+      border-radius: 999px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn:hover { background: var(--accent-dark); color: #fff; transform: translateY(-1px); }
+    .btn-note { font-size: 0.9rem; color: var(--muted); margin-top: 0.85rem; }
+
+    /* Hero */
+    .hero { padding: 3rem 0 4.5rem; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    .hero p.lead { max-width: 36ch; }
+    .photo-placeholder {
+      aspect-ratio: 4 / 5;
+      background: var(--accent-soft);
+      border: 2px dashed #D9B9A6;
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-weight: 500; text-align: center; padding: 1rem;
+      max-width: 380px; width: 100%; margin: 0 auto;
+    }
+
+    /* Pain points */
+    .quotes { display: grid; gap: 1rem; margin-top: 2rem; padding: 0; list-style: none; }
+    .quotes li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.45;
+    }
+    .quotes li::before { content: "\201C"; color: var(--accent); font-size: 1.8rem; line-height: 0; vertical-align: -0.45rem; margin-right: 0.15rem; }
+    .after-quotes { margin-top: 2rem; }
+
+    /* Offer */
+    .offer-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 2rem 1.4rem;
+      margin-top: 2rem;
+    }
+    .offer-head { border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+    .price { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; color: var(--text); line-height: 1; margin: 0.25rem 0 0.4rem; }
+    .price-tag { display: inline-block; background: var(--accent-soft); color: var(--accent-dark); font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 999px; }
+    .offer-items { display: grid; gap: 1.5rem; }
+    .offer-item h3 { margin-bottom: 0.35rem; }
+    .offer-item p { color: var(--muted); margin: 0; }
+    .ticks { list-style: none; padding: 0; margin: 0.5rem 0 0; color: var(--muted); }
+    .ticks li { padding-left: 1.6rem; position: relative; margin-bottom: 0.35rem; }
+    .ticks li::before {
+      content: ""; position: absolute; left: 0; top: 0.55em;
+      width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent);
+    }
+    .addon { margin-top: 1.75rem; padding: 1rem 1.2rem; background: var(--bg-alt); border-radius: 10px; }
+    .addon p { margin: 0; }
+
+    .monthly { display: grid; gap: 2rem; align-items: start; }
+    .monthly .offer-card { margin-top: 0; }
+
+    /* Steps */
+    .steps { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.25rem; counter-reset: step; }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 1.25rem 1.25rem 1.25rem 4.25rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute; left: 1.2rem; top: 1.15rem;
+      width: 2.2rem; height: 2.2rem; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      font-family: var(--serif); font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .steps h3 { margin-bottom: 0.25rem; font-size: 1.15rem; }
+    .steps p { margin: 0; color: var(--muted); }
+
+    /* Founding note */
+    .founding {
+      background: var(--accent-soft);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 2.25rem 1.5rem;
+    }
+    .founding p:last-child { margin-bottom: 0; }
+
+    /* FAQ */
+    .faq { margin-top: 2rem; border-top: 1px solid var(--line); }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1.25rem 2.5rem 1.25rem 0;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      position: relative;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+"; position: absolute; right: 0.25rem; top: 1.05rem;
+      font-family: var(--sans); font-size: 1.5rem; font-weight: 400; color: var(--accent);
+    }
+    .faq details[open] summary::after { content: "\2212"; }
+    .faq details p { color: var(--muted); padding-bottom: 0.5rem; }
+
+    /* Final CTA */
+    .final { text-align: center; }
+    .final .lead { margin-left: auto; margin-right: auto; max-width: 40ch; }
+
+    footer { padding: 2rem 0 3rem; font-size: 0.9rem; color: var(--muted); text-align: center; border-top: 1px solid var(--line); }
+
+    /* Larger screens */
+    @media (min-width: 720px) {
+      section { padding: 6rem 0; }
+      .quotes { grid-template-columns: repeat(2, 1fr); }
+      .offer-card { padding: 2.75rem; }
+      .offer-items { grid-template-columns: repeat(2, 1fr); gap: 2rem 2.5rem; }
+      .offer-item.full { grid-column: 1 / -1; }
+      .founding { padding: 3rem; }
+    }
+    @media (min-width: 900px) {
+      .hero { padding: 4rem 0 6rem; }
+      .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 4rem; }
+      .monthly { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="emailbyhuman, back to top">email<span>by</span>human</a>
+      <!-- [Booking link]: replace #book with your real scheduling link -->
+      <a class="header-link" href="#book">Book a call</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Done-for-you email for small service businesses</p>
+          <h1 id="hero-title">Emails that sound like you, and follow up for you.</h1>
+          <p class="lead">I write your emails by hand in your own voice and set them up to go out on their own, so new leads hear from you even when you're busy doing the actual work.</p>
+          <!-- [Booking link] -->
+          <a class="btn" href="#book">Book a free 20-minute call</a>
+          <p class="btn-note">A relaxed chat about your business. No pitch deck, no pressure.</p>
+        </div>
+        <!-- Replace this block with: <img src="your-photo.jpg" alt="[Your name] smiling at their desk"> -->
+        <div class="photo-placeholder" role="img" aria-label="Placeholder for a photo of the founder">[Your photo]</div>
+      </div>
+    </section>
+
+    <!-- 2. PAIN POINTS -->
+    <section class="alt" aria-labelledby="pain-title">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">Sound familiar?</p>
+          <h2 id="pain-title">You know email should be bringing in clients. It just isn't happening.</h2>
+          <p>These are the things I hear from business owners all the time, usually followed by a sigh.</p>
+        </div>
+        <ul class="quotes">
+          <li>I come back from networking with a list of emails that just sits there.</li>
+          <li>People join my list and then nobody ever talks to them again.</li>
+          <li>Writing a newsletter feels like a whole second job I never signed up for.</li>
+          <li>I tried AI drafts, and they don't sound anything like me.</li>
+          <li>My emails land in spam, and I'm not a tech person, so I don't know why.</li>
+          <li>I honestly have no idea if my emails are even working.</li>
+        </ul>
+        <div class="narrow after-quotes">
+          <p>If any of those made you nod, you're in good company. Most small business owners I talk to are great at what they do and short on time for everything around it. Email ends up at the bottom of the list, even though the people on that list already raised their hand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE SOLUTION -->
+    <section aria-labelledby="solution-title">
+      <div class="wrap narrow">
+        <p class="eyebrow">How I help</p>
+        <h2 id="solution-title">I build your email system once, then help you keep it warm.</h2>
+        <p>Here's the idea. When someone joins your list, downloads your freebie or fills out your contact form, the right emails go out to them automatically, written in your voice and pointed toward a reply or a booked call. You don't have to remember to follow up, because the follow-up is already written and waiting.</p>
+        <p>I write every email myself, after listening to how you actually talk about your work. Then I set it all up in your email platform, test it, and hand it over with a short video so you know what's running and where.</p>
+        <p>If you'd like, I can also stick around and write your newsletters each month, so your list keeps hearing from you long after the setup is done.</p>
+      </div>
+    </section>
+
+    <!-- 4. CORE OFFER -->
+    <section class="alt" id="offer" aria-labelledby="offer-title">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">The core offer</p>
+          <h2 id="offer-title">Email Workflow Setup</h2>
+          <p class="lead">Everything you need for email to start doing some of the follow-up for you.</p>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-head">
+            <span class="price-tag">Founding price</span>
+            <p class="price"><span data-price="setup"></span></p>
+            <p style="margin:0;color:var(--muted)">One-time project. Up to 8 emails written by me, in your voice.</p>
+          </div>
+
+          <div class="offer-items">
+            <div class="offer-item full">
+              <h3>Platform setup</h3>
+              <p>The behind-the-scenes pieces that make the rest work, done for you.</p>
+              <ul class="ticks">
+                <li>Connecting your email tool so it's ready to send</li>
+                <li>A signup form for your website</li>
+                <li>A branded email template that matches your business</li>
+                <li>Sender authentication (SPF, DKIM and DMARC), which helps your emails land in inboxes instead of spam</li>
+              </ul>
+            </div>
+
+            <div class="offer-item">
+              <h3>Welcome series (4 emails)</h3>
+              <p>Goes out automatically when someone joins your list. It introduces you, builds a little trust, and is written to get a first reply or a booking.</p>
+            </div>
+
+            <div class="offer-item">
+              <h3>Nurture or lead magnet series (3 to 4 emails)</h3>
+              <p>Starts when someone downloads your freebie or sends an inquiry. It's written to turn that interest into a call or a purchase.</p>
+            </div>
+
+            <div class="offer-item full">
+              <h3>What else is included</h3>
+              <p>Every email is written by a real person (me) in your voice. You get one round of revisions on the whole set, plus a handoff video walking you through what's set up and how to find it.</p>
+            </div>
+          </div>
+
+          <div class="addon">
+            <p><strong>Need more?</strong> Extra workflows, like a post-call follow-up or a re-engagement series for people who've gone quiet, start at <span data-price="addon"></span> each.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MONTHLY PLAN -->
+    <section aria-labelledby="monthly-title">
+      <div class="wrap monthly">
+        <div>
+          <p class="eyebrow">Optional, after setup</p>
+          <h2 id="monthly-title">You talk, I write.</h2>
+          <p>Newsletters are where most people get stuck, because staring at a blank page every two weeks is exhausting. So we skip the blank page.</p>
+          <p>Once a month we hop on a 20-minute call, or you send me a voice note while you're walking the dog. You tell me what's been on your mind, what clients keep asking, or what you're offering next. I turn that into two newsletters that sound like you, and you approve them before anything goes out.</p>
+        </div>
+        <div class="offer-card">
+          <div class="offer-head">
+            <span class="price-tag">Monthly plan</span>
+            <p class="price"><span data-price="monthly"></span></p>
+            <p style="margin:0;color:var(--muted)">Month to month. Available once your setup is done.</p>
+          </div>
+          <ul class="ticks">
+            <li>A 20-minute call or voice note each month</li>
+            <li>2 newsletters a month, written in your voice</li>
+            <li>Scheduling, so they go out without you lifting a finger</li>
+            <li>A short monthly report on opens and clicks, in plain English</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. HOW IT WORKS -->
+    <section class="alt" aria-labelledby="how-title">
+      <div class="wrap narrow">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title">From first call to live emails</h2>
+        <ol class="steps">
+          <li>
+            <h3>Book a free call</h3>
+            <p>We talk for 20 minutes about your business, who you help, and where email fits. If it's not a good match, I'll tell you.</p>
+          </li>
+          <li>
+            <h3>A voice interview</h3>
+            <p>I ask you questions and you just talk. This is how I learn the way you explain things, so the emails end up sounding like you.</p>
+          </li>
+          <li>
+            <h3>I write and build</h3>
+            <p>I write your emails and set everything up in your platform, including the signup form, template and automations.</p>
+          </li>
+          <li>
+            <h3>You approve</h3>
+            <p>You read every email before it goes anywhere. Ask for changes during your revision round and I'll make them.</p>
+          </li>
+          <li>
+            <h3>It goes live</h3>
+            <p>I switch it on, test it, and send you the handoff video. From then on, new subscribers get your emails automatically.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. FOUNDING CLIENT NOTE -->
+    <section aria-labelledby="founding-title">
+      <div class="wrap narrow">
+        <div class="founding">
+          <p class="eyebrow">A note on founding spots</p>
+          <h2 id="founding-title">I'm keeping this price for a small group of founding clients.</h2>
+          <p>I'm opening [number] founding spots at <span data-price="setup"></span> for the setup. In return, I'll ask for your honest feedback on the process once your emails are live, the good parts and the parts I can do better.</p>
+          <p>Once those spots are filled, the price goes up. If you've been meaning to sort out your email, this is the cheapest it'll be.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="alt" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">Things people usually ask</h2>
+        <div class="faq">
+          <details>
+            <summary>Which email platforms do you work with?</summary>
+            <p>Most of the popular ones for small businesses, including Flodesk, Mailchimp and Kit. If you already use something else, ask me on the call. If you don't have a platform yet, I'll help you pick one that fits.</p>
+          </details>
+          <details>
+            <summary>Do I get to approve everything?</summary>
+            <p>Yes. Nothing goes out until you've read it and said it's good to go.</p>
+          </details>
+          <details>
+            <summary>Is this AI-written?</summary>
+            <p>No. I write every email myself, based on our voice interview and how you naturally talk about your work.</p>
+          </details>
+          <details>
+            <summary>What's not included?</summary>
+            <p>A few things sit outside the setup and get quoted separately: creating the lead magnet itself (the freebie people sign up for), e-commerce or shopping cart automations, and moving your list from one platform to another. If you need any of those, I'll give you a price before we start.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FINAL CTA -->
+    <section class="final" id="book" aria-labelledby="final-title">
+      <div class="wrap">
+        <h2 id="final-title">Let's get your emails working for you.</h2>
+        <p class="lead">Book a free 20-minute call and we'll figure out whether this is right for your business.</p>
+        <!-- [Booking link]: replace #book with your real scheduling link -->
+        <a class="btn" href="#book">Book a free 20-minute call</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year">2026</span> emailbyhuman. Written by a human, on purpose.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fill in every price from the PRICES list at the top of the file.
+    document.querySelectorAll("[data-price]").forEach(function (el) {
+      var key = el.getAttribute("data-price");
+      if (window.PRICES && window.PRICES[key]) el.textContent = window.PRICES[key];
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
