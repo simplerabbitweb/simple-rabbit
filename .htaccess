@@ -27,6 +27,9 @@ RewriteRule ^acrr-checklist(\.html)?/?$ / [R=301,L]
 RewriteRule ^checklist-thank-you(\.html)?/?$ / [R=301,L]
 RewriteRule ^ai-front-desk(\.html)?/?$ / [R=301,L]
 
+# --- Deleted Amazon giveaway / business survey page → homepage ---
+RewriteRule ^business-survey(\.html)?/?$ / [R=301,L]
+
 # --- Renamed landing page: website-review → missing-marketing-checklist ---
 RewriteRule ^website-review(\.html)?/?$ /missing-marketing-checklist [R=301,L]
 
