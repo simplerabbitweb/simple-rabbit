@@ -30,6 +30,9 @@ RewriteRule ^ai-front-desk(\.html)?/?$ / [R=301,L]
 # --- Deleted Amazon giveaway / business survey page → homepage ---
 RewriteRule ^business-survey(\.html)?/?$ / [R=301,L]
 
+# --- Retired change-request form (now email requests@simplerabbit.studio) → client hub ---
+RewriteRule ^changes(\.html)?/?$ /client-hub [R=301,L]
+
 # --- Renamed landing page: website-review → missing-marketing-checklist ---
 RewriteRule ^website-review(\.html)?/?$ /missing-marketing-checklist [R=301,L]
 
