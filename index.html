@@ -251,9 +251,9 @@
     @media (max-width: 900px) {
       .nav-inner { padding: 0 24px !important; }
       .px-lg { padding-left: 24px !important; padding-right: 24px !important; }
-      .hero-inner { grid-template-columns: 1fr !important; min-height: auto !important; }
-      .hero-inner > div:last-child { height: 380px; order: -1; }
-      .hero-inner > div:nth-child(2) { padding: 32px 24px 48px !important; }
+      .hero-inner { grid-template-columns: 1fr !important; min-height: auto !important; padding-top: 12px !important; padding-bottom: 8px !important; }
+      .hero-inner > div:last-child { height: auto; min-height: 0 !important; order: -1; padding: 6px 20px !important; }
+      .hero-inner > div:nth-child(2) { padding: 16px 24px 44px !important; }
       /* Hero eyebrow: reposition to left edge, hide line, add space above H1 */
       .hero-eyebrow { left: 24px !important; margin-bottom: 32px !important; }
       .hero-eyebrow-line { display: none !important; }
@@ -404,7 +404,7 @@
     </h1>
 
     <p style="font-size: 19px; line-height:1.85; color:var(--mid-lt); margin-bottom:20px; max-width:540px; font-weight:400;">
-      Simple Rabbit builds clean, modern websites and brands for service businesses, with a specialty in functional medicine and women&rsquo;s health. Based in Bergen County, NJ, working with clients across the US.
+      Simple Rabbit builds clean, modern websites and brands for service businesses, with a specialty in functional medicine and women&rsquo;s health.
     </p>
 
     <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin-top:10px;">
@@ -523,13 +523,13 @@
      TESTIMONIALS (band, 2-up)
      ════════════════════════════════════════════ -->
 <style>
-  .hp-rev-cols { column-count:3; column-gap:28px; max-width:1200px; margin:0 auto; }
-  .hp-rev-card { break-inside:avoid; -webkit-column-break-inside:avoid; background:var(--white); border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:28px 28px 30px; margin:0 0 28px; box-shadow:0 1px 20px rgba(0,0,0,0.05); }
-  .hp-rev-stars { color:var(--accent); letter-spacing:3px; font-size:14px; margin-bottom:14px; }
-  .hp-rev-text { font-family:var(--font-b); font-size:15px; line-height:1.65; color:rgba(10,9,5,0.80); margin:0 0 18px; }
-  .hp-rev-name { font-family:var(--font-d); font-size:19px; font-weight:400; letter-spacing:-0.3px; color:var(--black); }
-  @media (max-width:900px){ .hp-rev-cols{ column-count:2; } }
-  @media (max-width:600px){ .hp-rev-cols{ column-count:1; } }
+  .hp-hl-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1160px; margin:0 auto; }
+  .hp-hl-card { background:var(--white); border-radius:4px; padding:36px 32px; box-shadow:0 2px 26px rgba(0,0,0,0.07); display:flex; flex-direction:column; }
+  .hp-hl-stars { color:var(--accent); letter-spacing:4px; font-size:15px; margin-bottom:18px; }
+  .hp-hl-quote { font-family:var(--font-d); font-size:clamp(24px,2vw,31px); line-height:1.22; letter-spacing:-0.6px; font-weight:400; color:var(--black); margin:0 0 22px; }
+  .hp-hl-name { font-family:var(--font-b); font-size:12px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--mid-lt); margin-top:auto; }
+  @media (max-width:900px){ .hp-hl-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .hp-hl-grid{ grid-template-columns:1fr; gap:16px; } .hp-hl-card{ padding:28px 26px; } .hp-hl-quote{ font-size:24px; } }
 </style>
 <section class="reveal" style="background:#a6b7c2; padding:96px 64px; border-bottom:1px solid var(--rule-vt); position:relative; overflow:hidden;">
   <!-- Circle right, partially off-screen -->
@@ -540,91 +540,53 @@
   <svg style="position:absolute;top:-80px;left:-80px;width:260px;height:260px;pointer-events:none;" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
     <circle cx="130" cy="130" r="125" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
   </svg>
-  <div style="max-width:1200px; margin:0 auto; position:relative; z-index:1;">
+  <div style="max-width:1160px; margin:0 auto; position:relative; z-index:1;">
     <div style="text-align:center; margin-bottom:52px;">
       <h2 style="font-family:var(--font-d); font-size:clamp(30px,3.5vw,48px); line-height:1.05; letter-spacing:-1.5px; font-weight:300; color:var(--black); margin:0;">What clients are saying</h2>
     </div>
 
-    <div class="hp-rev-cols">
+    <div class="hp-hl-grid">
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Website came out great. Leann took time to get each detail correct and was very responsive throughout the process.<br><br>Final product is better than expected and I&rsquo;m confident knowing the website is tailored for my exact purpose.<br><br>I would recommend Leann and Simple Rabbit studio!</blockquote>
-        <figcaption class="hp-rev-name">Thomas Strobel</figcaption>
+      <figure class="hp-hl-card">
+        <div class="hp-hl-stars">★★★★★</div>
+        <blockquote class="hp-hl-quote">&ldquo;I started getting calls in week 2.&rdquo;</blockquote>
+        <figcaption class="hp-hl-name">Laura Gonzalez</figcaption>
       </figure>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Leann has handled our website and hosting for Innovative Software Solutions, and I have been consistently impressed with both the work and the way she works.<br><br>When our business direction changed — moving from a government-contracting focus to logistics and shipping intelligence — she rebuilt the site around the new positioning in a matter of days. New layout, new message, entirely different audience. She understood what we were trying to communicate without needing it explained twice, and turned it around faster than I expected.<br><br>Her responsiveness carries through to everything else. When our outgoing email started landing in spam, she made the DNS changes on her end quickly and stayed engaged until it was resolved. She also tells you plainly when something falls outside her expertise rather than guessing, which I value more than someone who claims to do it all.<br><br>Clean, professional work, delivered when she says it will be. For a small business owner who cannot afford to chase people down, that reliability matters as much as the design. I recommend SimpleRabbit.Studio without hesitation.</blockquote>
-        <figcaption class="hp-rev-name">Darryl Hill</figcaption>
+      <figure class="hp-hl-card">
+        <div class="hp-hl-stars">★★★★★</div>
+        <blockquote class="hp-hl-quote">&ldquo;I get so many clients now from the website search!&rdquo;</blockquote>
+        <figcaption class="hp-hl-name">Mona Perez</figcaption>
       </figure>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">I couldn’t be happier. Working with Leann has been a real pleasure and the final product is awesome. My website is even better than I expected. Her price is very reasonable and each phase was delivered on time or early and if anything... she was waiting on us and our input. In addition to delivering on all promises...she knows what and how to get your website noticed!</blockquote>
-        <figcaption class="hp-rev-name">David Deramo</figcaption>
+      <figure class="hp-hl-card">
+        <div class="hp-hl-stars">★★★★★</div>
+        <blockquote class="hp-hl-quote">&ldquo;My website went from mediocre to mesmerizing.&rdquo;</blockquote>
+        <figcaption class="hp-hl-name">Martin Swanzey</figcaption>
       </figure>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Leann was so great to work with! She broke all the social media stuff down for me to understand exactly what I needed to do, how to do it, and why. She took something totally out of my wheelhouse, that I found frustrating, and made it super simple. I can’t wait to work with her again on another project (she does so much more than social media stuff) and absolutely recommend you work with her, too.</blockquote>
-        <figcaption class="hp-rev-name">Michelle Davidoff</figcaption>
+      <figure class="hp-hl-card">
+        <div class="hp-hl-stars">★★★★★</div>
+        <blockquote class="hp-hl-quote">&ldquo;My website is even better than I expected.&rdquo;</blockquote>
+        <figcaption class="hp-hl-name">Dr. David Deramo &middot; Deramo Orthopaedics</figcaption>
       </figure>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">I had the very good fortune of connecting with Leann Frank when I was looking for a web designer. I met with numerous people, but none were a good match. Then I met Leann. Although I wasn’t really able to articulate much more than I wanted something clean and crisp and show her a few samples, Leann “got it” immediately. I’m not an easy customer by any stretch, yet I loved the very first version. We just worked on content after that. Leann was both responsive and creative. She thought outside the box when I had a rough idea of something I wanted to do. And equally importantly, her SEO work was spot on — I started getting calls in week 2. I’m already surpassing standard conversion rates.</blockquote>
-        <figcaption class="hp-rev-name">Laura Gonzalez</figcaption>
+      <figure class="hp-hl-card">
+        <div class="hp-hl-stars">★★★★★</div>
+        <blockquote class="hp-hl-quote">&ldquo;Working with Leann was an absolute dream.&rdquo;</blockquote>
+        <figcaption class="hp-hl-name">Melissa Simon &middot; The Home Refresh</figcaption>
       </figure>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Leann was absolutely amazing! Brought my ideas and vision into life for a professional and sophisticated website! I get so many clients now from the website search! It’s amazing! Thank you again Leann.</blockquote>
-        <figcaption class="hp-rev-name">Mona Perez</figcaption>
+      <figure class="hp-hl-card">
+        <div class="hp-hl-stars">★★★★★</div>
+        <blockquote class="hp-hl-quote">&ldquo;She could read my mind.&rdquo;</blockquote>
+        <figcaption class="hp-hl-name">Lauren Goodwin &middot; Goodwin Finishes</figcaption>
       </figure>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">I initially hired Leann to do a website audit. I quickly learned that she was the person to redo my website, which I felt didn’t reflect me. She was on time, communicated, and helped me along the way to improve business operations. Would highly recommend her!</blockquote>
-        <figcaption class="hp-rev-name">Lisa Milli</figcaption>
-      </figure>
+    </div>
 
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Leann has a sharp eye for what’s working and what isn’t. After her website audit, I walked away with a clear picture of exactly which pages and sections needed attention — and why. If you want honest, actionable feedback on your site, she’s the person to call.</blockquote>
-        <figcaption class="hp-rev-name">Nadya Ramos</figcaption>
-      </figure>
-
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">My website went from mediocre to mesmerizing with Leann Frank’s expertise and attention to detail. I finally have a site that I can confidently share with customers. Now, customers are intuitively guided to products and events; they can interact with vibrant images and text that link to points of sale. During our collaboration, Leann was responsive to requests that helped to personalize the website. Her customer service skills are A+! As my business grows, I look forward to working with her again.</blockquote>
-        <figcaption class="hp-rev-name">Martin Swanzey</figcaption>
-      </figure>
-
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Beautifully crafted website designs, bringing your vision and business to life, but even better than you could imagine. “Simple Rabbit” understands and nails it. Leann is an honest professional, knows what you need, and what you don’t need (which I really appreciate), is available for your every question, offering lots of insight on how to make your business stand out online, always working hard to meet &amp; exceed clients’ expectations. You won’t be disappointed when you choose “Simple Rabbit”!</blockquote>
-        <figcaption class="hp-rev-name">Dawn Buldo</figcaption>
-      </figure>
-
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Working with Leann from Simple Rabbit was an absolute dream! I hired her to design a new website for my home organizing business, and she completely brought my vision to life. Her designs were modern, clean, and totally on point. Beyond her creative talent, Leann made the entire process feel so easy and seamless. I truly felt like I was in the best hands from start to finish. She’s a gem of a human and a total pro. Highly recommend!</blockquote>
-        <figcaption class="hp-rev-name">Melissa Simon</figcaption>
-      </figure>
-
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">I can’t express how thrilled I am with the website Simple Rabbit created for my business. Leann was easy to work with, and she could read my mind. Now I have a website that represents my services beautifully, and I couldn’t be happier with the outcome and the ease with which it all came together.</blockquote>
-        <figcaption class="hp-rev-name">Lauren Goodwin</figcaption>
-      </figure>
-
-      <figure class="hp-rev-card">
-        <div class="hp-rev-stars">★★★★★</div>
-        <blockquote class="hp-rev-text">Leann’s professionalism went far beyond my expectations. Many people visit my website because of her expertise. Would recommend to anyone who is struggling with their business or personal brand.</blockquote>
-        <figcaption class="hp-rev-name">Nancy Sabato</figcaption>
-      </figure>
-
+    <div style="text-align:center; margin-top:48px;">
+      <a href="/portfolio" style="font-family:var(--font-b); font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--black); border-bottom:1px solid rgba(0,0,0,0.45); padding-bottom:3px;">Read all client reviews &rarr;</a>
     </div>
   </div>
 </section>
