@@ -256,7 +256,6 @@
 
   <!-- BOOKING FORM -->
   <form id="book-form" action="https://formspree.io/f/mgoqyroq" method="POST" style="margin-top:44px;">
-    <input type="hidden" name="_next" value="https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins">
     <input type="hidden" name="_subject" value="New discovery call request">
     <div class="form-group">
       <label class="form-label" for="name">Your name <span class="req">*</span></label>
@@ -293,7 +292,14 @@
     </div>
     <button type="submit" class="btn-submit" id="book-submit">Book my call &rarr;</button>
   </form>
-  <p style="text-align:center; font-family:var(--font-b); font-size:14px; color:var(--mid-lt); line-height:1.6; margin:20px 0 0;">After you submit, you&rsquo;ll go straight to my calendar to pick a time. Prefer email? <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent); font-weight:600; text-decoration:none; border-bottom:1px solid var(--accent);">hello@simplerabbit.studio</a></p>
+  <p id="submit-note" style="text-align:center; font-family:var(--font-b); font-size:14px; color:var(--mid-lt); line-height:1.6; margin:20px 0 0;">After you submit, I&rsquo;ll follow up by email. Prefer to reach out directly? <a href="mailto:hello@simplerabbit.studio" style="color:var(--accent); font-weight:600; text-decoration:none; border-bottom:1px solid var(--accent);">hello@simplerabbit.studio</a></p>
+
+  <!-- SUCCESS STATE -->
+  <div id="success-msg">
+    <h2>Thank you. Your request is in.</h2>
+    <p>I&rsquo;ll follow up by email soon to talk through your business and your project.</p>
+    <a href="/" class="btn-return">Back to home</a>
+  </div>
 
 </div><!-- /form-wrap -->
 
@@ -303,15 +309,19 @@
     var btn = document.getElementById('book-submit');
     btn.disabled = true;
     btn.textContent = 'One moment…';
-    var CAL = 'https://calendar.notion.so/meet/leann-2c21ga2e5y/30-mins';
     try {
       await fetch('https://formspree.io/f/mgoqyroq', {
         method: 'POST',
         body: new FormData(this),
         headers: { 'Accept': 'application/json' }
       });
-    } catch (err) { /* still send them to the calendar */ }
-    window.location.href = CAL;
+    } catch (err) { /* show the thank-you regardless */ }
+    this.style.display = 'none';
+    var ids = ['submit-note'];
+    ids.forEach(function(id){ var el = document.getElementById(id); if(el) el.style.display = 'none'; });
+    ['.form-title','.form-intro'].forEach(function(s){ var el = document.querySelector(s); if(el) el.style.display = 'none'; });
+    document.getElementById('success-msg').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   (function(){
